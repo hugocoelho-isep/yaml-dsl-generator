@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: pt.isep.yamldslgen.xtext
+Bundle-ManifestVersion: 2
+Bundle-Name: pt.isep.yamldslgen.xtext
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: pt.isep.yamldslgen.xtext; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: pt.isep.yamldslgen.yamlmde,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.19.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.42.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: pt.isep.yamldslgen.xtext.parser.antlr.internal,
+ pt.isep.yamldslgen.xtext.scoping,
+ pt.isep.yamldslgen.xtext.parser.antlr,
+ pt.isep.yamldslgen.xtext,
+ pt.isep.yamldslgen.xtext.services,
+ pt.isep.yamldslgen.xtext.formatting2,
+ pt.isep.yamldslgen.xtext.generator,
+ pt.isep.yamldslgen.xtext.serializer,
+ pt.isep.yamldslgen.xtext.validation
+Import-Package: org.apache.log4j

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated yamlmde -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="pt.isep.yamldslgen.github_actions.presentation.YamlmdeModelWizardID"
+            name="%_UI_YamlmdeModelWizard_label"
+            class="pt.isep.yamldslgen.github_actions.presentation.YamlmdeModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/YamlmdeModelFile.gif">
+         <description>%_UI_YamlmdeModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated yamlmde -->
+      <editor
+            id="pt.isep.yamldslgen.github_actions.presentation.YamlmdeEditorID"
+            name="%_UI_YamlmdeEditor_label"
+            icon="icons/full/obj16/YamlmdeModelFile.gif"
+            extensions="yamlmde"
+            class="pt.isep.yamldslgen.github_actions.presentation.YamlmdeEditor"
+            contributorClass="pt.isep.yamldslgen.github_actions.presentation.YamlmdeActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

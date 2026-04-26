@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: pt.isep.yamldslgen.yamlmde;singleton:=true
+Automatic-Module-Name: pt.isep.yamldslgen.yamlmde
+Bundle-Version: 0.1.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: pt.isep.yamldslgen.github_actions,
+ pt.isep.yamldslgen.github_actions.impl,
+ pt.isep.yamldslgen.github_actions.util
+Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy
