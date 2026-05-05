@@ -1,0 +1,396 @@
+/**
+ */
+package pt.isep.yamldslgen.github_actions.impl;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import pt.isep.yamldslgen.github_actions.Job;
+import pt.isep.yamldslgen.github_actions.Permissions;
+import pt.isep.yamldslgen.github_actions.Step;
+import pt.isep.yamldslgen.github_actions.YamlmdePackage;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Job</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getId <em>Id</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getRunsOn <em>Runs On</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getNeeds <em>Needs</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getSteps <em>Steps</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getPermissions <em>Permissions</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class JobImpl extends MinimalEObjectImpl.Container implements Job {
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getRunsOn() <em>Runs On</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRunsOn()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String RUNS_ON_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRunsOn() <em>Runs On</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRunsOn()
+	 * @generated
+	 * @ordered
+	 */
+	protected String runsOn = RUNS_ON_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getNeeds() <em>Needs</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNeeds()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> needs;
+
+	/**
+	 * The cached value of the '{@link #getSteps() <em>Steps</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSteps()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Step> steps;
+
+	/**
+	 * The cached value of the '{@link #getPermissions() <em>Permissions</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPermissions()
+	 * @generated
+	 * @ordered
+	 */
+	protected Permissions permissions;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected JobImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return YamlmdePackage.Literals.JOB;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.JOB__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getRunsOn() {
+		return runsOn;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRunsOn(String newRunsOn) {
+		String oldRunsOn = runsOn;
+		runsOn = newRunsOn;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.JOB__RUNS_ON, oldRunsOn, runsOn));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<String> getNeeds() {
+		if (needs == null) {
+			needs = new EDataTypeUniqueEList<String>(String.class, this, YamlmdePackage.JOB__NEEDS);
+		}
+		return needs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Step> getSteps() {
+		if (steps == null) {
+			steps = new EObjectContainmentEList<Step>(Step.class, this, YamlmdePackage.JOB__STEPS);
+		}
+		return steps;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Permissions getPermissions() {
+		return permissions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPermissions(Permissions newPermissions, NotificationChain msgs) {
+		Permissions oldPermissions = permissions;
+		permissions = newPermissions;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					YamlmdePackage.JOB__PERMISSIONS, oldPermissions, newPermissions);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPermissions(Permissions newPermissions) {
+		if (newPermissions != permissions) {
+			NotificationChain msgs = null;
+			if (permissions != null)
+				msgs = ((InternalEObject) permissions).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - YamlmdePackage.JOB__PERMISSIONS, null, msgs);
+			if (newPermissions != null)
+				msgs = ((InternalEObject) newPermissions).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - YamlmdePackage.JOB__PERMISSIONS, null, msgs);
+			msgs = basicSetPermissions(newPermissions, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.JOB__PERMISSIONS, newPermissions,
+					newPermissions));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case YamlmdePackage.JOB__STEPS:
+			return ((InternalEList<?>) getSteps()).basicRemove(otherEnd, msgs);
+		case YamlmdePackage.JOB__PERMISSIONS:
+			return basicSetPermissions(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+		case YamlmdePackage.JOB__ID:
+			return getId();
+		case YamlmdePackage.JOB__RUNS_ON:
+			return getRunsOn();
+		case YamlmdePackage.JOB__NEEDS:
+			return getNeeds();
+		case YamlmdePackage.JOB__STEPS:
+			return getSteps();
+		case YamlmdePackage.JOB__PERMISSIONS:
+			return getPermissions();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+		case YamlmdePackage.JOB__ID:
+			setId((String) newValue);
+			return;
+		case YamlmdePackage.JOB__RUNS_ON:
+			setRunsOn((String) newValue);
+			return;
+		case YamlmdePackage.JOB__NEEDS:
+			getNeeds().clear();
+			getNeeds().addAll((Collection<? extends String>) newValue);
+			return;
+		case YamlmdePackage.JOB__STEPS:
+			getSteps().clear();
+			getSteps().addAll((Collection<? extends Step>) newValue);
+			return;
+		case YamlmdePackage.JOB__PERMISSIONS:
+			setPermissions((Permissions) newValue);
+			return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+		case YamlmdePackage.JOB__ID:
+			setId(ID_EDEFAULT);
+			return;
+		case YamlmdePackage.JOB__RUNS_ON:
+			setRunsOn(RUNS_ON_EDEFAULT);
+			return;
+		case YamlmdePackage.JOB__NEEDS:
+			getNeeds().clear();
+			return;
+		case YamlmdePackage.JOB__STEPS:
+			getSteps().clear();
+			return;
+		case YamlmdePackage.JOB__PERMISSIONS:
+			setPermissions((Permissions) null);
+			return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+		case YamlmdePackage.JOB__ID:
+			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+		case YamlmdePackage.JOB__RUNS_ON:
+			return RUNS_ON_EDEFAULT == null ? runsOn != null : !RUNS_ON_EDEFAULT.equals(runsOn);
+		case YamlmdePackage.JOB__NEEDS:
+			return needs != null && !needs.isEmpty();
+		case YamlmdePackage.JOB__STEPS:
+			return steps != null && !steps.isEmpty();
+		case YamlmdePackage.JOB__PERMISSIONS:
+			return permissions != null;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (id: ");
+		result.append(id);
+		result.append(", runsOn: ");
+		result.append(runsOn);
+		result.append(", needs: ");
+		result.append(needs);
+		result.append(')');
+		return result.toString();
+	}
+
+} //JobImpl
