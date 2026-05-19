@@ -21,16 +21,16 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import pt.isep.yamldslgen.github_actions.Permissions;
+import pt.isep.yamldslgen.github_actions.Concurrency;
 import pt.isep.yamldslgen.github_actions.YamlmdePackage;
 
 /**
- * This is the item provider adapter for a {@link pt.isep.yamldslgen.github_actions.Permissions} object.
+ * This is the item provider adapter for a {@link pt.isep.yamldslgen.github_actions.Concurrency} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PermissionsItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class ConcurrencyItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -38,7 +38,7 @@ public class PermissionsItemProvider extends ItemProviderAdapter implements IEdi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PermissionsItemProvider(AdapterFactory adapterFactory) {
+	public ConcurrencyItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -53,36 +53,53 @@ public class PermissionsItemProvider extends ItemProviderAdapter implements IEdi
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addContentsPropertyDescriptor(object);
+			addGroupPropertyDescriptor(object);
+			addCancelInProgressPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Contents feature.
+	 * This adds a property descriptor for the Group feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addContentsPropertyDescriptor(Object object) {
+	protected void addGroupPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Permissions_contents_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Permissions_contents_feature",
-								"_UI_Permissions_type"),
-						YamlmdePackage.Literals.PERMISSIONS__CONTENTS, true, false, false,
+						getResourceLocator(), getString("_UI_Concurrency_group_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Concurrency_group_feature",
+								"_UI_Concurrency_type"),
+						YamlmdePackage.Literals.CONCURRENCY__GROUP, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This returns Permissions.gif.
+	 * This adds a property descriptor for the Cancel In Progress feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCancelInProgressPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Concurrency_cancelInProgress_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Concurrency_cancelInProgress_feature",
+								"_UI_Concurrency_type"),
+						YamlmdePackage.Literals.CONCURRENCY__CANCEL_IN_PROGRESS, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This returns Concurrency.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Permissions"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Concurrency"));
 	}
 
 	/**
@@ -103,9 +120,9 @@ public class PermissionsItemProvider extends ItemProviderAdapter implements IEdi
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Permissions) object).getContents();
-		return label == null || label.length() == 0 ? getString("_UI_Permissions_type")
-				: getString("_UI_Permissions_type") + " " + label;
+		String label = ((Concurrency) object).getGroup();
+		return label == null || label.length() == 0 ? getString("_UI_Concurrency_type")
+				: getString("_UI_Concurrency_type") + " " + label;
 	}
 
 	/**
@@ -119,8 +136,9 @@ public class PermissionsItemProvider extends ItemProviderAdapter implements IEdi
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Permissions.class)) {
-		case YamlmdePackage.PERMISSIONS__CONTENTS:
+		switch (notification.getFeatureID(Concurrency.class)) {
+		case YamlmdePackage.CONCURRENCY__GROUP:
+		case YamlmdePackage.CONCURRENCY__CANCEL_IN_PROGRESS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

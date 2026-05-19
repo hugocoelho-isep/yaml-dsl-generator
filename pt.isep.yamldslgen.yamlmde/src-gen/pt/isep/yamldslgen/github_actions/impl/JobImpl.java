@@ -19,8 +19,9 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import pt.isep.yamldslgen.github_actions.Environment;
 import pt.isep.yamldslgen.github_actions.Job;
-import pt.isep.yamldslgen.github_actions.Permissions;
+import pt.isep.yamldslgen.github_actions.KeyValuePair;
 import pt.isep.yamldslgen.github_actions.Step;
 import pt.isep.yamldslgen.github_actions.YamlmdePackage;
 
@@ -34,8 +35,10 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  * <ul>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getId <em>Id</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getRunsOn <em>Runs On</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getName <em>Name</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getNeeds <em>Needs</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getSteps <em>Steps</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getEnvironment <em>Environment</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getPermissions <em>Permissions</em>}</li>
  * </ul>
  *
@@ -83,6 +86,26 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	protected String runsOn = RUNS_ON_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
 	 * The cached value of the '{@link #getNeeds() <em>Needs</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -103,14 +126,24 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	protected EList<Step> steps;
 
 	/**
-	 * The cached value of the '{@link #getPermissions() <em>Permissions</em>}' containment reference.
+	 * The cached value of the '{@link #getEnvironment() <em>Environment</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnvironment()
+	 * @generated
+	 * @ordered
+	 */
+	protected Environment environment;
+
+	/**
+	 * The cached value of the '{@link #getPermissions() <em>Permissions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPermissions()
 	 * @generated
 	 * @ordered
 	 */
-	protected Permissions permissions;
+	protected EList<KeyValuePair> permissions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -183,6 +216,29 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 * @generated
 	 */
 	@Override
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.JOB__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<String> getNeeds() {
 		if (needs == null) {
 			needs = new EDataTypeUniqueEList<String>(String.class, this, YamlmdePackage.JOB__NEEDS);
@@ -209,8 +265,8 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 * @generated
 	 */
 	@Override
-	public Permissions getPermissions() {
-		return permissions;
+	public Environment getEnvironment() {
+		return environment;
 	}
 
 	/**
@@ -218,12 +274,12 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPermissions(Permissions newPermissions, NotificationChain msgs) {
-		Permissions oldPermissions = permissions;
-		permissions = newPermissions;
+	public NotificationChain basicSetEnvironment(Environment newEnvironment, NotificationChain msgs) {
+		Environment oldEnvironment = environment;
+		environment = newEnvironment;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					YamlmdePackage.JOB__PERMISSIONS, oldPermissions, newPermissions);
+					YamlmdePackage.JOB__ENVIRONMENT, oldEnvironment, newEnvironment);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -238,21 +294,35 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 * @generated
 	 */
 	@Override
-	public void setPermissions(Permissions newPermissions) {
-		if (newPermissions != permissions) {
+	public void setEnvironment(Environment newEnvironment) {
+		if (newEnvironment != environment) {
 			NotificationChain msgs = null;
-			if (permissions != null)
-				msgs = ((InternalEObject) permissions).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - YamlmdePackage.JOB__PERMISSIONS, null, msgs);
-			if (newPermissions != null)
-				msgs = ((InternalEObject) newPermissions).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - YamlmdePackage.JOB__PERMISSIONS, null, msgs);
-			msgs = basicSetPermissions(newPermissions, msgs);
+			if (environment != null)
+				msgs = ((InternalEObject) environment).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - YamlmdePackage.JOB__ENVIRONMENT, null, msgs);
+			if (newEnvironment != null)
+				msgs = ((InternalEObject) newEnvironment).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - YamlmdePackage.JOB__ENVIRONMENT, null, msgs);
+			msgs = basicSetEnvironment(newEnvironment, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.JOB__PERMISSIONS, newPermissions,
-					newPermissions));
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.JOB__ENVIRONMENT, newEnvironment,
+					newEnvironment));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<KeyValuePair> getPermissions() {
+		if (permissions == null) {
+			permissions = new EObjectContainmentEList<KeyValuePair>(KeyValuePair.class, this,
+					YamlmdePackage.JOB__PERMISSIONS);
+		}
+		return permissions;
 	}
 
 	/**
@@ -265,8 +335,10 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		switch (featureID) {
 		case YamlmdePackage.JOB__STEPS:
 			return ((InternalEList<?>) getSteps()).basicRemove(otherEnd, msgs);
+		case YamlmdePackage.JOB__ENVIRONMENT:
+			return basicSetEnvironment(null, msgs);
 		case YamlmdePackage.JOB__PERMISSIONS:
-			return basicSetPermissions(null, msgs);
+			return ((InternalEList<?>) getPermissions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -283,10 +355,14 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			return getId();
 		case YamlmdePackage.JOB__RUNS_ON:
 			return getRunsOn();
+		case YamlmdePackage.JOB__NAME:
+			return getName();
 		case YamlmdePackage.JOB__NEEDS:
 			return getNeeds();
 		case YamlmdePackage.JOB__STEPS:
 			return getSteps();
+		case YamlmdePackage.JOB__ENVIRONMENT:
+			return getEnvironment();
 		case YamlmdePackage.JOB__PERMISSIONS:
 			return getPermissions();
 		}
@@ -308,6 +384,9 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		case YamlmdePackage.JOB__RUNS_ON:
 			setRunsOn((String) newValue);
 			return;
+		case YamlmdePackage.JOB__NAME:
+			setName((String) newValue);
+			return;
 		case YamlmdePackage.JOB__NEEDS:
 			getNeeds().clear();
 			getNeeds().addAll((Collection<? extends String>) newValue);
@@ -316,8 +395,12 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			getSteps().clear();
 			getSteps().addAll((Collection<? extends Step>) newValue);
 			return;
+		case YamlmdePackage.JOB__ENVIRONMENT:
+			setEnvironment((Environment) newValue);
+			return;
 		case YamlmdePackage.JOB__PERMISSIONS:
-			setPermissions((Permissions) newValue);
+			getPermissions().clear();
+			getPermissions().addAll((Collection<? extends KeyValuePair>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -337,14 +420,20 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		case YamlmdePackage.JOB__RUNS_ON:
 			setRunsOn(RUNS_ON_EDEFAULT);
 			return;
+		case YamlmdePackage.JOB__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		case YamlmdePackage.JOB__NEEDS:
 			getNeeds().clear();
 			return;
 		case YamlmdePackage.JOB__STEPS:
 			getSteps().clear();
 			return;
+		case YamlmdePackage.JOB__ENVIRONMENT:
+			setEnvironment((Environment) null);
+			return;
 		case YamlmdePackage.JOB__PERMISSIONS:
-			setPermissions((Permissions) null);
+			getPermissions().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -362,12 +451,16 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		case YamlmdePackage.JOB__RUNS_ON:
 			return RUNS_ON_EDEFAULT == null ? runsOn != null : !RUNS_ON_EDEFAULT.equals(runsOn);
+		case YamlmdePackage.JOB__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case YamlmdePackage.JOB__NEEDS:
 			return needs != null && !needs.isEmpty();
 		case YamlmdePackage.JOB__STEPS:
 			return steps != null && !steps.isEmpty();
+		case YamlmdePackage.JOB__ENVIRONMENT:
+			return environment != null;
 		case YamlmdePackage.JOB__PERMISSIONS:
-			return permissions != null;
+			return permissions != null && !permissions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -387,6 +480,8 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		result.append(id);
 		result.append(", runsOn: ");
 		result.append(runsOn);
+		result.append(", name: ");
+		result.append(name);
 		result.append(", needs: ");
 		result.append(needs);
 		result.append(')');

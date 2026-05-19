@@ -56,22 +56,26 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+		case YamlmdePackage.KEY_VALUE_PAIR:
+			return createKeyValuePair();
 		case YamlmdePackage.GITHUB_ACTIONS:
 			return createGithubActions();
+		case YamlmdePackage.JOB:
+			return createJob();
+		case YamlmdePackage.STEP:
+			return createStep();
 		case YamlmdePackage.ON:
 			return createOn();
 		case YamlmdePackage.PUSH:
 			return createPush();
 		case YamlmdePackage.PULL_REQUEST:
 			return createPull_request();
-		case YamlmdePackage.JOB:
-			return createJob();
-		case YamlmdePackage.STEP:
-			return createStep();
-		case YamlmdePackage.WITH:
-			return createWith();
-		case YamlmdePackage.PERMISSIONS:
-			return createPermissions();
+		case YamlmdePackage.SCHEDULE:
+			return createSchedule();
+		case YamlmdePackage.CONCURRENCY:
+			return createConcurrency();
+		case YamlmdePackage.ENVIRONMENT:
+			return createEnvironment();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -83,9 +87,42 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 	 * @generated
 	 */
 	@Override
+	public KeyValuePair createKeyValuePair() {
+		KeyValuePairImpl keyValuePair = new KeyValuePairImpl();
+		return keyValuePair;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public GithubActions createGithubActions() {
 		GithubActionsImpl githubActions = new GithubActionsImpl();
 		return githubActions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Job createJob() {
+		JobImpl job = new JobImpl();
+		return job;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Step createStep() {
+		StepImpl step = new StepImpl();
+		return step;
 	}
 
 	/**
@@ -127,9 +164,9 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 	 * @generated
 	 */
 	@Override
-	public Job createJob() {
-		JobImpl job = new JobImpl();
-		return job;
+	public Schedule createSchedule() {
+		ScheduleImpl schedule = new ScheduleImpl();
+		return schedule;
 	}
 
 	/**
@@ -138,9 +175,9 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 	 * @generated
 	 */
 	@Override
-	public Step createStep() {
-		StepImpl step = new StepImpl();
-		return step;
+	public Concurrency createConcurrency() {
+		ConcurrencyImpl concurrency = new ConcurrencyImpl();
+		return concurrency;
 	}
 
 	/**
@@ -149,20 +186,9 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 	 * @generated
 	 */
 	@Override
-	public With createWith() {
-		WithImpl with = new WithImpl();
-		return with;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Permissions createPermissions() {
-		PermissionsImpl permissions = new PermissionsImpl();
-		return permissions;
+	public Environment createEnvironment() {
+		EnvironmentImpl environment = new EnvironmentImpl();
+		return environment;
 	}
 
 	/**

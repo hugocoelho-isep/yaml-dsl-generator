@@ -18,8 +18,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import pt.isep.yamldslgen.github_actions.Concurrency;
 import pt.isep.yamldslgen.github_actions.GithubActions;
 import pt.isep.yamldslgen.github_actions.Job;
+import pt.isep.yamldslgen.github_actions.KeyValuePair;
 import pt.isep.yamldslgen.github_actions.On;
 import pt.isep.yamldslgen.github_actions.YamlmdePackage;
 
@@ -32,8 +34,11 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  * </p>
  * <ul>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.GithubActionsImpl#getName <em>Name</em>}</li>
- *   <li>{@link pt.isep.yamldslgen.github_actions.impl.GithubActionsImpl#getOn <em>On</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.GithubActionsImpl#getJobs <em>Jobs</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.GithubActionsImpl#getOn <em>On</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.GithubActionsImpl#getConcurrency <em>Concurrency</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.GithubActionsImpl#getPermissions <em>Permissions</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.GithubActionsImpl#getEnv <em>Env</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,6 +65,16 @@ public class GithubActionsImpl extends MinimalEObjectImpl.Container implements G
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getJobs() <em>Jobs</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getJobs()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Job> jobs;
+
+	/**
 	 * The cached value of the '{@link #getOn() <em>On</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -70,14 +85,34 @@ public class GithubActionsImpl extends MinimalEObjectImpl.Container implements G
 	protected On on;
 
 	/**
-	 * The cached value of the '{@link #getJobs() <em>Jobs</em>}' containment reference list.
+	 * The cached value of the '{@link #getConcurrency() <em>Concurrency</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getJobs()
+	 * @see #getConcurrency()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Job> jobs;
+	protected Concurrency concurrency;
+
+	/**
+	 * The cached value of the '{@link #getPermissions() <em>Permissions</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPermissions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<KeyValuePair> permissions;
+
+	/**
+	 * The cached value of the '{@link #getEnv() <em>Env</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnv()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<KeyValuePair> env;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,6 +154,19 @@ public class GithubActionsImpl extends MinimalEObjectImpl.Container implements G
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.GITHUB_ACTIONS__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Job> getJobs() {
+		if (jobs == null) {
+			jobs = new EObjectContainmentEList<Job>(Job.class, this, YamlmdePackage.GITHUB_ACTIONS__JOBS);
+		}
+		return jobs;
 	}
 
 	/**
@@ -178,11 +226,78 @@ public class GithubActionsImpl extends MinimalEObjectImpl.Container implements G
 	 * @generated
 	 */
 	@Override
-	public EList<Job> getJobs() {
-		if (jobs == null) {
-			jobs = new EObjectContainmentEList<Job>(Job.class, this, YamlmdePackage.GITHUB_ACTIONS__JOBS);
+	public Concurrency getConcurrency() {
+		return concurrency;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetConcurrency(Concurrency newConcurrency, NotificationChain msgs) {
+		Concurrency oldConcurrency = concurrency;
+		concurrency = newConcurrency;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					YamlmdePackage.GITHUB_ACTIONS__CONCURRENCY, oldConcurrency, newConcurrency);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
-		return jobs;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setConcurrency(Concurrency newConcurrency) {
+		if (newConcurrency != concurrency) {
+			NotificationChain msgs = null;
+			if (concurrency != null)
+				msgs = ((InternalEObject) concurrency).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - YamlmdePackage.GITHUB_ACTIONS__CONCURRENCY, null, msgs);
+			if (newConcurrency != null)
+				msgs = ((InternalEObject) newConcurrency).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - YamlmdePackage.GITHUB_ACTIONS__CONCURRENCY, null, msgs);
+			msgs = basicSetConcurrency(newConcurrency, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.GITHUB_ACTIONS__CONCURRENCY,
+					newConcurrency, newConcurrency));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<KeyValuePair> getPermissions() {
+		if (permissions == null) {
+			permissions = new EObjectContainmentEList<KeyValuePair>(KeyValuePair.class, this,
+					YamlmdePackage.GITHUB_ACTIONS__PERMISSIONS);
+		}
+		return permissions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<KeyValuePair> getEnv() {
+		if (env == null) {
+			env = new EObjectContainmentEList<KeyValuePair>(KeyValuePair.class, this,
+					YamlmdePackage.GITHUB_ACTIONS__ENV);
+		}
+		return env;
 	}
 
 	/**
@@ -193,10 +308,16 @@ public class GithubActionsImpl extends MinimalEObjectImpl.Container implements G
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case YamlmdePackage.GITHUB_ACTIONS__ON:
-			return basicSetOn(null, msgs);
 		case YamlmdePackage.GITHUB_ACTIONS__JOBS:
 			return ((InternalEList<?>) getJobs()).basicRemove(otherEnd, msgs);
+		case YamlmdePackage.GITHUB_ACTIONS__ON:
+			return basicSetOn(null, msgs);
+		case YamlmdePackage.GITHUB_ACTIONS__CONCURRENCY:
+			return basicSetConcurrency(null, msgs);
+		case YamlmdePackage.GITHUB_ACTIONS__PERMISSIONS:
+			return ((InternalEList<?>) getPermissions()).basicRemove(otherEnd, msgs);
+		case YamlmdePackage.GITHUB_ACTIONS__ENV:
+			return ((InternalEList<?>) getEnv()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -211,10 +332,16 @@ public class GithubActionsImpl extends MinimalEObjectImpl.Container implements G
 		switch (featureID) {
 		case YamlmdePackage.GITHUB_ACTIONS__NAME:
 			return getName();
-		case YamlmdePackage.GITHUB_ACTIONS__ON:
-			return getOn();
 		case YamlmdePackage.GITHUB_ACTIONS__JOBS:
 			return getJobs();
+		case YamlmdePackage.GITHUB_ACTIONS__ON:
+			return getOn();
+		case YamlmdePackage.GITHUB_ACTIONS__CONCURRENCY:
+			return getConcurrency();
+		case YamlmdePackage.GITHUB_ACTIONS__PERMISSIONS:
+			return getPermissions();
+		case YamlmdePackage.GITHUB_ACTIONS__ENV:
+			return getEnv();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -231,12 +358,23 @@ public class GithubActionsImpl extends MinimalEObjectImpl.Container implements G
 		case YamlmdePackage.GITHUB_ACTIONS__NAME:
 			setName((String) newValue);
 			return;
-		case YamlmdePackage.GITHUB_ACTIONS__ON:
-			setOn((On) newValue);
-			return;
 		case YamlmdePackage.GITHUB_ACTIONS__JOBS:
 			getJobs().clear();
 			getJobs().addAll((Collection<? extends Job>) newValue);
+			return;
+		case YamlmdePackage.GITHUB_ACTIONS__ON:
+			setOn((On) newValue);
+			return;
+		case YamlmdePackage.GITHUB_ACTIONS__CONCURRENCY:
+			setConcurrency((Concurrency) newValue);
+			return;
+		case YamlmdePackage.GITHUB_ACTIONS__PERMISSIONS:
+			getPermissions().clear();
+			getPermissions().addAll((Collection<? extends KeyValuePair>) newValue);
+			return;
+		case YamlmdePackage.GITHUB_ACTIONS__ENV:
+			getEnv().clear();
+			getEnv().addAll((Collection<? extends KeyValuePair>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -253,11 +391,20 @@ public class GithubActionsImpl extends MinimalEObjectImpl.Container implements G
 		case YamlmdePackage.GITHUB_ACTIONS__NAME:
 			setName(NAME_EDEFAULT);
 			return;
+		case YamlmdePackage.GITHUB_ACTIONS__JOBS:
+			getJobs().clear();
+			return;
 		case YamlmdePackage.GITHUB_ACTIONS__ON:
 			setOn((On) null);
 			return;
-		case YamlmdePackage.GITHUB_ACTIONS__JOBS:
-			getJobs().clear();
+		case YamlmdePackage.GITHUB_ACTIONS__CONCURRENCY:
+			setConcurrency((Concurrency) null);
+			return;
+		case YamlmdePackage.GITHUB_ACTIONS__PERMISSIONS:
+			getPermissions().clear();
+			return;
+		case YamlmdePackage.GITHUB_ACTIONS__ENV:
+			getEnv().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -273,10 +420,16 @@ public class GithubActionsImpl extends MinimalEObjectImpl.Container implements G
 		switch (featureID) {
 		case YamlmdePackage.GITHUB_ACTIONS__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case YamlmdePackage.GITHUB_ACTIONS__ON:
-			return on != null;
 		case YamlmdePackage.GITHUB_ACTIONS__JOBS:
 			return jobs != null && !jobs.isEmpty();
+		case YamlmdePackage.GITHUB_ACTIONS__ON:
+			return on != null;
+		case YamlmdePackage.GITHUB_ACTIONS__CONCURRENCY:
+			return concurrency != null;
+		case YamlmdePackage.GITHUB_ACTIONS__PERMISSIONS:
+			return permissions != null && !permissions.isEmpty();
+		case YamlmdePackage.GITHUB_ACTIONS__ENV:
+			return env != null && !env.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

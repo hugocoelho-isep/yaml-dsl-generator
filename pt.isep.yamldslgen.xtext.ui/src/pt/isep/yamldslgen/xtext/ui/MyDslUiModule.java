@@ -4,6 +4,9 @@
 package pt.isep.yamldslgen.xtext.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.ide.editor.syntaxcoloring.ISemanticHighlightingCalculator;
+import pt.isep.yamldslgen.xtext.ui.highlighting.MyDslSemanticHighlightingCalculator;
+
 
 /**
  * Use this class to register components to be used within the Eclipse IDE.
@@ -13,4 +16,8 @@ public class MyDslUiModule extends AbstractMyDslUiModule {
 	public MyDslUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
 	}
+	
+    public Class<? extends ISemanticHighlightingCalculator>bindISemanticHighlightingCalculator() {
+    	return MyDslSemanticHighlightingCalculator.class;
+    }
 }

@@ -9,49 +9,49 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import pt.isep.yamldslgen.github_actions.Permissions;
+import pt.isep.yamldslgen.github_actions.Schedule;
 import pt.isep.yamldslgen.github_actions.YamlmdePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Permissions</b></em>'.
+ * An implementation of the model object '<em><b>Schedule</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pt.isep.yamldslgen.github_actions.impl.PermissionsImpl#getContents <em>Contents</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.ScheduleImpl#getCron <em>Cron</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PermissionsImpl extends MinimalEObjectImpl.Container implements Permissions {
+public class ScheduleImpl extends MinimalEObjectImpl.Container implements Schedule {
 	/**
-	 * The default value of the '{@link #getContents() <em>Contents</em>}' attribute.
+	 * The default value of the '{@link #getCron() <em>Cron</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getContents()
+	 * @see #getCron()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CONTENTS_EDEFAULT = null;
+	protected static final String CRON_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getContents() <em>Contents</em>}' attribute.
+	 * The cached value of the '{@link #getCron() <em>Cron</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getContents()
+	 * @see #getCron()
 	 * @generated
 	 * @ordered
 	 */
-	protected String contents = CONTENTS_EDEFAULT;
+	protected String cron = CRON_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PermissionsImpl() {
+	protected ScheduleImpl() {
 		super();
 	}
 
@@ -62,7 +62,7 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return YamlmdePackage.Literals.PERMISSIONS;
+		return YamlmdePackage.Literals.SCHEDULE;
 	}
 
 	/**
@@ -71,8 +71,8 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 	 * @generated
 	 */
 	@Override
-	public String getContents() {
-		return contents;
+	public String getCron() {
+		return cron;
 	}
 
 	/**
@@ -81,12 +81,11 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 	 * @generated
 	 */
 	@Override
-	public void setContents(String newContents) {
-		String oldContents = contents;
-		contents = newContents;
+	public void setCron(String newCron) {
+		String oldCron = cron;
+		cron = newCron;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.PERMISSIONS__CONTENTS, oldContents,
-					contents));
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.SCHEDULE__CRON, oldCron, cron));
 	}
 
 	/**
@@ -97,8 +96,8 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case YamlmdePackage.PERMISSIONS__CONTENTS:
-			return getContents();
+		case YamlmdePackage.SCHEDULE__CRON:
+			return getCron();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -111,8 +110,8 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case YamlmdePackage.PERMISSIONS__CONTENTS:
-			setContents((String) newValue);
+		case YamlmdePackage.SCHEDULE__CRON:
+			setCron((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,8 +125,8 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case YamlmdePackage.PERMISSIONS__CONTENTS:
-			setContents(CONTENTS_EDEFAULT);
+		case YamlmdePackage.SCHEDULE__CRON:
+			setCron(CRON_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -141,8 +140,8 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case YamlmdePackage.PERMISSIONS__CONTENTS:
-			return CONTENTS_EDEFAULT == null ? contents != null : !CONTENTS_EDEFAULT.equals(contents);
+		case YamlmdePackage.SCHEDULE__CRON:
+			return CRON_EDEFAULT == null ? cron != null : !CRON_EDEFAULT.equals(cron);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -158,10 +157,10 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (contents: ");
-		result.append(contents);
+		result.append(" (cron: ");
+		result.append(cron);
 		result.append(')');
 		return result.toString();
 	}
 
-} //PermissionsImpl
+} //ScheduleImpl

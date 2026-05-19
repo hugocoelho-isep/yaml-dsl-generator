@@ -2,8 +2,12 @@
  */
 package pt.isep.yamldslgen.github_actions.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -11,8 +15,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import pt.isep.yamldslgen.github_actions.KeyValuePair;
 import pt.isep.yamldslgen.github_actions.Step;
-import pt.isep.yamldslgen.github_actions.With;
 import pt.isep.yamldslgen.github_actions.YamlmdePackage;
 
 /**
@@ -26,7 +33,11 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.StepImpl#getName <em>Name</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.StepImpl#getUses <em>Uses</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.StepImpl#getRun <em>Run</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.StepImpl#getId <em>Id</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.StepImpl#getIf <em>If</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.StepImpl#getWorkingDirectory <em>Working Directory</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.StepImpl#getWith <em>With</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.StepImpl#getEnv <em>Env</em>}</li>
  * </ul>
  *
  * @generated
@@ -93,14 +104,84 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 	protected String run = RUN_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getWith() <em>With</em>}' containment reference.
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getIf() <em>If</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIf()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String IF_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getIf() <em>If</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIf()
+	 * @generated
+	 * @ordered
+	 */
+	protected String if_ = IF_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getWorkingDirectory() <em>Working Directory</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkingDirectory()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String WORKING_DIRECTORY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getWorkingDirectory() <em>Working Directory</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkingDirectory()
+	 * @generated
+	 * @ordered
+	 */
+	protected String workingDirectory = WORKING_DIRECTORY_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getWith() <em>With</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getWith()
 	 * @generated
 	 * @ordered
 	 */
-	protected With with;
+	protected EList<KeyValuePair> with;
+
+	/**
+	 * The cached value of the '{@link #getEnv() <em>Env</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnv()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<KeyValuePair> env;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,27 +277,8 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 	 * @generated
 	 */
 	@Override
-	public With getWith() {
-		return with;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetWith(With newWith, NotificationChain msgs) {
-		With oldWith = with;
-		with = newWith;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, YamlmdePackage.STEP__WITH,
-					oldWith, newWith);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
+	public String getId() {
+		return id;
 	}
 
 	/**
@@ -225,20 +287,84 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 	 * @generated
 	 */
 	@Override
-	public void setWith(With newWith) {
-		if (newWith != with) {
-			NotificationChain msgs = null;
-			if (with != null)
-				msgs = ((InternalEObject) with).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - YamlmdePackage.STEP__WITH,
-						null, msgs);
-			if (newWith != null)
-				msgs = ((InternalEObject) newWith).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - YamlmdePackage.STEP__WITH,
-						null, msgs);
-			msgs = basicSetWith(newWith, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.STEP__WITH, newWith, newWith));
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.STEP__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getIf() {
+		return if_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIf(String newIf) {
+		String oldIf = if_;
+		if_ = newIf;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.STEP__IF, oldIf, if_));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getWorkingDirectory() {
+		return workingDirectory;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setWorkingDirectory(String newWorkingDirectory) {
+		String oldWorkingDirectory = workingDirectory;
+		workingDirectory = newWorkingDirectory;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.STEP__WORKING_DIRECTORY,
+					oldWorkingDirectory, workingDirectory));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<KeyValuePair> getWith() {
+		if (with == null) {
+			with = new EObjectContainmentEList<KeyValuePair>(KeyValuePair.class, this, YamlmdePackage.STEP__WITH);
+		}
+		return with;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<KeyValuePair> getEnv() {
+		if (env == null) {
+			env = new EObjectContainmentEList<KeyValuePair>(KeyValuePair.class, this, YamlmdePackage.STEP__ENV);
+		}
+		return env;
 	}
 
 	/**
@@ -250,7 +376,9 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case YamlmdePackage.STEP__WITH:
-			return basicSetWith(null, msgs);
+			return ((InternalEList<?>) getWith()).basicRemove(otherEnd, msgs);
+		case YamlmdePackage.STEP__ENV:
+			return ((InternalEList<?>) getEnv()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -269,8 +397,16 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 			return getUses();
 		case YamlmdePackage.STEP__RUN:
 			return getRun();
+		case YamlmdePackage.STEP__ID:
+			return getId();
+		case YamlmdePackage.STEP__IF:
+			return getIf();
+		case YamlmdePackage.STEP__WORKING_DIRECTORY:
+			return getWorkingDirectory();
 		case YamlmdePackage.STEP__WITH:
 			return getWith();
+		case YamlmdePackage.STEP__ENV:
+			return getEnv();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -280,6 +416,7 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -292,8 +429,22 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 		case YamlmdePackage.STEP__RUN:
 			setRun((String) newValue);
 			return;
+		case YamlmdePackage.STEP__ID:
+			setId((String) newValue);
+			return;
+		case YamlmdePackage.STEP__IF:
+			setIf((String) newValue);
+			return;
+		case YamlmdePackage.STEP__WORKING_DIRECTORY:
+			setWorkingDirectory((String) newValue);
+			return;
 		case YamlmdePackage.STEP__WITH:
-			setWith((With) newValue);
+			getWith().clear();
+			getWith().addAll((Collection<? extends KeyValuePair>) newValue);
+			return;
+		case YamlmdePackage.STEP__ENV:
+			getEnv().clear();
+			getEnv().addAll((Collection<? extends KeyValuePair>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -316,8 +467,20 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 		case YamlmdePackage.STEP__RUN:
 			setRun(RUN_EDEFAULT);
 			return;
+		case YamlmdePackage.STEP__ID:
+			setId(ID_EDEFAULT);
+			return;
+		case YamlmdePackage.STEP__IF:
+			setIf(IF_EDEFAULT);
+			return;
+		case YamlmdePackage.STEP__WORKING_DIRECTORY:
+			setWorkingDirectory(WORKING_DIRECTORY_EDEFAULT);
+			return;
 		case YamlmdePackage.STEP__WITH:
-			setWith((With) null);
+			getWith().clear();
+			return;
+		case YamlmdePackage.STEP__ENV:
+			getEnv().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -337,8 +500,17 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 			return USES_EDEFAULT == null ? uses != null : !USES_EDEFAULT.equals(uses);
 		case YamlmdePackage.STEP__RUN:
 			return RUN_EDEFAULT == null ? run != null : !RUN_EDEFAULT.equals(run);
+		case YamlmdePackage.STEP__ID:
+			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+		case YamlmdePackage.STEP__IF:
+			return IF_EDEFAULT == null ? if_ != null : !IF_EDEFAULT.equals(if_);
+		case YamlmdePackage.STEP__WORKING_DIRECTORY:
+			return WORKING_DIRECTORY_EDEFAULT == null ? workingDirectory != null
+					: !WORKING_DIRECTORY_EDEFAULT.equals(workingDirectory);
 		case YamlmdePackage.STEP__WITH:
-			return with != null;
+			return with != null && !with.isEmpty();
+		case YamlmdePackage.STEP__ENV:
+			return env != null && !env.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -360,6 +532,12 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 		result.append(uses);
 		result.append(", run: ");
 		result.append(run);
+		result.append(", id: ");
+		result.append(id);
+		result.append(", if: ");
+		result.append(if_);
+		result.append(", workingDirectory: ");
+		result.append(workingDirectory);
 		result.append(')');
 		return result.toString();
 	}

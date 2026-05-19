@@ -22,6 +22,15 @@ public interface YamlmdeFactory extends EFactory {
 	YamlmdeFactory eINSTANCE = pt.isep.yamldslgen.github_actions.impl.YamlmdeFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Key Value Pair</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Key Value Pair</em>'.
+	 * @generated
+	 */
+	KeyValuePair createKeyValuePair();
+
+	/**
 	 * Returns a new object of class '<em>Github Actions</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -29,6 +38,24 @@ public interface YamlmdeFactory extends EFactory {
 	 * @generated
 	 */
 	GithubActions createGithubActions();
+
+	/**
+	 * Returns a new object of class '<em>Job</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Job</em>'.
+	 * @generated
+	 */
+	Job createJob();
+
+	/**
+	 * Returns a new object of class '<em>Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Step</em>'.
+	 * @generated
+	 */
+	Step createStep();
 
 	/**
 	 * Returns a new object of class '<em>On</em>'.
@@ -58,40 +85,31 @@ public interface YamlmdeFactory extends EFactory {
 	Pull_request createPull_request();
 
 	/**
-	 * Returns a new object of class '<em>Job</em>'.
+	 * Returns a new object of class '<em>Schedule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Job</em>'.
+	 * @return a new object of class '<em>Schedule</em>'.
 	 * @generated
 	 */
-	Job createJob();
+	Schedule createSchedule();
 
 	/**
-	 * Returns a new object of class '<em>Step</em>'.
+	 * Returns a new object of class '<em>Concurrency</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Step</em>'.
+	 * @return a new object of class '<em>Concurrency</em>'.
 	 * @generated
 	 */
-	Step createStep();
+	Concurrency createConcurrency();
 
 	/**
-	 * Returns a new object of class '<em>With</em>'.
+	 * Returns a new object of class '<em>Environment</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>With</em>'.
+	 * @return a new object of class '<em>Environment</em>'.
 	 * @generated
 	 */
-	With createWith();
-
-	/**
-	 * Returns a new object of class '<em>Permissions</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Permissions</em>'.
-	 * @generated
-	 */
-	Permissions createPermissions();
+	Environment createEnvironment();
 
 	/**
 	 * Returns the package supported by this factory.

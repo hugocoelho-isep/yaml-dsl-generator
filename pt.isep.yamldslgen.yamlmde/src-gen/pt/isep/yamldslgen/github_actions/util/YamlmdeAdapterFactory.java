@@ -67,8 +67,23 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected YamlmdeSwitch<Adapter> modelSwitch = new YamlmdeSwitch<Adapter>() {
 		@Override
+		public Adapter caseKeyValuePair(KeyValuePair object) {
+			return createKeyValuePairAdapter();
+		}
+
+		@Override
 		public Adapter caseGithubActions(GithubActions object) {
 			return createGithubActionsAdapter();
+		}
+
+		@Override
+		public Adapter caseJob(Job object) {
+			return createJobAdapter();
+		}
+
+		@Override
+		public Adapter caseStep(Step object) {
+			return createStepAdapter();
 		}
 
 		@Override
@@ -87,23 +102,18 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseJob(Job object) {
-			return createJobAdapter();
+		public Adapter caseSchedule(Schedule object) {
+			return createScheduleAdapter();
 		}
 
 		@Override
-		public Adapter caseStep(Step object) {
-			return createStepAdapter();
+		public Adapter caseConcurrency(Concurrency object) {
+			return createConcurrencyAdapter();
 		}
 
 		@Override
-		public Adapter caseWith(With object) {
-			return createWithAdapter();
-		}
-
-		@Override
-		public Adapter casePermissions(Permissions object) {
-			return createPermissionsAdapter();
+		public Adapter caseEnvironment(Environment object) {
+			return createEnvironmentAdapter();
 		}
 
 		@Override
@@ -126,6 +136,20 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.KeyValuePair <em>Key Value Pair</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.KeyValuePair
+	 * @generated
+	 */
+	public Adapter createKeyValuePairAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.GithubActions <em>Github Actions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -136,6 +160,34 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createGithubActionsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Job <em>Job</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Job
+	 * @generated
+	 */
+	public Adapter createJobAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Step <em>Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Step
+	 * @generated
+	 */
+	public Adapter createStepAdapter() {
 		return null;
 	}
 
@@ -182,58 +234,44 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Job <em>Job</em>}'.
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Schedule <em>Schedule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see pt.isep.yamldslgen.github_actions.Job
+	 * @see pt.isep.yamldslgen.github_actions.Schedule
 	 * @generated
 	 */
-	public Adapter createJobAdapter() {
+	public Adapter createScheduleAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Step <em>Step</em>}'.
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Concurrency <em>Concurrency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see pt.isep.yamldslgen.github_actions.Step
+	 * @see pt.isep.yamldslgen.github_actions.Concurrency
 	 * @generated
 	 */
-	public Adapter createStepAdapter() {
+	public Adapter createConcurrencyAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.With <em>With</em>}'.
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Environment <em>Environment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see pt.isep.yamldslgen.github_actions.With
+	 * @see pt.isep.yamldslgen.github_actions.Environment
 	 * @generated
 	 */
-	public Adapter createWithAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Permissions <em>Permissions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see pt.isep.yamldslgen.github_actions.Permissions
-	 * @generated
-	 */
-	public Adapter createPermissionsAdapter() {
+	public Adapter createEnvironmentAdapter() {
 		return null;
 	}
 
