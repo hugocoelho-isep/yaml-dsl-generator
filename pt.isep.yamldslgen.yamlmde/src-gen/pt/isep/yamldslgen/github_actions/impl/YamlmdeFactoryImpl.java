@@ -72,6 +72,15 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 			return createWith();
 		case YamlmdePackage.PERMISSIONS:
 			return createPermissions();
+<<<<<<< Updated upstream
+=======
+		case YamlmdePackage.SCHEDULE:
+			return createSchedule();
+		case YamlmdePackage.ENVIRONMENT:
+			return createEnvironment();
+		case YamlmdePackage.CONCURRENCY:
+			return createConcurrency();
+>>>>>>> Stashed changes
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}

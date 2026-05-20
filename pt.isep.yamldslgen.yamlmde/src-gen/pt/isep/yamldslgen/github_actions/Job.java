@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getId <em>Id</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getRunsOn <em>Runs On</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getNeeds <em>Needs</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getIf <em>If</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getSteps <em>Steps</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getPermissions <em>Permissions</em>}</li>
  * </ul>
@@ -82,6 +83,28 @@ public interface Job extends EObject {
 	 * @generated
 	 */
 	EList<String> getNeeds();
+
+	/**
+	 * Returns the value of the '<em><b>If</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>If</em>' attribute.
+	 * @see #setIf(String)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getJob_If()
+	 * @model
+	 * @generated
+	 */
+	String getIf();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.Job#getIf <em>If</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>If</em>' attribute.
+	 * @see #getIf()
+	 * @generated
+	 */
+	void setIf(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Steps</b></em>' containment reference list.

@@ -54,6 +54,7 @@ public class Pull_requestItemProvider extends ItemProviderAdapter implements IEd
 			super.getPropertyDescriptors(object);
 
 			addBranchesPropertyDescriptor(object);
+			addTypesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -71,6 +72,22 @@ public class Pull_requestItemProvider extends ItemProviderAdapter implements IEd
 						getString("_UI_PropertyDescriptor_description", "_UI_Pull_request_branches_feature",
 								"_UI_Pull_request_type"),
 						YamlmdePackage.Literals.PULL_REQUEST__BRANCHES, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Types feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTypesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Pull_request_types_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Pull_request_types_feature",
+								"_UI_Pull_request_type"),
+						YamlmdePackage.Literals.PULL_REQUEST__TYPES, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -119,6 +136,7 @@ public class Pull_requestItemProvider extends ItemProviderAdapter implements IEd
 
 		switch (notification.getFeatureID(Pull_request.class)) {
 		case YamlmdePackage.PULL_REQUEST__BRANCHES:
+		case YamlmdePackage.PULL_REQUEST__TYPES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

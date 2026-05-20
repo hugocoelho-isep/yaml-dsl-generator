@@ -88,7 +88,26 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Job returns Job
 	 *
 	 * Constraint:
+<<<<<<< Updated upstream
 	 *     (id=EString ((runsOn=EString | needs+=EString | steps+=Step | permissions=Permissions)? (needs+=EString needs+=EString*)?)+)
+=======
+	 *     (
+	 *         id=EString 
+	 *         (
+	 *             (
+	 *                 name=EString | 
+	 *                 runsOn=EString | 
+	 *                 needs+=EString | 
+	 *                 needs+=EString | 
+	 *                 if=EString | 
+	 *                 environment=Environment | 
+	 *                 steps+=Step | 
+	 *                 permissions=Permissions
+	 *             )? 
+	 *             (needs+=EString needs+=EString*)?
+	 *         )+
+	 *     )
+>>>>>>> Stashed changes
 	 * </pre>
 	 */
 	protected void sequence_Job(ISerializationContext context, Job semanticObject) {
@@ -116,7 +135,18 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Permissions returns Permissions
 	 *
 	 * Constraint:
+<<<<<<< Updated upstream
 	 *     contents=EString
+=======
+	 *     (
+	 *         contents=EString | 
+	 *         securityEvents=EString | 
+	 *         actions=EString | 
+	 *         pages=EString | 
+	 *         idToken=EString | 
+	 *         pullRequests=EString
+	 *     )*
+>>>>>>> Stashed changes
 	 * </pre>
 	 */
 	protected void sequence_Permissions(ISerializationContext context, Permissions semanticObject) {
@@ -136,7 +166,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Pull_request returns Pull_request
 	 *
 	 * Constraint:
-	 *     (branches+=EString+ | (branches+=EString branches+=EString*))
+	 *     ((branches+=EString | types+=EString)? (branches+=EString branches+=EString*)? (types+=EString types+=EString*)?)+
 	 * </pre>
 	 */
 	protected void sequence_Pull_request(ISerializationContext context, Pull_request semanticObject) {

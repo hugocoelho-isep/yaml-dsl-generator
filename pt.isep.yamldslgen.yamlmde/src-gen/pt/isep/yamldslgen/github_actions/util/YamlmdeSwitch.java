@@ -122,6 +122,30 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+<<<<<<< Updated upstream
+=======
+		case YamlmdePackage.SCHEDULE: {
+			Schedule schedule = (Schedule) theEObject;
+			T result = caseSchedule(schedule);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamlmdePackage.ENVIRONMENT: {
+			Environment environment = (Environment) theEObject;
+			T result = caseEnvironment(environment);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamlmdePackage.CONCURRENCY: {
+			Concurrency concurrency = (Concurrency) theEObject;
+			T result = caseConcurrency(concurrency);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+>>>>>>> Stashed changes
 		default:
 			return defaultCase(theEObject);
 		}

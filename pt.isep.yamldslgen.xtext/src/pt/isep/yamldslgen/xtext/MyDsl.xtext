@@ -33,6 +33,7 @@ PlainScalar returns ecore::EString:
 	(ID | INT | PLAIN_SCALAR | 'true' | 'false')
 	(ID | INT | PLAIN_SCALAR | 'true' | 'false')*;
 	
+<<<<<<< Updated upstream
 //On returns On:
 //	{On}
 //	'On'
@@ -40,6 +41,47 @@ PlainScalar returns ecore::EString:
 //		('push' push=Push)?
 //		('pullRequest' pullRequest=Pull_request)?
 //	'}';
+=======
+// Lida com 'run: >' ou 'run: |' consumindo o bloco inteiro
+// Aceita qualquer token do Xtext e pontuações do Bash (como [, ], ; e -)
+BlockString returns ecore::EString:
+	('>' | '|') BEG_BLOCK? (
+		YAML_SCALAR | GH_EXPRESSION | ID | INT | STRING 
+		| '-' | '[' | ']' | ';' | ':' | ',' | '{' | '}' | ANY_OTHER
+	)* END_BLOCK?;
+
+// =============================================================================
+// KEY RULE
+// =============================================================================
+
+// KeyName is used exclusively as the key in KeyValuePair.
+// Xtext keyword tokens ('name', 'run', etc.) cannot be matched by ID or
+// PLAIN_SCALAR, so every grammar keyword that may appear as a free-form
+// YAML key must be listed here explicitly.
+// ─── When adding a new DSL: add its keywords to this rule only. ───────────
+KeyName returns ecore::EString:
+	  ID | YAML_SCALAR | INT
+	// ── GitHub Actions keywords ──────────────────────────────────────────
+	| 'name' | 'on'   | 'jobs'        | 'permissions' | 'env'
+	| 'push' | 'pull_request'         | 'branches'    | 'tags'
+	| 'runs-on' | 'needs' | 'steps'   | 'uses'        | 'run' | 'with'
+	| 'shell' | 'contents' | 'security-events' | 'actions' | 'pages' | 'id-token'
+	| 'types' | 'pull-requests' | 'if';
+	
+	
+// =============================================================================
+// KEY-VALUE PAIR  (generic block content — e.g. 'with:', 'env:')
+// =============================================================================
+
+// Key uses KeyName so grammar keywords are accepted as YAML keys
+// (e.g. "name: checkstyle-report" inside a 'with:' block).
+KeyValuePair returns KeyValuePair:
+	key=KeyName ':' value=EString;
+	
+// =============================================================================
+// TRIGGER RULES
+// =============================================================================
+>>>>>>> Stashed changes
 
 // ---------------------------------------------------------------------------
 // 'on:' block
@@ -112,11 +154,21 @@ Push returns Push:
 Pull_request returns Pull_request:
 	{Pull_request}
 	BEG_BLOCK
+<<<<<<< Updated upstream
 		'branches' ':' (
 			BEG_BLOCK ('-' BEG_BLOCK branches+=EString END_BLOCK)+ END_BLOCK
+=======
+		(('branches' ':' (
+			  BEG_BLOCK ('-' BEG_BLOCK branches+=EString END_BLOCK)+ END_BLOCK
+>>>>>>> Stashed changes
 			| '[' branches+=EString (',' branches+=EString)* ']'
-		)
+		))
+		& ('types' ':' (
+			  BEG_BLOCK ('-' BEG_BLOCK types+=EString END_BLOCK)+ END_BLOCK
+			| '[' types+=EString (',' types+=EString)* ']'
+		))?)
 	END_BLOCK;
+<<<<<<< Updated upstream
 
 
 //Step returns Step:
@@ -128,6 +180,70 @@ Pull_request returns Pull_request:
 //		('run' run=EString)?
 //		('with' ^with=With)?
 //	'}';
+=======
+	
+Schedule returns Schedule:
+	'-' BEG_BLOCK?
+		'cron' ':' cron=EString
+	END_BLOCK?;
+	
+	
+// =============================================================================
+// CONCURRENCY & ENVIRONMENT
+// =============================================================================
+Concurrency returns Concurrency:
+	{Concurrency}
+	BEG_BLOCK?
+		(('group' ':' group=EString)?
+		& ('cancel-in-progress' ':' cancelInProgress=EBoolean)?)
+	END_BLOCK?;
+
+Environment returns Environment:
+	{Environment}
+	BEG_BLOCK?
+		(('name' ':' name=EString)?
+		& ('url' ':' url=EString)?)
+	END_BLOCK?;
+	
+// =============================================================================
+// PERMISSIONS
+// =============================================================================
+
+Permissions returns Permissions:
+	{Permissions}
+	BEG_BLOCK?
+		(('contents' ':' contents=EString)?
+		& ('security-events' ':' securityEvents=EString)?
+		& ('actions' ':' actions=EString)?
+		& ('pages' ':' pages=EString)?
+		& ('id-token' ':' idToken=EString)?
+		& ('pull-requests' ':' pullRequests=EString)?)
+	END_BLOCK?;
+
+
+// =============================================================================
+// JOB
+// =============================================================================
+
+Job returns Job:
+	id=EString ':' BEG_BLOCK?
+		(('name' ':' name=EString)?
+		& ('runs-on' ':' runsOn=EString)?
+		& ('needs' ':' (
+			  needs+=EString 
+			| BEG_BLOCK ('-' BEG_BLOCK? needs+=EString END_BLOCK?)+ END_BLOCK
+			| '[' needs+=EString (',' needs+=EString)* ']'
+		))?
+		& ('if' ':' ^if=EString)?
+		& ('environment' ':' environment=Environment)?
+		& ('steps' ':' BEG_BLOCK? steps+=Step+ END_BLOCK?)?
+		& ('permissions' ':' permissions=Permissions)?)
+	END_BLOCK?;
+
+// =============================================================================
+// STEP
+// =============================================================================
+>>>>>>> Stashed changes
 
 // ---------------------------------------------------------------------------
 // Step (list item) — properties in any order, all optional

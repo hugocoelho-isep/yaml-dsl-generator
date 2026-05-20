@@ -107,6 +107,24 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+<<<<<<< Updated upstream
+=======
+		public Adapter caseSchedule(Schedule object) {
+			return createScheduleAdapter();
+		}
+
+		@Override
+		public Adapter caseEnvironment(Environment object) {
+			return createEnvironmentAdapter();
+		}
+
+		@Override
+		public Adapter caseConcurrency(Concurrency object) {
+			return createConcurrencyAdapter();
+		}
+
+		@Override
+>>>>>>> Stashed changes
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}

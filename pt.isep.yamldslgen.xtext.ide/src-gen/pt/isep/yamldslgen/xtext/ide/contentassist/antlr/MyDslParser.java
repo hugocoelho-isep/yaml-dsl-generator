@@ -37,7 +37,13 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getJobAccess().getAlternatives_3_1_2(), "rule__Job__Alternatives_3_1_2");
 			builder.put(grammarAccess.getPushAccess().getAlternatives_2_0_2(), "rule__Push__Alternatives_2_0_2");
 			builder.put(grammarAccess.getPushAccess().getAlternatives_2_1_2(), "rule__Push__Alternatives_2_1_2");
+<<<<<<< Updated upstream
 			builder.put(grammarAccess.getPull_requestAccess().getAlternatives_4(), "rule__Pull_request__Alternatives_4");
+=======
+			builder.put(grammarAccess.getPull_requestAccess().getAlternatives_2_0_2(), "rule__Pull_request__Alternatives_2_0_2");
+			builder.put(grammarAccess.getPull_requestAccess().getAlternatives_2_1_2(), "rule__Pull_request__Alternatives_2_1_2");
+			builder.put(grammarAccess.getJobAccess().getAlternatives_3_2_2(), "rule__Job__Alternatives_3_2_2");
+>>>>>>> Stashed changes
 			builder.put(grammarAccess.getEBooleanAccess().getAlternatives(), "rule__EBoolean__Alternatives");
 			builder.put(grammarAccess.getGithubActionsAccess().getGroup_0(), "rule__GithubActions__Group_0__0");
 			builder.put(grammarAccess.getGithubActionsAccess().getGroup_1(), "rule__GithubActions__Group_1__0");
@@ -67,10 +73,49 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPushAccess().getGroup_2_1_2_1(), "rule__Push__Group_2_1_2_1__0");
 			builder.put(grammarAccess.getPushAccess().getGroup_2_1_2_1_2(), "rule__Push__Group_2_1_2_1_2__0");
 			builder.put(grammarAccess.getPull_requestAccess().getGroup(), "rule__Pull_request__Group__0");
+<<<<<<< Updated upstream
 			builder.put(grammarAccess.getPull_requestAccess().getGroup_4_0(), "rule__Pull_request__Group_4_0__0");
 			builder.put(grammarAccess.getPull_requestAccess().getGroup_4_0_1(), "rule__Pull_request__Group_4_0_1__0");
 			builder.put(grammarAccess.getPull_requestAccess().getGroup_4_1(), "rule__Pull_request__Group_4_1__0");
 			builder.put(grammarAccess.getPull_requestAccess().getGroup_4_1_2(), "rule__Pull_request__Group_4_1_2__0");
+=======
+			builder.put(grammarAccess.getPull_requestAccess().getGroup_2_0(), "rule__Pull_request__Group_2_0__0");
+			builder.put(grammarAccess.getPull_requestAccess().getGroup_2_0_2_0(), "rule__Pull_request__Group_2_0_2_0__0");
+			builder.put(grammarAccess.getPull_requestAccess().getGroup_2_0_2_0_1(), "rule__Pull_request__Group_2_0_2_0_1__0");
+			builder.put(grammarAccess.getPull_requestAccess().getGroup_2_0_2_1(), "rule__Pull_request__Group_2_0_2_1__0");
+			builder.put(grammarAccess.getPull_requestAccess().getGroup_2_0_2_1_2(), "rule__Pull_request__Group_2_0_2_1_2__0");
+			builder.put(grammarAccess.getPull_requestAccess().getGroup_2_1(), "rule__Pull_request__Group_2_1__0");
+			builder.put(grammarAccess.getPull_requestAccess().getGroup_2_1_2_0(), "rule__Pull_request__Group_2_1_2_0__0");
+			builder.put(grammarAccess.getPull_requestAccess().getGroup_2_1_2_0_1(), "rule__Pull_request__Group_2_1_2_0_1__0");
+			builder.put(grammarAccess.getPull_requestAccess().getGroup_2_1_2_1(), "rule__Pull_request__Group_2_1_2_1__0");
+			builder.put(grammarAccess.getPull_requestAccess().getGroup_2_1_2_1_2(), "rule__Pull_request__Group_2_1_2_1_2__0");
+			builder.put(grammarAccess.getScheduleAccess().getGroup(), "rule__Schedule__Group__0");
+			builder.put(grammarAccess.getConcurrencyAccess().getGroup(), "rule__Concurrency__Group__0");
+			builder.put(grammarAccess.getConcurrencyAccess().getGroup_2_0(), "rule__Concurrency__Group_2_0__0");
+			builder.put(grammarAccess.getConcurrencyAccess().getGroup_2_1(), "rule__Concurrency__Group_2_1__0");
+			builder.put(grammarAccess.getEnvironmentAccess().getGroup(), "rule__Environment__Group__0");
+			builder.put(grammarAccess.getEnvironmentAccess().getGroup_2_0(), "rule__Environment__Group_2_0__0");
+			builder.put(grammarAccess.getEnvironmentAccess().getGroup_2_1(), "rule__Environment__Group_2_1__0");
+			builder.put(grammarAccess.getPermissionsAccess().getGroup(), "rule__Permissions__Group__0");
+			builder.put(grammarAccess.getPermissionsAccess().getGroup_2_0(), "rule__Permissions__Group_2_0__0");
+			builder.put(grammarAccess.getPermissionsAccess().getGroup_2_1(), "rule__Permissions__Group_2_1__0");
+			builder.put(grammarAccess.getPermissionsAccess().getGroup_2_2(), "rule__Permissions__Group_2_2__0");
+			builder.put(grammarAccess.getPermissionsAccess().getGroup_2_3(), "rule__Permissions__Group_2_3__0");
+			builder.put(grammarAccess.getPermissionsAccess().getGroup_2_4(), "rule__Permissions__Group_2_4__0");
+			builder.put(grammarAccess.getPermissionsAccess().getGroup_2_5(), "rule__Permissions__Group_2_5__0");
+			builder.put(grammarAccess.getJobAccess().getGroup(), "rule__Job__Group__0");
+			builder.put(grammarAccess.getJobAccess().getGroup_3_0(), "rule__Job__Group_3_0__0");
+			builder.put(grammarAccess.getJobAccess().getGroup_3_1(), "rule__Job__Group_3_1__0");
+			builder.put(grammarAccess.getJobAccess().getGroup_3_2(), "rule__Job__Group_3_2__0");
+			builder.put(grammarAccess.getJobAccess().getGroup_3_2_2_1(), "rule__Job__Group_3_2_2_1__0");
+			builder.put(grammarAccess.getJobAccess().getGroup_3_2_2_1_1(), "rule__Job__Group_3_2_2_1_1__0");
+			builder.put(grammarAccess.getJobAccess().getGroup_3_2_2_2(), "rule__Job__Group_3_2_2_2__0");
+			builder.put(grammarAccess.getJobAccess().getGroup_3_2_2_2_2(), "rule__Job__Group_3_2_2_2_2__0");
+			builder.put(grammarAccess.getJobAccess().getGroup_3_3(), "rule__Job__Group_3_3__0");
+			builder.put(grammarAccess.getJobAccess().getGroup_3_4(), "rule__Job__Group_3_4__0");
+			builder.put(grammarAccess.getJobAccess().getGroup_3_5(), "rule__Job__Group_3_5__0");
+			builder.put(grammarAccess.getJobAccess().getGroup_3_6(), "rule__Job__Group_3_6__0");
+>>>>>>> Stashed changes
 			builder.put(grammarAccess.getStepAccess().getGroup(), "rule__Step__Group__0");
 			builder.put(grammarAccess.getStepAccess().getGroup_3_0(), "rule__Step__Group_3_0__0");
 			builder.put(grammarAccess.getStepAccess().getGroup_3_1(), "rule__Step__Group_3_1__0");
@@ -104,9 +149,40 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPushAccess().getTagsAssignment_2_1_2_0_1_2(), "rule__Push__TagsAssignment_2_1_2_0_1_2");
 			builder.put(grammarAccess.getPushAccess().getTagsAssignment_2_1_2_1_1(), "rule__Push__TagsAssignment_2_1_2_1_1");
 			builder.put(grammarAccess.getPushAccess().getTagsAssignment_2_1_2_1_2_1(), "rule__Push__TagsAssignment_2_1_2_1_2_1");
+<<<<<<< Updated upstream
 			builder.put(grammarAccess.getPull_requestAccess().getBranchesAssignment_4_0_1_2(), "rule__Pull_request__BranchesAssignment_4_0_1_2");
 			builder.put(grammarAccess.getPull_requestAccess().getBranchesAssignment_4_1_1(), "rule__Pull_request__BranchesAssignment_4_1_1");
 			builder.put(grammarAccess.getPull_requestAccess().getBranchesAssignment_4_1_2_1(), "rule__Pull_request__BranchesAssignment_4_1_2_1");
+=======
+			builder.put(grammarAccess.getPull_requestAccess().getBranchesAssignment_2_0_2_0_1_2(), "rule__Pull_request__BranchesAssignment_2_0_2_0_1_2");
+			builder.put(grammarAccess.getPull_requestAccess().getBranchesAssignment_2_0_2_1_1(), "rule__Pull_request__BranchesAssignment_2_0_2_1_1");
+			builder.put(grammarAccess.getPull_requestAccess().getBranchesAssignment_2_0_2_1_2_1(), "rule__Pull_request__BranchesAssignment_2_0_2_1_2_1");
+			builder.put(grammarAccess.getPull_requestAccess().getTypesAssignment_2_1_2_0_1_2(), "rule__Pull_request__TypesAssignment_2_1_2_0_1_2");
+			builder.put(grammarAccess.getPull_requestAccess().getTypesAssignment_2_1_2_1_1(), "rule__Pull_request__TypesAssignment_2_1_2_1_1");
+			builder.put(grammarAccess.getPull_requestAccess().getTypesAssignment_2_1_2_1_2_1(), "rule__Pull_request__TypesAssignment_2_1_2_1_2_1");
+			builder.put(grammarAccess.getScheduleAccess().getCronAssignment_4(), "rule__Schedule__CronAssignment_4");
+			builder.put(grammarAccess.getConcurrencyAccess().getGroupAssignment_2_0_2(), "rule__Concurrency__GroupAssignment_2_0_2");
+			builder.put(grammarAccess.getConcurrencyAccess().getCancelInProgressAssignment_2_1_2(), "rule__Concurrency__CancelInProgressAssignment_2_1_2");
+			builder.put(grammarAccess.getEnvironmentAccess().getNameAssignment_2_0_2(), "rule__Environment__NameAssignment_2_0_2");
+			builder.put(grammarAccess.getEnvironmentAccess().getUrlAssignment_2_1_2(), "rule__Environment__UrlAssignment_2_1_2");
+			builder.put(grammarAccess.getPermissionsAccess().getContentsAssignment_2_0_2(), "rule__Permissions__ContentsAssignment_2_0_2");
+			builder.put(grammarAccess.getPermissionsAccess().getSecurityEventsAssignment_2_1_2(), "rule__Permissions__SecurityEventsAssignment_2_1_2");
+			builder.put(grammarAccess.getPermissionsAccess().getActionsAssignment_2_2_2(), "rule__Permissions__ActionsAssignment_2_2_2");
+			builder.put(grammarAccess.getPermissionsAccess().getPagesAssignment_2_3_2(), "rule__Permissions__PagesAssignment_2_3_2");
+			builder.put(grammarAccess.getPermissionsAccess().getIdTokenAssignment_2_4_2(), "rule__Permissions__IdTokenAssignment_2_4_2");
+			builder.put(grammarAccess.getPermissionsAccess().getPullRequestsAssignment_2_5_2(), "rule__Permissions__PullRequestsAssignment_2_5_2");
+			builder.put(grammarAccess.getJobAccess().getIdAssignment_0(), "rule__Job__IdAssignment_0");
+			builder.put(grammarAccess.getJobAccess().getNameAssignment_3_0_2(), "rule__Job__NameAssignment_3_0_2");
+			builder.put(grammarAccess.getJobAccess().getRunsOnAssignment_3_1_2(), "rule__Job__RunsOnAssignment_3_1_2");
+			builder.put(grammarAccess.getJobAccess().getNeedsAssignment_3_2_2_0(), "rule__Job__NeedsAssignment_3_2_2_0");
+			builder.put(grammarAccess.getJobAccess().getNeedsAssignment_3_2_2_1_1_2(), "rule__Job__NeedsAssignment_3_2_2_1_1_2");
+			builder.put(grammarAccess.getJobAccess().getNeedsAssignment_3_2_2_2_1(), "rule__Job__NeedsAssignment_3_2_2_2_1");
+			builder.put(grammarAccess.getJobAccess().getNeedsAssignment_3_2_2_2_2_1(), "rule__Job__NeedsAssignment_3_2_2_2_2_1");
+			builder.put(grammarAccess.getJobAccess().getIfAssignment_3_3_2(), "rule__Job__IfAssignment_3_3_2");
+			builder.put(grammarAccess.getJobAccess().getEnvironmentAssignment_3_4_2(), "rule__Job__EnvironmentAssignment_3_4_2");
+			builder.put(grammarAccess.getJobAccess().getStepsAssignment_3_5_3(), "rule__Job__StepsAssignment_3_5_3");
+			builder.put(grammarAccess.getJobAccess().getPermissionsAssignment_3_6_2(), "rule__Job__PermissionsAssignment_3_6_2");
+>>>>>>> Stashed changes
 			builder.put(grammarAccess.getStepAccess().getNameAssignment_3_0_2(), "rule__Step__NameAssignment_3_0_2");
 			builder.put(grammarAccess.getStepAccess().getUsesAssignment_3_1_2(), "rule__Step__UsesAssignment_3_1_2");
 			builder.put(grammarAccess.getStepAccess().getRunAssignment_3_2_2(), "rule__Step__RunAssignment_3_2_2");
@@ -122,6 +198,14 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getWithAccess().getGenerateReleaseNotesAssignment_2_7_2(), "rule__With__GenerateReleaseNotesAssignment_2_7_2");
 			builder.put(grammarAccess.getGithubActionsAccess().getUnorderedGroup(), "rule__GithubActions__UnorderedGroup");
 			builder.put(grammarAccess.getOnAccess().getUnorderedGroup_2(), "rule__On__UnorderedGroup_2");
+<<<<<<< Updated upstream
+=======
+			builder.put(grammarAccess.getPushAccess().getUnorderedGroup_2(), "rule__Push__UnorderedGroup_2");
+			builder.put(grammarAccess.getPull_requestAccess().getUnorderedGroup_2(), "rule__Pull_request__UnorderedGroup_2");
+			builder.put(grammarAccess.getConcurrencyAccess().getUnorderedGroup_2(), "rule__Concurrency__UnorderedGroup_2");
+			builder.put(grammarAccess.getEnvironmentAccess().getUnorderedGroup_2(), "rule__Environment__UnorderedGroup_2");
+			builder.put(grammarAccess.getPermissionsAccess().getUnorderedGroup_2(), "rule__Permissions__UnorderedGroup_2");
+>>>>>>> Stashed changes
 			builder.put(grammarAccess.getJobAccess().getUnorderedGroup_3(), "rule__Job__UnorderedGroup_3");
 			builder.put(grammarAccess.getPushAccess().getUnorderedGroup_2(), "rule__Push__UnorderedGroup_2");
 			builder.put(grammarAccess.getStepAccess().getUnorderedGroup_3(), "rule__Step__UnorderedGroup_3");

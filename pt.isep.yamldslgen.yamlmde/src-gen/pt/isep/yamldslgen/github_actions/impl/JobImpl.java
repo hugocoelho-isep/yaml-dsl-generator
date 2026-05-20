@@ -35,6 +35,7 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getId <em>Id</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getRunsOn <em>Runs On</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getNeeds <em>Needs</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getIf <em>If</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getSteps <em>Steps</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getPermissions <em>Permissions</em>}</li>
  * </ul>
@@ -91,6 +92,26 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 * @ordered
 	 */
 	protected EList<String> needs;
+
+	/**
+	 * The default value of the '{@link #getIf() <em>If</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIf()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String IF_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getIf() <em>If</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIf()
+	 * @generated
+	 * @ordered
+	 */
+	protected String if_ = IF_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getSteps() <em>Steps</em>}' containment reference list.
@@ -196,6 +217,29 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 * @generated
 	 */
 	@Override
+	public String getIf() {
+		return if_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIf(String newIf) {
+		String oldIf = if_;
+		if_ = newIf;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.JOB__IF, oldIf, if_));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<Step> getSteps() {
 		if (steps == null) {
 			steps = new EObjectContainmentEList<Step>(Step.class, this, YamlmdePackage.JOB__STEPS);
@@ -285,6 +329,8 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			return getRunsOn();
 		case YamlmdePackage.JOB__NEEDS:
 			return getNeeds();
+		case YamlmdePackage.JOB__IF:
+			return getIf();
 		case YamlmdePackage.JOB__STEPS:
 			return getSteps();
 		case YamlmdePackage.JOB__PERMISSIONS:
@@ -311,6 +357,9 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		case YamlmdePackage.JOB__NEEDS:
 			getNeeds().clear();
 			getNeeds().addAll((Collection<? extends String>) newValue);
+			return;
+		case YamlmdePackage.JOB__IF:
+			setIf((String) newValue);
 			return;
 		case YamlmdePackage.JOB__STEPS:
 			getSteps().clear();
@@ -340,6 +389,9 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		case YamlmdePackage.JOB__NEEDS:
 			getNeeds().clear();
 			return;
+		case YamlmdePackage.JOB__IF:
+			setIf(IF_EDEFAULT);
+			return;
 		case YamlmdePackage.JOB__STEPS:
 			getSteps().clear();
 			return;
@@ -364,6 +416,8 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			return RUNS_ON_EDEFAULT == null ? runsOn != null : !RUNS_ON_EDEFAULT.equals(runsOn);
 		case YamlmdePackage.JOB__NEEDS:
 			return needs != null && !needs.isEmpty();
+		case YamlmdePackage.JOB__IF:
+			return IF_EDEFAULT == null ? if_ != null : !IF_EDEFAULT.equals(if_);
 		case YamlmdePackage.JOB__STEPS:
 			return steps != null && !steps.isEmpty();
 		case YamlmdePackage.JOB__PERMISSIONS:
@@ -389,6 +443,8 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		result.append(runsOn);
 		result.append(", needs: ");
 		result.append(needs);
+		result.append(", if: ");
+		result.append(if_);
 		result.append(')');
 		return result.toString();
 	}

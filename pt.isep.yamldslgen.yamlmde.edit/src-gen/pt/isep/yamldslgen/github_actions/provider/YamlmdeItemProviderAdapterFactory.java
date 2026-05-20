@@ -377,6 +377,15 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 			withItemProvider.dispose();
 		if (permissionsItemProvider != null)
 			permissionsItemProvider.dispose();
+<<<<<<< Updated upstream
+=======
+		if (scheduleItemProvider != null)
+			scheduleItemProvider.dispose();
+		if (environmentItemProvider != null)
+			environmentItemProvider.dispose();
+		if (concurrencyItemProvider != null)
+			concurrencyItemProvider.dispose();
+>>>>>>> Stashed changes
 	}
 
 }

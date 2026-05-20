@@ -14,6 +14,14 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Permissions#getContents <em>Contents</em>}</li>
+<<<<<<< Updated upstream
+=======
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Permissions#getSecurityEvents <em>Security Events</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Permissions#getActions <em>Actions</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Permissions#getPages <em>Pages</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Permissions#getIdToken <em>Id Token</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Permissions#getPullRequests <em>Pull Requests</em>}</li>
+>>>>>>> Stashed changes
  * </ul>
  *
  * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getPermissions()
@@ -43,4 +51,117 @@ public interface Permissions extends EObject {
 	 */
 	void setContents(String value);
 
+<<<<<<< Updated upstream
+=======
+	/**
+	 * Returns the value of the '<em><b>Security Events</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Security Events</em>' attribute.
+	 * @see #setSecurityEvents(String)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getPermissions_SecurityEvents()
+	 * @model
+	 * @generated
+	 */
+	String getSecurityEvents();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.Permissions#getSecurityEvents <em>Security Events</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Security Events</em>' attribute.
+	 * @see #getSecurityEvents()
+	 * @generated
+	 */
+	void setSecurityEvents(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Actions</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Actions</em>' attribute.
+	 * @see #setActions(String)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getPermissions_Actions()
+	 * @model
+	 * @generated
+	 */
+	String getActions();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.Permissions#getActions <em>Actions</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Actions</em>' attribute.
+	 * @see #getActions()
+	 * @generated
+	 */
+	void setActions(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Pages</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pages</em>' attribute.
+	 * @see #setPages(String)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getPermissions_Pages()
+	 * @model
+	 * @generated
+	 */
+	String getPages();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.Permissions#getPages <em>Pages</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pages</em>' attribute.
+	 * @see #getPages()
+	 * @generated
+	 */
+	void setPages(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Id Token</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id Token</em>' attribute.
+	 * @see #setIdToken(String)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getPermissions_IdToken()
+	 * @model
+	 * @generated
+	 */
+	String getIdToken();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.Permissions#getIdToken <em>Id Token</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id Token</em>' attribute.
+	 * @see #getIdToken()
+	 * @generated
+	 */
+	void setIdToken(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Pull Requests</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pull Requests</em>' attribute.
+	 * @see #setPullRequests(String)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getPermissions_PullRequests()
+	 * @model
+	 * @generated
+	 */
+	String getPullRequests();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.Permissions#getPullRequests <em>Pull Requests</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pull Requests</em>' attribute.
+	 * @see #getPullRequests()
+	 * @generated
+	 */
+	void setPullRequests(String value);
+
+>>>>>>> Stashed changes
 } // Permissions

@@ -13,7 +13,34 @@
     <genClasses ecoreClass="yamlmde.ecore#//GithubActions">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//GithubActions/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//GithubActions/on"/>
+<<<<<<< Updated upstream
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//GithubActions/jobs"/>
+=======
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//GithubActions/permissions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//GithubActions/concurrency"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//GithubActions/env"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Job">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Job/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Job/runsOn"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Job/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Job/needs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Job/if"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Job/steps"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Job/permissions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Job/environment"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Step">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Step/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Step/uses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Step/run"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Step/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Step/if"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Step/workingDirectory"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Step/shell"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Step/env"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Step/with"/>
+>>>>>>> Stashed changes
     </genClasses>
     <genClasses ecoreClass="yamlmde.ecore#//On">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//On/push"/>
@@ -25,6 +52,7 @@
     </genClasses>
     <genClasses ecoreClass="yamlmde.ecore#//Pull_request">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Pull_request/branches"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Pull_request/types"/>
     </genClasses>
     <genClasses ecoreClass="yamlmde.ecore#//Job">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Job/id"/>
@@ -51,6 +79,25 @@
     </genClasses>
     <genClasses ecoreClass="yamlmde.ecore#//Permissions">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Permissions/contents"/>
+<<<<<<< Updated upstream
+=======
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Permissions/securityEvents"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Permissions/actions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Permissions/pages"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Permissions/idToken"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Permissions/pullRequests"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Schedule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Schedule/cron"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Environment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Environment/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Environment/url"/>
+>>>>>>> Stashed changes
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Concurrency">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Concurrency/group"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Concurrency/cancelInProgress"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -54,6 +54,14 @@ public class PermissionsItemProvider extends ItemProviderAdapter implements IEdi
 			super.getPropertyDescriptors(object);
 
 			addContentsPropertyDescriptor(object);
+<<<<<<< Updated upstream
+=======
+			addSecurityEventsPropertyDescriptor(object);
+			addActionsPropertyDescriptor(object);
+			addPagesPropertyDescriptor(object);
+			addIdTokenPropertyDescriptor(object);
+			addPullRequestsPropertyDescriptor(object);
+>>>>>>> Stashed changes
 		}
 		return itemPropertyDescriptors;
 	}
@@ -75,6 +83,89 @@ public class PermissionsItemProvider extends ItemProviderAdapter implements IEdi
 	}
 
 	/**
+<<<<<<< Updated upstream
+=======
+	 * This adds a property descriptor for the Security Events feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSecurityEventsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Permissions_securityEvents_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Permissions_securityEvents_feature",
+								"_UI_Permissions_type"),
+						YamlmdePackage.Literals.PERMISSIONS__SECURITY_EVENTS, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Actions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addActionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Permissions_actions_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Permissions_actions_feature",
+								"_UI_Permissions_type"),
+						YamlmdePackage.Literals.PERMISSIONS__ACTIONS, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Pages feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPagesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Permissions_pages_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Permissions_pages_feature",
+								"_UI_Permissions_type"),
+						YamlmdePackage.Literals.PERMISSIONS__PAGES, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Id Token feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIdTokenPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Permissions_idToken_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Permissions_idToken_feature",
+								"_UI_Permissions_type"),
+						YamlmdePackage.Literals.PERMISSIONS__ID_TOKEN, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Pull Requests feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPullRequestsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Permissions_pullRequests_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Permissions_pullRequests_feature",
+								"_UI_Permissions_type"),
+						YamlmdePackage.Literals.PERMISSIONS__PULL_REQUESTS, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+>>>>>>> Stashed changes
 	 * This returns Permissions.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -121,6 +212,14 @@ public class PermissionsItemProvider extends ItemProviderAdapter implements IEdi
 
 		switch (notification.getFeatureID(Permissions.class)) {
 		case YamlmdePackage.PERMISSIONS__CONTENTS:
+<<<<<<< Updated upstream
+=======
+		case YamlmdePackage.PERMISSIONS__SECURITY_EVENTS:
+		case YamlmdePackage.PERMISSIONS__ACTIONS:
+		case YamlmdePackage.PERMISSIONS__PAGES:
+		case YamlmdePackage.PERMISSIONS__ID_TOKEN:
+		case YamlmdePackage.PERMISSIONS__PULL_REQUESTS:
+>>>>>>> Stashed changes
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
