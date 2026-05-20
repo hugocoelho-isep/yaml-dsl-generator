@@ -59,6 +59,11 @@ public class StepItemProvider extends ItemProviderAdapter implements IEditingDom
 			addNamePropertyDescriptor(object);
 			addUsesPropertyDescriptor(object);
 			addRunPropertyDescriptor(object);
+			addIdPropertyDescriptor(object);
+			addIfPropertyDescriptor(object);
+			addWorkingDirectoryPropertyDescriptor(object);
+			addShellPropertyDescriptor(object);
+			addContinueOnErrorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -109,6 +114,83 @@ public class StepItemProvider extends ItemProviderAdapter implements IEditingDom
 	}
 
 	/**
+	 * This adds a property descriptor for the Id feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Step_id_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Step_id_feature", "_UI_Step_type"),
+						YamlmdePackage.Literals.STEP__ID, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the If feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIfPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Step_if_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Step_if_feature", "_UI_Step_type"),
+						YamlmdePackage.Literals.STEP__IF, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Working Directory feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addWorkingDirectoryPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Step_workingDirectory_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Step_workingDirectory_feature",
+								"_UI_Step_type"),
+						YamlmdePackage.Literals.STEP__WORKING_DIRECTORY, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Shell feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addShellPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Step_shell_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Step_shell_feature", "_UI_Step_type"),
+						YamlmdePackage.Literals.STEP__SHELL, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Continue On Error feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContinueOnErrorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Step_continueOnError_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Step_continueOnError_feature",
+								"_UI_Step_type"),
+						YamlmdePackage.Literals.STEP__CONTINUE_ON_ERROR, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -121,6 +203,7 @@ public class StepItemProvider extends ItemProviderAdapter implements IEditingDom
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(YamlmdePackage.Literals.STEP__WITH);
+			childrenFeatures.add(YamlmdePackage.Literals.STEP__ENV);
 		}
 		return childrenFeatures;
 	}
@@ -187,9 +270,15 @@ public class StepItemProvider extends ItemProviderAdapter implements IEditingDom
 		case YamlmdePackage.STEP__NAME:
 		case YamlmdePackage.STEP__USES:
 		case YamlmdePackage.STEP__RUN:
+		case YamlmdePackage.STEP__ID:
+		case YamlmdePackage.STEP__IF:
+		case YamlmdePackage.STEP__WORKING_DIRECTORY:
+		case YamlmdePackage.STEP__SHELL:
+		case YamlmdePackage.STEP__CONTINUE_ON_ERROR:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case YamlmdePackage.STEP__WITH:
+		case YamlmdePackage.STEP__ENV:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -207,8 +296,32 @@ public class StepItemProvider extends ItemProviderAdapter implements IEditingDom
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors
-				.add(createChildParameter(YamlmdePackage.Literals.STEP__WITH, YamlmdeFactory.eINSTANCE.createWith()));
+		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.STEP__WITH,
+				YamlmdeFactory.eINSTANCE.createKeyValuePair()));
+
+		newChildDescriptors.add(
+				createChildParameter(YamlmdePackage.Literals.STEP__ENV, YamlmdeFactory.eINSTANCE.createKeyValuePair()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify = childFeature == YamlmdePackage.Literals.STEP__WITH
+				|| childFeature == YamlmdePackage.Literals.STEP__ENV;
+
+		if (qualify) {
+			return getString("_UI_CreateChild_text2",
+					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

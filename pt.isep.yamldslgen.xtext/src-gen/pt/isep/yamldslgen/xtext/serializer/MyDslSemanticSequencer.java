@@ -14,14 +14,17 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import pt.isep.yamldslgen.github_actions.Concurrency;
+import pt.isep.yamldslgen.github_actions.Environment;
 import pt.isep.yamldslgen.github_actions.GithubActions;
 import pt.isep.yamldslgen.github_actions.Job;
+import pt.isep.yamldslgen.github_actions.KeyValuePair;
 import pt.isep.yamldslgen.github_actions.On;
 import pt.isep.yamldslgen.github_actions.Permissions;
 import pt.isep.yamldslgen.github_actions.Pull_request;
 import pt.isep.yamldslgen.github_actions.Push;
+import pt.isep.yamldslgen.github_actions.Schedule;
 import pt.isep.yamldslgen.github_actions.Step;
-import pt.isep.yamldslgen.github_actions.With;
 import pt.isep.yamldslgen.github_actions.YamlmdePackage;
 import pt.isep.yamldslgen.xtext.services.MyDslGrammarAccess;
 
@@ -39,11 +42,20 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == YamlmdePackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case YamlmdePackage.CONCURRENCY:
+				sequence_Concurrency(context, (Concurrency) semanticObject); 
+				return; 
+			case YamlmdePackage.ENVIRONMENT:
+				sequence_Environment(context, (Environment) semanticObject); 
+				return; 
 			case YamlmdePackage.GITHUB_ACTIONS:
 				sequence_GithubActions(context, (GithubActions) semanticObject); 
 				return; 
 			case YamlmdePackage.JOB:
 				sequence_Job(context, (Job) semanticObject); 
+				return; 
+			case YamlmdePackage.KEY_VALUE_PAIR:
+				sequence_KeyValuePair(context, (KeyValuePair) semanticObject); 
 				return; 
 			case YamlmdePackage.ON:
 				sequence_On(context, (On) semanticObject); 
@@ -57,11 +69,11 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case YamlmdePackage.PUSH:
 				sequence_Push(context, (Push) semanticObject); 
 				return; 
+			case YamlmdePackage.SCHEDULE:
+				sequence_Schedule(context, (Schedule) semanticObject); 
+				return; 
 			case YamlmdePackage.STEP:
 				sequence_Step(context, (Step) semanticObject); 
-				return; 
-			case YamlmdePackage.WITH:
-				sequence_With(context, (With) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -71,10 +83,45 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Concurrency returns Concurrency
+	 *
+	 * Constraint:
+	 *     (group=EString | cancelInProgress=EBoolean)*
+	 * </pre>
+	 */
+	protected void sequence_Concurrency(ISerializationContext context, Concurrency semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Environment returns Environment
+	 *
+	 * Constraint:
+	 *     (name=EString | url=EString)*
+	 * </pre>
+	 */
+	protected void sequence_Environment(ISerializationContext context, Environment semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     GithubActions returns GithubActions
 	 *
 	 * Constraint:
-	 *     (name=EString | on=On | jobs+=Job)+
+	 *     (
+	 *         name=EString | 
+	 *         on=On | 
+	 *         concurrency=Concurrency | 
+	 *         jobs+=Job | 
+	 *         permissions=Permissions | 
+	 *         env+=KeyValuePair
+	 *     )+
 	 * </pre>
 	 */
 	protected void sequence_GithubActions(ISerializationContext context, GithubActions semanticObject) {
@@ -88,9 +135,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Job returns Job
 	 *
 	 * Constraint:
-<<<<<<< Updated upstream
-	 *     (id=EString ((runsOn=EString | needs+=EString | steps+=Step | permissions=Permissions)? (needs+=EString needs+=EString*)?)+)
-=======
 	 *     (
 	 *         id=EString 
 	 *         (
@@ -107,7 +151,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *             (needs+=EString needs+=EString*)?
 	 *         )+
 	 *     )
->>>>>>> Stashed changes
 	 * </pre>
 	 */
 	protected void sequence_Job(ISerializationContext context, Job semanticObject) {
@@ -118,10 +161,33 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     KeyValuePair returns KeyValuePair
+	 *
+	 * Constraint:
+	 *     (key=KeyName value=EString)
+	 * </pre>
+	 */
+	protected void sequence_KeyValuePair(ISerializationContext context, KeyValuePair semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, YamlmdePackage.Literals.KEY_VALUE_PAIR__KEY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, YamlmdePackage.Literals.KEY_VALUE_PAIR__KEY));
+			if (transientValues.isValueTransient(semanticObject, YamlmdePackage.Literals.KEY_VALUE_PAIR__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, YamlmdePackage.Literals.KEY_VALUE_PAIR__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getKeyValuePairAccess().getKeyKeyNameParserRuleCall_0_0(), semanticObject.getKey());
+		feeder.accept(grammarAccess.getKeyValuePairAccess().getValueEStringParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     On returns On
 	 *
 	 * Constraint:
-	 *     (push=Push | pullRequest=Pull_request)*
+	 *     (push=Push | pullRequest=Pull_request | schedule+=Schedule | workflowDispatch=EString)*
 	 * </pre>
 	 */
 	protected void sequence_On(ISerializationContext context, On semanticObject) {
@@ -135,28 +201,19 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Permissions returns Permissions
 	 *
 	 * Constraint:
-<<<<<<< Updated upstream
-	 *     contents=EString
-=======
 	 *     (
 	 *         contents=EString | 
 	 *         securityEvents=EString | 
 	 *         actions=EString | 
 	 *         pages=EString | 
 	 *         idToken=EString | 
-	 *         pullRequests=EString
+	 *         pullRequests=EString | 
+	 *         issues=EString
 	 *     )*
->>>>>>> Stashed changes
 	 * </pre>
 	 */
 	protected void sequence_Permissions(ISerializationContext context, Permissions semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, YamlmdePackage.Literals.PERMISSIONS__CONTENTS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, YamlmdePackage.Literals.PERMISSIONS__CONTENTS));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPermissionsAccess().getContentsEStringParserRuleCall_4_0(), semanticObject.getContents());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -191,36 +248,44 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Step returns Step
+	 *     Schedule returns Schedule
 	 *
 	 * Constraint:
-	 *     (name=EString | uses=EString | run=EString | with=With)*
+	 *     cron=EString
 	 * </pre>
 	 */
-	protected void sequence_Step(ISerializationContext context, Step semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_Schedule(ISerializationContext context, Schedule semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, YamlmdePackage.Literals.SCHEDULE__CRON) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, YamlmdePackage.Literals.SCHEDULE__CRON));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getScheduleAccess().getCronEStringParserRuleCall_4_0(), semanticObject.getCron());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     With returns With
+	 *     Step returns Step
 	 *
 	 * Constraint:
 	 *     (
 	 *         name=EString | 
-	 *         javaVersion=EString | 
-	 *         distribution=EString | 
-	 *         path=EString | 
-	 *         target=EString | 
-	 *         token=EString | 
-	 *         files=EString | 
-	 *         generateReleaseNotes?='true'
+	 *         id=EString | 
+	 *         uses=EString | 
+	 *         run=EString | 
+	 *         if=EString | 
+	 *         workingDirectory=EString | 
+	 *         shell=EString | 
+	 *         continueOnError=EBoolean | 
+	 *         with+=KeyValuePair | 
+	 *         env+=KeyValuePair
 	 *     )*
 	 * </pre>
 	 */
-	protected void sequence_With(ISerializationContext context, With semanticObject) {
+	protected void sequence_Step(ISerializationContext context, Step semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

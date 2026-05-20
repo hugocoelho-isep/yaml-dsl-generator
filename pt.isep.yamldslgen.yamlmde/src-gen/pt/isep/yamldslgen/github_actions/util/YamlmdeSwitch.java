@@ -66,6 +66,13 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+		case YamlmdePackage.KEY_VALUE_PAIR: {
+			KeyValuePair keyValuePair = (KeyValuePair) theEObject;
+			T result = caseKeyValuePair(keyValuePair);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case YamlmdePackage.GITHUB_ACTIONS: {
 			GithubActions githubActions = (GithubActions) theEObject;
 			T result = caseGithubActions(githubActions);
@@ -108,13 +115,6 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case YamlmdePackage.WITH: {
-			With with = (With) theEObject;
-			T result = caseWith(with);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case YamlmdePackage.PERMISSIONS: {
 			Permissions permissions = (Permissions) theEObject;
 			T result = casePermissions(permissions);
@@ -122,8 +122,6 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-<<<<<<< Updated upstream
-=======
 		case YamlmdePackage.SCHEDULE: {
 			Schedule schedule = (Schedule) theEObject;
 			T result = caseSchedule(schedule);
@@ -145,10 +143,24 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
->>>>>>> Stashed changes
 		default:
 			return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Key Value Pair</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Key Value Pair</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseKeyValuePair(KeyValuePair object) {
+		return null;
 	}
 
 	/**
@@ -242,21 +254,6 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>With</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>With</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseWith(With object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Permissions</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -268,6 +265,51 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePermissions(Permissions object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Schedule</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Schedule</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSchedule(Schedule object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Environment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Environment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEnvironment(Environment object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Concurrency</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Concurrency</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConcurrency(Concurrency object) {
 		return null;
 	}
 

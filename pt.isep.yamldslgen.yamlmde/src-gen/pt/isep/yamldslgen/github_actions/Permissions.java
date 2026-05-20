@@ -14,14 +14,12 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Permissions#getContents <em>Contents</em>}</li>
-<<<<<<< Updated upstream
-=======
  *   <li>{@link pt.isep.yamldslgen.github_actions.Permissions#getSecurityEvents <em>Security Events</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Permissions#getActions <em>Actions</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Permissions#getPages <em>Pages</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Permissions#getIdToken <em>Id Token</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Permissions#getPullRequests <em>Pull Requests</em>}</li>
->>>>>>> Stashed changes
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Permissions#getIssues <em>Issues</em>}</li>
  * </ul>
  *
  * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getPermissions()
@@ -36,7 +34,7 @@ public interface Permissions extends EObject {
 	 * @return the value of the '<em>Contents</em>' attribute.
 	 * @see #setContents(String)
 	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getPermissions_Contents()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	String getContents();
@@ -51,8 +49,6 @@ public interface Permissions extends EObject {
 	 */
 	void setContents(String value);
 
-<<<<<<< Updated upstream
-=======
 	/**
 	 * Returns the value of the '<em><b>Security Events</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -163,5 +159,26 @@ public interface Permissions extends EObject {
 	 */
 	void setPullRequests(String value);
 
->>>>>>> Stashed changes
+	/**
+	 * Returns the value of the '<em><b>Issues</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Issues</em>' attribute.
+	 * @see #setIssues(String)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getPermissions_Issues()
+	 * @model
+	 * @generated
+	 */
+	String getIssues();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.Permissions#getIssues <em>Issues</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Issues</em>' attribute.
+	 * @see #getIssues()
+	 * @generated
+	 */
+	void setIssues(String value);
+
 } // Permissions

@@ -21,14 +21,12 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  * </p>
  * <ul>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.PermissionsImpl#getContents <em>Contents</em>}</li>
-<<<<<<< Updated upstream
-=======
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.PermissionsImpl#getSecurityEvents <em>Security Events</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.PermissionsImpl#getActions <em>Actions</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.PermissionsImpl#getPages <em>Pages</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.PermissionsImpl#getIdToken <em>Id Token</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.PermissionsImpl#getPullRequests <em>Pull Requests</em>}</li>
->>>>>>> Stashed changes
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.PermissionsImpl#getIssues <em>Issues</em>}</li>
  * </ul>
  *
  * @generated
@@ -55,8 +53,6 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 	protected String contents = CONTENTS_EDEFAULT;
 
 	/**
-<<<<<<< Updated upstream
-=======
 	 * The default value of the '{@link #getSecurityEvents() <em>Security Events</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -157,7 +153,26 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 	protected String pullRequests = PULL_REQUESTS_EDEFAULT;
 
 	/**
->>>>>>> Stashed changes
+	 * The default value of the '{@link #getIssues() <em>Issues</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIssues()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ISSUES_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getIssues() <em>Issues</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIssues()
+	 * @generated
+	 * @ordered
+	 */
+	protected String issues = ISSUES_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -206,8 +221,6 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 	 * @generated
 	 */
 	@Override
-<<<<<<< Updated upstream
-=======
 	public String getSecurityEvents() {
 		return securityEvents;
 	}
@@ -327,13 +340,34 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 	 * @generated
 	 */
 	@Override
->>>>>>> Stashed changes
+	public String getIssues() {
+		return issues;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIssues(String newIssues) {
+		String oldIssues = issues;
+		issues = newIssues;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.PERMISSIONS__ISSUES, oldIssues,
+					issues));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case YamlmdePackage.PERMISSIONS__CONTENTS:
 			return getContents();
-<<<<<<< Updated upstream
-=======
 		case YamlmdePackage.PERMISSIONS__SECURITY_EVENTS:
 			return getSecurityEvents();
 		case YamlmdePackage.PERMISSIONS__ACTIONS:
@@ -344,7 +378,8 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 			return getIdToken();
 		case YamlmdePackage.PERMISSIONS__PULL_REQUESTS:
 			return getPullRequests();
->>>>>>> Stashed changes
+		case YamlmdePackage.PERMISSIONS__ISSUES:
+			return getIssues();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -360,8 +395,6 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 		case YamlmdePackage.PERMISSIONS__CONTENTS:
 			setContents((String) newValue);
 			return;
-<<<<<<< Updated upstream
-=======
 		case YamlmdePackage.PERMISSIONS__SECURITY_EVENTS:
 			setSecurityEvents((String) newValue);
 			return;
@@ -377,7 +410,9 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 		case YamlmdePackage.PERMISSIONS__PULL_REQUESTS:
 			setPullRequests((String) newValue);
 			return;
->>>>>>> Stashed changes
+		case YamlmdePackage.PERMISSIONS__ISSUES:
+			setIssues((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -393,8 +428,6 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 		case YamlmdePackage.PERMISSIONS__CONTENTS:
 			setContents(CONTENTS_EDEFAULT);
 			return;
-<<<<<<< Updated upstream
-=======
 		case YamlmdePackage.PERMISSIONS__SECURITY_EVENTS:
 			setSecurityEvents(SECURITY_EVENTS_EDEFAULT);
 			return;
@@ -410,7 +443,9 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 		case YamlmdePackage.PERMISSIONS__PULL_REQUESTS:
 			setPullRequests(PULL_REQUESTS_EDEFAULT);
 			return;
->>>>>>> Stashed changes
+		case YamlmdePackage.PERMISSIONS__ISSUES:
+			setIssues(ISSUES_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -425,8 +460,6 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 		switch (featureID) {
 		case YamlmdePackage.PERMISSIONS__CONTENTS:
 			return CONTENTS_EDEFAULT == null ? contents != null : !CONTENTS_EDEFAULT.equals(contents);
-<<<<<<< Updated upstream
-=======
 		case YamlmdePackage.PERMISSIONS__SECURITY_EVENTS:
 			return SECURITY_EVENTS_EDEFAULT == null ? securityEvents != null
 					: !SECURITY_EVENTS_EDEFAULT.equals(securityEvents);
@@ -438,7 +471,8 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 			return ID_TOKEN_EDEFAULT == null ? idToken != null : !ID_TOKEN_EDEFAULT.equals(idToken);
 		case YamlmdePackage.PERMISSIONS__PULL_REQUESTS:
 			return PULL_REQUESTS_EDEFAULT == null ? pullRequests != null : !PULL_REQUESTS_EDEFAULT.equals(pullRequests);
->>>>>>> Stashed changes
+		case YamlmdePackage.PERMISSIONS__ISSUES:
+			return ISSUES_EDEFAULT == null ? issues != null : !ISSUES_EDEFAULT.equals(issues);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -456,8 +490,6 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (contents: ");
 		result.append(contents);
-<<<<<<< Updated upstream
-=======
 		result.append(", securityEvents: ");
 		result.append(securityEvents);
 		result.append(", actions: ");
@@ -468,7 +500,8 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 		result.append(idToken);
 		result.append(", pullRequests: ");
 		result.append(pullRequests);
->>>>>>> Stashed changes
+		result.append(", issues: ");
+		result.append(issues);
 		result.append(')');
 		return result.toString();
 	}

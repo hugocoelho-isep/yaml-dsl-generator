@@ -58,6 +58,7 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 
 			addIdPropertyDescriptor(object);
 			addRunsOnPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 			addNeedsPropertyDescriptor(object);
 			addIfPropertyDescriptor(object);
 		}
@@ -91,6 +92,21 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 						getResourceLocator(), getString("_UI_Job_runsOn_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_Job_runsOn_feature", "_UI_Job_type"),
 						YamlmdePackage.Literals.JOB__RUNS_ON, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Job_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Job_name_feature", "_UI_Job_type"),
+						YamlmdePackage.Literals.JOB__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -138,6 +154,7 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(YamlmdePackage.Literals.JOB__STEPS);
 			childrenFeatures.add(YamlmdePackage.Literals.JOB__PERMISSIONS);
+			childrenFeatures.add(YamlmdePackage.Literals.JOB__ENVIRONMENT);
 		}
 		return childrenFeatures;
 	}
@@ -184,7 +201,7 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Job) object).getId();
+		String label = ((Job) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_Job_type")
 				: getString("_UI_Job_type") + " " + label;
 	}
@@ -203,12 +220,14 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 		switch (notification.getFeatureID(Job.class)) {
 		case YamlmdePackage.JOB__ID:
 		case YamlmdePackage.JOB__RUNS_ON:
+		case YamlmdePackage.JOB__NAME:
 		case YamlmdePackage.JOB__NEEDS:
 		case YamlmdePackage.JOB__IF:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case YamlmdePackage.JOB__STEPS:
 		case YamlmdePackage.JOB__PERMISSIONS:
+		case YamlmdePackage.JOB__ENVIRONMENT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -231,6 +250,9 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 
 		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.JOB__PERMISSIONS,
 				YamlmdeFactory.eINSTANCE.createPermissions()));
+
+		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.JOB__ENVIRONMENT,
+				YamlmdeFactory.eINSTANCE.createEnvironment()));
 	}
 
 	/**

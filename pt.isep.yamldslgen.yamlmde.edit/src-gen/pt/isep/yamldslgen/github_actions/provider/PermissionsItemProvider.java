@@ -54,14 +54,12 @@ public class PermissionsItemProvider extends ItemProviderAdapter implements IEdi
 			super.getPropertyDescriptors(object);
 
 			addContentsPropertyDescriptor(object);
-<<<<<<< Updated upstream
-=======
 			addSecurityEventsPropertyDescriptor(object);
 			addActionsPropertyDescriptor(object);
 			addPagesPropertyDescriptor(object);
 			addIdTokenPropertyDescriptor(object);
 			addPullRequestsPropertyDescriptor(object);
->>>>>>> Stashed changes
+			addIssuesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -83,8 +81,6 @@ public class PermissionsItemProvider extends ItemProviderAdapter implements IEdi
 	}
 
 	/**
-<<<<<<< Updated upstream
-=======
 	 * This adds a property descriptor for the Security Events feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -165,7 +161,22 @@ public class PermissionsItemProvider extends ItemProviderAdapter implements IEdi
 	}
 
 	/**
->>>>>>> Stashed changes
+	 * This adds a property descriptor for the Issues feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIssuesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Permissions_issues_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Permissions_issues_feature",
+								"_UI_Permissions_type"),
+						YamlmdePackage.Literals.PERMISSIONS__ISSUES, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This returns Permissions.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -212,14 +223,12 @@ public class PermissionsItemProvider extends ItemProviderAdapter implements IEdi
 
 		switch (notification.getFeatureID(Permissions.class)) {
 		case YamlmdePackage.PERMISSIONS__CONTENTS:
-<<<<<<< Updated upstream
-=======
 		case YamlmdePackage.PERMISSIONS__SECURITY_EVENTS:
 		case YamlmdePackage.PERMISSIONS__ACTIONS:
 		case YamlmdePackage.PERMISSIONS__PAGES:
 		case YamlmdePackage.PERMISSIONS__ID_TOKEN:
 		case YamlmdePackage.PERMISSIONS__PULL_REQUESTS:
->>>>>>> Stashed changes
+		case YamlmdePackage.PERMISSIONS__ISSUES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

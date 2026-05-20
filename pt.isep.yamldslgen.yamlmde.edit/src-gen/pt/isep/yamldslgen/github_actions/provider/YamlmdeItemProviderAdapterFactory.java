@@ -73,6 +73,29 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.KeyValuePair} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected KeyValuePairItemProvider keyValuePairItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.KeyValuePair}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createKeyValuePairAdapter() {
+		if (keyValuePairItemProvider == null) {
+			keyValuePairItemProvider = new KeyValuePairItemProvider(this);
+		}
+
+		return keyValuePairItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.GithubActions} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -211,29 +234,6 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.With} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected WithItemProvider withItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.With}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createWithAdapter() {
-		if (withItemProvider == null) {
-			withItemProvider = new WithItemProvider(this);
-		}
-
-		return withItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Permissions} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -254,6 +254,75 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 		}
 
 		return permissionsItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Schedule} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ScheduleItemProvider scheduleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Schedule}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createScheduleAdapter() {
+		if (scheduleItemProvider == null) {
+			scheduleItemProvider = new ScheduleItemProvider(this);
+		}
+
+		return scheduleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Environment} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EnvironmentItemProvider environmentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Environment}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEnvironmentAdapter() {
+		if (environmentItemProvider == null) {
+			environmentItemProvider = new EnvironmentItemProvider(this);
+		}
+
+		return environmentItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Concurrency} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConcurrencyItemProvider concurrencyItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Concurrency}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createConcurrencyAdapter() {
+		if (concurrencyItemProvider == null) {
+			concurrencyItemProvider = new ConcurrencyItemProvider(this);
+		}
+
+		return concurrencyItemProvider;
 	}
 
 	/**
@@ -361,6 +430,8 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 	 */
 	@Override
 	public void dispose() {
+		if (keyValuePairItemProvider != null)
+			keyValuePairItemProvider.dispose();
 		if (githubActionsItemProvider != null)
 			githubActionsItemProvider.dispose();
 		if (onItemProvider != null)
@@ -373,19 +444,14 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 			jobItemProvider.dispose();
 		if (stepItemProvider != null)
 			stepItemProvider.dispose();
-		if (withItemProvider != null)
-			withItemProvider.dispose();
 		if (permissionsItemProvider != null)
 			permissionsItemProvider.dispose();
-<<<<<<< Updated upstream
-=======
 		if (scheduleItemProvider != null)
 			scheduleItemProvider.dispose();
 		if (environmentItemProvider != null)
 			environmentItemProvider.dispose();
 		if (concurrencyItemProvider != null)
 			concurrencyItemProvider.dispose();
->>>>>>> Stashed changes
 	}
 
 }

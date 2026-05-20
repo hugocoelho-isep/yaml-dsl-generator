@@ -56,6 +56,8 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+		case YamlmdePackage.KEY_VALUE_PAIR:
+			return createKeyValuePair();
 		case YamlmdePackage.GITHUB_ACTIONS:
 			return createGithubActions();
 		case YamlmdePackage.ON:
@@ -68,22 +70,28 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 			return createJob();
 		case YamlmdePackage.STEP:
 			return createStep();
-		case YamlmdePackage.WITH:
-			return createWith();
 		case YamlmdePackage.PERMISSIONS:
 			return createPermissions();
-<<<<<<< Updated upstream
-=======
 		case YamlmdePackage.SCHEDULE:
 			return createSchedule();
 		case YamlmdePackage.ENVIRONMENT:
 			return createEnvironment();
 		case YamlmdePackage.CONCURRENCY:
 			return createConcurrency();
->>>>>>> Stashed changes
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public KeyValuePair createKeyValuePair() {
+		KeyValuePairImpl keyValuePair = new KeyValuePairImpl();
+		return keyValuePair;
 	}
 
 	/**
@@ -158,9 +166,9 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 	 * @generated
 	 */
 	@Override
-	public With createWith() {
-		WithImpl with = new WithImpl();
-		return with;
+	public Permissions createPermissions() {
+		PermissionsImpl permissions = new PermissionsImpl();
+		return permissions;
 	}
 
 	/**
@@ -169,9 +177,31 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 	 * @generated
 	 */
 	@Override
-	public Permissions createPermissions() {
-		PermissionsImpl permissions = new PermissionsImpl();
-		return permissions;
+	public Schedule createSchedule() {
+		ScheduleImpl schedule = new ScheduleImpl();
+		return schedule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Environment createEnvironment() {
+		EnvironmentImpl environment = new EnvironmentImpl();
+		return environment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Concurrency createConcurrency() {
+		ConcurrencyImpl concurrency = new ConcurrencyImpl();
+		return concurrency;
 	}
 
 	/**

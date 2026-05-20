@@ -67,6 +67,11 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected YamlmdeSwitch<Adapter> modelSwitch = new YamlmdeSwitch<Adapter>() {
 		@Override
+		public Adapter caseKeyValuePair(KeyValuePair object) {
+			return createKeyValuePairAdapter();
+		}
+
+		@Override
 		public Adapter caseGithubActions(GithubActions object) {
 			return createGithubActionsAdapter();
 		}
@@ -97,18 +102,11 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseWith(With object) {
-			return createWithAdapter();
-		}
-
-		@Override
 		public Adapter casePermissions(Permissions object) {
 			return createPermissionsAdapter();
 		}
 
 		@Override
-<<<<<<< Updated upstream
-=======
 		public Adapter caseSchedule(Schedule object) {
 			return createScheduleAdapter();
 		}
@@ -124,7 +122,6 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
->>>>>>> Stashed changes
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -141,6 +138,20 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 	@Override
 	public Adapter createAdapter(Notifier target) {
 		return modelSwitch.doSwitch((EObject) target);
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.KeyValuePair <em>Key Value Pair</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.KeyValuePair
+	 * @generated
+	 */
+	public Adapter createKeyValuePairAdapter() {
+		return null;
 	}
 
 	/**
@@ -228,20 +239,6 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.With <em>With</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see pt.isep.yamldslgen.github_actions.With
-	 * @generated
-	 */
-	public Adapter createWithAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Permissions <em>Permissions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -252,6 +249,48 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPermissionsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Schedule <em>Schedule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Schedule
+	 * @generated
+	 */
+	public Adapter createScheduleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Environment <em>Environment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Environment
+	 * @generated
+	 */
+	public Adapter createEnvironmentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Concurrency <em>Concurrency</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Concurrency
+	 * @generated
+	 */
+	public Adapter createConcurrencyAdapter() {
 		return null;
 	}
 

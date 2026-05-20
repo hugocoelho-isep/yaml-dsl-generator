@@ -17,10 +17,12 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getId <em>Id</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getRunsOn <em>Runs On</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getName <em>Name</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getNeeds <em>Needs</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getIf <em>If</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getSteps <em>Steps</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getPermissions <em>Permissions</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getEnvironment <em>Environment</em>}</li>
  * </ul>
  *
  * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getJob()
@@ -71,6 +73,28 @@ public interface Job extends EObject {
 	 * @generated
 	 */
 	void setRunsOn(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getJob_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.Job#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Needs</b></em>' attribute list.
@@ -139,5 +163,27 @@ public interface Job extends EObject {
 	 * @generated
 	 */
 	void setPermissions(Permissions value);
+
+	/**
+	 * Returns the value of the '<em><b>Environment</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Environment</em>' containment reference.
+	 * @see #setEnvironment(Environment)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getJob_Environment()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Environment getEnvironment();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.Job#getEnvironment <em>Environment</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Environment</em>' containment reference.
+	 * @see #getEnvironment()
+	 * @generated
+	 */
+	void setEnvironment(Environment value);
 
 } // Job

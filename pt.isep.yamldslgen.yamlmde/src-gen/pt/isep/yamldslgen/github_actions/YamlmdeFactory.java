@@ -22,6 +22,15 @@ public interface YamlmdeFactory extends EFactory {
 	YamlmdeFactory eINSTANCE = pt.isep.yamldslgen.github_actions.impl.YamlmdeFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Key Value Pair</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Key Value Pair</em>'.
+	 * @generated
+	 */
+	KeyValuePair createKeyValuePair();
+
+	/**
 	 * Returns a new object of class '<em>Github Actions</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -76,15 +85,6 @@ public interface YamlmdeFactory extends EFactory {
 	Step createStep();
 
 	/**
-	 * Returns a new object of class '<em>With</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>With</em>'.
-	 * @generated
-	 */
-	With createWith();
-
-	/**
 	 * Returns a new object of class '<em>Permissions</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92,6 +92,33 @@ public interface YamlmdeFactory extends EFactory {
 	 * @generated
 	 */
 	Permissions createPermissions();
+
+	/**
+	 * Returns a new object of class '<em>Schedule</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Schedule</em>'.
+	 * @generated
+	 */
+	Schedule createSchedule();
+
+	/**
+	 * Returns a new object of class '<em>Environment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Environment</em>'.
+	 * @generated
+	 */
+	Environment createEnvironment();
+
+	/**
+	 * Returns a new object of class '<em>Concurrency</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Concurrency</em>'.
+	 * @generated
+	 */
+	Concurrency createConcurrency();
 
 	/**
 	 * Returns the package supported by this factory.
