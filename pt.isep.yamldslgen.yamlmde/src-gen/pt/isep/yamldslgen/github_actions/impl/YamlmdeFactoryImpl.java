@@ -70,6 +70,8 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 			return createPush();
 		case YamlmdePackage.PULL_REQUEST:
 			return createPull_request();
+		case YamlmdePackage.PERMISSIONS:
+			return createPermissions();
 		case YamlmdePackage.SCHEDULE:
 			return createSchedule();
 		case YamlmdePackage.CONCURRENCY:
@@ -156,6 +158,17 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 	public Pull_request createPull_request() {
 		Pull_requestImpl pull_request = new Pull_requestImpl();
 		return pull_request;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Permissions createPermissions() {
+		PermissionsImpl permissions = new PermissionsImpl();
+		return permissions;
 	}
 
 	/**

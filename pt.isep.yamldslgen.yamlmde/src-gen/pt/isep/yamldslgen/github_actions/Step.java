@@ -21,8 +21,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pt.isep.yamldslgen.github_actions.Step#getId <em>Id</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Step#getIf <em>If</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Step#getWorkingDirectory <em>Working Directory</em>}</li>
- *   <li>{@link pt.isep.yamldslgen.github_actions.Step#getWith <em>With</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Step#getShell <em>Shell</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Step#getEnv <em>Env</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Step#getWith <em>With</em>}</li>
  * </ul>
  *
  * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getStep()
@@ -161,6 +162,28 @@ public interface Step extends EObject {
 	 * @generated
 	 */
 	void setWorkingDirectory(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Shell</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Shell</em>' attribute.
+	 * @see #setShell(String)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getStep_Shell()
+	 * @model
+	 * @generated
+	 */
+	String getShell();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.Step#getShell <em>Shell</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Shell</em>' attribute.
+	 * @see #getShell()
+	 * @generated
+	 */
+	void setShell(String value);
 
 	/**
 	 * Returns the value of the '<em><b>With</b></em>' containment reference list.

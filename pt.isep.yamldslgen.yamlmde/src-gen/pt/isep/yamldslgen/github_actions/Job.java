@@ -20,8 +20,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getName <em>Name</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getNeeds <em>Needs</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getSteps <em>Steps</em>}</li>
- *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getEnvironment <em>Environment</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getPermissions <em>Permissions</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getEnvironment <em>Environment</em>}</li>
  * </ul>
  *
  * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getJob()
@@ -142,15 +142,25 @@ public interface Job extends EObject {
 	void setEnvironment(Environment value);
 
 	/**
-	 * Returns the value of the '<em><b>Permissions</b></em>' containment reference list.
-	 * The list contents are of type {@link pt.isep.yamldslgen.github_actions.KeyValuePair}.
+	 * Returns the value of the '<em><b>Permissions</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Permissions</em>' containment reference list.
+	 * @return the value of the '<em>Permissions</em>' containment reference.
+	 * @see #setPermissions(Permissions)
 	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getJob_Permissions()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<KeyValuePair> getPermissions();
+	Permissions getPermissions();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.Job#getPermissions <em>Permissions</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Permissions</em>' containment reference.
+	 * @see #getPermissions()
+	 * @generated
+	 */
+	void setPermissions(Permissions value);
 
 } // Job

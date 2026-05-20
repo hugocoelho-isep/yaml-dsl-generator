@@ -234,6 +234,29 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Permissions} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PermissionsItemProvider permissionsItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Permissions}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPermissionsAdapter() {
+		if (permissionsItemProvider == null) {
+			permissionsItemProvider = new PermissionsItemProvider(this);
+		}
+
+		return permissionsItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Schedule} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -421,6 +444,8 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 			pushItemProvider.dispose();
 		if (pull_requestItemProvider != null)
 			pull_requestItemProvider.dispose();
+		if (permissionsItemProvider != null)
+			permissionsItemProvider.dispose();
 		if (scheduleItemProvider != null)
 			scheduleItemProvider.dispose();
 		if (concurrencyItemProvider != null)

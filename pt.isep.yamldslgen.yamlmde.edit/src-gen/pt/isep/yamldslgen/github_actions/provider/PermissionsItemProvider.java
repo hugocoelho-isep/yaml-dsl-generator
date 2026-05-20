@@ -10,8 +10,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -23,17 +21,16 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import pt.isep.yamldslgen.github_actions.Job;
-import pt.isep.yamldslgen.github_actions.YamlmdeFactory;
+import pt.isep.yamldslgen.github_actions.Permissions;
 import pt.isep.yamldslgen.github_actions.YamlmdePackage;
 
 /**
- * This is the item provider adapter for a {@link pt.isep.yamldslgen.github_actions.Job} object.
+ * This is the item provider adapter for a {@link pt.isep.yamldslgen.github_actions.Permissions} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class JobItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class PermissionsItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -41,7 +38,7 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public JobItemProvider(AdapterFactory adapterFactory) {
+	public PermissionsItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -56,115 +53,104 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIdPropertyDescriptor(object);
-			addRunsOnPropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
-			addNeedsPropertyDescriptor(object);
+			addContentsPropertyDescriptor(object);
+			addSecurityEventsPropertyDescriptor(object);
+			addActionsPropertyDescriptor(object);
+			addPagesPropertyDescriptor(object);
+			addIdTokenPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Id feature.
+	 * This adds a property descriptor for the Contents feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIdPropertyDescriptor(Object object) {
+	protected void addContentsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Job_id_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Job_id_feature", "_UI_Job_type"),
-						YamlmdePackage.Literals.JOB__ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-						null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Runs On feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRunsOnPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Job_runsOn_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Job_runsOn_feature", "_UI_Job_type"),
-						YamlmdePackage.Literals.JOB__RUNS_ON, true, false, false,
+						getResourceLocator(), getString("_UI_Permissions_contents_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Permissions_contents_feature",
+								"_UI_Permissions_type"),
+						YamlmdePackage.Literals.PERMISSIONS__CONTENTS, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Security Events feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addSecurityEventsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Job_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Job_name_feature", "_UI_Job_type"),
-						YamlmdePackage.Literals.JOB__NAME, true, false, false,
+						getResourceLocator(), getString("_UI_Permissions_securityEvents_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Permissions_securityEvents_feature",
+								"_UI_Permissions_type"),
+						YamlmdePackage.Literals.PERMISSIONS__SECURITY_EVENTS, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Needs feature.
+	 * This adds a property descriptor for the Actions feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNeedsPropertyDescriptor(Object object) {
+	protected void addActionsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Job_needs_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Job_needs_feature", "_UI_Job_type"),
-						YamlmdePackage.Literals.JOB__NEEDS, true, false, false,
+						getResourceLocator(), getString("_UI_Permissions_actions_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Permissions_actions_feature",
+								"_UI_Permissions_type"),
+						YamlmdePackage.Literals.PERMISSIONS__ACTIONS, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Pages feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(YamlmdePackage.Literals.JOB__STEPS);
-			childrenFeatures.add(YamlmdePackage.Literals.JOB__PERMISSIONS);
-			childrenFeatures.add(YamlmdePackage.Literals.JOB__ENVIRONMENT);
-		}
-		return childrenFeatures;
+	protected void addPagesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Permissions_pages_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Permissions_pages_feature",
+								"_UI_Permissions_type"),
+						YamlmdePackage.Literals.PERMISSIONS__PAGES, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
+	 * This adds a property descriptor for the Id Token feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
+	protected void addIdTokenPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Permissions_idToken_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Permissions_idToken_feature",
+								"_UI_Permissions_type"),
+						YamlmdePackage.Literals.PERMISSIONS__ID_TOKEN, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This returns Job.gif.
+	 * This returns Permissions.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Job"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Permissions"));
 	}
 
 	/**
@@ -185,9 +171,9 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Job) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Job_type")
-				: getString("_UI_Job_type") + " " + label;
+		String label = ((Permissions) object).getContents();
+		return label == null || label.length() == 0 ? getString("_UI_Permissions_type")
+				: getString("_UI_Permissions_type") + " " + label;
 	}
 
 	/**
@@ -201,17 +187,13 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Job.class)) {
-		case YamlmdePackage.JOB__ID:
-		case YamlmdePackage.JOB__RUNS_ON:
-		case YamlmdePackage.JOB__NAME:
-		case YamlmdePackage.JOB__NEEDS:
+		switch (notification.getFeatureID(Permissions.class)) {
+		case YamlmdePackage.PERMISSIONS__CONTENTS:
+		case YamlmdePackage.PERMISSIONS__SECURITY_EVENTS:
+		case YamlmdePackage.PERMISSIONS__ACTIONS:
+		case YamlmdePackage.PERMISSIONS__PAGES:
+		case YamlmdePackage.PERMISSIONS__ID_TOKEN:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		case YamlmdePackage.JOB__STEPS:
-		case YamlmdePackage.JOB__PERMISSIONS:
-		case YamlmdePackage.JOB__ENVIRONMENT:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -227,15 +209,6 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors
-				.add(createChildParameter(YamlmdePackage.Literals.JOB__STEPS, YamlmdeFactory.eINSTANCE.createStep()));
-
-		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.JOB__PERMISSIONS,
-				YamlmdeFactory.eINSTANCE.createPermissions()));
-
-		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.JOB__ENVIRONMENT,
-				YamlmdeFactory.eINSTANCE.createEnvironment()));
 	}
 
 	/**

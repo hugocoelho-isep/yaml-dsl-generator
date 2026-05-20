@@ -13,7 +13,7 @@ GithubActions returns GithubActions:
 	& ('on' ':' on=On)
 	& ('concurrency' ':' concurrency=Concurrency)?
 	& ('jobs' ':' BEG_BLOCK? jobs+=Job+ END_BLOCK?)
-	& ('permissions' ':' (BEG_BLOCK? permissions+=KeyValuePair+ END_BLOCK?))?
+	& ('permissions' ':' permissions=Permissions)?
 	& ('env' ':' (BEG_BLOCK? env+=KeyValuePair+ END_BLOCK?))?);
 
 // =============================================================================
@@ -51,7 +51,8 @@ KeyName returns ecore::EString:
 	// ── GitHub Actions keywords ──────────────────────────────────────────
 	| 'name' | 'on'   | 'jobs'        | 'permissions' | 'env'
 	| 'push' | 'pull_request'         | 'branches'    | 'tags'
-	| 'runs-on' | 'needs' | 'steps'   | 'uses'        | 'run' | 'with';
+	| 'runs-on' | 'needs' | 'steps'   | 'uses'        | 'run' | 'with'
+	| 'shell' | 'contents' | 'security-events' | 'actions' | 'pages' | 'id-token';
 	
 	
 // =============================================================================
@@ -120,6 +121,20 @@ Environment returns Environment:
 		(('name' ':' name=EString)?
 		& ('url' ':' url=EString)?)
 	END_BLOCK?;
+	
+// =============================================================================
+// PERMISSIONS
+// =============================================================================
+
+Permissions returns Permissions:
+	{Permissions}
+	BEG_BLOCK?
+		(('contents' ':' contents=EString)?
+		& ('security-events' ':' securityEvents=EString)?
+		& ('actions' ':' actions=EString)?
+		& ('pages' ':' pages=EString)?
+		& ('id-token' ':' idToken=EString)?)
+	END_BLOCK?;
 
 
 // =============================================================================
@@ -137,7 +152,7 @@ Job returns Job:
 		))?
 		& ('environment' ':' environment=Environment)?
 		& ('steps' ':' BEG_BLOCK? steps+=Step+ END_BLOCK?)?
-		& ('permissions' ':' (BEG_BLOCK? permissions+=KeyValuePair+ END_BLOCK?))?)
+		& ('permissions' ':' permissions=Permissions)?)
 	END_BLOCK?;
 
 // =============================================================================
@@ -153,6 +168,7 @@ Step returns Step:
 		& ('run'  ':' run=EString)?
 		& ('if'   ':' ^if=EString)?
 		& ('working-directory' ':' workingDirectory=EString)?
+		& ('shell' ':' shell=EString)?
 		& ('with' ':' (BEG_BLOCK? ^with+=KeyValuePair+ END_BLOCK?))?
 		& ('env'  ':' (BEG_BLOCK? env+=KeyValuePair+ END_BLOCK?))?)
 	END_BLOCK?;
@@ -178,7 +194,8 @@ terminal END_BLOCK: 'synthetic:END';
 // =============================================================================
 
 // Ignora comentários do YAML (linhas que começam por #)
-@Override terminal SL_COMMENT: '#' !('\n'|'\r')* ('\r'? '\n')?;
+@Override terminal SL_COMMENT: '#' !('\n'|'\r')*;
+// @Override terminal SL_COMMENT: '#' !('\n'|'\r')* ('\r'? '\n')?;
 
 // GitHub Actions expression ${{ ... }}
 // Mantemos o until-match ('->') para capturar expressões completas sem o Lexer se perder nas chavetas.

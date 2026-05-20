@@ -18,8 +18,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//GithubActions/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//GithubActions/jobs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//GithubActions/on"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//GithubActions/concurrency"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//GithubActions/permissions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//GithubActions/concurrency"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//GithubActions/env"/>
     </genClasses>
     <genClasses ecoreClass="yamlmde.ecore#//Job">
@@ -28,8 +28,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Job/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Job/needs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Job/steps"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Job/environment"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Job/permissions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Job/environment"/>
     </genClasses>
     <genClasses ecoreClass="yamlmde.ecore#//Step">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Step/name"/>
@@ -38,8 +38,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Step/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Step/if"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Step/workingDirectory"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Step/with"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Step/shell"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Step/env"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Step/with"/>
     </genClasses>
     <genClasses ecoreClass="yamlmde.ecore#//On">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//On/workflowDispatch"/>
@@ -53,6 +54,13 @@
     </genClasses>
     <genClasses ecoreClass="yamlmde.ecore#//Pull_request">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Pull_request/branches"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Permissions">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Permissions/contents"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Permissions/securityEvents"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Permissions/actions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Permissions/pages"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Permissions/idToken"/>
     </genClasses>
     <genClasses ecoreClass="yamlmde.ecore#//Schedule">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Schedule/cron"/>

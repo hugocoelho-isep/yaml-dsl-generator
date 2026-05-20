@@ -91,8 +91,8 @@ public class GithubActionsItemProvider extends ItemProviderAdapter implements IE
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(YamlmdePackage.Literals.GITHUB_ACTIONS__JOBS);
 			childrenFeatures.add(YamlmdePackage.Literals.GITHUB_ACTIONS__ON);
-			childrenFeatures.add(YamlmdePackage.Literals.GITHUB_ACTIONS__CONCURRENCY);
 			childrenFeatures.add(YamlmdePackage.Literals.GITHUB_ACTIONS__PERMISSIONS);
+			childrenFeatures.add(YamlmdePackage.Literals.GITHUB_ACTIONS__CONCURRENCY);
 			childrenFeatures.add(YamlmdePackage.Literals.GITHUB_ACTIONS__ENV);
 		}
 		return childrenFeatures;
@@ -162,8 +162,8 @@ public class GithubActionsItemProvider extends ItemProviderAdapter implements IE
 			return;
 		case YamlmdePackage.GITHUB_ACTIONS__JOBS:
 		case YamlmdePackage.GITHUB_ACTIONS__ON:
-		case YamlmdePackage.GITHUB_ACTIONS__CONCURRENCY:
 		case YamlmdePackage.GITHUB_ACTIONS__PERMISSIONS:
+		case YamlmdePackage.GITHUB_ACTIONS__CONCURRENCY:
 		case YamlmdePackage.GITHUB_ACTIONS__ENV:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -188,35 +188,14 @@ public class GithubActionsItemProvider extends ItemProviderAdapter implements IE
 		newChildDescriptors.add(
 				createChildParameter(YamlmdePackage.Literals.GITHUB_ACTIONS__ON, YamlmdeFactory.eINSTANCE.createOn()));
 
+		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.GITHUB_ACTIONS__PERMISSIONS,
+				YamlmdeFactory.eINSTANCE.createPermissions()));
+
 		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.GITHUB_ACTIONS__CONCURRENCY,
 				YamlmdeFactory.eINSTANCE.createConcurrency()));
 
-		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.GITHUB_ACTIONS__PERMISSIONS,
-				YamlmdeFactory.eINSTANCE.createKeyValuePair()));
-
 		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.GITHUB_ACTIONS__ENV,
 				YamlmdeFactory.eINSTANCE.createKeyValuePair()));
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify = childFeature == YamlmdePackage.Literals.GITHUB_ACTIONS__PERMISSIONS
-				|| childFeature == YamlmdePackage.Literals.GITHUB_ACTIONS__ENV;
-
-		if (qualify) {
-			return getString("_UI_CreateChild_text2",
-					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

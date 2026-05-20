@@ -85,6 +85,15 @@ public interface YamlmdeFactory extends EFactory {
 	Pull_request createPull_request();
 
 	/**
+	 * Returns a new object of class '<em>Permissions</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Permissions</em>'.
+	 * @generated
+	 */
+	Permissions createPermissions();
+
+	/**
 	 * Returns a new object of class '<em>Schedule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -36,8 +36,9 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.StepImpl#getId <em>Id</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.StepImpl#getIf <em>If</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.StepImpl#getWorkingDirectory <em>Working Directory</em>}</li>
- *   <li>{@link pt.isep.yamldslgen.github_actions.impl.StepImpl#getWith <em>With</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.StepImpl#getShell <em>Shell</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.StepImpl#getEnv <em>Env</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.StepImpl#getWith <em>With</em>}</li>
  * </ul>
  *
  * @generated
@@ -164,14 +165,24 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 	protected String workingDirectory = WORKING_DIRECTORY_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getWith() <em>With</em>}' containment reference list.
+	 * The default value of the '{@link #getShell() <em>Shell</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getWith()
+	 * @see #getShell()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<KeyValuePair> with;
+	protected static final String SHELL_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getShell() <em>Shell</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShell()
+	 * @generated
+	 * @ordered
+	 */
+	protected String shell = SHELL_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getEnv() <em>Env</em>}' containment reference list.
@@ -182,6 +193,16 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 	 * @ordered
 	 */
 	protected EList<KeyValuePair> env;
+
+	/**
+	 * The cached value of the '{@link #getWith() <em>With</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWith()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<KeyValuePair> with;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -347,6 +368,29 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 	 * @generated
 	 */
 	@Override
+	public String getShell() {
+		return shell;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setShell(String newShell) {
+		String oldShell = shell;
+		shell = newShell;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.STEP__SHELL, oldShell, shell));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<KeyValuePair> getWith() {
 		if (with == null) {
 			with = new EObjectContainmentEList<KeyValuePair>(KeyValuePair.class, this, YamlmdePackage.STEP__WITH);
@@ -375,10 +419,10 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case YamlmdePackage.STEP__WITH:
-			return ((InternalEList<?>) getWith()).basicRemove(otherEnd, msgs);
 		case YamlmdePackage.STEP__ENV:
 			return ((InternalEList<?>) getEnv()).basicRemove(otherEnd, msgs);
+		case YamlmdePackage.STEP__WITH:
+			return ((InternalEList<?>) getWith()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -403,10 +447,12 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 			return getIf();
 		case YamlmdePackage.STEP__WORKING_DIRECTORY:
 			return getWorkingDirectory();
-		case YamlmdePackage.STEP__WITH:
-			return getWith();
+		case YamlmdePackage.STEP__SHELL:
+			return getShell();
 		case YamlmdePackage.STEP__ENV:
 			return getEnv();
+		case YamlmdePackage.STEP__WITH:
+			return getWith();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -438,13 +484,16 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 		case YamlmdePackage.STEP__WORKING_DIRECTORY:
 			setWorkingDirectory((String) newValue);
 			return;
-		case YamlmdePackage.STEP__WITH:
-			getWith().clear();
-			getWith().addAll((Collection<? extends KeyValuePair>) newValue);
+		case YamlmdePackage.STEP__SHELL:
+			setShell((String) newValue);
 			return;
 		case YamlmdePackage.STEP__ENV:
 			getEnv().clear();
 			getEnv().addAll((Collection<? extends KeyValuePair>) newValue);
+			return;
+		case YamlmdePackage.STEP__WITH:
+			getWith().clear();
+			getWith().addAll((Collection<? extends KeyValuePair>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -476,11 +525,14 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 		case YamlmdePackage.STEP__WORKING_DIRECTORY:
 			setWorkingDirectory(WORKING_DIRECTORY_EDEFAULT);
 			return;
-		case YamlmdePackage.STEP__WITH:
-			getWith().clear();
+		case YamlmdePackage.STEP__SHELL:
+			setShell(SHELL_EDEFAULT);
 			return;
 		case YamlmdePackage.STEP__ENV:
 			getEnv().clear();
+			return;
+		case YamlmdePackage.STEP__WITH:
+			getWith().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -507,10 +559,12 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 		case YamlmdePackage.STEP__WORKING_DIRECTORY:
 			return WORKING_DIRECTORY_EDEFAULT == null ? workingDirectory != null
 					: !WORKING_DIRECTORY_EDEFAULT.equals(workingDirectory);
-		case YamlmdePackage.STEP__WITH:
-			return with != null && !with.isEmpty();
+		case YamlmdePackage.STEP__SHELL:
+			return SHELL_EDEFAULT == null ? shell != null : !SHELL_EDEFAULT.equals(shell);
 		case YamlmdePackage.STEP__ENV:
 			return env != null && !env.isEmpty();
+		case YamlmdePackage.STEP__WITH:
+			return with != null && !with.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -538,6 +592,8 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 		result.append(if_);
 		result.append(", workingDirectory: ");
 		result.append(workingDirectory);
+		result.append(", shell: ");
+		result.append(shell);
 		result.append(')');
 		return result.toString();
 	}

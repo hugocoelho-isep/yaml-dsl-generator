@@ -20,6 +20,7 @@ import pt.isep.yamldslgen.github_actions.GithubActions;
 import pt.isep.yamldslgen.github_actions.Job;
 import pt.isep.yamldslgen.github_actions.KeyValuePair;
 import pt.isep.yamldslgen.github_actions.On;
+import pt.isep.yamldslgen.github_actions.Permissions;
 import pt.isep.yamldslgen.github_actions.Pull_request;
 import pt.isep.yamldslgen.github_actions.Push;
 import pt.isep.yamldslgen.github_actions.Schedule;
@@ -58,6 +59,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case YamlmdePackage.ON:
 				sequence_On(context, (On) semanticObject); 
+				return; 
+			case YamlmdePackage.PERMISSIONS:
+				sequence_Permissions(context, (Permissions) semanticObject); 
 				return; 
 			case YamlmdePackage.PULL_REQUEST:
 				sequence_Pull_request(context, (Pull_request) semanticObject); 
@@ -115,7 +119,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         on=On | 
 	 *         concurrency=Concurrency | 
 	 *         jobs+=Job | 
-	 *         permissions+=KeyValuePair | 
+	 *         permissions=Permissions | 
 	 *         env+=KeyValuePair
 	 *     )+
 	 * </pre>
@@ -141,7 +145,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *                 needs+=EString | 
 	 *                 environment=Environment | 
 	 *                 steps+=Step | 
-	 *                 permissions+=KeyValuePair
+	 *                 permissions=Permissions
 	 *             )? 
 	 *             (needs+=EString needs+=EString*)?
 	 *         )+
@@ -186,6 +190,20 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * </pre>
 	 */
 	protected void sequence_On(ISerializationContext context, On semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Permissions returns Permissions
+	 *
+	 * Constraint:
+	 *     (contents=EString | securityEvents=EString | actions=EString | pages=EString | idToken=EString)*
+	 * </pre>
+	 */
+	protected void sequence_Permissions(ISerializationContext context, Permissions semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -251,6 +269,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         run=EString | 
 	 *         if=EString | 
 	 *         workingDirectory=EString | 
+	 *         shell=EString | 
 	 *         with+=KeyValuePair | 
 	 *         env+=KeyValuePair
 	 *     )*

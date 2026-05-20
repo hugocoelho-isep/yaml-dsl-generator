@@ -102,6 +102,11 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter casePermissions(Permissions object) {
+			return createPermissionsAdapter();
+		}
+
+		@Override
 		public Adapter caseSchedule(Schedule object) {
 			return createScheduleAdapter();
 		}
@@ -230,6 +235,20 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPull_requestAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Permissions <em>Permissions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Permissions
+	 * @generated
+	 */
+	public Adapter createPermissionsAdapter() {
 		return null;
 	}
 

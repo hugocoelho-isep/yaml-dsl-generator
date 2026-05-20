@@ -18,8 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getName <em>Name</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getJobs <em>Jobs</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getOn <em>On</em>}</li>
- *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getConcurrency <em>Concurrency</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getPermissions <em>Permissions</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getConcurrency <em>Concurrency</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getEnv <em>Env</em>}</li>
  * </ul>
  *
@@ -107,16 +107,26 @@ public interface GithubActions extends EObject {
 	void setConcurrency(Concurrency value);
 
 	/**
-	 * Returns the value of the '<em><b>Permissions</b></em>' containment reference list.
-	 * The list contents are of type {@link pt.isep.yamldslgen.github_actions.KeyValuePair}.
+	 * Returns the value of the '<em><b>Permissions</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Permissions</em>' containment reference list.
+	 * @return the value of the '<em>Permissions</em>' containment reference.
+	 * @see #setPermissions(Permissions)
 	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getGithubActions_Permissions()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<KeyValuePair> getPermissions();
+	Permissions getPermissions();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.GithubActions#getPermissions <em>Permissions</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Permissions</em>' containment reference.
+	 * @see #getPermissions()
+	 * @generated
+	 */
+	void setPermissions(Permissions value);
 
 	/**
 	 * Returns the value of the '<em><b>Env</b></em>' containment reference list.

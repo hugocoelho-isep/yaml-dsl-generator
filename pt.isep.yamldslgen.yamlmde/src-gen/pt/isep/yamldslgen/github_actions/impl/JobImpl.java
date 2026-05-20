@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import pt.isep.yamldslgen.github_actions.Environment;
 import pt.isep.yamldslgen.github_actions.Job;
-import pt.isep.yamldslgen.github_actions.KeyValuePair;
+import pt.isep.yamldslgen.github_actions.Permissions;
 import pt.isep.yamldslgen.github_actions.Step;
 import pt.isep.yamldslgen.github_actions.YamlmdePackage;
 
@@ -38,8 +38,8 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getName <em>Name</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getNeeds <em>Needs</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getSteps <em>Steps</em>}</li>
- *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getEnvironment <em>Environment</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getPermissions <em>Permissions</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getEnvironment <em>Environment</em>}</li>
  * </ul>
  *
  * @generated
@@ -126,6 +126,16 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	protected EList<Step> steps;
 
 	/**
+	 * The cached value of the '{@link #getPermissions() <em>Permissions</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPermissions()
+	 * @generated
+	 * @ordered
+	 */
+	protected Permissions permissions;
+
+	/**
 	 * The cached value of the '{@link #getEnvironment() <em>Environment</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -134,16 +144,6 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 * @ordered
 	 */
 	protected Environment environment;
-
-	/**
-	 * The cached value of the '{@link #getPermissions() <em>Permissions</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPermissions()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<KeyValuePair> permissions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -317,12 +317,50 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 * @generated
 	 */
 	@Override
-	public EList<KeyValuePair> getPermissions() {
-		if (permissions == null) {
-			permissions = new EObjectContainmentEList<KeyValuePair>(KeyValuePair.class, this,
-					YamlmdePackage.JOB__PERMISSIONS);
-		}
+	public Permissions getPermissions() {
 		return permissions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPermissions(Permissions newPermissions, NotificationChain msgs) {
+		Permissions oldPermissions = permissions;
+		permissions = newPermissions;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					YamlmdePackage.JOB__PERMISSIONS, oldPermissions, newPermissions);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPermissions(Permissions newPermissions) {
+		if (newPermissions != permissions) {
+			NotificationChain msgs = null;
+			if (permissions != null)
+				msgs = ((InternalEObject) permissions).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - YamlmdePackage.JOB__PERMISSIONS, null, msgs);
+			if (newPermissions != null)
+				msgs = ((InternalEObject) newPermissions).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - YamlmdePackage.JOB__PERMISSIONS, null, msgs);
+			msgs = basicSetPermissions(newPermissions, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.JOB__PERMISSIONS, newPermissions,
+					newPermissions));
 	}
 
 	/**
@@ -335,10 +373,10 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		switch (featureID) {
 		case YamlmdePackage.JOB__STEPS:
 			return ((InternalEList<?>) getSteps()).basicRemove(otherEnd, msgs);
+		case YamlmdePackage.JOB__PERMISSIONS:
+			return basicSetPermissions(null, msgs);
 		case YamlmdePackage.JOB__ENVIRONMENT:
 			return basicSetEnvironment(null, msgs);
-		case YamlmdePackage.JOB__PERMISSIONS:
-			return ((InternalEList<?>) getPermissions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -361,10 +399,10 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			return getNeeds();
 		case YamlmdePackage.JOB__STEPS:
 			return getSteps();
-		case YamlmdePackage.JOB__ENVIRONMENT:
-			return getEnvironment();
 		case YamlmdePackage.JOB__PERMISSIONS:
 			return getPermissions();
+		case YamlmdePackage.JOB__ENVIRONMENT:
+			return getEnvironment();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -395,12 +433,11 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			getSteps().clear();
 			getSteps().addAll((Collection<? extends Step>) newValue);
 			return;
+		case YamlmdePackage.JOB__PERMISSIONS:
+			setPermissions((Permissions) newValue);
+			return;
 		case YamlmdePackage.JOB__ENVIRONMENT:
 			setEnvironment((Environment) newValue);
-			return;
-		case YamlmdePackage.JOB__PERMISSIONS:
-			getPermissions().clear();
-			getPermissions().addAll((Collection<? extends KeyValuePair>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -429,11 +466,11 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		case YamlmdePackage.JOB__STEPS:
 			getSteps().clear();
 			return;
+		case YamlmdePackage.JOB__PERMISSIONS:
+			setPermissions((Permissions) null);
+			return;
 		case YamlmdePackage.JOB__ENVIRONMENT:
 			setEnvironment((Environment) null);
-			return;
-		case YamlmdePackage.JOB__PERMISSIONS:
-			getPermissions().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -457,10 +494,10 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			return needs != null && !needs.isEmpty();
 		case YamlmdePackage.JOB__STEPS:
 			return steps != null && !steps.isEmpty();
+		case YamlmdePackage.JOB__PERMISSIONS:
+			return permissions != null;
 		case YamlmdePackage.JOB__ENVIRONMENT:
 			return environment != null;
-		case YamlmdePackage.JOB__PERMISSIONS:
-			return permissions != null && !permissions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
