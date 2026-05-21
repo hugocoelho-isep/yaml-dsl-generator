@@ -19,6 +19,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getPush <em>Push</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getPullRequest <em>Pull Request</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getSchedule <em>Schedule</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.On#getWorkflowCall <em>Workflow Call</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.On#getPullRequestTarget <em>Pull Request Target</em>}</li>
  * </ul>
  *
  * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getOn()
@@ -103,5 +105,49 @@ public interface On extends EObject {
 	 * @generated
 	 */
 	EList<Schedule> getSchedule();
+
+	/**
+	 * Returns the value of the '<em><b>Workflow Call</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Workflow Call</em>' containment reference.
+	 * @see #setWorkflowCall(Workflow_call)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getOn_WorkflowCall()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Workflow_call getWorkflowCall();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.On#getWorkflowCall <em>Workflow Call</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Workflow Call</em>' containment reference.
+	 * @see #getWorkflowCall()
+	 * @generated
+	 */
+	void setWorkflowCall(Workflow_call value);
+
+	/**
+	 * Returns the value of the '<em><b>Pull Request Target</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pull Request Target</em>' containment reference.
+	 * @see #setPullRequestTarget(Pull_request)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getOn_PullRequestTarget()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Pull_request getPullRequestTarget();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.On#getPullRequestTarget <em>Pull Request Target</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Pull Request Target</em>' containment reference.
+	 * @see #getPullRequestTarget()
+	 * @generated
+	 */
+	void setPullRequestTarget(Pull_request value);
 
 } // On

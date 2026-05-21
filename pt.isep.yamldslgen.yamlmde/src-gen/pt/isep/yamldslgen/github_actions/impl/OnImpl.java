@@ -22,6 +22,7 @@ import pt.isep.yamldslgen.github_actions.On;
 import pt.isep.yamldslgen.github_actions.Pull_request;
 import pt.isep.yamldslgen.github_actions.Push;
 import pt.isep.yamldslgen.github_actions.Schedule;
+import pt.isep.yamldslgen.github_actions.Workflow_call;
 import pt.isep.yamldslgen.github_actions.YamlmdePackage;
 
 /**
@@ -36,6 +37,8 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getPush <em>Push</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getPullRequest <em>Pull Request</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getSchedule <em>Schedule</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getWorkflowCall <em>Workflow Call</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getPullRequestTarget <em>Pull Request Target</em>}</li>
  * </ul>
  *
  * @generated
@@ -90,6 +93,26 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 	 * @ordered
 	 */
 	protected EList<Schedule> schedule;
+
+	/**
+	 * The cached value of the '{@link #getWorkflowCall() <em>Workflow Call</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkflowCall()
+	 * @generated
+	 * @ordered
+	 */
+	protected Workflow_call workflowCall;
+
+	/**
+	 * The cached value of the '{@link #getPullRequestTarget() <em>Pull Request Target</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPullRequestTarget()
+	 * @generated
+	 * @ordered
+	 */
+	protected Pull_request pullRequestTarget;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -256,6 +279,110 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 	 * @generated
 	 */
 	@Override
+	public Workflow_call getWorkflowCall() {
+		return workflowCall;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetWorkflowCall(Workflow_call newWorkflowCall, NotificationChain msgs) {
+		Workflow_call oldWorkflowCall = workflowCall;
+		workflowCall = newWorkflowCall;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					YamlmdePackage.ON__WORKFLOW_CALL, oldWorkflowCall, newWorkflowCall);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setWorkflowCall(Workflow_call newWorkflowCall) {
+		if (newWorkflowCall != workflowCall) {
+			NotificationChain msgs = null;
+			if (workflowCall != null)
+				msgs = ((InternalEObject) workflowCall).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - YamlmdePackage.ON__WORKFLOW_CALL, null, msgs);
+			if (newWorkflowCall != null)
+				msgs = ((InternalEObject) newWorkflowCall).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - YamlmdePackage.ON__WORKFLOW_CALL, null, msgs);
+			msgs = basicSetWorkflowCall(newWorkflowCall, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.ON__WORKFLOW_CALL, newWorkflowCall,
+					newWorkflowCall));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Pull_request getPullRequestTarget() {
+		return pullRequestTarget;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPullRequestTarget(Pull_request newPullRequestTarget, NotificationChain msgs) {
+		Pull_request oldPullRequestTarget = pullRequestTarget;
+		pullRequestTarget = newPullRequestTarget;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					YamlmdePackage.ON__PULL_REQUEST_TARGET, oldPullRequestTarget, newPullRequestTarget);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPullRequestTarget(Pull_request newPullRequestTarget) {
+		if (newPullRequestTarget != pullRequestTarget) {
+			NotificationChain msgs = null;
+			if (pullRequestTarget != null)
+				msgs = ((InternalEObject) pullRequestTarget).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - YamlmdePackage.ON__PULL_REQUEST_TARGET, null, msgs);
+			if (newPullRequestTarget != null)
+				msgs = ((InternalEObject) newPullRequestTarget).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - YamlmdePackage.ON__PULL_REQUEST_TARGET, null, msgs);
+			msgs = basicSetPullRequestTarget(newPullRequestTarget, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.ON__PULL_REQUEST_TARGET,
+					newPullRequestTarget, newPullRequestTarget));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case YamlmdePackage.ON__PUSH:
@@ -264,6 +391,10 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 			return basicSetPullRequest(null, msgs);
 		case YamlmdePackage.ON__SCHEDULE:
 			return ((InternalEList<?>) getSchedule()).basicRemove(otherEnd, msgs);
+		case YamlmdePackage.ON__WORKFLOW_CALL:
+			return basicSetWorkflowCall(null, msgs);
+		case YamlmdePackage.ON__PULL_REQUEST_TARGET:
+			return basicSetPullRequestTarget(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -284,6 +415,10 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 			return getPullRequest();
 		case YamlmdePackage.ON__SCHEDULE:
 			return getSchedule();
+		case YamlmdePackage.ON__WORKFLOW_CALL:
+			return getWorkflowCall();
+		case YamlmdePackage.ON__PULL_REQUEST_TARGET:
+			return getPullRequestTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -310,6 +445,12 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 			getSchedule().clear();
 			getSchedule().addAll((Collection<? extends Schedule>) newValue);
 			return;
+		case YamlmdePackage.ON__WORKFLOW_CALL:
+			setWorkflowCall((Workflow_call) newValue);
+			return;
+		case YamlmdePackage.ON__PULL_REQUEST_TARGET:
+			setPullRequestTarget((Pull_request) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -334,6 +475,12 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 		case YamlmdePackage.ON__SCHEDULE:
 			getSchedule().clear();
 			return;
+		case YamlmdePackage.ON__WORKFLOW_CALL:
+			setWorkflowCall((Workflow_call) null);
+			return;
+		case YamlmdePackage.ON__PULL_REQUEST_TARGET:
+			setPullRequestTarget((Pull_request) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -355,6 +502,10 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 			return pullRequest != null;
 		case YamlmdePackage.ON__SCHEDULE:
 			return schedule != null && !schedule.isEmpty();
+		case YamlmdePackage.ON__WORKFLOW_CALL:
+			return workflowCall != null;
+		case YamlmdePackage.ON__PULL_REQUEST_TARGET:
+			return pullRequestTarget != null;
 		}
 		return super.eIsSet(featureID);
 	}

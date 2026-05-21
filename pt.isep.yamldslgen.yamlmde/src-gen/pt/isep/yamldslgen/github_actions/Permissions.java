@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pt.isep.yamldslgen.github_actions.Permissions#getIdToken <em>Id Token</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Permissions#getPullRequests <em>Pull Requests</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Permissions#getIssues <em>Issues</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Permissions#getPackages <em>Packages</em>}</li>
  * </ul>
  *
  * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getPermissions()
@@ -180,5 +181,27 @@ public interface Permissions extends EObject {
 	 * @generated
 	 */
 	void setIssues(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Packages</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Packages</em>' attribute.
+	 * @see #setPackages(String)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getPermissions_Packages()
+	 * @model
+	 * @generated
+	 */
+	String getPackages();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.Permissions#getPackages <em>Packages</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Packages</em>' attribute.
+	 * @see #getPackages()
+	 * @generated
+	 */
+	void setPackages(String value);
 
 } // Permissions

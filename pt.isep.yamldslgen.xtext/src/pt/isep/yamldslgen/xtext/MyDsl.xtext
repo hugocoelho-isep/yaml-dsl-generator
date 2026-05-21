@@ -48,13 +48,16 @@ BlockString returns ecore::EString:
 // ─── When adding a new DSL: add its keywords to this rule only. ───────────
 KeyName returns ecore::EString:
 	  ID | YAML_SCALAR | INT
-	// ── GitHub Actions keywords ──────────────────────────────────────────
-	| 'name' | 'on'   | 'jobs'        | 'permissions' | 'env'
-	| 'push' | 'pull_request'         | 'branches'    | 'tags'
-	| 'runs-on' | 'needs' | 'steps'   | 'uses'        | 'run' | 'with'
-	| 'shell' | 'contents' | 'security-events' | 'actions' | 'pages' | 'id-token'
-	| 'types' | 'pull-requests' | 'if' 
-	| 'continue-on-error' | 'issues';
+	| 'name' | 'on' | 'jobs' | 'permissions' | 'env'
+	| 'push' | 'pull_request' | 'branches' | 'tags'
+	| 'runs-on' | 'needs' | 'steps' | 'uses' | 'run' | 'with'
+	| 'shell' | 'contents' | 'security-events' | 'actions' 
+	| 'pages' | 'id-token' | 'types' | 'pull-requests' | 'if' 
+	| 'continue-on-error' | 'issues'
+	| 'strategy' | 'fail-fast' | 'matrix' | 'os' | 'build-type' 
+	| 'c-compiler' | 'cpp-compiler' | 'otp' | 'elixir' | 'include' 
+	| 'exclude' | 'workflow_call' | 'pull_request_target' | 'secrets' 
+	| 'required' | 'packages';
 	
 	
 // =============================================================================
@@ -73,10 +76,12 @@ KeyValuePair returns KeyValuePair:
 On returns On:
 	{On}
 	BEG_BLOCK?
-		(('push' ':' push=Push)?
+	(('push' ':' push=Push)?
 		& ('pull_request' ':' pullRequest=Pull_request)?
+		& ('pull_request_target' ':' pullRequestTarget=Pull_request)?
 		& ('schedule' ':' (BEG_BLOCK? schedule+=Schedule+ END_BLOCK?))?
-		& ('workflow_dispatch' ':' (workflowDispatch=EString)?)?)
+		& ('workflow_dispatch' ':' (workflowDispatch=EString)?)?
+		& ('workflow_call' ':' workflowCall=Workflow_call)?)
 	END_BLOCK?;
 
 Push returns Push:
@@ -110,6 +115,17 @@ Schedule returns Schedule:
 		'cron' ':' cron=EString
 	END_BLOCK?;
 	
+Workflow_call returns Workflow_call:
+	{Workflow_call}
+	BEG_BLOCK?
+		('secrets' ':' BEG_BLOCK? secrets+=Secret+ END_BLOCK?)?
+	END_BLOCK?;
+	
+Secret returns Secret:
+	id=EString ':' BEG_BLOCK?
+		('required' ':' required=EBoolean)?
+	END_BLOCK?;
+	
 	
 // =============================================================================
 // CONCURRENCY & ENVIRONMENT
@@ -141,9 +157,9 @@ Permissions returns Permissions:
 		& ('pages' ':' pages=EString)?
 		& ('id-token' ':' idToken=EString)?
 		& ('pull-requests' ':' pullRequests=EString)?
-		& ('issues' ':' issues=EString)?)
+		& ('issues' ':' issues=EString)?
+		& ('packages' ':' packages=EString)?)
 	END_BLOCK?;
-
 
 // =============================================================================
 // JOB
@@ -160,6 +176,7 @@ Job returns Job:
 		))?
 		& ('if' ':' ^if=EString)?
 		& ('environment' ':' environment=Environment)?
+		& ('strategy' ':' strategy=Strategy)?
 		& ('steps' ':' BEG_BLOCK? steps+=Step+ END_BLOCK?)?
 		& ('permissions' ':' permissions=Permissions)?)
 	END_BLOCK?;
@@ -184,7 +201,60 @@ Step returns Step:
 	END_BLOCK?;
 
 // =============================================================================
-// STEP
+// STRATEGY
+// =============================================================================
+	
+Strategy returns Strategy:
+	{Strategy}
+	BEG_BLOCK?
+		(('fail-fast' ':' failFast=EBoolean)?
+		& ('matrix' ':' matrix=Matrix)?)
+	END_BLOCK?;
+
+Matrix returns Matrix:
+	{Matrix}
+	BEG_BLOCK?
+		(('os' ':' (
+			  BEG_BLOCK ('-' BEG_BLOCK? os+=EString END_BLOCK?)+ END_BLOCK
+			| '[' os+=EString (',' os+=EString)* ']'
+		))?
+		& ('build-type' ':' (
+			  BEG_BLOCK ('-' BEG_BLOCK? buildType+=EString END_BLOCK?)+ END_BLOCK
+			| '[' buildType+=EString (',' buildType+=EString)* ']'
+		))?
+		& ('c-compiler' ':' (
+			  BEG_BLOCK ('-' BEG_BLOCK? cCompiler+=EString END_BLOCK?)+ END_BLOCK
+			| '[' cCompiler+=EString (',' cCompiler+=EString)* ']'
+		))?
+		& ('otp' ':' (
+			  BEG_BLOCK ('-' BEG_BLOCK? otp+=EString END_BLOCK?)+ END_BLOCK
+			| '[' otp+=EString (',' otp+=EString)* ']'
+		))?
+		& ('elixir' ':' (
+			  BEG_BLOCK ('-' BEG_BLOCK? elixir+=EString END_BLOCK?)+ END_BLOCK
+			| '[' elixir+=EString (',' elixir+=EString)* ']'
+		))?
+		& ('include' ':' BEG_BLOCK ('-' BEG_BLOCK? include+=Include END_BLOCK?)+ END_BLOCK)?
+		& ('exclude' ':' BEG_BLOCK ('-' BEG_BLOCK? exclude+=Exclude END_BLOCK?)+ END_BLOCK)?)
+	END_BLOCK?;
+	
+Include returns Include:
+	{Include}
+	BEG_BLOCK?
+		(('os' ':' os=EString)?
+		& ('c-compiler' ':' cCompiler=EString)?
+		& ('cpp-compiler' ':' cppCompiler=EString)?)
+	END_BLOCK?;
+
+Exclude returns Exclude:
+	{Exclude}
+	BEG_BLOCK?
+		(('os' ':' os=EString)?
+		& ('c-compiler' ':' cCompiler=EString)?)
+	END_BLOCK?;
+
+// =============================================================================
+// BOOLEAN
 // =============================================================================
 
 EBoolean returns ecore::EBoolean:
@@ -212,6 +282,9 @@ terminal END_BLOCK: 'synthetic:END';
 terminal GH_EXPRESSION:
     '${{' -> '}}'
     | '$' ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-')*;
+    
+// Força o Lexer a dar prioridade a números puros antes do YAML_SCALAR
+@Override terminal INT returns ecore::EInt: ('0'..'9')+;
 
 // Um escalar YAML "apanha-tudo" que suporta comandos shell, espaços e símbolos.
 // Pára automaticamente em vírgulas, parêntesis retos (para arrays funcionarem) e dois pontos (para as keys funcionarem).

@@ -60,6 +60,7 @@ public class PermissionsItemProvider extends ItemProviderAdapter implements IEdi
 			addIdTokenPropertyDescriptor(object);
 			addPullRequestsPropertyDescriptor(object);
 			addIssuesPropertyDescriptor(object);
+			addPackagesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -177,6 +178,22 @@ public class PermissionsItemProvider extends ItemProviderAdapter implements IEdi
 	}
 
 	/**
+	 * This adds a property descriptor for the Packages feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPackagesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Permissions_packages_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Permissions_packages_feature",
+								"_UI_Permissions_type"),
+						YamlmdePackage.Literals.PERMISSIONS__PACKAGES, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This returns Permissions.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -229,6 +246,7 @@ public class PermissionsItemProvider extends ItemProviderAdapter implements IEdi
 		case YamlmdePackage.PERMISSIONS__ID_TOKEN:
 		case YamlmdePackage.PERMISSIONS__PULL_REQUESTS:
 		case YamlmdePackage.PERMISSIONS__ISSUES:
+		case YamlmdePackage.PERMISSIONS__PACKAGES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

@@ -23,17 +23,17 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import pt.isep.yamldslgen.github_actions.Job;
+import pt.isep.yamldslgen.github_actions.Matrix;
 import pt.isep.yamldslgen.github_actions.YamlmdeFactory;
 import pt.isep.yamldslgen.github_actions.YamlmdePackage;
 
 /**
- * This is the item provider adapter for a {@link pt.isep.yamldslgen.github_actions.Job} object.
+ * This is the item provider adapter for a {@link pt.isep.yamldslgen.github_actions.Matrix} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class JobItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class MatrixItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -41,7 +41,7 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public JobItemProvider(AdapterFactory adapterFactory) {
+	public MatrixItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -56,88 +56,90 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIdPropertyDescriptor(object);
-			addRunsOnPropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
-			addNeedsPropertyDescriptor(object);
-			addIfPropertyDescriptor(object);
+			addOsPropertyDescriptor(object);
+			addBuildTypePropertyDescriptor(object);
+			addCCompilerPropertyDescriptor(object);
+			addOtpPropertyDescriptor(object);
+			addElixirPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Id feature.
+	 * This adds a property descriptor for the Os feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIdPropertyDescriptor(Object object) {
+	protected void addOsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Job_id_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Job_id_feature", "_UI_Job_type"),
-						YamlmdePackage.Literals.JOB__ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-						null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Runs On feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRunsOnPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Job_runsOn_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Job_runsOn_feature", "_UI_Job_type"),
-						YamlmdePackage.Literals.JOB__RUNS_ON, true, false, false,
+						getResourceLocator(), getString("_UI_Matrix_os_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Matrix_os_feature", "_UI_Matrix_type"),
+						YamlmdePackage.Literals.MATRIX__OS, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Build Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addBuildTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Job_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Job_name_feature", "_UI_Job_type"),
-						YamlmdePackage.Literals.JOB__NAME, true, false, false,
+						getResourceLocator(), getString("_UI_Matrix_buildType_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Matrix_buildType_feature",
+								"_UI_Matrix_type"),
+						YamlmdePackage.Literals.MATRIX__BUILD_TYPE, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Needs feature.
+	 * This adds a property descriptor for the CCompiler feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNeedsPropertyDescriptor(Object object) {
+	protected void addCCompilerPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Job_needs_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Job_needs_feature", "_UI_Job_type"),
-						YamlmdePackage.Literals.JOB__NEEDS, true, false, false,
+						getResourceLocator(), getString("_UI_Matrix_cCompiler_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Matrix_cCompiler_feature",
+								"_UI_Matrix_type"),
+						YamlmdePackage.Literals.MATRIX__CCOMPILER, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the If feature.
+	 * This adds a property descriptor for the Otp feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIfPropertyDescriptor(Object object) {
+	protected void addOtpPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Job_if_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Job_if_feature", "_UI_Job_type"),
-						YamlmdePackage.Literals.JOB__IF, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-						null, null));
+						getResourceLocator(), getString("_UI_Matrix_otp_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Matrix_otp_feature", "_UI_Matrix_type"),
+						YamlmdePackage.Literals.MATRIX__OTP, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Elixir feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addElixirPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Matrix_elixir_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Matrix_elixir_feature", "_UI_Matrix_type"),
+						YamlmdePackage.Literals.MATRIX__ELIXIR, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -152,10 +154,8 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(YamlmdePackage.Literals.JOB__STEPS);
-			childrenFeatures.add(YamlmdePackage.Literals.JOB__PERMISSIONS);
-			childrenFeatures.add(YamlmdePackage.Literals.JOB__ENVIRONMENT);
-			childrenFeatures.add(YamlmdePackage.Literals.JOB__STRATEGY);
+			childrenFeatures.add(YamlmdePackage.Literals.MATRIX__INCLUDE);
+			childrenFeatures.add(YamlmdePackage.Literals.MATRIX__EXCLUDE);
 		}
 		return childrenFeatures;
 	}
@@ -174,14 +174,14 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 	}
 
 	/**
-	 * This returns Job.gif.
+	 * This returns Matrix.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Job"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Matrix"));
 	}
 
 	/**
@@ -202,9 +202,7 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Job) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Job_type")
-				: getString("_UI_Job_type") + " " + label;
+		return getString("_UI_Matrix_type");
 	}
 
 	/**
@@ -218,18 +216,16 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Job.class)) {
-		case YamlmdePackage.JOB__ID:
-		case YamlmdePackage.JOB__RUNS_ON:
-		case YamlmdePackage.JOB__NAME:
-		case YamlmdePackage.JOB__NEEDS:
-		case YamlmdePackage.JOB__IF:
+		switch (notification.getFeatureID(Matrix.class)) {
+		case YamlmdePackage.MATRIX__OS:
+		case YamlmdePackage.MATRIX__BUILD_TYPE:
+		case YamlmdePackage.MATRIX__CCOMPILER:
+		case YamlmdePackage.MATRIX__OTP:
+		case YamlmdePackage.MATRIX__ELIXIR:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case YamlmdePackage.JOB__STEPS:
-		case YamlmdePackage.JOB__PERMISSIONS:
-		case YamlmdePackage.JOB__ENVIRONMENT:
-		case YamlmdePackage.JOB__STRATEGY:
+		case YamlmdePackage.MATRIX__INCLUDE:
+		case YamlmdePackage.MATRIX__EXCLUDE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -247,17 +243,11 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors
-				.add(createChildParameter(YamlmdePackage.Literals.JOB__STEPS, YamlmdeFactory.eINSTANCE.createStep()));
+		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.MATRIX__INCLUDE,
+				YamlmdeFactory.eINSTANCE.createInclude()));
 
-		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.JOB__PERMISSIONS,
-				YamlmdeFactory.eINSTANCE.createPermissions()));
-
-		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.JOB__ENVIRONMENT,
-				YamlmdeFactory.eINSTANCE.createEnvironment()));
-
-		newChildDescriptors.add(
-				createChildParameter(YamlmdePackage.Literals.JOB__STRATEGY, YamlmdeFactory.eINSTANCE.createStrategy()));
+		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.MATRIX__EXCLUDE,
+				YamlmdeFactory.eINSTANCE.createExclude()));
 	}
 
 	/**

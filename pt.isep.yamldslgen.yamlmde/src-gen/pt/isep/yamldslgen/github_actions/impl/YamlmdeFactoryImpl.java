@@ -60,24 +60,36 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 			return createKeyValuePair();
 		case YamlmdePackage.GITHUB_ACTIONS:
 			return createGithubActions();
+		case YamlmdePackage.JOB:
+			return createJob();
+		case YamlmdePackage.STEP:
+			return createStep();
 		case YamlmdePackage.ON:
 			return createOn();
 		case YamlmdePackage.PUSH:
 			return createPush();
 		case YamlmdePackage.PULL_REQUEST:
 			return createPull_request();
-		case YamlmdePackage.JOB:
-			return createJob();
-		case YamlmdePackage.STEP:
-			return createStep();
 		case YamlmdePackage.PERMISSIONS:
 			return createPermissions();
 		case YamlmdePackage.SCHEDULE:
 			return createSchedule();
-		case YamlmdePackage.ENVIRONMENT:
-			return createEnvironment();
 		case YamlmdePackage.CONCURRENCY:
 			return createConcurrency();
+		case YamlmdePackage.ENVIRONMENT:
+			return createEnvironment();
+		case YamlmdePackage.STRATEGY:
+			return createStrategy();
+		case YamlmdePackage.MATRIX:
+			return createMatrix();
+		case YamlmdePackage.INCLUDE:
+			return createInclude();
+		case YamlmdePackage.EXCLUDE:
+			return createExclude();
+		case YamlmdePackage.WORKFLOW_CALL:
+			return createWorkflow_call();
+		case YamlmdePackage.SECRET:
+			return createSecret();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -191,6 +203,72 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 	public Environment createEnvironment() {
 		EnvironmentImpl environment = new EnvironmentImpl();
 		return environment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Strategy createStrategy() {
+		StrategyImpl strategy = new StrategyImpl();
+		return strategy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Matrix createMatrix() {
+		MatrixImpl matrix = new MatrixImpl();
+		return matrix;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Include createInclude() {
+		IncludeImpl include = new IncludeImpl();
+		return include;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Exclude createExclude() {
+		ExcludeImpl exclude = new ExcludeImpl();
+		return exclude;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Workflow_call createWorkflow_call() {
+		Workflow_callImpl workflow_call = new Workflow_callImpl();
+		return workflow_call;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Secret createSecret() {
+		SecretImpl secret = new SecretImpl();
+		return secret;
 	}
 
 	/**

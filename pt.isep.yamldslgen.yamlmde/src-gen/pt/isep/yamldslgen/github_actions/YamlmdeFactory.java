@@ -112,6 +112,60 @@ public interface YamlmdeFactory extends EFactory {
 	Environment createEnvironment();
 
 	/**
+	 * Returns a new object of class '<em>Strategy</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Strategy</em>'.
+	 * @generated
+	 */
+	Strategy createStrategy();
+
+	/**
+	 * Returns a new object of class '<em>Matrix</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Matrix</em>'.
+	 * @generated
+	 */
+	Matrix createMatrix();
+
+	/**
+	 * Returns a new object of class '<em>Include</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Include</em>'.
+	 * @generated
+	 */
+	Include createInclude();
+
+	/**
+	 * Returns a new object of class '<em>Exclude</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Exclude</em>'.
+	 * @generated
+	 */
+	Exclude createExclude();
+
+	/**
+	 * Returns a new object of class '<em>Workflow call</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Workflow call</em>'.
+	 * @generated
+	 */
+	Workflow_call createWorkflow_call();
+
+	/**
+	 * Returns a new object of class '<em>Secret</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Secret</em>'.
+	 * @generated
+	 */
+	Secret createSecret();
+
+	/**
 	 * Returns a new object of class '<em>Concurrency</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

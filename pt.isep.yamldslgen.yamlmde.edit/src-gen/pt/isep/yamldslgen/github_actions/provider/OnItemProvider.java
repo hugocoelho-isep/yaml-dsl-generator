@@ -92,6 +92,8 @@ public class OnItemProvider extends ItemProviderAdapter implements IEditingDomai
 			childrenFeatures.add(YamlmdePackage.Literals.ON__PUSH);
 			childrenFeatures.add(YamlmdePackage.Literals.ON__PULL_REQUEST);
 			childrenFeatures.add(YamlmdePackage.Literals.ON__SCHEDULE);
+			childrenFeatures.add(YamlmdePackage.Literals.ON__WORKFLOW_CALL);
+			childrenFeatures.add(YamlmdePackage.Literals.ON__PULL_REQUEST_TARGET);
 		}
 		return childrenFeatures;
 	}
@@ -160,6 +162,8 @@ public class OnItemProvider extends ItemProviderAdapter implements IEditingDomai
 		case YamlmdePackage.ON__PUSH:
 		case YamlmdePackage.ON__PULL_REQUEST:
 		case YamlmdePackage.ON__SCHEDULE:
+		case YamlmdePackage.ON__WORKFLOW_CALL:
+		case YamlmdePackage.ON__PULL_REQUEST_TARGET:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -185,6 +189,33 @@ public class OnItemProvider extends ItemProviderAdapter implements IEditingDomai
 
 		newChildDescriptors.add(
 				createChildParameter(YamlmdePackage.Literals.ON__SCHEDULE, YamlmdeFactory.eINSTANCE.createSchedule()));
+
+		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.ON__WORKFLOW_CALL,
+				YamlmdeFactory.eINSTANCE.createWorkflow_call()));
+
+		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.ON__PULL_REQUEST_TARGET,
+				YamlmdeFactory.eINSTANCE.createPull_request()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify = childFeature == YamlmdePackage.Literals.ON__PULL_REQUEST
+				|| childFeature == YamlmdePackage.Literals.ON__PULL_REQUEST_TARGET;
+
+		if (qualify) {
+			return getString("_UI_CreateChild_text2",
+					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

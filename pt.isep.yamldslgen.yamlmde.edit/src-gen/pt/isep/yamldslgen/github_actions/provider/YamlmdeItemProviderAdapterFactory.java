@@ -303,6 +303,144 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Strategy} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StrategyItemProvider strategyItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Strategy}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStrategyAdapter() {
+		if (strategyItemProvider == null) {
+			strategyItemProvider = new StrategyItemProvider(this);
+		}
+
+		return strategyItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Matrix} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MatrixItemProvider matrixItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Matrix}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMatrixAdapter() {
+		if (matrixItemProvider == null) {
+			matrixItemProvider = new MatrixItemProvider(this);
+		}
+
+		return matrixItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Include} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IncludeItemProvider includeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Include}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIncludeAdapter() {
+		if (includeItemProvider == null) {
+			includeItemProvider = new IncludeItemProvider(this);
+		}
+
+		return includeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Exclude} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ExcludeItemProvider excludeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Exclude}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createExcludeAdapter() {
+		if (excludeItemProvider == null) {
+			excludeItemProvider = new ExcludeItemProvider(this);
+		}
+
+		return excludeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Workflow_call} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Workflow_callItemProvider workflow_callItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Workflow_call}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createWorkflow_callAdapter() {
+		if (workflow_callItemProvider == null) {
+			workflow_callItemProvider = new Workflow_callItemProvider(this);
+		}
+
+		return workflow_callItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Secret} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SecretItemProvider secretItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Secret}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSecretAdapter() {
+		if (secretItemProvider == null) {
+			secretItemProvider = new SecretItemProvider(this);
+		}
+
+		return secretItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Concurrency} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -434,24 +572,36 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 			keyValuePairItemProvider.dispose();
 		if (githubActionsItemProvider != null)
 			githubActionsItemProvider.dispose();
+		if (jobItemProvider != null)
+			jobItemProvider.dispose();
+		if (stepItemProvider != null)
+			stepItemProvider.dispose();
 		if (onItemProvider != null)
 			onItemProvider.dispose();
 		if (pushItemProvider != null)
 			pushItemProvider.dispose();
 		if (pull_requestItemProvider != null)
 			pull_requestItemProvider.dispose();
-		if (jobItemProvider != null)
-			jobItemProvider.dispose();
-		if (stepItemProvider != null)
-			stepItemProvider.dispose();
 		if (permissionsItemProvider != null)
 			permissionsItemProvider.dispose();
 		if (scheduleItemProvider != null)
 			scheduleItemProvider.dispose();
-		if (environmentItemProvider != null)
-			environmentItemProvider.dispose();
 		if (concurrencyItemProvider != null)
 			concurrencyItemProvider.dispose();
+		if (environmentItemProvider != null)
+			environmentItemProvider.dispose();
+		if (strategyItemProvider != null)
+			strategyItemProvider.dispose();
+		if (matrixItemProvider != null)
+			matrixItemProvider.dispose();
+		if (includeItemProvider != null)
+			includeItemProvider.dispose();
+		if (excludeItemProvider != null)
+			excludeItemProvider.dispose();
+		if (workflow_callItemProvider != null)
+			workflow_callItemProvider.dispose();
+		if (secretItemProvider != null)
+			secretItemProvider.dispose();
 	}
 
 }

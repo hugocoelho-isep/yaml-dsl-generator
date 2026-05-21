@@ -23,6 +23,7 @@ import pt.isep.yamldslgen.github_actions.Environment;
 import pt.isep.yamldslgen.github_actions.Job;
 import pt.isep.yamldslgen.github_actions.Permissions;
 import pt.isep.yamldslgen.github_actions.Step;
+import pt.isep.yamldslgen.github_actions.Strategy;
 import pt.isep.yamldslgen.github_actions.YamlmdePackage;
 
 /**
@@ -41,6 +42,7 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getSteps <em>Steps</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getPermissions <em>Permissions</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getEnvironment <em>Environment</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getStrategy <em>Strategy</em>}</li>
  * </ul>
  *
  * @generated
@@ -165,6 +167,16 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 * @ordered
 	 */
 	protected Environment environment;
+
+	/**
+	 * The cached value of the '{@link #getStrategy() <em>Strategy</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStrategy()
+	 * @generated
+	 * @ordered
+	 */
+	protected Strategy strategy;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -413,6 +425,58 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 * @generated
 	 */
 	@Override
+	public Strategy getStrategy() {
+		return strategy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetStrategy(Strategy newStrategy, NotificationChain msgs) {
+		Strategy oldStrategy = strategy;
+		strategy = newStrategy;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, YamlmdePackage.JOB__STRATEGY,
+					oldStrategy, newStrategy);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setStrategy(Strategy newStrategy) {
+		if (newStrategy != strategy) {
+			NotificationChain msgs = null;
+			if (strategy != null)
+				msgs = ((InternalEObject) strategy).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - YamlmdePackage.JOB__STRATEGY, null, msgs);
+			if (newStrategy != null)
+				msgs = ((InternalEObject) newStrategy).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - YamlmdePackage.JOB__STRATEGY, null, msgs);
+			msgs = basicSetStrategy(newStrategy, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.JOB__STRATEGY, newStrategy,
+					newStrategy));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case YamlmdePackage.JOB__STEPS:
@@ -421,6 +485,8 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			return basicSetPermissions(null, msgs);
 		case YamlmdePackage.JOB__ENVIRONMENT:
 			return basicSetEnvironment(null, msgs);
+		case YamlmdePackage.JOB__STRATEGY:
+			return basicSetStrategy(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -449,6 +515,8 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			return getPermissions();
 		case YamlmdePackage.JOB__ENVIRONMENT:
 			return getEnvironment();
+		case YamlmdePackage.JOB__STRATEGY:
+			return getStrategy();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -488,6 +556,9 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		case YamlmdePackage.JOB__ENVIRONMENT:
 			setEnvironment((Environment) newValue);
 			return;
+		case YamlmdePackage.JOB__STRATEGY:
+			setStrategy((Strategy) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -524,6 +595,9 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		case YamlmdePackage.JOB__ENVIRONMENT:
 			setEnvironment((Environment) null);
 			return;
+		case YamlmdePackage.JOB__STRATEGY:
+			setStrategy((Strategy) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -552,6 +626,8 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			return permissions != null;
 		case YamlmdePackage.JOB__ENVIRONMENT:
 			return environment != null;
+		case YamlmdePackage.JOB__STRATEGY:
+			return strategy != null;
 		}
 		return super.eIsSet(featureID);
 	}

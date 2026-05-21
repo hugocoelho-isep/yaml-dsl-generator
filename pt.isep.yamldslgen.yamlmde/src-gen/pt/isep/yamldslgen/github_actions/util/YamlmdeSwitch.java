@@ -80,6 +80,20 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case YamlmdePackage.JOB: {
+			Job job = (Job) theEObject;
+			T result = caseJob(job);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamlmdePackage.STEP: {
+			Step step = (Step) theEObject;
+			T result = caseStep(step);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case YamlmdePackage.ON: {
 			On on = (On) theEObject;
 			T result = caseOn(on);
@@ -101,20 +115,6 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case YamlmdePackage.JOB: {
-			Job job = (Job) theEObject;
-			T result = caseJob(job);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case YamlmdePackage.STEP: {
-			Step step = (Step) theEObject;
-			T result = caseStep(step);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case YamlmdePackage.PERMISSIONS: {
 			Permissions permissions = (Permissions) theEObject;
 			T result = casePermissions(permissions);
@@ -129,6 +129,13 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case YamlmdePackage.CONCURRENCY: {
+			Concurrency concurrency = (Concurrency) theEObject;
+			T result = caseConcurrency(concurrency);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case YamlmdePackage.ENVIRONMENT: {
 			Environment environment = (Environment) theEObject;
 			T result = caseEnvironment(environment);
@@ -136,9 +143,44 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case YamlmdePackage.CONCURRENCY: {
-			Concurrency concurrency = (Concurrency) theEObject;
-			T result = caseConcurrency(concurrency);
+		case YamlmdePackage.STRATEGY: {
+			Strategy strategy = (Strategy) theEObject;
+			T result = caseStrategy(strategy);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamlmdePackage.MATRIX: {
+			Matrix matrix = (Matrix) theEObject;
+			T result = caseMatrix(matrix);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamlmdePackage.INCLUDE: {
+			Include include = (Include) theEObject;
+			T result = caseInclude(include);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamlmdePackage.EXCLUDE: {
+			Exclude exclude = (Exclude) theEObject;
+			T result = caseExclude(exclude);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamlmdePackage.WORKFLOW_CALL: {
+			Workflow_call workflow_call = (Workflow_call) theEObject;
+			T result = caseWorkflow_call(workflow_call);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamlmdePackage.SECRET: {
+			Secret secret = (Secret) theEObject;
+			T result = caseSecret(secret);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -295,6 +337,96 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEnvironment(Environment object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Strategy</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Strategy</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStrategy(Strategy object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Matrix</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Matrix</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMatrix(Matrix object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Include</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Include</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInclude(Include object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Exclude</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Exclude</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExclude(Exclude object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Workflow call</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Workflow call</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseWorkflow_call(Workflow_call object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Secret</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Secret</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSecret(Secret object) {
 		return null;
 	}
 

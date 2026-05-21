@@ -10,8 +10,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -23,17 +21,16 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import pt.isep.yamldslgen.github_actions.GithubActions;
-import pt.isep.yamldslgen.github_actions.YamlmdeFactory;
+import pt.isep.yamldslgen.github_actions.Exclude;
 import pt.isep.yamldslgen.github_actions.YamlmdePackage;
 
 /**
- * This is the item provider adapter for a {@link pt.isep.yamldslgen.github_actions.GithubActions} object.
+ * This is the item provider adapter for a {@link pt.isep.yamldslgen.github_actions.Exclude} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class GithubActionsItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class ExcludeItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -41,7 +38,7 @@ public class GithubActionsItemProvider extends ItemProviderAdapter implements IE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GithubActionsItemProvider(AdapterFactory adapterFactory) {
+	public ExcludeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -56,70 +53,52 @@ public class GithubActionsItemProvider extends ItemProviderAdapter implements IE
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
+			addOsPropertyDescriptor(object);
+			addCCompilerPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Os feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addOsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_GithubActions_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_GithubActions_name_feature",
-								"_UI_GithubActions_type"),
-						YamlmdePackage.Literals.GITHUB_ACTIONS__NAME, true, false, false,
+						getResourceLocator(), getString("_UI_Exclude_os_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Exclude_os_feature", "_UI_Exclude_type"),
+						YamlmdePackage.Literals.EXCLUDE__OS, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the CCompiler feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(YamlmdePackage.Literals.GITHUB_ACTIONS__JOBS);
-			childrenFeatures.add(YamlmdePackage.Literals.GITHUB_ACTIONS__ON);
-			childrenFeatures.add(YamlmdePackage.Literals.GITHUB_ACTIONS__PERMISSIONS);
-			childrenFeatures.add(YamlmdePackage.Literals.GITHUB_ACTIONS__CONCURRENCY);
-			childrenFeatures.add(YamlmdePackage.Literals.GITHUB_ACTIONS__ENV);
-		}
-		return childrenFeatures;
+	protected void addCCompilerPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Exclude_cCompiler_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Exclude_cCompiler_feature",
+								"_UI_Exclude_type"),
+						YamlmdePackage.Literals.EXCLUDE__CCOMPILER, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * This returns GithubActions.gif.
+	 * This returns Exclude.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/GithubActions"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Exclude"));
 	}
 
 	/**
@@ -140,9 +119,9 @@ public class GithubActionsItemProvider extends ItemProviderAdapter implements IE
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((GithubActions) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_GithubActions_type")
-				: getString("_UI_GithubActions_type") + " " + label;
+		String label = ((Exclude) object).getOs();
+		return label == null || label.length() == 0 ? getString("_UI_Exclude_type")
+				: getString("_UI_Exclude_type") + " " + label;
 	}
 
 	/**
@@ -156,16 +135,10 @@ public class GithubActionsItemProvider extends ItemProviderAdapter implements IE
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(GithubActions.class)) {
-		case YamlmdePackage.GITHUB_ACTIONS__NAME:
+		switch (notification.getFeatureID(Exclude.class)) {
+		case YamlmdePackage.EXCLUDE__OS:
+		case YamlmdePackage.EXCLUDE__CCOMPILER:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		case YamlmdePackage.GITHUB_ACTIONS__JOBS:
-		case YamlmdePackage.GITHUB_ACTIONS__ON:
-		case YamlmdePackage.GITHUB_ACTIONS__PERMISSIONS:
-		case YamlmdePackage.GITHUB_ACTIONS__CONCURRENCY:
-		case YamlmdePackage.GITHUB_ACTIONS__ENV:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -181,21 +154,6 @@ public class GithubActionsItemProvider extends ItemProviderAdapter implements IE
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.GITHUB_ACTIONS__JOBS,
-				YamlmdeFactory.eINSTANCE.createJob()));
-
-		newChildDescriptors.add(
-				createChildParameter(YamlmdePackage.Literals.GITHUB_ACTIONS__ON, YamlmdeFactory.eINSTANCE.createOn()));
-
-		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.GITHUB_ACTIONS__PERMISSIONS,
-				YamlmdeFactory.eINSTANCE.createPermissions()));
-
-		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.GITHUB_ACTIONS__CONCURRENCY,
-				YamlmdeFactory.eINSTANCE.createConcurrency()));
-
-		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.GITHUB_ACTIONS__ENV,
-				YamlmdeFactory.eINSTANCE.createKeyValuePair()));
 	}
 
 	/**
