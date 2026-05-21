@@ -15,6 +15,7 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import pt.isep.yamldslgen.github_actions.Concurrency;
+import pt.isep.yamldslgen.github_actions.Container;
 import pt.isep.yamldslgen.github_actions.Environment;
 import pt.isep.yamldslgen.github_actions.Exclude;
 import pt.isep.yamldslgen.github_actions.GithubActions;
@@ -50,6 +51,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			switch (semanticObject.eClass().getClassifierID()) {
 			case YamlmdePackage.CONCURRENCY:
 				sequence_Concurrency(context, (Concurrency) semanticObject); 
+				return; 
+			case YamlmdePackage.CONTAINER:
+				sequence_Container(context, (Container) semanticObject); 
 				return; 
 			case YamlmdePackage.ENVIRONMENT:
 				sequence_Environment(context, (Environment) semanticObject); 
@@ -115,6 +119,26 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 */
 	protected void sequence_Concurrency(ISerializationContext context, Concurrency semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Container returns Container
+	 *
+	 * Constraint:
+	 *     image=EString
+	 * </pre>
+	 */
+	protected void sequence_Container(ISerializationContext context, Container semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, YamlmdePackage.Literals.CONTAINER__IMAGE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, YamlmdePackage.Literals.CONTAINER__IMAGE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getContainerAccess().getImageEStringParserRuleCall_2_2_0(), semanticObject.getImage());
+		feeder.finish();
 	}
 	
 	
@@ -198,6 +222,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *                 if=EString | 
 	 *                 environment=Environment | 
 	 *                 strategy=Strategy | 
+	 *                 container=Container | 
 	 *                 steps+=Step | 
 	 *                 permissions=Permissions
 	 *             )? 

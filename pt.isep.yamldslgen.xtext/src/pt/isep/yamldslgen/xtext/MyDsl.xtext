@@ -54,11 +54,13 @@ KeyName returns ecore::EString:
 	| 'shell' | 'contents' | 'security-events' | 'actions' 
 	| 'pages' | 'id-token' | 'types' | 'pull-requests' | 'if' 
 	| 'continue-on-error' | 'issues'
-	| 'strategy' | 'fail-fast' | 'matrix' | 'os' | 'build-type' 
+	| 'strategy' | 'fail-fast' | 'matrix' |
+	  'os' | 'build-type' 
 	| 'c-compiler' | 'cpp-compiler' | 'otp' | 'elixir' | 'include' 
-	| 'exclude' | 'workflow_call' | 'pull_request_target' | 'secrets' 
-	| 'required' | 'packages';
-	
+	| 'exclude' | 'workflow_call' | 'pull_request_target' |
+	  'secrets' 
+	| 'required' | 'packages'
+	| 'container' | 'image';
 	
 // =============================================================================
 // KEY-VALUE PAIR  (generic block content — e.g. 'with:', 'env:')
@@ -177,6 +179,7 @@ Job returns Job:
 		& ('if' ':' ^if=EString)?
 		& ('environment' ':' environment=Environment)?
 		& ('strategy' ':' strategy=Strategy)?
+		& ('container' ':' container=Container)?
 		& ('steps' ':' BEG_BLOCK? steps+=Step+ END_BLOCK?)?
 		& ('permissions' ':' permissions=Permissions)?)
 	END_BLOCK?;
@@ -251,6 +254,16 @@ Exclude returns Exclude:
 	BEG_BLOCK?
 		(('os' ':' os=EString)?
 		& ('c-compiler' ':' cCompiler=EString)?)
+	END_BLOCK?;
+	
+// =============================================================================
+// CONTAINER
+// =============================================================================
+
+Container returns Container:
+	{Container}
+	BEG_BLOCK?
+		('image' ':' image=EString)
 	END_BLOCK?;
 
 // =============================================================================

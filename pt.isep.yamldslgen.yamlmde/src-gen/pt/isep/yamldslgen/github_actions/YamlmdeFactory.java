@@ -166,6 +166,15 @@ public interface YamlmdeFactory extends EFactory {
 	Secret createSecret();
 
 	/**
+	 * Returns a new object of class '<em>Container</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Container</em>'.
+	 * @generated
+	 */
+	Container createContainer();
+
+	/**
 	 * Returns a new object of class '<em>Concurrency</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

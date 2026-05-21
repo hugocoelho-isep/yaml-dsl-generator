@@ -156,6 +156,7 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 			childrenFeatures.add(YamlmdePackage.Literals.JOB__PERMISSIONS);
 			childrenFeatures.add(YamlmdePackage.Literals.JOB__ENVIRONMENT);
 			childrenFeatures.add(YamlmdePackage.Literals.JOB__STRATEGY);
+			childrenFeatures.add(YamlmdePackage.Literals.JOB__CONTAINER);
 		}
 		return childrenFeatures;
 	}
@@ -230,6 +231,7 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 		case YamlmdePackage.JOB__PERMISSIONS:
 		case YamlmdePackage.JOB__ENVIRONMENT:
 		case YamlmdePackage.JOB__STRATEGY:
+		case YamlmdePackage.JOB__CONTAINER:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -258,6 +260,9 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 
 		newChildDescriptors.add(
 				createChildParameter(YamlmdePackage.Literals.JOB__STRATEGY, YamlmdeFactory.eINSTANCE.createStrategy()));
+
+		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.JOB__CONTAINER,
+				YamlmdeFactory.eINSTANCE.createContainer()));
 	}
 
 	/**

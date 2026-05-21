@@ -122,6 +122,7 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getJobAccess().getGroup_3_5(), "rule__Job__Group_3_5__0");
 			builder.put(grammarAccess.getJobAccess().getGroup_3_6(), "rule__Job__Group_3_6__0");
 			builder.put(grammarAccess.getJobAccess().getGroup_3_7(), "rule__Job__Group_3_7__0");
+			builder.put(grammarAccess.getJobAccess().getGroup_3_8(), "rule__Job__Group_3_8__0");
 			builder.put(grammarAccess.getStepAccess().getGroup(), "rule__Step__Group__0");
 			builder.put(grammarAccess.getStepAccess().getGroup_3_0(), "rule__Step__Group_3_0__0");
 			builder.put(grammarAccess.getStepAccess().getGroup_3_1(), "rule__Step__Group_3_1__0");
@@ -175,6 +176,8 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getExcludeAccess().getGroup(), "rule__Exclude__Group__0");
 			builder.put(grammarAccess.getExcludeAccess().getGroup_2_0(), "rule__Exclude__Group_2_0__0");
 			builder.put(grammarAccess.getExcludeAccess().getGroup_2_1(), "rule__Exclude__Group_2_1__0");
+			builder.put(grammarAccess.getContainerAccess().getGroup(), "rule__Container__Group__0");
+			builder.put(grammarAccess.getContainerAccess().getGroup_2(), "rule__Container__Group_2__0");
 			builder.put(grammarAccess.getGithubActionsAccess().getNameAssignment_0_2(), "rule__GithubActions__NameAssignment_0_2");
 			builder.put(grammarAccess.getGithubActionsAccess().getOnAssignment_1_2(), "rule__GithubActions__OnAssignment_1_2");
 			builder.put(grammarAccess.getGithubActionsAccess().getConcurrencyAssignment_2_2(), "rule__GithubActions__ConcurrencyAssignment_2_2");
@@ -227,8 +230,9 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getJobAccess().getIfAssignment_3_3_2(), "rule__Job__IfAssignment_3_3_2");
 			builder.put(grammarAccess.getJobAccess().getEnvironmentAssignment_3_4_2(), "rule__Job__EnvironmentAssignment_3_4_2");
 			builder.put(grammarAccess.getJobAccess().getStrategyAssignment_3_5_2(), "rule__Job__StrategyAssignment_3_5_2");
-			builder.put(grammarAccess.getJobAccess().getStepsAssignment_3_6_3(), "rule__Job__StepsAssignment_3_6_3");
-			builder.put(grammarAccess.getJobAccess().getPermissionsAssignment_3_7_2(), "rule__Job__PermissionsAssignment_3_7_2");
+			builder.put(grammarAccess.getJobAccess().getContainerAssignment_3_6_2(), "rule__Job__ContainerAssignment_3_6_2");
+			builder.put(grammarAccess.getJobAccess().getStepsAssignment_3_7_3(), "rule__Job__StepsAssignment_3_7_3");
+			builder.put(grammarAccess.getJobAccess().getPermissionsAssignment_3_8_2(), "rule__Job__PermissionsAssignment_3_8_2");
 			builder.put(grammarAccess.getStepAccess().getNameAssignment_3_0_2(), "rule__Step__NameAssignment_3_0_2");
 			builder.put(grammarAccess.getStepAccess().getIdAssignment_3_1_2(), "rule__Step__IdAssignment_3_1_2");
 			builder.put(grammarAccess.getStepAccess().getUsesAssignment_3_2_2(), "rule__Step__UsesAssignment_3_2_2");
@@ -263,6 +267,7 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getIncludeAccess().getCppCompilerAssignment_2_2_2(), "rule__Include__CppCompilerAssignment_2_2_2");
 			builder.put(grammarAccess.getExcludeAccess().getOsAssignment_2_0_2(), "rule__Exclude__OsAssignment_2_0_2");
 			builder.put(grammarAccess.getExcludeAccess().getCCompilerAssignment_2_1_2(), "rule__Exclude__CCompilerAssignment_2_1_2");
+			builder.put(grammarAccess.getContainerAccess().getImageAssignment_2_2(), "rule__Container__ImageAssignment_2_2");
 			builder.put(grammarAccess.getGithubActionsAccess().getUnorderedGroup(), "rule__GithubActions__UnorderedGroup");
 			builder.put(grammarAccess.getOnAccess().getUnorderedGroup_2(), "rule__On__UnorderedGroup_2");
 			builder.put(grammarAccess.getPushAccess().getUnorderedGroup_2(), "rule__Push__UnorderedGroup_2");

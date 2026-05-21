@@ -23,8 +23,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pt.isep.yamldslgen.github_actions.Step#getWorkingDirectory <em>Working Directory</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Step#getShell <em>Shell</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Step#isContinueOnError <em>Continue On Error</em>}</li>
- *   <li>{@link pt.isep.yamldslgen.github_actions.Step#getWith <em>With</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Step#getEnv <em>Env</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Step#getWith <em>With</em>}</li>
  * </ul>
  *
  * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getStep()

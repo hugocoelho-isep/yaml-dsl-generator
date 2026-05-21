@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getPermissions <em>Permissions</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getEnvironment <em>Environment</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getStrategy <em>Strategy</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getContainer <em>Container</em>}</li>
  * </ul>
  *
  * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getJob()
@@ -208,5 +209,27 @@ public interface Job extends EObject {
 	 * @generated
 	 */
 	void setStrategy(Strategy value);
+
+	/**
+	 * Returns the value of the '<em><b>Container</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Container</em>' containment reference.
+	 * @see #setContainer(Container)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getJob_Container()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Container getContainer();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.Job#getContainer <em>Container</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Container</em>' containment reference.
+	 * @see #getContainer()
+	 * @generated
+	 */
+	void setContainer(Container value);
 
 } // Job
