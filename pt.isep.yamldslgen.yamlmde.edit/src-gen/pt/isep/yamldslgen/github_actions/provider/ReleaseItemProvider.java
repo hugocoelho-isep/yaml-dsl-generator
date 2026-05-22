@@ -10,8 +10,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -23,17 +21,16 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import pt.isep.yamldslgen.github_actions.Strategy;
-import pt.isep.yamldslgen.github_actions.YamlmdeFactory;
+import pt.isep.yamldslgen.github_actions.Release;
 import pt.isep.yamldslgen.github_actions.YamlmdePackage;
 
 /**
- * This is the item provider adapter for a {@link pt.isep.yamldslgen.github_actions.Strategy} object.
+ * This is the item provider adapter for a {@link pt.isep.yamldslgen.github_actions.Release} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class StrategyItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class ReleaseItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -41,7 +38,7 @@ public class StrategyItemProvider extends ItemProviderAdapter implements IEditin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StrategyItemProvider(AdapterFactory adapterFactory) {
+	public ReleaseItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -56,83 +53,36 @@ public class StrategyItemProvider extends ItemProviderAdapter implements IEditin
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addFailFastPropertyDescriptor(object);
-			addMaxParallelPropertyDescriptor(object);
+			addTypesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Fail Fast feature.
+	 * This adds a property descriptor for the Types feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFailFastPropertyDescriptor(Object object) {
+	protected void addTypesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Strategy_failFast_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Strategy_failFast_feature",
-								"_UI_Strategy_type"),
-						YamlmdePackage.Literals.STRATEGY__FAIL_FAST, true, false, false,
-						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+						getResourceLocator(), getString("_UI_Release_types_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Release_types_feature",
+								"_UI_Release_type"),
+						YamlmdePackage.Literals.RELEASE__TYPES, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Max Parallel feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addMaxParallelPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Strategy_maxParallel_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Strategy_maxParallel_feature",
-								"_UI_Strategy_type"),
-						YamlmdePackage.Literals.STRATEGY__MAX_PARALLEL, true, false, false,
-						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(YamlmdePackage.Literals.STRATEGY__MATRIX);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * This returns Strategy.gif.
+	 * This returns Release.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Strategy"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Release"));
 	}
 
 	/**
@@ -153,8 +103,7 @@ public class StrategyItemProvider extends ItemProviderAdapter implements IEditin
 	 */
 	@Override
 	public String getText(Object object) {
-		Strategy strategy = (Strategy) object;
-		return getString("_UI_Strategy_type") + " " + strategy.isFailFast();
+		return getString("_UI_Release_type");
 	}
 
 	/**
@@ -168,13 +117,9 @@ public class StrategyItemProvider extends ItemProviderAdapter implements IEditin
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Strategy.class)) {
-		case YamlmdePackage.STRATEGY__FAIL_FAST:
-		case YamlmdePackage.STRATEGY__MAX_PARALLEL:
+		switch (notification.getFeatureID(Release.class)) {
+		case YamlmdePackage.RELEASE__TYPES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		case YamlmdePackage.STRATEGY__MATRIX:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -190,9 +135,6 @@ public class StrategyItemProvider extends ItemProviderAdapter implements IEditin
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.STRATEGY__MATRIX,
-				YamlmdeFactory.eINSTANCE.createMatrix()));
 	}
 
 	/**

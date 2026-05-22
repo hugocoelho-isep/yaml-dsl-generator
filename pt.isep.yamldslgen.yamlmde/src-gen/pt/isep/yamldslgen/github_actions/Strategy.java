@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Strategy#isFailFast <em>Fail Fast</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Strategy#getMaxParallel <em>Max Parallel</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Strategy#getMatrix <em>Matrix</em>}</li>
  * </ul>
  *
@@ -29,7 +30,7 @@ public interface Strategy extends EObject {
 	 * @return the value of the '<em>Fail Fast</em>' attribute.
 	 * @see #setFailFast(boolean)
 	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getStrategy_FailFast()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	boolean isFailFast();
@@ -43,6 +44,28 @@ public interface Strategy extends EObject {
 	 * @generated
 	 */
 	void setFailFast(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Parallel</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Parallel</em>' attribute.
+	 * @see #setMaxParallel(int)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getStrategy_MaxParallel()
+	 * @model
+	 * @generated
+	 */
+	int getMaxParallel();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.Strategy#getMaxParallel <em>Max Parallel</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Parallel</em>' attribute.
+	 * @see #getMaxParallel()
+	 * @generated
+	 */
+	void setMaxParallel(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Matrix</b></em>' containment reference.

@@ -464,6 +464,98 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Defaults} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DefaultsItemProvider defaultsItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Defaults}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDefaultsAdapter() {
+		if (defaultsItemProvider == null) {
+			defaultsItemProvider = new DefaultsItemProvider(this);
+		}
+
+		return defaultsItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Run} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RunItemProvider runItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Run}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRunAdapter() {
+		if (runItemProvider == null) {
+			runItemProvider = new RunItemProvider(this);
+		}
+
+		return runItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Outputs} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OutputsItemProvider outputsItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Outputs}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOutputsAdapter() {
+		if (outputsItemProvider == null) {
+			outputsItemProvider = new OutputsItemProvider(this);
+		}
+
+		return outputsItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Release} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ReleaseItemProvider releaseItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Release}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createReleaseAdapter() {
+		if (releaseItemProvider == null) {
+			releaseItemProvider = new ReleaseItemProvider(this);
+		}
+
+		return releaseItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Concurrency} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -595,24 +687,24 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 			keyValuePairItemProvider.dispose();
 		if (githubActionsItemProvider != null)
 			githubActionsItemProvider.dispose();
+		if (jobItemProvider != null)
+			jobItemProvider.dispose();
+		if (stepItemProvider != null)
+			stepItemProvider.dispose();
 		if (onItemProvider != null)
 			onItemProvider.dispose();
 		if (pushItemProvider != null)
 			pushItemProvider.dispose();
 		if (pull_requestItemProvider != null)
 			pull_requestItemProvider.dispose();
-		if (jobItemProvider != null)
-			jobItemProvider.dispose();
-		if (stepItemProvider != null)
-			stepItemProvider.dispose();
 		if (permissionsItemProvider != null)
 			permissionsItemProvider.dispose();
 		if (scheduleItemProvider != null)
 			scheduleItemProvider.dispose();
-		if (environmentItemProvider != null)
-			environmentItemProvider.dispose();
 		if (concurrencyItemProvider != null)
 			concurrencyItemProvider.dispose();
+		if (environmentItemProvider != null)
+			environmentItemProvider.dispose();
 		if (strategyItemProvider != null)
 			strategyItemProvider.dispose();
 		if (matrixItemProvider != null)
@@ -627,6 +719,14 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 			secretItemProvider.dispose();
 		if (containerItemProvider != null)
 			containerItemProvider.dispose();
+		if (defaultsItemProvider != null)
+			defaultsItemProvider.dispose();
+		if (runItemProvider != null)
+			runItemProvider.dispose();
+		if (outputsItemProvider != null)
+			outputsItemProvider.dispose();
+		if (releaseItemProvider != null)
+			releaseItemProvider.dispose();
 	}
 
 }

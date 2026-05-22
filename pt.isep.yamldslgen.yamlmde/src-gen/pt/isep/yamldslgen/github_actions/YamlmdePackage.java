@@ -122,22 +122,22 @@ public interface YamlmdePackage extends EPackage {
 	int GITHUB_ACTIONS__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>On</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GITHUB_ACTIONS__ON = 1;
-
-	/**
 	 * The feature id for the '<em><b>Jobs</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GITHUB_ACTIONS__JOBS = 2;
+	int GITHUB_ACTIONS__JOBS = 1;
+
+	/**
+	 * The feature id for the '<em><b>On</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GITHUB_ACTIONS__ON = 2;
 
 	/**
 	 * The feature id for the '<em><b>Permissions</b></em>' containment reference.
@@ -158,13 +158,22 @@ public interface YamlmdePackage extends EPackage {
 	int GITHUB_ACTIONS__CONCURRENCY = 4;
 
 	/**
+	 * The feature id for the '<em><b>Defaults</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GITHUB_ACTIONS__DEFAULTS = 5;
+
+	/**
 	 * The feature id for the '<em><b>Env</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GITHUB_ACTIONS__ENV = 5;
+	int GITHUB_ACTIONS__ENV = 6;
 
 	/**
 	 * The number of structural features of the '<em>Github Actions</em>' class.
@@ -173,7 +182,7 @@ public interface YamlmdePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GITHUB_ACTIONS_FEATURE_COUNT = 6;
+	int GITHUB_ACTIONS_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Github Actions</em>' class.
@@ -192,7 +201,7 @@ public interface YamlmdePackage extends EPackage {
 	 * @see pt.isep.yamldslgen.github_actions.impl.YamlmdePackageImpl#getOn()
 	 * @generated
 	 */
-	int ON = 2;
+	int ON = 4;
 
 	/**
 	 * The meta object id for the '{@link pt.isep.yamldslgen.github_actions.impl.PushImpl <em>Push</em>}' class.
@@ -202,7 +211,7 @@ public interface YamlmdePackage extends EPackage {
 	 * @see pt.isep.yamldslgen.github_actions.impl.YamlmdePackageImpl#getPush()
 	 * @generated
 	 */
-	int PUSH = 3;
+	int PUSH = 5;
 
 	/**
 	 * The meta object id for the '{@link pt.isep.yamldslgen.github_actions.impl.Pull_requestImpl <em>Pull request</em>}' class.
@@ -212,7 +221,7 @@ public interface YamlmdePackage extends EPackage {
 	 * @see pt.isep.yamldslgen.github_actions.impl.YamlmdePackageImpl#getPull_request()
 	 * @generated
 	 */
-	int PULL_REQUEST = 4;
+	int PULL_REQUEST = 6;
 
 	/**
 	 * The meta object id for the '{@link pt.isep.yamldslgen.github_actions.impl.JobImpl <em>Job</em>}' class.
@@ -222,7 +231,7 @@ public interface YamlmdePackage extends EPackage {
 	 * @see pt.isep.yamldslgen.github_actions.impl.YamlmdePackageImpl#getJob()
 	 * @generated
 	 */
-	int JOB = 5;
+	int JOB = 2;
 
 	/**
 	 * The meta object id for the '{@link pt.isep.yamldslgen.github_actions.impl.StepImpl <em>Step</em>}' class.
@@ -232,151 +241,7 @@ public interface YamlmdePackage extends EPackage {
 	 * @see pt.isep.yamldslgen.github_actions.impl.YamlmdePackageImpl#getStep()
 	 * @generated
 	 */
-	int STEP = 6;
-
-	/**
-	 * The feature id for the '<em><b>Workflow Dispatch</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ON__WORKFLOW_DISPATCH = 0;
-
-	/**
-	 * The feature id for the '<em><b>Push</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ON__PUSH = 1;
-
-	/**
-	 * The feature id for the '<em><b>Pull Request</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ON__PULL_REQUEST = 2;
-
-	/**
-	 * The feature id for the '<em><b>Schedule</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ON__SCHEDULE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Workflow Call</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ON__WORKFLOW_CALL = 4;
-
-	/**
-	 * The feature id for the '<em><b>Pull Request Target</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ON__PULL_REQUEST_TARGET = 5;
-
-	/**
-	 * The number of structural features of the '<em>On</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ON_FEATURE_COUNT = 6;
-
-	/**
-	 * The number of operations of the '<em>On</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ON_OPERATION_COUNT = 0;
-
-	/**
-	 * The feature id for the '<em><b>Branches</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PUSH__BRANCHES = 0;
-
-	/**
-	 * The feature id for the '<em><b>Tags</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PUSH__TAGS = 1;
-
-	/**
-	 * The number of structural features of the '<em>Push</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PUSH_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Push</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PUSH_OPERATION_COUNT = 0;
-
-	/**
-	 * The feature id for the '<em><b>Branches</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PULL_REQUEST__BRANCHES = 0;
-
-	/**
-	 * The feature id for the '<em><b>Types</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PULL_REQUEST__TYPES = 1;
-
-	/**
-	 * The number of structural features of the '<em>Pull request</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PULL_REQUEST_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Pull request</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PULL_REQUEST_OPERATION_COUNT = 0;
+	int STEP = 3;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -424,13 +289,22 @@ public interface YamlmdePackage extends EPackage {
 	int JOB__IF = 4;
 
 	/**
+	 * The feature id for the '<em><b>Uses</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB__USES = 5;
+
+	/**
 	 * The feature id for the '<em><b>Steps</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__STEPS = 5;
+	int JOB__STEPS = 6;
 
 	/**
 	 * The feature id for the '<em><b>Permissions</b></em>' containment reference.
@@ -439,7 +313,7 @@ public interface YamlmdePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__PERMISSIONS = 6;
+	int JOB__PERMISSIONS = 7;
 
 	/**
 	 * The feature id for the '<em><b>Environment</b></em>' containment reference.
@@ -448,7 +322,7 @@ public interface YamlmdePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__ENVIRONMENT = 7;
+	int JOB__ENVIRONMENT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Strategy</b></em>' containment reference.
@@ -457,7 +331,7 @@ public interface YamlmdePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__STRATEGY = 8;
+	int JOB__STRATEGY = 9;
 
 	/**
 	 * The feature id for the '<em><b>Container</b></em>' containment reference.
@@ -466,7 +340,34 @@ public interface YamlmdePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__CONTAINER = 9;
+	int JOB__CONTAINER = 10;
+
+	/**
+	 * The feature id for the '<em><b>Outputs</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB__OUTPUTS = 11;
+
+	/**
+	 * The feature id for the '<em><b>Env</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB__ENV = 12;
+
+	/**
+	 * The feature id for the '<em><b>With</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB__WITH = 13;
 
 	/**
 	 * The number of structural features of the '<em>Job</em>' class.
@@ -475,7 +376,7 @@ public interface YamlmdePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_FEATURE_COUNT = 10;
+	int JOB_FEATURE_COUNT = 14;
 
 	/**
 	 * The number of operations of the '<em>Job</em>' class.
@@ -593,6 +494,159 @@ public interface YamlmdePackage extends EPackage {
 	 * @ordered
 	 */
 	int STEP_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Workflow Dispatch</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ON__WORKFLOW_DISPATCH = 0;
+
+	/**
+	 * The feature id for the '<em><b>Push</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ON__PUSH = 1;
+
+	/**
+	 * The feature id for the '<em><b>Pull Request</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ON__PULL_REQUEST = 2;
+
+	/**
+	 * The feature id for the '<em><b>Schedule</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ON__SCHEDULE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Workflow Call</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ON__WORKFLOW_CALL = 4;
+
+	/**
+	 * The feature id for the '<em><b>Pull Request Target</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ON__PULL_REQUEST_TARGET = 5;
+
+	/**
+	 * The feature id for the '<em><b>Release</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ON__RELEASE = 6;
+
+	/**
+	 * The number of structural features of the '<em>On</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ON_FEATURE_COUNT = 7;
+
+	/**
+	 * The number of operations of the '<em>On</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ON_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Branches</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUSH__BRANCHES = 0;
+
+	/**
+	 * The feature id for the '<em><b>Tags</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUSH__TAGS = 1;
+
+	/**
+	 * The number of structural features of the '<em>Push</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUSH_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Push</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUSH_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Branches</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PULL_REQUEST__BRANCHES = 0;
+
+	/**
+	 * The feature id for the '<em><b>Types</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PULL_REQUEST__TYPES = 1;
+
+	/**
+	 * The number of structural features of the '<em>Pull request</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PULL_REQUEST_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Pull request</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PULL_REQUEST_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link pt.isep.yamldslgen.github_actions.impl.PermissionsImpl <em>Permissions</em>}' class.
@@ -739,7 +793,7 @@ public interface YamlmdePackage extends EPackage {
 	 * @see pt.isep.yamldslgen.github_actions.impl.YamlmdePackageImpl#getEnvironment()
 	 * @generated
 	 */
-	int ENVIRONMENT = 9;
+	int ENVIRONMENT = 10;
 
 	/**
 	 * The meta object id for the '{@link pt.isep.yamldslgen.github_actions.impl.StrategyImpl <em>Strategy</em>}' class.
@@ -809,43 +863,7 @@ public interface YamlmdePackage extends EPackage {
 	 * @see pt.isep.yamldslgen.github_actions.impl.YamlmdePackageImpl#getConcurrency()
 	 * @generated
 	 */
-	int CONCURRENCY = 10;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENVIRONMENT__NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Url</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENVIRONMENT__URL = 1;
-
-	/**
-	 * The number of structural features of the '<em>Environment</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENVIRONMENT_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Environment</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENVIRONMENT_OPERATION_COUNT = 0;
+	int CONCURRENCY = 9;
 
 	/**
 	 * The feature id for the '<em><b>Group</b></em>' attribute.
@@ -884,6 +902,42 @@ public interface YamlmdePackage extends EPackage {
 	int CONCURRENCY_OPERATION_COUNT = 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT__URL = 1;
+
+	/**
+	 * The number of structural features of the '<em>Environment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Environment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT_OPERATION_COUNT = 0;
+
+	/**
 	 * The feature id for the '<em><b>Fail Fast</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -893,13 +947,22 @@ public interface YamlmdePackage extends EPackage {
 	int STRATEGY__FAIL_FAST = 0;
 
 	/**
+	 * The feature id for the '<em><b>Max Parallel</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRATEGY__MAX_PARALLEL = 1;
+
+	/**
 	 * The feature id for the '<em><b>Matrix</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGY__MATRIX = 1;
+	int STRATEGY__MATRIX = 2;
 
 	/**
 	 * The number of structural features of the '<em>Strategy</em>' class.
@@ -908,7 +971,7 @@ public interface YamlmdePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRATEGY_FEATURE_COUNT = 2;
+	int STRATEGY_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Strategy</em>' class.
@@ -965,13 +1028,31 @@ public interface YamlmdePackage extends EPackage {
 	int MATRIX__ELIXIR = 4;
 
 	/**
+	 * The feature id for the '<em><b>Python Version</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATRIX__PYTHON_VERSION = 5;
+
+	/**
+	 * The feature id for the '<em><b>Configuration</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATRIX__CONFIGURATION = 6;
+
+	/**
 	 * The feature id for the '<em><b>Include</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MATRIX__INCLUDE = 5;
+	int MATRIX__INCLUDE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Exclude</b></em>' containment reference list.
@@ -980,7 +1061,7 @@ public interface YamlmdePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATRIX__EXCLUDE = 6;
+	int MATRIX__EXCLUDE = 8;
 
 	/**
 	 * The number of structural features of the '<em>Matrix</em>' class.
@@ -989,7 +1070,7 @@ public interface YamlmdePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATRIX_FEATURE_COUNT = 7;
+	int MATRIX_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>Matrix</em>' class.
@@ -1182,6 +1263,154 @@ public interface YamlmdePackage extends EPackage {
 	int CONTAINER_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link pt.isep.yamldslgen.github_actions.impl.DefaultsImpl <em>Defaults</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pt.isep.yamldslgen.github_actions.impl.DefaultsImpl
+	 * @see pt.isep.yamldslgen.github_actions.impl.YamlmdePackageImpl#getDefaults()
+	 * @generated
+	 */
+	int DEFAULTS = 18;
+
+	/**
+	 * The feature id for the '<em><b>Run</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEFAULTS__RUN = 0;
+
+	/**
+	 * The number of structural features of the '<em>Defaults</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEFAULTS_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Defaults</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEFAULTS_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link pt.isep.yamldslgen.github_actions.impl.RunImpl <em>Run</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pt.isep.yamldslgen.github_actions.impl.RunImpl
+	 * @see pt.isep.yamldslgen.github_actions.impl.YamlmdePackageImpl#getRun()
+	 * @generated
+	 */
+	int RUN = 19;
+
+	/**
+	 * The feature id for the '<em><b>Shell</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUN__SHELL = 0;
+
+	/**
+	 * The number of structural features of the '<em>Run</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUN_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Run</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUN_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link pt.isep.yamldslgen.github_actions.impl.OutputsImpl <em>Outputs</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pt.isep.yamldslgen.github_actions.impl.OutputsImpl
+	 * @see pt.isep.yamldslgen.github_actions.impl.YamlmdePackageImpl#getOutputs()
+	 * @generated
+	 */
+	int OUTPUTS = 20;
+
+	/**
+	 * The feature id for the '<em><b>Digests</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUTS__DIGESTS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Outputs</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUTS_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Outputs</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTPUTS_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link pt.isep.yamldslgen.github_actions.impl.ReleaseImpl <em>Release</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pt.isep.yamldslgen.github_actions.impl.ReleaseImpl
+	 * @see pt.isep.yamldslgen.github_actions.impl.YamlmdePackageImpl#getRelease()
+	 * @generated
+	 */
+	int RELEASE = 21;
+
+	/**
+	 * The feature id for the '<em><b>Types</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELEASE__TYPES = 0;
+
+	/**
+	 * The number of structural features of the '<em>Release</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELEASE_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Release</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELEASE_OPERATION_COUNT = 0;
+
+	/**
 	 * Returns the meta object for class '{@link pt.isep.yamldslgen.github_actions.KeyValuePair <em>Key Value Pair</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1279,6 +1508,17 @@ public interface YamlmdePackage extends EPackage {
 	EReference getGithubActions_Concurrency();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link pt.isep.yamldslgen.github_actions.GithubActions#getDefaults <em>Defaults</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Defaults</em>'.
+	 * @see pt.isep.yamldslgen.github_actions.GithubActions#getDefaults()
+	 * @see #getGithubActions()
+	 * @generated
+	 */
+	EReference getGithubActions_Defaults();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link pt.isep.yamldslgen.github_actions.GithubActions#getEnv <em>Env</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1364,6 +1604,17 @@ public interface YamlmdePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getOn_PullRequestTarget();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link pt.isep.yamldslgen.github_actions.On#getRelease <em>Release</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Release</em>'.
+	 * @see pt.isep.yamldslgen.github_actions.On#getRelease()
+	 * @see #getOn()
+	 * @generated
+	 */
+	EReference getOn_Release();
 
 	/**
 	 * Returns the meta object for class '{@link pt.isep.yamldslgen.github_actions.Push <em>Push</em>}'.
@@ -1495,6 +1746,17 @@ public interface YamlmdePackage extends EPackage {
 	EAttribute getJob_If();
 
 	/**
+	 * Returns the meta object for the attribute '{@link pt.isep.yamldslgen.github_actions.Job#getUses <em>Uses</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Uses</em>'.
+	 * @see pt.isep.yamldslgen.github_actions.Job#getUses()
+	 * @see #getJob()
+	 * @generated
+	 */
+	EAttribute getJob_Uses();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link pt.isep.yamldslgen.github_actions.Job#getSteps <em>Steps</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1548,6 +1810,39 @@ public interface YamlmdePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getJob_Container();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link pt.isep.yamldslgen.github_actions.Job#getOutputs <em>Outputs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Outputs</em>'.
+	 * @see pt.isep.yamldslgen.github_actions.Job#getOutputs()
+	 * @see #getJob()
+	 * @generated
+	 */
+	EReference getJob_Outputs();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link pt.isep.yamldslgen.github_actions.Job#getEnv <em>Env</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Env</em>'.
+	 * @see pt.isep.yamldslgen.github_actions.Job#getEnv()
+	 * @see #getJob()
+	 * @generated
+	 */
+	EReference getJob_Env();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link pt.isep.yamldslgen.github_actions.Job#getWith <em>With</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>With</em>'.
+	 * @see pt.isep.yamldslgen.github_actions.Job#getWith()
+	 * @see #getJob()
+	 * @generated
+	 */
+	EReference getJob_With();
 
 	/**
 	 * Returns the meta object for class '{@link pt.isep.yamldslgen.github_actions.Step <em>Step</em>}'.
@@ -1842,6 +2137,17 @@ public interface YamlmdePackage extends EPackage {
 	EAttribute getStrategy_FailFast();
 
 	/**
+	 * Returns the meta object for the attribute '{@link pt.isep.yamldslgen.github_actions.Strategy#getMaxParallel <em>Max Parallel</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Max Parallel</em>'.
+	 * @see pt.isep.yamldslgen.github_actions.Strategy#getMaxParallel()
+	 * @see #getStrategy()
+	 * @generated
+	 */
+	EAttribute getStrategy_MaxParallel();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link pt.isep.yamldslgen.github_actions.Strategy#getMatrix <em>Matrix</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1916,6 +2222,28 @@ public interface YamlmdePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMatrix_Elixir();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link pt.isep.yamldslgen.github_actions.Matrix#getPythonVersion <em>Python Version</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Python Version</em>'.
+	 * @see pt.isep.yamldslgen.github_actions.Matrix#getPythonVersion()
+	 * @see #getMatrix()
+	 * @generated
+	 */
+	EAttribute getMatrix_PythonVersion();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link pt.isep.yamldslgen.github_actions.Matrix#getConfiguration <em>Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Configuration</em>'.
+	 * @see pt.isep.yamldslgen.github_actions.Matrix#getConfiguration()
+	 * @see #getMatrix()
+	 * @generated
+	 */
+	EAttribute getMatrix_Configuration();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link pt.isep.yamldslgen.github_actions.Matrix#getInclude <em>Include</em>}'.
@@ -2089,6 +2417,90 @@ public interface YamlmdePackage extends EPackage {
 	EAttribute getContainer_Image();
 
 	/**
+	 * Returns the meta object for class '{@link pt.isep.yamldslgen.github_actions.Defaults <em>Defaults</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Defaults</em>'.
+	 * @see pt.isep.yamldslgen.github_actions.Defaults
+	 * @generated
+	 */
+	EClass getDefaults();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link pt.isep.yamldslgen.github_actions.Defaults#getRun <em>Run</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Run</em>'.
+	 * @see pt.isep.yamldslgen.github_actions.Defaults#getRun()
+	 * @see #getDefaults()
+	 * @generated
+	 */
+	EReference getDefaults_Run();
+
+	/**
+	 * Returns the meta object for class '{@link pt.isep.yamldslgen.github_actions.Run <em>Run</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Run</em>'.
+	 * @see pt.isep.yamldslgen.github_actions.Run
+	 * @generated
+	 */
+	EClass getRun();
+
+	/**
+	 * Returns the meta object for the attribute '{@link pt.isep.yamldslgen.github_actions.Run#getShell <em>Shell</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Shell</em>'.
+	 * @see pt.isep.yamldslgen.github_actions.Run#getShell()
+	 * @see #getRun()
+	 * @generated
+	 */
+	EAttribute getRun_Shell();
+
+	/**
+	 * Returns the meta object for class '{@link pt.isep.yamldslgen.github_actions.Outputs <em>Outputs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Outputs</em>'.
+	 * @see pt.isep.yamldslgen.github_actions.Outputs
+	 * @generated
+	 */
+	EClass getOutputs();
+
+	/**
+	 * Returns the meta object for the attribute '{@link pt.isep.yamldslgen.github_actions.Outputs#getDigests <em>Digests</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Digests</em>'.
+	 * @see pt.isep.yamldslgen.github_actions.Outputs#getDigests()
+	 * @see #getOutputs()
+	 * @generated
+	 */
+	EAttribute getOutputs_Digests();
+
+	/**
+	 * Returns the meta object for class '{@link pt.isep.yamldslgen.github_actions.Release <em>Release</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Release</em>'.
+	 * @see pt.isep.yamldslgen.github_actions.Release
+	 * @generated
+	 */
+	EClass getRelease();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link pt.isep.yamldslgen.github_actions.Release#getTypes <em>Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Types</em>'.
+	 * @see pt.isep.yamldslgen.github_actions.Release#getTypes()
+	 * @see #getRelease()
+	 * @generated
+	 */
+	EAttribute getRelease_Types();
+
+	/**
 	 * Returns the meta object for class '{@link pt.isep.yamldslgen.github_actions.Concurrency <em>Concurrency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2220,6 +2632,14 @@ public interface YamlmdePackage extends EPackage {
 		EReference GITHUB_ACTIONS__CONCURRENCY = eINSTANCE.getGithubActions_Concurrency();
 
 		/**
+		 * The meta object literal for the '<em><b>Defaults</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GITHUB_ACTIONS__DEFAULTS = eINSTANCE.getGithubActions_Defaults();
+
+		/**
 		 * The meta object literal for the '<em><b>Env</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2284,6 +2704,14 @@ public interface YamlmdePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ON__PULL_REQUEST_TARGET = eINSTANCE.getOn_PullRequestTarget();
+
+		/**
+		 * The meta object literal for the '<em><b>Release</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ON__RELEASE = eINSTANCE.getOn_Release();
 
 		/**
 		 * The meta object literal for the '{@link pt.isep.yamldslgen.github_actions.impl.PushImpl <em>Push</em>}' class.
@@ -2388,6 +2816,14 @@ public interface YamlmdePackage extends EPackage {
 		EAttribute JOB__IF = eINSTANCE.getJob_If();
 
 		/**
+		 * The meta object literal for the '<em><b>Uses</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JOB__USES = eINSTANCE.getJob_Uses();
+
+		/**
 		 * The meta object literal for the '<em><b>Steps</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2426,6 +2862,30 @@ public interface YamlmdePackage extends EPackage {
 		 * @generated
 		 */
 		EReference JOB__CONTAINER = eINSTANCE.getJob_Container();
+
+		/**
+		 * The meta object literal for the '<em><b>Outputs</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference JOB__OUTPUTS = eINSTANCE.getJob_Outputs();
+
+		/**
+		 * The meta object literal for the '<em><b>Env</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference JOB__ENV = eINSTANCE.getJob_Env();
+
+		/**
+		 * The meta object literal for the '<em><b>With</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference JOB__WITH = eINSTANCE.getJob_With();
 
 		/**
 		 * The meta object literal for the '{@link pt.isep.yamldslgen.github_actions.impl.StepImpl <em>Step</em>}' class.
@@ -2654,6 +3114,14 @@ public interface YamlmdePackage extends EPackage {
 		EAttribute STRATEGY__FAIL_FAST = eINSTANCE.getStrategy_FailFast();
 
 		/**
+		 * The meta object literal for the '<em><b>Max Parallel</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRATEGY__MAX_PARALLEL = eINSTANCE.getStrategy_MaxParallel();
+
+		/**
 		 * The meta object literal for the '<em><b>Matrix</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2710,6 +3178,22 @@ public interface YamlmdePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MATRIX__ELIXIR = eINSTANCE.getMatrix_Elixir();
+
+		/**
+		 * The meta object literal for the '<em><b>Python Version</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MATRIX__PYTHON_VERSION = eINSTANCE.getMatrix_PythonVersion();
+
+		/**
+		 * The meta object literal for the '<em><b>Configuration</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MATRIX__CONFIGURATION = eINSTANCE.getMatrix_Configuration();
 
 		/**
 		 * The meta object literal for the '<em><b>Include</b></em>' containment reference list feature.
@@ -2848,6 +3332,78 @@ public interface YamlmdePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONTAINER__IMAGE = eINSTANCE.getContainer_Image();
+
+		/**
+		 * The meta object literal for the '{@link pt.isep.yamldslgen.github_actions.impl.DefaultsImpl <em>Defaults</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see pt.isep.yamldslgen.github_actions.impl.DefaultsImpl
+		 * @see pt.isep.yamldslgen.github_actions.impl.YamlmdePackageImpl#getDefaults()
+		 * @generated
+		 */
+		EClass DEFAULTS = eINSTANCE.getDefaults();
+
+		/**
+		 * The meta object literal for the '<em><b>Run</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEFAULTS__RUN = eINSTANCE.getDefaults_Run();
+
+		/**
+		 * The meta object literal for the '{@link pt.isep.yamldslgen.github_actions.impl.RunImpl <em>Run</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see pt.isep.yamldslgen.github_actions.impl.RunImpl
+		 * @see pt.isep.yamldslgen.github_actions.impl.YamlmdePackageImpl#getRun()
+		 * @generated
+		 */
+		EClass RUN = eINSTANCE.getRun();
+
+		/**
+		 * The meta object literal for the '<em><b>Shell</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RUN__SHELL = eINSTANCE.getRun_Shell();
+
+		/**
+		 * The meta object literal for the '{@link pt.isep.yamldslgen.github_actions.impl.OutputsImpl <em>Outputs</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see pt.isep.yamldslgen.github_actions.impl.OutputsImpl
+		 * @see pt.isep.yamldslgen.github_actions.impl.YamlmdePackageImpl#getOutputs()
+		 * @generated
+		 */
+		EClass OUTPUTS = eINSTANCE.getOutputs();
+
+		/**
+		 * The meta object literal for the '<em><b>Digests</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OUTPUTS__DIGESTS = eINSTANCE.getOutputs_Digests();
+
+		/**
+		 * The meta object literal for the '{@link pt.isep.yamldslgen.github_actions.impl.ReleaseImpl <em>Release</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see pt.isep.yamldslgen.github_actions.impl.ReleaseImpl
+		 * @see pt.isep.yamldslgen.github_actions.impl.YamlmdePackageImpl#getRelease()
+		 * @generated
+		 */
+		EClass RELEASE = eINSTANCE.getRelease();
+
+		/**
+		 * The meta object literal for the '<em><b>Types</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RELEASE__TYPES = eINSTANCE.getRelease_Types();
 
 		/**
 		 * The meta object literal for the '{@link pt.isep.yamldslgen.github_actions.impl.ConcurrencyImpl <em>Concurrency</em>}' class.

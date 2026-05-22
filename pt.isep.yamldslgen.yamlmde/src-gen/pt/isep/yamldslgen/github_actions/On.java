@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getSchedule <em>Schedule</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getWorkflowCall <em>Workflow Call</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getPullRequestTarget <em>Pull Request Target</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.On#getRelease <em>Release</em>}</li>
  * </ul>
  *
  * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getOn()
@@ -149,5 +150,27 @@ public interface On extends EObject {
 	 * @generated
 	 */
 	void setPullRequestTarget(Pull_request value);
+
+	/**
+	 * Returns the value of the '<em><b>Release</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Release</em>' containment reference.
+	 * @see #setRelease(Release)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getOn_Release()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Release getRelease();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.On#getRelease <em>Release</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Release</em>' containment reference.
+	 * @see #getRelease()
+	 * @generated
+	 */
+	void setRelease(Release value);
 
 } // On

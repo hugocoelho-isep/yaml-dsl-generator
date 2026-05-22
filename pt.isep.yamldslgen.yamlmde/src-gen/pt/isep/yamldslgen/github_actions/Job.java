@@ -20,11 +20,15 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getName <em>Name</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getNeeds <em>Needs</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getIf <em>If</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getUses <em>Uses</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getSteps <em>Steps</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getPermissions <em>Permissions</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getEnvironment <em>Environment</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getStrategy <em>Strategy</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getContainer <em>Container</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getOutputs <em>Outputs</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getEnv <em>Env</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getWith <em>With</em>}</li>
  * </ul>
  *
  * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getJob()
@@ -61,7 +65,7 @@ public interface Job extends EObject {
 	 * @return the value of the '<em>Runs On</em>' attribute.
 	 * @see #setRunsOn(String)
 	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getJob_RunsOn()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	String getRunsOn();
@@ -133,13 +137,35 @@ public interface Job extends EObject {
 	void setIf(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Uses</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Uses</em>' attribute.
+	 * @see #setUses(String)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getJob_Uses()
+	 * @model
+	 * @generated
+	 */
+	String getUses();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.Job#getUses <em>Uses</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Uses</em>' attribute.
+	 * @see #getUses()
+	 * @generated
+	 */
+	void setUses(String value);
+
+	/**
 	 * Returns the value of the '<em><b>Steps</b></em>' containment reference list.
 	 * The list contents are of type {@link pt.isep.yamldslgen.github_actions.Step}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Steps</em>' containment reference list.
 	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getJob_Steps()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Step> getSteps();
@@ -231,5 +257,51 @@ public interface Job extends EObject {
 	 * @generated
 	 */
 	void setContainer(Container value);
+
+	/**
+	 * Returns the value of the '<em><b>Outputs</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Outputs</em>' containment reference.
+	 * @see #setOutputs(Outputs)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getJob_Outputs()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Outputs getOutputs();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.Job#getOutputs <em>Outputs</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Outputs</em>' containment reference.
+	 * @see #getOutputs()
+	 * @generated
+	 */
+	void setOutputs(Outputs value);
+
+	/**
+	 * Returns the value of the '<em><b>Env</b></em>' containment reference list.
+	 * The list contents are of type {@link pt.isep.yamldslgen.github_actions.KeyValuePair}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Env</em>' containment reference list.
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getJob_Env()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<KeyValuePair> getEnv();
+
+	/**
+	 * Returns the value of the '<em><b>With</b></em>' containment reference list.
+	 * The list contents are of type {@link pt.isep.yamldslgen.github_actions.KeyValuePair}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>With</em>' containment reference list.
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getJob_With()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<KeyValuePair> getWith();
 
 } // Job

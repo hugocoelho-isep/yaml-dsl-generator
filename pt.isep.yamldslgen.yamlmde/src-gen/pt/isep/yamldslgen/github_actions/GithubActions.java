@@ -16,10 +16,11 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getName <em>Name</em>}</li>
- *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getOn <em>On</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getJobs <em>Jobs</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getOn <em>On</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getPermissions <em>Permissions</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getConcurrency <em>Concurrency</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getDefaults <em>Defaults</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getEnv <em>Env</em>}</li>
  * </ul>
  *
@@ -127,6 +128,28 @@ public interface GithubActions extends EObject {
 	 * @generated
 	 */
 	void setConcurrency(Concurrency value);
+
+	/**
+	 * Returns the value of the '<em><b>Defaults</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Defaults</em>' containment reference.
+	 * @see #setDefaults(Defaults)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getGithubActions_Defaults()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Defaults getDefaults();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.GithubActions#getDefaults <em>Defaults</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Defaults</em>' containment reference.
+	 * @see #getDefaults()
+	 * @generated
+	 */
+	void setDefaults(Defaults value);
 
 	/**
 	 * Returns the value of the '<em><b>Env</b></em>' containment reference list.

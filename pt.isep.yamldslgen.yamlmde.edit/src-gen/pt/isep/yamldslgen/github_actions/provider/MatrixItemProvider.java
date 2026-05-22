@@ -61,6 +61,8 @@ public class MatrixItemProvider extends ItemProviderAdapter implements IEditingD
 			addCCompilerPropertyDescriptor(object);
 			addOtpPropertyDescriptor(object);
 			addElixirPropertyDescriptor(object);
+			addPythonVersionPropertyDescriptor(object);
+			addConfigurationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -139,6 +141,38 @@ public class MatrixItemProvider extends ItemProviderAdapter implements IEditingD
 						getResourceLocator(), getString("_UI_Matrix_elixir_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_Matrix_elixir_feature", "_UI_Matrix_type"),
 						YamlmdePackage.Literals.MATRIX__ELIXIR, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Python Version feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPythonVersionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Matrix_pythonVersion_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Matrix_pythonVersion_feature",
+								"_UI_Matrix_type"),
+						YamlmdePackage.Literals.MATRIX__PYTHON_VERSION, true, false, false,
+						ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Configuration feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConfigurationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Matrix_configuration_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Matrix_configuration_feature",
+								"_UI_Matrix_type"),
+						YamlmdePackage.Literals.MATRIX__CONFIGURATION, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -222,6 +256,8 @@ public class MatrixItemProvider extends ItemProviderAdapter implements IEditingD
 		case YamlmdePackage.MATRIX__CCOMPILER:
 		case YamlmdePackage.MATRIX__OTP:
 		case YamlmdePackage.MATRIX__ELIXIR:
+		case YamlmdePackage.MATRIX__PYTHON_VERSION:
+		case YamlmdePackage.MATRIX__CONFIGURATION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case YamlmdePackage.MATRIX__INCLUDE:

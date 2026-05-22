@@ -61,6 +61,7 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 			addNamePropertyDescriptor(object);
 			addNeedsPropertyDescriptor(object);
 			addIfPropertyDescriptor(object);
+			addUsesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -141,6 +142,21 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 	}
 
 	/**
+	 * This adds a property descriptor for the Uses feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUsesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Job_uses_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Job_uses_feature", "_UI_Job_type"),
+						YamlmdePackage.Literals.JOB__USES, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -157,6 +173,9 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 			childrenFeatures.add(YamlmdePackage.Literals.JOB__ENVIRONMENT);
 			childrenFeatures.add(YamlmdePackage.Literals.JOB__STRATEGY);
 			childrenFeatures.add(YamlmdePackage.Literals.JOB__CONTAINER);
+			childrenFeatures.add(YamlmdePackage.Literals.JOB__OUTPUTS);
+			childrenFeatures.add(YamlmdePackage.Literals.JOB__ENV);
+			childrenFeatures.add(YamlmdePackage.Literals.JOB__WITH);
 		}
 		return childrenFeatures;
 	}
@@ -225,6 +244,7 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 		case YamlmdePackage.JOB__NAME:
 		case YamlmdePackage.JOB__NEEDS:
 		case YamlmdePackage.JOB__IF:
+		case YamlmdePackage.JOB__USES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case YamlmdePackage.JOB__STEPS:
@@ -232,6 +252,9 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 		case YamlmdePackage.JOB__ENVIRONMENT:
 		case YamlmdePackage.JOB__STRATEGY:
 		case YamlmdePackage.JOB__CONTAINER:
+		case YamlmdePackage.JOB__OUTPUTS:
+		case YamlmdePackage.JOB__ENV:
+		case YamlmdePackage.JOB__WITH:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -263,6 +286,36 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 
 		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.JOB__CONTAINER,
 				YamlmdeFactory.eINSTANCE.createContainer()));
+
+		newChildDescriptors.add(
+				createChildParameter(YamlmdePackage.Literals.JOB__OUTPUTS, YamlmdeFactory.eINSTANCE.createOutputs()));
+
+		newChildDescriptors.add(
+				createChildParameter(YamlmdePackage.Literals.JOB__ENV, YamlmdeFactory.eINSTANCE.createKeyValuePair()));
+
+		newChildDescriptors.add(
+				createChildParameter(YamlmdePackage.Literals.JOB__WITH, YamlmdeFactory.eINSTANCE.createKeyValuePair()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify = childFeature == YamlmdePackage.Literals.JOB__ENV
+				|| childFeature == YamlmdePackage.Literals.JOB__WITH;
+
+		if (qualify) {
+			return getString("_UI_CreateChild_text2",
+					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

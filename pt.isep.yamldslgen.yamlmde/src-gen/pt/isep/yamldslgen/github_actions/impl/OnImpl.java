@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import pt.isep.yamldslgen.github_actions.On;
 import pt.isep.yamldslgen.github_actions.Pull_request;
 import pt.isep.yamldslgen.github_actions.Push;
+import pt.isep.yamldslgen.github_actions.Release;
 import pt.isep.yamldslgen.github_actions.Schedule;
 import pt.isep.yamldslgen.github_actions.Workflow_call;
 import pt.isep.yamldslgen.github_actions.YamlmdePackage;
@@ -39,6 +40,7 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getSchedule <em>Schedule</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getWorkflowCall <em>Workflow Call</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getPullRequestTarget <em>Pull Request Target</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getRelease <em>Release</em>}</li>
  * </ul>
  *
  * @generated
@@ -113,6 +115,16 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 	 * @ordered
 	 */
 	protected Pull_request pullRequestTarget;
+
+	/**
+	 * The cached value of the '{@link #getRelease() <em>Release</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRelease()
+	 * @generated
+	 * @ordered
+	 */
+	protected Release release;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -383,6 +395,57 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 	 * @generated
 	 */
 	@Override
+	public Release getRelease() {
+		return release;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetRelease(Release newRelease, NotificationChain msgs) {
+		Release oldRelease = release;
+		release = newRelease;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, YamlmdePackage.ON__RELEASE,
+					oldRelease, newRelease);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRelease(Release newRelease) {
+		if (newRelease != release) {
+			NotificationChain msgs = null;
+			if (release != null)
+				msgs = ((InternalEObject) release).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - YamlmdePackage.ON__RELEASE, null, msgs);
+			if (newRelease != null)
+				msgs = ((InternalEObject) newRelease).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - YamlmdePackage.ON__RELEASE, null, msgs);
+			msgs = basicSetRelease(newRelease, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.ON__RELEASE, newRelease, newRelease));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case YamlmdePackage.ON__PUSH:
@@ -395,6 +458,8 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 			return basicSetWorkflowCall(null, msgs);
 		case YamlmdePackage.ON__PULL_REQUEST_TARGET:
 			return basicSetPullRequestTarget(null, msgs);
+		case YamlmdePackage.ON__RELEASE:
+			return basicSetRelease(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -419,6 +484,8 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 			return getWorkflowCall();
 		case YamlmdePackage.ON__PULL_REQUEST_TARGET:
 			return getPullRequestTarget();
+		case YamlmdePackage.ON__RELEASE:
+			return getRelease();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -451,6 +518,9 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 		case YamlmdePackage.ON__PULL_REQUEST_TARGET:
 			setPullRequestTarget((Pull_request) newValue);
 			return;
+		case YamlmdePackage.ON__RELEASE:
+			setRelease((Release) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -481,6 +551,9 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 		case YamlmdePackage.ON__PULL_REQUEST_TARGET:
 			setPullRequestTarget((Pull_request) null);
 			return;
+		case YamlmdePackage.ON__RELEASE:
+			setRelease((Release) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -506,6 +579,8 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 			return workflowCall != null;
 		case YamlmdePackage.ON__PULL_REQUEST_TARGET:
 			return pullRequestTarget != null;
+		case YamlmdePackage.ON__RELEASE:
+			return release != null;
 		}
 		return super.eIsSet(featureID);
 	}

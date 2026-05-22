@@ -12,6 +12,7 @@ GithubActions returns GithubActions:
 	(('name' ':' name=EString)?
 	& ('on' ':' on=On)
 	& ('concurrency' ':' concurrency=Concurrency)?
+	& ('defaults' ':' defaults=Defaults)?
 	& ('jobs' ':' BEG_BLOCK? jobs+=Job+ END_BLOCK?)
 	& ('permissions' ':' permissions=Permissions)?
 	& ('env' ':' (BEG_BLOCK? env+=KeyValuePair+ END_BLOCK?))?);
@@ -54,13 +55,14 @@ KeyName returns ecore::EString:
 	| 'shell' | 'contents' | 'security-events' | 'actions' 
 	| 'pages' | 'id-token' | 'types' | 'pull-requests' | 'if' 
 	| 'continue-on-error' | 'issues'
-	| 'strategy' | 'fail-fast' | 'matrix' |
-	  'os' | 'build-type' 
+	| 'strategy' | 'fail-fast' | 'matrix' 
+	| 'os' | 'build-type' 
 	| 'c-compiler' | 'cpp-compiler' | 'otp' | 'elixir' | 'include' 
-	| 'exclude' | 'workflow_call' | 'pull_request_target' |
-	  'secrets' 
-	| 'required' | 'packages'
-	| 'container' | 'image';
+	| 'exclude' | 'workflow_call' | 'pull_request_target' 
+	| 'secrets' | 'required' | 'packages'
+	| 'container' | 'image'
+	| 'defaults' | 'outputs' | 'release' 
+	| 'python-version' | 'configuration' | 'digests';
 	
 // =============================================================================
 // KEY-VALUE PAIR  (generic block content — e.g. 'with:', 'env:')
@@ -83,7 +85,8 @@ On returns On:
 		& ('pull_request_target' ':' pullRequestTarget=Pull_request)?
 		& ('schedule' ':' (BEG_BLOCK? schedule+=Schedule+ END_BLOCK?))?
 		& ('workflow_dispatch' ':' (workflowDispatch=EString)?)?
-		& ('workflow_call' ':' workflowCall=Workflow_call)?)
+		& ('workflow_call' ':' workflowCall=Workflow_call)?
+		& ('release' ':' release=Release)?)
 	END_BLOCK?;
 
 Push returns Push:
@@ -146,6 +149,8 @@ Environment returns Environment:
 		& ('url' ':' url=EString)?)
 	END_BLOCK?;
 	
+
+	
 // =============================================================================
 // PERMISSIONS
 // =============================================================================
@@ -177,11 +182,15 @@ Job returns Job:
 			| '[' needs+=EString (',' needs+=EString)* ']'
 		))?
 		& ('if' ':' ^if=EString)?
+		& ('uses' ':' uses=EString)?
 		& ('environment' ':' environment=Environment)?
 		& ('strategy' ':' strategy=Strategy)?
 		& ('container' ':' container=Container)?
+		& ('outputs' ':' outputs=Outputs)?
 		& ('steps' ':' BEG_BLOCK? steps+=Step+ END_BLOCK?)?
-		& ('permissions' ':' permissions=Permissions)?)
+		& ('permissions' ':' permissions=Permissions)?
+		& ('env' ':' (BEG_BLOCK? env+=KeyValuePair+ END_BLOCK?))?
+		& ('with' ':' (BEG_BLOCK? ^with+=KeyValuePair+ END_BLOCK?))?)
 	END_BLOCK?;
 
 // =============================================================================
@@ -237,6 +246,14 @@ Matrix returns Matrix:
 			  BEG_BLOCK ('-' BEG_BLOCK? elixir+=EString END_BLOCK?)+ END_BLOCK
 			| '[' elixir+=EString (',' elixir+=EString)* ']'
 		))?
+		// & ('python-version' ':' (
+			  // BEG_BLOCK ('-' BEG_BLOCK? pythonVersion+=EString END_BLOCK?)+ END_BLOCK
+			// | '[' pythonVersion+=EString (',' pythonVersion+=EString)* ']'
+		// ))?
+		& ('configuration' ':' (
+			  BEG_BLOCK ('-' BEG_BLOCK? configuration+=EString END_BLOCK?)+ END_BLOCK
+			| '[' configuration+=EString (',' configuration+=EString)* ']'
+		))?
 		& ('include' ':' BEG_BLOCK ('-' BEG_BLOCK? include+=Include END_BLOCK?)+ END_BLOCK)?
 		& ('exclude' ':' BEG_BLOCK ('-' BEG_BLOCK? exclude+=Exclude END_BLOCK?)+ END_BLOCK)?)
 	END_BLOCK?;
@@ -254,6 +271,45 @@ Exclude returns Exclude:
 	BEG_BLOCK?
 		(('os' ':' os=EString)?
 		& ('c-compiler' ':' cCompiler=EString)?)
+	END_BLOCK?;
+	
+// =============================================================================
+// DEFAULTS & RUN
+// =============================================================================
+
+Defaults returns Defaults:
+	{Defaults}
+	BEG_BLOCK?
+		('run' ':' run=Run)
+	END_BLOCK?;
+
+Run returns Run:
+	{Run}
+	BEG_BLOCK?
+		('shell' ':' shell=EString)
+	END_BLOCK?;
+
+// =============================================================================
+// OUTPUTS
+// =============================================================================
+
+Outputs returns Outputs:
+	{Outputs}
+	BEG_BLOCK?
+		('digests' ':' digests=EString)
+	END_BLOCK?;
+
+// =============================================================================
+// RELEASE
+// =============================================================================
+
+Release returns Release:
+	{Release}
+	BEG_BLOCK?
+		('types' ':' (
+			  BEG_BLOCK ('-' BEG_BLOCK? types+=EString END_BLOCK?)+ END_BLOCK
+			| '[' types+=EString (',' types+=EString)* ']'
+		))
 	END_BLOCK?;
 	
 // =============================================================================

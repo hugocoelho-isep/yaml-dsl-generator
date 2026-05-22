@@ -16,6 +16,7 @@ import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequence
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import pt.isep.yamldslgen.github_actions.Concurrency;
 import pt.isep.yamldslgen.github_actions.Container;
+import pt.isep.yamldslgen.github_actions.Defaults;
 import pt.isep.yamldslgen.github_actions.Environment;
 import pt.isep.yamldslgen.github_actions.Exclude;
 import pt.isep.yamldslgen.github_actions.GithubActions;
@@ -24,9 +25,12 @@ import pt.isep.yamldslgen.github_actions.Job;
 import pt.isep.yamldslgen.github_actions.KeyValuePair;
 import pt.isep.yamldslgen.github_actions.Matrix;
 import pt.isep.yamldslgen.github_actions.On;
+import pt.isep.yamldslgen.github_actions.Outputs;
 import pt.isep.yamldslgen.github_actions.Permissions;
 import pt.isep.yamldslgen.github_actions.Pull_request;
 import pt.isep.yamldslgen.github_actions.Push;
+import pt.isep.yamldslgen.github_actions.Release;
+import pt.isep.yamldslgen.github_actions.Run;
 import pt.isep.yamldslgen.github_actions.Schedule;
 import pt.isep.yamldslgen.github_actions.Secret;
 import pt.isep.yamldslgen.github_actions.Step;
@@ -55,6 +59,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case YamlmdePackage.CONTAINER:
 				sequence_Container(context, (Container) semanticObject); 
 				return; 
+			case YamlmdePackage.DEFAULTS:
+				sequence_Defaults(context, (Defaults) semanticObject); 
+				return; 
 			case YamlmdePackage.ENVIRONMENT:
 				sequence_Environment(context, (Environment) semanticObject); 
 				return; 
@@ -79,6 +86,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case YamlmdePackage.ON:
 				sequence_On(context, (On) semanticObject); 
 				return; 
+			case YamlmdePackage.OUTPUTS:
+				sequence_Outputs(context, (Outputs) semanticObject); 
+				return; 
 			case YamlmdePackage.PERMISSIONS:
 				sequence_Permissions(context, (Permissions) semanticObject); 
 				return; 
@@ -87,6 +97,12 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case YamlmdePackage.PUSH:
 				sequence_Push(context, (Push) semanticObject); 
+				return; 
+			case YamlmdePackage.RELEASE:
+				sequence_Release(context, (Release) semanticObject); 
+				return; 
+			case YamlmdePackage.RUN:
+				sequence_Run(context, (Run) semanticObject); 
 				return; 
 			case YamlmdePackage.SCHEDULE:
 				sequence_Schedule(context, (Schedule) semanticObject); 
@@ -145,6 +161,26 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Defaults returns Defaults
+	 *
+	 * Constraint:
+	 *     run=Run
+	 * </pre>
+	 */
+	protected void sequence_Defaults(ISerializationContext context, Defaults semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, YamlmdePackage.Literals.DEFAULTS__RUN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, YamlmdePackage.Literals.DEFAULTS__RUN));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDefaultsAccess().getRunRunParserRuleCall_2_2_0(), semanticObject.getRun());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Environment returns Environment
 	 *
 	 * Constraint:
@@ -180,6 +216,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         name=EString | 
 	 *         on=On | 
 	 *         concurrency=Concurrency | 
+	 *         defaults=Defaults | 
 	 *         jobs+=Job | 
 	 *         permissions=Permissions | 
 	 *         env+=KeyValuePair
@@ -220,11 +257,15 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *                 needs+=EString | 
 	 *                 needs+=EString | 
 	 *                 if=EString | 
+	 *                 uses=EString | 
 	 *                 environment=Environment | 
 	 *                 strategy=Strategy | 
 	 *                 container=Container | 
+	 *                 outputs=Outputs | 
 	 *                 steps+=Step | 
-	 *                 permissions=Permissions
+	 *                 permissions=Permissions | 
+	 *                 env+=KeyValuePair | 
+	 *                 with+=KeyValuePair
 	 *             )? 
 	 *             (needs+=EString needs+=EString*)?
 	 *         )+
@@ -272,6 +313,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *             cCompiler+=EString | 
 	 *             otp+=EString | 
 	 *             elixir+=EString | 
+	 *             configuration+=EString | 
 	 *             include+=Include | 
 	 *             exclude+=Exclude
 	 *         )? 
@@ -279,7 +321,8 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         (buildType+=EString buildType+=EString*)? 
 	 *         (cCompiler+=EString cCompiler+=EString*)? 
 	 *         (otp+=EString otp+=EString*)? 
-	 *         (elixir+=EString elixir+=EString*)?
+	 *         (elixir+=EString elixir+=EString*)? 
+	 *         (configuration+=EString configuration+=EString*)?
 	 *     )+
 	 * </pre>
 	 */
@@ -300,12 +343,33 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         pullRequestTarget=Pull_request | 
 	 *         schedule+=Schedule | 
 	 *         workflowDispatch=EString | 
-	 *         workflowCall=Workflow_call
+	 *         workflowCall=Workflow_call | 
+	 *         release=Release
 	 *     )*
 	 * </pre>
 	 */
 	protected void sequence_On(ISerializationContext context, On semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Outputs returns Outputs
+	 *
+	 * Constraint:
+	 *     digests=EString
+	 * </pre>
+	 */
+	protected void sequence_Outputs(ISerializationContext context, Outputs semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, YamlmdePackage.Literals.OUTPUTS__DIGESTS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, YamlmdePackage.Literals.OUTPUTS__DIGESTS));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getOutputsAccess().getDigestsEStringParserRuleCall_2_2_0(), semanticObject.getDigests());
+		feeder.finish();
 	}
 	
 	
@@ -357,6 +421,40 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 */
 	protected void sequence_Push(ISerializationContext context, Push semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Release returns Release
+	 *
+	 * Constraint:
+	 *     (types+=EString+ | (types+=EString types+=EString*))
+	 * </pre>
+	 */
+	protected void sequence_Release(ISerializationContext context, Release semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Run returns Run
+	 *
+	 * Constraint:
+	 *     shell=EString
+	 * </pre>
+	 */
+	protected void sequence_Run(ISerializationContext context, Run semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, YamlmdePackage.Literals.RUN__SHELL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, YamlmdePackage.Literals.RUN__SHELL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRunAccess().getShellEStringParserRuleCall_2_2_0(), semanticObject.getShell());
+		feeder.finish();
 	}
 	
 	

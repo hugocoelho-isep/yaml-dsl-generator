@@ -60,24 +60,24 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 			return createKeyValuePair();
 		case YamlmdePackage.GITHUB_ACTIONS:
 			return createGithubActions();
+		case YamlmdePackage.JOB:
+			return createJob();
+		case YamlmdePackage.STEP:
+			return createStep();
 		case YamlmdePackage.ON:
 			return createOn();
 		case YamlmdePackage.PUSH:
 			return createPush();
 		case YamlmdePackage.PULL_REQUEST:
 			return createPull_request();
-		case YamlmdePackage.JOB:
-			return createJob();
-		case YamlmdePackage.STEP:
-			return createStep();
 		case YamlmdePackage.PERMISSIONS:
 			return createPermissions();
 		case YamlmdePackage.SCHEDULE:
 			return createSchedule();
-		case YamlmdePackage.ENVIRONMENT:
-			return createEnvironment();
 		case YamlmdePackage.CONCURRENCY:
 			return createConcurrency();
+		case YamlmdePackage.ENVIRONMENT:
+			return createEnvironment();
 		case YamlmdePackage.STRATEGY:
 			return createStrategy();
 		case YamlmdePackage.MATRIX:
@@ -92,6 +92,14 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 			return createSecret();
 		case YamlmdePackage.CONTAINER:
 			return createContainer();
+		case YamlmdePackage.DEFAULTS:
+			return createDefaults();
+		case YamlmdePackage.RUN:
+			return createRun();
+		case YamlmdePackage.OUTPUTS:
+			return createOutputs();
+		case YamlmdePackage.RELEASE:
+			return createRelease();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -282,6 +290,50 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 	public pt.isep.yamldslgen.github_actions.Container createContainer() {
 		ContainerImpl container = new ContainerImpl();
 		return container;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Defaults createDefaults() {
+		DefaultsImpl defaults = new DefaultsImpl();
+		return defaults;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Run createRun() {
+		RunImpl run = new RunImpl();
+		return run;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Outputs createOutputs() {
+		OutputsImpl outputs = new OutputsImpl();
+		return outputs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Release createRelease() {
+		ReleaseImpl release = new ReleaseImpl();
+		return release;
 	}
 
 	/**

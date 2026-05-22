@@ -20,6 +20,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pt.isep.yamldslgen.github_actions.Matrix#getCCompiler <em>CCompiler</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Matrix#getOtp <em>Otp</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Matrix#getElixir <em>Elixir</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Matrix#getPythonVersion <em>Python Version</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Matrix#getConfiguration <em>Configuration</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Matrix#getInclude <em>Include</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Matrix#getExclude <em>Exclude</em>}</li>
  * </ul>
@@ -88,6 +90,30 @@ public interface Matrix extends EObject {
 	 * @generated
 	 */
 	EList<String> getElixir();
+
+	/**
+	 * Returns the value of the '<em><b>Python Version</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.Float}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Python Version</em>' attribute list.
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getMatrix_PythonVersion()
+	 * @model
+	 * @generated
+	 */
+	EList<Float> getPythonVersion();
+
+	/**
+	 * Returns the value of the '<em><b>Configuration</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Configuration</em>' attribute list.
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getMatrix_Configuration()
+	 * @model
+	 * @generated
+	 */
+	EList<String> getConfiguration();
 
 	/**
 	 * Returns the value of the '<em><b>Include</b></em>' containment reference list.

@@ -94,6 +94,7 @@ public class OnItemProvider extends ItemProviderAdapter implements IEditingDomai
 			childrenFeatures.add(YamlmdePackage.Literals.ON__SCHEDULE);
 			childrenFeatures.add(YamlmdePackage.Literals.ON__WORKFLOW_CALL);
 			childrenFeatures.add(YamlmdePackage.Literals.ON__PULL_REQUEST_TARGET);
+			childrenFeatures.add(YamlmdePackage.Literals.ON__RELEASE);
 		}
 		return childrenFeatures;
 	}
@@ -164,6 +165,7 @@ public class OnItemProvider extends ItemProviderAdapter implements IEditingDomai
 		case YamlmdePackage.ON__SCHEDULE:
 		case YamlmdePackage.ON__WORKFLOW_CALL:
 		case YamlmdePackage.ON__PULL_REQUEST_TARGET:
+		case YamlmdePackage.ON__RELEASE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -195,6 +197,9 @@ public class OnItemProvider extends ItemProviderAdapter implements IEditingDomai
 
 		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.ON__PULL_REQUEST_TARGET,
 				YamlmdeFactory.eINSTANCE.createPull_request()));
+
+		newChildDescriptors.add(
+				createChildParameter(YamlmdePackage.Literals.ON__RELEASE, YamlmdeFactory.eINSTANCE.createRelease()));
 	}
 
 	/**

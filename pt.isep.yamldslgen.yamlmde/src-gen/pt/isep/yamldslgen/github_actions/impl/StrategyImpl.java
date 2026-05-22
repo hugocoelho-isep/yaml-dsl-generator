@@ -24,6 +24,7 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  * </p>
  * <ul>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.StrategyImpl#isFailFast <em>Fail Fast</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.StrategyImpl#getMaxParallel <em>Max Parallel</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.StrategyImpl#getMatrix <em>Matrix</em>}</li>
  * </ul>
  *
@@ -49,6 +50,26 @@ public class StrategyImpl extends MinimalEObjectImpl.Container implements Strate
 	 * @ordered
 	 */
 	protected boolean failFast = FAIL_FAST_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMaxParallel() <em>Max Parallel</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxParallel()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int MAX_PARALLEL_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getMaxParallel() <em>Max Parallel</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxParallel()
+	 * @generated
+	 * @ordered
+	 */
+	protected int maxParallel = MAX_PARALLEL_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getMatrix() <em>Matrix</em>}' containment reference.
@@ -101,6 +122,30 @@ public class StrategyImpl extends MinimalEObjectImpl.Container implements Strate
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.STRATEGY__FAIL_FAST, oldFailFast,
 					failFast));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getMaxParallel() {
+		return maxParallel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setMaxParallel(int newMaxParallel) {
+		int oldMaxParallel = maxParallel;
+		maxParallel = newMaxParallel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.STRATEGY__MAX_PARALLEL, oldMaxParallel,
+					maxParallel));
 	}
 
 	/**
@@ -179,6 +224,8 @@ public class StrategyImpl extends MinimalEObjectImpl.Container implements Strate
 		switch (featureID) {
 		case YamlmdePackage.STRATEGY__FAIL_FAST:
 			return isFailFast();
+		case YamlmdePackage.STRATEGY__MAX_PARALLEL:
+			return getMaxParallel();
 		case YamlmdePackage.STRATEGY__MATRIX:
 			return getMatrix();
 		}
@@ -195,6 +242,9 @@ public class StrategyImpl extends MinimalEObjectImpl.Container implements Strate
 		switch (featureID) {
 		case YamlmdePackage.STRATEGY__FAIL_FAST:
 			setFailFast((Boolean) newValue);
+			return;
+		case YamlmdePackage.STRATEGY__MAX_PARALLEL:
+			setMaxParallel((Integer) newValue);
 			return;
 		case YamlmdePackage.STRATEGY__MATRIX:
 			setMatrix((Matrix) newValue);
@@ -214,6 +264,9 @@ public class StrategyImpl extends MinimalEObjectImpl.Container implements Strate
 		case YamlmdePackage.STRATEGY__FAIL_FAST:
 			setFailFast(FAIL_FAST_EDEFAULT);
 			return;
+		case YamlmdePackage.STRATEGY__MAX_PARALLEL:
+			setMaxParallel(MAX_PARALLEL_EDEFAULT);
+			return;
 		case YamlmdePackage.STRATEGY__MATRIX:
 			setMatrix((Matrix) null);
 			return;
@@ -231,6 +284,8 @@ public class StrategyImpl extends MinimalEObjectImpl.Container implements Strate
 		switch (featureID) {
 		case YamlmdePackage.STRATEGY__FAIL_FAST:
 			return failFast != FAIL_FAST_EDEFAULT;
+		case YamlmdePackage.STRATEGY__MAX_PARALLEL:
+			return maxParallel != MAX_PARALLEL_EDEFAULT;
 		case YamlmdePackage.STRATEGY__MATRIX:
 			return matrix != null;
 		}
@@ -250,6 +305,8 @@ public class StrategyImpl extends MinimalEObjectImpl.Container implements Strate
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (failFast: ");
 		result.append(failFast);
+		result.append(", maxParallel: ");
+		result.append(maxParallel);
 		result.append(')');
 		return result.toString();
 	}

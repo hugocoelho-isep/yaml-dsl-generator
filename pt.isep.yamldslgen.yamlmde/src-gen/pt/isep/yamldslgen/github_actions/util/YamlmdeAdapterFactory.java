@@ -77,6 +77,16 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseJob(Job object) {
+			return createJobAdapter();
+		}
+
+		@Override
+		public Adapter caseStep(Step object) {
+			return createStepAdapter();
+		}
+
+		@Override
 		public Adapter caseOn(On object) {
 			return createOnAdapter();
 		}
@@ -92,16 +102,6 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseJob(Job object) {
-			return createJobAdapter();
-		}
-
-		@Override
-		public Adapter caseStep(Step object) {
-			return createStepAdapter();
-		}
-
-		@Override
 		public Adapter casePermissions(Permissions object) {
 			return createPermissionsAdapter();
 		}
@@ -112,13 +112,13 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseEnvironment(Environment object) {
-			return createEnvironmentAdapter();
+		public Adapter caseConcurrency(Concurrency object) {
+			return createConcurrencyAdapter();
 		}
 
 		@Override
-		public Adapter caseConcurrency(Concurrency object) {
-			return createConcurrencyAdapter();
+		public Adapter caseEnvironment(Environment object) {
+			return createEnvironmentAdapter();
 		}
 
 		@Override
@@ -154,6 +154,26 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseContainer(Container object) {
 			return createContainerAdapter();
+		}
+
+		@Override
+		public Adapter caseDefaults(Defaults object) {
+			return createDefaultsAdapter();
+		}
+
+		@Override
+		public Adapter caseRun(Run object) {
+			return createRunAdapter();
+		}
+
+		@Override
+		public Adapter caseOutputs(Outputs object) {
+			return createOutputsAdapter();
+		}
+
+		@Override
+		public Adapter caseRelease(Release object) {
+			return createReleaseAdapter();
 		}
 
 		@Override
@@ -410,6 +430,62 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createContainerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Defaults <em>Defaults</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Defaults
+	 * @generated
+	 */
+	public Adapter createDefaultsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Run <em>Run</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Run
+	 * @generated
+	 */
+	public Adapter createRunAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Outputs <em>Outputs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Outputs
+	 * @generated
+	 */
+	public Adapter createOutputsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Release <em>Release</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Release
+	 * @generated
+	 */
+	public Adapter createReleaseAdapter() {
 		return null;
 	}
 

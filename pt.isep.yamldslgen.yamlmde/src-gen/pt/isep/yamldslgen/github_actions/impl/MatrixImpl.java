@@ -35,6 +35,8 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.MatrixImpl#getCCompiler <em>CCompiler</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.MatrixImpl#getOtp <em>Otp</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.MatrixImpl#getElixir <em>Elixir</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.MatrixImpl#getPythonVersion <em>Python Version</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.MatrixImpl#getConfiguration <em>Configuration</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.MatrixImpl#getInclude <em>Include</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.MatrixImpl#getExclude <em>Exclude</em>}</li>
  * </ul>
@@ -91,6 +93,26 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix {
 	 * @ordered
 	 */
 	protected EList<String> elixir;
+
+	/**
+	 * The cached value of the '{@link #getPythonVersion() <em>Python Version</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPythonVersion()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Float> pythonVersion;
+
+	/**
+	 * The cached value of the '{@link #getConfiguration() <em>Configuration</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConfiguration()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> configuration;
 
 	/**
 	 * The cached value of the '{@link #getInclude() <em>Include</em>}' containment reference list.
@@ -202,6 +224,32 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix {
 	 * @generated
 	 */
 	@Override
+	public EList<Float> getPythonVersion() {
+		if (pythonVersion == null) {
+			pythonVersion = new EDataTypeUniqueEList<Float>(Float.class, this, YamlmdePackage.MATRIX__PYTHON_VERSION);
+		}
+		return pythonVersion;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<String> getConfiguration() {
+		if (configuration == null) {
+			configuration = new EDataTypeUniqueEList<String>(String.class, this, YamlmdePackage.MATRIX__CONFIGURATION);
+		}
+		return configuration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<Include> getInclude() {
 		if (include == null) {
 			include = new EObjectContainmentEList<Include>(Include.class, this, YamlmdePackage.MATRIX__INCLUDE);
@@ -256,6 +304,10 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix {
 			return getOtp();
 		case YamlmdePackage.MATRIX__ELIXIR:
 			return getElixir();
+		case YamlmdePackage.MATRIX__PYTHON_VERSION:
+			return getPythonVersion();
+		case YamlmdePackage.MATRIX__CONFIGURATION:
+			return getConfiguration();
 		case YamlmdePackage.MATRIX__INCLUDE:
 			return getInclude();
 		case YamlmdePackage.MATRIX__EXCLUDE:
@@ -293,6 +345,14 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix {
 			getElixir().clear();
 			getElixir().addAll((Collection<? extends String>) newValue);
 			return;
+		case YamlmdePackage.MATRIX__PYTHON_VERSION:
+			getPythonVersion().clear();
+			getPythonVersion().addAll((Collection<? extends Float>) newValue);
+			return;
+		case YamlmdePackage.MATRIX__CONFIGURATION:
+			getConfiguration().clear();
+			getConfiguration().addAll((Collection<? extends String>) newValue);
+			return;
 		case YamlmdePackage.MATRIX__INCLUDE:
 			getInclude().clear();
 			getInclude().addAll((Collection<? extends Include>) newValue);
@@ -328,6 +388,12 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix {
 		case YamlmdePackage.MATRIX__ELIXIR:
 			getElixir().clear();
 			return;
+		case YamlmdePackage.MATRIX__PYTHON_VERSION:
+			getPythonVersion().clear();
+			return;
+		case YamlmdePackage.MATRIX__CONFIGURATION:
+			getConfiguration().clear();
+			return;
 		case YamlmdePackage.MATRIX__INCLUDE:
 			getInclude().clear();
 			return;
@@ -356,6 +422,10 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix {
 			return otp != null && !otp.isEmpty();
 		case YamlmdePackage.MATRIX__ELIXIR:
 			return elixir != null && !elixir.isEmpty();
+		case YamlmdePackage.MATRIX__PYTHON_VERSION:
+			return pythonVersion != null && !pythonVersion.isEmpty();
+		case YamlmdePackage.MATRIX__CONFIGURATION:
+			return configuration != null && !configuration.isEmpty();
 		case YamlmdePackage.MATRIX__INCLUDE:
 			return include != null && !include.isEmpty();
 		case YamlmdePackage.MATRIX__EXCLUDE:
@@ -385,6 +455,10 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix {
 		result.append(otp);
 		result.append(", elixir: ");
 		result.append(elixir);
+		result.append(", pythonVersion: ");
+		result.append(pythonVersion);
+		result.append(", configuration: ");
+		result.append(configuration);
 		result.append(')');
 		return result.toString();
 	}

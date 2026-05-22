@@ -1,0 +1,38 @@
+/**
+ */
+package pt.isep.yamldslgen.github_actions;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Release</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Release#getTypes <em>Types</em>}</li>
+ * </ul>
+ *
+ * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getRelease()
+ * @model
+ * @generated
+ */
+public interface Release extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Types</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Types</em>' attribute list.
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getRelease_Types()
+	 * @model required="true"
+	 * @generated
+	 */
+	EList<String> getTypes();
+
+} // Release

@@ -175,6 +175,42 @@ public interface YamlmdeFactory extends EFactory {
 	Container createContainer();
 
 	/**
+	 * Returns a new object of class '<em>Defaults</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Defaults</em>'.
+	 * @generated
+	 */
+	Defaults createDefaults();
+
+	/**
+	 * Returns a new object of class '<em>Run</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Run</em>'.
+	 * @generated
+	 */
+	Run createRun();
+
+	/**
+	 * Returns a new object of class '<em>Outputs</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Outputs</em>'.
+	 * @generated
+	 */
+	Outputs createOutputs();
+
+	/**
+	 * Returns a new object of class '<em>Release</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Release</em>'.
+	 * @generated
+	 */
+	Release createRelease();
+
+	/**
 	 * Returns a new object of class '<em>Concurrency</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
