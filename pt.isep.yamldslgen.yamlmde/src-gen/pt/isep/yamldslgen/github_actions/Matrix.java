@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pt.isep.yamldslgen.github_actions.Matrix#getConfiguration <em>Configuration</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Matrix#getNodeVersion <em>Node Version</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Matrix#getRVersion <em>RVersion</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Matrix#getRubyVersion <em>Ruby Version</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Matrix#getInclude <em>Include</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Matrix#getExclude <em>Exclude</em>}</li>
  * </ul>
@@ -140,6 +141,18 @@ public interface Matrix extends EObject {
 	 * @generated
 	 */
 	EList<String> getRVersion();
+
+	/**
+	 * Returns the value of the '<em><b>Ruby Version</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ruby Version</em>' attribute list.
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getMatrix_RubyVersion()
+	 * @model
+	 * @generated
+	 */
+	EList<String> getRubyVersion();
 
 	/**
 	 * Returns the value of the '<em><b>Include</b></em>' containment reference list.

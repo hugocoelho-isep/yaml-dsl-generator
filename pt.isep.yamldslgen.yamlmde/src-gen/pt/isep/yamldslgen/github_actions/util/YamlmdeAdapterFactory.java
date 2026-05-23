@@ -77,6 +77,16 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseJob(Job object) {
+			return createJobAdapter();
+		}
+
+		@Override
+		public Adapter caseStep(Step object) {
+			return createStepAdapter();
+		}
+
+		@Override
 		public Adapter caseOn(On object) {
 			return createOnAdapter();
 		}
@@ -89,16 +99,6 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter casePull_request(Pull_request object) {
 			return createPull_requestAdapter();
-		}
-
-		@Override
-		public Adapter caseJob(Job object) {
-			return createJobAdapter();
-		}
-
-		@Override
-		public Adapter caseStep(Step object) {
-			return createStepAdapter();
 		}
 
 		@Override
@@ -177,6 +177,11 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseIssues(Issues object) {
+			return createIssuesAdapter();
+		}
+
+		@Override
 		public Adapter caseInput(Input object) {
 			return createInputAdapter();
 		}
@@ -184,6 +189,11 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseMerge_group(Merge_group object) {
 			return createMerge_groupAdapter();
+		}
+
+		@Override
+		public Adapter caseService(Service object) {
+			return createServiceAdapter();
 		}
 
 		@Override
@@ -514,6 +524,20 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Issues <em>Issues</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Issues
+	 * @generated
+	 */
+	public Adapter createIssuesAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Input <em>Input</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -538,6 +562,20 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMerge_groupAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Service <em>Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Service
+	 * @generated
+	 */
+	public Adapter createServiceAdapter() {
 		return null;
 	}
 

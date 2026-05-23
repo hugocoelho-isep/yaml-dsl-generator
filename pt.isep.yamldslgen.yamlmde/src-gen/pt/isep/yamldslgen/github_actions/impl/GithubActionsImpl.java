@@ -36,8 +36,8 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  * </p>
  * <ul>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.GithubActionsImpl#getName <em>Name</em>}</li>
- *   <li>{@link pt.isep.yamldslgen.github_actions.impl.GithubActionsImpl#getOn <em>On</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.GithubActionsImpl#getJobs <em>Jobs</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.GithubActionsImpl#getOn <em>On</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.GithubActionsImpl#getPermissions <em>Permissions</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.GithubActionsImpl#getConcurrency <em>Concurrency</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.GithubActionsImpl#getDefaults <em>Defaults</em>}</li>
@@ -68,16 +68,6 @@ public class GithubActionsImpl extends MinimalEObjectImpl.Container implements G
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getOn() <em>On</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOn()
-	 * @generated
-	 * @ordered
-	 */
-	protected On on;
-
-	/**
 	 * The cached value of the '{@link #getJobs() <em>Jobs</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -86,6 +76,16 @@ public class GithubActionsImpl extends MinimalEObjectImpl.Container implements G
 	 * @ordered
 	 */
 	protected EList<Job> jobs;
+
+	/**
+	 * The cached value of the '{@link #getOn() <em>On</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOn()
+	 * @generated
+	 * @ordered
+	 */
+	protected On on;
 
 	/**
 	 * The cached value of the '{@link #getPermissions() <em>Permissions</em>}' containment reference.
@@ -411,10 +411,10 @@ public class GithubActionsImpl extends MinimalEObjectImpl.Container implements G
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case YamlmdePackage.GITHUB_ACTIONS__ON:
-			return basicSetOn(null, msgs);
 		case YamlmdePackage.GITHUB_ACTIONS__JOBS:
 			return ((InternalEList<?>) getJobs()).basicRemove(otherEnd, msgs);
+		case YamlmdePackage.GITHUB_ACTIONS__ON:
+			return basicSetOn(null, msgs);
 		case YamlmdePackage.GITHUB_ACTIONS__PERMISSIONS:
 			return basicSetPermissions(null, msgs);
 		case YamlmdePackage.GITHUB_ACTIONS__CONCURRENCY:
@@ -437,10 +437,10 @@ public class GithubActionsImpl extends MinimalEObjectImpl.Container implements G
 		switch (featureID) {
 		case YamlmdePackage.GITHUB_ACTIONS__NAME:
 			return getName();
-		case YamlmdePackage.GITHUB_ACTIONS__ON:
-			return getOn();
 		case YamlmdePackage.GITHUB_ACTIONS__JOBS:
 			return getJobs();
+		case YamlmdePackage.GITHUB_ACTIONS__ON:
+			return getOn();
 		case YamlmdePackage.GITHUB_ACTIONS__PERMISSIONS:
 			return getPermissions();
 		case YamlmdePackage.GITHUB_ACTIONS__CONCURRENCY:
@@ -465,12 +465,12 @@ public class GithubActionsImpl extends MinimalEObjectImpl.Container implements G
 		case YamlmdePackage.GITHUB_ACTIONS__NAME:
 			setName((String) newValue);
 			return;
-		case YamlmdePackage.GITHUB_ACTIONS__ON:
-			setOn((On) newValue);
-			return;
 		case YamlmdePackage.GITHUB_ACTIONS__JOBS:
 			getJobs().clear();
 			getJobs().addAll((Collection<? extends Job>) newValue);
+			return;
+		case YamlmdePackage.GITHUB_ACTIONS__ON:
+			setOn((On) newValue);
 			return;
 		case YamlmdePackage.GITHUB_ACTIONS__PERMISSIONS:
 			setPermissions((Permissions) newValue);
@@ -500,11 +500,11 @@ public class GithubActionsImpl extends MinimalEObjectImpl.Container implements G
 		case YamlmdePackage.GITHUB_ACTIONS__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case YamlmdePackage.GITHUB_ACTIONS__ON:
-			setOn((On) null);
-			return;
 		case YamlmdePackage.GITHUB_ACTIONS__JOBS:
 			getJobs().clear();
+			return;
+		case YamlmdePackage.GITHUB_ACTIONS__ON:
+			setOn((On) null);
 			return;
 		case YamlmdePackage.GITHUB_ACTIONS__PERMISSIONS:
 			setPermissions((Permissions) null);
@@ -532,10 +532,10 @@ public class GithubActionsImpl extends MinimalEObjectImpl.Container implements G
 		switch (featureID) {
 		case YamlmdePackage.GITHUB_ACTIONS__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case YamlmdePackage.GITHUB_ACTIONS__ON:
-			return on != null;
 		case YamlmdePackage.GITHUB_ACTIONS__JOBS:
 			return jobs != null && !jobs.isEmpty();
+		case YamlmdePackage.GITHUB_ACTIONS__ON:
+			return on != null;
 		case YamlmdePackage.GITHUB_ACTIONS__PERMISSIONS:
 			return permissions != null;
 		case YamlmdePackage.GITHUB_ACTIONS__CONCURRENCY:

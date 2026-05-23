@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import pt.isep.yamldslgen.github_actions.Issues;
 import pt.isep.yamldslgen.github_actions.Merge_group;
 import pt.isep.yamldslgen.github_actions.On;
 import pt.isep.yamldslgen.github_actions.Pull_request;
@@ -36,7 +37,7 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getIssues <em>Issues</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getBranchProtectionRule <em>Branch Protection Rule</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getPush <em>Push</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getPullRequest <em>Pull Request</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getSchedule <em>Schedule</em>}</li>
@@ -44,6 +45,7 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getWorkflowCall <em>Workflow Call</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getPullRequestTarget <em>Pull Request Target</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getRelease <em>Release</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getIssues <em>Issues</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getMergeGroup <em>Merge Group</em>}</li>
  * </ul>
  *
@@ -51,24 +53,24 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  */
 public class OnImpl extends MinimalEObjectImpl.Container implements On {
 	/**
-	 * The default value of the '{@link #getIssues() <em>Issues</em>}' attribute.
+	 * The default value of the '{@link #getBranchProtectionRule() <em>Branch Protection Rule</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIssues()
+	 * @see #getBranchProtectionRule()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ISSUES_EDEFAULT = null;
+	protected static final String BRANCH_PROTECTION_RULE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getIssues() <em>Issues</em>}' attribute.
+	 * The cached value of the '{@link #getBranchProtectionRule() <em>Branch Protection Rule</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIssues()
+	 * @see #getBranchProtectionRule()
 	 * @generated
 	 * @ordered
 	 */
-	protected String issues = ISSUES_EDEFAULT;
+	protected String branchProtectionRule = BRANCH_PROTECTION_RULE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getPush() <em>Push</em>}' containment reference.
@@ -141,6 +143,16 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 	protected Release release;
 
 	/**
+	 * The cached value of the '{@link #getIssues() <em>Issues</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIssues()
+	 * @generated
+	 * @ordered
+	 */
+	protected Issues issues;
+
+	/**
 	 * The cached value of the '{@link #getMergeGroup() <em>Merge Group</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -175,8 +187,8 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 	 * @generated
 	 */
 	@Override
-	public String getIssues() {
-		return issues;
+	public String getBranchProtectionRule() {
+		return branchProtectionRule;
 	}
 
 	/**
@@ -185,11 +197,63 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 	 * @generated
 	 */
 	@Override
-	public void setIssues(String newIssues) {
-		String oldIssues = issues;
-		issues = newIssues;
+	public void setBranchProtectionRule(String newBranchProtectionRule) {
+		String oldBranchProtectionRule = branchProtectionRule;
+		branchProtectionRule = newBranchProtectionRule;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.ON__ISSUES, oldIssues, issues));
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.ON__BRANCH_PROTECTION_RULE,
+					oldBranchProtectionRule, branchProtectionRule));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Issues getIssues() {
+		return issues;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetIssues(Issues newIssues, NotificationChain msgs) {
+		Issues oldIssues = issues;
+		issues = newIssues;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, YamlmdePackage.ON__ISSUES,
+					oldIssues, newIssues);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIssues(Issues newIssues) {
+		if (newIssues != issues) {
+			NotificationChain msgs = null;
+			if (issues != null)
+				msgs = ((InternalEObject) issues).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - YamlmdePackage.ON__ISSUES, null, msgs);
+			if (newIssues != null)
+				msgs = ((InternalEObject) newIssues).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - YamlmdePackage.ON__ISSUES, null, msgs);
+			msgs = basicSetIssues(newIssues, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.ON__ISSUES, newIssues, newIssues));
 	}
 
 	/**
@@ -589,6 +653,8 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 			return basicSetPullRequestTarget(null, msgs);
 		case YamlmdePackage.ON__RELEASE:
 			return basicSetRelease(null, msgs);
+		case YamlmdePackage.ON__ISSUES:
+			return basicSetIssues(null, msgs);
 		case YamlmdePackage.ON__MERGE_GROUP:
 			return basicSetMergeGroup(null, msgs);
 		}
@@ -603,8 +669,8 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case YamlmdePackage.ON__ISSUES:
-			return getIssues();
+		case YamlmdePackage.ON__BRANCH_PROTECTION_RULE:
+			return getBranchProtectionRule();
 		case YamlmdePackage.ON__PUSH:
 			return getPush();
 		case YamlmdePackage.ON__PULL_REQUEST:
@@ -619,6 +685,8 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 			return getPullRequestTarget();
 		case YamlmdePackage.ON__RELEASE:
 			return getRelease();
+		case YamlmdePackage.ON__ISSUES:
+			return getIssues();
 		case YamlmdePackage.ON__MERGE_GROUP:
 			return getMergeGroup();
 		}
@@ -634,8 +702,8 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case YamlmdePackage.ON__ISSUES:
-			setIssues((String) newValue);
+		case YamlmdePackage.ON__BRANCH_PROTECTION_RULE:
+			setBranchProtectionRule((String) newValue);
 			return;
 		case YamlmdePackage.ON__PUSH:
 			setPush((Push) newValue);
@@ -659,6 +727,9 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 		case YamlmdePackage.ON__RELEASE:
 			setRelease((Release) newValue);
 			return;
+		case YamlmdePackage.ON__ISSUES:
+			setIssues((Issues) newValue);
+			return;
 		case YamlmdePackage.ON__MERGE_GROUP:
 			setMergeGroup((Merge_group) newValue);
 			return;
@@ -674,8 +745,8 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case YamlmdePackage.ON__ISSUES:
-			setIssues(ISSUES_EDEFAULT);
+		case YamlmdePackage.ON__BRANCH_PROTECTION_RULE:
+			setBranchProtectionRule(BRANCH_PROTECTION_RULE_EDEFAULT);
 			return;
 		case YamlmdePackage.ON__PUSH:
 			setPush((Push) null);
@@ -698,6 +769,9 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 		case YamlmdePackage.ON__RELEASE:
 			setRelease((Release) null);
 			return;
+		case YamlmdePackage.ON__ISSUES:
+			setIssues((Issues) null);
+			return;
 		case YamlmdePackage.ON__MERGE_GROUP:
 			setMergeGroup((Merge_group) null);
 			return;
@@ -713,8 +787,9 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case YamlmdePackage.ON__ISSUES:
-			return ISSUES_EDEFAULT == null ? issues != null : !ISSUES_EDEFAULT.equals(issues);
+		case YamlmdePackage.ON__BRANCH_PROTECTION_RULE:
+			return BRANCH_PROTECTION_RULE_EDEFAULT == null ? branchProtectionRule != null
+					: !BRANCH_PROTECTION_RULE_EDEFAULT.equals(branchProtectionRule);
 		case YamlmdePackage.ON__PUSH:
 			return push != null;
 		case YamlmdePackage.ON__PULL_REQUEST:
@@ -729,6 +804,8 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 			return pullRequestTarget != null;
 		case YamlmdePackage.ON__RELEASE:
 			return release != null;
+		case YamlmdePackage.ON__ISSUES:
+			return issues != null;
 		case YamlmdePackage.ON__MERGE_GROUP:
 			return mergeGroup != null;
 		}
@@ -746,8 +823,8 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (issues: ");
-		result.append(issues);
+		result.append(" (branchProtectionRule: ");
+		result.append(branchProtectionRule);
 		result.append(')');
 		return result.toString();
 	}

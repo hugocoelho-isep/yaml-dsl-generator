@@ -39,6 +39,7 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.MatrixImpl#getConfiguration <em>Configuration</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.MatrixImpl#getNodeVersion <em>Node Version</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.MatrixImpl#getRVersion <em>RVersion</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.MatrixImpl#getRubyVersion <em>Ruby Version</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.MatrixImpl#getInclude <em>Include</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.MatrixImpl#getExclude <em>Exclude</em>}</li>
  * </ul>
@@ -135,6 +136,16 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix {
 	 * @ordered
 	 */
 	protected EList<String> rVersion;
+
+	/**
+	 * The cached value of the '{@link #getRubyVersion() <em>Ruby Version</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRubyVersion()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> rubyVersion;
 
 	/**
 	 * The cached value of the '{@link #getInclude() <em>Include</em>}' containment reference list.
@@ -298,6 +309,19 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix {
 	 * @generated
 	 */
 	@Override
+	public EList<String> getRubyVersion() {
+		if (rubyVersion == null) {
+			rubyVersion = new EDataTypeUniqueEList<String>(String.class, this, YamlmdePackage.MATRIX__RUBY_VERSION);
+		}
+		return rubyVersion;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<Include> getInclude() {
 		if (include == null) {
 			include = new EObjectContainmentEList<Include>(Include.class, this, YamlmdePackage.MATRIX__INCLUDE);
@@ -360,6 +384,8 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix {
 			return getNodeVersion();
 		case YamlmdePackage.MATRIX__RVERSION:
 			return getRVersion();
+		case YamlmdePackage.MATRIX__RUBY_VERSION:
+			return getRubyVersion();
 		case YamlmdePackage.MATRIX__INCLUDE:
 			return getInclude();
 		case YamlmdePackage.MATRIX__EXCLUDE:
@@ -413,6 +439,10 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix {
 			getRVersion().clear();
 			getRVersion().addAll((Collection<? extends String>) newValue);
 			return;
+		case YamlmdePackage.MATRIX__RUBY_VERSION:
+			getRubyVersion().clear();
+			getRubyVersion().addAll((Collection<? extends String>) newValue);
+			return;
 		case YamlmdePackage.MATRIX__INCLUDE:
 			getInclude().clear();
 			getInclude().addAll((Collection<? extends Include>) newValue);
@@ -460,6 +490,9 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix {
 		case YamlmdePackage.MATRIX__RVERSION:
 			getRVersion().clear();
 			return;
+		case YamlmdePackage.MATRIX__RUBY_VERSION:
+			getRubyVersion().clear();
+			return;
 		case YamlmdePackage.MATRIX__INCLUDE:
 			getInclude().clear();
 			return;
@@ -496,6 +529,8 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix {
 			return nodeVersion != null && !nodeVersion.isEmpty();
 		case YamlmdePackage.MATRIX__RVERSION:
 			return rVersion != null && !rVersion.isEmpty();
+		case YamlmdePackage.MATRIX__RUBY_VERSION:
+			return rubyVersion != null && !rubyVersion.isEmpty();
 		case YamlmdePackage.MATRIX__INCLUDE:
 			return include != null && !include.isEmpty();
 		case YamlmdePackage.MATRIX__EXCLUDE:
@@ -533,6 +568,8 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix {
 		result.append(nodeVersion);
 		result.append(", rVersion: ");
 		result.append(rVersion);
+		result.append(", rubyVersion: ");
+		result.append(rubyVersion);
 		result.append(')');
 		return result.toString();
 	}

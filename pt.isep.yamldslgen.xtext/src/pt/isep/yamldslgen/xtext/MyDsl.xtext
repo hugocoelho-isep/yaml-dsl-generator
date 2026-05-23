@@ -65,7 +65,8 @@ KeyName returns ecore::EString:
 	| 'inputs' | 'description' | 'default' 
 	| 'type' | 'node-version'
 	| 'python-version' | 'configuration' | 'digests'
-	| 'merge_group' | 'r-version';
+	| 'merge_group' | 'r-version'
+	| 'branch_protection_rule' | 'models' | 'ruby-version' | 'services' | 'ports';
 	
 // =============================================================================
 // KEY-VALUE PAIR  (generic block content — e.g. 'with:', 'env:')
@@ -91,7 +92,7 @@ On returns On:
 		& ('workflow_call' ':' workflowCall=Workflow_call)?
 		& ('release' ':' release=Release)?
 		& ('merge_group' ':' mergeGroup=Merge_group)?
-		& ('issues' ':' issues=EString)?)
+		& ('issues' ':' issues=Issues)?)
 	END_BLOCK?;
 
 Push returns Push:
@@ -159,6 +160,14 @@ Merge_group returns Merge_group:
 		))
 	END_BLOCK?;
 	
+Issues returns Issues:
+	{Issues}
+	BEG_BLOCK?
+		('types' ':' (
+			  BEG_BLOCK ('-' BEG_BLOCK? types+=EString END_BLOCK?)+ END_BLOCK
+			| '[' types+=EString (',' types+=EString)* ']'
+		))
+	END_BLOCK?;
 	
 // =============================================================================
 // CONCURRENCY & ENVIRONMENT
@@ -193,7 +202,8 @@ Permissions returns Permissions:
 		& ('id-token' ':' idToken=EString)?
 		& ('pull-requests' ':' pullRequests=EString)?
 		& ('issues' ':' issues=EString)?
-		& ('packages' ':' packages=EString)?)
+		& ('packages' ':' packages=EString)?
+		& ('models' ':' models=EString)?)
 	END_BLOCK?;
 
 // =============================================================================
@@ -214,11 +224,22 @@ Job returns Job:
 		& ('environment' ':' environment=Environment)?
 		& ('strategy' ':' strategy=Strategy)?
 		& ('container' ':' container=Container)?
+		& ('services' ':' (BEG_BLOCK? services+=Service+ END_BLOCK?))?
 		& ('outputs' ':' (BEG_BLOCK? outputs+=KeyValuePair+ END_BLOCK?))?
 		& ('steps' ':' BEG_BLOCK? steps+=Step+ END_BLOCK?)?
 		& ('permissions' ':' permissions=Permissions)?
 		& ('env' ':' (BEG_BLOCK? env+=KeyValuePair+ END_BLOCK?))?
 		& ('with' ':' (BEG_BLOCK? ^with+=KeyValuePair+ END_BLOCK?))?)
+	END_BLOCK?;
+	
+Service returns Service:
+	id=EString ':' BEG_BLOCK?
+		(('image' ':' image=EString)?
+		& ('ports' ':' (
+			  BEG_BLOCK ('-' BEG_BLOCK? ports+=EString END_BLOCK?)+ END_BLOCK
+			| '[' ports+=EString (',' ports+=EString)* ']'
+		))?
+		& ('env' ':' (BEG_BLOCK? env+=KeyValuePair+ END_BLOCK?))?)
 	END_BLOCK?;
 
 // =============================================================================
@@ -282,6 +303,10 @@ Matrix returns Matrix:
 		& ('node-version' ':' (
 		      BEG_BLOCK ('-' BEG_BLOCK? nodeVersion+=EString END_BLOCK?)+ END_BLOCK
 		    | '[' nodeVersion+=EString (',' nodeVersion+=EString)* ']'
+		))?
+		& ('ruby-version' ':' ( 
+			  BEG_BLOCK ('-' BEG_BLOCK? rubyVersion+=EString END_BLOCK?)+ END_BLOCK
+			| '[' rubyVersion+=EString (',' rubyVersion+=EString)* ']'
 		))?
 		& ('r-version' ':' (
 			  BEG_BLOCK ('-' BEG_BLOCK? rVersion+=EString END_BLOCK?)+ END_BLOCK

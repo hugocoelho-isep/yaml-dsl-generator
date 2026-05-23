@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getName <em>Name</em>}</li>
- *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getOn <em>On</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getJobs <em>Jobs</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getOn <em>On</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getPermissions <em>Permissions</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getConcurrency <em>Concurrency</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getDefaults <em>Defaults</em>}</li>

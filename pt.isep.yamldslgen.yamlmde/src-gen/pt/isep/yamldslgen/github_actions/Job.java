@@ -26,8 +26,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getEnvironment <em>Environment</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getStrategy <em>Strategy</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getContainer <em>Container</em>}</li>
- *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getWith <em>With</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getServices <em>Services</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getEnv <em>Env</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getWith <em>With</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getOutputs <em>Outputs</em>}</li>
  * </ul>
  *
@@ -257,6 +258,18 @@ public interface Job extends EObject {
 	 * @generated
 	 */
 	void setContainer(Container value);
+
+	/**
+	 * Returns the value of the '<em><b>Services</b></em>' containment reference list.
+	 * The list contents are of type {@link pt.isep.yamldslgen.github_actions.Service}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Services</em>' containment reference list.
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getJob_Services()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Service> getServices();
 
 	/**
 	 * Returns the value of the '<em><b>With</b></em>' containment reference list.

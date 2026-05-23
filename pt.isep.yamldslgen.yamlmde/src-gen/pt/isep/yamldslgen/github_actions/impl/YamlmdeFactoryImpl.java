@@ -60,16 +60,16 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 			return createKeyValuePair();
 		case YamlmdePackage.GITHUB_ACTIONS:
 			return createGithubActions();
+		case YamlmdePackage.JOB:
+			return createJob();
+		case YamlmdePackage.STEP:
+			return createStep();
 		case YamlmdePackage.ON:
 			return createOn();
 		case YamlmdePackage.PUSH:
 			return createPush();
 		case YamlmdePackage.PULL_REQUEST:
 			return createPull_request();
-		case YamlmdePackage.JOB:
-			return createJob();
-		case YamlmdePackage.STEP:
-			return createStep();
 		case YamlmdePackage.PERMISSIONS:
 			return createPermissions();
 		case YamlmdePackage.SCHEDULE:
@@ -100,10 +100,14 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 			return createRun();
 		case YamlmdePackage.RELEASE:
 			return createRelease();
+		case YamlmdePackage.ISSUES:
+			return createIssues();
 		case YamlmdePackage.INPUT:
 			return createInput();
 		case YamlmdePackage.MERGE_GROUP:
 			return createMerge_group();
+		case YamlmdePackage.SERVICE:
+			return createService();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -357,6 +361,17 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 	 * @generated
 	 */
 	@Override
+	public Issues createIssues() {
+		IssuesImpl issues = new IssuesImpl();
+		return issues;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Input createInput() {
 		InputImpl input = new InputImpl();
 		return input;
@@ -371,6 +386,17 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 	public Merge_group createMerge_group() {
 		Merge_groupImpl merge_group = new Merge_groupImpl();
 		return merge_group;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Service createService() {
+		ServiceImpl service = new ServiceImpl();
+		return service;
 	}
 
 	/**

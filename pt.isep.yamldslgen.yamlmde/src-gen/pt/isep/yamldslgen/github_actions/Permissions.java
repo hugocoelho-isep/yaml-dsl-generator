@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pt.isep.yamldslgen.github_actions.Permissions#getPullRequests <em>Pull Requests</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Permissions#getIssues <em>Issues</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Permissions#getPackages <em>Packages</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Permissions#getModels <em>Models</em>}</li>
  * </ul>
  *
  * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getPermissions()
@@ -203,5 +204,27 @@ public interface Permissions extends EObject {
 	 * @generated
 	 */
 	void setPackages(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Models</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Models</em>' attribute.
+	 * @see #setModels(String)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getPermissions_Models()
+	 * @model
+	 * @generated
+	 */
+	String getModels();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.Permissions#getModels <em>Models</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Models</em>' attribute.
+	 * @see #getModels()
+	 * @generated
+	 */
+	void setModels(String value);
 
 } // Permissions

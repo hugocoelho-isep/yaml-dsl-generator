@@ -220,6 +220,15 @@ public interface YamlmdeFactory extends EFactory {
 	Release createRelease();
 
 	/**
+	 * Returns a new object of class '<em>Issues</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Issues</em>'.
+	 * @generated
+	 */
+	Issues createIssues();
+
+	/**
 	 * Returns a new object of class '<em>Input</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -236,6 +245,15 @@ public interface YamlmdeFactory extends EFactory {
 	 * @generated
 	 */
 	Merge_group createMerge_group();
+
+	/**
+	 * Returns a new object of class '<em>Service</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Service</em>'.
+	 * @generated
+	 */
+	Service createService();
 
 	/**
 	 * Returns the package supported by this factory.

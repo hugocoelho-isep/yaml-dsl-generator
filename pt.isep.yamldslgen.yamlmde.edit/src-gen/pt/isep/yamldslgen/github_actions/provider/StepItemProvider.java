@@ -202,8 +202,8 @@ public class StepItemProvider extends ItemProviderAdapter implements IEditingDom
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(YamlmdePackage.Literals.STEP__WITH);
 			childrenFeatures.add(YamlmdePackage.Literals.STEP__ENV);
+			childrenFeatures.add(YamlmdePackage.Literals.STEP__WITH);
 		}
 		return childrenFeatures;
 	}
@@ -277,8 +277,8 @@ public class StepItemProvider extends ItemProviderAdapter implements IEditingDom
 		case YamlmdePackage.STEP__CONTINUE_ON_ERROR:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case YamlmdePackage.STEP__WITH:
 		case YamlmdePackage.STEP__ENV:
+		case YamlmdePackage.STEP__WITH:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -296,11 +296,11 @@ public class StepItemProvider extends ItemProviderAdapter implements IEditingDom
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.STEP__WITH,
-				YamlmdeFactory.eINSTANCE.createKeyValuePair()));
-
 		newChildDescriptors.add(
 				createChildParameter(YamlmdePackage.Literals.STEP__ENV, YamlmdeFactory.eINSTANCE.createKeyValuePair()));
+
+		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.STEP__WITH,
+				YamlmdeFactory.eINSTANCE.createKeyValuePair()));
 	}
 
 	/**
@@ -314,8 +314,8 @@ public class StepItemProvider extends ItemProviderAdapter implements IEditingDom
 		Object childFeature = feature;
 		Object childObject = child;
 
-		boolean qualify = childFeature == YamlmdePackage.Literals.STEP__WITH
-				|| childFeature == YamlmdePackage.Literals.STEP__ENV;
+		boolean qualify = childFeature == YamlmdePackage.Literals.STEP__ENV
+				|| childFeature == YamlmdePackage.Literals.STEP__WITH;
 
 		if (qualify) {
 			return getString("_UI_CreateChild_text2",

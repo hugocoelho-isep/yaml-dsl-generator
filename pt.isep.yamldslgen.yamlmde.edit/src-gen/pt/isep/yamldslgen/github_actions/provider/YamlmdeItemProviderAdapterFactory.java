@@ -579,6 +579,29 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Issues} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IssuesItemProvider issuesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Issues}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIssuesAdapter() {
+		if (issuesItemProvider == null) {
+			issuesItemProvider = new IssuesItemProvider(this);
+		}
+
+		return issuesItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Input} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -622,6 +645,29 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 		}
 
 		return merge_groupItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Service} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ServiceItemProvider serviceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Service}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createServiceAdapter() {
+		if (serviceItemProvider == null) {
+			serviceItemProvider = new ServiceItemProvider(this);
+		}
+
+		return serviceItemProvider;
 	}
 
 	/**
@@ -733,16 +779,16 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 			keyValuePairItemProvider.dispose();
 		if (githubActionsItemProvider != null)
 			githubActionsItemProvider.dispose();
+		if (jobItemProvider != null)
+			jobItemProvider.dispose();
+		if (stepItemProvider != null)
+			stepItemProvider.dispose();
 		if (onItemProvider != null)
 			onItemProvider.dispose();
 		if (pushItemProvider != null)
 			pushItemProvider.dispose();
 		if (pull_requestItemProvider != null)
 			pull_requestItemProvider.dispose();
-		if (jobItemProvider != null)
-			jobItemProvider.dispose();
-		if (stepItemProvider != null)
-			stepItemProvider.dispose();
 		if (permissionsItemProvider != null)
 			permissionsItemProvider.dispose();
 		if (scheduleItemProvider != null)
@@ -773,10 +819,14 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 			runItemProvider.dispose();
 		if (releaseItemProvider != null)
 			releaseItemProvider.dispose();
+		if (issuesItemProvider != null)
+			issuesItemProvider.dispose();
 		if (inputItemProvider != null)
 			inputItemProvider.dispose();
 		if (merge_groupItemProvider != null)
 			merge_groupItemProvider.dispose();
+		if (serviceItemProvider != null)
+			serviceItemProvider.dispose();
 	}
 
 }

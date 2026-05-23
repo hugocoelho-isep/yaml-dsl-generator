@@ -56,10 +56,27 @@ public class OnItemProvider extends ItemProviderAdapter implements IEditingDomai
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIssuesPropertyDescriptor(object);
+			addBranchProtectionRulePropertyDescriptor(object);
 			addWorkflowDispatchPropertyDescriptor(object);
+			addIssuesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Branch Protection Rule feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBranchProtectionRulePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_On_branchProtectionRule_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_On_branchProtectionRule_feature",
+								"_UI_On_type"),
+						YamlmdePackage.Literals.ON__BRANCH_PROTECTION_RULE, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -73,8 +90,7 @@ public class OnItemProvider extends ItemProviderAdapter implements IEditingDomai
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
 						getResourceLocator(), getString("_UI_On_issues_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_On_issues_feature", "_UI_On_type"),
-						YamlmdePackage.Literals.ON__ISSUES, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+						YamlmdePackage.Literals.ON__ISSUES, true, false, false, null, null, null));
 	}
 
 	/**
@@ -157,7 +173,7 @@ public class OnItemProvider extends ItemProviderAdapter implements IEditingDomai
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((On) object).getIssues();
+		String label = ((On) object).getBranchProtectionRule();
 		return label == null || label.length() == 0 ? getString("_UI_On_type") : getString("_UI_On_type") + " " + label;
 	}
 
@@ -173,8 +189,9 @@ public class OnItemProvider extends ItemProviderAdapter implements IEditingDomai
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(On.class)) {
-		case YamlmdePackage.ON__ISSUES:
+		case YamlmdePackage.ON__BRANCH_PROTECTION_RULE:
 		case YamlmdePackage.ON__WORKFLOW_DISPATCH:
+		case YamlmdePackage.ON__ISSUES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case YamlmdePackage.ON__PUSH:

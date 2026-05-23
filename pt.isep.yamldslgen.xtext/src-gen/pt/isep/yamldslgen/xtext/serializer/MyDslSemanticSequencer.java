@@ -22,6 +22,7 @@ import pt.isep.yamldslgen.github_actions.Exclude;
 import pt.isep.yamldslgen.github_actions.GithubActions;
 import pt.isep.yamldslgen.github_actions.Include;
 import pt.isep.yamldslgen.github_actions.Input;
+import pt.isep.yamldslgen.github_actions.Issues;
 import pt.isep.yamldslgen.github_actions.Job;
 import pt.isep.yamldslgen.github_actions.KeyValuePair;
 import pt.isep.yamldslgen.github_actions.Matrix;
@@ -34,6 +35,7 @@ import pt.isep.yamldslgen.github_actions.Release;
 import pt.isep.yamldslgen.github_actions.Run;
 import pt.isep.yamldslgen.github_actions.Schedule;
 import pt.isep.yamldslgen.github_actions.Secret;
+import pt.isep.yamldslgen.github_actions.Service;
 import pt.isep.yamldslgen.github_actions.Step;
 import pt.isep.yamldslgen.github_actions.Strategy;
 import pt.isep.yamldslgen.github_actions.Workflow_call;
@@ -79,6 +81,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case YamlmdePackage.INPUT:
 				sequence_Input(context, (Input) semanticObject); 
 				return; 
+			case YamlmdePackage.ISSUES:
+				sequence_Issues(context, (Issues) semanticObject); 
+				return; 
 			case YamlmdePackage.JOB:
 				sequence_Job(context, (Job) semanticObject); 
 				return; 
@@ -114,6 +119,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case YamlmdePackage.SECRET:
 				sequence_Secret(context, (Secret) semanticObject); 
+				return; 
+			case YamlmdePackage.SERVICE:
+				sequence_Service(context, (Service) semanticObject); 
 				return; 
 			case YamlmdePackage.STEP:
 				sequence_Step(context, (Step) semanticObject); 
@@ -267,6 +275,20 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Issues returns Issues
+	 *
+	 * Constraint:
+	 *     (types+=EString+ | (types+=EString types+=EString*))
+	 * </pre>
+	 */
+	protected void sequence_Issues(ISerializationContext context, Issues semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Job returns Job
 	 *
 	 * Constraint:
@@ -283,6 +305,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *                 environment=Environment | 
 	 *                 strategy=Strategy | 
 	 *                 container=Container | 
+	 *                 services+=Service | 
 	 *                 outputs+=KeyValuePair | 
 	 *                 steps+=Step | 
 	 *                 permissions=Permissions | 
@@ -336,6 +359,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *             otp+=EString | 
 	 *             elixir+=EString | 
 	 *             nodeVersion+=EString | 
+	 *             rubyVersion+=EString | 
 	 *             rVersion+=EString | 
 	 *             configuration+=EString | 
 	 *             include+=Include | 
@@ -347,6 +371,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         (otp+=EString otp+=EString*)? 
 	 *         (elixir+=EString elixir+=EString*)? 
 	 *         (nodeVersion+=EString nodeVersion+=EString*)? 
+	 *         (rubyVersion+=EString rubyVersion+=EString*)? 
 	 *         (rVersion+=EString rVersion+=EString*)? 
 	 *         (configuration+=EString configuration+=EString*)?
 	 *     )+
@@ -386,7 +411,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         workflowCall=Workflow_call | 
 	 *         release=Release | 
 	 *         mergeGroup=Merge_group | 
-	 *         issues=EString
+	 *         issues=Issues
 	 *     )*
 	 * </pre>
 	 */
@@ -409,7 +434,8 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         idToken=EString | 
 	 *         pullRequests=EString | 
 	 *         issues=EString | 
-	 *         packages=EString
+	 *         packages=EString | 
+	 *         models=EString
 	 *     )*
 	 * </pre>
 	 */
@@ -510,6 +536,20 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * </pre>
 	 */
 	protected void sequence_Secret(ISerializationContext context, Secret semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Service returns Service
+	 *
+	 * Constraint:
+	 *     (id=EString ((image=EString | ports+=EString | env+=KeyValuePair)? (ports+=EString ports+=EString*)?)+)
+	 * </pre>
+	 */
+	protected void sequence_Service(ISerializationContext context, Service semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

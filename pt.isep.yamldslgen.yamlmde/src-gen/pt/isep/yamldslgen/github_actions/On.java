@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link pt.isep.yamldslgen.github_actions.On#getIssues <em>Issues</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.On#getBranchProtectionRule <em>Branch Protection Rule</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getPush <em>Push</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getPullRequest <em>Pull Request</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getSchedule <em>Schedule</em>}</li>
@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getWorkflowCall <em>Workflow Call</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getPullRequestTarget <em>Pull Request Target</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getRelease <em>Release</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.On#getIssues <em>Issues</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getMergeGroup <em>Merge Group</em>}</li>
  * </ul>
  *
@@ -32,26 +33,48 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface On extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Issues</b></em>' attribute.
+	 * Returns the value of the '<em><b>Branch Protection Rule</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Issues</em>' attribute.
-	 * @see #setIssues(String)
-	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getOn_Issues()
+	 * @return the value of the '<em>Branch Protection Rule</em>' attribute.
+	 * @see #setBranchProtectionRule(String)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getOn_BranchProtectionRule()
 	 * @model
 	 * @generated
 	 */
-	String getIssues();
+	String getBranchProtectionRule();
 
 	/**
-	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.On#getIssues <em>Issues</em>}' attribute.
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.On#getBranchProtectionRule <em>Branch Protection Rule</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Issues</em>' attribute.
+	 * @param value the new value of the '<em>Branch Protection Rule</em>' attribute.
+	 * @see #getBranchProtectionRule()
+	 * @generated
+	 */
+	void setBranchProtectionRule(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Issues</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Issues</em>' containment reference.
+	 * @see #setIssues(Issues)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getOn_Issues()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Issues getIssues();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.On#getIssues <em>Issues</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Issues</em>' containment reference.
 	 * @see #getIssues()
 	 * @generated
 	 */
-	void setIssues(String value);
+	void setIssues(Issues value);
 
 	/**
 	 * Returns the value of the '<em><b>Push</b></em>' containment reference.
