@@ -229,6 +229,15 @@ public interface YamlmdeFactory extends EFactory {
 	Input createInput();
 
 	/**
+	 * Returns a new object of class '<em>Merge group</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Merge group</em>'.
+	 * @generated
+	 */
+	Merge_group createMerge_group();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

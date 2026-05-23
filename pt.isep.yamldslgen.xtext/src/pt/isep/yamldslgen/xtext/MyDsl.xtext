@@ -62,8 +62,10 @@ KeyName returns ecore::EString:
 	| 'secrets' | 'required' | 'packages'
 	| 'container' | 'image'
 	| 'defaults' | 'outputs' | 'release' 
-	| 'inputs' | 'description' | 'default' | 'type' | 'node-version'
-	| 'python-version' | 'configuration' | 'digests';
+	| 'inputs' | 'description' | 'default' 
+	| 'type' | 'node-version'
+	| 'python-version' | 'configuration' | 'digests'
+	| 'merge_group' | 'r-version';
 	
 // =============================================================================
 // KEY-VALUE PAIR  (generic block content — e.g. 'with:', 'env:')
@@ -88,6 +90,7 @@ On returns On:
 		& ('workflow_dispatch' ':' workflowDispatch=Workflow_dispatch)?
 		& ('workflow_call' ':' workflowCall=Workflow_call)?
 		& ('release' ':' release=Release)?
+		& ('merge_group' ':' mergeGroup=Merge_group)?
 		& ('issues' ':' issues=EString)?)
 	END_BLOCK?;
 
@@ -145,6 +148,15 @@ Workflow_call returns Workflow_call:
 Secret returns Secret:
 	id=EString ':' BEG_BLOCK?
 		('required' ':' required=EBoolean)?
+	END_BLOCK?;
+	
+Merge_group returns Merge_group:
+	{Merge_group}
+	BEG_BLOCK?
+		('branches' ':' (
+			  BEG_BLOCK ('-' BEG_BLOCK? branches+=EString END_BLOCK?)+ END_BLOCK
+			| '[' branches+=EString (',' branches+=EString)* ']'
+		))
 	END_BLOCK?;
 	
 	
@@ -270,6 +282,10 @@ Matrix returns Matrix:
 		& ('node-version' ':' (
 		      BEG_BLOCK ('-' BEG_BLOCK? nodeVersion+=EString END_BLOCK?)+ END_BLOCK
 		    | '[' nodeVersion+=EString (',' nodeVersion+=EString)* ']'
+		))?
+		& ('r-version' ':' (
+			  BEG_BLOCK ('-' BEG_BLOCK? rVersion+=EString END_BLOCK?)+ END_BLOCK
+			| '[' rVersion+=EString (',' rVersion+=EString)* ']'
 		))?
 		& ('configuration' ':' (
 			  BEG_BLOCK ('-' BEG_BLOCK? configuration+=EString END_BLOCK?)+ END_BLOCK

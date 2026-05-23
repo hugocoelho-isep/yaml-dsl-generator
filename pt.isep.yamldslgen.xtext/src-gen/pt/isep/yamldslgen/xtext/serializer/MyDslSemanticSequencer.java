@@ -25,6 +25,7 @@ import pt.isep.yamldslgen.github_actions.Input;
 import pt.isep.yamldslgen.github_actions.Job;
 import pt.isep.yamldslgen.github_actions.KeyValuePair;
 import pt.isep.yamldslgen.github_actions.Matrix;
+import pt.isep.yamldslgen.github_actions.Merge_group;
 import pt.isep.yamldslgen.github_actions.On;
 import pt.isep.yamldslgen.github_actions.Permissions;
 import pt.isep.yamldslgen.github_actions.Pull_request;
@@ -86,6 +87,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case YamlmdePackage.MATRIX:
 				sequence_Matrix(context, (Matrix) semanticObject); 
+				return; 
+			case YamlmdePackage.MERGE_GROUP:
+				sequence_Merge_group(context, (Merge_group) semanticObject); 
 				return; 
 			case YamlmdePackage.ON:
 				sequence_On(context, (On) semanticObject); 
@@ -332,6 +336,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *             otp+=EString | 
 	 *             elixir+=EString | 
 	 *             nodeVersion+=EString | 
+	 *             rVersion+=EString | 
 	 *             configuration+=EString | 
 	 *             include+=Include | 
 	 *             exclude+=Exclude
@@ -342,11 +347,26 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         (otp+=EString otp+=EString*)? 
 	 *         (elixir+=EString elixir+=EString*)? 
 	 *         (nodeVersion+=EString nodeVersion+=EString*)? 
+	 *         (rVersion+=EString rVersion+=EString*)? 
 	 *         (configuration+=EString configuration+=EString*)?
 	 *     )+
 	 * </pre>
 	 */
 	protected void sequence_Matrix(ISerializationContext context, Matrix semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Merge_group returns Merge_group
+	 *
+	 * Constraint:
+	 *     (branches+=EString+ | (branches+=EString branches+=EString*))
+	 * </pre>
+	 */
+	protected void sequence_Merge_group(ISerializationContext context, Merge_group semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -365,6 +385,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         workflowDispatch=Workflow_dispatch | 
 	 *         workflowCall=Workflow_call | 
 	 *         release=Release | 
+	 *         mergeGroup=Merge_group | 
 	 *         issues=EString
 	 *     )*
 	 * </pre>

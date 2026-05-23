@@ -51,7 +51,7 @@ public interface Environment extends EObject {
 	 * @return the value of the '<em>Url</em>' attribute.
 	 * @see #setUrl(String)
 	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getEnvironment_Url()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	String getUrl();

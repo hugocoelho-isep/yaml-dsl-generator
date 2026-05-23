@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import pt.isep.yamldslgen.github_actions.Merge_group;
 import pt.isep.yamldslgen.github_actions.On;
 import pt.isep.yamldslgen.github_actions.Pull_request;
 import pt.isep.yamldslgen.github_actions.Push;
@@ -43,6 +44,7 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getWorkflowCall <em>Workflow Call</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getPullRequestTarget <em>Pull Request Target</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getRelease <em>Release</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getMergeGroup <em>Merge Group</em>}</li>
  * </ul>
  *
  * @generated
@@ -137,6 +139,16 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 	 * @ordered
 	 */
 	protected Release release;
+
+	/**
+	 * The cached value of the '{@link #getMergeGroup() <em>Merge Group</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMergeGroup()
+	 * @generated
+	 * @ordered
+	 */
+	protected Merge_group mergeGroup;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -509,6 +521,58 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 	 * @generated
 	 */
 	@Override
+	public Merge_group getMergeGroup() {
+		return mergeGroup;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMergeGroup(Merge_group newMergeGroup, NotificationChain msgs) {
+		Merge_group oldMergeGroup = mergeGroup;
+		mergeGroup = newMergeGroup;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					YamlmdePackage.ON__MERGE_GROUP, oldMergeGroup, newMergeGroup);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setMergeGroup(Merge_group newMergeGroup) {
+		if (newMergeGroup != mergeGroup) {
+			NotificationChain msgs = null;
+			if (mergeGroup != null)
+				msgs = ((InternalEObject) mergeGroup).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - YamlmdePackage.ON__MERGE_GROUP, null, msgs);
+			if (newMergeGroup != null)
+				msgs = ((InternalEObject) newMergeGroup).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - YamlmdePackage.ON__MERGE_GROUP, null, msgs);
+			msgs = basicSetMergeGroup(newMergeGroup, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.ON__MERGE_GROUP, newMergeGroup,
+					newMergeGroup));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case YamlmdePackage.ON__PUSH:
@@ -525,6 +589,8 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 			return basicSetPullRequestTarget(null, msgs);
 		case YamlmdePackage.ON__RELEASE:
 			return basicSetRelease(null, msgs);
+		case YamlmdePackage.ON__MERGE_GROUP:
+			return basicSetMergeGroup(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -553,6 +619,8 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 			return getPullRequestTarget();
 		case YamlmdePackage.ON__RELEASE:
 			return getRelease();
+		case YamlmdePackage.ON__MERGE_GROUP:
+			return getMergeGroup();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -591,6 +659,9 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 		case YamlmdePackage.ON__RELEASE:
 			setRelease((Release) newValue);
 			return;
+		case YamlmdePackage.ON__MERGE_GROUP:
+			setMergeGroup((Merge_group) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -627,6 +698,9 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 		case YamlmdePackage.ON__RELEASE:
 			setRelease((Release) null);
 			return;
+		case YamlmdePackage.ON__MERGE_GROUP:
+			setMergeGroup((Merge_group) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -655,6 +729,8 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 			return pullRequestTarget != null;
 		case YamlmdePackage.ON__RELEASE:
 			return release != null;
+		case YamlmdePackage.ON__MERGE_GROUP:
+			return mergeGroup != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -64,6 +64,7 @@ public class MatrixItemProvider extends ItemProviderAdapter implements IEditingD
 			addPythonVersionPropertyDescriptor(object);
 			addConfigurationPropertyDescriptor(object);
 			addNodeVersionPropertyDescriptor(object);
+			addRVersionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -194,6 +195,22 @@ public class MatrixItemProvider extends ItemProviderAdapter implements IEditingD
 	}
 
 	/**
+	 * This adds a property descriptor for the RVersion feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRVersionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Matrix_rVersion_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Matrix_rVersion_feature",
+								"_UI_Matrix_type"),
+						YamlmdePackage.Literals.MATRIX__RVERSION, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -276,6 +293,7 @@ public class MatrixItemProvider extends ItemProviderAdapter implements IEditingD
 		case YamlmdePackage.MATRIX__PYTHON_VERSION:
 		case YamlmdePackage.MATRIX__CONFIGURATION:
 		case YamlmdePackage.MATRIX__NODE_VERSION:
+		case YamlmdePackage.MATRIX__RVERSION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case YamlmdePackage.MATRIX__INCLUDE:

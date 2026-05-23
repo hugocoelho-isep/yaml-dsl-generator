@@ -74,7 +74,7 @@ public interface Strategy extends EObject {
 	 * @return the value of the '<em>Matrix</em>' containment reference.
 	 * @see #setMatrix(Matrix)
 	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getStrategy_Matrix()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	Matrix getMatrix();

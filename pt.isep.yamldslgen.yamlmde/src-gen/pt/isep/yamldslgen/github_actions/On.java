@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getWorkflowCall <em>Workflow Call</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getPullRequestTarget <em>Pull Request Target</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getRelease <em>Release</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.On#getMergeGroup <em>Merge Group</em>}</li>
  * </ul>
  *
  * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getOn()
@@ -195,5 +196,27 @@ public interface On extends EObject {
 	 * @generated
 	 */
 	void setRelease(Release value);
+
+	/**
+	 * Returns the value of the '<em><b>Merge Group</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Merge Group</em>' containment reference.
+	 * @see #setMergeGroup(Merge_group)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getOn_MergeGroup()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Merge_group getMergeGroup();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.On#getMergeGroup <em>Merge Group</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Merge Group</em>' containment reference.
+	 * @see #getMergeGroup()
+	 * @generated
+	 */
+	void setMergeGroup(Merge_group value);
 
 } // On

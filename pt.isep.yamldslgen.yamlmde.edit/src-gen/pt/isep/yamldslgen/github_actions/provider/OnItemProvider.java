@@ -110,6 +110,7 @@ public class OnItemProvider extends ItemProviderAdapter implements IEditingDomai
 			childrenFeatures.add(YamlmdePackage.Literals.ON__WORKFLOW_CALL);
 			childrenFeatures.add(YamlmdePackage.Literals.ON__PULL_REQUEST_TARGET);
 			childrenFeatures.add(YamlmdePackage.Literals.ON__RELEASE);
+			childrenFeatures.add(YamlmdePackage.Literals.ON__MERGE_GROUP);
 		}
 		return childrenFeatures;
 	}
@@ -182,6 +183,7 @@ public class OnItemProvider extends ItemProviderAdapter implements IEditingDomai
 		case YamlmdePackage.ON__WORKFLOW_CALL:
 		case YamlmdePackage.ON__PULL_REQUEST_TARGET:
 		case YamlmdePackage.ON__RELEASE:
+		case YamlmdePackage.ON__MERGE_GROUP:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -216,6 +218,9 @@ public class OnItemProvider extends ItemProviderAdapter implements IEditingDomai
 
 		newChildDescriptors.add(
 				createChildParameter(YamlmdePackage.Literals.ON__RELEASE, YamlmdeFactory.eINSTANCE.createRelease()));
+
+		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.ON__MERGE_GROUP,
+				YamlmdeFactory.eINSTANCE.createMerge_group()));
 	}
 
 	/**
