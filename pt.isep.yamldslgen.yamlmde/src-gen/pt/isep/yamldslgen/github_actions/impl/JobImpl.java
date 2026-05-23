@@ -48,8 +48,8 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getStrategy <em>Strategy</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getContainer <em>Container</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getOutputs <em>Outputs</em>}</li>
- *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getEnv <em>Env</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getWith <em>With</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getEnv <em>Env</em>}</li>
  * </ul>
  *
  * @generated
@@ -226,16 +226,6 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	protected Outputs outputs;
 
 	/**
-	 * The cached value of the '{@link #getEnv() <em>Env</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEnv()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<KeyValuePair> env;
-
-	/**
 	 * The cached value of the '{@link #getWith() <em>With</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -244,6 +234,16 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 * @ordered
 	 */
 	protected EList<KeyValuePair> with;
+
+	/**
+	 * The cached value of the '{@link #getEnv() <em>Env</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnv()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<KeyValuePair> env;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -711,10 +711,10 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			return basicSetContainer(null, msgs);
 		case YamlmdePackage.JOB__OUTPUTS:
 			return basicSetOutputs(null, msgs);
-		case YamlmdePackage.JOB__ENV:
-			return ((InternalEList<?>) getEnv()).basicRemove(otherEnd, msgs);
 		case YamlmdePackage.JOB__WITH:
 			return ((InternalEList<?>) getWith()).basicRemove(otherEnd, msgs);
+		case YamlmdePackage.JOB__ENV:
+			return ((InternalEList<?>) getEnv()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -751,10 +751,10 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			return getContainer();
 		case YamlmdePackage.JOB__OUTPUTS:
 			return getOutputs();
-		case YamlmdePackage.JOB__ENV:
-			return getEnv();
 		case YamlmdePackage.JOB__WITH:
 			return getWith();
+		case YamlmdePackage.JOB__ENV:
+			return getEnv();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -806,13 +806,13 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		case YamlmdePackage.JOB__OUTPUTS:
 			setOutputs((Outputs) newValue);
 			return;
-		case YamlmdePackage.JOB__ENV:
-			getEnv().clear();
-			getEnv().addAll((Collection<? extends KeyValuePair>) newValue);
-			return;
 		case YamlmdePackage.JOB__WITH:
 			getWith().clear();
 			getWith().addAll((Collection<? extends KeyValuePair>) newValue);
+			return;
+		case YamlmdePackage.JOB__ENV:
+			getEnv().clear();
+			getEnv().addAll((Collection<? extends KeyValuePair>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -862,11 +862,11 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		case YamlmdePackage.JOB__OUTPUTS:
 			setOutputs((Outputs) null);
 			return;
-		case YamlmdePackage.JOB__ENV:
-			getEnv().clear();
-			return;
 		case YamlmdePackage.JOB__WITH:
 			getWith().clear();
+			return;
+		case YamlmdePackage.JOB__ENV:
+			getEnv().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -904,10 +904,10 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			return container != null;
 		case YamlmdePackage.JOB__OUTPUTS:
 			return outputs != null;
-		case YamlmdePackage.JOB__ENV:
-			return env != null && !env.isEmpty();
 		case YamlmdePackage.JOB__WITH:
 			return with != null && !with.isEmpty();
+		case YamlmdePackage.JOB__ENV:
+			return env != null && !env.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

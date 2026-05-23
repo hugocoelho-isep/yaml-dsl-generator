@@ -687,24 +687,24 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 			keyValuePairItemProvider.dispose();
 		if (githubActionsItemProvider != null)
 			githubActionsItemProvider.dispose();
-		if (jobItemProvider != null)
-			jobItemProvider.dispose();
-		if (stepItemProvider != null)
-			stepItemProvider.dispose();
 		if (onItemProvider != null)
 			onItemProvider.dispose();
 		if (pushItemProvider != null)
 			pushItemProvider.dispose();
 		if (pull_requestItemProvider != null)
 			pull_requestItemProvider.dispose();
+		if (jobItemProvider != null)
+			jobItemProvider.dispose();
+		if (stepItemProvider != null)
+			stepItemProvider.dispose();
 		if (permissionsItemProvider != null)
 			permissionsItemProvider.dispose();
 		if (scheduleItemProvider != null)
 			scheduleItemProvider.dispose();
-		if (concurrencyItemProvider != null)
-			concurrencyItemProvider.dispose();
 		if (environmentItemProvider != null)
 			environmentItemProvider.dispose();
+		if (concurrencyItemProvider != null)
+			concurrencyItemProvider.dispose();
 		if (strategyItemProvider != null)
 			strategyItemProvider.dispose();
 		if (matrixItemProvider != null)
@@ -723,10 +723,10 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 			defaultsItemProvider.dispose();
 		if (runItemProvider != null)
 			runItemProvider.dispose();
-		if (outputsItemProvider != null)
-			outputsItemProvider.dispose();
 		if (releaseItemProvider != null)
 			releaseItemProvider.dispose();
+		if (outputsItemProvider != null)
+			outputsItemProvider.dispose();
 	}
 
 }

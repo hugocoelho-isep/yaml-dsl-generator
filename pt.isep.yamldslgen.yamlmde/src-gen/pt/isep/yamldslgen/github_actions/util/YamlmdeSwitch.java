@@ -80,20 +80,6 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case YamlmdePackage.JOB: {
-			Job job = (Job) theEObject;
-			T result = caseJob(job);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case YamlmdePackage.STEP: {
-			Step step = (Step) theEObject;
-			T result = caseStep(step);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case YamlmdePackage.ON: {
 			On on = (On) theEObject;
 			T result = caseOn(on);
@@ -115,6 +101,20 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case YamlmdePackage.JOB: {
+			Job job = (Job) theEObject;
+			T result = caseJob(job);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamlmdePackage.STEP: {
+			Step step = (Step) theEObject;
+			T result = caseStep(step);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case YamlmdePackage.PERMISSIONS: {
 			Permissions permissions = (Permissions) theEObject;
 			T result = casePermissions(permissions);
@@ -129,16 +129,16 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case YamlmdePackage.CONCURRENCY: {
-			Concurrency concurrency = (Concurrency) theEObject;
-			T result = caseConcurrency(concurrency);
+		case YamlmdePackage.ENVIRONMENT: {
+			Environment environment = (Environment) theEObject;
+			T result = caseEnvironment(environment);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case YamlmdePackage.ENVIRONMENT: {
-			Environment environment = (Environment) theEObject;
-			T result = caseEnvironment(environment);
+		case YamlmdePackage.CONCURRENCY: {
+			Concurrency concurrency = (Concurrency) theEObject;
+			T result = caseConcurrency(concurrency);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -206,16 +206,16 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case YamlmdePackage.OUTPUTS: {
-			Outputs outputs = (Outputs) theEObject;
-			T result = caseOutputs(outputs);
+		case YamlmdePackage.RELEASE: {
+			Release release = (Release) theEObject;
+			T result = caseRelease(release);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case YamlmdePackage.RELEASE: {
-			Release release = (Release) theEObject;
-			T result = caseRelease(release);
+		case YamlmdePackage.OUTPUTS: {
+			Outputs outputs = (Outputs) theEObject;
+			T result = caseOutputs(outputs);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;

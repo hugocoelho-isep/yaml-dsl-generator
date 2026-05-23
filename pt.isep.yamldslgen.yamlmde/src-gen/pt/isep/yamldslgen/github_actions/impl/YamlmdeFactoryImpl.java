@@ -60,24 +60,24 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 			return createKeyValuePair();
 		case YamlmdePackage.GITHUB_ACTIONS:
 			return createGithubActions();
-		case YamlmdePackage.JOB:
-			return createJob();
-		case YamlmdePackage.STEP:
-			return createStep();
 		case YamlmdePackage.ON:
 			return createOn();
 		case YamlmdePackage.PUSH:
 			return createPush();
 		case YamlmdePackage.PULL_REQUEST:
 			return createPull_request();
+		case YamlmdePackage.JOB:
+			return createJob();
+		case YamlmdePackage.STEP:
+			return createStep();
 		case YamlmdePackage.PERMISSIONS:
 			return createPermissions();
 		case YamlmdePackage.SCHEDULE:
 			return createSchedule();
-		case YamlmdePackage.CONCURRENCY:
-			return createConcurrency();
 		case YamlmdePackage.ENVIRONMENT:
 			return createEnvironment();
+		case YamlmdePackage.CONCURRENCY:
+			return createConcurrency();
 		case YamlmdePackage.STRATEGY:
 			return createStrategy();
 		case YamlmdePackage.MATRIX:
@@ -96,10 +96,10 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 			return createDefaults();
 		case YamlmdePackage.RUN:
 			return createRun();
-		case YamlmdePackage.OUTPUTS:
-			return createOutputs();
 		case YamlmdePackage.RELEASE:
 			return createRelease();
+		case YamlmdePackage.OUTPUTS:
+			return createOutputs();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}

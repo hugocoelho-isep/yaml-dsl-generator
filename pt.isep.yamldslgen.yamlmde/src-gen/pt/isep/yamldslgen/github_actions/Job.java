@@ -27,8 +27,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getStrategy <em>Strategy</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getContainer <em>Container</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getOutputs <em>Outputs</em>}</li>
- *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getEnv <em>Env</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getWith <em>With</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getEnv <em>Env</em>}</li>
  * </ul>
  *
  * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getJob()

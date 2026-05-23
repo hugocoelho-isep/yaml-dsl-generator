@@ -1716,6 +1716,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     BEG_BLOCK?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) ('workflow_dispatch' ':')* 'issues' ':' issues=EString
 	 *     (rule start) (ambiguity) ('workflow_dispatch' ':')* 'pull_request' ':' pullRequest=Pull_request
 	 *     (rule start) (ambiguity) ('workflow_dispatch' ':')* 'pull_request_target' ':' pullRequestTarget=Pull_request
 	 *     (rule start) (ambiguity) ('workflow_dispatch' ':')* 'push' ':' push=Push
@@ -1738,6 +1739,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) BEG_BLOCK? ('workflow_dispatch' ':')* 'schedule' ':' (ambiguity) schedule+=Schedule
+	 *     issues=EString ('workflow_dispatch' ':')* 'schedule' ':' (ambiguity) schedule+=Schedule
 	 *     pullRequest=Pull_request ('workflow_dispatch' ':')* 'schedule' ':' (ambiguity) schedule+=Schedule
 	 *     pullRequestTarget=Pull_request ('workflow_dispatch' ':')* 'schedule' ':' (ambiguity) schedule+=Schedule
 	 *     push=Push ('workflow_dispatch' ':')* 'schedule' ':' (ambiguity) schedule+=Schedule
@@ -1757,6 +1759,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     END_BLOCK?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     schedule+=Schedule (ambiguity) ('workflow_dispatch' ':')* 'issues' ':' issues=EString
 	 *     schedule+=Schedule (ambiguity) ('workflow_dispatch' ':')* 'pull_request' ':' pullRequest=Pull_request
 	 *     schedule+=Schedule (ambiguity) ('workflow_dispatch' ':')* 'pull_request_target' ':' pullRequestTarget=Pull_request
 	 *     schedule+=Schedule (ambiguity) ('workflow_dispatch' ':')* 'push' ':' push=Push
@@ -1778,6 +1781,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) BEG_BLOCK? ('workflow_dispatch' ':')* (ambiguity) (rule start)
+	 *     issues=EString ('workflow_dispatch' ':')* (ambiguity) (rule end)
 	 *     pullRequest=Pull_request ('workflow_dispatch' ':')* (ambiguity) (rule end)
 	 *     pullRequestTarget=Pull_request ('workflow_dispatch' ':')* (ambiguity) (rule end)
 	 *     push=Push ('workflow_dispatch' ':')* (ambiguity) (rule end)
@@ -1812,6 +1816,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('workflow_dispatch' ':')*
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     (rule start) BEG_BLOCK? (ambiguity) 'issues' ':' issues=EString
 	 *     (rule start) BEG_BLOCK? (ambiguity) 'pull_request' ':' pullRequest=Pull_request
 	 *     (rule start) BEG_BLOCK? (ambiguity) 'pull_request_target' ':' pullRequestTarget=Pull_request
 	 *     (rule start) BEG_BLOCK? (ambiguity) 'push' ':' push=Push
@@ -1819,6 +1824,15 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) BEG_BLOCK? (ambiguity) 'schedule' ':' BEG_BLOCK? schedule+=Schedule
 	 *     (rule start) BEG_BLOCK? (ambiguity) 'workflow_call' ':' workflowCall=Workflow_call
 	 *     (rule start) BEG_BLOCK? (ambiguity) END_BLOCK? (rule start)
+	 *     issues=EString (ambiguity) 'issues' ':' issues=EString
+	 *     issues=EString (ambiguity) 'pull_request' ':' pullRequest=Pull_request
+	 *     issues=EString (ambiguity) 'pull_request_target' ':' pullRequestTarget=Pull_request
+	 *     issues=EString (ambiguity) 'push' ':' push=Push
+	 *     issues=EString (ambiguity) 'release' ':' release=Release
+	 *     issues=EString (ambiguity) 'schedule' ':' BEG_BLOCK? schedule+=Schedule
+	 *     issues=EString (ambiguity) 'workflow_call' ':' workflowCall=Workflow_call
+	 *     issues=EString (ambiguity) END_BLOCK? (rule end)
+	 *     pullRequest=Pull_request (ambiguity) 'issues' ':' issues=EString
 	 *     pullRequest=Pull_request (ambiguity) 'pull_request' ':' pullRequest=Pull_request
 	 *     pullRequest=Pull_request (ambiguity) 'pull_request_target' ':' pullRequestTarget=Pull_request
 	 *     pullRequest=Pull_request (ambiguity) 'push' ':' push=Push
@@ -1826,6 +1840,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     pullRequest=Pull_request (ambiguity) 'schedule' ':' BEG_BLOCK? schedule+=Schedule
 	 *     pullRequest=Pull_request (ambiguity) 'workflow_call' ':' workflowCall=Workflow_call
 	 *     pullRequest=Pull_request (ambiguity) END_BLOCK? (rule end)
+	 *     pullRequestTarget=Pull_request (ambiguity) 'issues' ':' issues=EString
 	 *     pullRequestTarget=Pull_request (ambiguity) 'pull_request' ':' pullRequest=Pull_request
 	 *     pullRequestTarget=Pull_request (ambiguity) 'pull_request_target' ':' pullRequestTarget=Pull_request
 	 *     pullRequestTarget=Pull_request (ambiguity) 'push' ':' push=Push
@@ -1833,6 +1848,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     pullRequestTarget=Pull_request (ambiguity) 'schedule' ':' BEG_BLOCK? schedule+=Schedule
 	 *     pullRequestTarget=Pull_request (ambiguity) 'workflow_call' ':' workflowCall=Workflow_call
 	 *     pullRequestTarget=Pull_request (ambiguity) END_BLOCK? (rule end)
+	 *     push=Push (ambiguity) 'issues' ':' issues=EString
 	 *     push=Push (ambiguity) 'pull_request' ':' pullRequest=Pull_request
 	 *     push=Push (ambiguity) 'pull_request_target' ':' pullRequestTarget=Pull_request
 	 *     push=Push (ambiguity) 'push' ':' push=Push
@@ -1840,6 +1856,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     push=Push (ambiguity) 'schedule' ':' BEG_BLOCK? schedule+=Schedule
 	 *     push=Push (ambiguity) 'workflow_call' ':' workflowCall=Workflow_call
 	 *     push=Push (ambiguity) END_BLOCK? (rule end)
+	 *     release=Release (ambiguity) 'issues' ':' issues=EString
 	 *     release=Release (ambiguity) 'pull_request' ':' pullRequest=Pull_request
 	 *     release=Release (ambiguity) 'pull_request_target' ':' pullRequestTarget=Pull_request
 	 *     release=Release (ambiguity) 'push' ':' push=Push
@@ -1847,12 +1864,14 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     release=Release (ambiguity) 'schedule' ':' BEG_BLOCK? schedule+=Schedule
 	 *     release=Release (ambiguity) 'workflow_call' ':' workflowCall=Workflow_call
 	 *     release=Release (ambiguity) END_BLOCK? (rule end)
+	 *     schedule+=Schedule END_BLOCK? (ambiguity) 'issues' ':' issues=EString
 	 *     schedule+=Schedule END_BLOCK? (ambiguity) 'pull_request' ':' pullRequest=Pull_request
 	 *     schedule+=Schedule END_BLOCK? (ambiguity) 'pull_request_target' ':' pullRequestTarget=Pull_request
 	 *     schedule+=Schedule END_BLOCK? (ambiguity) 'push' ':' push=Push
 	 *     schedule+=Schedule END_BLOCK? (ambiguity) 'release' ':' release=Release
 	 *     schedule+=Schedule END_BLOCK? (ambiguity) 'workflow_call' ':' workflowCall=Workflow_call
 	 *     schedule+=Schedule END_BLOCK? (ambiguity) END_BLOCK? (rule end)
+	 *     workflowCall=Workflow_call (ambiguity) 'issues' ':' issues=EString
 	 *     workflowCall=Workflow_call (ambiguity) 'pull_request' ':' pullRequest=Pull_request
 	 *     workflowCall=Workflow_call (ambiguity) 'pull_request_target' ':' pullRequestTarget=Pull_request
 	 *     workflowCall=Workflow_call (ambiguity) 'push' ':' push=Push
@@ -1860,6 +1879,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     workflowCall=Workflow_call (ambiguity) 'schedule' ':' BEG_BLOCK? schedule+=Schedule
 	 *     workflowCall=Workflow_call (ambiguity) 'workflow_call' ':' workflowCall=Workflow_call
 	 *     workflowCall=Workflow_call (ambiguity) END_BLOCK? (rule end)
+	 *     workflowDispatch=EString (ambiguity) 'issues' ':' issues=EString
 	 *     workflowDispatch=EString (ambiguity) 'pull_request' ':' pullRequest=Pull_request
 	 *     workflowDispatch=EString (ambiguity) 'pull_request_target' ':' pullRequestTarget=Pull_request
 	 *     workflowDispatch=EString (ambiguity) 'push' ':' push=Push
@@ -1881,6 +1901,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) BEG_BLOCK? (ambiguity) workflowDispatch=EString
+	 *     issues=EString (ambiguity) workflowDispatch=EString
 	 *     pullRequest=Pull_request (ambiguity) workflowDispatch=EString
 	 *     pullRequestTarget=Pull_request (ambiguity) workflowDispatch=EString
 	 *     push=Push (ambiguity) workflowDispatch=EString
@@ -2345,6 +2366,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) 'fail-fast' ':' failFast=EBoolean
 	 *     (rule start) (ambiguity) 'matrix' ':' matrix=Matrix
+	 *     (rule start) (ambiguity) 'max-parallel' ':' maxParallel=INT
 	 *     (rule start) (ambiguity) END_BLOCK? (rule start)
 	 
 	 * </pre>
@@ -2362,6 +2384,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) BEG_BLOCK? (ambiguity) (rule start)
 	 *     failFast=EBoolean (ambiguity) (rule end)
 	 *     matrix=Matrix (ambiguity) (rule end)
+	 *     maxParallel=INT (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */

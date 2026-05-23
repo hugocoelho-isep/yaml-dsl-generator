@@ -35,6 +35,7 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  * </p>
  * <ul>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getWorkflowDispatch <em>Workflow Dispatch</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getIssues <em>Issues</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getPush <em>Push</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getPullRequest <em>Pull Request</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getSchedule <em>Schedule</em>}</li>
@@ -65,6 +66,26 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 	 * @ordered
 	 */
 	protected String workflowDispatch = WORKFLOW_DISPATCH_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getIssues() <em>Issues</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIssues()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ISSUES_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getIssues() <em>Issues</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIssues()
+	 * @generated
+	 * @ordered
+	 */
+	protected String issues = ISSUES_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getPush() <em>Push</em>}' containment reference.
@@ -167,6 +188,29 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.ON__WORKFLOW_DISPATCH,
 					oldWorkflowDispatch, workflowDispatch));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getIssues() {
+		return issues;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIssues(String newIssues) {
+		String oldIssues = issues;
+		issues = newIssues;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.ON__ISSUES, oldIssues, issues));
 	}
 
 	/**
@@ -474,6 +518,8 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 		switch (featureID) {
 		case YamlmdePackage.ON__WORKFLOW_DISPATCH:
 			return getWorkflowDispatch();
+		case YamlmdePackage.ON__ISSUES:
+			return getIssues();
 		case YamlmdePackage.ON__PUSH:
 			return getPush();
 		case YamlmdePackage.ON__PULL_REQUEST:
@@ -501,6 +547,9 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 		switch (featureID) {
 		case YamlmdePackage.ON__WORKFLOW_DISPATCH:
 			setWorkflowDispatch((String) newValue);
+			return;
+		case YamlmdePackage.ON__ISSUES:
+			setIssues((String) newValue);
 			return;
 		case YamlmdePackage.ON__PUSH:
 			setPush((Push) newValue);
@@ -536,6 +585,9 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 		case YamlmdePackage.ON__WORKFLOW_DISPATCH:
 			setWorkflowDispatch(WORKFLOW_DISPATCH_EDEFAULT);
 			return;
+		case YamlmdePackage.ON__ISSUES:
+			setIssues(ISSUES_EDEFAULT);
+			return;
 		case YamlmdePackage.ON__PUSH:
 			setPush((Push) null);
 			return;
@@ -569,6 +621,8 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 		case YamlmdePackage.ON__WORKFLOW_DISPATCH:
 			return WORKFLOW_DISPATCH_EDEFAULT == null ? workflowDispatch != null
 					: !WORKFLOW_DISPATCH_EDEFAULT.equals(workflowDispatch);
+		case YamlmdePackage.ON__ISSUES:
+			return ISSUES_EDEFAULT == null ? issues != null : !ISSUES_EDEFAULT.equals(issues);
 		case YamlmdePackage.ON__PUSH:
 			return push != null;
 		case YamlmdePackage.ON__PULL_REQUEST:
@@ -598,6 +652,8 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (workflowDispatch: ");
 		result.append(workflowDispatch);
+		result.append(", issues: ");
+		result.append(issues);
 		result.append(')');
 		return result.toString();
 	}

@@ -895,136 +895,142 @@ ruleKeyName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 			newLeafNode(kw, grammarAccess.getKeyNameAccess().getFailFastKeyword_30());
 		}
 		    |
+		kw='max-parallel'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getMaxParallelKeyword_31());
+		}
+		    |
 		kw='matrix'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getMatrixKeyword_31());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getMatrixKeyword_32());
 		}
 		    |
 		kw='os'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getOsKeyword_32());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getOsKeyword_33());
 		}
 		    |
 		kw='build-type'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getBuildTypeKeyword_33());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getBuildTypeKeyword_34());
 		}
 		    |
 		kw='c-compiler'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getCCompilerKeyword_34());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getCCompilerKeyword_35());
 		}
 		    |
 		kw='cpp-compiler'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getCppCompilerKeyword_35());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getCppCompilerKeyword_36());
 		}
 		    |
 		kw='otp'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getOtpKeyword_36());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getOtpKeyword_37());
 		}
 		    |
 		kw='elixir'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getElixirKeyword_37());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getElixirKeyword_38());
 		}
 		    |
 		kw='include'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getIncludeKeyword_38());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getIncludeKeyword_39());
 		}
 		    |
 		kw='exclude'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getExcludeKeyword_39());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getExcludeKeyword_40());
 		}
 		    |
 		kw='workflow_call'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getWorkflow_callKeyword_40());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getWorkflow_callKeyword_41());
 		}
 		    |
 		kw='pull_request_target'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getPull_request_targetKeyword_41());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getPull_request_targetKeyword_42());
 		}
 		    |
 		kw='secrets'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getSecretsKeyword_42());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getSecretsKeyword_43());
 		}
 		    |
 		kw='required'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getRequiredKeyword_43());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getRequiredKeyword_44());
 		}
 		    |
 		kw='packages'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getPackagesKeyword_44());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getPackagesKeyword_45());
 		}
 		    |
 		kw='container'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getContainerKeyword_45());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getContainerKeyword_46());
 		}
 		    |
 		kw='image'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getImageKeyword_46());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getImageKeyword_47());
 		}
 		    |
 		kw='defaults'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getDefaultsKeyword_47());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getDefaultsKeyword_48());
 		}
 		    |
 		kw='outputs'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getOutputsKeyword_48());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getOutputsKeyword_49());
 		}
 		    |
 		kw='release'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getReleaseKeyword_49());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getReleaseKeyword_50());
 		}
 		    |
 		kw='python-version'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getPythonVersionKeyword_50());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getPythonVersionKeyword_51());
 		}
 		    |
 		kw='configuration'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getConfigurationKeyword_51());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getConfigurationKeyword_52());
 		}
 		    |
 		kw='digests'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getDigestsKeyword_52());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getDigestsKeyword_53());
 		}
 	)
 ;
@@ -1405,6 +1411,44 @@ ruleOn returns [EObject current=null]
 						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getOnAccess().getUnorderedGroup_2());
 					}
 				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getOnAccess().getUnorderedGroup_2(), 7)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getOnAccess().getUnorderedGroup_2(), 7);
+					}
+								({true}?=>(otherlv_26='issues'
+								{
+									newLeafNode(otherlv_26, grammarAccess.getOnAccess().getIssuesKeyword_2_7_0());
+								}
+								otherlv_27=':'
+								{
+									newLeafNode(otherlv_27, grammarAccess.getOnAccess().getColonKeyword_2_7_1());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getOnAccess().getIssuesEStringParserRuleCall_2_7_2_0());
+										}
+										lv_issues_28_0=ruleEString
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getOnRule());
+											}
+											set(
+												$current,
+												"issues",
+												lv_issues_28_0,
+												"pt.isep.yamldslgen.xtext.MyDsl.EString");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getOnAccess().getUnorderedGroup_2());
+					}
+				)
 			)
 					)*
 				)
@@ -1414,9 +1458,9 @@ ruleOn returns [EObject current=null]
 				}
 		)
 		(
-			this_END_BLOCK_26=RULE_END_BLOCK
+			this_END_BLOCK_29=RULE_END_BLOCK
 			{
-				newLeafNode(this_END_BLOCK_26, grammarAccess.getOnAccess().getEND_BLOCKTerminalRuleCall_3());
+				newLeafNode(this_END_BLOCK_29, grammarAccess.getOnAccess().getEND_BLOCKTerminalRuleCall_3());
 			}
 		)?
 	)
@@ -4081,9 +4125,9 @@ ruleStrategy returns [EObject current=null]
 					{
 						getUnorderedGroupHelper().select(grammarAccess.getStrategyAccess().getUnorderedGroup_2(), 1);
 					}
-								({true}?=>(otherlv_6='matrix'
+								({true}?=>(otherlv_6='max-parallel'
 								{
-									newLeafNode(otherlv_6, grammarAccess.getStrategyAccess().getMatrixKeyword_2_1_0());
+									newLeafNode(otherlv_6, grammarAccess.getStrategyAccess().getMaxParallelKeyword_2_1_0());
 								}
 								otherlv_7=':'
 								{
@@ -4091,10 +4135,47 @@ ruleStrategy returns [EObject current=null]
 								}
 								(
 									(
+										lv_maxParallel_8_0=RULE_INT
 										{
-											newCompositeNode(grammarAccess.getStrategyAccess().getMatrixMatrixParserRuleCall_2_1_2_0());
+											newLeafNode(lv_maxParallel_8_0, grammarAccess.getStrategyAccess().getMaxParallelINTTerminalRuleCall_2_1_2_0());
 										}
-										lv_matrix_8_0=ruleMatrix
+										{
+											if ($current==null) {
+												$current = createModelElement(grammarAccess.getStrategyRule());
+											}
+											setWithLastConsumed(
+												$current,
+												"maxParallel",
+												lv_maxParallel_8_0,
+												"pt.isep.yamldslgen.xtext.MyDsl.INT");
+										}
+									)
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getStrategyAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getStrategyAccess().getUnorderedGroup_2(), 2)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getStrategyAccess().getUnorderedGroup_2(), 2);
+					}
+								({true}?=>(otherlv_9='matrix'
+								{
+									newLeafNode(otherlv_9, grammarAccess.getStrategyAccess().getMatrixKeyword_2_2_0());
+								}
+								otherlv_10=':'
+								{
+									newLeafNode(otherlv_10, grammarAccess.getStrategyAccess().getColonKeyword_2_2_1());
+								}
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getStrategyAccess().getMatrixMatrixParserRuleCall_2_2_2_0());
+										}
+										lv_matrix_11_0=ruleMatrix
 										{
 											if ($current==null) {
 												$current = createModelElementForParent(grammarAccess.getStrategyRule());
@@ -4102,7 +4183,7 @@ ruleStrategy returns [EObject current=null]
 											set(
 												$current,
 												"matrix",
-												lv_matrix_8_0,
+												lv_matrix_11_0,
 												"pt.isep.yamldslgen.xtext.MyDsl.Matrix");
 											afterParserOrEnumRuleCall();
 										}
@@ -4122,9 +4203,9 @@ ruleStrategy returns [EObject current=null]
 				}
 		)
 		(
-			this_END_BLOCK_9=RULE_END_BLOCK
+			this_END_BLOCK_12=RULE_END_BLOCK
 			{
-				newLeafNode(this_END_BLOCK_9, grammarAccess.getStrategyAccess().getEND_BLOCKTerminalRuleCall_3());
+				newLeafNode(this_END_BLOCK_12, grammarAccess.getStrategyAccess().getEND_BLOCKTerminalRuleCall_3());
 			}
 		)?
 	)

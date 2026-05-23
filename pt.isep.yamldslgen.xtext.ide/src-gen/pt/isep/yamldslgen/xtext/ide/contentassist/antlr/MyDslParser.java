@@ -71,6 +71,7 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getOnAccess().getGroup_2_4(), "rule__On__Group_2_4__0");
 			builder.put(grammarAccess.getOnAccess().getGroup_2_5(), "rule__On__Group_2_5__0");
 			builder.put(grammarAccess.getOnAccess().getGroup_2_6(), "rule__On__Group_2_6__0");
+			builder.put(grammarAccess.getOnAccess().getGroup_2_7(), "rule__On__Group_2_7__0");
 			builder.put(grammarAccess.getPushAccess().getGroup(), "rule__Push__Group__0");
 			builder.put(grammarAccess.getPushAccess().getGroup_2_0(), "rule__Push__Group_2_0__0");
 			builder.put(grammarAccess.getPushAccess().getGroup_2_0_2_0(), "rule__Push__Group_2_0_2_0__0");
@@ -149,6 +150,7 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getStrategyAccess().getGroup(), "rule__Strategy__Group__0");
 			builder.put(grammarAccess.getStrategyAccess().getGroup_2_0(), "rule__Strategy__Group_2_0__0");
 			builder.put(grammarAccess.getStrategyAccess().getGroup_2_1(), "rule__Strategy__Group_2_1__0");
+			builder.put(grammarAccess.getStrategyAccess().getGroup_2_2(), "rule__Strategy__Group_2_2__0");
 			builder.put(grammarAccess.getMatrixAccess().getGroup(), "rule__Matrix__Group__0");
 			builder.put(grammarAccess.getMatrixAccess().getGroup_2_0(), "rule__Matrix__Group_2_0__0");
 			builder.put(grammarAccess.getMatrixAccess().getGroup_2_0_2_0(), "rule__Matrix__Group_2_0_2_0__0");
@@ -221,6 +223,7 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getOnAccess().getWorkflowDispatchAssignment_2_4_2(), "rule__On__WorkflowDispatchAssignment_2_4_2");
 			builder.put(grammarAccess.getOnAccess().getWorkflowCallAssignment_2_5_2(), "rule__On__WorkflowCallAssignment_2_5_2");
 			builder.put(grammarAccess.getOnAccess().getReleaseAssignment_2_6_2(), "rule__On__ReleaseAssignment_2_6_2");
+			builder.put(grammarAccess.getOnAccess().getIssuesAssignment_2_7_2(), "rule__On__IssuesAssignment_2_7_2");
 			builder.put(grammarAccess.getPushAccess().getBranchesAssignment_2_0_2_0_1_2(), "rule__Push__BranchesAssignment_2_0_2_0_1_2");
 			builder.put(grammarAccess.getPushAccess().getBranchesAssignment_2_0_2_1_1(), "rule__Push__BranchesAssignment_2_0_2_1_1");
 			builder.put(grammarAccess.getPushAccess().getBranchesAssignment_2_0_2_1_2_1(), "rule__Push__BranchesAssignment_2_0_2_1_2_1");
@@ -277,7 +280,8 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getStepAccess().getWithAssignment_3_8_2_1(), "rule__Step__WithAssignment_3_8_2_1");
 			builder.put(grammarAccess.getStepAccess().getEnvAssignment_3_9_2_1(), "rule__Step__EnvAssignment_3_9_2_1");
 			builder.put(grammarAccess.getStrategyAccess().getFailFastAssignment_2_0_2(), "rule__Strategy__FailFastAssignment_2_0_2");
-			builder.put(grammarAccess.getStrategyAccess().getMatrixAssignment_2_1_2(), "rule__Strategy__MatrixAssignment_2_1_2");
+			builder.put(grammarAccess.getStrategyAccess().getMaxParallelAssignment_2_1_2(), "rule__Strategy__MaxParallelAssignment_2_1_2");
+			builder.put(grammarAccess.getStrategyAccess().getMatrixAssignment_2_2_2(), "rule__Strategy__MatrixAssignment_2_2_2");
 			builder.put(grammarAccess.getMatrixAccess().getOsAssignment_2_0_2_0_1_2(), "rule__Matrix__OsAssignment_2_0_2_0_1_2");
 			builder.put(grammarAccess.getMatrixAccess().getOsAssignment_2_0_2_1_1(), "rule__Matrix__OsAssignment_2_0_2_1_1");
 			builder.put(grammarAccess.getMatrixAccess().getOsAssignment_2_0_2_1_2_1(), "rule__Matrix__OsAssignment_2_0_2_1_2_1");

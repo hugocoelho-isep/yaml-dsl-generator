@@ -55,7 +55,7 @@ KeyName returns ecore::EString:
 	| 'shell' | 'contents' | 'security-events' | 'actions' 
 	| 'pages' | 'id-token' | 'types' | 'pull-requests' | 'if' 
 	| 'continue-on-error' | 'issues'
-	| 'strategy' | 'fail-fast' | 'matrix' 
+	| 'strategy' | 'fail-fast' | 'max-parallel' | 'matrix'
 	| 'os' | 'build-type' 
 	| 'c-compiler' | 'cpp-compiler' | 'otp' | 'elixir' | 'include' 
 	| 'exclude' | 'workflow_call' | 'pull_request_target' 
@@ -86,7 +86,8 @@ On returns On:
 		& ('schedule' ':' (BEG_BLOCK? schedule+=Schedule+ END_BLOCK?))?
 		& ('workflow_dispatch' ':' (workflowDispatch=EString)?)?
 		& ('workflow_call' ':' workflowCall=Workflow_call)?
-		& ('release' ':' release=Release)?)
+		& ('release' ':' release=Release)?
+		& ('issues' ':' issues=EString)?)
 	END_BLOCK?;
 
 Push returns Push:
@@ -220,6 +221,7 @@ Strategy returns Strategy:
 	{Strategy}
 	BEG_BLOCK?
 		(('fail-fast' ':' failFast=EBoolean)?
+		& ('max-parallel' ':' maxParallel=INT)?
 		& ('matrix' ':' matrix=Matrix)?)
 	END_BLOCK?;
 

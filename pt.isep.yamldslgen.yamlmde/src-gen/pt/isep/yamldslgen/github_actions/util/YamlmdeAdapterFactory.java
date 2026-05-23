@@ -77,16 +77,6 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseJob(Job object) {
-			return createJobAdapter();
-		}
-
-		@Override
-		public Adapter caseStep(Step object) {
-			return createStepAdapter();
-		}
-
-		@Override
 		public Adapter caseOn(On object) {
 			return createOnAdapter();
 		}
@@ -102,6 +92,16 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseJob(Job object) {
+			return createJobAdapter();
+		}
+
+		@Override
+		public Adapter caseStep(Step object) {
+			return createStepAdapter();
+		}
+
+		@Override
 		public Adapter casePermissions(Permissions object) {
 			return createPermissionsAdapter();
 		}
@@ -112,13 +112,13 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseConcurrency(Concurrency object) {
-			return createConcurrencyAdapter();
+		public Adapter caseEnvironment(Environment object) {
+			return createEnvironmentAdapter();
 		}
 
 		@Override
-		public Adapter caseEnvironment(Environment object) {
-			return createEnvironmentAdapter();
+		public Adapter caseConcurrency(Concurrency object) {
+			return createConcurrencyAdapter();
 		}
 
 		@Override
@@ -167,13 +167,13 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseOutputs(Outputs object) {
-			return createOutputsAdapter();
+		public Adapter caseRelease(Release object) {
+			return createReleaseAdapter();
 		}
 
 		@Override
-		public Adapter caseRelease(Release object) {
-			return createReleaseAdapter();
+		public Adapter caseOutputs(Outputs object) {
+			return createOutputsAdapter();
 		}
 
 		@Override

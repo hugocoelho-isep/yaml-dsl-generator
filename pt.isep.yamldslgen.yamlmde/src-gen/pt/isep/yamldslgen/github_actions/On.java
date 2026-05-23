@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getWorkflowDispatch <em>Workflow Dispatch</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.On#getIssues <em>Issues</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getPush <em>Push</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getPullRequest <em>Pull Request</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getSchedule <em>Schedule</em>}</li>
@@ -50,6 +51,28 @@ public interface On extends EObject {
 	 * @generated
 	 */
 	void setWorkflowDispatch(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Issues</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Issues</em>' attribute.
+	 * @see #setIssues(String)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getOn_Issues()
+	 * @model
+	 * @generated
+	 */
+	String getIssues();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.On#getIssues <em>Issues</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Issues</em>' attribute.
+	 * @see #getIssues()
+	 * @generated
+	 */
+	void setIssues(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Push</b></em>' containment reference.

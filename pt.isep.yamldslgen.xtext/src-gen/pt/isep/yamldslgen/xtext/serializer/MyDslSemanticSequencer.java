@@ -344,7 +344,8 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         schedule+=Schedule | 
 	 *         workflowDispatch=EString | 
 	 *         workflowCall=Workflow_call | 
-	 *         release=Release
+	 *         release=Release | 
+	 *         issues=EString
 	 *     )*
 	 * </pre>
 	 */
@@ -523,7 +524,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Strategy returns Strategy
 	 *
 	 * Constraint:
-	 *     (failFast=EBoolean | matrix=Matrix)*
+	 *     (failFast=EBoolean | maxParallel=INT | matrix=Matrix)*
 	 * </pre>
 	 */
 	protected void sequence_Strategy(ISerializationContext context, Strategy semanticObject) {

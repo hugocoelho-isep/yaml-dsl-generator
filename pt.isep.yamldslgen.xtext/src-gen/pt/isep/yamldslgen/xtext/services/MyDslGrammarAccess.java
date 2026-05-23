@@ -447,28 +447,29 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cIssuesKeyword_28 = (Keyword)cAlternatives.eContents().get(28);
 		private final Keyword cStrategyKeyword_29 = (Keyword)cAlternatives.eContents().get(29);
 		private final Keyword cFailFastKeyword_30 = (Keyword)cAlternatives.eContents().get(30);
-		private final Keyword cMatrixKeyword_31 = (Keyword)cAlternatives.eContents().get(31);
-		private final Keyword cOsKeyword_32 = (Keyword)cAlternatives.eContents().get(32);
-		private final Keyword cBuildTypeKeyword_33 = (Keyword)cAlternatives.eContents().get(33);
-		private final Keyword cCCompilerKeyword_34 = (Keyword)cAlternatives.eContents().get(34);
-		private final Keyword cCppCompilerKeyword_35 = (Keyword)cAlternatives.eContents().get(35);
-		private final Keyword cOtpKeyword_36 = (Keyword)cAlternatives.eContents().get(36);
-		private final Keyword cElixirKeyword_37 = (Keyword)cAlternatives.eContents().get(37);
-		private final Keyword cIncludeKeyword_38 = (Keyword)cAlternatives.eContents().get(38);
-		private final Keyword cExcludeKeyword_39 = (Keyword)cAlternatives.eContents().get(39);
-		private final Keyword cWorkflow_callKeyword_40 = (Keyword)cAlternatives.eContents().get(40);
-		private final Keyword cPull_request_targetKeyword_41 = (Keyword)cAlternatives.eContents().get(41);
-		private final Keyword cSecretsKeyword_42 = (Keyword)cAlternatives.eContents().get(42);
-		private final Keyword cRequiredKeyword_43 = (Keyword)cAlternatives.eContents().get(43);
-		private final Keyword cPackagesKeyword_44 = (Keyword)cAlternatives.eContents().get(44);
-		private final Keyword cContainerKeyword_45 = (Keyword)cAlternatives.eContents().get(45);
-		private final Keyword cImageKeyword_46 = (Keyword)cAlternatives.eContents().get(46);
-		private final Keyword cDefaultsKeyword_47 = (Keyword)cAlternatives.eContents().get(47);
-		private final Keyword cOutputsKeyword_48 = (Keyword)cAlternatives.eContents().get(48);
-		private final Keyword cReleaseKeyword_49 = (Keyword)cAlternatives.eContents().get(49);
-		private final Keyword cPythonVersionKeyword_50 = (Keyword)cAlternatives.eContents().get(50);
-		private final Keyword cConfigurationKeyword_51 = (Keyword)cAlternatives.eContents().get(51);
-		private final Keyword cDigestsKeyword_52 = (Keyword)cAlternatives.eContents().get(52);
+		private final Keyword cMaxParallelKeyword_31 = (Keyword)cAlternatives.eContents().get(31);
+		private final Keyword cMatrixKeyword_32 = (Keyword)cAlternatives.eContents().get(32);
+		private final Keyword cOsKeyword_33 = (Keyword)cAlternatives.eContents().get(33);
+		private final Keyword cBuildTypeKeyword_34 = (Keyword)cAlternatives.eContents().get(34);
+		private final Keyword cCCompilerKeyword_35 = (Keyword)cAlternatives.eContents().get(35);
+		private final Keyword cCppCompilerKeyword_36 = (Keyword)cAlternatives.eContents().get(36);
+		private final Keyword cOtpKeyword_37 = (Keyword)cAlternatives.eContents().get(37);
+		private final Keyword cElixirKeyword_38 = (Keyword)cAlternatives.eContents().get(38);
+		private final Keyword cIncludeKeyword_39 = (Keyword)cAlternatives.eContents().get(39);
+		private final Keyword cExcludeKeyword_40 = (Keyword)cAlternatives.eContents().get(40);
+		private final Keyword cWorkflow_callKeyword_41 = (Keyword)cAlternatives.eContents().get(41);
+		private final Keyword cPull_request_targetKeyword_42 = (Keyword)cAlternatives.eContents().get(42);
+		private final Keyword cSecretsKeyword_43 = (Keyword)cAlternatives.eContents().get(43);
+		private final Keyword cRequiredKeyword_44 = (Keyword)cAlternatives.eContents().get(44);
+		private final Keyword cPackagesKeyword_45 = (Keyword)cAlternatives.eContents().get(45);
+		private final Keyword cContainerKeyword_46 = (Keyword)cAlternatives.eContents().get(46);
+		private final Keyword cImageKeyword_47 = (Keyword)cAlternatives.eContents().get(47);
+		private final Keyword cDefaultsKeyword_48 = (Keyword)cAlternatives.eContents().get(48);
+		private final Keyword cOutputsKeyword_49 = (Keyword)cAlternatives.eContents().get(49);
+		private final Keyword cReleaseKeyword_50 = (Keyword)cAlternatives.eContents().get(50);
+		private final Keyword cPythonVersionKeyword_51 = (Keyword)cAlternatives.eContents().get(51);
+		private final Keyword cConfigurationKeyword_52 = (Keyword)cAlternatives.eContents().get(52);
+		private final Keyword cDigestsKeyword_53 = (Keyword)cAlternatives.eContents().get(53);
 		
 		//// =============================================================================
 		//// KEY RULE
@@ -486,7 +487,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//    | 'shell' | 'contents' | 'security-events' | 'actions'
 		//    | 'pages' | 'id-token' | 'types' | 'pull-requests' | 'if'
 		//    | 'continue-on-error' | 'issues'
-		//    | 'strategy' | 'fail-fast' | 'matrix'
+		//    | 'strategy' | 'fail-fast' | 'max-parallel' | 'matrix'
 		//    | 'os' | 'build-type'
 		//    | 'c-compiler' | 'cpp-compiler' | 'otp' | 'elixir' | 'include'
 		//    | 'exclude' | 'workflow_call' | 'pull_request_target'
@@ -503,7 +504,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//| 'shell' | 'contents' | 'security-events' | 'actions'
 		//| 'pages' | 'id-token' | 'types' | 'pull-requests' | 'if'
 		//| 'continue-on-error' | 'issues'
-		//| 'strategy' | 'fail-fast' | 'matrix'
+		//| 'strategy' | 'fail-fast' | 'max-parallel' | 'matrix'
 		//| 'os' | 'build-type'
 		//| 'c-compiler' | 'cpp-compiler' | 'otp' | 'elixir' | 'include'
 		//| 'exclude' | 'workflow_call' | 'pull_request_target'
@@ -606,71 +607,74 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'fail-fast'
 		public Keyword getFailFastKeyword_30() { return cFailFastKeyword_30; }
 		
+		//'max-parallel'
+		public Keyword getMaxParallelKeyword_31() { return cMaxParallelKeyword_31; }
+		
 		//'matrix'
-		public Keyword getMatrixKeyword_31() { return cMatrixKeyword_31; }
+		public Keyword getMatrixKeyword_32() { return cMatrixKeyword_32; }
 		
 		//'os'
-		public Keyword getOsKeyword_32() { return cOsKeyword_32; }
+		public Keyword getOsKeyword_33() { return cOsKeyword_33; }
 		
 		//'build-type'
-		public Keyword getBuildTypeKeyword_33() { return cBuildTypeKeyword_33; }
+		public Keyword getBuildTypeKeyword_34() { return cBuildTypeKeyword_34; }
 		
 		//'c-compiler'
-		public Keyword getCCompilerKeyword_34() { return cCCompilerKeyword_34; }
+		public Keyword getCCompilerKeyword_35() { return cCCompilerKeyword_35; }
 		
 		//'cpp-compiler'
-		public Keyword getCppCompilerKeyword_35() { return cCppCompilerKeyword_35; }
+		public Keyword getCppCompilerKeyword_36() { return cCppCompilerKeyword_36; }
 		
 		//'otp'
-		public Keyword getOtpKeyword_36() { return cOtpKeyword_36; }
+		public Keyword getOtpKeyword_37() { return cOtpKeyword_37; }
 		
 		//'elixir'
-		public Keyword getElixirKeyword_37() { return cElixirKeyword_37; }
+		public Keyword getElixirKeyword_38() { return cElixirKeyword_38; }
 		
 		//'include'
-		public Keyword getIncludeKeyword_38() { return cIncludeKeyword_38; }
+		public Keyword getIncludeKeyword_39() { return cIncludeKeyword_39; }
 		
 		//'exclude'
-		public Keyword getExcludeKeyword_39() { return cExcludeKeyword_39; }
+		public Keyword getExcludeKeyword_40() { return cExcludeKeyword_40; }
 		
 		//'workflow_call'
-		public Keyword getWorkflow_callKeyword_40() { return cWorkflow_callKeyword_40; }
+		public Keyword getWorkflow_callKeyword_41() { return cWorkflow_callKeyword_41; }
 		
 		//'pull_request_target'
-		public Keyword getPull_request_targetKeyword_41() { return cPull_request_targetKeyword_41; }
+		public Keyword getPull_request_targetKeyword_42() { return cPull_request_targetKeyword_42; }
 		
 		//'secrets'
-		public Keyword getSecretsKeyword_42() { return cSecretsKeyword_42; }
+		public Keyword getSecretsKeyword_43() { return cSecretsKeyword_43; }
 		
 		//'required'
-		public Keyword getRequiredKeyword_43() { return cRequiredKeyword_43; }
+		public Keyword getRequiredKeyword_44() { return cRequiredKeyword_44; }
 		
 		//'packages'
-		public Keyword getPackagesKeyword_44() { return cPackagesKeyword_44; }
+		public Keyword getPackagesKeyword_45() { return cPackagesKeyword_45; }
 		
 		//'container'
-		public Keyword getContainerKeyword_45() { return cContainerKeyword_45; }
+		public Keyword getContainerKeyword_46() { return cContainerKeyword_46; }
 		
 		//'image'
-		public Keyword getImageKeyword_46() { return cImageKeyword_46; }
+		public Keyword getImageKeyword_47() { return cImageKeyword_47; }
 		
 		//'defaults'
-		public Keyword getDefaultsKeyword_47() { return cDefaultsKeyword_47; }
+		public Keyword getDefaultsKeyword_48() { return cDefaultsKeyword_48; }
 		
 		//'outputs'
-		public Keyword getOutputsKeyword_48() { return cOutputsKeyword_48; }
+		public Keyword getOutputsKeyword_49() { return cOutputsKeyword_49; }
 		
 		//'release'
-		public Keyword getReleaseKeyword_49() { return cReleaseKeyword_49; }
+		public Keyword getReleaseKeyword_50() { return cReleaseKeyword_50; }
 		
 		//'python-version'
-		public Keyword getPythonVersionKeyword_50() { return cPythonVersionKeyword_50; }
+		public Keyword getPythonVersionKeyword_51() { return cPythonVersionKeyword_51; }
 		
 		//'configuration'
-		public Keyword getConfigurationKeyword_51() { return cConfigurationKeyword_51; }
+		public Keyword getConfigurationKeyword_52() { return cConfigurationKeyword_52; }
 		
 		//'digests'
-		public Keyword getDigestsKeyword_52() { return cDigestsKeyword_52; }
+		public Keyword getDigestsKeyword_53() { return cDigestsKeyword_53; }
 	}
 	public class KeyValuePairElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "pt.isep.yamldslgen.xtext.MyDsl.KeyValuePair");
@@ -752,6 +756,11 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cColonKeyword_2_6_1 = (Keyword)cGroup_2_6.eContents().get(1);
 		private final Assignment cReleaseAssignment_2_6_2 = (Assignment)cGroup_2_6.eContents().get(2);
 		private final RuleCall cReleaseReleaseParserRuleCall_2_6_2_0 = (RuleCall)cReleaseAssignment_2_6_2.eContents().get(0);
+		private final Group cGroup_2_7 = (Group)cUnorderedGroup_2.eContents().get(7);
+		private final Keyword cIssuesKeyword_2_7_0 = (Keyword)cGroup_2_7.eContents().get(0);
+		private final Keyword cColonKeyword_2_7_1 = (Keyword)cGroup_2_7.eContents().get(1);
+		private final Assignment cIssuesAssignment_2_7_2 = (Assignment)cGroup_2_7.eContents().get(2);
+		private final RuleCall cIssuesEStringParserRuleCall_2_7_2_0 = (RuleCall)cIssuesAssignment_2_7_2.eContents().get(0);
 		private final RuleCall cEND_BLOCKTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//// =============================================================================
@@ -766,7 +775,8 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//        & ('schedule' ':' (BEG_BLOCK? schedule+=Schedule+ END_BLOCK?))?
 		//        & ('workflow_dispatch' ':' (workflowDispatch=EString)?)?
 		//        & ('workflow_call' ':' workflowCall=Workflow_call)?
-		//        & ('release' ':' release=Release)?)
+		//        & ('release' ':' release=Release)?
+		//        & ('issues' ':' issues=EString)?)
 		//    END_BLOCK?;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -778,7 +788,8 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//    & ('schedule' ':' (BEG_BLOCK? schedule+=Schedule+ END_BLOCK?))?
 		//    & ('workflow_dispatch' ':' (workflowDispatch=EString)?)?
 		//    & ('workflow_call' ':' workflowCall=Workflow_call)?
-		//    & ('release' ':' release=Release)?)
+		//    & ('release' ':' release=Release)?
+		//    & ('issues' ':' issues=EString)?)
 		//END_BLOCK?
 		public Group getGroup() { return cGroup; }
 		
@@ -794,7 +805,8 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//    & ('schedule' ':' (BEG_BLOCK? schedule+=Schedule+ END_BLOCK?))?
 		//    & ('workflow_dispatch' ':' (workflowDispatch=EString)?)?
 		//    & ('workflow_call' ':' workflowCall=Workflow_call)?
-		//    & ('release' ':' release=Release)?)
+		//    & ('release' ':' release=Release)?
+		//    & ('issues' ':' issues=EString)?)
 		public UnorderedGroup getUnorderedGroup_2() { return cUnorderedGroup_2; }
 		
 		//('push' ':' push=Push)?
@@ -910,6 +922,21 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		
 		//Release
 		public RuleCall getReleaseReleaseParserRuleCall_2_6_2_0() { return cReleaseReleaseParserRuleCall_2_6_2_0; }
+		
+		//('issues' ':' issues=EString)?
+		public Group getGroup_2_7() { return cGroup_2_7; }
+		
+		//'issues'
+		public Keyword getIssuesKeyword_2_7_0() { return cIssuesKeyword_2_7_0; }
+		
+		//':'
+		public Keyword getColonKeyword_2_7_1() { return cColonKeyword_2_7_1; }
+		
+		//issues=EString
+		public Assignment getIssuesAssignment_2_7_2() { return cIssuesAssignment_2_7_2; }
+		
+		//EString
+		public RuleCall getIssuesEStringParserRuleCall_2_7_2_0() { return cIssuesEStringParserRuleCall_2_7_2_0; }
 		
 		//END_BLOCK?
 		public RuleCall getEND_BLOCKTerminalRuleCall_3() { return cEND_BLOCKTerminalRuleCall_3; }
@@ -2694,10 +2721,15 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Assignment cFailFastAssignment_2_0_2 = (Assignment)cGroup_2_0.eContents().get(2);
 		private final RuleCall cFailFastEBooleanParserRuleCall_2_0_2_0 = (RuleCall)cFailFastAssignment_2_0_2.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cUnorderedGroup_2.eContents().get(1);
-		private final Keyword cMatrixKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
+		private final Keyword cMaxParallelKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Keyword cColonKeyword_2_1_1 = (Keyword)cGroup_2_1.eContents().get(1);
-		private final Assignment cMatrixAssignment_2_1_2 = (Assignment)cGroup_2_1.eContents().get(2);
-		private final RuleCall cMatrixMatrixParserRuleCall_2_1_2_0 = (RuleCall)cMatrixAssignment_2_1_2.eContents().get(0);
+		private final Assignment cMaxParallelAssignment_2_1_2 = (Assignment)cGroup_2_1.eContents().get(2);
+		private final RuleCall cMaxParallelINTTerminalRuleCall_2_1_2_0 = (RuleCall)cMaxParallelAssignment_2_1_2.eContents().get(0);
+		private final Group cGroup_2_2 = (Group)cUnorderedGroup_2.eContents().get(2);
+		private final Keyword cMatrixKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
+		private final Keyword cColonKeyword_2_2_1 = (Keyword)cGroup_2_2.eContents().get(1);
+		private final Assignment cMatrixAssignment_2_2_2 = (Assignment)cGroup_2_2.eContents().get(2);
+		private final RuleCall cMatrixMatrixParserRuleCall_2_2_2_0 = (RuleCall)cMatrixAssignment_2_2_2.eContents().get(0);
 		private final RuleCall cEND_BLOCKTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//// =============================================================================
@@ -2707,6 +2739,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//    {Strategy}
 		//    BEG_BLOCK?
 		//        (('fail-fast' ':' failFast=EBoolean)?
+		//        & ('max-parallel' ':' maxParallel=INT)?
 		//        & ('matrix' ':' matrix=Matrix)?)
 		//    END_BLOCK?;
 		@Override public ParserRule getRule() { return rule; }
@@ -2714,6 +2747,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//{Strategy}
 		//BEG_BLOCK?
 		//    (('fail-fast' ':' failFast=EBoolean)?
+		//    & ('max-parallel' ':' maxParallel=INT)?
 		//    & ('matrix' ':' matrix=Matrix)?)
 		//END_BLOCK?
 		public Group getGroup() { return cGroup; }
@@ -2725,6 +2759,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		public RuleCall getBEG_BLOCKTerminalRuleCall_1() { return cBEG_BLOCKTerminalRuleCall_1; }
 		
 		//(('fail-fast' ':' failFast=EBoolean)?
+		//& ('max-parallel' ':' maxParallel=INT)?
 		//& ('matrix' ':' matrix=Matrix)?)
 		public UnorderedGroup getUnorderedGroup_2() { return cUnorderedGroup_2; }
 		
@@ -2743,20 +2778,35 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//EBoolean
 		public RuleCall getFailFastEBooleanParserRuleCall_2_0_2_0() { return cFailFastEBooleanParserRuleCall_2_0_2_0; }
 		
-		//('matrix' ':' matrix=Matrix)?
+		//('max-parallel' ':' maxParallel=INT)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
 		
-		//'matrix'
-		public Keyword getMatrixKeyword_2_1_0() { return cMatrixKeyword_2_1_0; }
+		//'max-parallel'
+		public Keyword getMaxParallelKeyword_2_1_0() { return cMaxParallelKeyword_2_1_0; }
 		
 		//':'
 		public Keyword getColonKeyword_2_1_1() { return cColonKeyword_2_1_1; }
 		
+		//maxParallel=INT
+		public Assignment getMaxParallelAssignment_2_1_2() { return cMaxParallelAssignment_2_1_2; }
+		
+		//INT
+		public RuleCall getMaxParallelINTTerminalRuleCall_2_1_2_0() { return cMaxParallelINTTerminalRuleCall_2_1_2_0; }
+		
+		//('matrix' ':' matrix=Matrix)?
+		public Group getGroup_2_2() { return cGroup_2_2; }
+		
+		//'matrix'
+		public Keyword getMatrixKeyword_2_2_0() { return cMatrixKeyword_2_2_0; }
+		
+		//':'
+		public Keyword getColonKeyword_2_2_1() { return cColonKeyword_2_2_1; }
+		
 		//matrix=Matrix
-		public Assignment getMatrixAssignment_2_1_2() { return cMatrixAssignment_2_1_2; }
+		public Assignment getMatrixAssignment_2_2_2() { return cMatrixAssignment_2_2_2; }
 		
 		//Matrix
-		public RuleCall getMatrixMatrixParserRuleCall_2_1_2_0() { return cMatrixMatrixParserRuleCall_2_1_2_0; }
+		public RuleCall getMatrixMatrixParserRuleCall_2_2_2_0() { return cMatrixMatrixParserRuleCall_2_2_2_0; }
 		
 		//END_BLOCK?
 		public RuleCall getEND_BLOCKTerminalRuleCall_3() { return cEND_BLOCKTerminalRuleCall_3; }
@@ -4250,7 +4300,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//    | 'shell' | 'contents' | 'security-events' | 'actions'
 	//    | 'pages' | 'id-token' | 'types' | 'pull-requests' | 'if'
 	//    | 'continue-on-error' | 'issues'
-	//    | 'strategy' | 'fail-fast' | 'matrix'
+	//    | 'strategy' | 'fail-fast' | 'max-parallel' | 'matrix'
 	//    | 'os' | 'build-type'
 	//    | 'c-compiler' | 'cpp-compiler' | 'otp' | 'elixir' | 'include'
 	//    | 'exclude' | 'workflow_call' | 'pull_request_target'
@@ -4293,7 +4343,8 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//        & ('schedule' ':' (BEG_BLOCK? schedule+=Schedule+ END_BLOCK?))?
 	//        & ('workflow_dispatch' ':' (workflowDispatch=EString)?)?
 	//        & ('workflow_call' ':' workflowCall=Workflow_call)?
-	//        & ('release' ':' release=Release)?)
+	//        & ('release' ':' release=Release)?
+	//        & ('issues' ':' issues=EString)?)
 	//    END_BLOCK?;
 	public OnElements getOnAccess() {
 		return pOn;
@@ -4497,6 +4548,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//    {Strategy}
 	//    BEG_BLOCK?
 	//        (('fail-fast' ':' failFast=EBoolean)?
+	//        & ('max-parallel' ':' maxParallel=INT)?
 	//        & ('matrix' ':' matrix=Matrix)?)
 	//    END_BLOCK?;
 	public StrategyElements getStrategyAccess() {
