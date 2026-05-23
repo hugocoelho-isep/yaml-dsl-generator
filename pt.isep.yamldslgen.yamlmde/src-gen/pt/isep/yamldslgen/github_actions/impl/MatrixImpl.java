@@ -37,6 +37,7 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.MatrixImpl#getElixir <em>Elixir</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.MatrixImpl#getPythonVersion <em>Python Version</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.MatrixImpl#getConfiguration <em>Configuration</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.MatrixImpl#getNodeVersion <em>Node Version</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.MatrixImpl#getInclude <em>Include</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.MatrixImpl#getExclude <em>Exclude</em>}</li>
  * </ul>
@@ -113,6 +114,16 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix {
 	 * @ordered
 	 */
 	protected EList<String> configuration;
+
+	/**
+	 * The cached value of the '{@link #getNodeVersion() <em>Node Version</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNodeVersion()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> nodeVersion;
 
 	/**
 	 * The cached value of the '{@link #getInclude() <em>Include</em>}' containment reference list.
@@ -250,6 +261,19 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix {
 	 * @generated
 	 */
 	@Override
+	public EList<String> getNodeVersion() {
+		if (nodeVersion == null) {
+			nodeVersion = new EDataTypeUniqueEList<String>(String.class, this, YamlmdePackage.MATRIX__NODE_VERSION);
+		}
+		return nodeVersion;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<Include> getInclude() {
 		if (include == null) {
 			include = new EObjectContainmentEList<Include>(Include.class, this, YamlmdePackage.MATRIX__INCLUDE);
@@ -308,6 +332,8 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix {
 			return getPythonVersion();
 		case YamlmdePackage.MATRIX__CONFIGURATION:
 			return getConfiguration();
+		case YamlmdePackage.MATRIX__NODE_VERSION:
+			return getNodeVersion();
 		case YamlmdePackage.MATRIX__INCLUDE:
 			return getInclude();
 		case YamlmdePackage.MATRIX__EXCLUDE:
@@ -353,6 +379,10 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix {
 			getConfiguration().clear();
 			getConfiguration().addAll((Collection<? extends String>) newValue);
 			return;
+		case YamlmdePackage.MATRIX__NODE_VERSION:
+			getNodeVersion().clear();
+			getNodeVersion().addAll((Collection<? extends String>) newValue);
+			return;
 		case YamlmdePackage.MATRIX__INCLUDE:
 			getInclude().clear();
 			getInclude().addAll((Collection<? extends Include>) newValue);
@@ -394,6 +424,9 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix {
 		case YamlmdePackage.MATRIX__CONFIGURATION:
 			getConfiguration().clear();
 			return;
+		case YamlmdePackage.MATRIX__NODE_VERSION:
+			getNodeVersion().clear();
+			return;
 		case YamlmdePackage.MATRIX__INCLUDE:
 			getInclude().clear();
 			return;
@@ -426,6 +459,8 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix {
 			return pythonVersion != null && !pythonVersion.isEmpty();
 		case YamlmdePackage.MATRIX__CONFIGURATION:
 			return configuration != null && !configuration.isEmpty();
+		case YamlmdePackage.MATRIX__NODE_VERSION:
+			return nodeVersion != null && !nodeVersion.isEmpty();
 		case YamlmdePackage.MATRIX__INCLUDE:
 			return include != null && !include.isEmpty();
 		case YamlmdePackage.MATRIX__EXCLUDE:
@@ -459,6 +494,8 @@ public class MatrixImpl extends MinimalEObjectImpl.Container implements Matrix {
 		result.append(pythonVersion);
 		result.append(", configuration: ");
 		result.append(configuration);
+		result.append(", nodeVersion: ");
+		result.append(nodeVersion);
 		result.append(')');
 		return result.toString();
 	}

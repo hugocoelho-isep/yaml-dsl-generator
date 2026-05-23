@@ -24,6 +24,7 @@ import pt.isep.yamldslgen.github_actions.Push;
 import pt.isep.yamldslgen.github_actions.Release;
 import pt.isep.yamldslgen.github_actions.Schedule;
 import pt.isep.yamldslgen.github_actions.Workflow_call;
+import pt.isep.yamldslgen.github_actions.Workflow_dispatch;
 import pt.isep.yamldslgen.github_actions.YamlmdePackage;
 
 /**
@@ -34,11 +35,11 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getWorkflowDispatch <em>Workflow Dispatch</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getIssues <em>Issues</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getPush <em>Push</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getPullRequest <em>Pull Request</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getSchedule <em>Schedule</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getWorkflowDispatch <em>Workflow Dispatch</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getWorkflowCall <em>Workflow Call</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getPullRequestTarget <em>Pull Request Target</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.OnImpl#getRelease <em>Release</em>}</li>
@@ -47,26 +48,6 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  * @generated
  */
 public class OnImpl extends MinimalEObjectImpl.Container implements On {
-	/**
-	 * The default value of the '{@link #getWorkflowDispatch() <em>Workflow Dispatch</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkflowDispatch()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String WORKFLOW_DISPATCH_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getWorkflowDispatch() <em>Workflow Dispatch</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWorkflowDispatch()
-	 * @generated
-	 * @ordered
-	 */
-	protected String workflowDispatch = WORKFLOW_DISPATCH_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getIssues() <em>Issues</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -118,6 +99,16 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 	protected EList<Schedule> schedule;
 
 	/**
+	 * The cached value of the '{@link #getWorkflowDispatch() <em>Workflow Dispatch</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkflowDispatch()
+	 * @generated
+	 * @ordered
+	 */
+	protected Workflow_dispatch workflowDispatch;
+
+	/**
 	 * The cached value of the '{@link #getWorkflowCall() <em>Workflow Call</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -164,30 +155,6 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 	@Override
 	protected EClass eStaticClass() {
 		return YamlmdePackage.Literals.ON;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getWorkflowDispatch() {
-		return workflowDispatch;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setWorkflowDispatch(String newWorkflowDispatch) {
-		String oldWorkflowDispatch = workflowDispatch;
-		workflowDispatch = newWorkflowDispatch;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.ON__WORKFLOW_DISPATCH,
-					oldWorkflowDispatch, workflowDispatch));
 	}
 
 	/**
@@ -327,6 +294,58 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 			schedule = new EObjectContainmentEList<Schedule>(Schedule.class, this, YamlmdePackage.ON__SCHEDULE);
 		}
 		return schedule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Workflow_dispatch getWorkflowDispatch() {
+		return workflowDispatch;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetWorkflowDispatch(Workflow_dispatch newWorkflowDispatch, NotificationChain msgs) {
+		Workflow_dispatch oldWorkflowDispatch = workflowDispatch;
+		workflowDispatch = newWorkflowDispatch;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					YamlmdePackage.ON__WORKFLOW_DISPATCH, oldWorkflowDispatch, newWorkflowDispatch);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setWorkflowDispatch(Workflow_dispatch newWorkflowDispatch) {
+		if (newWorkflowDispatch != workflowDispatch) {
+			NotificationChain msgs = null;
+			if (workflowDispatch != null)
+				msgs = ((InternalEObject) workflowDispatch).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - YamlmdePackage.ON__WORKFLOW_DISPATCH, null, msgs);
+			if (newWorkflowDispatch != null)
+				msgs = ((InternalEObject) newWorkflowDispatch).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - YamlmdePackage.ON__WORKFLOW_DISPATCH, null, msgs);
+			msgs = basicSetWorkflowDispatch(newWorkflowDispatch, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.ON__WORKFLOW_DISPATCH,
+					newWorkflowDispatch, newWorkflowDispatch));
 	}
 
 	/**
@@ -498,6 +517,8 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 			return basicSetPullRequest(null, msgs);
 		case YamlmdePackage.ON__SCHEDULE:
 			return ((InternalEList<?>) getSchedule()).basicRemove(otherEnd, msgs);
+		case YamlmdePackage.ON__WORKFLOW_DISPATCH:
+			return basicSetWorkflowDispatch(null, msgs);
 		case YamlmdePackage.ON__WORKFLOW_CALL:
 			return basicSetWorkflowCall(null, msgs);
 		case YamlmdePackage.ON__PULL_REQUEST_TARGET:
@@ -516,8 +537,6 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case YamlmdePackage.ON__WORKFLOW_DISPATCH:
-			return getWorkflowDispatch();
 		case YamlmdePackage.ON__ISSUES:
 			return getIssues();
 		case YamlmdePackage.ON__PUSH:
@@ -526,6 +545,8 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 			return getPullRequest();
 		case YamlmdePackage.ON__SCHEDULE:
 			return getSchedule();
+		case YamlmdePackage.ON__WORKFLOW_DISPATCH:
+			return getWorkflowDispatch();
 		case YamlmdePackage.ON__WORKFLOW_CALL:
 			return getWorkflowCall();
 		case YamlmdePackage.ON__PULL_REQUEST_TARGET:
@@ -545,9 +566,6 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case YamlmdePackage.ON__WORKFLOW_DISPATCH:
-			setWorkflowDispatch((String) newValue);
-			return;
 		case YamlmdePackage.ON__ISSUES:
 			setIssues((String) newValue);
 			return;
@@ -560,6 +578,9 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 		case YamlmdePackage.ON__SCHEDULE:
 			getSchedule().clear();
 			getSchedule().addAll((Collection<? extends Schedule>) newValue);
+			return;
+		case YamlmdePackage.ON__WORKFLOW_DISPATCH:
+			setWorkflowDispatch((Workflow_dispatch) newValue);
 			return;
 		case YamlmdePackage.ON__WORKFLOW_CALL:
 			setWorkflowCall((Workflow_call) newValue);
@@ -582,9 +603,6 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case YamlmdePackage.ON__WORKFLOW_DISPATCH:
-			setWorkflowDispatch(WORKFLOW_DISPATCH_EDEFAULT);
-			return;
 		case YamlmdePackage.ON__ISSUES:
 			setIssues(ISSUES_EDEFAULT);
 			return;
@@ -596,6 +614,9 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 			return;
 		case YamlmdePackage.ON__SCHEDULE:
 			getSchedule().clear();
+			return;
+		case YamlmdePackage.ON__WORKFLOW_DISPATCH:
+			setWorkflowDispatch((Workflow_dispatch) null);
 			return;
 		case YamlmdePackage.ON__WORKFLOW_CALL:
 			setWorkflowCall((Workflow_call) null);
@@ -618,9 +639,6 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case YamlmdePackage.ON__WORKFLOW_DISPATCH:
-			return WORKFLOW_DISPATCH_EDEFAULT == null ? workflowDispatch != null
-					: !WORKFLOW_DISPATCH_EDEFAULT.equals(workflowDispatch);
 		case YamlmdePackage.ON__ISSUES:
 			return ISSUES_EDEFAULT == null ? issues != null : !ISSUES_EDEFAULT.equals(issues);
 		case YamlmdePackage.ON__PUSH:
@@ -629,6 +647,8 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 			return pullRequest != null;
 		case YamlmdePackage.ON__SCHEDULE:
 			return schedule != null && !schedule.isEmpty();
+		case YamlmdePackage.ON__WORKFLOW_DISPATCH:
+			return workflowDispatch != null;
 		case YamlmdePackage.ON__WORKFLOW_CALL:
 			return workflowCall != null;
 		case YamlmdePackage.ON__PULL_REQUEST_TARGET:
@@ -650,9 +670,7 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (workflowDispatch: ");
-		result.append(workflowDispatch);
-		result.append(", issues: ");
+		result.append(" (issues: ");
 		result.append(issues);
 		result.append(')');
 		return result.toString();

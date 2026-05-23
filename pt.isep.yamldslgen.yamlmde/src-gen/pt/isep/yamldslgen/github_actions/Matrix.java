@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pt.isep.yamldslgen.github_actions.Matrix#getElixir <em>Elixir</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Matrix#getPythonVersion <em>Python Version</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Matrix#getConfiguration <em>Configuration</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Matrix#getNodeVersion <em>Node Version</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Matrix#getInclude <em>Include</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Matrix#getExclude <em>Exclude</em>}</li>
  * </ul>
@@ -114,6 +115,18 @@ public interface Matrix extends EObject {
 	 * @generated
 	 */
 	EList<String> getConfiguration();
+
+	/**
+	 * Returns the value of the '<em><b>Node Version</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Node Version</em>' attribute list.
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getMatrix_NodeVersion()
+	 * @model
+	 * @generated
+	 */
+	EList<String> getNodeVersion();
 
 	/**
 	 * Returns the value of the '<em><b>Include</b></em>' containment reference list.

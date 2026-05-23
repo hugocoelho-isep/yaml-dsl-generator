@@ -62,6 +62,7 @@ KeyName returns ecore::EString:
 	| 'secrets' | 'required' | 'packages'
 	| 'container' | 'image'
 	| 'defaults' | 'outputs' | 'release' 
+	| 'inputs' | 'description' | 'default' | 'type' | 'node-version'
 	| 'python-version' | 'configuration' | 'digests';
 	
 // =============================================================================
@@ -84,7 +85,7 @@ On returns On:
 		& ('pull_request' ':' pullRequest=Pull_request)?
 		& ('pull_request_target' ':' pullRequestTarget=Pull_request)?
 		& ('schedule' ':' (BEG_BLOCK? schedule+=Schedule+ END_BLOCK?))?
-		& ('workflow_dispatch' ':' (workflowDispatch=EString)?)?
+		& ('workflow_dispatch' ':' workflowDispatch=Workflow_dispatch)?
 		& ('workflow_call' ':' workflowCall=Workflow_call)?
 		& ('release' ':' release=Release)?
 		& ('issues' ':' issues=EString)?)
@@ -120,6 +121,20 @@ Schedule returns Schedule:
 	'-' BEG_BLOCK?
 		'cron' ':' cron=EString
 	END_BLOCK?;
+	
+Workflow_dispatch returns Workflow_dispatch:
+    {Workflow_dispatch}
+    BEG_BLOCK?
+        ('inputs' ':' (BEG_BLOCK? inputs+=Input+ END_BLOCK?))?
+    END_BLOCK?;
+
+Input returns Input:
+    id=KeyName ':' BEG_BLOCK?
+        (('description' ':' description=EString)?
+        & ('default' ':' default=EString)?
+        & ('required' ':' required=EBoolean)?
+        & ('type' ':' type=EString)?)
+    END_BLOCK?;
 	
 Workflow_call returns Workflow_call:
 	{Workflow_call}
@@ -187,7 +202,7 @@ Job returns Job:
 		& ('environment' ':' environment=Environment)?
 		& ('strategy' ':' strategy=Strategy)?
 		& ('container' ':' container=Container)?
-		& ('outputs' ':' outputs=Outputs)?
+		& ('outputs' ':' (BEG_BLOCK? outputs+=KeyValuePair+ END_BLOCK?))?
 		& ('steps' ':' BEG_BLOCK? steps+=Step+ END_BLOCK?)?
 		& ('permissions' ':' permissions=Permissions)?
 		& ('env' ':' (BEG_BLOCK? env+=KeyValuePair+ END_BLOCK?))?
@@ -252,6 +267,10 @@ Matrix returns Matrix:
 			  // BEG_BLOCK ('-' BEG_BLOCK? pythonVersion+=EString END_BLOCK?)+ END_BLOCK
 			// | '[' pythonVersion+=EString (',' pythonVersion+=EString)* ']'
 		// ))?
+		& ('node-version' ':' (
+		      BEG_BLOCK ('-' BEG_BLOCK? nodeVersion+=EString END_BLOCK?)+ END_BLOCK
+		    | '[' nodeVersion+=EString (',' nodeVersion+=EString)* ']'
+		))?
 		& ('configuration' ':' (
 			  BEG_BLOCK ('-' BEG_BLOCK? configuration+=EString END_BLOCK?)+ END_BLOCK
 			| '[' configuration+=EString (',' configuration+=EString)* ']'
@@ -289,16 +308,6 @@ Run returns Run:
 	{Run}
 	BEG_BLOCK?
 		('shell' ':' shell=EString)
-	END_BLOCK?;
-
-// =============================================================================
-// OUTPUTS
-// =============================================================================
-
-Outputs returns Outputs:
-	{Outputs}
-	BEG_BLOCK?
-		('digests' ':' digests=EString)
 	END_BLOCK?;
 
 // =============================================================================
@@ -351,7 +360,7 @@ terminal END_BLOCK: 'synthetic:END';
 // GitHub Actions expression ${{ ... }}
 // Mantemos o until-match ('->') para capturar expressões completas sem o Lexer se perder nas chavetas.
 terminal GH_EXPRESSION:
-    '${{' -> '}}'
+    '$'? '{{' -> '}}'
     | '$' ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-')*;
     
 // Força o Lexer a dar prioridade a números puros antes do YAML_SCALAR

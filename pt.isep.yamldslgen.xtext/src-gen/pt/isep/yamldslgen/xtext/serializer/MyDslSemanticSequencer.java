@@ -21,11 +21,11 @@ import pt.isep.yamldslgen.github_actions.Environment;
 import pt.isep.yamldslgen.github_actions.Exclude;
 import pt.isep.yamldslgen.github_actions.GithubActions;
 import pt.isep.yamldslgen.github_actions.Include;
+import pt.isep.yamldslgen.github_actions.Input;
 import pt.isep.yamldslgen.github_actions.Job;
 import pt.isep.yamldslgen.github_actions.KeyValuePair;
 import pt.isep.yamldslgen.github_actions.Matrix;
 import pt.isep.yamldslgen.github_actions.On;
-import pt.isep.yamldslgen.github_actions.Outputs;
 import pt.isep.yamldslgen.github_actions.Permissions;
 import pt.isep.yamldslgen.github_actions.Pull_request;
 import pt.isep.yamldslgen.github_actions.Push;
@@ -36,6 +36,7 @@ import pt.isep.yamldslgen.github_actions.Secret;
 import pt.isep.yamldslgen.github_actions.Step;
 import pt.isep.yamldslgen.github_actions.Strategy;
 import pt.isep.yamldslgen.github_actions.Workflow_call;
+import pt.isep.yamldslgen.github_actions.Workflow_dispatch;
 import pt.isep.yamldslgen.github_actions.YamlmdePackage;
 import pt.isep.yamldslgen.xtext.services.MyDslGrammarAccess;
 
@@ -74,6 +75,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case YamlmdePackage.INCLUDE:
 				sequence_Include(context, (Include) semanticObject); 
 				return; 
+			case YamlmdePackage.INPUT:
+				sequence_Input(context, (Input) semanticObject); 
+				return; 
 			case YamlmdePackage.JOB:
 				sequence_Job(context, (Job) semanticObject); 
 				return; 
@@ -85,9 +89,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case YamlmdePackage.ON:
 				sequence_On(context, (On) semanticObject); 
-				return; 
-			case YamlmdePackage.OUTPUTS:
-				sequence_Outputs(context, (Outputs) semanticObject); 
 				return; 
 			case YamlmdePackage.PERMISSIONS:
 				sequence_Permissions(context, (Permissions) semanticObject); 
@@ -118,6 +119,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case YamlmdePackage.WORKFLOW_CALL:
 				sequence_Workflow_call(context, (Workflow_call) semanticObject); 
+				return; 
+			case YamlmdePackage.WORKFLOW_DISPATCH:
+				sequence_Workflow_dispatch(context, (Workflow_dispatch) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -245,6 +249,20 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Input returns Input
+	 *
+	 * Constraint:
+	 *     (id=KeyName (description=EString | default=EString | required=EBoolean | type=EString)*)
+	 * </pre>
+	 */
+	protected void sequence_Input(ISerializationContext context, Input semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Job returns Job
 	 *
 	 * Constraint:
@@ -261,7 +279,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *                 environment=Environment | 
 	 *                 strategy=Strategy | 
 	 *                 container=Container | 
-	 *                 outputs=Outputs | 
+	 *                 outputs+=KeyValuePair | 
 	 *                 steps+=Step | 
 	 *                 permissions=Permissions | 
 	 *                 env+=KeyValuePair | 
@@ -313,6 +331,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *             cCompiler+=EString | 
 	 *             otp+=EString | 
 	 *             elixir+=EString | 
+	 *             nodeVersion+=EString | 
 	 *             configuration+=EString | 
 	 *             include+=Include | 
 	 *             exclude+=Exclude
@@ -322,6 +341,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         (cCompiler+=EString cCompiler+=EString*)? 
 	 *         (otp+=EString otp+=EString*)? 
 	 *         (elixir+=EString elixir+=EString*)? 
+	 *         (nodeVersion+=EString nodeVersion+=EString*)? 
 	 *         (configuration+=EString configuration+=EString*)?
 	 *     )+
 	 * </pre>
@@ -342,7 +362,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         pullRequest=Pull_request | 
 	 *         pullRequestTarget=Pull_request | 
 	 *         schedule+=Schedule | 
-	 *         workflowDispatch=EString | 
+	 *         workflowDispatch=Workflow_dispatch | 
 	 *         workflowCall=Workflow_call | 
 	 *         release=Release | 
 	 *         issues=EString
@@ -351,26 +371,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 */
 	protected void sequence_On(ISerializationContext context, On semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Outputs returns Outputs
-	 *
-	 * Constraint:
-	 *     digests=EString
-	 * </pre>
-	 */
-	protected void sequence_Outputs(ISerializationContext context, Outputs semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, YamlmdePackage.Literals.OUTPUTS__DIGESTS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, YamlmdePackage.Literals.OUTPUTS__DIGESTS));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getOutputsAccess().getDigestsEStringParserRuleCall_2_2_0(), semanticObject.getDigests());
-		feeder.finish();
 	}
 	
 	
@@ -542,6 +542,20 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * </pre>
 	 */
 	protected void sequence_Workflow_call(ISerializationContext context, Workflow_call semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Workflow_dispatch returns Workflow_dispatch
+	 *
+	 * Constraint:
+	 *     inputs+=Input*
+	 * </pre>
+	 */
+	protected void sequence_Workflow_dispatch(ISerializationContext context, Workflow_dispatch semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

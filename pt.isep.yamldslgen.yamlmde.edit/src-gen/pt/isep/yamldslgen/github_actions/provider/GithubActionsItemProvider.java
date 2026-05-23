@@ -89,8 +89,8 @@ public class GithubActionsItemProvider extends ItemProviderAdapter implements IE
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(YamlmdePackage.Literals.GITHUB_ACTIONS__ON);
 			childrenFeatures.add(YamlmdePackage.Literals.GITHUB_ACTIONS__JOBS);
+			childrenFeatures.add(YamlmdePackage.Literals.GITHUB_ACTIONS__ON);
 			childrenFeatures.add(YamlmdePackage.Literals.GITHUB_ACTIONS__PERMISSIONS);
 			childrenFeatures.add(YamlmdePackage.Literals.GITHUB_ACTIONS__CONCURRENCY);
 			childrenFeatures.add(YamlmdePackage.Literals.GITHUB_ACTIONS__DEFAULTS);
@@ -161,8 +161,8 @@ public class GithubActionsItemProvider extends ItemProviderAdapter implements IE
 		case YamlmdePackage.GITHUB_ACTIONS__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case YamlmdePackage.GITHUB_ACTIONS__ON:
 		case YamlmdePackage.GITHUB_ACTIONS__JOBS:
+		case YamlmdePackage.GITHUB_ACTIONS__ON:
 		case YamlmdePackage.GITHUB_ACTIONS__PERMISSIONS:
 		case YamlmdePackage.GITHUB_ACTIONS__CONCURRENCY:
 		case YamlmdePackage.GITHUB_ACTIONS__DEFAULTS:
@@ -184,11 +184,11 @@ public class GithubActionsItemProvider extends ItemProviderAdapter implements IE
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(
-				createChildParameter(YamlmdePackage.Literals.GITHUB_ACTIONS__ON, YamlmdeFactory.eINSTANCE.createOn()));
-
 		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.GITHUB_ACTIONS__JOBS,
 				YamlmdeFactory.eINSTANCE.createJob()));
+
+		newChildDescriptors.add(
+				createChildParameter(YamlmdePackage.Literals.GITHUB_ACTIONS__ON, YamlmdeFactory.eINSTANCE.createOn()));
 
 		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.GITHUB_ACTIONS__PERMISSIONS,
 				YamlmdeFactory.eINSTANCE.createPermissions()));

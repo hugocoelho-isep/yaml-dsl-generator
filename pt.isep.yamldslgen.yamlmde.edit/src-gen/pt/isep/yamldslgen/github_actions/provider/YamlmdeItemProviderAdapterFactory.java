@@ -119,6 +119,52 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Job} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected JobItemProvider jobItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Job}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createJobAdapter() {
+		if (jobItemProvider == null) {
+			jobItemProvider = new JobItemProvider(this);
+		}
+
+		return jobItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Step} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StepItemProvider stepItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Step}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStepAdapter() {
+		if (stepItemProvider == null) {
+			stepItemProvider = new StepItemProvider(this);
+		}
+
+		return stepItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.On} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -188,52 +234,6 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Job} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected JobItemProvider jobItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Job}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createJobAdapter() {
-		if (jobItemProvider == null) {
-			jobItemProvider = new JobItemProvider(this);
-		}
-
-		return jobItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Step} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected StepItemProvider stepItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Step}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createStepAdapter() {
-		if (stepItemProvider == null) {
-			stepItemProvider = new StepItemProvider(this);
-		}
-
-		return stepItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Permissions} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -280,6 +280,29 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Workflow_dispatch} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Workflow_dispatchItemProvider workflow_dispatchItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Workflow_dispatch}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createWorkflow_dispatchAdapter() {
+		if (workflow_dispatchItemProvider == null) {
+			workflow_dispatchItemProvider = new Workflow_dispatchItemProvider(this);
+		}
+
+		return workflow_dispatchItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Environment} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -300,6 +323,29 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 		}
 
 		return environmentItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Concurrency} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConcurrencyItemProvider concurrencyItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Concurrency}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createConcurrencyAdapter() {
+		if (concurrencyItemProvider == null) {
+			concurrencyItemProvider = new ConcurrencyItemProvider(this);
+		}
+
+		return concurrencyItemProvider;
 	}
 
 	/**
@@ -510,29 +556,6 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Outputs} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected OutputsItemProvider outputsItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Outputs}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createOutputsAdapter() {
-		if (outputsItemProvider == null) {
-			outputsItemProvider = new OutputsItemProvider(this);
-		}
-
-		return outputsItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Release} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -556,26 +579,26 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Concurrency} instances.
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Input} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ConcurrencyItemProvider concurrencyItemProvider;
+	protected InputItemProvider inputItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Concurrency}.
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Input}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createConcurrencyAdapter() {
-		if (concurrencyItemProvider == null) {
-			concurrencyItemProvider = new ConcurrencyItemProvider(this);
+	public Adapter createInputAdapter() {
+		if (inputItemProvider == null) {
+			inputItemProvider = new InputItemProvider(this);
 		}
 
-		return concurrencyItemProvider;
+		return inputItemProvider;
 	}
 
 	/**
@@ -687,20 +710,22 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 			keyValuePairItemProvider.dispose();
 		if (githubActionsItemProvider != null)
 			githubActionsItemProvider.dispose();
+		if (jobItemProvider != null)
+			jobItemProvider.dispose();
+		if (stepItemProvider != null)
+			stepItemProvider.dispose();
 		if (onItemProvider != null)
 			onItemProvider.dispose();
 		if (pushItemProvider != null)
 			pushItemProvider.dispose();
 		if (pull_requestItemProvider != null)
 			pull_requestItemProvider.dispose();
-		if (jobItemProvider != null)
-			jobItemProvider.dispose();
-		if (stepItemProvider != null)
-			stepItemProvider.dispose();
 		if (permissionsItemProvider != null)
 			permissionsItemProvider.dispose();
 		if (scheduleItemProvider != null)
 			scheduleItemProvider.dispose();
+		if (workflow_dispatchItemProvider != null)
+			workflow_dispatchItemProvider.dispose();
 		if (environmentItemProvider != null)
 			environmentItemProvider.dispose();
 		if (concurrencyItemProvider != null)
@@ -725,8 +750,8 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 			runItemProvider.dispose();
 		if (releaseItemProvider != null)
 			releaseItemProvider.dispose();
-		if (outputsItemProvider != null)
-			outputsItemProvider.dispose();
+		if (inputItemProvider != null)
+			inputItemProvider.dispose();
 	}
 
 }

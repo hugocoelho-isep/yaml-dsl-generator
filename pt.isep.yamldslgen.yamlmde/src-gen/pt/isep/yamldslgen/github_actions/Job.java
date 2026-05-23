@@ -26,9 +26,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getEnvironment <em>Environment</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getStrategy <em>Strategy</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getContainer <em>Container</em>}</li>
- *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getOutputs <em>Outputs</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getWith <em>With</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getEnv <em>Env</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getOutputs <em>Outputs</em>}</li>
  * </ul>
  *
  * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getJob()
@@ -259,26 +259,16 @@ public interface Job extends EObject {
 	void setContainer(Container value);
 
 	/**
-	 * Returns the value of the '<em><b>Outputs</b></em>' containment reference.
+	 * Returns the value of the '<em><b>With</b></em>' containment reference list.
+	 * The list contents are of type {@link pt.isep.yamldslgen.github_actions.KeyValuePair}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Outputs</em>' containment reference.
-	 * @see #setOutputs(Outputs)
-	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getJob_Outputs()
+	 * @return the value of the '<em>With</em>' containment reference list.
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getJob_With()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Outputs getOutputs();
-
-	/**
-	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.Job#getOutputs <em>Outputs</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Outputs</em>' containment reference.
-	 * @see #getOutputs()
-	 * @generated
-	 */
-	void setOutputs(Outputs value);
+	EList<KeyValuePair> getWith();
 
 	/**
 	 * Returns the value of the '<em><b>Env</b></em>' containment reference list.
@@ -293,15 +283,15 @@ public interface Job extends EObject {
 	EList<KeyValuePair> getEnv();
 
 	/**
-	 * Returns the value of the '<em><b>With</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Outputs</b></em>' containment reference list.
 	 * The list contents are of type {@link pt.isep.yamldslgen.github_actions.KeyValuePair}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>With</em>' containment reference list.
-	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getJob_With()
+	 * @return the value of the '<em>Outputs</em>' containment reference list.
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getJob_Outputs()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<KeyValuePair> getWith();
+	EList<KeyValuePair> getOutputs();
 
 } // Job

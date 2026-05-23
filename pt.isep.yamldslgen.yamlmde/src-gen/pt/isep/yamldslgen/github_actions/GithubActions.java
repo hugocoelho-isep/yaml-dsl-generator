@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getName <em>Name</em>}</li>
- *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getOn <em>On</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getJobs <em>Jobs</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getOn <em>On</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getPermissions <em>Permissions</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getConcurrency <em>Concurrency</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.GithubActions#getDefaults <em>Defaults</em>}</li>
@@ -52,6 +52,18 @@ public interface GithubActions extends EObject {
 	void setName(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Jobs</b></em>' containment reference list.
+	 * The list contents are of type {@link pt.isep.yamldslgen.github_actions.Job}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Jobs</em>' containment reference list.
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getGithubActions_Jobs()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	EList<Job> getJobs();
+
+	/**
 	 * Returns the value of the '<em><b>On</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -72,18 +84,6 @@ public interface GithubActions extends EObject {
 	 * @generated
 	 */
 	void setOn(On value);
-
-	/**
-	 * Returns the value of the '<em><b>Jobs</b></em>' containment reference list.
-	 * The list contents are of type {@link pt.isep.yamldslgen.github_actions.Job}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Jobs</em>' containment reference list.
-	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getGithubActions_Jobs()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	EList<Job> getJobs();
 
 	/**
 	 * Returns the value of the '<em><b>Permissions</b></em>' containment reference.

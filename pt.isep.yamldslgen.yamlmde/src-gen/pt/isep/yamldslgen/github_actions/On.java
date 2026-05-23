@@ -15,11 +15,11 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link pt.isep.yamldslgen.github_actions.On#getWorkflowDispatch <em>Workflow Dispatch</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getIssues <em>Issues</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getPush <em>Push</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getPullRequest <em>Pull Request</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getSchedule <em>Schedule</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.On#getWorkflowDispatch <em>Workflow Dispatch</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getWorkflowCall <em>Workflow Call</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getPullRequestTarget <em>Pull Request Target</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.On#getRelease <em>Release</em>}</li>
@@ -30,28 +30,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface On extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Workflow Dispatch</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Workflow Dispatch</em>' attribute.
-	 * @see #setWorkflowDispatch(String)
-	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getOn_WorkflowDispatch()
-	 * @model
-	 * @generated
-	 */
-	String getWorkflowDispatch();
-
-	/**
-	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.On#getWorkflowDispatch <em>Workflow Dispatch</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Workflow Dispatch</em>' attribute.
-	 * @see #getWorkflowDispatch()
-	 * @generated
-	 */
-	void setWorkflowDispatch(String value);
-
 	/**
 	 * Returns the value of the '<em><b>Issues</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -129,6 +107,28 @@ public interface On extends EObject {
 	 * @generated
 	 */
 	EList<Schedule> getSchedule();
+
+	/**
+	 * Returns the value of the '<em><b>Workflow Dispatch</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Workflow Dispatch</em>' containment reference.
+	 * @see #setWorkflowDispatch(Workflow_dispatch)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getOn_WorkflowDispatch()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Workflow_dispatch getWorkflowDispatch();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.On#getWorkflowDispatch <em>Workflow Dispatch</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Workflow Dispatch</em>' containment reference.
+	 * @see #getWorkflowDispatch()
+	 * @generated
+	 */
+	void setWorkflowDispatch(Workflow_dispatch value);
 
 	/**
 	 * Returns the value of the '<em><b>Workflow Call</b></em>' containment reference.

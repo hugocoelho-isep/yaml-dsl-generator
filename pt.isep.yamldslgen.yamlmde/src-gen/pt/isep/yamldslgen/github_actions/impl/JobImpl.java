@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import pt.isep.yamldslgen.github_actions.Environment;
 import pt.isep.yamldslgen.github_actions.Job;
 import pt.isep.yamldslgen.github_actions.KeyValuePair;
-import pt.isep.yamldslgen.github_actions.Outputs;
 import pt.isep.yamldslgen.github_actions.Permissions;
 import pt.isep.yamldslgen.github_actions.Step;
 import pt.isep.yamldslgen.github_actions.Strategy;
@@ -47,9 +46,9 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getEnvironment <em>Environment</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getStrategy <em>Strategy</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getContainer <em>Container</em>}</li>
- *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getOutputs <em>Outputs</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getWith <em>With</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getEnv <em>Env</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getOutputs <em>Outputs</em>}</li>
  * </ul>
  *
  * @generated
@@ -216,16 +215,6 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	protected pt.isep.yamldslgen.github_actions.Container container;
 
 	/**
-	 * The cached value of the '{@link #getOutputs() <em>Outputs</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOutputs()
-	 * @generated
-	 * @ordered
-	 */
-	protected Outputs outputs;
-
-	/**
 	 * The cached value of the '{@link #getWith() <em>With</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -244,6 +233,16 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 * @ordered
 	 */
 	protected EList<KeyValuePair> env;
+
+	/**
+	 * The cached value of the '{@link #getOutputs() <em>Outputs</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOutputs()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<KeyValuePair> outputs;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -620,49 +619,11 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 * @generated
 	 */
 	@Override
-	public Outputs getOutputs() {
-		return outputs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetOutputs(Outputs newOutputs, NotificationChain msgs) {
-		Outputs oldOutputs = outputs;
-		outputs = newOutputs;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, YamlmdePackage.JOB__OUTPUTS,
-					oldOutputs, newOutputs);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+	public EList<KeyValuePair> getWith() {
+		if (with == null) {
+			with = new EObjectContainmentEList<KeyValuePair>(KeyValuePair.class, this, YamlmdePackage.JOB__WITH);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setOutputs(Outputs newOutputs) {
-		if (newOutputs != outputs) {
-			NotificationChain msgs = null;
-			if (outputs != null)
-				msgs = ((InternalEObject) outputs).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - YamlmdePackage.JOB__OUTPUTS, null, msgs);
-			if (newOutputs != null)
-				msgs = ((InternalEObject) newOutputs).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - YamlmdePackage.JOB__OUTPUTS, null, msgs);
-			msgs = basicSetOutputs(newOutputs, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.JOB__OUTPUTS, newOutputs, newOutputs));
+		return with;
 	}
 
 	/**
@@ -684,11 +645,11 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 * @generated
 	 */
 	@Override
-	public EList<KeyValuePair> getWith() {
-		if (with == null) {
-			with = new EObjectContainmentEList<KeyValuePair>(KeyValuePair.class, this, YamlmdePackage.JOB__WITH);
+	public EList<KeyValuePair> getOutputs() {
+		if (outputs == null) {
+			outputs = new EObjectContainmentEList<KeyValuePair>(KeyValuePair.class, this, YamlmdePackage.JOB__OUTPUTS);
 		}
-		return with;
+		return outputs;
 	}
 
 	/**
@@ -709,12 +670,12 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			return basicSetStrategy(null, msgs);
 		case YamlmdePackage.JOB__CONTAINER:
 			return basicSetContainer(null, msgs);
-		case YamlmdePackage.JOB__OUTPUTS:
-			return basicSetOutputs(null, msgs);
 		case YamlmdePackage.JOB__WITH:
 			return ((InternalEList<?>) getWith()).basicRemove(otherEnd, msgs);
 		case YamlmdePackage.JOB__ENV:
 			return ((InternalEList<?>) getEnv()).basicRemove(otherEnd, msgs);
+		case YamlmdePackage.JOB__OUTPUTS:
+			return ((InternalEList<?>) getOutputs()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -749,12 +710,12 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			return getStrategy();
 		case YamlmdePackage.JOB__CONTAINER:
 			return getContainer();
-		case YamlmdePackage.JOB__OUTPUTS:
-			return getOutputs();
 		case YamlmdePackage.JOB__WITH:
 			return getWith();
 		case YamlmdePackage.JOB__ENV:
 			return getEnv();
+		case YamlmdePackage.JOB__OUTPUTS:
+			return getOutputs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -803,9 +764,6 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		case YamlmdePackage.JOB__CONTAINER:
 			setContainer((pt.isep.yamldslgen.github_actions.Container) newValue);
 			return;
-		case YamlmdePackage.JOB__OUTPUTS:
-			setOutputs((Outputs) newValue);
-			return;
 		case YamlmdePackage.JOB__WITH:
 			getWith().clear();
 			getWith().addAll((Collection<? extends KeyValuePair>) newValue);
@@ -813,6 +771,10 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		case YamlmdePackage.JOB__ENV:
 			getEnv().clear();
 			getEnv().addAll((Collection<? extends KeyValuePair>) newValue);
+			return;
+		case YamlmdePackage.JOB__OUTPUTS:
+			getOutputs().clear();
+			getOutputs().addAll((Collection<? extends KeyValuePair>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -859,14 +821,14 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		case YamlmdePackage.JOB__CONTAINER:
 			setContainer((pt.isep.yamldslgen.github_actions.Container) null);
 			return;
-		case YamlmdePackage.JOB__OUTPUTS:
-			setOutputs((Outputs) null);
-			return;
 		case YamlmdePackage.JOB__WITH:
 			getWith().clear();
 			return;
 		case YamlmdePackage.JOB__ENV:
 			getEnv().clear();
+			return;
+		case YamlmdePackage.JOB__OUTPUTS:
+			getOutputs().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -902,12 +864,12 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			return strategy != null;
 		case YamlmdePackage.JOB__CONTAINER:
 			return container != null;
-		case YamlmdePackage.JOB__OUTPUTS:
-			return outputs != null;
 		case YamlmdePackage.JOB__WITH:
 			return with != null && !with.isEmpty();
 		case YamlmdePackage.JOB__ENV:
 			return env != null && !env.isEmpty();
+		case YamlmdePackage.JOB__OUTPUTS:
+			return outputs != null && !outputs.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

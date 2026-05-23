@@ -40,6 +40,24 @@ public interface YamlmdeFactory extends EFactory {
 	GithubActions createGithubActions();
 
 	/**
+	 * Returns a new object of class '<em>Job</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Job</em>'.
+	 * @generated
+	 */
+	Job createJob();
+
+	/**
+	 * Returns a new object of class '<em>Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Step</em>'.
+	 * @generated
+	 */
+	Step createStep();
+
+	/**
 	 * Returns a new object of class '<em>On</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,24 +85,6 @@ public interface YamlmdeFactory extends EFactory {
 	Pull_request createPull_request();
 
 	/**
-	 * Returns a new object of class '<em>Job</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Job</em>'.
-	 * @generated
-	 */
-	Job createJob();
-
-	/**
-	 * Returns a new object of class '<em>Step</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Step</em>'.
-	 * @generated
-	 */
-	Step createStep();
-
-	/**
 	 * Returns a new object of class '<em>Permissions</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -103,6 +103,15 @@ public interface YamlmdeFactory extends EFactory {
 	Schedule createSchedule();
 
 	/**
+	 * Returns a new object of class '<em>Workflow dispatch</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Workflow dispatch</em>'.
+	 * @generated
+	 */
+	Workflow_dispatch createWorkflow_dispatch();
+
+	/**
 	 * Returns a new object of class '<em>Environment</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -110,6 +119,15 @@ public interface YamlmdeFactory extends EFactory {
 	 * @generated
 	 */
 	Environment createEnvironment();
+
+	/**
+	 * Returns a new object of class '<em>Concurrency</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Concurrency</em>'.
+	 * @generated
+	 */
+	Concurrency createConcurrency();
 
 	/**
 	 * Returns a new object of class '<em>Strategy</em>'.
@@ -193,15 +211,6 @@ public interface YamlmdeFactory extends EFactory {
 	Run createRun();
 
 	/**
-	 * Returns a new object of class '<em>Outputs</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Outputs</em>'.
-	 * @generated
-	 */
-	Outputs createOutputs();
-
-	/**
 	 * Returns a new object of class '<em>Release</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -211,13 +220,13 @@ public interface YamlmdeFactory extends EFactory {
 	Release createRelease();
 
 	/**
-	 * Returns a new object of class '<em>Concurrency</em>'.
+	 * Returns a new object of class '<em>Input</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Concurrency</em>'.
+	 * @return a new object of class '<em>Input</em>'.
 	 * @generated
 	 */
-	Concurrency createConcurrency();
+	Input createInput();
 
 	/**
 	 * Returns the package supported by this factory.
