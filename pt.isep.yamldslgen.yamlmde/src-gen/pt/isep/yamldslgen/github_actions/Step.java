@@ -23,8 +23,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pt.isep.yamldslgen.github_actions.Step#getWorkingDirectory <em>Working Directory</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Step#getShell <em>Shell</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Step#isContinueOnError <em>Continue On Error</em>}</li>
- *   <li>{@link pt.isep.yamldslgen.github_actions.Step#getEnv <em>Env</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Step#getTimeoutMinutes <em>Timeout Minutes</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Step#getWith <em>With</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Step#getEnv <em>Env</em>}</li>
  * </ul>
  *
  * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getStep()
@@ -207,6 +208,28 @@ public interface Step extends EObject {
 	 * @generated
 	 */
 	void setContinueOnError(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Timeout Minutes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Timeout Minutes</em>' attribute.
+	 * @see #setTimeoutMinutes(int)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getStep_TimeoutMinutes()
+	 * @model
+	 * @generated
+	 */
+	int getTimeoutMinutes();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.Step#getTimeoutMinutes <em>Timeout Minutes</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Timeout Minutes</em>' attribute.
+	 * @see #getTimeoutMinutes()
+	 * @generated
+	 */
+	void setTimeoutMinutes(int value);
 
 	/**
 	 * Returns the value of the '<em><b>With</b></em>' containment reference list.

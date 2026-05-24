@@ -29,6 +29,7 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.PermissionsImpl#getIssues <em>Issues</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.PermissionsImpl#getPackages <em>Packages</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.PermissionsImpl#getModels <em>Models</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.PermissionsImpl#getChecks <em>Checks</em>}</li>
  * </ul>
  *
  * @generated
@@ -213,6 +214,26 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 	 * @ordered
 	 */
 	protected String models = MODELS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getChecks() <em>Checks</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChecks()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CHECKS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getChecks() <em>Checks</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChecks()
+	 * @generated
+	 * @ordered
+	 */
+	protected String checks = CHECKS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -454,6 +475,30 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 	 * @generated
 	 */
 	@Override
+	public String getChecks() {
+		return checks;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setChecks(String newChecks) {
+		String oldChecks = checks;
+		checks = newChecks;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.PERMISSIONS__CHECKS, oldChecks,
+					checks));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case YamlmdePackage.PERMISSIONS__CONTENTS:
@@ -474,6 +519,8 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 			return getPackages();
 		case YamlmdePackage.PERMISSIONS__MODELS:
 			return getModels();
+		case YamlmdePackage.PERMISSIONS__CHECKS:
+			return getChecks();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -512,6 +559,9 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 			return;
 		case YamlmdePackage.PERMISSIONS__MODELS:
 			setModels((String) newValue);
+			return;
+		case YamlmdePackage.PERMISSIONS__CHECKS:
+			setChecks((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -552,6 +602,9 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 		case YamlmdePackage.PERMISSIONS__MODELS:
 			setModels(MODELS_EDEFAULT);
 			return;
+		case YamlmdePackage.PERMISSIONS__CHECKS:
+			setChecks(CHECKS_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -583,6 +636,8 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 			return PACKAGES_EDEFAULT == null ? packages != null : !PACKAGES_EDEFAULT.equals(packages);
 		case YamlmdePackage.PERMISSIONS__MODELS:
 			return MODELS_EDEFAULT == null ? models != null : !MODELS_EDEFAULT.equals(models);
+		case YamlmdePackage.PERMISSIONS__CHECKS:
+			return CHECKS_EDEFAULT == null ? checks != null : !CHECKS_EDEFAULT.equals(checks);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -616,6 +671,8 @@ public class PermissionsImpl extends MinimalEObjectImpl.Container implements Per
 		result.append(packages);
 		result.append(", models: ");
 		result.append(models);
+		result.append(", checks: ");
+		result.append(checks);
 		result.append(')');
 		return result.toString();
 	}

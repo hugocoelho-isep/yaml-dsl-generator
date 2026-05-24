@@ -27,8 +27,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getStrategy <em>Strategy</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getContainer <em>Container</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getServices <em>Services</em>}</li>
- *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getEnv <em>Env</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getDefaults <em>Defaults</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getWith <em>With</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getEnv <em>Env</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Job#getOutputs <em>Outputs</em>}</li>
  * </ul>
  *
@@ -270,6 +271,28 @@ public interface Job extends EObject {
 	 * @generated
 	 */
 	EList<Service> getServices();
+
+	/**
+	 * Returns the value of the '<em><b>Defaults</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Defaults</em>' containment reference.
+	 * @see #setDefaults(Defaults)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getJob_Defaults()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Defaults getDefaults();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.Job#getDefaults <em>Defaults</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Defaults</em>' containment reference.
+	 * @see #getDefaults()
+	 * @generated
+	 */
+	void setDefaults(Defaults value);
 
 	/**
 	 * Returns the value of the '<em><b>With</b></em>' containment reference list.

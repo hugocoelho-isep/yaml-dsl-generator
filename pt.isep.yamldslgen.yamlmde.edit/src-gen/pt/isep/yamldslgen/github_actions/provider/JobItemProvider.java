@@ -174,8 +174,9 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 			childrenFeatures.add(YamlmdePackage.Literals.JOB__STRATEGY);
 			childrenFeatures.add(YamlmdePackage.Literals.JOB__CONTAINER);
 			childrenFeatures.add(YamlmdePackage.Literals.JOB__SERVICES);
-			childrenFeatures.add(YamlmdePackage.Literals.JOB__ENV);
+			childrenFeatures.add(YamlmdePackage.Literals.JOB__DEFAULTS);
 			childrenFeatures.add(YamlmdePackage.Literals.JOB__WITH);
+			childrenFeatures.add(YamlmdePackage.Literals.JOB__ENV);
 			childrenFeatures.add(YamlmdePackage.Literals.JOB__OUTPUTS);
 		}
 		return childrenFeatures;
@@ -254,8 +255,9 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 		case YamlmdePackage.JOB__STRATEGY:
 		case YamlmdePackage.JOB__CONTAINER:
 		case YamlmdePackage.JOB__SERVICES:
-		case YamlmdePackage.JOB__ENV:
+		case YamlmdePackage.JOB__DEFAULTS:
 		case YamlmdePackage.JOB__WITH:
+		case YamlmdePackage.JOB__ENV:
 		case YamlmdePackage.JOB__OUTPUTS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -293,10 +295,13 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 				createChildParameter(YamlmdePackage.Literals.JOB__SERVICES, YamlmdeFactory.eINSTANCE.createService()));
 
 		newChildDescriptors.add(
-				createChildParameter(YamlmdePackage.Literals.JOB__ENV, YamlmdeFactory.eINSTANCE.createKeyValuePair()));
+				createChildParameter(YamlmdePackage.Literals.JOB__DEFAULTS, YamlmdeFactory.eINSTANCE.createDefaults()));
 
 		newChildDescriptors.add(
 				createChildParameter(YamlmdePackage.Literals.JOB__WITH, YamlmdeFactory.eINSTANCE.createKeyValuePair()));
+
+		newChildDescriptors.add(
+				createChildParameter(YamlmdePackage.Literals.JOB__ENV, YamlmdeFactory.eINSTANCE.createKeyValuePair()));
 
 		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.JOB__OUTPUTS,
 				YamlmdeFactory.eINSTANCE.createKeyValuePair()));
@@ -313,8 +318,8 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 		Object childFeature = feature;
 		Object childObject = child;
 
-		boolean qualify = childFeature == YamlmdePackage.Literals.JOB__ENV
-				|| childFeature == YamlmdePackage.Literals.JOB__WITH
+		boolean qualify = childFeature == YamlmdePackage.Literals.JOB__WITH
+				|| childFeature == YamlmdePackage.Literals.JOB__ENV
 				|| childFeature == YamlmdePackage.Literals.JOB__OUTPUTS;
 
 		if (qualify) {

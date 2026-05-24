@@ -64,6 +64,7 @@ public class StepItemProvider extends ItemProviderAdapter implements IEditingDom
 			addWorkingDirectoryPropertyDescriptor(object);
 			addShellPropertyDescriptor(object);
 			addContinueOnErrorPropertyDescriptor(object);
+			addTimeoutMinutesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -191,6 +192,22 @@ public class StepItemProvider extends ItemProviderAdapter implements IEditingDom
 	}
 
 	/**
+	 * This adds a property descriptor for the Timeout Minutes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTimeoutMinutesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Step_timeoutMinutes_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Step_timeoutMinutes_feature",
+								"_UI_Step_type"),
+						YamlmdePackage.Literals.STEP__TIMEOUT_MINUTES, true, false, false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -202,8 +219,8 @@ public class StepItemProvider extends ItemProviderAdapter implements IEditingDom
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(YamlmdePackage.Literals.STEP__ENV);
 			childrenFeatures.add(YamlmdePackage.Literals.STEP__WITH);
+			childrenFeatures.add(YamlmdePackage.Literals.STEP__ENV);
 		}
 		return childrenFeatures;
 	}
@@ -275,10 +292,11 @@ public class StepItemProvider extends ItemProviderAdapter implements IEditingDom
 		case YamlmdePackage.STEP__WORKING_DIRECTORY:
 		case YamlmdePackage.STEP__SHELL:
 		case YamlmdePackage.STEP__CONTINUE_ON_ERROR:
+		case YamlmdePackage.STEP__TIMEOUT_MINUTES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case YamlmdePackage.STEP__ENV:
 		case YamlmdePackage.STEP__WITH:
+		case YamlmdePackage.STEP__ENV:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -296,11 +314,11 @@ public class StepItemProvider extends ItemProviderAdapter implements IEditingDom
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(
-				createChildParameter(YamlmdePackage.Literals.STEP__ENV, YamlmdeFactory.eINSTANCE.createKeyValuePair()));
-
 		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.STEP__WITH,
 				YamlmdeFactory.eINSTANCE.createKeyValuePair()));
+
+		newChildDescriptors.add(
+				createChildParameter(YamlmdePackage.Literals.STEP__ENV, YamlmdeFactory.eINSTANCE.createKeyValuePair()));
 	}
 
 	/**
@@ -314,8 +332,8 @@ public class StepItemProvider extends ItemProviderAdapter implements IEditingDom
 		Object childFeature = feature;
 		Object childObject = child;
 
-		boolean qualify = childFeature == YamlmdePackage.Literals.STEP__ENV
-				|| childFeature == YamlmdePackage.Literals.STEP__WITH;
+		boolean qualify = childFeature == YamlmdePackage.Literals.STEP__WITH
+				|| childFeature == YamlmdePackage.Literals.STEP__ENV;
 
 		if (qualify) {
 			return getString("_UI_CreateChild_text2",

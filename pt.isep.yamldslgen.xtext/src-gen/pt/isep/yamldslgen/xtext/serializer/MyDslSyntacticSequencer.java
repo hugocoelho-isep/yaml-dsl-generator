@@ -46,22 +46,22 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Issues_END_BLOCKTerminalRuleCall_2_2_0_1_3_q;
 	protected AbstractElementAlias match_Issues_END_BLOCKTerminalRuleCall_3_q;
 	protected AbstractElementAlias match_Job_BEG_BLOCKTerminalRuleCall_2_q;
-	protected AbstractElementAlias match_Job_BEG_BLOCKTerminalRuleCall_3_10_2_q;
-	protected AbstractElementAlias match_Job_BEG_BLOCKTerminalRuleCall_3_12_2_0_q;
+	protected AbstractElementAlias match_Job_BEG_BLOCKTerminalRuleCall_3_11_2_q;
 	protected AbstractElementAlias match_Job_BEG_BLOCKTerminalRuleCall_3_13_2_0_q;
+	protected AbstractElementAlias match_Job_BEG_BLOCKTerminalRuleCall_3_14_2_0_q;
 	protected AbstractElementAlias match_Job_BEG_BLOCKTerminalRuleCall_3_2_2_1_1_1_q;
 	protected AbstractElementAlias match_Job_BEG_BLOCKTerminalRuleCall_3_8_2_0_q;
 	protected AbstractElementAlias match_Job_BEG_BLOCKTerminalRuleCall_3_9_2_0_q;
-	protected AbstractElementAlias match_Job_END_BLOCKTerminalRuleCall_3_10_4_q;
-	protected AbstractElementAlias match_Job_END_BLOCKTerminalRuleCall_3_12_2_2_q;
+	protected AbstractElementAlias match_Job_END_BLOCKTerminalRuleCall_3_11_4_q;
 	protected AbstractElementAlias match_Job_END_BLOCKTerminalRuleCall_3_13_2_2_q;
+	protected AbstractElementAlias match_Job_END_BLOCKTerminalRuleCall_3_14_2_2_q;
 	protected AbstractElementAlias match_Job_END_BLOCKTerminalRuleCall_3_2_2_1_1_3_q;
 	protected AbstractElementAlias match_Job_END_BLOCKTerminalRuleCall_3_8_2_2_q;
 	protected AbstractElementAlias match_Job_END_BLOCKTerminalRuleCall_3_9_2_2_q;
 	protected AbstractElementAlias match_Job_END_BLOCKTerminalRuleCall_4_q;
-	protected AbstractElementAlias match_Job___END_BLOCKTerminalRuleCall_3_10_4_q_StepsKeyword_3_10_0_ColonKeyword_3_10_1_BEG_BLOCKTerminalRuleCall_3_10_2_q__q;
-	protected AbstractElementAlias match_Job___END_BLOCKTerminalRuleCall_3_12_2_2_q_EnvKeyword_3_12_0_ColonKeyword_3_12_1_BEG_BLOCKTerminalRuleCall_3_12_2_0_q__q;
-	protected AbstractElementAlias match_Job___END_BLOCKTerminalRuleCall_3_13_2_2_q_WithKeyword_3_13_0_ColonKeyword_3_13_1_BEG_BLOCKTerminalRuleCall_3_13_2_0_q__q;
+	protected AbstractElementAlias match_Job___END_BLOCKTerminalRuleCall_3_11_4_q_StepsKeyword_3_11_0_ColonKeyword_3_11_1_BEG_BLOCKTerminalRuleCall_3_11_2_q__q;
+	protected AbstractElementAlias match_Job___END_BLOCKTerminalRuleCall_3_13_2_2_q_EnvKeyword_3_13_0_ColonKeyword_3_13_1_BEG_BLOCKTerminalRuleCall_3_13_2_0_q__q;
+	protected AbstractElementAlias match_Job___END_BLOCKTerminalRuleCall_3_14_2_2_q_WithKeyword_3_14_0_ColonKeyword_3_14_1_BEG_BLOCKTerminalRuleCall_3_14_2_0_q__q;
 	protected AbstractElementAlias match_Job___END_BLOCKTerminalRuleCall_3_2_2_1_2_NeedsKeyword_3_2_0_ColonKeyword_3_2_1_BEG_BLOCKTerminalRuleCall_3_2_2_1_0__q;
 	protected AbstractElementAlias match_Job___END_BLOCKTerminalRuleCall_3_8_2_2_q_ServicesKeyword_3_8_0_ColonKeyword_3_8_1_BEG_BLOCKTerminalRuleCall_3_8_2_0_q__q;
 	protected AbstractElementAlias match_Job___END_BLOCKTerminalRuleCall_3_9_2_2_q_OutputsKeyword_3_9_0_ColonKeyword_3_9_1_BEG_BLOCKTerminalRuleCall_3_9_2_0_q__q;
@@ -105,10 +105,10 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Merge_group_END_BLOCKTerminalRuleCall_2_2_0_1_3_q;
 	protected AbstractElementAlias match_Merge_group_END_BLOCKTerminalRuleCall_3_q;
 	protected AbstractElementAlias match_On_BEG_BLOCKTerminalRuleCall_1_q;
-	protected AbstractElementAlias match_On_BEG_BLOCKTerminalRuleCall_2_3_2_0_q;
-	protected AbstractElementAlias match_On_END_BLOCKTerminalRuleCall_2_3_2_2_q;
+	protected AbstractElementAlias match_On_BEG_BLOCKTerminalRuleCall_2_4_2_0_q;
+	protected AbstractElementAlias match_On_END_BLOCKTerminalRuleCall_2_4_2_2_q;
 	protected AbstractElementAlias match_On_END_BLOCKTerminalRuleCall_3_q;
-	protected AbstractElementAlias match_On___END_BLOCKTerminalRuleCall_2_3_2_2_q_ScheduleKeyword_2_3_0_ColonKeyword_2_3_1_BEG_BLOCKTerminalRuleCall_2_3_2_0_q__q;
+	protected AbstractElementAlias match_On___END_BLOCKTerminalRuleCall_2_4_2_2_q_ScheduleKeyword_2_4_0_ColonKeyword_2_4_1_BEG_BLOCKTerminalRuleCall_2_4_2_0_q__q;
 	protected AbstractElementAlias match_Permissions_BEG_BLOCKTerminalRuleCall_1_q;
 	protected AbstractElementAlias match_Permissions_END_BLOCKTerminalRuleCall_3_q;
 	protected AbstractElementAlias match_Pull_request___END_BLOCKTerminalRuleCall_2_0_2_0_2_BranchesKeyword_2_0_0_ColonKeyword_2_0_1_BEG_BLOCKTerminalRuleCall_2_0_2_0_0__q;
@@ -134,13 +134,13 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Service___END_BLOCKTerminalRuleCall_3_1_2_0_2_PortsKeyword_3_1_0_ColonKeyword_3_1_1_BEG_BLOCKTerminalRuleCall_3_1_2_0_0__q;
 	protected AbstractElementAlias match_Service___END_BLOCKTerminalRuleCall_3_2_2_2_q_EnvKeyword_3_2_0_ColonKeyword_3_2_1_BEG_BLOCKTerminalRuleCall_3_2_2_0_q__q;
 	protected AbstractElementAlias match_Step_BEG_BLOCKTerminalRuleCall_2_q;
-	protected AbstractElementAlias match_Step_BEG_BLOCKTerminalRuleCall_3_8_2_0_q;
+	protected AbstractElementAlias match_Step_BEG_BLOCKTerminalRuleCall_3_10_2_0_q;
 	protected AbstractElementAlias match_Step_BEG_BLOCKTerminalRuleCall_3_9_2_0_q;
-	protected AbstractElementAlias match_Step_END_BLOCKTerminalRuleCall_3_8_2_2_q;
+	protected AbstractElementAlias match_Step_END_BLOCKTerminalRuleCall_3_10_2_2_q;
 	protected AbstractElementAlias match_Step_END_BLOCKTerminalRuleCall_3_9_2_2_q;
 	protected AbstractElementAlias match_Step_END_BLOCKTerminalRuleCall_4_q;
-	protected AbstractElementAlias match_Step___END_BLOCKTerminalRuleCall_3_8_2_2_q_WithKeyword_3_8_0_ColonKeyword_3_8_1_BEG_BLOCKTerminalRuleCall_3_8_2_0_q__q;
-	protected AbstractElementAlias match_Step___END_BLOCKTerminalRuleCall_3_9_2_2_q_EnvKeyword_3_9_0_ColonKeyword_3_9_1_BEG_BLOCKTerminalRuleCall_3_9_2_0_q__q;
+	protected AbstractElementAlias match_Step___END_BLOCKTerminalRuleCall_3_10_2_2_q_EnvKeyword_3_10_0_ColonKeyword_3_10_1_BEG_BLOCKTerminalRuleCall_3_10_2_0_q__q;
+	protected AbstractElementAlias match_Step___END_BLOCKTerminalRuleCall_3_9_2_2_q_WithKeyword_3_9_0_ColonKeyword_3_9_1_BEG_BLOCKTerminalRuleCall_3_9_2_0_q__q;
 	protected AbstractElementAlias match_Strategy_BEG_BLOCKTerminalRuleCall_1_q;
 	protected AbstractElementAlias match_Strategy_END_BLOCKTerminalRuleCall_3_q;
 	protected AbstractElementAlias match_Workflow_call_BEG_BLOCKTerminalRuleCall_1_q;
@@ -186,22 +186,22 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Issues_END_BLOCKTerminalRuleCall_2_2_0_1_3_q = new TokenAlias(false, true, grammarAccess.getIssuesAccess().getEND_BLOCKTerminalRuleCall_2_2_0_1_3());
 		match_Issues_END_BLOCKTerminalRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getIssuesAccess().getEND_BLOCKTerminalRuleCall_3());
 		match_Job_BEG_BLOCKTerminalRuleCall_2_q = new TokenAlias(false, true, grammarAccess.getJobAccess().getBEG_BLOCKTerminalRuleCall_2());
-		match_Job_BEG_BLOCKTerminalRuleCall_3_10_2_q = new TokenAlias(false, true, grammarAccess.getJobAccess().getBEG_BLOCKTerminalRuleCall_3_10_2());
-		match_Job_BEG_BLOCKTerminalRuleCall_3_12_2_0_q = new TokenAlias(false, true, grammarAccess.getJobAccess().getBEG_BLOCKTerminalRuleCall_3_12_2_0());
+		match_Job_BEG_BLOCKTerminalRuleCall_3_11_2_q = new TokenAlias(false, true, grammarAccess.getJobAccess().getBEG_BLOCKTerminalRuleCall_3_11_2());
 		match_Job_BEG_BLOCKTerminalRuleCall_3_13_2_0_q = new TokenAlias(false, true, grammarAccess.getJobAccess().getBEG_BLOCKTerminalRuleCall_3_13_2_0());
+		match_Job_BEG_BLOCKTerminalRuleCall_3_14_2_0_q = new TokenAlias(false, true, grammarAccess.getJobAccess().getBEG_BLOCKTerminalRuleCall_3_14_2_0());
 		match_Job_BEG_BLOCKTerminalRuleCall_3_2_2_1_1_1_q = new TokenAlias(false, true, grammarAccess.getJobAccess().getBEG_BLOCKTerminalRuleCall_3_2_2_1_1_1());
 		match_Job_BEG_BLOCKTerminalRuleCall_3_8_2_0_q = new TokenAlias(false, true, grammarAccess.getJobAccess().getBEG_BLOCKTerminalRuleCall_3_8_2_0());
 		match_Job_BEG_BLOCKTerminalRuleCall_3_9_2_0_q = new TokenAlias(false, true, grammarAccess.getJobAccess().getBEG_BLOCKTerminalRuleCall_3_9_2_0());
-		match_Job_END_BLOCKTerminalRuleCall_3_10_4_q = new TokenAlias(false, true, grammarAccess.getJobAccess().getEND_BLOCKTerminalRuleCall_3_10_4());
-		match_Job_END_BLOCKTerminalRuleCall_3_12_2_2_q = new TokenAlias(false, true, grammarAccess.getJobAccess().getEND_BLOCKTerminalRuleCall_3_12_2_2());
+		match_Job_END_BLOCKTerminalRuleCall_3_11_4_q = new TokenAlias(false, true, grammarAccess.getJobAccess().getEND_BLOCKTerminalRuleCall_3_11_4());
 		match_Job_END_BLOCKTerminalRuleCall_3_13_2_2_q = new TokenAlias(false, true, grammarAccess.getJobAccess().getEND_BLOCKTerminalRuleCall_3_13_2_2());
+		match_Job_END_BLOCKTerminalRuleCall_3_14_2_2_q = new TokenAlias(false, true, grammarAccess.getJobAccess().getEND_BLOCKTerminalRuleCall_3_14_2_2());
 		match_Job_END_BLOCKTerminalRuleCall_3_2_2_1_1_3_q = new TokenAlias(false, true, grammarAccess.getJobAccess().getEND_BLOCKTerminalRuleCall_3_2_2_1_1_3());
 		match_Job_END_BLOCKTerminalRuleCall_3_8_2_2_q = new TokenAlias(false, true, grammarAccess.getJobAccess().getEND_BLOCKTerminalRuleCall_3_8_2_2());
 		match_Job_END_BLOCKTerminalRuleCall_3_9_2_2_q = new TokenAlias(false, true, grammarAccess.getJobAccess().getEND_BLOCKTerminalRuleCall_3_9_2_2());
 		match_Job_END_BLOCKTerminalRuleCall_4_q = new TokenAlias(false, true, grammarAccess.getJobAccess().getEND_BLOCKTerminalRuleCall_4());
-		match_Job___END_BLOCKTerminalRuleCall_3_10_4_q_StepsKeyword_3_10_0_ColonKeyword_3_10_1_BEG_BLOCKTerminalRuleCall_3_10_2_q__q = new GroupAlias(false, true, new TokenAlias(false, true, grammarAccess.getJobAccess().getEND_BLOCKTerminalRuleCall_3_10_4()), new TokenAlias(false, false, grammarAccess.getJobAccess().getStepsKeyword_3_10_0()), new TokenAlias(false, false, grammarAccess.getJobAccess().getColonKeyword_3_10_1()), new TokenAlias(false, true, grammarAccess.getJobAccess().getBEG_BLOCKTerminalRuleCall_3_10_2()));
-		match_Job___END_BLOCKTerminalRuleCall_3_12_2_2_q_EnvKeyword_3_12_0_ColonKeyword_3_12_1_BEG_BLOCKTerminalRuleCall_3_12_2_0_q__q = new GroupAlias(false, true, new TokenAlias(false, true, grammarAccess.getJobAccess().getEND_BLOCKTerminalRuleCall_3_12_2_2()), new TokenAlias(false, false, grammarAccess.getJobAccess().getEnvKeyword_3_12_0()), new TokenAlias(false, false, grammarAccess.getJobAccess().getColonKeyword_3_12_1()), new TokenAlias(false, true, grammarAccess.getJobAccess().getBEG_BLOCKTerminalRuleCall_3_12_2_0()));
-		match_Job___END_BLOCKTerminalRuleCall_3_13_2_2_q_WithKeyword_3_13_0_ColonKeyword_3_13_1_BEG_BLOCKTerminalRuleCall_3_13_2_0_q__q = new GroupAlias(false, true, new TokenAlias(false, true, grammarAccess.getJobAccess().getEND_BLOCKTerminalRuleCall_3_13_2_2()), new TokenAlias(false, false, grammarAccess.getJobAccess().getWithKeyword_3_13_0()), new TokenAlias(false, false, grammarAccess.getJobAccess().getColonKeyword_3_13_1()), new TokenAlias(false, true, grammarAccess.getJobAccess().getBEG_BLOCKTerminalRuleCall_3_13_2_0()));
+		match_Job___END_BLOCKTerminalRuleCall_3_11_4_q_StepsKeyword_3_11_0_ColonKeyword_3_11_1_BEG_BLOCKTerminalRuleCall_3_11_2_q__q = new GroupAlias(false, true, new TokenAlias(false, true, grammarAccess.getJobAccess().getEND_BLOCKTerminalRuleCall_3_11_4()), new TokenAlias(false, false, grammarAccess.getJobAccess().getStepsKeyword_3_11_0()), new TokenAlias(false, false, grammarAccess.getJobAccess().getColonKeyword_3_11_1()), new TokenAlias(false, true, grammarAccess.getJobAccess().getBEG_BLOCKTerminalRuleCall_3_11_2()));
+		match_Job___END_BLOCKTerminalRuleCall_3_13_2_2_q_EnvKeyword_3_13_0_ColonKeyword_3_13_1_BEG_BLOCKTerminalRuleCall_3_13_2_0_q__q = new GroupAlias(false, true, new TokenAlias(false, true, grammarAccess.getJobAccess().getEND_BLOCKTerminalRuleCall_3_13_2_2()), new TokenAlias(false, false, grammarAccess.getJobAccess().getEnvKeyword_3_13_0()), new TokenAlias(false, false, grammarAccess.getJobAccess().getColonKeyword_3_13_1()), new TokenAlias(false, true, grammarAccess.getJobAccess().getBEG_BLOCKTerminalRuleCall_3_13_2_0()));
+		match_Job___END_BLOCKTerminalRuleCall_3_14_2_2_q_WithKeyword_3_14_0_ColonKeyword_3_14_1_BEG_BLOCKTerminalRuleCall_3_14_2_0_q__q = new GroupAlias(false, true, new TokenAlias(false, true, grammarAccess.getJobAccess().getEND_BLOCKTerminalRuleCall_3_14_2_2()), new TokenAlias(false, false, grammarAccess.getJobAccess().getWithKeyword_3_14_0()), new TokenAlias(false, false, grammarAccess.getJobAccess().getColonKeyword_3_14_1()), new TokenAlias(false, true, grammarAccess.getJobAccess().getBEG_BLOCKTerminalRuleCall_3_14_2_0()));
 		match_Job___END_BLOCKTerminalRuleCall_3_2_2_1_2_NeedsKeyword_3_2_0_ColonKeyword_3_2_1_BEG_BLOCKTerminalRuleCall_3_2_2_1_0__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getJobAccess().getEND_BLOCKTerminalRuleCall_3_2_2_1_2()), new TokenAlias(false, false, grammarAccess.getJobAccess().getNeedsKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getJobAccess().getColonKeyword_3_2_1()), new TokenAlias(false, false, grammarAccess.getJobAccess().getBEG_BLOCKTerminalRuleCall_3_2_2_1_0()));
 		match_Job___END_BLOCKTerminalRuleCall_3_8_2_2_q_ServicesKeyword_3_8_0_ColonKeyword_3_8_1_BEG_BLOCKTerminalRuleCall_3_8_2_0_q__q = new GroupAlias(false, true, new TokenAlias(false, true, grammarAccess.getJobAccess().getEND_BLOCKTerminalRuleCall_3_8_2_2()), new TokenAlias(false, false, grammarAccess.getJobAccess().getServicesKeyword_3_8_0()), new TokenAlias(false, false, grammarAccess.getJobAccess().getColonKeyword_3_8_1()), new TokenAlias(false, true, grammarAccess.getJobAccess().getBEG_BLOCKTerminalRuleCall_3_8_2_0()));
 		match_Job___END_BLOCKTerminalRuleCall_3_9_2_2_q_OutputsKeyword_3_9_0_ColonKeyword_3_9_1_BEG_BLOCKTerminalRuleCall_3_9_2_0_q__q = new GroupAlias(false, true, new TokenAlias(false, true, grammarAccess.getJobAccess().getEND_BLOCKTerminalRuleCall_3_9_2_2()), new TokenAlias(false, false, grammarAccess.getJobAccess().getOutputsKeyword_3_9_0()), new TokenAlias(false, false, grammarAccess.getJobAccess().getColonKeyword_3_9_1()), new TokenAlias(false, true, grammarAccess.getJobAccess().getBEG_BLOCKTerminalRuleCall_3_9_2_0()));
@@ -248,10 +248,10 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Merge_group_END_BLOCKTerminalRuleCall_2_2_0_1_3_q = new TokenAlias(false, true, grammarAccess.getMerge_groupAccess().getEND_BLOCKTerminalRuleCall_2_2_0_1_3());
 		match_Merge_group_END_BLOCKTerminalRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getMerge_groupAccess().getEND_BLOCKTerminalRuleCall_3());
 		match_On_BEG_BLOCKTerminalRuleCall_1_q = new TokenAlias(false, true, grammarAccess.getOnAccess().getBEG_BLOCKTerminalRuleCall_1());
-		match_On_BEG_BLOCKTerminalRuleCall_2_3_2_0_q = new TokenAlias(false, true, grammarAccess.getOnAccess().getBEG_BLOCKTerminalRuleCall_2_3_2_0());
-		match_On_END_BLOCKTerminalRuleCall_2_3_2_2_q = new TokenAlias(false, true, grammarAccess.getOnAccess().getEND_BLOCKTerminalRuleCall_2_3_2_2());
+		match_On_BEG_BLOCKTerminalRuleCall_2_4_2_0_q = new TokenAlias(false, true, grammarAccess.getOnAccess().getBEG_BLOCKTerminalRuleCall_2_4_2_0());
+		match_On_END_BLOCKTerminalRuleCall_2_4_2_2_q = new TokenAlias(false, true, grammarAccess.getOnAccess().getEND_BLOCKTerminalRuleCall_2_4_2_2());
 		match_On_END_BLOCKTerminalRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getOnAccess().getEND_BLOCKTerminalRuleCall_3());
-		match_On___END_BLOCKTerminalRuleCall_2_3_2_2_q_ScheduleKeyword_2_3_0_ColonKeyword_2_3_1_BEG_BLOCKTerminalRuleCall_2_3_2_0_q__q = new GroupAlias(false, true, new TokenAlias(false, true, grammarAccess.getOnAccess().getEND_BLOCKTerminalRuleCall_2_3_2_2()), new TokenAlias(false, false, grammarAccess.getOnAccess().getScheduleKeyword_2_3_0()), new TokenAlias(false, false, grammarAccess.getOnAccess().getColonKeyword_2_3_1()), new TokenAlias(false, true, grammarAccess.getOnAccess().getBEG_BLOCKTerminalRuleCall_2_3_2_0()));
+		match_On___END_BLOCKTerminalRuleCall_2_4_2_2_q_ScheduleKeyword_2_4_0_ColonKeyword_2_4_1_BEG_BLOCKTerminalRuleCall_2_4_2_0_q__q = new GroupAlias(false, true, new TokenAlias(false, true, grammarAccess.getOnAccess().getEND_BLOCKTerminalRuleCall_2_4_2_2()), new TokenAlias(false, false, grammarAccess.getOnAccess().getScheduleKeyword_2_4_0()), new TokenAlias(false, false, grammarAccess.getOnAccess().getColonKeyword_2_4_1()), new TokenAlias(false, true, grammarAccess.getOnAccess().getBEG_BLOCKTerminalRuleCall_2_4_2_0()));
 		match_Permissions_BEG_BLOCKTerminalRuleCall_1_q = new TokenAlias(false, true, grammarAccess.getPermissionsAccess().getBEG_BLOCKTerminalRuleCall_1());
 		match_Permissions_END_BLOCKTerminalRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getPermissionsAccess().getEND_BLOCKTerminalRuleCall_3());
 		match_Pull_request___END_BLOCKTerminalRuleCall_2_0_2_0_2_BranchesKeyword_2_0_0_ColonKeyword_2_0_1_BEG_BLOCKTerminalRuleCall_2_0_2_0_0__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPull_requestAccess().getEND_BLOCKTerminalRuleCall_2_0_2_0_2()), new TokenAlias(false, false, grammarAccess.getPull_requestAccess().getBranchesKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getPull_requestAccess().getColonKeyword_2_0_1()), new TokenAlias(false, false, grammarAccess.getPull_requestAccess().getBEG_BLOCKTerminalRuleCall_2_0_2_0_0()));
@@ -277,13 +277,13 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Service___END_BLOCKTerminalRuleCall_3_1_2_0_2_PortsKeyword_3_1_0_ColonKeyword_3_1_1_BEG_BLOCKTerminalRuleCall_3_1_2_0_0__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_1_2_0_2()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getPortsKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getColonKeyword_3_1_1()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_1_2_0_0()));
 		match_Service___END_BLOCKTerminalRuleCall_3_2_2_2_q_EnvKeyword_3_2_0_ColonKeyword_3_2_1_BEG_BLOCKTerminalRuleCall_3_2_2_0_q__q = new GroupAlias(false, true, new TokenAlias(false, true, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_2_2_2()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getEnvKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getColonKeyword_3_2_1()), new TokenAlias(false, true, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_2_2_0()));
 		match_Step_BEG_BLOCKTerminalRuleCall_2_q = new TokenAlias(false, true, grammarAccess.getStepAccess().getBEG_BLOCKTerminalRuleCall_2());
-		match_Step_BEG_BLOCKTerminalRuleCall_3_8_2_0_q = new TokenAlias(false, true, grammarAccess.getStepAccess().getBEG_BLOCKTerminalRuleCall_3_8_2_0());
+		match_Step_BEG_BLOCKTerminalRuleCall_3_10_2_0_q = new TokenAlias(false, true, grammarAccess.getStepAccess().getBEG_BLOCKTerminalRuleCall_3_10_2_0());
 		match_Step_BEG_BLOCKTerminalRuleCall_3_9_2_0_q = new TokenAlias(false, true, grammarAccess.getStepAccess().getBEG_BLOCKTerminalRuleCall_3_9_2_0());
-		match_Step_END_BLOCKTerminalRuleCall_3_8_2_2_q = new TokenAlias(false, true, grammarAccess.getStepAccess().getEND_BLOCKTerminalRuleCall_3_8_2_2());
+		match_Step_END_BLOCKTerminalRuleCall_3_10_2_2_q = new TokenAlias(false, true, grammarAccess.getStepAccess().getEND_BLOCKTerminalRuleCall_3_10_2_2());
 		match_Step_END_BLOCKTerminalRuleCall_3_9_2_2_q = new TokenAlias(false, true, grammarAccess.getStepAccess().getEND_BLOCKTerminalRuleCall_3_9_2_2());
 		match_Step_END_BLOCKTerminalRuleCall_4_q = new TokenAlias(false, true, grammarAccess.getStepAccess().getEND_BLOCKTerminalRuleCall_4());
-		match_Step___END_BLOCKTerminalRuleCall_3_8_2_2_q_WithKeyword_3_8_0_ColonKeyword_3_8_1_BEG_BLOCKTerminalRuleCall_3_8_2_0_q__q = new GroupAlias(false, true, new TokenAlias(false, true, grammarAccess.getStepAccess().getEND_BLOCKTerminalRuleCall_3_8_2_2()), new TokenAlias(false, false, grammarAccess.getStepAccess().getWithKeyword_3_8_0()), new TokenAlias(false, false, grammarAccess.getStepAccess().getColonKeyword_3_8_1()), new TokenAlias(false, true, grammarAccess.getStepAccess().getBEG_BLOCKTerminalRuleCall_3_8_2_0()));
-		match_Step___END_BLOCKTerminalRuleCall_3_9_2_2_q_EnvKeyword_3_9_0_ColonKeyword_3_9_1_BEG_BLOCKTerminalRuleCall_3_9_2_0_q__q = new GroupAlias(false, true, new TokenAlias(false, true, grammarAccess.getStepAccess().getEND_BLOCKTerminalRuleCall_3_9_2_2()), new TokenAlias(false, false, grammarAccess.getStepAccess().getEnvKeyword_3_9_0()), new TokenAlias(false, false, grammarAccess.getStepAccess().getColonKeyword_3_9_1()), new TokenAlias(false, true, grammarAccess.getStepAccess().getBEG_BLOCKTerminalRuleCall_3_9_2_0()));
+		match_Step___END_BLOCKTerminalRuleCall_3_10_2_2_q_EnvKeyword_3_10_0_ColonKeyword_3_10_1_BEG_BLOCKTerminalRuleCall_3_10_2_0_q__q = new GroupAlias(false, true, new TokenAlias(false, true, grammarAccess.getStepAccess().getEND_BLOCKTerminalRuleCall_3_10_2_2()), new TokenAlias(false, false, grammarAccess.getStepAccess().getEnvKeyword_3_10_0()), new TokenAlias(false, false, grammarAccess.getStepAccess().getColonKeyword_3_10_1()), new TokenAlias(false, true, grammarAccess.getStepAccess().getBEG_BLOCKTerminalRuleCall_3_10_2_0()));
+		match_Step___END_BLOCKTerminalRuleCall_3_9_2_2_q_WithKeyword_3_9_0_ColonKeyword_3_9_1_BEG_BLOCKTerminalRuleCall_3_9_2_0_q__q = new GroupAlias(false, true, new TokenAlias(false, true, grammarAccess.getStepAccess().getEND_BLOCKTerminalRuleCall_3_9_2_2()), new TokenAlias(false, false, grammarAccess.getStepAccess().getWithKeyword_3_9_0()), new TokenAlias(false, false, grammarAccess.getStepAccess().getColonKeyword_3_9_1()), new TokenAlias(false, true, grammarAccess.getStepAccess().getBEG_BLOCKTerminalRuleCall_3_9_2_0()));
 	}
 	
 	private void init2() {
@@ -382,24 +382,24 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Issues_END_BLOCKTerminalRuleCall_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Job_BEG_BLOCKTerminalRuleCall_2_q.equals(syntax))
 				emit_Job_BEG_BLOCKTerminalRuleCall_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Job_BEG_BLOCKTerminalRuleCall_3_10_2_q.equals(syntax))
-				emit_Job_BEG_BLOCKTerminalRuleCall_3_10_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Job_BEG_BLOCKTerminalRuleCall_3_12_2_0_q.equals(syntax))
-				emit_Job_BEG_BLOCKTerminalRuleCall_3_12_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Job_BEG_BLOCKTerminalRuleCall_3_11_2_q.equals(syntax))
+				emit_Job_BEG_BLOCKTerminalRuleCall_3_11_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Job_BEG_BLOCKTerminalRuleCall_3_13_2_0_q.equals(syntax))
 				emit_Job_BEG_BLOCKTerminalRuleCall_3_13_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Job_BEG_BLOCKTerminalRuleCall_3_14_2_0_q.equals(syntax))
+				emit_Job_BEG_BLOCKTerminalRuleCall_3_14_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Job_BEG_BLOCKTerminalRuleCall_3_2_2_1_1_1_q.equals(syntax))
 				emit_Job_BEG_BLOCKTerminalRuleCall_3_2_2_1_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Job_BEG_BLOCKTerminalRuleCall_3_8_2_0_q.equals(syntax))
 				emit_Job_BEG_BLOCKTerminalRuleCall_3_8_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Job_BEG_BLOCKTerminalRuleCall_3_9_2_0_q.equals(syntax))
 				emit_Job_BEG_BLOCKTerminalRuleCall_3_9_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Job_END_BLOCKTerminalRuleCall_3_10_4_q.equals(syntax))
-				emit_Job_END_BLOCKTerminalRuleCall_3_10_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Job_END_BLOCKTerminalRuleCall_3_12_2_2_q.equals(syntax))
-				emit_Job_END_BLOCKTerminalRuleCall_3_12_2_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Job_END_BLOCKTerminalRuleCall_3_11_4_q.equals(syntax))
+				emit_Job_END_BLOCKTerminalRuleCall_3_11_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Job_END_BLOCKTerminalRuleCall_3_13_2_2_q.equals(syntax))
 				emit_Job_END_BLOCKTerminalRuleCall_3_13_2_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Job_END_BLOCKTerminalRuleCall_3_14_2_2_q.equals(syntax))
+				emit_Job_END_BLOCKTerminalRuleCall_3_14_2_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Job_END_BLOCKTerminalRuleCall_3_2_2_1_1_3_q.equals(syntax))
 				emit_Job_END_BLOCKTerminalRuleCall_3_2_2_1_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Job_END_BLOCKTerminalRuleCall_3_8_2_2_q.equals(syntax))
@@ -408,12 +408,12 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Job_END_BLOCKTerminalRuleCall_3_9_2_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Job_END_BLOCKTerminalRuleCall_4_q.equals(syntax))
 				emit_Job_END_BLOCKTerminalRuleCall_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Job___END_BLOCKTerminalRuleCall_3_10_4_q_StepsKeyword_3_10_0_ColonKeyword_3_10_1_BEG_BLOCKTerminalRuleCall_3_10_2_q__q.equals(syntax))
-				emit_Job___END_BLOCKTerminalRuleCall_3_10_4_q_StepsKeyword_3_10_0_ColonKeyword_3_10_1_BEG_BLOCKTerminalRuleCall_3_10_2_q__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Job___END_BLOCKTerminalRuleCall_3_12_2_2_q_EnvKeyword_3_12_0_ColonKeyword_3_12_1_BEG_BLOCKTerminalRuleCall_3_12_2_0_q__q.equals(syntax))
-				emit_Job___END_BLOCKTerminalRuleCall_3_12_2_2_q_EnvKeyword_3_12_0_ColonKeyword_3_12_1_BEG_BLOCKTerminalRuleCall_3_12_2_0_q__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Job___END_BLOCKTerminalRuleCall_3_13_2_2_q_WithKeyword_3_13_0_ColonKeyword_3_13_1_BEG_BLOCKTerminalRuleCall_3_13_2_0_q__q.equals(syntax))
-				emit_Job___END_BLOCKTerminalRuleCall_3_13_2_2_q_WithKeyword_3_13_0_ColonKeyword_3_13_1_BEG_BLOCKTerminalRuleCall_3_13_2_0_q__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Job___END_BLOCKTerminalRuleCall_3_11_4_q_StepsKeyword_3_11_0_ColonKeyword_3_11_1_BEG_BLOCKTerminalRuleCall_3_11_2_q__q.equals(syntax))
+				emit_Job___END_BLOCKTerminalRuleCall_3_11_4_q_StepsKeyword_3_11_0_ColonKeyword_3_11_1_BEG_BLOCKTerminalRuleCall_3_11_2_q__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Job___END_BLOCKTerminalRuleCall_3_13_2_2_q_EnvKeyword_3_13_0_ColonKeyword_3_13_1_BEG_BLOCKTerminalRuleCall_3_13_2_0_q__q.equals(syntax))
+				emit_Job___END_BLOCKTerminalRuleCall_3_13_2_2_q_EnvKeyword_3_13_0_ColonKeyword_3_13_1_BEG_BLOCKTerminalRuleCall_3_13_2_0_q__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Job___END_BLOCKTerminalRuleCall_3_14_2_2_q_WithKeyword_3_14_0_ColonKeyword_3_14_1_BEG_BLOCKTerminalRuleCall_3_14_2_0_q__q.equals(syntax))
+				emit_Job___END_BLOCKTerminalRuleCall_3_14_2_2_q_WithKeyword_3_14_0_ColonKeyword_3_14_1_BEG_BLOCKTerminalRuleCall_3_14_2_0_q__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Job___END_BLOCKTerminalRuleCall_3_2_2_1_2_NeedsKeyword_3_2_0_ColonKeyword_3_2_1_BEG_BLOCKTerminalRuleCall_3_2_2_1_0__q.equals(syntax))
 				emit_Job___END_BLOCKTerminalRuleCall_3_2_2_1_2_NeedsKeyword_3_2_0_ColonKeyword_3_2_1_BEG_BLOCKTerminalRuleCall_3_2_2_1_0__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Job___END_BLOCKTerminalRuleCall_3_8_2_2_q_ServicesKeyword_3_8_0_ColonKeyword_3_8_1_BEG_BLOCKTerminalRuleCall_3_8_2_0_q__q.equals(syntax))
@@ -500,14 +500,14 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Merge_group_END_BLOCKTerminalRuleCall_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_On_BEG_BLOCKTerminalRuleCall_1_q.equals(syntax))
 				emit_On_BEG_BLOCKTerminalRuleCall_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_On_BEG_BLOCKTerminalRuleCall_2_3_2_0_q.equals(syntax))
-				emit_On_BEG_BLOCKTerminalRuleCall_2_3_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_On_END_BLOCKTerminalRuleCall_2_3_2_2_q.equals(syntax))
-				emit_On_END_BLOCKTerminalRuleCall_2_3_2_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_On_BEG_BLOCKTerminalRuleCall_2_4_2_0_q.equals(syntax))
+				emit_On_BEG_BLOCKTerminalRuleCall_2_4_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_On_END_BLOCKTerminalRuleCall_2_4_2_2_q.equals(syntax))
+				emit_On_END_BLOCKTerminalRuleCall_2_4_2_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_On_END_BLOCKTerminalRuleCall_3_q.equals(syntax))
 				emit_On_END_BLOCKTerminalRuleCall_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_On___END_BLOCKTerminalRuleCall_2_3_2_2_q_ScheduleKeyword_2_3_0_ColonKeyword_2_3_1_BEG_BLOCKTerminalRuleCall_2_3_2_0_q__q.equals(syntax))
-				emit_On___END_BLOCKTerminalRuleCall_2_3_2_2_q_ScheduleKeyword_2_3_0_ColonKeyword_2_3_1_BEG_BLOCKTerminalRuleCall_2_3_2_0_q__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_On___END_BLOCKTerminalRuleCall_2_4_2_2_q_ScheduleKeyword_2_4_0_ColonKeyword_2_4_1_BEG_BLOCKTerminalRuleCall_2_4_2_0_q__q.equals(syntax))
+				emit_On___END_BLOCKTerminalRuleCall_2_4_2_2_q_ScheduleKeyword_2_4_0_ColonKeyword_2_4_1_BEG_BLOCKTerminalRuleCall_2_4_2_0_q__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Permissions_BEG_BLOCKTerminalRuleCall_1_q.equals(syntax))
 				emit_Permissions_BEG_BLOCKTerminalRuleCall_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Permissions_END_BLOCKTerminalRuleCall_3_q.equals(syntax))
@@ -558,20 +558,20 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Service___END_BLOCKTerminalRuleCall_3_2_2_2_q_EnvKeyword_3_2_0_ColonKeyword_3_2_1_BEG_BLOCKTerminalRuleCall_3_2_2_0_q__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Step_BEG_BLOCKTerminalRuleCall_2_q.equals(syntax))
 				emit_Step_BEG_BLOCKTerminalRuleCall_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Step_BEG_BLOCKTerminalRuleCall_3_8_2_0_q.equals(syntax))
-				emit_Step_BEG_BLOCKTerminalRuleCall_3_8_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Step_BEG_BLOCKTerminalRuleCall_3_10_2_0_q.equals(syntax))
+				emit_Step_BEG_BLOCKTerminalRuleCall_3_10_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Step_BEG_BLOCKTerminalRuleCall_3_9_2_0_q.equals(syntax))
 				emit_Step_BEG_BLOCKTerminalRuleCall_3_9_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Step_END_BLOCKTerminalRuleCall_3_8_2_2_q.equals(syntax))
-				emit_Step_END_BLOCKTerminalRuleCall_3_8_2_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Step_END_BLOCKTerminalRuleCall_3_10_2_2_q.equals(syntax))
+				emit_Step_END_BLOCKTerminalRuleCall_3_10_2_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Step_END_BLOCKTerminalRuleCall_3_9_2_2_q.equals(syntax))
 				emit_Step_END_BLOCKTerminalRuleCall_3_9_2_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Step_END_BLOCKTerminalRuleCall_4_q.equals(syntax))
 				emit_Step_END_BLOCKTerminalRuleCall_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Step___END_BLOCKTerminalRuleCall_3_8_2_2_q_WithKeyword_3_8_0_ColonKeyword_3_8_1_BEG_BLOCKTerminalRuleCall_3_8_2_0_q__q.equals(syntax))
-				emit_Step___END_BLOCKTerminalRuleCall_3_8_2_2_q_WithKeyword_3_8_0_ColonKeyword_3_8_1_BEG_BLOCKTerminalRuleCall_3_8_2_0_q__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Step___END_BLOCKTerminalRuleCall_3_9_2_2_q_EnvKeyword_3_9_0_ColonKeyword_3_9_1_BEG_BLOCKTerminalRuleCall_3_9_2_0_q__q.equals(syntax))
-				emit_Step___END_BLOCKTerminalRuleCall_3_9_2_2_q_EnvKeyword_3_9_0_ColonKeyword_3_9_1_BEG_BLOCKTerminalRuleCall_3_9_2_0_q__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Step___END_BLOCKTerminalRuleCall_3_10_2_2_q_EnvKeyword_3_10_0_ColonKeyword_3_10_1_BEG_BLOCKTerminalRuleCall_3_10_2_0_q__q.equals(syntax))
+				emit_Step___END_BLOCKTerminalRuleCall_3_10_2_2_q_EnvKeyword_3_10_0_ColonKeyword_3_10_1_BEG_BLOCKTerminalRuleCall_3_10_2_0_q__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Step___END_BLOCKTerminalRuleCall_3_9_2_2_q_WithKeyword_3_9_0_ColonKeyword_3_9_1_BEG_BLOCKTerminalRuleCall_3_9_2_0_q__q.equals(syntax))
+				emit_Step___END_BLOCKTerminalRuleCall_3_9_2_2_q_WithKeyword_3_9_0_ColonKeyword_3_9_1_BEG_BLOCKTerminalRuleCall_3_9_2_0_q__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Strategy_BEG_BLOCKTerminalRuleCall_1_q.equals(syntax))
 				emit_Strategy_BEG_BLOCKTerminalRuleCall_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Strategy_END_BLOCKTerminalRuleCall_3_q.equals(syntax))
@@ -993,6 +993,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     id=EString ':' (ambiguity) 'container' ':' container=Container
+	 *     id=EString ':' (ambiguity) 'defaults' ':' defaults=Defaults
 	 *     id=EString ':' (ambiguity) 'env' ':' BEG_BLOCK? env+=KeyValuePair
 	 *     id=EString ':' (ambiguity) 'environment' ':' environment=Environment
 	 *     id=EString ':' (ambiguity) 'if' ':' if=EString
@@ -1023,6 +1024,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     container=Container 'steps' ':' (ambiguity) steps+=Step
+	 *     defaults=Defaults 'steps' ':' (ambiguity) steps+=Step
 	 *     env+=KeyValuePair END_BLOCK? 'steps' ':' (ambiguity) steps+=Step
 	 *     environment=Environment 'steps' ':' (ambiguity) steps+=Step
 	 *     id=EString ':' BEG_BLOCK? 'steps' ':' (ambiguity) steps+=Step
@@ -1041,7 +1043,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 
 	 * </pre>
 	 */
-	protected void emit_Job_BEG_BLOCKTerminalRuleCall_3_10_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Job_BEG_BLOCKTerminalRuleCall_3_11_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -1052,6 +1054,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     container=Container 'env' ':' (ambiguity) env+=KeyValuePair
+	 *     defaults=Defaults 'env' ':' (ambiguity) env+=KeyValuePair
 	 *     environment=Environment 'env' ':' (ambiguity) env+=KeyValuePair
 	 *     id=EString ':' BEG_BLOCK? 'env' ':' (ambiguity) env+=KeyValuePair
 	 *     if=EString 'env' ':' (ambiguity) env+=KeyValuePair
@@ -1070,7 +1073,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 
 	 * </pre>
 	 */
-	protected void emit_Job_BEG_BLOCKTerminalRuleCall_3_12_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Job_BEG_BLOCKTerminalRuleCall_3_13_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -1081,6 +1084,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     container=Container 'with' ':' (ambiguity) with+=KeyValuePair
+	 *     defaults=Defaults 'with' ':' (ambiguity) with+=KeyValuePair
 	 *     env+=KeyValuePair END_BLOCK? 'with' ':' (ambiguity) with+=KeyValuePair
 	 *     environment=Environment 'with' ':' (ambiguity) with+=KeyValuePair
 	 *     id=EString ':' BEG_BLOCK? 'with' ':' (ambiguity) with+=KeyValuePair
@@ -1099,7 +1103,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 
 	 * </pre>
 	 */
-	protected void emit_Job_BEG_BLOCKTerminalRuleCall_3_13_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Job_BEG_BLOCKTerminalRuleCall_3_14_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -1110,6 +1114,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     container=Container 'needs' ':' BEG_BLOCK '-' (ambiguity) needs+=EString
+	 *     defaults=Defaults 'needs' ':' BEG_BLOCK '-' (ambiguity) needs+=EString
 	 *     env+=KeyValuePair END_BLOCK? 'needs' ':' BEG_BLOCK '-' (ambiguity) needs+=EString
 	 *     environment=Environment 'needs' ':' BEG_BLOCK '-' (ambiguity) needs+=EString
 	 *     id=EString ':' BEG_BLOCK? 'needs' ':' BEG_BLOCK '-' (ambiguity) needs+=EString
@@ -1140,6 +1145,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     container=Container 'services' ':' (ambiguity) services+=Service
+	 *     defaults=Defaults 'services' ':' (ambiguity) services+=Service
 	 *     env+=KeyValuePair END_BLOCK? 'services' ':' (ambiguity) services+=Service
 	 *     environment=Environment 'services' ':' (ambiguity) services+=Service
 	 *     id=EString ':' BEG_BLOCK? 'services' ':' (ambiguity) services+=Service
@@ -1169,6 +1175,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     container=Container 'outputs' ':' (ambiguity) outputs+=KeyValuePair
+	 *     defaults=Defaults 'outputs' ':' (ambiguity) outputs+=KeyValuePair
 	 *     env+=KeyValuePair END_BLOCK? 'outputs' ':' (ambiguity) outputs+=KeyValuePair
 	 *     environment=Environment 'outputs' ':' (ambiguity) outputs+=KeyValuePair
 	 *     id=EString ':' BEG_BLOCK? 'outputs' ':' (ambiguity) outputs+=KeyValuePair
@@ -1198,6 +1205,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     steps+=Step (ambiguity) 'container' ':' container=Container
+	 *     steps+=Step (ambiguity) 'defaults' ':' defaults=Defaults
 	 *     steps+=Step (ambiguity) 'env' ':' BEG_BLOCK? env+=KeyValuePair
 	 *     steps+=Step (ambiguity) 'environment' ':' environment=Environment
 	 *     steps+=Step (ambiguity) 'if' ':' if=EString
@@ -1216,7 +1224,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 
 	 * </pre>
 	 */
-	protected void emit_Job_END_BLOCKTerminalRuleCall_3_10_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Job_END_BLOCKTerminalRuleCall_3_11_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -1227,6 +1235,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     env+=KeyValuePair (ambiguity) 'container' ':' container=Container
+	 *     env+=KeyValuePair (ambiguity) 'defaults' ':' defaults=Defaults
 	 *     env+=KeyValuePair (ambiguity) 'environment' ':' environment=Environment
 	 *     env+=KeyValuePair (ambiguity) 'if' ':' if=EString
 	 *     env+=KeyValuePair (ambiguity) 'name' ':' name=EString
@@ -1245,7 +1254,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 
 	 * </pre>
 	 */
-	protected void emit_Job_END_BLOCKTerminalRuleCall_3_12_2_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Job_END_BLOCKTerminalRuleCall_3_13_2_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -1256,6 +1265,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     with+=KeyValuePair (ambiguity) 'container' ':' container=Container
+	 *     with+=KeyValuePair (ambiguity) 'defaults' ':' defaults=Defaults
 	 *     with+=KeyValuePair (ambiguity) 'env' ':' BEG_BLOCK? env+=KeyValuePair
 	 *     with+=KeyValuePair (ambiguity) 'environment' ':' environment=Environment
 	 *     with+=KeyValuePair (ambiguity) 'if' ':' if=EString
@@ -1274,7 +1284,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 
 	 * </pre>
 	 */
-	protected void emit_Job_END_BLOCKTerminalRuleCall_3_13_2_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Job_END_BLOCKTerminalRuleCall_3_14_2_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -1286,6 +1296,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     needs+=EString (ambiguity) (END_BLOCK 'needs' ':' BEG_BLOCK)? '-' BEG_BLOCK? needs+=EString
 	 *     needs+=EString (ambiguity) END_BLOCK 'container' ':' container=Container
+	 *     needs+=EString (ambiguity) END_BLOCK 'defaults' ':' defaults=Defaults
 	 *     needs+=EString (ambiguity) END_BLOCK 'env' ':' BEG_BLOCK? env+=KeyValuePair
 	 *     needs+=EString (ambiguity) END_BLOCK 'environment' ':' environment=Environment
 	 *     needs+=EString (ambiguity) END_BLOCK 'if' ':' if=EString
@@ -1315,6 +1326,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     services+=Service (ambiguity) 'container' ':' container=Container
+	 *     services+=Service (ambiguity) 'defaults' ':' defaults=Defaults
 	 *     services+=Service (ambiguity) 'env' ':' BEG_BLOCK? env+=KeyValuePair
 	 *     services+=Service (ambiguity) 'environment' ':' environment=Environment
 	 *     services+=Service (ambiguity) 'if' ':' if=EString
@@ -1344,6 +1356,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     outputs+=KeyValuePair (ambiguity) 'container' ':' container=Container
+	 *     outputs+=KeyValuePair (ambiguity) 'defaults' ':' defaults=Defaults
 	 *     outputs+=KeyValuePair (ambiguity) 'env' ':' BEG_BLOCK? env+=KeyValuePair
 	 *     outputs+=KeyValuePair (ambiguity) 'environment' ':' environment=Environment
 	 *     outputs+=KeyValuePair (ambiguity) 'if' ':' if=EString
@@ -1373,6 +1386,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     container=Container (ambiguity) (rule end)
+	 *     defaults=Defaults (ambiguity) (rule end)
 	 *     env+=KeyValuePair END_BLOCK? (ambiguity) (rule end)
 	 *     environment=Environment (ambiguity) (rule end)
 	 *     id=EString ':' BEG_BLOCK? (ambiguity) (rule end)
@@ -1406,7 +1420,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 
 	 * </pre>
 	 */
-	protected void emit_Job___END_BLOCKTerminalRuleCall_3_10_4_q_StepsKeyword_3_10_0_ColonKeyword_3_10_1_BEG_BLOCKTerminalRuleCall_3_10_2_q__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Job___END_BLOCKTerminalRuleCall_3_11_4_q_StepsKeyword_3_11_0_ColonKeyword_3_11_1_BEG_BLOCKTerminalRuleCall_3_11_2_q__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -1420,7 +1434,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 
 	 * </pre>
 	 */
-	protected void emit_Job___END_BLOCKTerminalRuleCall_3_12_2_2_q_EnvKeyword_3_12_0_ColonKeyword_3_12_1_BEG_BLOCKTerminalRuleCall_3_12_2_0_q__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Job___END_BLOCKTerminalRuleCall_3_13_2_2_q_EnvKeyword_3_13_0_ColonKeyword_3_13_1_BEG_BLOCKTerminalRuleCall_3_13_2_0_q__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -1434,7 +1448,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 
 	 * </pre>
 	 */
-	protected void emit_Job___END_BLOCKTerminalRuleCall_3_13_2_2_q_WithKeyword_3_13_0_ColonKeyword_3_13_1_BEG_BLOCKTerminalRuleCall_3_13_2_0_q__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Job___END_BLOCKTerminalRuleCall_3_14_2_2_q_WithKeyword_3_14_0_ColonKeyword_3_14_1_BEG_BLOCKTerminalRuleCall_3_14_2_0_q__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -2516,6 +2530,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     BEG_BLOCK?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) 'branch_protection_rule' ':' branchProtectionRule=EString
 	 *     (rule start) (ambiguity) 'issues' ':' issues=Issues
 	 *     (rule start) (ambiguity) 'merge_group' ':' mergeGroup=Merge_group
 	 *     (rule start) (ambiguity) 'pull_request' ':' pullRequest=Pull_request
@@ -2540,6 +2555,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) BEG_BLOCK? 'schedule' ':' (ambiguity) schedule+=Schedule
+	 *     branchProtectionRule=EString 'schedule' ':' (ambiguity) schedule+=Schedule
 	 *     issues=Issues 'schedule' ':' (ambiguity) schedule+=Schedule
 	 *     mergeGroup=Merge_group 'schedule' ':' (ambiguity) schedule+=Schedule
 	 *     pullRequest=Pull_request 'schedule' ':' (ambiguity) schedule+=Schedule
@@ -2551,7 +2567,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 
 	 * </pre>
 	 */
-	protected void emit_On_BEG_BLOCKTerminalRuleCall_2_3_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_On_BEG_BLOCKTerminalRuleCall_2_4_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -2561,6 +2577,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     END_BLOCK?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     schedule+=Schedule (ambiguity) 'branch_protection_rule' ':' branchProtectionRule=EString
 	 *     schedule+=Schedule (ambiguity) 'issues' ':' issues=Issues
 	 *     schedule+=Schedule (ambiguity) 'merge_group' ':' mergeGroup=Merge_group
 	 *     schedule+=Schedule (ambiguity) 'pull_request' ':' pullRequest=Pull_request
@@ -2573,7 +2590,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 
 	 * </pre>
 	 */
-	protected void emit_On_END_BLOCKTerminalRuleCall_2_3_2_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_On_END_BLOCKTerminalRuleCall_2_4_2_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -2584,6 +2601,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) BEG_BLOCK? (ambiguity) (rule start)
+	 *     branchProtectionRule=EString (ambiguity) (rule end)
 	 *     issues=Issues (ambiguity) (rule end)
 	 *     mergeGroup=Merge_group (ambiguity) (rule end)
 	 *     pullRequest=Pull_request (ambiguity) (rule end)
@@ -2610,7 +2628,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 
 	 * </pre>
 	 */
-	protected void emit_On___END_BLOCKTerminalRuleCall_2_3_2_2_q_ScheduleKeyword_2_3_0_ColonKeyword_2_3_1_BEG_BLOCKTerminalRuleCall_2_3_2_0_q__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_On___END_BLOCKTerminalRuleCall_2_4_2_2_q_ScheduleKeyword_2_4_0_ColonKeyword_2_4_1_BEG_BLOCKTerminalRuleCall_2_4_2_0_q__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -2621,6 +2639,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) 'actions' ':' actions=EString
+	 *     (rule start) (ambiguity) 'checks' ':' checks=EString
 	 *     (rule start) (ambiguity) 'contents' ':' contents=EString
 	 *     (rule start) (ambiguity) 'id-token' ':' idToken=EString
 	 *     (rule start) (ambiguity) 'issues' ':' issues=EString
@@ -2645,6 +2664,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) BEG_BLOCK? (ambiguity) (rule start)
 	 *     actions=EString (ambiguity) (rule end)
+	 *     checks=EString (ambiguity) (rule end)
 	 *     contents=EString (ambiguity) (rule end)
 	 *     idToken=EString (ambiguity) (rule end)
 	 *     issues=EString (ambiguity) (rule end)
@@ -3009,6 +3029,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) '-' (ambiguity) 'name' ':' name=EString
 	 *     (rule start) '-' (ambiguity) 'run' ':' run=EString
 	 *     (rule start) '-' (ambiguity) 'shell' ':' shell=EString
+	 *     (rule start) '-' (ambiguity) 'timeout-minutes' ':' timeoutMinutes=INT
 	 *     (rule start) '-' (ambiguity) 'uses' ':' uses=EString
 	 *     (rule start) '-' (ambiguity) 'with' ':' BEG_BLOCK? with+=KeyValuePair
 	 *     (rule start) '-' (ambiguity) 'working-directory' ':' workingDirectory=EString
@@ -3026,20 +3047,21 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     BEG_BLOCK?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) '-' BEG_BLOCK? 'with' ':' (ambiguity) with+=KeyValuePair
-	 *     continueOnError=EBoolean 'with' ':' (ambiguity) with+=KeyValuePair
-	 *     env+=KeyValuePair END_BLOCK? 'with' ':' (ambiguity) with+=KeyValuePair
-	 *     id=EString 'with' ':' (ambiguity) with+=KeyValuePair
-	 *     if=EString 'with' ':' (ambiguity) with+=KeyValuePair
-	 *     name=EString 'with' ':' (ambiguity) with+=KeyValuePair
-	 *     run=EString 'with' ':' (ambiguity) with+=KeyValuePair
-	 *     shell=EString 'with' ':' (ambiguity) with+=KeyValuePair
-	 *     uses=EString 'with' ':' (ambiguity) with+=KeyValuePair
-	 *     workingDirectory=EString 'with' ':' (ambiguity) with+=KeyValuePair
+	 *     (rule start) '-' BEG_BLOCK? 'env' ':' (ambiguity) env+=KeyValuePair
+	 *     continueOnError=EBoolean 'env' ':' (ambiguity) env+=KeyValuePair
+	 *     id=EString 'env' ':' (ambiguity) env+=KeyValuePair
+	 *     if=EString 'env' ':' (ambiguity) env+=KeyValuePair
+	 *     name=EString 'env' ':' (ambiguity) env+=KeyValuePair
+	 *     run=EString 'env' ':' (ambiguity) env+=KeyValuePair
+	 *     shell=EString 'env' ':' (ambiguity) env+=KeyValuePair
+	 *     timeoutMinutes=INT 'env' ':' (ambiguity) env+=KeyValuePair
+	 *     uses=EString 'env' ':' (ambiguity) env+=KeyValuePair
+	 *     with+=KeyValuePair END_BLOCK? 'env' ':' (ambiguity) env+=KeyValuePair
+	 *     workingDirectory=EString 'env' ':' (ambiguity) env+=KeyValuePair
 	 
 	 * </pre>
 	 */
-	protected void emit_Step_BEG_BLOCKTerminalRuleCall_3_8_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Step_BEG_BLOCKTerminalRuleCall_3_10_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -3049,20 +3071,45 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     BEG_BLOCK?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) '-' BEG_BLOCK? 'env' ':' (ambiguity) env+=KeyValuePair
-	 *     continueOnError=EBoolean 'env' ':' (ambiguity) env+=KeyValuePair
-	 *     id=EString 'env' ':' (ambiguity) env+=KeyValuePair
-	 *     if=EString 'env' ':' (ambiguity) env+=KeyValuePair
-	 *     name=EString 'env' ':' (ambiguity) env+=KeyValuePair
-	 *     run=EString 'env' ':' (ambiguity) env+=KeyValuePair
-	 *     shell=EString 'env' ':' (ambiguity) env+=KeyValuePair
-	 *     uses=EString 'env' ':' (ambiguity) env+=KeyValuePair
-	 *     with+=KeyValuePair END_BLOCK? 'env' ':' (ambiguity) env+=KeyValuePair
-	 *     workingDirectory=EString 'env' ':' (ambiguity) env+=KeyValuePair
+	 *     (rule start) '-' BEG_BLOCK? 'with' ':' (ambiguity) with+=KeyValuePair
+	 *     continueOnError=EBoolean 'with' ':' (ambiguity) with+=KeyValuePair
+	 *     env+=KeyValuePair END_BLOCK? 'with' ':' (ambiguity) with+=KeyValuePair
+	 *     id=EString 'with' ':' (ambiguity) with+=KeyValuePair
+	 *     if=EString 'with' ':' (ambiguity) with+=KeyValuePair
+	 *     name=EString 'with' ':' (ambiguity) with+=KeyValuePair
+	 *     run=EString 'with' ':' (ambiguity) with+=KeyValuePair
+	 *     shell=EString 'with' ':' (ambiguity) with+=KeyValuePair
+	 *     timeoutMinutes=INT 'with' ':' (ambiguity) with+=KeyValuePair
+	 *     uses=EString 'with' ':' (ambiguity) with+=KeyValuePair
+	 *     workingDirectory=EString 'with' ':' (ambiguity) with+=KeyValuePair
 	 
 	 * </pre>
 	 */
 	protected void emit_Step_BEG_BLOCKTerminalRuleCall_3_9_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     END_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     env+=KeyValuePair (ambiguity) 'continue-on-error' ':' continueOnError=EBoolean
+	 *     env+=KeyValuePair (ambiguity) 'id' ':' id=EString
+	 *     env+=KeyValuePair (ambiguity) 'if' ':' if=EString
+	 *     env+=KeyValuePair (ambiguity) 'name' ':' name=EString
+	 *     env+=KeyValuePair (ambiguity) 'run' ':' run=EString
+	 *     env+=KeyValuePair (ambiguity) 'shell' ':' shell=EString
+	 *     env+=KeyValuePair (ambiguity) 'timeout-minutes' ':' timeoutMinutes=INT
+	 *     env+=KeyValuePair (ambiguity) 'uses' ':' uses=EString
+	 *     env+=KeyValuePair (ambiguity) 'with' ':' BEG_BLOCK? with+=KeyValuePair
+	 *     env+=KeyValuePair (ambiguity) 'working-directory' ':' workingDirectory=EString
+	 *     env+=KeyValuePair (ambiguity) END_BLOCK? (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Step_END_BLOCKTerminalRuleCall_3_10_2_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -3079,32 +3126,10 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     with+=KeyValuePair (ambiguity) 'name' ':' name=EString
 	 *     with+=KeyValuePair (ambiguity) 'run' ':' run=EString
 	 *     with+=KeyValuePair (ambiguity) 'shell' ':' shell=EString
+	 *     with+=KeyValuePair (ambiguity) 'timeout-minutes' ':' timeoutMinutes=INT
 	 *     with+=KeyValuePair (ambiguity) 'uses' ':' uses=EString
 	 *     with+=KeyValuePair (ambiguity) 'working-directory' ':' workingDirectory=EString
 	 *     with+=KeyValuePair (ambiguity) END_BLOCK? (rule end)
-	 
-	 * </pre>
-	 */
-	protected void emit_Step_END_BLOCKTerminalRuleCall_3_8_2_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
-	 *     END_BLOCK?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     env+=KeyValuePair (ambiguity) 'continue-on-error' ':' continueOnError=EBoolean
-	 *     env+=KeyValuePair (ambiguity) 'id' ':' id=EString
-	 *     env+=KeyValuePair (ambiguity) 'if' ':' if=EString
-	 *     env+=KeyValuePair (ambiguity) 'name' ':' name=EString
-	 *     env+=KeyValuePair (ambiguity) 'run' ':' run=EString
-	 *     env+=KeyValuePair (ambiguity) 'shell' ':' shell=EString
-	 *     env+=KeyValuePair (ambiguity) 'uses' ':' uses=EString
-	 *     env+=KeyValuePair (ambiguity) 'with' ':' BEG_BLOCK? with+=KeyValuePair
-	 *     env+=KeyValuePair (ambiguity) 'working-directory' ':' workingDirectory=EString
-	 *     env+=KeyValuePair (ambiguity) END_BLOCK? (rule end)
 	 
 	 * </pre>
 	 */
@@ -3126,6 +3151,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     name=EString (ambiguity) (rule end)
 	 *     run=EString (ambiguity) (rule end)
 	 *     shell=EString (ambiguity) (rule end)
+	 *     timeoutMinutes=INT (ambiguity) (rule end)
 	 *     uses=EString (ambiguity) (rule end)
 	 *     with+=KeyValuePair END_BLOCK? (ambiguity) (rule end)
 	 *     workingDirectory=EString (ambiguity) (rule end)
@@ -3139,20 +3165,6 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
-	 *     (END_BLOCK? 'with' ':' BEG_BLOCK?)?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     with+=KeyValuePair (ambiguity) with+=KeyValuePair
-	 
-	 * </pre>
-	 */
-	protected void emit_Step___END_BLOCKTerminalRuleCall_3_8_2_2_q_WithKeyword_3_8_0_ColonKeyword_3_8_1_BEG_BLOCKTerminalRuleCall_3_8_2_0_q__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
 	 *     (END_BLOCK? 'env' ':' BEG_BLOCK?)?
 	 *
 	 * This ambiguous syntax occurs at:
@@ -3160,7 +3172,21 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 
 	 * </pre>
 	 */
-	protected void emit_Step___END_BLOCKTerminalRuleCall_3_9_2_2_q_EnvKeyword_3_9_0_ColonKeyword_3_9_1_BEG_BLOCKTerminalRuleCall_3_9_2_0_q__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Step___END_BLOCKTerminalRuleCall_3_10_2_2_q_EnvKeyword_3_10_0_ColonKeyword_3_10_1_BEG_BLOCKTerminalRuleCall_3_10_2_0_q__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END_BLOCK? 'with' ':' BEG_BLOCK?)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     with+=KeyValuePair (ambiguity) with+=KeyValuePair
+	 
+	 * </pre>
+	 */
+	protected void emit_Step___END_BLOCKTerminalRuleCall_3_9_2_2_q_WithKeyword_3_9_0_ColonKeyword_3_9_1_BEG_BLOCKTerminalRuleCall_3_9_2_0_q__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

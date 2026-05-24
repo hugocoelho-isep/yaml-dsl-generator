@@ -307,6 +307,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *                 container=Container | 
 	 *                 services+=Service | 
 	 *                 outputs+=KeyValuePair | 
+	 *                 defaults=Defaults | 
 	 *                 steps+=Step | 
 	 *                 permissions=Permissions | 
 	 *                 env+=KeyValuePair | 
@@ -403,6 +404,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *
 	 * Constraint:
 	 *     (
+	 *         branchProtectionRule=EString | 
 	 *         push=Push | 
 	 *         pullRequest=Pull_request | 
 	 *         pullRequestTarget=Pull_request | 
@@ -435,7 +437,8 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         pullRequests=EString | 
 	 *         issues=EString | 
 	 *         packages=EString | 
-	 *         models=EString
+	 *         models=EString | 
+	 *         checks=EString
 	 *     )*
 	 * </pre>
 	 */
@@ -569,6 +572,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         workingDirectory=EString | 
 	 *         shell=EString | 
 	 *         continueOnError=EBoolean | 
+	 *         timeoutMinutes=INT | 
 	 *         with+=KeyValuePair | 
 	 *         env+=KeyValuePair
 	 *     )*

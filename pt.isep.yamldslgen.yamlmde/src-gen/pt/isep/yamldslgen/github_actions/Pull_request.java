@@ -31,7 +31,7 @@ public interface Pull_request extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Branches</em>' attribute list.
 	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getPull_request_Branches()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	EList<String> getBranches();

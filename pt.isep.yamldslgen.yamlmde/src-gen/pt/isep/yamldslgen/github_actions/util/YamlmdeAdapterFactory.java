@@ -77,16 +77,6 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseJob(Job object) {
-			return createJobAdapter();
-		}
-
-		@Override
-		public Adapter caseStep(Step object) {
-			return createStepAdapter();
-		}
-
-		@Override
 		public Adapter caseOn(On object) {
 			return createOnAdapter();
 		}
@@ -99,6 +89,16 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter casePull_request(Pull_request object) {
 			return createPull_requestAdapter();
+		}
+
+		@Override
+		public Adapter caseJob(Job object) {
+			return createJobAdapter();
+		}
+
+		@Override
+		public Adapter caseStep(Step object) {
+			return createStepAdapter();
 		}
 
 		@Override

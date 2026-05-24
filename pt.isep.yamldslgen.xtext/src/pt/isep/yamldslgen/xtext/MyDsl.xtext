@@ -66,7 +66,8 @@ KeyName returns ecore::EString:
 	| 'type' | 'node-version'
 	| 'python-version' | 'configuration' | 'digests'
 	| 'merge_group' | 'r-version'
-	| 'branch_protection_rule' | 'models' | 'ruby-version' | 'services' | 'ports';
+	| 'branch_protection_rule' | 'models' | 'ruby-version' | 'services' | 'ports'
+	| 'timeout-minutes' | 'checks';
 	
 // =============================================================================
 // KEY-VALUE PAIR  (generic block content — e.g. 'with:', 'env:')
@@ -84,7 +85,8 @@ KeyValuePair returns KeyValuePair:
 On returns On:
 	{On}
 	BEG_BLOCK?
-	(('push' ':' push=Push)?
+		(('branch_protection_rule' ':' branchProtectionRule=EString)?
+		&('push' ':' push=Push)?
 		& ('pull_request' ':' pullRequest=Pull_request)?
 		& ('pull_request_target' ':' pullRequestTarget=Pull_request)?
 		& ('schedule' ':' (BEG_BLOCK? schedule+=Schedule+ END_BLOCK?))?
@@ -203,7 +205,8 @@ Permissions returns Permissions:
 		& ('pull-requests' ':' pullRequests=EString)?
 		& ('issues' ':' issues=EString)?
 		& ('packages' ':' packages=EString)?
-		& ('models' ':' models=EString)?)
+		& ('models' ':' models=EString)?
+		& ('checks' ':' checks=EString)?)
 	END_BLOCK?;
 
 // =============================================================================
@@ -226,6 +229,7 @@ Job returns Job:
 		& ('container' ':' container=Container)?
 		& ('services' ':' (BEG_BLOCK? services+=Service+ END_BLOCK?))?
 		& ('outputs' ':' (BEG_BLOCK? outputs+=KeyValuePair+ END_BLOCK?))?
+		& ('defaults' ':' defaults=Defaults)?
 		& ('steps' ':' BEG_BLOCK? steps+=Step+ END_BLOCK?)?
 		& ('permissions' ':' permissions=Permissions)?
 		& ('env' ':' (BEG_BLOCK? env+=KeyValuePair+ END_BLOCK?))?
@@ -257,6 +261,7 @@ Step returns Step:
 		& ('working-directory' ':' workingDirectory=EString)?
 		& ('shell' ':' shell=EString)?
 		& ('continue-on-error' ':' continueOnError=EBoolean)?
+		& ('timeout-minutes' ':' timeoutMinutes=INT)?
 		& ('with' ':' (BEG_BLOCK? ^with+=KeyValuePair+ END_BLOCK?))?
 		& ('env'  ':' (BEG_BLOCK? env+=KeyValuePair+ END_BLOCK?))?)
 	END_BLOCK?;

@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link pt.isep.yamldslgen.github_actions.Permissions#getIssues <em>Issues</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Permissions#getPackages <em>Packages</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.Permissions#getModels <em>Models</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Permissions#getChecks <em>Checks</em>}</li>
  * </ul>
  *
  * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getPermissions()
@@ -226,5 +227,27 @@ public interface Permissions extends EObject {
 	 * @generated
 	 */
 	void setModels(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Checks</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Checks</em>' attribute.
+	 * @see #setChecks(String)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getPermissions_Checks()
+	 * @model
+	 * @generated
+	 */
+	String getChecks();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.Permissions#getChecks <em>Checks</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Checks</em>' attribute.
+	 * @see #getChecks()
+	 * @generated
+	 */
+	void setChecks(String value);
 
 } // Permissions
