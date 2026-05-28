@@ -211,57 +211,6 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 	 * @generated
 	 */
 	@Override
-	public Issues getIssues() {
-		return issues;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetIssues(Issues newIssues, NotificationChain msgs) {
-		Issues oldIssues = issues;
-		issues = newIssues;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, YamlmdePackage.ON__ISSUES,
-					oldIssues, newIssues);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setIssues(Issues newIssues) {
-		if (newIssues != issues) {
-			NotificationChain msgs = null;
-			if (issues != null)
-				msgs = ((InternalEObject) issues).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - YamlmdePackage.ON__ISSUES, null, msgs);
-			if (newIssues != null)
-				msgs = ((InternalEObject) newIssues).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - YamlmdePackage.ON__ISSUES, null, msgs);
-			msgs = basicSetIssues(newIssues, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.ON__ISSUES, newIssues, newIssues));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Push getPush() {
 		return push;
 	}
@@ -577,6 +526,57 @@ public class OnImpl extends MinimalEObjectImpl.Container implements On {
 				msgs.dispatch();
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.ON__RELEASE, newRelease, newRelease));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Issues getIssues() {
+		return issues;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetIssues(Issues newIssues, NotificationChain msgs) {
+		Issues oldIssues = issues;
+		issues = newIssues;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, YamlmdePackage.ON__ISSUES,
+					oldIssues, newIssues);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIssues(Issues newIssues) {
+		if (newIssues != issues) {
+			NotificationChain msgs = null;
+			if (issues != null)
+				msgs = ((InternalEObject) issues).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - YamlmdePackage.ON__ISSUES, null, msgs);
+			if (newIssues != null)
+				msgs = ((InternalEObject) newIssues).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - YamlmdePackage.ON__ISSUES, null, msgs);
+			msgs = basicSetIssues(newIssues, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.ON__ISSUES, newIssues, newIssues));
 	}
 
 	/**

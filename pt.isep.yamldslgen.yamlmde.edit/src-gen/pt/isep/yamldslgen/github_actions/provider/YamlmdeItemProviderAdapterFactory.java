@@ -119,52 +119,6 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Job} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected JobItemProvider jobItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Job}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createJobAdapter() {
-		if (jobItemProvider == null) {
-			jobItemProvider = new JobItemProvider(this);
-		}
-
-		return jobItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Step} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected StepItemProvider stepItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Step}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createStepAdapter() {
-		if (stepItemProvider == null) {
-			stepItemProvider = new StepItemProvider(this);
-		}
-
-		return stepItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.On} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -231,6 +185,52 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 		}
 
 		return pull_requestItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Job} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected JobItemProvider jobItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Job}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createJobAdapter() {
+		if (jobItemProvider == null) {
+			jobItemProvider = new JobItemProvider(this);
+		}
+
+		return jobItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Step} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StepItemProvider stepItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Step}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStepAdapter() {
+		if (stepItemProvider == null) {
+			stepItemProvider = new StepItemProvider(this);
+		}
+
+		return stepItemProvider;
 	}
 
 	/**

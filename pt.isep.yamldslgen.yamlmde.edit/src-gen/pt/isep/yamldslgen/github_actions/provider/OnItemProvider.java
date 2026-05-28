@@ -80,20 +80,6 @@ public class OnItemProvider extends ItemProviderAdapter implements IEditingDomai
 	}
 
 	/**
-	 * This adds a property descriptor for the Issues feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIssuesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_On_issues_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_On_issues_feature", "_UI_On_type"),
-						YamlmdePackage.Literals.ON__ISSUES, true, false, false, null, null, null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Workflow Dispatch feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -106,6 +92,20 @@ public class OnItemProvider extends ItemProviderAdapter implements IEditingDomai
 						getString("_UI_PropertyDescriptor_description", "_UI_On_workflowDispatch_feature",
 								"_UI_On_type"),
 						YamlmdePackage.Literals.ON__WORKFLOW_DISPATCH, true, false, false, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Issues feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIssuesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_On_issues_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_On_issues_feature", "_UI_On_type"),
+						YamlmdePackage.Literals.ON__ISSUES, true, false, false, null, null, null));
 	}
 
 	/**

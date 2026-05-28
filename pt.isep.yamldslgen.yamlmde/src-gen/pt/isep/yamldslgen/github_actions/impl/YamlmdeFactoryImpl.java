@@ -141,28 +141,6 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 	 * @generated
 	 */
 	@Override
-	public Job createJob() {
-		JobImpl job = new JobImpl();
-		return job;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Step createStep() {
-		StepImpl step = new StepImpl();
-		return step;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public On createOn() {
 		OnImpl on = new OnImpl();
 		return on;
@@ -188,6 +166,28 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 	public Pull_request createPull_request() {
 		Pull_requestImpl pull_request = new Pull_requestImpl();
 		return pull_request;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Job createJob() {
+		JobImpl job = new JobImpl();
+		return job;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Step createStep() {
+		StepImpl step = new StepImpl();
+		return step;
 	}
 
 	/**

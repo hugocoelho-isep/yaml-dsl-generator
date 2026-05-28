@@ -244,34 +244,6 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Job <em>Job</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see pt.isep.yamldslgen.github_actions.Job
-	 * @generated
-	 */
-	public Adapter createJobAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Step <em>Step</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see pt.isep.yamldslgen.github_actions.Step
-	 * @generated
-	 */
-	public Adapter createStepAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.On <em>On</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -310,6 +282,34 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPull_requestAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Job <em>Job</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Job
+	 * @generated
+	 */
+	public Adapter createJobAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Step <em>Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Step
+	 * @generated
+	 */
+	public Adapter createStepAdapter() {
 		return null;
 	}
 

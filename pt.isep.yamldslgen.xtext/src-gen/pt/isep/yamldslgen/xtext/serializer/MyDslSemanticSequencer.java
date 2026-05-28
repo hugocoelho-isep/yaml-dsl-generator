@@ -200,7 +200,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Environment returns Environment
 	 *
 	 * Constraint:
-	 *     (name=EString | url=EString)*
+	 *     (name=EString | (name=EString | url=EString)+)?
 	 * </pre>
 	 */
 	protected void sequence_Environment(ISerializationContext context, Environment semanticObject) {

@@ -408,31 +408,23 @@ ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 			newLeafNode(this_STRING_0, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0());
 		}
 		    |
-		this_GH_EXPRESSION_1=RULE_GH_EXPRESSION
 		{
-			$current.merge(this_GH_EXPRESSION_1);
+			newCompositeNode(grammarAccess.getEStringAccess().getBlockStringParserRuleCall_1());
 		}
+		this_BlockString_1=ruleBlockString
 		{
-			newLeafNode(this_GH_EXPRESSION_1, grammarAccess.getEStringAccess().getGH_EXPRESSIONTerminalRuleCall_1());
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getEStringAccess().getBlockStringParserRuleCall_2());
-		}
-		this_BlockString_2=ruleBlockString
-		{
-			$current.merge(this_BlockString_2);
+			$current.merge(this_BlockString_1);
 		}
 		{
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getEStringAccess().getScalarSequenceParserRuleCall_3());
+			newCompositeNode(grammarAccess.getEStringAccess().getScalarSequenceParserRuleCall_2());
 		}
-		this_ScalarSequence_3=ruleScalarSequence
+		this_ScalarSequence_2=ruleScalarSequence
 		{
-			$current.merge(this_ScalarSequence_3);
+			$current.merge(this_ScalarSequence_2);
 		}
 		{
 			afterParserOrEnumRuleCall();
@@ -465,77 +457,119 @@ ruleScalarSequence returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRule
 				newLeafNode(this_YAML_SCALAR_0, grammarAccess.getScalarSequenceAccess().getYAML_SCALARTerminalRuleCall_0_0());
 			}
 			    |
-			this_ID_1=RULE_ID
+			this_GH_EXPRESSION_1=RULE_GH_EXPRESSION
 			{
-				$current.merge(this_ID_1);
+				$current.merge(this_GH_EXPRESSION_1);
 			}
 			{
-				newLeafNode(this_ID_1, grammarAccess.getScalarSequenceAccess().getIDTerminalRuleCall_0_1());
+				newLeafNode(this_GH_EXPRESSION_1, grammarAccess.getScalarSequenceAccess().getGH_EXPRESSIONTerminalRuleCall_0_1());
 			}
 			    |
-			this_INT_2=RULE_INT
+			this_ID_2=RULE_ID
 			{
-				$current.merge(this_INT_2);
+				$current.merge(this_ID_2);
 			}
 			{
-				newLeafNode(this_INT_2, grammarAccess.getScalarSequenceAccess().getINTTerminalRuleCall_0_2());
+				newLeafNode(this_ID_2, grammarAccess.getScalarSequenceAccess().getIDTerminalRuleCall_0_2());
+			}
+			    |
+			this_INT_3=RULE_INT
+			{
+				$current.merge(this_INT_3);
+			}
+			{
+				newLeafNode(this_INT_3, grammarAccess.getScalarSequenceAccess().getINTTerminalRuleCall_0_3());
 			}
 			    |
 			kw='true'
 			{
 				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getScalarSequenceAccess().getTrueKeyword_0_3());
+				newLeafNode(kw, grammarAccess.getScalarSequenceAccess().getTrueKeyword_0_4());
 			}
 			    |
 			kw='false'
 			{
 				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getScalarSequenceAccess().getFalseKeyword_0_4());
+				newLeafNode(kw, grammarAccess.getScalarSequenceAccess().getFalseKeyword_0_5());
 			}
 		)
 		(
-			kw=':'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getScalarSequenceAccess().getColonKeyword_1_0());
-			}
 			(
-				this_YAML_SCALAR_6=RULE_YAML_SCALAR
-				{
-					$current.merge(this_YAML_SCALAR_6);
-				}
-				{
-					newLeafNode(this_YAML_SCALAR_6, grammarAccess.getScalarSequenceAccess().getYAML_SCALARTerminalRuleCall_1_1_0());
-				}
-				    |
-				this_ID_7=RULE_ID
-				{
-					$current.merge(this_ID_7);
-				}
-				{
-					newLeafNode(this_ID_7, grammarAccess.getScalarSequenceAccess().getIDTerminalRuleCall_1_1_1());
-				}
-				    |
-				this_INT_8=RULE_INT
-				{
-					$current.merge(this_INT_8);
-				}
-				{
-					newLeafNode(this_INT_8, grammarAccess.getScalarSequenceAccess().getINTTerminalRuleCall_1_1_2());
-				}
-				    |
-				kw='true'
-				{
-					$current.merge(kw);
-					newLeafNode(kw, grammarAccess.getScalarSequenceAccess().getTrueKeyword_1_1_3());
-				}
-				    |
-				kw='false'
-				{
-					$current.merge(kw);
-					newLeafNode(kw, grammarAccess.getScalarSequenceAccess().getFalseKeyword_1_1_4());
-				}
+				(
+					kw=':'
+					{
+						$current.merge(kw);
+						newLeafNode(kw, grammarAccess.getScalarSequenceAccess().getColonKeyword_1_0_0_0());
+					}
+					    |
+					kw='-'
+					{
+						$current.merge(kw);
+						newLeafNode(kw, grammarAccess.getScalarSequenceAccess().getHyphenMinusKeyword_1_0_0_1());
+					}
+				)
+				(
+					this_YAML_SCALAR_8=RULE_YAML_SCALAR
+					{
+						$current.merge(this_YAML_SCALAR_8);
+					}
+					{
+						newLeafNode(this_YAML_SCALAR_8, grammarAccess.getScalarSequenceAccess().getYAML_SCALARTerminalRuleCall_1_0_1_0());
+					}
+					    |
+					this_GH_EXPRESSION_9=RULE_GH_EXPRESSION
+					{
+						$current.merge(this_GH_EXPRESSION_9);
+					}
+					{
+						newLeafNode(this_GH_EXPRESSION_9, grammarAccess.getScalarSequenceAccess().getGH_EXPRESSIONTerminalRuleCall_1_0_1_1());
+					}
+					    |
+					this_ID_10=RULE_ID
+					{
+						$current.merge(this_ID_10);
+					}
+					{
+						newLeafNode(this_ID_10, grammarAccess.getScalarSequenceAccess().getIDTerminalRuleCall_1_0_1_2());
+					}
+					    |
+					this_INT_11=RULE_INT
+					{
+						$current.merge(this_INT_11);
+					}
+					{
+						newLeafNode(this_INT_11, grammarAccess.getScalarSequenceAccess().getINTTerminalRuleCall_1_0_1_3());
+					}
+					    |
+					kw='true'
+					{
+						$current.merge(kw);
+						newLeafNode(kw, grammarAccess.getScalarSequenceAccess().getTrueKeyword_1_0_1_4());
+					}
+					    |
+					kw='false'
+					{
+						$current.merge(kw);
+						newLeafNode(kw, grammarAccess.getScalarSequenceAccess().getFalseKeyword_1_0_1_5());
+					}
+				)
 			)
+			    |
+			this_GH_EXPRESSION_14=RULE_GH_EXPRESSION
+			{
+				$current.merge(this_GH_EXPRESSION_14);
+			}
+			{
+				newLeafNode(this_GH_EXPRESSION_14, grammarAccess.getScalarSequenceAccess().getGH_EXPRESSIONTerminalRuleCall_1_1());
+			}
+			    |
+			this_YAML_SCALAR_15=RULE_YAML_SCALAR
+			{
+				$current.merge(this_YAML_SCALAR_15);
+			}
+			{
+				newLeafNode(this_YAML_SCALAR_15, grammarAccess.getScalarSequenceAccess().getYAML_SCALARTerminalRuleCall_1_2());
+			}
 		)*
 	)
 ;
@@ -1045,76 +1079,88 @@ ruleKeyName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 			newLeafNode(kw, grammarAccess.getKeyNameAccess().getNodeVersionKeyword_55());
 		}
 		    |
+		kw='cache'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getCacheKeyword_56());
+		}
+		    |
 		kw='python-version'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getPythonVersionKeyword_56());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getPythonVersionKeyword_57());
 		}
 		    |
 		kw='configuration'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getConfigurationKeyword_57());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getConfigurationKeyword_58());
 		}
 		    |
 		kw='digests'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getDigestsKeyword_58());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getDigestsKeyword_59());
 		}
 		    |
 		kw='merge_group'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getMerge_groupKeyword_59());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getMerge_groupKeyword_60());
 		}
 		    |
 		kw='r-version'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getRVersionKeyword_60());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getRVersionKeyword_61());
 		}
 		    |
 		kw='branch_protection_rule'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getBranch_protection_ruleKeyword_61());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getBranch_protection_ruleKeyword_62());
 		}
 		    |
 		kw='models'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getModelsKeyword_62());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getModelsKeyword_63());
 		}
 		    |
 		kw='ruby-version'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getRubyVersionKeyword_63());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getRubyVersionKeyword_64());
 		}
 		    |
 		kw='services'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getServicesKeyword_64());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getServicesKeyword_65());
 		}
 		    |
 		kw='ports'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getPortsKeyword_65());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getPortsKeyword_66());
 		}
 		    |
 		kw='timeout-minutes'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getTimeoutMinutesKeyword_66());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getTimeoutMinutesKeyword_67());
 		}
 		    |
 		kw='checks'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getChecksKeyword_67());
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getChecksKeyword_68());
+		}
+		    |
+		kw='restore-keys'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getKeyNameAccess().getRestoreKeysKeyword_69());
 		}
 	)
 ;
@@ -3180,107 +3226,129 @@ ruleEnvironment returns [EObject current=null]
 			}
 		)
 		(
-			this_BEG_BLOCK_1=RULE_BEG_BLOCK
-			{
-				newLeafNode(this_BEG_BLOCK_1, grammarAccess.getEnvironmentAccess().getBEG_BLOCKTerminalRuleCall_1());
-			}
-		)?
-		(
 			(
-				{ 
-				  getUnorderedGroupHelper().enter(grammarAccess.getEnvironmentAccess().getUnorderedGroup_2());
+				(
+					{
+						newCompositeNode(grammarAccess.getEnvironmentAccess().getNameEStringParserRuleCall_1_0_0());
+					}
+					lv_name_1_0=ruleEString
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getEnvironmentRule());
+						}
+						set(
+							$current,
+							"name",
+							lv_name_1_0,
+							"pt.isep.yamldslgen.xtext.MyDsl.EString");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			    |
+			(
+				this_BEG_BLOCK_2=RULE_BEG_BLOCK
+				{
+					newLeafNode(this_BEG_BLOCK_2, grammarAccess.getEnvironmentAccess().getBEG_BLOCKTerminalRuleCall_1_1_0());
 				}
 				(
 					(
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getEnvironmentAccess().getUnorderedGroup_2(), 0)}?=>(
+						{ 
+						  getUnorderedGroupHelper().enter(grammarAccess.getEnvironmentAccess().getUnorderedGroup_1_1_1());
+						}
+						(
+							(
+					(
+						{getUnorderedGroupHelper().canSelect(grammarAccess.getEnvironmentAccess().getUnorderedGroup_1_1_1(), 0)}?=>(
+							{
+								getUnorderedGroupHelper().select(grammarAccess.getEnvironmentAccess().getUnorderedGroup_1_1_1(), 0);
+							}
+										({true}?=>(otherlv_4='name'
+										{
+											newLeafNode(otherlv_4, grammarAccess.getEnvironmentAccess().getNameKeyword_1_1_1_0_0());
+										}
+										otherlv_5=':'
+										{
+											newLeafNode(otherlv_5, grammarAccess.getEnvironmentAccess().getColonKeyword_1_1_1_0_1());
+										}
+										(
+											(
+												{
+													newCompositeNode(grammarAccess.getEnvironmentAccess().getNameEStringParserRuleCall_1_1_1_0_2_0());
+												}
+												lv_name_6_0=ruleEString
+												{
+													if ($current==null) {
+														$current = createModelElementForParent(grammarAccess.getEnvironmentRule());
+													}
+													set(
+														$current,
+														"name",
+														lv_name_6_0,
+														"pt.isep.yamldslgen.xtext.MyDsl.EString");
+													afterParserOrEnumRuleCall();
+												}
+											)
+										)
+										))
+							{ 
+								getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEnvironmentAccess().getUnorderedGroup_1_1_1());
+							}
+						)
+					)|
+					(
+						{getUnorderedGroupHelper().canSelect(grammarAccess.getEnvironmentAccess().getUnorderedGroup_1_1_1(), 1)}?=>(
+							{
+								getUnorderedGroupHelper().select(grammarAccess.getEnvironmentAccess().getUnorderedGroup_1_1_1(), 1);
+							}
+										({true}?=>(otherlv_7='url'
+										{
+											newLeafNode(otherlv_7, grammarAccess.getEnvironmentAccess().getUrlKeyword_1_1_1_1_0());
+										}
+										otherlv_8=':'
+										{
+											newLeafNode(otherlv_8, grammarAccess.getEnvironmentAccess().getColonKeyword_1_1_1_1_1());
+										}
+										(
+											(
+												{
+													newCompositeNode(grammarAccess.getEnvironmentAccess().getUrlEStringParserRuleCall_1_1_1_1_2_0());
+												}
+												lv_url_9_0=ruleEString
+												{
+													if ($current==null) {
+														$current = createModelElementForParent(grammarAccess.getEnvironmentRule());
+													}
+													set(
+														$current,
+														"url",
+														lv_url_9_0,
+														"pt.isep.yamldslgen.xtext.MyDsl.EString");
+													afterParserOrEnumRuleCall();
+												}
+											)
+										)
+										))
+							{ 
+								getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEnvironmentAccess().getUnorderedGroup_1_1_1());
+							}
+						)
+					)
+							)*
+						)
+					)
+						{ 
+						  getUnorderedGroupHelper().leave(grammarAccess.getEnvironmentAccess().getUnorderedGroup_1_1_1());
+						}
+				)
+				(
+					this_END_BLOCK_10=RULE_END_BLOCK
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getEnvironmentAccess().getUnorderedGroup_2(), 0);
+						newLeafNode(this_END_BLOCK_10, grammarAccess.getEnvironmentAccess().getEND_BLOCKTerminalRuleCall_1_1_2());
 					}
-								({true}?=>(otherlv_3='name'
-								{
-									newLeafNode(otherlv_3, grammarAccess.getEnvironmentAccess().getNameKeyword_2_0_0());
-								}
-								otherlv_4=':'
-								{
-									newLeafNode(otherlv_4, grammarAccess.getEnvironmentAccess().getColonKeyword_2_0_1());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getEnvironmentAccess().getNameEStringParserRuleCall_2_0_2_0());
-										}
-										lv_name_5_0=ruleEString
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getEnvironmentRule());
-											}
-											set(
-												$current,
-												"name",
-												lv_name_5_0,
-												"pt.isep.yamldslgen.xtext.MyDsl.EString");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEnvironmentAccess().getUnorderedGroup_2());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getEnvironmentAccess().getUnorderedGroup_2(), 1)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getEnvironmentAccess().getUnorderedGroup_2(), 1);
-					}
-								({true}?=>(otherlv_6='url'
-								{
-									newLeafNode(otherlv_6, grammarAccess.getEnvironmentAccess().getUrlKeyword_2_1_0());
-								}
-								otherlv_7=':'
-								{
-									newLeafNode(otherlv_7, grammarAccess.getEnvironmentAccess().getColonKeyword_2_1_1());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getEnvironmentAccess().getUrlEStringParserRuleCall_2_1_2_0());
-										}
-										lv_url_8_0=ruleEString
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getEnvironmentRule());
-											}
-											set(
-												$current,
-												"url",
-												lv_url_8_0,
-												"pt.isep.yamldslgen.xtext.MyDsl.EString");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getEnvironmentAccess().getUnorderedGroup_2());
-					}
-				)
+				)?
 			)
-					)*
-				)
-			)
-				{ 
-				  getUnorderedGroupHelper().leave(grammarAccess.getEnvironmentAccess().getUnorderedGroup_2());
-				}
 		)
-		(
-			this_END_BLOCK_9=RULE_END_BLOCK
-			{
-				newLeafNode(this_END_BLOCK_9, grammarAccess.getEnvironmentAccess().getEND_BLOCKTerminalRuleCall_3());
-			}
-		)?
 	)
 ;
 

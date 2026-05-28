@@ -40,24 +40,6 @@ public interface YamlmdeFactory extends EFactory {
 	GithubActions createGithubActions();
 
 	/**
-	 * Returns a new object of class '<em>Job</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Job</em>'.
-	 * @generated
-	 */
-	Job createJob();
-
-	/**
-	 * Returns a new object of class '<em>Step</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Step</em>'.
-	 * @generated
-	 */
-	Step createStep();
-
-	/**
 	 * Returns a new object of class '<em>On</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,6 +65,24 @@ public interface YamlmdeFactory extends EFactory {
 	 * @generated
 	 */
 	Pull_request createPull_request();
+
+	/**
+	 * Returns a new object of class '<em>Job</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Job</em>'.
+	 * @generated
+	 */
+	Job createJob();
+
+	/**
+	 * Returns a new object of class '<em>Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Step</em>'.
+	 * @generated
+	 */
+	Step createStep();
 
 	/**
 	 * Returns a new object of class '<em>Permissions</em>'.

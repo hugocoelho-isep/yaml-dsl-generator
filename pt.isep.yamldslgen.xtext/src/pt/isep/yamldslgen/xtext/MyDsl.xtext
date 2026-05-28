@@ -22,13 +22,15 @@ GithubActions returns GithubActions:
 // =============================================================================
 
 EString returns ecore::EString:
-	STRING | GH_EXPRESSION | BlockString | ScalarSequence;
+	STRING | BlockString | ScalarSequence;
 
 // Junta múltiplos tokens separados por dois pontos (ex: docker:latest, http://...)
 // Como exige que o ':' seja seguido de outro texto, NUNCA engole o ':' estrutural do YAML.
 ScalarSequence returns ecore::EString:
-	(YAML_SCALAR | ID | INT | 'true' | 'false') 
-	(':' (YAML_SCALAR | ID | INT | 'true' | 'false'))*;
+    (YAML_SCALAR | GH_EXPRESSION | ID | INT | 'true' | 'false')
+    ( ((':' | '-') (YAML_SCALAR | GH_EXPRESSION | ID | INT | 'true' | 'false'))
+    | GH_EXPRESSION
+    | YAML_SCALAR )*;
 	
 // Lida com 'run: >' ou 'run: |' consumindo o bloco inteiro
 // Aceita qualquer token do Xtext e pontuações do Bash (como [, ], ; e -)
@@ -63,11 +65,11 @@ KeyName returns ecore::EString:
 	| 'container' | 'image'
 	| 'defaults' | 'outputs' | 'release' 
 	| 'inputs' | 'description' | 'default' 
-	| 'type' | 'node-version'
+	| 'type' | 'node-version' | 'cache'
 	| 'python-version' | 'configuration' | 'digests'
 	| 'merge_group' | 'r-version'
 	| 'branch_protection_rule' | 'models' | 'ruby-version' | 'services' | 'ports'
-	| 'timeout-minutes' | 'checks';
+	| 'timeout-minutes' | 'checks' | 'restore-keys';
 	
 // =============================================================================
 // KEY-VALUE PAIR  (generic block content — e.g. 'with:', 'env:')
@@ -181,12 +183,17 @@ Concurrency returns Concurrency:
 		& ('cancel-in-progress' ':' cancelInProgress=EBoolean)?)
 	END_BLOCK?;
 
+//in future try to infer this in metayaml
 Environment returns Environment:
 	{Environment}
-	BEG_BLOCK?
-		(('name' ':' name=EString)?
-		& ('url' ':' url=EString)?)
-	END_BLOCK?;
+	(
+		name=EString              // environment: production
+	|
+		BEG_BLOCK
+			(('name' ':' name=EString)?
+			& ('url' ':' url=EString)?)
+		END_BLOCK?
+	);
 	
 
 	

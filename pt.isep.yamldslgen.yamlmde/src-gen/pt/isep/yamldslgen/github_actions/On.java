@@ -55,28 +55,6 @@ public interface On extends EObject {
 	void setBranchProtectionRule(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Issues</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Issues</em>' containment reference.
-	 * @see #setIssues(Issues)
-	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getOn_Issues()
-	 * @model containment="true"
-	 * @generated
-	 */
-	Issues getIssues();
-
-	/**
-	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.On#getIssues <em>Issues</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Issues</em>' containment reference.
-	 * @see #getIssues()
-	 * @generated
-	 */
-	void setIssues(Issues value);
-
-	/**
 	 * Returns the value of the '<em><b>Push</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -219,6 +197,28 @@ public interface On extends EObject {
 	 * @generated
 	 */
 	void setRelease(Release value);
+
+	/**
+	 * Returns the value of the '<em><b>Issues</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Issues</em>' containment reference.
+	 * @see #setIssues(Issues)
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getOn_Issues()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Issues getIssues();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.On#getIssues <em>Issues</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Issues</em>' containment reference.
+	 * @see #getIssues()
+	 * @generated
+	 */
+	void setIssues(Issues value);
 
 	/**
 	 * Returns the value of the '<em><b>Merge Group</b></em>' containment reference.

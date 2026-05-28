@@ -175,19 +175,6 @@ public class GithubActionsImpl extends MinimalEObjectImpl.Container implements G
 	 * @generated
 	 */
 	@Override
-	public EList<Job> getJobs() {
-		if (jobs == null) {
-			jobs = new EObjectContainmentEList<Job>(Job.class, this, YamlmdePackage.GITHUB_ACTIONS__JOBS);
-		}
-		return jobs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public On getOn() {
 		return on;
 	}
@@ -231,6 +218,19 @@ public class GithubActionsImpl extends MinimalEObjectImpl.Container implements G
 				msgs.dispatch();
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.GITHUB_ACTIONS__ON, newOn, newOn));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Job> getJobs() {
+		if (jobs == null) {
+			jobs = new EObjectContainmentEList<Job>(Job.class, this, YamlmdePackage.GITHUB_ACTIONS__JOBS);
+		}
+		return jobs;
 	}
 
 	/**
