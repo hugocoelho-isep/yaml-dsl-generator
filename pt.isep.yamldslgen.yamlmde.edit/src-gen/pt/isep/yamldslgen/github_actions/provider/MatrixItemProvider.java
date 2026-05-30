@@ -11,15 +11,12 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -56,175 +53,8 @@ public class MatrixItemProvider extends ItemProviderAdapter implements IEditingD
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addOsPropertyDescriptor(object);
-			addBuildTypePropertyDescriptor(object);
-			addCCompilerPropertyDescriptor(object);
-			addOtpPropertyDescriptor(object);
-			addElixirPropertyDescriptor(object);
-			addPythonVersionPropertyDescriptor(object);
-			addConfigurationPropertyDescriptor(object);
-			addNodeVersionPropertyDescriptor(object);
-			addRVersionPropertyDescriptor(object);
-			addRubyVersionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Os feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Matrix_os_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Matrix_os_feature", "_UI_Matrix_type"),
-						YamlmdePackage.Literals.MATRIX__OS, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Build Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addBuildTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Matrix_buildType_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Matrix_buildType_feature",
-								"_UI_Matrix_type"),
-						YamlmdePackage.Literals.MATRIX__BUILD_TYPE, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the CCompiler feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCCompilerPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Matrix_cCompiler_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Matrix_cCompiler_feature",
-								"_UI_Matrix_type"),
-						YamlmdePackage.Literals.MATRIX__CCOMPILER, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Otp feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOtpPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Matrix_otp_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Matrix_otp_feature", "_UI_Matrix_type"),
-						YamlmdePackage.Literals.MATRIX__OTP, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Elixir feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addElixirPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Matrix_elixir_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Matrix_elixir_feature", "_UI_Matrix_type"),
-						YamlmdePackage.Literals.MATRIX__ELIXIR, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Python Version feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPythonVersionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Matrix_pythonVersion_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Matrix_pythonVersion_feature",
-								"_UI_Matrix_type"),
-						YamlmdePackage.Literals.MATRIX__PYTHON_VERSION, true, false, false,
-						ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Configuration feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addConfigurationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Matrix_configuration_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Matrix_configuration_feature",
-								"_UI_Matrix_type"),
-						YamlmdePackage.Literals.MATRIX__CONFIGURATION, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Node Version feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNodeVersionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Matrix_nodeVersion_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Matrix_nodeVersion_feature",
-								"_UI_Matrix_type"),
-						YamlmdePackage.Literals.MATRIX__NODE_VERSION, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the RVersion feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRVersionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Matrix_rVersion_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Matrix_rVersion_feature",
-								"_UI_Matrix_type"),
-						YamlmdePackage.Literals.MATRIX__RVERSION, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Ruby Version feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRubyVersionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Matrix_rubyVersion_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Matrix_rubyVersion_feature",
-								"_UI_Matrix_type"),
-						YamlmdePackage.Literals.MATRIX__RUBY_VERSION, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -241,6 +71,7 @@ public class MatrixItemProvider extends ItemProviderAdapter implements IEditingD
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(YamlmdePackage.Literals.MATRIX__INCLUDE);
 			childrenFeatures.add(YamlmdePackage.Literals.MATRIX__EXCLUDE);
+			childrenFeatures.add(YamlmdePackage.Literals.MATRIX__PARAMETERS);
 		}
 		return childrenFeatures;
 	}
@@ -302,20 +133,9 @@ public class MatrixItemProvider extends ItemProviderAdapter implements IEditingD
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Matrix.class)) {
-		case YamlmdePackage.MATRIX__OS:
-		case YamlmdePackage.MATRIX__BUILD_TYPE:
-		case YamlmdePackage.MATRIX__CCOMPILER:
-		case YamlmdePackage.MATRIX__OTP:
-		case YamlmdePackage.MATRIX__ELIXIR:
-		case YamlmdePackage.MATRIX__PYTHON_VERSION:
-		case YamlmdePackage.MATRIX__CONFIGURATION:
-		case YamlmdePackage.MATRIX__NODE_VERSION:
-		case YamlmdePackage.MATRIX__RVERSION:
-		case YamlmdePackage.MATRIX__RUBY_VERSION:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
 		case YamlmdePackage.MATRIX__INCLUDE:
 		case YamlmdePackage.MATRIX__EXCLUDE:
+		case YamlmdePackage.MATRIX__PARAMETERS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -338,6 +158,9 @@ public class MatrixItemProvider extends ItemProviderAdapter implements IEditingD
 
 		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.MATRIX__EXCLUDE,
 				YamlmdeFactory.eINSTANCE.createExclude()));
+
+		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.MATRIX__PARAMETERS,
+				YamlmdeFactory.eINSTANCE.createMatrixParameter()));
 	}
 
 	/**

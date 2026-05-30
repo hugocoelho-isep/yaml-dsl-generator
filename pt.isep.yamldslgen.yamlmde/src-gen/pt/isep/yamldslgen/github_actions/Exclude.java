@@ -2,6 +2,7 @@
  */
 package pt.isep.yamldslgen.github_actions;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,8 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link pt.isep.yamldslgen.github_actions.Exclude#getOs <em>Os</em>}</li>
- *   <li>{@link pt.isep.yamldslgen.github_actions.Exclude#getCCompiler <em>CCompiler</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.Exclude#getEntries <em>Entries</em>}</li>
  * </ul>
  *
  * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getExclude()
@@ -23,47 +23,15 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Exclude extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Os</b></em>' attribute.
+	 * Returns the value of the '<em><b>Entries</b></em>' containment reference list.
+	 * The list contents are of type {@link pt.isep.yamldslgen.github_actions.KeyValuePair}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Os</em>' attribute.
-	 * @see #setOs(String)
-	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getExclude_Os()
-	 * @model required="true"
+	 * @return the value of the '<em>Entries</em>' containment reference list.
+	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getExclude_Entries()
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	String getOs();
-
-	/**
-	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.Exclude#getOs <em>Os</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Os</em>' attribute.
-	 * @see #getOs()
-	 * @generated
-	 */
-	void setOs(String value);
-
-	/**
-	 * Returns the value of the '<em><b>CCompiler</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>CCompiler</em>' attribute.
-	 * @see #setCCompiler(String)
-	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getExclude_CCompiler()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getCCompiler();
-
-	/**
-	 * Sets the value of the '{@link pt.isep.yamldslgen.github_actions.Exclude#getCCompiler <em>CCompiler</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>CCompiler</em>' attribute.
-	 * @see #getCCompiler()
-	 * @generated
-	 */
-	void setCCompiler(String value);
+	EList<KeyValuePair> getEntries();
 
 } // Exclude

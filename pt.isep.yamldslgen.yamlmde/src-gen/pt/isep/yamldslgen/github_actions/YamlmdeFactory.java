@@ -256,6 +256,15 @@ public interface YamlmdeFactory extends EFactory {
 	Service createService();
 
 	/**
+	 * Returns a new object of class '<em>Matrix Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Matrix Parameter</em>'.
+	 * @generated
+	 */
+	MatrixParameter createMatrixParameter();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

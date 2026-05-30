@@ -170,7 +170,8 @@
 
           // (8) Dash at start of a line: opens a virtual block for the item's
           //     content (grammar expects `'-' BEG_BLOCK ...`).
-          if (wasFirstOfLine && "-".equals(t.getText())) {
+          //     Skip inside a block scalar body (e.g. '-D...' flags in 'run: >').
+          if (wasFirstOfLine && !insideBlockScalar && "-".equals(t.getText())) {
               int virtualIndent = t.getCharPositionInLine() + 2;
               indentStack.push(virtualIndent);
               pending.addLast(makeSynthetic(RULE_BEG_BLOCK, "<BEG_BLOCK>"));

@@ -408,23 +408,31 @@ ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 			newLeafNode(this_STRING_0, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0());
 		}
 		    |
+		this_SQ_STRING_1=RULE_SQ_STRING
 		{
-			newCompositeNode(grammarAccess.getEStringAccess().getBlockStringParserRuleCall_1());
+			$current.merge(this_SQ_STRING_1);
 		}
-		this_BlockString_1=ruleBlockString
 		{
-			$current.merge(this_BlockString_1);
+			newLeafNode(this_SQ_STRING_1, grammarAccess.getEStringAccess().getSQ_STRINGTerminalRuleCall_1());
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getEStringAccess().getBlockStringParserRuleCall_2());
+		}
+		this_BlockString_2=ruleBlockString
+		{
+			$current.merge(this_BlockString_2);
 		}
 		{
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getEStringAccess().getScalarSequenceParserRuleCall_2());
+			newCompositeNode(grammarAccess.getEStringAccess().getScalarSequenceParserRuleCall_3());
 		}
-		this_ScalarSequence_2=ruleScalarSequence
+		this_ScalarSequence_3=ruleScalarSequence
 		{
-			$current.merge(this_ScalarSequence_2);
+			$current.merge(this_ScalarSequence_3);
 		}
 		{
 			afterParserOrEnumRuleCall();
@@ -465,32 +473,40 @@ ruleScalarSequence returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRule
 				newLeafNode(this_GH_EXPRESSION_1, grammarAccess.getScalarSequenceAccess().getGH_EXPRESSIONTerminalRuleCall_0_1());
 			}
 			    |
-			this_ID_2=RULE_ID
+			this_SQ_STRING_2=RULE_SQ_STRING
 			{
-				$current.merge(this_ID_2);
+				$current.merge(this_SQ_STRING_2);
 			}
 			{
-				newLeafNode(this_ID_2, grammarAccess.getScalarSequenceAccess().getIDTerminalRuleCall_0_2());
+				newLeafNode(this_SQ_STRING_2, grammarAccess.getScalarSequenceAccess().getSQ_STRINGTerminalRuleCall_0_2());
 			}
 			    |
-			this_INT_3=RULE_INT
+			this_ID_3=RULE_ID
 			{
-				$current.merge(this_INT_3);
+				$current.merge(this_ID_3);
 			}
 			{
-				newLeafNode(this_INT_3, grammarAccess.getScalarSequenceAccess().getINTTerminalRuleCall_0_3());
+				newLeafNode(this_ID_3, grammarAccess.getScalarSequenceAccess().getIDTerminalRuleCall_0_3());
+			}
+			    |
+			this_INT_4=RULE_INT
+			{
+				$current.merge(this_INT_4);
+			}
+			{
+				newLeafNode(this_INT_4, grammarAccess.getScalarSequenceAccess().getINTTerminalRuleCall_0_4());
 			}
 			    |
 			kw='true'
 			{
 				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getScalarSequenceAccess().getTrueKeyword_0_4());
+				newLeafNode(kw, grammarAccess.getScalarSequenceAccess().getTrueKeyword_0_5());
 			}
 			    |
 			kw='false'
 			{
 				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getScalarSequenceAccess().getFalseKeyword_0_5());
+				newLeafNode(kw, grammarAccess.getScalarSequenceAccess().getFalseKeyword_0_6());
 			}
 		)
 		(
@@ -509,66 +525,80 @@ ruleScalarSequence returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRule
 					}
 				)
 				(
-					this_YAML_SCALAR_8=RULE_YAML_SCALAR
+					this_YAML_SCALAR_9=RULE_YAML_SCALAR
 					{
-						$current.merge(this_YAML_SCALAR_8);
+						$current.merge(this_YAML_SCALAR_9);
 					}
 					{
-						newLeafNode(this_YAML_SCALAR_8, grammarAccess.getScalarSequenceAccess().getYAML_SCALARTerminalRuleCall_1_0_1_0());
-					}
-					    |
-					this_GH_EXPRESSION_9=RULE_GH_EXPRESSION
-					{
-						$current.merge(this_GH_EXPRESSION_9);
-					}
-					{
-						newLeafNode(this_GH_EXPRESSION_9, grammarAccess.getScalarSequenceAccess().getGH_EXPRESSIONTerminalRuleCall_1_0_1_1());
+						newLeafNode(this_YAML_SCALAR_9, grammarAccess.getScalarSequenceAccess().getYAML_SCALARTerminalRuleCall_1_0_1_0());
 					}
 					    |
-					this_ID_10=RULE_ID
+					this_GH_EXPRESSION_10=RULE_GH_EXPRESSION
 					{
-						$current.merge(this_ID_10);
+						$current.merge(this_GH_EXPRESSION_10);
 					}
 					{
-						newLeafNode(this_ID_10, grammarAccess.getScalarSequenceAccess().getIDTerminalRuleCall_1_0_1_2());
+						newLeafNode(this_GH_EXPRESSION_10, grammarAccess.getScalarSequenceAccess().getGH_EXPRESSIONTerminalRuleCall_1_0_1_1());
 					}
 					    |
-					this_INT_11=RULE_INT
+					this_SQ_STRING_11=RULE_SQ_STRING
 					{
-						$current.merge(this_INT_11);
+						$current.merge(this_SQ_STRING_11);
 					}
 					{
-						newLeafNode(this_INT_11, grammarAccess.getScalarSequenceAccess().getINTTerminalRuleCall_1_0_1_3());
+						newLeafNode(this_SQ_STRING_11, grammarAccess.getScalarSequenceAccess().getSQ_STRINGTerminalRuleCall_1_0_1_2());
+					}
+					    |
+					this_ID_12=RULE_ID
+					{
+						$current.merge(this_ID_12);
+					}
+					{
+						newLeafNode(this_ID_12, grammarAccess.getScalarSequenceAccess().getIDTerminalRuleCall_1_0_1_3());
+					}
+					    |
+					this_INT_13=RULE_INT
+					{
+						$current.merge(this_INT_13);
+					}
+					{
+						newLeafNode(this_INT_13, grammarAccess.getScalarSequenceAccess().getINTTerminalRuleCall_1_0_1_4());
 					}
 					    |
 					kw='true'
 					{
 						$current.merge(kw);
-						newLeafNode(kw, grammarAccess.getScalarSequenceAccess().getTrueKeyword_1_0_1_4());
+						newLeafNode(kw, grammarAccess.getScalarSequenceAccess().getTrueKeyword_1_0_1_5());
 					}
 					    |
 					kw='false'
 					{
 						$current.merge(kw);
-						newLeafNode(kw, grammarAccess.getScalarSequenceAccess().getFalseKeyword_1_0_1_5());
+						newLeafNode(kw, grammarAccess.getScalarSequenceAccess().getFalseKeyword_1_0_1_6());
 					}
 				)
 			)
 			    |
-			this_GH_EXPRESSION_14=RULE_GH_EXPRESSION
+			this_GH_EXPRESSION_16=RULE_GH_EXPRESSION
 			{
-				$current.merge(this_GH_EXPRESSION_14);
+				$current.merge(this_GH_EXPRESSION_16);
 			}
 			{
-				newLeafNode(this_GH_EXPRESSION_14, grammarAccess.getScalarSequenceAccess().getGH_EXPRESSIONTerminalRuleCall_1_1());
+				newLeafNode(this_GH_EXPRESSION_16, grammarAccess.getScalarSequenceAccess().getGH_EXPRESSIONTerminalRuleCall_1_1());
 			}
 			    |
-			this_YAML_SCALAR_15=RULE_YAML_SCALAR
+			this_SQ_STRING_17=RULE_SQ_STRING
 			{
-				$current.merge(this_YAML_SCALAR_15);
+				$current.merge(this_SQ_STRING_17);
 			}
 			{
-				newLeafNode(this_YAML_SCALAR_15, grammarAccess.getScalarSequenceAccess().getYAML_SCALARTerminalRuleCall_1_2());
+				newLeafNode(this_SQ_STRING_17, grammarAccess.getScalarSequenceAccess().getSQ_STRINGTerminalRuleCall_1_2());
+			}
+			    |
+			kw='-'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getScalarSequenceAccess().getHyphenMinusKeyword_1_3());
 			}
 		)*
 	)
@@ -1155,12 +1185,6 @@ ruleKeyName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 		{
 			$current.merge(kw);
 			newLeafNode(kw, grammarAccess.getKeyNameAccess().getChecksKeyword_68());
-		}
-		    |
-		kw='restore-keys'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getKeyNameAccess().getRestoreKeysKeyword_69());
 		}
 	)
 ;
@@ -2230,8 +2254,7 @@ rulePull_request returns [EObject current=null]
 					}
 				)
 			)
-					)+
-					{getUnorderedGroupHelper().canLeave(grammarAccess.getPull_requestAccess().getUnorderedGroup_2())}?
+					)*
 				)
 			)
 				{ 
@@ -5573,1259 +5596,289 @@ ruleMatrix returns [EObject current=null]
 		)?
 		(
 			(
-				{ 
-				  getUnorderedGroupHelper().enter(grammarAccess.getMatrixAccess().getUnorderedGroup_2());
+				otherlv_2='include'
+				{
+					newLeafNode(otherlv_2, grammarAccess.getMatrixAccess().getIncludeKeyword_2_0_0());
+				}
+				otherlv_3=':'
+				{
+					newLeafNode(otherlv_3, grammarAccess.getMatrixAccess().getColonKeyword_2_0_1());
+				}
+				this_BEG_BLOCK_4=RULE_BEG_BLOCK
+				{
+					newLeafNode(this_BEG_BLOCK_4, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_0_2());
+				}
+				(
+					otherlv_5='-'
+					{
+						newLeafNode(otherlv_5, grammarAccess.getMatrixAccess().getHyphenMinusKeyword_2_0_3_0());
+					}
+					(
+						this_BEG_BLOCK_6=RULE_BEG_BLOCK
+						{
+							newLeafNode(this_BEG_BLOCK_6, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_0_3_1());
+						}
+					)?
+					(
+						(
+							{
+								newCompositeNode(grammarAccess.getMatrixAccess().getIncludeIncludeParserRuleCall_2_0_3_2_0());
+							}
+							lv_include_7_0=ruleInclude
+							{
+								if ($current==null) {
+									$current = createModelElementForParent(grammarAccess.getMatrixRule());
+								}
+								add(
+									$current,
+									"include",
+									lv_include_7_0,
+									"pt.isep.yamldslgen.xtext.MyDsl.Include");
+								afterParserOrEnumRuleCall();
+							}
+						)
+					)
+					(
+						this_END_BLOCK_8=RULE_END_BLOCK
+						{
+							newLeafNode(this_END_BLOCK_8, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_0_3_3());
+						}
+					)?
+				)+
+				this_END_BLOCK_9=RULE_END_BLOCK
+				{
+					newLeafNode(this_END_BLOCK_9, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_0_4());
+				}
+			)
+			    |
+			(
+				otherlv_10='exclude'
+				{
+					newLeafNode(otherlv_10, grammarAccess.getMatrixAccess().getExcludeKeyword_2_1_0());
+				}
+				otherlv_11=':'
+				{
+					newLeafNode(otherlv_11, grammarAccess.getMatrixAccess().getColonKeyword_2_1_1());
+				}
+				this_BEG_BLOCK_12=RULE_BEG_BLOCK
+				{
+					newLeafNode(this_BEG_BLOCK_12, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_1_2());
+				}
+				(
+					otherlv_13='-'
+					{
+						newLeafNode(otherlv_13, grammarAccess.getMatrixAccess().getHyphenMinusKeyword_2_1_3_0());
+					}
+					(
+						this_BEG_BLOCK_14=RULE_BEG_BLOCK
+						{
+							newLeafNode(this_BEG_BLOCK_14, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_1_3_1());
+						}
+					)?
+					(
+						(
+							{
+								newCompositeNode(grammarAccess.getMatrixAccess().getExcludeExcludeParserRuleCall_2_1_3_2_0());
+							}
+							lv_exclude_15_0=ruleExclude
+							{
+								if ($current==null) {
+									$current = createModelElementForParent(grammarAccess.getMatrixRule());
+								}
+								add(
+									$current,
+									"exclude",
+									lv_exclude_15_0,
+									"pt.isep.yamldslgen.xtext.MyDsl.Exclude");
+								afterParserOrEnumRuleCall();
+							}
+						)
+					)
+					(
+						this_END_BLOCK_16=RULE_END_BLOCK
+						{
+							newLeafNode(this_END_BLOCK_16, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_1_3_3());
+						}
+					)?
+				)+
+				this_END_BLOCK_17=RULE_END_BLOCK
+				{
+					newLeafNode(this_END_BLOCK_17, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_1_4());
+				}
+			)
+			    |
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMatrixAccess().getParametersMatrixParameterParserRuleCall_2_2_0());
+					}
+					lv_parameters_18_0=ruleMatrixParameter
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMatrixRule());
+						}
+						add(
+							$current,
+							"parameters",
+							lv_parameters_18_0,
+							"pt.isep.yamldslgen.xtext.MyDsl.MatrixParameter");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+		(
+			this_END_BLOCK_19=RULE_END_BLOCK
+			{
+				newLeafNode(this_END_BLOCK_19, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_3());
+			}
+		)?
+	)
+;
+
+// Entry rule entryRuleMatrixParameter
+entryRuleMatrixParameter returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMatrixParameterRule()); }
+	iv_ruleMatrixParameter=ruleMatrixParameter
+	{ $current=$iv_ruleMatrixParameter.current; }
+	EOF;
+
+// Rule MatrixParameter
+ruleMatrixParameter returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getMatrixParameterAccess().getKeyKeyNameParserRuleCall_0_0());
+				}
+				lv_key_0_0=ruleKeyName
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getMatrixParameterRule());
+					}
+					set(
+						$current,
+						"key",
+						lv_key_0_0,
+						"pt.isep.yamldslgen.xtext.MyDsl.KeyName");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_1=':'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getMatrixParameterAccess().getColonKeyword_1());
+		}
+		(
+			(
+				this_BEG_BLOCK_2=RULE_BEG_BLOCK
+				{
+					newLeafNode(this_BEG_BLOCK_2, grammarAccess.getMatrixParameterAccess().getBEG_BLOCKTerminalRuleCall_2_0_0());
+				}
+				(
+					otherlv_3='-'
+					{
+						newLeafNode(otherlv_3, grammarAccess.getMatrixParameterAccess().getHyphenMinusKeyword_2_0_1_0());
+					}
+					(
+						this_BEG_BLOCK_4=RULE_BEG_BLOCK
+						{
+							newLeafNode(this_BEG_BLOCK_4, grammarAccess.getMatrixParameterAccess().getBEG_BLOCKTerminalRuleCall_2_0_1_1());
+						}
+					)?
+					(
+						(
+							{
+								newCompositeNode(grammarAccess.getMatrixParameterAccess().getValuesEStringParserRuleCall_2_0_1_2_0());
+							}
+							lv_values_5_0=ruleEString
+							{
+								if ($current==null) {
+									$current = createModelElementForParent(grammarAccess.getMatrixParameterRule());
+								}
+								add(
+									$current,
+									"values",
+									lv_values_5_0,
+									"pt.isep.yamldslgen.xtext.MyDsl.EString");
+								afterParserOrEnumRuleCall();
+							}
+						)
+					)
+					(
+						this_END_BLOCK_6=RULE_END_BLOCK
+						{
+							newLeafNode(this_END_BLOCK_6, grammarAccess.getMatrixParameterAccess().getEND_BLOCKTerminalRuleCall_2_0_1_3());
+						}
+					)?
+				)+
+				this_END_BLOCK_7=RULE_END_BLOCK
+				{
+					newLeafNode(this_END_BLOCK_7, grammarAccess.getMatrixParameterAccess().getEND_BLOCKTerminalRuleCall_2_0_2());
+				}
+			)
+			    |
+			(
+				otherlv_8='['
+				{
+					newLeafNode(otherlv_8, grammarAccess.getMatrixParameterAccess().getLeftSquareBracketKeyword_2_1_0());
 				}
 				(
 					(
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getMatrixAccess().getUnorderedGroup_2(), 0)}?=>(
+						{
+							newCompositeNode(grammarAccess.getMatrixParameterAccess().getValuesEStringParserRuleCall_2_1_1_0());
+						}
+						lv_values_9_0=ruleEString
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getMatrixParameterRule());
+							}
+							add(
+								$current,
+								"values",
+								lv_values_9_0,
+								"pt.isep.yamldslgen.xtext.MyDsl.EString");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+				(
+					otherlv_10=','
 					{
-						getUnorderedGroupHelper().select(grammarAccess.getMatrixAccess().getUnorderedGroup_2(), 0);
+						newLeafNode(otherlv_10, grammarAccess.getMatrixParameterAccess().getCommaKeyword_2_1_2_0());
 					}
-								({true}?=>(otherlv_3='os'
-								{
-									newLeafNode(otherlv_3, grammarAccess.getMatrixAccess().getOsKeyword_2_0_0());
+					(
+						(
+							{
+								newCompositeNode(grammarAccess.getMatrixParameterAccess().getValuesEStringParserRuleCall_2_1_2_1_0());
+							}
+							lv_values_11_0=ruleEString
+							{
+								if ($current==null) {
+									$current = createModelElementForParent(grammarAccess.getMatrixParameterRule());
 								}
-								otherlv_4=':'
-								{
-									newLeafNode(otherlv_4, grammarAccess.getMatrixAccess().getColonKeyword_2_0_1());
-								}
-								(
-									(
-										this_BEG_BLOCK_5=RULE_BEG_BLOCK
-										{
-											newLeafNode(this_BEG_BLOCK_5, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_0_2_0_0());
-										}
-										(
-											otherlv_6='-'
-											{
-												newLeafNode(otherlv_6, grammarAccess.getMatrixAccess().getHyphenMinusKeyword_2_0_2_0_1_0());
-											}
-											(
-												this_BEG_BLOCK_7=RULE_BEG_BLOCK
-												{
-													newLeafNode(this_BEG_BLOCK_7, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_0_2_0_1_1());
-												}
-											)?
-											(
-												(
-													{
-														newCompositeNode(grammarAccess.getMatrixAccess().getOsEStringParserRuleCall_2_0_2_0_1_2_0());
-													}
-													lv_os_8_0=ruleEString
-													{
-														if ($current==null) {
-															$current = createModelElementForParent(grammarAccess.getMatrixRule());
-														}
-														add(
-															$current,
-															"os",
-															lv_os_8_0,
-															"pt.isep.yamldslgen.xtext.MyDsl.EString");
-														afterParserOrEnumRuleCall();
-													}
-												)
-											)
-											(
-												this_END_BLOCK_9=RULE_END_BLOCK
-												{
-													newLeafNode(this_END_BLOCK_9, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_0_2_0_1_3());
-												}
-											)?
-										)+
-										this_END_BLOCK_10=RULE_END_BLOCK
-										{
-											newLeafNode(this_END_BLOCK_10, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_0_2_0_2());
-										}
-									)
-									    |
-									(
-										otherlv_11='['
-										{
-											newLeafNode(otherlv_11, grammarAccess.getMatrixAccess().getLeftSquareBracketKeyword_2_0_2_1_0());
-										}
-										(
-											(
-												{
-													newCompositeNode(grammarAccess.getMatrixAccess().getOsEStringParserRuleCall_2_0_2_1_1_0());
-												}
-												lv_os_12_0=ruleEString
-												{
-													if ($current==null) {
-														$current = createModelElementForParent(grammarAccess.getMatrixRule());
-													}
-													add(
-														$current,
-														"os",
-														lv_os_12_0,
-														"pt.isep.yamldslgen.xtext.MyDsl.EString");
-													afterParserOrEnumRuleCall();
-												}
-											)
-										)
-										(
-											otherlv_13=','
-											{
-												newLeafNode(otherlv_13, grammarAccess.getMatrixAccess().getCommaKeyword_2_0_2_1_2_0());
-											}
-											(
-												(
-													{
-														newCompositeNode(grammarAccess.getMatrixAccess().getOsEStringParserRuleCall_2_0_2_1_2_1_0());
-													}
-													lv_os_14_0=ruleEString
-													{
-														if ($current==null) {
-															$current = createModelElementForParent(grammarAccess.getMatrixRule());
-														}
-														add(
-															$current,
-															"os",
-															lv_os_14_0,
-															"pt.isep.yamldslgen.xtext.MyDsl.EString");
-														afterParserOrEnumRuleCall();
-													}
-												)
-											)
-										)*
-										otherlv_15=']'
-										{
-											newLeafNode(otherlv_15, grammarAccess.getMatrixAccess().getRightSquareBracketKeyword_2_0_2_1_3());
-										}
-									)
-								)
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getMatrixAccess().getUnorderedGroup_2());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getMatrixAccess().getUnorderedGroup_2(), 1)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getMatrixAccess().getUnorderedGroup_2(), 1);
-					}
-								({true}?=>(otherlv_16='build-type'
-								{
-									newLeafNode(otherlv_16, grammarAccess.getMatrixAccess().getBuildTypeKeyword_2_1_0());
-								}
-								otherlv_17=':'
-								{
-									newLeafNode(otherlv_17, grammarAccess.getMatrixAccess().getColonKeyword_2_1_1());
-								}
-								(
-									(
-										this_BEG_BLOCK_18=RULE_BEG_BLOCK
-										{
-											newLeafNode(this_BEG_BLOCK_18, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_1_2_0_0());
-										}
-										(
-											otherlv_19='-'
-											{
-												newLeafNode(otherlv_19, grammarAccess.getMatrixAccess().getHyphenMinusKeyword_2_1_2_0_1_0());
-											}
-											(
-												this_BEG_BLOCK_20=RULE_BEG_BLOCK
-												{
-													newLeafNode(this_BEG_BLOCK_20, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_1_2_0_1_1());
-												}
-											)?
-											(
-												(
-													{
-														newCompositeNode(grammarAccess.getMatrixAccess().getBuildTypeEStringParserRuleCall_2_1_2_0_1_2_0());
-													}
-													lv_buildType_21_0=ruleEString
-													{
-														if ($current==null) {
-															$current = createModelElementForParent(grammarAccess.getMatrixRule());
-														}
-														add(
-															$current,
-															"buildType",
-															lv_buildType_21_0,
-															"pt.isep.yamldslgen.xtext.MyDsl.EString");
-														afterParserOrEnumRuleCall();
-													}
-												)
-											)
-											(
-												this_END_BLOCK_22=RULE_END_BLOCK
-												{
-													newLeafNode(this_END_BLOCK_22, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_1_2_0_1_3());
-												}
-											)?
-										)+
-										this_END_BLOCK_23=RULE_END_BLOCK
-										{
-											newLeafNode(this_END_BLOCK_23, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_1_2_0_2());
-										}
-									)
-									    |
-									(
-										otherlv_24='['
-										{
-											newLeafNode(otherlv_24, grammarAccess.getMatrixAccess().getLeftSquareBracketKeyword_2_1_2_1_0());
-										}
-										(
-											(
-												{
-													newCompositeNode(grammarAccess.getMatrixAccess().getBuildTypeEStringParserRuleCall_2_1_2_1_1_0());
-												}
-												lv_buildType_25_0=ruleEString
-												{
-													if ($current==null) {
-														$current = createModelElementForParent(grammarAccess.getMatrixRule());
-													}
-													add(
-														$current,
-														"buildType",
-														lv_buildType_25_0,
-														"pt.isep.yamldslgen.xtext.MyDsl.EString");
-													afterParserOrEnumRuleCall();
-												}
-											)
-										)
-										(
-											otherlv_26=','
-											{
-												newLeafNode(otherlv_26, grammarAccess.getMatrixAccess().getCommaKeyword_2_1_2_1_2_0());
-											}
-											(
-												(
-													{
-														newCompositeNode(grammarAccess.getMatrixAccess().getBuildTypeEStringParserRuleCall_2_1_2_1_2_1_0());
-													}
-													lv_buildType_27_0=ruleEString
-													{
-														if ($current==null) {
-															$current = createModelElementForParent(grammarAccess.getMatrixRule());
-														}
-														add(
-															$current,
-															"buildType",
-															lv_buildType_27_0,
-															"pt.isep.yamldslgen.xtext.MyDsl.EString");
-														afterParserOrEnumRuleCall();
-													}
-												)
-											)
-										)*
-										otherlv_28=']'
-										{
-											newLeafNode(otherlv_28, grammarAccess.getMatrixAccess().getRightSquareBracketKeyword_2_1_2_1_3());
-										}
-									)
-								)
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getMatrixAccess().getUnorderedGroup_2());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getMatrixAccess().getUnorderedGroup_2(), 2)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getMatrixAccess().getUnorderedGroup_2(), 2);
-					}
-								({true}?=>(otherlv_29='c-compiler'
-								{
-									newLeafNode(otherlv_29, grammarAccess.getMatrixAccess().getCCompilerKeyword_2_2_0());
-								}
-								otherlv_30=':'
-								{
-									newLeafNode(otherlv_30, grammarAccess.getMatrixAccess().getColonKeyword_2_2_1());
-								}
-								(
-									(
-										this_BEG_BLOCK_31=RULE_BEG_BLOCK
-										{
-											newLeafNode(this_BEG_BLOCK_31, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_2_2_0_0());
-										}
-										(
-											otherlv_32='-'
-											{
-												newLeafNode(otherlv_32, grammarAccess.getMatrixAccess().getHyphenMinusKeyword_2_2_2_0_1_0());
-											}
-											(
-												this_BEG_BLOCK_33=RULE_BEG_BLOCK
-												{
-													newLeafNode(this_BEG_BLOCK_33, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_2_2_0_1_1());
-												}
-											)?
-											(
-												(
-													{
-														newCompositeNode(grammarAccess.getMatrixAccess().getCCompilerEStringParserRuleCall_2_2_2_0_1_2_0());
-													}
-													lv_cCompiler_34_0=ruleEString
-													{
-														if ($current==null) {
-															$current = createModelElementForParent(grammarAccess.getMatrixRule());
-														}
-														add(
-															$current,
-															"cCompiler",
-															lv_cCompiler_34_0,
-															"pt.isep.yamldslgen.xtext.MyDsl.EString");
-														afterParserOrEnumRuleCall();
-													}
-												)
-											)
-											(
-												this_END_BLOCK_35=RULE_END_BLOCK
-												{
-													newLeafNode(this_END_BLOCK_35, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_2_2_0_1_3());
-												}
-											)?
-										)+
-										this_END_BLOCK_36=RULE_END_BLOCK
-										{
-											newLeafNode(this_END_BLOCK_36, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_2_2_0_2());
-										}
-									)
-									    |
-									(
-										otherlv_37='['
-										{
-											newLeafNode(otherlv_37, grammarAccess.getMatrixAccess().getLeftSquareBracketKeyword_2_2_2_1_0());
-										}
-										(
-											(
-												{
-													newCompositeNode(grammarAccess.getMatrixAccess().getCCompilerEStringParserRuleCall_2_2_2_1_1_0());
-												}
-												lv_cCompiler_38_0=ruleEString
-												{
-													if ($current==null) {
-														$current = createModelElementForParent(grammarAccess.getMatrixRule());
-													}
-													add(
-														$current,
-														"cCompiler",
-														lv_cCompiler_38_0,
-														"pt.isep.yamldslgen.xtext.MyDsl.EString");
-													afterParserOrEnumRuleCall();
-												}
-											)
-										)
-										(
-											otherlv_39=','
-											{
-												newLeafNode(otherlv_39, grammarAccess.getMatrixAccess().getCommaKeyword_2_2_2_1_2_0());
-											}
-											(
-												(
-													{
-														newCompositeNode(grammarAccess.getMatrixAccess().getCCompilerEStringParserRuleCall_2_2_2_1_2_1_0());
-													}
-													lv_cCompiler_40_0=ruleEString
-													{
-														if ($current==null) {
-															$current = createModelElementForParent(grammarAccess.getMatrixRule());
-														}
-														add(
-															$current,
-															"cCompiler",
-															lv_cCompiler_40_0,
-															"pt.isep.yamldslgen.xtext.MyDsl.EString");
-														afterParserOrEnumRuleCall();
-													}
-												)
-											)
-										)*
-										otherlv_41=']'
-										{
-											newLeafNode(otherlv_41, grammarAccess.getMatrixAccess().getRightSquareBracketKeyword_2_2_2_1_3());
-										}
-									)
-								)
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getMatrixAccess().getUnorderedGroup_2());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getMatrixAccess().getUnorderedGroup_2(), 3)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getMatrixAccess().getUnorderedGroup_2(), 3);
-					}
-								({true}?=>(otherlv_42='otp'
-								{
-									newLeafNode(otherlv_42, grammarAccess.getMatrixAccess().getOtpKeyword_2_3_0());
-								}
-								otherlv_43=':'
-								{
-									newLeafNode(otherlv_43, grammarAccess.getMatrixAccess().getColonKeyword_2_3_1());
-								}
-								(
-									(
-										this_BEG_BLOCK_44=RULE_BEG_BLOCK
-										{
-											newLeafNode(this_BEG_BLOCK_44, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_3_2_0_0());
-										}
-										(
-											otherlv_45='-'
-											{
-												newLeafNode(otherlv_45, grammarAccess.getMatrixAccess().getHyphenMinusKeyword_2_3_2_0_1_0());
-											}
-											(
-												this_BEG_BLOCK_46=RULE_BEG_BLOCK
-												{
-													newLeafNode(this_BEG_BLOCK_46, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_3_2_0_1_1());
-												}
-											)?
-											(
-												(
-													{
-														newCompositeNode(grammarAccess.getMatrixAccess().getOtpEStringParserRuleCall_2_3_2_0_1_2_0());
-													}
-													lv_otp_47_0=ruleEString
-													{
-														if ($current==null) {
-															$current = createModelElementForParent(grammarAccess.getMatrixRule());
-														}
-														add(
-															$current,
-															"otp",
-															lv_otp_47_0,
-															"pt.isep.yamldslgen.xtext.MyDsl.EString");
-														afterParserOrEnumRuleCall();
-													}
-												)
-											)
-											(
-												this_END_BLOCK_48=RULE_END_BLOCK
-												{
-													newLeafNode(this_END_BLOCK_48, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_3_2_0_1_3());
-												}
-											)?
-										)+
-										this_END_BLOCK_49=RULE_END_BLOCK
-										{
-											newLeafNode(this_END_BLOCK_49, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_3_2_0_2());
-										}
-									)
-									    |
-									(
-										otherlv_50='['
-										{
-											newLeafNode(otherlv_50, grammarAccess.getMatrixAccess().getLeftSquareBracketKeyword_2_3_2_1_0());
-										}
-										(
-											(
-												{
-													newCompositeNode(grammarAccess.getMatrixAccess().getOtpEStringParserRuleCall_2_3_2_1_1_0());
-												}
-												lv_otp_51_0=ruleEString
-												{
-													if ($current==null) {
-														$current = createModelElementForParent(grammarAccess.getMatrixRule());
-													}
-													add(
-														$current,
-														"otp",
-														lv_otp_51_0,
-														"pt.isep.yamldslgen.xtext.MyDsl.EString");
-													afterParserOrEnumRuleCall();
-												}
-											)
-										)
-										(
-											otherlv_52=','
-											{
-												newLeafNode(otherlv_52, grammarAccess.getMatrixAccess().getCommaKeyword_2_3_2_1_2_0());
-											}
-											(
-												(
-													{
-														newCompositeNode(grammarAccess.getMatrixAccess().getOtpEStringParserRuleCall_2_3_2_1_2_1_0());
-													}
-													lv_otp_53_0=ruleEString
-													{
-														if ($current==null) {
-															$current = createModelElementForParent(grammarAccess.getMatrixRule());
-														}
-														add(
-															$current,
-															"otp",
-															lv_otp_53_0,
-															"pt.isep.yamldslgen.xtext.MyDsl.EString");
-														afterParserOrEnumRuleCall();
-													}
-												)
-											)
-										)*
-										otherlv_54=']'
-										{
-											newLeafNode(otherlv_54, grammarAccess.getMatrixAccess().getRightSquareBracketKeyword_2_3_2_1_3());
-										}
-									)
-								)
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getMatrixAccess().getUnorderedGroup_2());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getMatrixAccess().getUnorderedGroup_2(), 4)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getMatrixAccess().getUnorderedGroup_2(), 4);
-					}
-								({true}?=>(otherlv_55='elixir'
-								{
-									newLeafNode(otherlv_55, grammarAccess.getMatrixAccess().getElixirKeyword_2_4_0());
-								}
-								otherlv_56=':'
-								{
-									newLeafNode(otherlv_56, grammarAccess.getMatrixAccess().getColonKeyword_2_4_1());
-								}
-								(
-									(
-										this_BEG_BLOCK_57=RULE_BEG_BLOCK
-										{
-											newLeafNode(this_BEG_BLOCK_57, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_4_2_0_0());
-										}
-										(
-											otherlv_58='-'
-											{
-												newLeafNode(otherlv_58, grammarAccess.getMatrixAccess().getHyphenMinusKeyword_2_4_2_0_1_0());
-											}
-											(
-												this_BEG_BLOCK_59=RULE_BEG_BLOCK
-												{
-													newLeafNode(this_BEG_BLOCK_59, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_4_2_0_1_1());
-												}
-											)?
-											(
-												(
-													{
-														newCompositeNode(grammarAccess.getMatrixAccess().getElixirEStringParserRuleCall_2_4_2_0_1_2_0());
-													}
-													lv_elixir_60_0=ruleEString
-													{
-														if ($current==null) {
-															$current = createModelElementForParent(grammarAccess.getMatrixRule());
-														}
-														add(
-															$current,
-															"elixir",
-															lv_elixir_60_0,
-															"pt.isep.yamldslgen.xtext.MyDsl.EString");
-														afterParserOrEnumRuleCall();
-													}
-												)
-											)
-											(
-												this_END_BLOCK_61=RULE_END_BLOCK
-												{
-													newLeafNode(this_END_BLOCK_61, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_4_2_0_1_3());
-												}
-											)?
-										)+
-										this_END_BLOCK_62=RULE_END_BLOCK
-										{
-											newLeafNode(this_END_BLOCK_62, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_4_2_0_2());
-										}
-									)
-									    |
-									(
-										otherlv_63='['
-										{
-											newLeafNode(otherlv_63, grammarAccess.getMatrixAccess().getLeftSquareBracketKeyword_2_4_2_1_0());
-										}
-										(
-											(
-												{
-													newCompositeNode(grammarAccess.getMatrixAccess().getElixirEStringParserRuleCall_2_4_2_1_1_0());
-												}
-												lv_elixir_64_0=ruleEString
-												{
-													if ($current==null) {
-														$current = createModelElementForParent(grammarAccess.getMatrixRule());
-													}
-													add(
-														$current,
-														"elixir",
-														lv_elixir_64_0,
-														"pt.isep.yamldslgen.xtext.MyDsl.EString");
-													afterParserOrEnumRuleCall();
-												}
-											)
-										)
-										(
-											otherlv_65=','
-											{
-												newLeafNode(otherlv_65, grammarAccess.getMatrixAccess().getCommaKeyword_2_4_2_1_2_0());
-											}
-											(
-												(
-													{
-														newCompositeNode(grammarAccess.getMatrixAccess().getElixirEStringParserRuleCall_2_4_2_1_2_1_0());
-													}
-													lv_elixir_66_0=ruleEString
-													{
-														if ($current==null) {
-															$current = createModelElementForParent(grammarAccess.getMatrixRule());
-														}
-														add(
-															$current,
-															"elixir",
-															lv_elixir_66_0,
-															"pt.isep.yamldslgen.xtext.MyDsl.EString");
-														afterParserOrEnumRuleCall();
-													}
-												)
-											)
-										)*
-										otherlv_67=']'
-										{
-											newLeafNode(otherlv_67, grammarAccess.getMatrixAccess().getRightSquareBracketKeyword_2_4_2_1_3());
-										}
-									)
-								)
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getMatrixAccess().getUnorderedGroup_2());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getMatrixAccess().getUnorderedGroup_2(), 5)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getMatrixAccess().getUnorderedGroup_2(), 5);
-					}
-								({true}?=>(otherlv_68='node-version'
-								{
-									newLeafNode(otherlv_68, grammarAccess.getMatrixAccess().getNodeVersionKeyword_2_5_0());
-								}
-								otherlv_69=':'
-								{
-									newLeafNode(otherlv_69, grammarAccess.getMatrixAccess().getColonKeyword_2_5_1());
-								}
-								(
-									(
-										this_BEG_BLOCK_70=RULE_BEG_BLOCK
-										{
-											newLeafNode(this_BEG_BLOCK_70, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_5_2_0_0());
-										}
-										(
-											otherlv_71='-'
-											{
-												newLeafNode(otherlv_71, grammarAccess.getMatrixAccess().getHyphenMinusKeyword_2_5_2_0_1_0());
-											}
-											(
-												this_BEG_BLOCK_72=RULE_BEG_BLOCK
-												{
-													newLeafNode(this_BEG_BLOCK_72, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_5_2_0_1_1());
-												}
-											)?
-											(
-												(
-													{
-														newCompositeNode(grammarAccess.getMatrixAccess().getNodeVersionEStringParserRuleCall_2_5_2_0_1_2_0());
-													}
-													lv_nodeVersion_73_0=ruleEString
-													{
-														if ($current==null) {
-															$current = createModelElementForParent(grammarAccess.getMatrixRule());
-														}
-														add(
-															$current,
-															"nodeVersion",
-															lv_nodeVersion_73_0,
-															"pt.isep.yamldslgen.xtext.MyDsl.EString");
-														afterParserOrEnumRuleCall();
-													}
-												)
-											)
-											(
-												this_END_BLOCK_74=RULE_END_BLOCK
-												{
-													newLeafNode(this_END_BLOCK_74, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_5_2_0_1_3());
-												}
-											)?
-										)+
-										this_END_BLOCK_75=RULE_END_BLOCK
-										{
-											newLeafNode(this_END_BLOCK_75, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_5_2_0_2());
-										}
-									)
-									    |
-									(
-										otherlv_76='['
-										{
-											newLeafNode(otherlv_76, grammarAccess.getMatrixAccess().getLeftSquareBracketKeyword_2_5_2_1_0());
-										}
-										(
-											(
-												{
-													newCompositeNode(grammarAccess.getMatrixAccess().getNodeVersionEStringParserRuleCall_2_5_2_1_1_0());
-												}
-												lv_nodeVersion_77_0=ruleEString
-												{
-													if ($current==null) {
-														$current = createModelElementForParent(grammarAccess.getMatrixRule());
-													}
-													add(
-														$current,
-														"nodeVersion",
-														lv_nodeVersion_77_0,
-														"pt.isep.yamldslgen.xtext.MyDsl.EString");
-													afterParserOrEnumRuleCall();
-												}
-											)
-										)
-										(
-											otherlv_78=','
-											{
-												newLeafNode(otherlv_78, grammarAccess.getMatrixAccess().getCommaKeyword_2_5_2_1_2_0());
-											}
-											(
-												(
-													{
-														newCompositeNode(grammarAccess.getMatrixAccess().getNodeVersionEStringParserRuleCall_2_5_2_1_2_1_0());
-													}
-													lv_nodeVersion_79_0=ruleEString
-													{
-														if ($current==null) {
-															$current = createModelElementForParent(grammarAccess.getMatrixRule());
-														}
-														add(
-															$current,
-															"nodeVersion",
-															lv_nodeVersion_79_0,
-															"pt.isep.yamldslgen.xtext.MyDsl.EString");
-														afterParserOrEnumRuleCall();
-													}
-												)
-											)
-										)*
-										otherlv_80=']'
-										{
-											newLeafNode(otherlv_80, grammarAccess.getMatrixAccess().getRightSquareBracketKeyword_2_5_2_1_3());
-										}
-									)
-								)
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getMatrixAccess().getUnorderedGroup_2());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getMatrixAccess().getUnorderedGroup_2(), 6)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getMatrixAccess().getUnorderedGroup_2(), 6);
-					}
-								({true}?=>(otherlv_81='ruby-version'
-								{
-									newLeafNode(otherlv_81, grammarAccess.getMatrixAccess().getRubyVersionKeyword_2_6_0());
-								}
-								otherlv_82=':'
-								{
-									newLeafNode(otherlv_82, grammarAccess.getMatrixAccess().getColonKeyword_2_6_1());
-								}
-								(
-									(
-										this_BEG_BLOCK_83=RULE_BEG_BLOCK
-										{
-											newLeafNode(this_BEG_BLOCK_83, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_6_2_0_0());
-										}
-										(
-											otherlv_84='-'
-											{
-												newLeafNode(otherlv_84, grammarAccess.getMatrixAccess().getHyphenMinusKeyword_2_6_2_0_1_0());
-											}
-											(
-												this_BEG_BLOCK_85=RULE_BEG_BLOCK
-												{
-													newLeafNode(this_BEG_BLOCK_85, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_6_2_0_1_1());
-												}
-											)?
-											(
-												(
-													{
-														newCompositeNode(grammarAccess.getMatrixAccess().getRubyVersionEStringParserRuleCall_2_6_2_0_1_2_0());
-													}
-													lv_rubyVersion_86_0=ruleEString
-													{
-														if ($current==null) {
-															$current = createModelElementForParent(grammarAccess.getMatrixRule());
-														}
-														add(
-															$current,
-															"rubyVersion",
-															lv_rubyVersion_86_0,
-															"pt.isep.yamldslgen.xtext.MyDsl.EString");
-														afterParserOrEnumRuleCall();
-													}
-												)
-											)
-											(
-												this_END_BLOCK_87=RULE_END_BLOCK
-												{
-													newLeafNode(this_END_BLOCK_87, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_6_2_0_1_3());
-												}
-											)?
-										)+
-										this_END_BLOCK_88=RULE_END_BLOCK
-										{
-											newLeafNode(this_END_BLOCK_88, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_6_2_0_2());
-										}
-									)
-									    |
-									(
-										otherlv_89='['
-										{
-											newLeafNode(otherlv_89, grammarAccess.getMatrixAccess().getLeftSquareBracketKeyword_2_6_2_1_0());
-										}
-										(
-											(
-												{
-													newCompositeNode(grammarAccess.getMatrixAccess().getRubyVersionEStringParserRuleCall_2_6_2_1_1_0());
-												}
-												lv_rubyVersion_90_0=ruleEString
-												{
-													if ($current==null) {
-														$current = createModelElementForParent(grammarAccess.getMatrixRule());
-													}
-													add(
-														$current,
-														"rubyVersion",
-														lv_rubyVersion_90_0,
-														"pt.isep.yamldslgen.xtext.MyDsl.EString");
-													afterParserOrEnumRuleCall();
-												}
-											)
-										)
-										(
-											otherlv_91=','
-											{
-												newLeafNode(otherlv_91, grammarAccess.getMatrixAccess().getCommaKeyword_2_6_2_1_2_0());
-											}
-											(
-												(
-													{
-														newCompositeNode(grammarAccess.getMatrixAccess().getRubyVersionEStringParserRuleCall_2_6_2_1_2_1_0());
-													}
-													lv_rubyVersion_92_0=ruleEString
-													{
-														if ($current==null) {
-															$current = createModelElementForParent(grammarAccess.getMatrixRule());
-														}
-														add(
-															$current,
-															"rubyVersion",
-															lv_rubyVersion_92_0,
-															"pt.isep.yamldslgen.xtext.MyDsl.EString");
-														afterParserOrEnumRuleCall();
-													}
-												)
-											)
-										)*
-										otherlv_93=']'
-										{
-											newLeafNode(otherlv_93, grammarAccess.getMatrixAccess().getRightSquareBracketKeyword_2_6_2_1_3());
-										}
-									)
-								)
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getMatrixAccess().getUnorderedGroup_2());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getMatrixAccess().getUnorderedGroup_2(), 7)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getMatrixAccess().getUnorderedGroup_2(), 7);
-					}
-								({true}?=>(otherlv_94='r-version'
-								{
-									newLeafNode(otherlv_94, grammarAccess.getMatrixAccess().getRVersionKeyword_2_7_0());
-								}
-								otherlv_95=':'
-								{
-									newLeafNode(otherlv_95, grammarAccess.getMatrixAccess().getColonKeyword_2_7_1());
-								}
-								(
-									(
-										this_BEG_BLOCK_96=RULE_BEG_BLOCK
-										{
-											newLeafNode(this_BEG_BLOCK_96, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_7_2_0_0());
-										}
-										(
-											otherlv_97='-'
-											{
-												newLeafNode(otherlv_97, grammarAccess.getMatrixAccess().getHyphenMinusKeyword_2_7_2_0_1_0());
-											}
-											(
-												this_BEG_BLOCK_98=RULE_BEG_BLOCK
-												{
-													newLeafNode(this_BEG_BLOCK_98, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_7_2_0_1_1());
-												}
-											)?
-											(
-												(
-													{
-														newCompositeNode(grammarAccess.getMatrixAccess().getRVersionEStringParserRuleCall_2_7_2_0_1_2_0());
-													}
-													lv_rVersion_99_0=ruleEString
-													{
-														if ($current==null) {
-															$current = createModelElementForParent(grammarAccess.getMatrixRule());
-														}
-														add(
-															$current,
-															"rVersion",
-															lv_rVersion_99_0,
-															"pt.isep.yamldslgen.xtext.MyDsl.EString");
-														afterParserOrEnumRuleCall();
-													}
-												)
-											)
-											(
-												this_END_BLOCK_100=RULE_END_BLOCK
-												{
-													newLeafNode(this_END_BLOCK_100, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_7_2_0_1_3());
-												}
-											)?
-										)+
-										this_END_BLOCK_101=RULE_END_BLOCK
-										{
-											newLeafNode(this_END_BLOCK_101, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_7_2_0_2());
-										}
-									)
-									    |
-									(
-										otherlv_102='['
-										{
-											newLeafNode(otherlv_102, grammarAccess.getMatrixAccess().getLeftSquareBracketKeyword_2_7_2_1_0());
-										}
-										(
-											(
-												{
-													newCompositeNode(grammarAccess.getMatrixAccess().getRVersionEStringParserRuleCall_2_7_2_1_1_0());
-												}
-												lv_rVersion_103_0=ruleEString
-												{
-													if ($current==null) {
-														$current = createModelElementForParent(grammarAccess.getMatrixRule());
-													}
-													add(
-														$current,
-														"rVersion",
-														lv_rVersion_103_0,
-														"pt.isep.yamldslgen.xtext.MyDsl.EString");
-													afterParserOrEnumRuleCall();
-												}
-											)
-										)
-										(
-											otherlv_104=','
-											{
-												newLeafNode(otherlv_104, grammarAccess.getMatrixAccess().getCommaKeyword_2_7_2_1_2_0());
-											}
-											(
-												(
-													{
-														newCompositeNode(grammarAccess.getMatrixAccess().getRVersionEStringParserRuleCall_2_7_2_1_2_1_0());
-													}
-													lv_rVersion_105_0=ruleEString
-													{
-														if ($current==null) {
-															$current = createModelElementForParent(grammarAccess.getMatrixRule());
-														}
-														add(
-															$current,
-															"rVersion",
-															lv_rVersion_105_0,
-															"pt.isep.yamldslgen.xtext.MyDsl.EString");
-														afterParserOrEnumRuleCall();
-													}
-												)
-											)
-										)*
-										otherlv_106=']'
-										{
-											newLeafNode(otherlv_106, grammarAccess.getMatrixAccess().getRightSquareBracketKeyword_2_7_2_1_3());
-										}
-									)
-								)
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getMatrixAccess().getUnorderedGroup_2());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getMatrixAccess().getUnorderedGroup_2(), 8)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getMatrixAccess().getUnorderedGroup_2(), 8);
-					}
-								({true}?=>(otherlv_107='configuration'
-								{
-									newLeafNode(otherlv_107, grammarAccess.getMatrixAccess().getConfigurationKeyword_2_8_0());
-								}
-								otherlv_108=':'
-								{
-									newLeafNode(otherlv_108, grammarAccess.getMatrixAccess().getColonKeyword_2_8_1());
-								}
-								(
-									(
-										this_BEG_BLOCK_109=RULE_BEG_BLOCK
-										{
-											newLeafNode(this_BEG_BLOCK_109, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_8_2_0_0());
-										}
-										(
-											otherlv_110='-'
-											{
-												newLeafNode(otherlv_110, grammarAccess.getMatrixAccess().getHyphenMinusKeyword_2_8_2_0_1_0());
-											}
-											(
-												this_BEG_BLOCK_111=RULE_BEG_BLOCK
-												{
-													newLeafNode(this_BEG_BLOCK_111, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_8_2_0_1_1());
-												}
-											)?
-											(
-												(
-													{
-														newCompositeNode(grammarAccess.getMatrixAccess().getConfigurationEStringParserRuleCall_2_8_2_0_1_2_0());
-													}
-													lv_configuration_112_0=ruleEString
-													{
-														if ($current==null) {
-															$current = createModelElementForParent(grammarAccess.getMatrixRule());
-														}
-														add(
-															$current,
-															"configuration",
-															lv_configuration_112_0,
-															"pt.isep.yamldslgen.xtext.MyDsl.EString");
-														afterParserOrEnumRuleCall();
-													}
-												)
-											)
-											(
-												this_END_BLOCK_113=RULE_END_BLOCK
-												{
-													newLeafNode(this_END_BLOCK_113, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_8_2_0_1_3());
-												}
-											)?
-										)+
-										this_END_BLOCK_114=RULE_END_BLOCK
-										{
-											newLeafNode(this_END_BLOCK_114, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_8_2_0_2());
-										}
-									)
-									    |
-									(
-										otherlv_115='['
-										{
-											newLeafNode(otherlv_115, grammarAccess.getMatrixAccess().getLeftSquareBracketKeyword_2_8_2_1_0());
-										}
-										(
-											(
-												{
-													newCompositeNode(grammarAccess.getMatrixAccess().getConfigurationEStringParserRuleCall_2_8_2_1_1_0());
-												}
-												lv_configuration_116_0=ruleEString
-												{
-													if ($current==null) {
-														$current = createModelElementForParent(grammarAccess.getMatrixRule());
-													}
-													add(
-														$current,
-														"configuration",
-														lv_configuration_116_0,
-														"pt.isep.yamldslgen.xtext.MyDsl.EString");
-													afterParserOrEnumRuleCall();
-												}
-											)
-										)
-										(
-											otherlv_117=','
-											{
-												newLeafNode(otherlv_117, grammarAccess.getMatrixAccess().getCommaKeyword_2_8_2_1_2_0());
-											}
-											(
-												(
-													{
-														newCompositeNode(grammarAccess.getMatrixAccess().getConfigurationEStringParserRuleCall_2_8_2_1_2_1_0());
-													}
-													lv_configuration_118_0=ruleEString
-													{
-														if ($current==null) {
-															$current = createModelElementForParent(grammarAccess.getMatrixRule());
-														}
-														add(
-															$current,
-															"configuration",
-															lv_configuration_118_0,
-															"pt.isep.yamldslgen.xtext.MyDsl.EString");
-														afterParserOrEnumRuleCall();
-													}
-												)
-											)
-										)*
-										otherlv_119=']'
-										{
-											newLeafNode(otherlv_119, grammarAccess.getMatrixAccess().getRightSquareBracketKeyword_2_8_2_1_3());
-										}
-									)
-								)
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getMatrixAccess().getUnorderedGroup_2());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getMatrixAccess().getUnorderedGroup_2(), 9)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getMatrixAccess().getUnorderedGroup_2(), 9);
-					}
-								({true}?=>(otherlv_120='include'
-								{
-									newLeafNode(otherlv_120, grammarAccess.getMatrixAccess().getIncludeKeyword_2_9_0());
-								}
-								otherlv_121=':'
-								{
-									newLeafNode(otherlv_121, grammarAccess.getMatrixAccess().getColonKeyword_2_9_1());
-								}
-								this_BEG_BLOCK_122=RULE_BEG_BLOCK
-								{
-									newLeafNode(this_BEG_BLOCK_122, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_9_2());
-								}
-								(
-									otherlv_123='-'
-									{
-										newLeafNode(otherlv_123, grammarAccess.getMatrixAccess().getHyphenMinusKeyword_2_9_3_0());
-									}
-									(
-										this_BEG_BLOCK_124=RULE_BEG_BLOCK
-										{
-											newLeafNode(this_BEG_BLOCK_124, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_9_3_1());
-										}
-									)?
-									(
-										(
-											{
-												newCompositeNode(grammarAccess.getMatrixAccess().getIncludeIncludeParserRuleCall_2_9_3_2_0());
-											}
-											lv_include_125_0=ruleInclude
-											{
-												if ($current==null) {
-													$current = createModelElementForParent(grammarAccess.getMatrixRule());
-												}
-												add(
-													$current,
-													"include",
-													lv_include_125_0,
-													"pt.isep.yamldslgen.xtext.MyDsl.Include");
-												afterParserOrEnumRuleCall();
-											}
-										)
-									)
-									(
-										this_END_BLOCK_126=RULE_END_BLOCK
-										{
-											newLeafNode(this_END_BLOCK_126, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_9_3_3());
-										}
-									)?
-								)+
-								this_END_BLOCK_127=RULE_END_BLOCK
-								{
-									newLeafNode(this_END_BLOCK_127, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_9_4());
-								}
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getMatrixAccess().getUnorderedGroup_2());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getMatrixAccess().getUnorderedGroup_2(), 10)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getMatrixAccess().getUnorderedGroup_2(), 10);
-					}
-								({true}?=>(otherlv_128='exclude'
-								{
-									newLeafNode(otherlv_128, grammarAccess.getMatrixAccess().getExcludeKeyword_2_10_0());
-								}
-								otherlv_129=':'
-								{
-									newLeafNode(otherlv_129, grammarAccess.getMatrixAccess().getColonKeyword_2_10_1());
-								}
-								this_BEG_BLOCK_130=RULE_BEG_BLOCK
-								{
-									newLeafNode(this_BEG_BLOCK_130, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_10_2());
-								}
-								(
-									otherlv_131='-'
-									{
-										newLeafNode(otherlv_131, grammarAccess.getMatrixAccess().getHyphenMinusKeyword_2_10_3_0());
-									}
-									(
-										this_BEG_BLOCK_132=RULE_BEG_BLOCK
-										{
-											newLeafNode(this_BEG_BLOCK_132, grammarAccess.getMatrixAccess().getBEG_BLOCKTerminalRuleCall_2_10_3_1());
-										}
-									)?
-									(
-										(
-											{
-												newCompositeNode(grammarAccess.getMatrixAccess().getExcludeExcludeParserRuleCall_2_10_3_2_0());
-											}
-											lv_exclude_133_0=ruleExclude
-											{
-												if ($current==null) {
-													$current = createModelElementForParent(grammarAccess.getMatrixRule());
-												}
-												add(
-													$current,
-													"exclude",
-													lv_exclude_133_0,
-													"pt.isep.yamldslgen.xtext.MyDsl.Exclude");
-												afterParserOrEnumRuleCall();
-											}
-										)
-									)
-									(
-										this_END_BLOCK_134=RULE_END_BLOCK
-										{
-											newLeafNode(this_END_BLOCK_134, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_10_3_3());
-										}
-									)?
-								)+
-								this_END_BLOCK_135=RULE_END_BLOCK
-								{
-									newLeafNode(this_END_BLOCK_135, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_2_10_4());
-								}
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getMatrixAccess().getUnorderedGroup_2());
-					}
-				)
-			)
-					)*
-				)
-			)
-				{ 
-				  getUnorderedGroupHelper().leave(grammarAccess.getMatrixAccess().getUnorderedGroup_2());
+								add(
+									$current,
+									"values",
+									lv_values_11_0,
+									"pt.isep.yamldslgen.xtext.MyDsl.EString");
+								afterParserOrEnumRuleCall();
+							}
+						)
+					)
+				)*
+				otherlv_12=']'
+				{
+					newLeafNode(otherlv_12, grammarAccess.getMatrixParameterAccess().getRightSquareBracketKeyword_2_1_3());
 				}
+			)
 		)
-		(
-			this_END_BLOCK_136=RULE_END_BLOCK
-			{
-				newLeafNode(this_END_BLOCK_136, grammarAccess.getMatrixAccess().getEND_BLOCKTerminalRuleCall_3());
-			}
-		)?
 	)
 ;
 
@@ -6860,136 +5913,27 @@ ruleInclude returns [EObject current=null]
 		)?
 		(
 			(
-				{ 
-				  getUnorderedGroupHelper().enter(grammarAccess.getIncludeAccess().getUnorderedGroup_2());
+				{
+					newCompositeNode(grammarAccess.getIncludeAccess().getEntriesKeyValuePairParserRuleCall_2_0());
 				}
-				(
-					(
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getIncludeAccess().getUnorderedGroup_2(), 0)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getIncludeAccess().getUnorderedGroup_2(), 0);
+				lv_entries_2_0=ruleKeyValuePair
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getIncludeRule());
 					}
-								({true}?=>(otherlv_3='os'
-								{
-									newLeafNode(otherlv_3, grammarAccess.getIncludeAccess().getOsKeyword_2_0_0());
-								}
-								otherlv_4=':'
-								{
-									newLeafNode(otherlv_4, grammarAccess.getIncludeAccess().getColonKeyword_2_0_1());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getIncludeAccess().getOsEStringParserRuleCall_2_0_2_0());
-										}
-										lv_os_5_0=ruleEString
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getIncludeRule());
-											}
-											set(
-												$current,
-												"os",
-												lv_os_5_0,
-												"pt.isep.yamldslgen.xtext.MyDsl.EString");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getIncludeAccess().getUnorderedGroup_2());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getIncludeAccess().getUnorderedGroup_2(), 1)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getIncludeAccess().getUnorderedGroup_2(), 1);
-					}
-								({true}?=>(otherlv_6='c-compiler'
-								{
-									newLeafNode(otherlv_6, grammarAccess.getIncludeAccess().getCCompilerKeyword_2_1_0());
-								}
-								otherlv_7=':'
-								{
-									newLeafNode(otherlv_7, grammarAccess.getIncludeAccess().getColonKeyword_2_1_1());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getIncludeAccess().getCCompilerEStringParserRuleCall_2_1_2_0());
-										}
-										lv_cCompiler_8_0=ruleEString
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getIncludeRule());
-											}
-											set(
-												$current,
-												"cCompiler",
-												lv_cCompiler_8_0,
-												"pt.isep.yamldslgen.xtext.MyDsl.EString");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getIncludeAccess().getUnorderedGroup_2());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getIncludeAccess().getUnorderedGroup_2(), 2)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getIncludeAccess().getUnorderedGroup_2(), 2);
-					}
-								({true}?=>(otherlv_9='cpp-compiler'
-								{
-									newLeafNode(otherlv_9, grammarAccess.getIncludeAccess().getCppCompilerKeyword_2_2_0());
-								}
-								otherlv_10=':'
-								{
-									newLeafNode(otherlv_10, grammarAccess.getIncludeAccess().getColonKeyword_2_2_1());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getIncludeAccess().getCppCompilerEStringParserRuleCall_2_2_2_0());
-										}
-										lv_cppCompiler_11_0=ruleEString
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getIncludeRule());
-											}
-											set(
-												$current,
-												"cppCompiler",
-												lv_cppCompiler_11_0,
-												"pt.isep.yamldslgen.xtext.MyDsl.EString");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getIncludeAccess().getUnorderedGroup_2());
-					}
-				)
-			)
-					)*
-				)
-			)
-				{ 
-				  getUnorderedGroupHelper().leave(grammarAccess.getIncludeAccess().getUnorderedGroup_2());
+					add(
+						$current,
+						"entries",
+						lv_entries_2_0,
+						"pt.isep.yamldslgen.xtext.MyDsl.KeyValuePair");
+					afterParserOrEnumRuleCall();
 				}
-		)
+			)
+		)+
 		(
-			this_END_BLOCK_12=RULE_END_BLOCK
+			this_END_BLOCK_3=RULE_END_BLOCK
 			{
-				newLeafNode(this_END_BLOCK_12, grammarAccess.getIncludeAccess().getEND_BLOCKTerminalRuleCall_3());
+				newLeafNode(this_END_BLOCK_3, grammarAccess.getIncludeAccess().getEND_BLOCKTerminalRuleCall_3());
 			}
 		)?
 	)
@@ -7026,98 +5970,27 @@ ruleExclude returns [EObject current=null]
 		)?
 		(
 			(
-				{ 
-				  getUnorderedGroupHelper().enter(grammarAccess.getExcludeAccess().getUnorderedGroup_2());
+				{
+					newCompositeNode(grammarAccess.getExcludeAccess().getEntriesKeyValuePairParserRuleCall_2_0());
 				}
-				(
-					(
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getExcludeAccess().getUnorderedGroup_2(), 0)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getExcludeAccess().getUnorderedGroup_2(), 0);
+				lv_entries_2_0=ruleKeyValuePair
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getExcludeRule());
 					}
-								({true}?=>(otherlv_3='os'
-								{
-									newLeafNode(otherlv_3, grammarAccess.getExcludeAccess().getOsKeyword_2_0_0());
-								}
-								otherlv_4=':'
-								{
-									newLeafNode(otherlv_4, grammarAccess.getExcludeAccess().getColonKeyword_2_0_1());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getExcludeAccess().getOsEStringParserRuleCall_2_0_2_0());
-										}
-										lv_os_5_0=ruleEString
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getExcludeRule());
-											}
-											set(
-												$current,
-												"os",
-												lv_os_5_0,
-												"pt.isep.yamldslgen.xtext.MyDsl.EString");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getExcludeAccess().getUnorderedGroup_2());
-					}
-				)
-			)|
-			(
-				{getUnorderedGroupHelper().canSelect(grammarAccess.getExcludeAccess().getUnorderedGroup_2(), 1)}?=>(
-					{
-						getUnorderedGroupHelper().select(grammarAccess.getExcludeAccess().getUnorderedGroup_2(), 1);
-					}
-								({true}?=>(otherlv_6='c-compiler'
-								{
-									newLeafNode(otherlv_6, grammarAccess.getExcludeAccess().getCCompilerKeyword_2_1_0());
-								}
-								otherlv_7=':'
-								{
-									newLeafNode(otherlv_7, grammarAccess.getExcludeAccess().getColonKeyword_2_1_1());
-								}
-								(
-									(
-										{
-											newCompositeNode(grammarAccess.getExcludeAccess().getCCompilerEStringParserRuleCall_2_1_2_0());
-										}
-										lv_cCompiler_8_0=ruleEString
-										{
-											if ($current==null) {
-												$current = createModelElementForParent(grammarAccess.getExcludeRule());
-											}
-											set(
-												$current,
-												"cCompiler",
-												lv_cCompiler_8_0,
-												"pt.isep.yamldslgen.xtext.MyDsl.EString");
-											afterParserOrEnumRuleCall();
-										}
-									)
-								)
-								))
-					{ 
-						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getExcludeAccess().getUnorderedGroup_2());
-					}
-				)
-			)
-					)*
-				)
-			)
-				{ 
-				  getUnorderedGroupHelper().leave(grammarAccess.getExcludeAccess().getUnorderedGroup_2());
+					add(
+						$current,
+						"entries",
+						lv_entries_2_0,
+						"pt.isep.yamldslgen.xtext.MyDsl.KeyValuePair");
+					afterParserOrEnumRuleCall();
 				}
-		)
+			)
+		)+
 		(
-			this_END_BLOCK_9=RULE_END_BLOCK
+			this_END_BLOCK_3=RULE_END_BLOCK
 			{
-				newLeafNode(this_END_BLOCK_9, grammarAccess.getExcludeAccess().getEND_BLOCKTerminalRuleCall_3());
+				newLeafNode(this_END_BLOCK_3, grammarAccess.getExcludeAccess().getEND_BLOCKTerminalRuleCall_3());
 			}
 		)?
 	)
@@ -7509,6 +6382,8 @@ ruleEBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
 RULE_BEG_BLOCK : 'synthetic:BEGIN';
 
 RULE_END_BLOCK : 'synthetic:END';
+
+RULE_SQ_STRING : '\'' ~('\'')* '\'';
 
 RULE_SL_COMMENT : '#' ~(('\n'|'\r'))*;
 

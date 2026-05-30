@@ -22,15 +22,16 @@ GithubActions returns GithubActions:
 // =============================================================================
 
 EString returns ecore::EString:
-	STRING | BlockString | ScalarSequence;
+	STRING | SQ_STRING | BlockString | ScalarSequence;
 
 // Junta múltiplos tokens separados por dois pontos (ex: docker:latest, http://...)
 // Como exige que o ':' seja seguido de outro texto, NUNCA engole o ':' estrutural do YAML.
 ScalarSequence returns ecore::EString:
-    (YAML_SCALAR | GH_EXPRESSION | ID | INT | 'true' | 'false')
-    ( ((':' | '-') (YAML_SCALAR | GH_EXPRESSION | ID | INT | 'true' | 'false'))
+    (YAML_SCALAR | GH_EXPRESSION | SQ_STRING | ID | INT | 'true' | 'false')
+    ( ((':' | '-') (YAML_SCALAR | GH_EXPRESSION | SQ_STRING | ID | INT | 'true' | 'false'))
     | GH_EXPRESSION
-    | YAML_SCALAR )*;
+    | SQ_STRING
+    | '-' )*;
 	
 // Lida com 'run: >' ou 'run: |' consumindo o bloco inteiro
 // Aceita qualquer token do Xtext e pontuações do Bash (como [, ], ; e -)
@@ -69,7 +70,7 @@ KeyName returns ecore::EString:
 	| 'python-version' | 'configuration' | 'digests'
 	| 'merge_group' | 'r-version'
 	| 'branch_protection_rule' | 'models' | 'ruby-version' | 'services' | 'ports'
-	| 'timeout-minutes' | 'checks' | 'restore-keys';
+	| 'timeout-minutes' | 'checks';
 	
 // =============================================================================
 // KEY-VALUE PAIR  (generic block content — e.g. 'with:', 'env:')
@@ -118,7 +119,7 @@ Pull_request returns Pull_request:
 		(('branches' ':' (
 			  BEG_BLOCK ('-' BEG_BLOCK branches+=EString END_BLOCK)+ END_BLOCK
 			| '[' branches+=EString (',' branches+=EString)* ']'
-		))
+		))?
 		& ('types' ':' (
 			  BEG_BLOCK ('-' BEG_BLOCK types+=EString END_BLOCK)+ END_BLOCK
 			| '[' types+=EString (',' types+=EString)* ']'
@@ -285,66 +286,34 @@ Strategy returns Strategy:
 		& ('matrix' ':' matrix=Matrix)?)
 	END_BLOCK?;
 
+// Matrix accepts any user-defined axis keys (os, node-version, java-version, ...) as
+// MatrixParameter entries. 'include' and 'exclude' are matched first so they are never
+// consumed as generic parameters.
 Matrix returns Matrix:
 	{Matrix}
 	BEG_BLOCK?
-		(('os' ':' (
-			  BEG_BLOCK ('-' BEG_BLOCK? os+=EString END_BLOCK?)+ END_BLOCK
-			| '[' os+=EString (',' os+=EString)* ']'
-		))?
-		& ('build-type' ':' (
-			  BEG_BLOCK ('-' BEG_BLOCK? buildType+=EString END_BLOCK?)+ END_BLOCK
-			| '[' buildType+=EString (',' buildType+=EString)* ']'
-		))?
-		& ('c-compiler' ':' (
-			  BEG_BLOCK ('-' BEG_BLOCK? cCompiler+=EString END_BLOCK?)+ END_BLOCK
-			| '[' cCompiler+=EString (',' cCompiler+=EString)* ']'
-		))?
-		& ('otp' ':' (
-			  BEG_BLOCK ('-' BEG_BLOCK? otp+=EString END_BLOCK?)+ END_BLOCK
-			| '[' otp+=EString (',' otp+=EString)* ']'
-		))?
-		& ('elixir' ':' (
-			  BEG_BLOCK ('-' BEG_BLOCK? elixir+=EString END_BLOCK?)+ END_BLOCK
-			| '[' elixir+=EString (',' elixir+=EString)* ']'
-		))?
-		// & ('python-version' ':' (
-			  // BEG_BLOCK ('-' BEG_BLOCK? pythonVersion+=EString END_BLOCK?)+ END_BLOCK
-			// | '[' pythonVersion+=EString (',' pythonVersion+=EString)* ']'
-		// ))?
-		& ('node-version' ':' (
-		      BEG_BLOCK ('-' BEG_BLOCK? nodeVersion+=EString END_BLOCK?)+ END_BLOCK
-		    | '[' nodeVersion+=EString (',' nodeVersion+=EString)* ']'
-		))?
-		& ('ruby-version' ':' ( 
-			  BEG_BLOCK ('-' BEG_BLOCK? rubyVersion+=EString END_BLOCK?)+ END_BLOCK
-			| '[' rubyVersion+=EString (',' rubyVersion+=EString)* ']'
-		))?
-		& ('r-version' ':' (
-			  BEG_BLOCK ('-' BEG_BLOCK? rVersion+=EString END_BLOCK?)+ END_BLOCK
-			| '[' rVersion+=EString (',' rVersion+=EString)* ']'
-		))?
-		& ('configuration' ':' (
-			  BEG_BLOCK ('-' BEG_BLOCK? configuration+=EString END_BLOCK?)+ END_BLOCK
-			| '[' configuration+=EString (',' configuration+=EString)* ']'
-		))?
-		& ('include' ':' BEG_BLOCK ('-' BEG_BLOCK? include+=Include END_BLOCK?)+ END_BLOCK)?
-		& ('exclude' ':' BEG_BLOCK ('-' BEG_BLOCK? exclude+=Exclude END_BLOCK?)+ END_BLOCK)?)
+		(  'include' ':' BEG_BLOCK ('-' BEG_BLOCK? include+=Include END_BLOCK?)+ END_BLOCK
+		 | 'exclude' ':' BEG_BLOCK ('-' BEG_BLOCK? exclude+=Exclude END_BLOCK?)+ END_BLOCK
+		 | parameters+=MatrixParameter
+		)*
 	END_BLOCK?;
-	
+
+MatrixParameter returns MatrixParameter:
+	key=KeyName ':' (
+		  BEG_BLOCK ('-' BEG_BLOCK? values+=EString END_BLOCK?)+ END_BLOCK
+		| '[' values+=EString (',' values+=EString)* ']'
+	);
+
 Include returns Include:
 	{Include}
 	BEG_BLOCK?
-		(('os' ':' os=EString)?
-		& ('c-compiler' ':' cCompiler=EString)?
-		& ('cpp-compiler' ':' cppCompiler=EString)?)
+		entries+=KeyValuePair+
 	END_BLOCK?;
 
 Exclude returns Exclude:
 	{Exclude}
 	BEG_BLOCK?
-		(('os' ':' os=EString)?
-		& ('c-compiler' ':' cCompiler=EString)?)
+		entries+=KeyValuePair+
 	END_BLOCK?;
 	
 // =============================================================================
@@ -405,6 +374,9 @@ terminal END_BLOCK: 'synthetic:END';
 // =============================================================================
 // CUSTOM TERMINALS
 // =============================================================================
+
+// Single-quoted YAML string literal: 'value'
+terminal SQ_STRING: "'" !("'")* "'";
 
 // Ignora comentários do YAML (linhas que começam por #)
 @Override terminal SL_COMMENT: '#' !('\n'|'\r')*;

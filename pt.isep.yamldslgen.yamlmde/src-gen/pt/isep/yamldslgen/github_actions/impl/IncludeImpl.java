@@ -2,14 +2,18 @@
  */
 package pt.isep.yamldslgen.github_actions.impl;
 
-import org.eclipse.emf.common.notify.Notification;
-
+import java.util.Collection;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import pt.isep.yamldslgen.github_actions.Include;
+import pt.isep.yamldslgen.github_actions.KeyValuePair;
 import pt.isep.yamldslgen.github_actions.YamlmdePackage;
 
 /**
@@ -20,73 +24,21 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link pt.isep.yamldslgen.github_actions.impl.IncludeImpl#getOs <em>Os</em>}</li>
- *   <li>{@link pt.isep.yamldslgen.github_actions.impl.IncludeImpl#getCCompiler <em>CCompiler</em>}</li>
- *   <li>{@link pt.isep.yamldslgen.github_actions.impl.IncludeImpl#getCppCompiler <em>Cpp Compiler</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.IncludeImpl#getEntries <em>Entries</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class IncludeImpl extends MinimalEObjectImpl.Container implements Include {
 	/**
-	 * The default value of the '{@link #getOs() <em>Os</em>}' attribute.
+	 * The cached value of the '{@link #getEntries() <em>Entries</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOs()
+	 * @see #getEntries()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String OS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOs() <em>Os</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOs()
-	 * @generated
-	 * @ordered
-	 */
-	protected String os = OS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCCompiler() <em>CCompiler</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCCompiler()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CCOMPILER_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCCompiler() <em>CCompiler</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCCompiler()
-	 * @generated
-	 * @ordered
-	 */
-	protected String cCompiler = CCOMPILER_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCppCompiler() <em>Cpp Compiler</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCppCompiler()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CPP_COMPILER_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCppCompiler() <em>Cpp Compiler</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCppCompiler()
-	 * @generated
-	 * @ordered
-	 */
-	protected String cppCompiler = CPP_COMPILER_EDEFAULT;
+	protected EList<KeyValuePair> entries;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,8 +65,12 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	 * @generated
 	 */
 	@Override
-	public String getOs() {
-		return os;
+	public EList<KeyValuePair> getEntries() {
+		if (entries == null) {
+			entries = new EObjectContainmentEList<KeyValuePair>(KeyValuePair.class, this,
+					YamlmdePackage.INCLUDE__ENTRIES);
+		}
+		return entries;
 	}
 
 	/**
@@ -123,59 +79,12 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	 * @generated
 	 */
 	@Override
-	public void setOs(String newOs) {
-		String oldOs = os;
-		os = newOs;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.INCLUDE__OS, oldOs, os));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCCompiler() {
-		return cCompiler;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setCCompiler(String newCCompiler) {
-		String oldCCompiler = cCompiler;
-		cCompiler = newCCompiler;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.INCLUDE__CCOMPILER, oldCCompiler,
-					cCompiler));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCppCompiler() {
-		return cppCompiler;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setCppCompiler(String newCppCompiler) {
-		String oldCppCompiler = cppCompiler;
-		cppCompiler = newCppCompiler;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, YamlmdePackage.INCLUDE__CPP_COMPILER, oldCppCompiler,
-					cppCompiler));
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case YamlmdePackage.INCLUDE__ENTRIES:
+			return ((InternalEList<?>) getEntries()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -186,12 +95,8 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case YamlmdePackage.INCLUDE__OS:
-			return getOs();
-		case YamlmdePackage.INCLUDE__CCOMPILER:
-			return getCCompiler();
-		case YamlmdePackage.INCLUDE__CPP_COMPILER:
-			return getCppCompiler();
+		case YamlmdePackage.INCLUDE__ENTRIES:
+			return getEntries();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -201,17 +106,13 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case YamlmdePackage.INCLUDE__OS:
-			setOs((String) newValue);
-			return;
-		case YamlmdePackage.INCLUDE__CCOMPILER:
-			setCCompiler((String) newValue);
-			return;
-		case YamlmdePackage.INCLUDE__CPP_COMPILER:
-			setCppCompiler((String) newValue);
+		case YamlmdePackage.INCLUDE__ENTRIES:
+			getEntries().clear();
+			getEntries().addAll((Collection<? extends KeyValuePair>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -225,14 +126,8 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case YamlmdePackage.INCLUDE__OS:
-			setOs(OS_EDEFAULT);
-			return;
-		case YamlmdePackage.INCLUDE__CCOMPILER:
-			setCCompiler(CCOMPILER_EDEFAULT);
-			return;
-		case YamlmdePackage.INCLUDE__CPP_COMPILER:
-			setCppCompiler(CPP_COMPILER_EDEFAULT);
+		case YamlmdePackage.INCLUDE__ENTRIES:
+			getEntries().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -246,35 +141,10 @@ public class IncludeImpl extends MinimalEObjectImpl.Container implements Include
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case YamlmdePackage.INCLUDE__OS:
-			return OS_EDEFAULT == null ? os != null : !OS_EDEFAULT.equals(os);
-		case YamlmdePackage.INCLUDE__CCOMPILER:
-			return CCOMPILER_EDEFAULT == null ? cCompiler != null : !CCOMPILER_EDEFAULT.equals(cCompiler);
-		case YamlmdePackage.INCLUDE__CPP_COMPILER:
-			return CPP_COMPILER_EDEFAULT == null ? cppCompiler != null : !CPP_COMPILER_EDEFAULT.equals(cppCompiler);
+		case YamlmdePackage.INCLUDE__ENTRIES:
+			return entries != null && !entries.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (os: ");
-		result.append(os);
-		result.append(", cCompiler: ");
-		result.append(cCompiler);
-		result.append(", cppCompiler: ");
-		result.append(cppCompiler);
-		result.append(')');
-		return result.toString();
 	}
 
 } //IncludeImpl

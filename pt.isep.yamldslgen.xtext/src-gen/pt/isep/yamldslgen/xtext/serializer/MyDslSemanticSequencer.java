@@ -26,6 +26,7 @@ import pt.isep.yamldslgen.github_actions.Issues;
 import pt.isep.yamldslgen.github_actions.Job;
 import pt.isep.yamldslgen.github_actions.KeyValuePair;
 import pt.isep.yamldslgen.github_actions.Matrix;
+import pt.isep.yamldslgen.github_actions.MatrixParameter;
 import pt.isep.yamldslgen.github_actions.Merge_group;
 import pt.isep.yamldslgen.github_actions.On;
 import pt.isep.yamldslgen.github_actions.Permissions;
@@ -92,6 +93,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case YamlmdePackage.MATRIX:
 				sequence_Matrix(context, (Matrix) semanticObject); 
+				return; 
+			case YamlmdePackage.MATRIX_PARAMETER:
+				sequence_MatrixParameter(context, (MatrixParameter) semanticObject); 
 				return; 
 			case YamlmdePackage.MERGE_GROUP:
 				sequence_Merge_group(context, (Merge_group) semanticObject); 
@@ -214,7 +218,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Exclude returns Exclude
 	 *
 	 * Constraint:
-	 *     (os=EString | cCompiler=EString)*
+	 *     entries+=KeyValuePair+
 	 * </pre>
 	 */
 	protected void sequence_Exclude(ISerializationContext context, Exclude semanticObject) {
@@ -250,7 +254,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Include returns Include
 	 *
 	 * Constraint:
-	 *     (os=EString | cCompiler=EString | cppCompiler=EString)*
+	 *     entries+=KeyValuePair+
 	 * </pre>
 	 */
 	protected void sequence_Include(ISerializationContext context, Include semanticObject) {
@@ -349,33 +353,24 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     MatrixParameter returns MatrixParameter
+	 *
+	 * Constraint:
+	 *     (key=KeyName (values+=EString+ | (values+=EString values+=EString*)))
+	 * </pre>
+	 */
+	protected void sequence_MatrixParameter(ISerializationContext context, MatrixParameter semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Matrix returns Matrix
 	 *
 	 * Constraint:
-	 *     (
-	 *         (
-	 *             os+=EString | 
-	 *             buildType+=EString | 
-	 *             cCompiler+=EString | 
-	 *             otp+=EString | 
-	 *             elixir+=EString | 
-	 *             nodeVersion+=EString | 
-	 *             rubyVersion+=EString | 
-	 *             rVersion+=EString | 
-	 *             configuration+=EString | 
-	 *             include+=Include | 
-	 *             exclude+=Exclude
-	 *         )? 
-	 *         (os+=EString os+=EString*)? 
-	 *         (buildType+=EString buildType+=EString*)? 
-	 *         (cCompiler+=EString cCompiler+=EString*)? 
-	 *         (otp+=EString otp+=EString*)? 
-	 *         (elixir+=EString elixir+=EString*)? 
-	 *         (nodeVersion+=EString nodeVersion+=EString*)? 
-	 *         (rubyVersion+=EString rubyVersion+=EString*)? 
-	 *         (rVersion+=EString rVersion+=EString*)? 
-	 *         (configuration+=EString configuration+=EString*)?
-	 *     )+
+	 *     (include+=Include | exclude+=Exclude | parameters+=MatrixParameter)*
 	 * </pre>
 	 */
 	protected void sequence_Matrix(ISerializationContext context, Matrix semanticObject) {
