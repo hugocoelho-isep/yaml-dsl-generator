@@ -24,6 +24,7 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  * </p>
  * <ul>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.Pull_requestImpl#getBranches <em>Branches</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.Pull_requestImpl#getTypes <em>Types</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,6 +39,16 @@ public class Pull_requestImpl extends MinimalEObjectImpl.Container implements Pu
 	 * @ordered
 	 */
 	protected EList<String> branches;
+
+	/**
+	 * The cached value of the '{@link #getTypes() <em>Types</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTypes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> types;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,10 +88,25 @@ public class Pull_requestImpl extends MinimalEObjectImpl.Container implements Pu
 	 * @generated
 	 */
 	@Override
+	public EList<String> getTypes() {
+		if (types == null) {
+			types = new EDataTypeUniqueEList<String>(String.class, this, YamlmdePackage.PULL_REQUEST__TYPES);
+		}
+		return types;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case YamlmdePackage.PULL_REQUEST__BRANCHES:
 			return getBranches();
+		case YamlmdePackage.PULL_REQUEST__TYPES:
+			return getTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -98,6 +124,10 @@ public class Pull_requestImpl extends MinimalEObjectImpl.Container implements Pu
 			getBranches().clear();
 			getBranches().addAll((Collection<? extends String>) newValue);
 			return;
+		case YamlmdePackage.PULL_REQUEST__TYPES:
+			getTypes().clear();
+			getTypes().addAll((Collection<? extends String>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -113,6 +143,9 @@ public class Pull_requestImpl extends MinimalEObjectImpl.Container implements Pu
 		case YamlmdePackage.PULL_REQUEST__BRANCHES:
 			getBranches().clear();
 			return;
+		case YamlmdePackage.PULL_REQUEST__TYPES:
+			getTypes().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -127,6 +160,8 @@ public class Pull_requestImpl extends MinimalEObjectImpl.Container implements Pu
 		switch (featureID) {
 		case YamlmdePackage.PULL_REQUEST__BRANCHES:
 			return branches != null && !branches.isEmpty();
+		case YamlmdePackage.PULL_REQUEST__TYPES:
+			return types != null && !types.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -144,6 +179,8 @@ public class Pull_requestImpl extends MinimalEObjectImpl.Container implements Pu
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (branches: ");
 		result.append(branches);
+		result.append(", types: ");
+		result.append(types);
 		result.append(')');
 		return result.toString();
 	}

@@ -4,212 +4,395 @@ grammar pt.isep.yamldslgen.xtext.MyDsl with org.eclipse.xtext.common.Terminals
 import "http://www.isep.pt/metayaml/github_actions" 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
-//GithubActions returns GithubActions:
-//	'GithubActions'
-//	name=EString
-//	'{'
-//		'on' on=On
-//		'jobs' '{' jobs+=Job ( "," jobs+=Job)* '}' 
-//	'}';
 
 // ---------------------------------------------------------------------------
 // Root
 // ---------------------------------------------------------------------------
 GithubActions returns GithubActions:
-	('name' ':' name=EString)
+	(('name' ':' name=EString)?
 	& ('on' ':' on=On)
-	& ('jobs' ':' BEG_BLOCK jobs+=Job+ END_BLOCK);
+	& ('concurrency' ':' concurrency=Concurrency)?
+	& ('defaults' ':' defaults=Defaults)?
+	& ('jobs' ':' BEG_BLOCK? jobs+=Job+ END_BLOCK?)
+	& ('permissions' ':' permissions=Permissions)?
+	& ('env' ':' (BEG_BLOCK? env+=KeyValuePair+ END_BLOCK?))?);
 
-// ---------------------------------------------------------------------------
-// EString — quoted string OR a plain scalar that may span multiple tokens.
-// PlainScalar collects every token type that can legitimately appear as a
-// "bare" YAML value, including PLAIN_SCALAR (with -, /, @, etc.), bare IDs,
-// integers, and the boolean keywords.
-// ---------------------------------------------------------------------------
+// =============================================================================
+// VALUE RULES
+// =============================================================================
+
 EString returns ecore::EString:
-	STRING | PlainScalar;
+	STRING | SQ_STRING | BlockString | ScalarSequence;
 
-PlainScalar returns ecore::EString:
-	(ID | INT | PLAIN_SCALAR | 'true' | 'false')
-	(ID | INT | PLAIN_SCALAR | 'true' | 'false')*;
+// Junta múltiplos tokens separados por dois pontos (ex: docker:latest, http://...)
+// Como exige que o ':' seja seguido de outro texto, NUNCA engole o ':' estrutural do YAML.
+ScalarSequence returns ecore::EString:
+    (YAML_SCALAR | GH_EXPRESSION | SQ_STRING | ID | INT | 'true' | 'false')
+    ( ((':' | '-') (YAML_SCALAR | GH_EXPRESSION | SQ_STRING | ID | INT | 'true' | 'false'))
+    | GH_EXPRESSION
+    | SQ_STRING
+    | '-' )*;
 	
-//On returns On:
-//	{On}
-//	'On'
-//	'{'
-//		('push' push=Push)?
-//		('pullRequest' pullRequest=Pull_request)?
-//	'}';
+// Lida com 'run: >' ou 'run: |' consumindo o bloco inteiro
+// Aceita qualquer token do Xtext e pontuações do Bash (como [, ], ; e -)
+BlockString returns ecore::EString:
+	('>' | '|') BEG_BLOCK? (
+		YAML_SCALAR | GH_EXPRESSION | ID | INT | STRING 
+		| '-' | '[' | ']' | ';' | ':' | ',' | '{' | '}' | ANY_OTHER
+	)* END_BLOCK?;
 
-// ---------------------------------------------------------------------------
-// 'on:' block
-// ---------------------------------------------------------------------------
+// =============================================================================
+// KEY RULE
+// =============================================================================
+
+// KeyName is used exclusively as the key in KeyValuePair.
+// Xtext keyword tokens ('name', 'run', etc.) cannot be matched by ID or
+// PLAIN_SCALAR, so every grammar keyword that may appear as a free-form
+// YAML key must be listed here explicitly.
+// ─── When adding a new DSL: add its keywords to this rule only. ───────────
+KeyName returns ecore::EString:
+	  ID | YAML_SCALAR | INT
+	| 'name' | 'on' | 'jobs' | 'permissions' | 'env'
+	| 'push' | 'pull_request' | 'branches' | 'tags'
+	| 'runs-on' | 'needs' | 'steps' | 'uses' | 'run' | 'with'
+	| 'shell' | 'contents' | 'security-events' | 'actions' 
+	| 'pages' | 'id-token' | 'types' | 'pull-requests' | 'if' 
+	| 'continue-on-error' | 'issues'
+	| 'strategy' | 'fail-fast' | 'max-parallel' | 'matrix'
+	| 'os' | 'build-type' 
+	| 'c-compiler' | 'cpp-compiler' | 'otp' | 'elixir' | 'include' 
+	| 'exclude' | 'workflow_call' | 'pull_request_target' 
+	| 'secrets' | 'required' | 'packages'
+	| 'container' | 'image'
+	| 'defaults' | 'outputs' | 'release' 
+	| 'inputs' | 'description' | 'default' 
+	| 'type' | 'node-version' | 'cache'
+	| 'python-version' | 'configuration' | 'digests'
+	| 'merge_group' | 'r-version'
+	| 'branch_protection_rule' | 'models' | 'ruby-version' | 'services' | 'ports'
+	| 'timeout-minutes' | 'checks';
+	
+// =============================================================================
+// KEY-VALUE PAIR  (generic block content — e.g. 'with:', 'env:')
+// =============================================================================
+
+// Key uses KeyName so grammar keywords are accepted as YAML keys
+// (e.g. "name: checkstyle-report" inside a 'with:' block).
+KeyValuePair returns KeyValuePair:
+	key=KeyName ':' value=EString;
+	
+// =============================================================================
+// TRIGGER RULES
+// =============================================================================
+
 On returns On:
 	{On}
-	BEG_BLOCK
-		(('push' ':' push=Push)?
-		& ('pull_request' ':' pullRequest=Pull_request)?)
-	END_BLOCK;
+	BEG_BLOCK?
+		(('branch_protection_rule' ':' branchProtectionRule=EString)?
+		&('push' ':' push=Push)?
+		& ('pull_request' ':' pullRequest=Pull_request)?
+		& ('pull_request_target' ':' pullRequestTarget=Pull_request)?
+		& ('schedule' ':' (BEG_BLOCK? schedule+=Schedule+ END_BLOCK?))?
+		& ('workflow_dispatch' ':' workflowDispatch=Workflow_dispatch)?
+		& ('workflow_call' ':' workflowCall=Workflow_call)?
+		& ('release' ':' release=Release)?
+		& ('merge_group' ':' mergeGroup=Merge_group)?
+		& ('issues' ':' issues=Issues)?)
+	END_BLOCK?;
 
-//Job returns Job:
-//	'Job'
-//	'{'
-//		'id' id=EString
-//		'runsOn' runsOn=EString
-//		('needs' '{' needs+=EString ( "," needs+=EString)* '}' )?
-//		'steps' '{' steps+=Step ( "," steps+=Step)* '}' 
-//		('permissions' permissions=Permissions)?
-//	'}';
-
-// ---------------------------------------------------------------------------
-// Job (id is the YAML key, properties in any order)
-// ---------------------------------------------------------------------------
-Job returns Job:
-	id=EString ':' BEG_BLOCK
-		(('runs-on' ':' runsOn=EString)
-		& ('needs' ':' (
-			BEG_BLOCK ('-' BEG_BLOCK needs+=EString END_BLOCK)+ END_BLOCK
-			| '[' needs+=EString (',' needs+=EString)* ']'
-		))?
-		& ('steps' ':' BEG_BLOCK steps+=Step+ END_BLOCK)
-		& ('permissions' ':' permissions=Permissions)?)
-	END_BLOCK;
-
-
-//Push returns Push:
-//	{Push}
-//	'Push'
-//	'{'
-//		('branches' '{' branches+=EString ( "," branches+=EString)* '}' )?
-//		('tags' '{' tags+=EString ( "," tags+=EString)* '}' )?
-//	'}';
-
-// ---------------------------------------------------------------------------
-// Push trigger — branches and tags both optional, both support flow & block
-// ---------------------------------------------------------------------------
 Push returns Push:
 	{Push}
 	BEG_BLOCK
 		(('branches' ':' (
-			BEG_BLOCK ('-' BEG_BLOCK branches+=EString END_BLOCK)+ END_BLOCK
+			  BEG_BLOCK ('-' BEG_BLOCK branches+=EString END_BLOCK)+ END_BLOCK
 			| '[' branches+=EString (',' branches+=EString)* ']'
 		))?
 		& ('tags' ':' (
-			BEG_BLOCK ('-' BEG_BLOCK tags+=EString END_BLOCK)+ END_BLOCK
+			  BEG_BLOCK ('-' BEG_BLOCK tags+=EString END_BLOCK)+ END_BLOCK
 			| '[' tags+=EString (',' tags+=EString)* ']'
 		))?)
 	END_BLOCK;
 
-//Pull_request returns Pull_request:
-//	'Pull_request'
-//	'{'
-//		'branches' '{' branches+=EString ( "," branches+=EString)* '}' 
-//	'}';
-
-// ---------------------------------------------------------------------------
-// Pull request trigger
-// ---------------------------------------------------------------------------
 Pull_request returns Pull_request:
 	{Pull_request}
 	BEG_BLOCK
-		'branches' ':' (
-			BEG_BLOCK ('-' BEG_BLOCK branches+=EString END_BLOCK)+ END_BLOCK
+		(('branches' ':' (
+			  BEG_BLOCK ('-' BEG_BLOCK branches+=EString END_BLOCK)+ END_BLOCK
 			| '[' branches+=EString (',' branches+=EString)* ']'
-		)
+		))?
+		& ('types' ':' (
+			  BEG_BLOCK ('-' BEG_BLOCK types+=EString END_BLOCK)+ END_BLOCK
+			| '[' types+=EString (',' types+=EString)* ']'
+		))?)
 	END_BLOCK;
+	
+Schedule returns Schedule:
+	'-' BEG_BLOCK?
+		'cron' ':' cron=EString
+	END_BLOCK?;
+	
+Workflow_dispatch returns Workflow_dispatch:
+    {Workflow_dispatch}
+    BEG_BLOCK?
+        ('inputs' ':' (BEG_BLOCK? inputs+=Input+ END_BLOCK?))?
+    END_BLOCK?;
 
+Input returns Input:
+    id=KeyName ':' BEG_BLOCK?
+        (('description' ':' description=EString)?
+        & ('default' ':' default=EString)?
+        & ('required' ':' required=EBoolean)?
+        & ('type' ':' type=EString)?)
+    END_BLOCK?;
+	
+Workflow_call returns Workflow_call:
+	{Workflow_call}
+	BEG_BLOCK?
+		('secrets' ':' BEG_BLOCK? secrets+=Secret+ END_BLOCK?)?
+	END_BLOCK?;
+	
+Secret returns Secret:
+	id=EString ':' BEG_BLOCK?
+		('required' ':' required=EBoolean)?
+	END_BLOCK?;
+	
+Merge_group returns Merge_group:
+	{Merge_group}
+	BEG_BLOCK?
+		('branches' ':' (
+			  BEG_BLOCK ('-' BEG_BLOCK? branches+=EString END_BLOCK?)+ END_BLOCK
+			| '[' branches+=EString (',' branches+=EString)* ']'
+		))
+	END_BLOCK?;
+	
+Issues returns Issues:
+	{Issues}
+	BEG_BLOCK?
+		('types' ':' (
+			  BEG_BLOCK ('-' BEG_BLOCK? types+=EString END_BLOCK?)+ END_BLOCK
+			| '[' types+=EString (',' types+=EString)* ']'
+		))
+	END_BLOCK?;
+	
+// =============================================================================
+// CONCURRENCY & ENVIRONMENT
+// =============================================================================
+Concurrency returns Concurrency:
+	{Concurrency}
+	BEG_BLOCK?
+		(('group' ':' group=EString)?
+		& ('cancel-in-progress' ':' cancelInProgress=EBoolean)?)
+	END_BLOCK?;
 
-//Step returns Step:
-//	{Step}
-//	'Step'
-//	name=EString
-//	'{'
-//		('uses' uses=EString)?
-//		('run' run=EString)?
-//		('with' ^with=With)?
-//	'}';
+//in future try to infer this in metayaml
+Environment returns Environment:
+	{Environment}
+	(
+		name=EString              // environment: production
+	|
+		BEG_BLOCK
+			(('name' ':' name=EString)?
+			& ('url' ':' url=EString)?)
+		END_BLOCK?
+	);
+	
 
-// ---------------------------------------------------------------------------
-// Step (list item) — properties in any order, all optional
-// ---------------------------------------------------------------------------
-Step returns Step:
-	{Step}
-	'-' BEG_BLOCK
-		(('name' ':' name=EString)?
-		& ('uses' ':' uses=EString)?
-		& ('run' ':' run=EString)?
-		& ('with' ':' ^with=With)?)
-	END_BLOCK;
+	
+// =============================================================================
+// PERMISSIONS
+// =============================================================================
 
-
-//Permissions returns Permissions:
-//	'Permissions'
-//	'{'
-//		'contents' contents=EString
-//	'}';
-
-// ---------------------------------------------------------------------------
-// Permissions
-// ---------------------------------------------------------------------------
 Permissions returns Permissions:
 	{Permissions}
-	BEG_BLOCK
-		'contents' ':' contents=EString
-	END_BLOCK;
+	BEG_BLOCK?
+		(('contents' ':' contents=EString)?
+		& ('security-events' ':' securityEvents=EString)?
+		& ('actions' ':' actions=EString)?
+		& ('pages' ':' pages=EString)?
+		& ('id-token' ':' idToken=EString)?
+		& ('pull-requests' ':' pullRequests=EString)?
+		& ('issues' ':' issues=EString)?
+		& ('packages' ':' packages=EString)?
+		& ('models' ':' models=EString)?
+		& ('checks' ':' checks=EString)?)
+	END_BLOCK?;
 
-//With returns With:
-//	{With}
-//	(generateReleaseNotes?='generateReleaseNotes')?
-//	'With'
-//	name=EString
-//	'{'
-//		('javaVersion' javaVersion=EString)?
-//		('distribution' distribution=EString)?
-//		('path' path=EString)?
-//		('target' target=EString)?
-//		('token' token=EString)?
-//		('files' files=EString)?
-//	'}';
+// =============================================================================
+// JOB
+// =============================================================================
 
-// ---------------------------------------------------------------------------
-// 'with:' — action inputs, all optional, any order
-// Concrete-syntax keywords match real GitHub Actions naming conventions
-// (java-version, generate_release_notes) but populate the metamodel
-// attributes (javaVersion, generateReleaseNotes) unchanged.
-// ---------------------------------------------------------------------------
-With returns With:
-	{With}
-	BEG_BLOCK
+Job returns Job:
+	id=EString ':' BEG_BLOCK?
 		(('name' ':' name=EString)?
-		& ('java-version' ':' javaVersion=EString)?
-		& ('distribution' ':' distribution=EString)?
-		& ('path' ':' path=EString)?
-		& ('target' ':' target=EString)?
-		& ('token' ':' token=EString)?
-		& ('files' ':' files=EString)?
-		& ('generate_release_notes' ':' generateReleaseNotes?='true')?)
-	END_BLOCK;
+		& ('runs-on' ':' runsOn=EString)?
+		& ('needs' ':' (
+			  needs+=EString 
+			| BEG_BLOCK ('-' BEG_BLOCK? needs+=EString END_BLOCK?)+ END_BLOCK
+			| '[' needs+=EString (',' needs+=EString)* ']'
+		))?
+		& ('if' ':' ^if=EString)?
+		& ('uses' ':' uses=EString)?
+		& ('environment' ':' environment=Environment)?
+		& ('strategy' ':' strategy=Strategy)?
+		& ('container' ':' container=Container)?
+		& ('services' ':' (BEG_BLOCK? services+=Service+ END_BLOCK?))?
+		& ('outputs' ':' (BEG_BLOCK? outputs+=KeyValuePair+ END_BLOCK?))?
+		& ('defaults' ':' defaults=Defaults)?
+		& ('steps' ':' BEG_BLOCK? steps+=Step+ END_BLOCK?)?
+		& ('permissions' ':' permissions=Permissions)?
+		& ('env' ':' (BEG_BLOCK? env+=KeyValuePair+ END_BLOCK?))?
+		& ('with' ':' (BEG_BLOCK? ^with+=KeyValuePair+ END_BLOCK?))?)
+	END_BLOCK?;
+	
+Service returns Service:
+	id=EString ':' BEG_BLOCK?
+		(('image' ':' image=EString)?
+		& ('ports' ':' (
+			  BEG_BLOCK ('-' BEG_BLOCK? ports+=EString END_BLOCK?)+ END_BLOCK
+			| '[' ports+=EString (',' ports+=EString)* ']'
+		))?
+		& ('env' ':' (BEG_BLOCK? env+=KeyValuePair+ END_BLOCK?))?)
+	END_BLOCK?;
+
+// =============================================================================
+// STEP
+// =============================================================================
+
+Step returns Step:
+	{Step}
+	'-' BEG_BLOCK?
+		(('name' ':' name=EString)?
+		& ('id'   ':' id=EString)?
+		& ('uses' ':' uses=EString)?
+		& ('run'  ':' run=EString)?
+		& ('if'   ':' ^if=EString)?
+		& ('working-directory' ':' workingDirectory=EString)?
+		& ('shell' ':' shell=EString)?
+		& ('continue-on-error' ':' continueOnError=EBoolean)?
+		& ('timeout-minutes' ':' timeoutMinutes=INT)?
+		& ('with' ':' (BEG_BLOCK? ^with+=KeyValuePair+ END_BLOCK?))?
+		& ('env'  ':' (BEG_BLOCK? env+=KeyValuePair+ END_BLOCK?))?)
+	END_BLOCK?;
+
+// =============================================================================
+// STRATEGY
+// =============================================================================
+	
+Strategy returns Strategy:
+	{Strategy}
+	BEG_BLOCK?
+		(('fail-fast' ':' failFast=EBoolean)?
+		& ('max-parallel' ':' maxParallel=INT)?
+		& ('matrix' ':' matrix=Matrix)?)
+	END_BLOCK?;
+
+// Matrix accepts any user-defined axis keys (os, node-version, java-version, ...) as
+// MatrixParameter entries. 'include' and 'exclude' are matched first so they are never
+// consumed as generic parameters.
+Matrix returns Matrix:
+	{Matrix}
+	BEG_BLOCK?
+		(  'include' ':' BEG_BLOCK ('-' BEG_BLOCK? include+=Include END_BLOCK?)+ END_BLOCK
+		 | 'exclude' ':' BEG_BLOCK ('-' BEG_BLOCK? exclude+=Exclude END_BLOCK?)+ END_BLOCK
+		 | parameters+=MatrixParameter
+		)*
+	END_BLOCK?;
+
+MatrixParameter returns MatrixParameter:
+	key=KeyName ':' (
+		  BEG_BLOCK ('-' BEG_BLOCK? values+=EString END_BLOCK?)+ END_BLOCK
+		| '[' values+=EString (',' values+=EString)* ']'
+	);
+
+Include returns Include:
+	{Include}
+	BEG_BLOCK?
+		entries+=KeyValuePair+
+	END_BLOCK?;
+
+Exclude returns Exclude:
+	{Exclude}
+	BEG_BLOCK?
+		entries+=KeyValuePair+
+	END_BLOCK?;
+	
+// =============================================================================
+// DEFAULTS & RUN
+// =============================================================================
+
+Defaults returns Defaults:
+	{Defaults}
+	BEG_BLOCK?
+		('run' ':' run=Run)
+	END_BLOCK?;
+
+Run returns Run:
+	{Run}
+	BEG_BLOCK?
+		('shell' ':' shell=EString)
+	END_BLOCK?;
+
+// =============================================================================
+// RELEASE
+// =============================================================================
+
+Release returns Release:
+	{Release}
+	BEG_BLOCK?
+		('types' ':' (
+			  BEG_BLOCK ('-' BEG_BLOCK? types+=EString END_BLOCK?)+ END_BLOCK
+			| '[' types+=EString (',' types+=EString)* ']'
+		))
+	END_BLOCK?;
+	
+// =============================================================================
+// CONTAINER
+// =============================================================================
+
+Container returns Container:
+	{Container}
+	BEG_BLOCK?
+		('image' ':' image=EString)
+	END_BLOCK?;
+
+// =============================================================================
+// BOOLEAN
+// =============================================================================
 
 EBoolean returns ecore::EBoolean:
 	'true' | 'false';
 	
 	
-// ---------------------------------------------------------------------------
-// Synthetic terminals injected by YamlIndentationTokenSource
-// (they replace the physical '{' and '}' used in the original grammar)
-// NOTE: terminal rules must come AFTER all parser rules in Xtext.
-// ---------------------------------------------------------------------------
+// =============================================================================
+// SYNTHETIC TERMINALS  (injected by MyDslIndentationAwareLexer)
+// =============================================================================
+
 terminal BEG_BLOCK: 'synthetic:BEGIN';
 terminal END_BLOCK: 'synthetic:END';
 
-// ---------------------------------------------------------------------------
-// Unquoted scalars containing structural punctuation (-, ., /, @, *).
-// First char may be a letter, underscore, dot, slash, dollar, or brace —
-// covering paths like "./gradlew" and expressions like "${{ ... }}".
-// (Digits as first char are excluded so plain integers stay tokenized as INT.)
-// ---------------------------------------------------------------------------
-terminal PLAIN_SCALAR:
-	('a'..'z'|'A'..'Z'|'_'|'.'|'/'|'$'|'{')
-	('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-'|'.'|'/'|'@'|'*'|'$'|'{'|'}'|' ')*
-	('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-'|'.'|'/'|'@'|'*'|'}');
 
+// =============================================================================
+// CUSTOM TERMINALS
+// =============================================================================
+
+// Single-quoted YAML string literal: 'value'
+terminal SQ_STRING: "'" !("'")* "'";
+
+// Ignora comentários do YAML (linhas que começam por #)
+@Override terminal SL_COMMENT: '#' !('\n'|'\r')*;
+// @Override terminal SL_COMMENT: '#' !('\n'|'\r')* ('\r'? '\n')?;
+
+// GitHub Actions expression ${{ ... }}
+// Mantemos o until-match ('->') para capturar expressões completas sem o Lexer se perder nas chavetas.
+terminal GH_EXPRESSION:
+    '$'? '{{' -> '}}'
+    | '$' ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-')*;
+    
+// Força o Lexer a dar prioridade a números puros antes do YAML_SCALAR
+@Override terminal INT returns ecore::EInt: ('0'..'9')+;
+
+// Um escalar YAML "apanha-tudo" que suporta comandos shell, espaços e símbolos.
+// Pára automaticamente em vírgulas, parêntesis retos (para arrays funcionarem) e dois pontos (para as keys funcionarem).
+terminal YAML_SCALAR:
+	('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'.'|'/'|'@'|'*'|'$'|'='|'+'|'<'|'>'|'|'|'&'|'~'|'!'|'?'|'\\'|'('|')')
+	('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-'|'.'|'/'|'@'|'*'|'$'|'='|'+'|'<'|'>'|'|'|'&'|'~'|'!'|'?'|'\\'|'('|')'|' ')*;

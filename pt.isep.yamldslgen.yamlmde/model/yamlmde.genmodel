@@ -10,14 +10,61 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Yamlmde" basePackage="pt.isep.yamldslgen" disposableProviderFactory="true"
       ecorePackage="yamlmde.ecore#/">
+    <genClasses ecoreClass="yamlmde.ecore#//KeyValuePair">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//KeyValuePair/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//KeyValuePair/value"/>
+    </genClasses>
     <genClasses ecoreClass="yamlmde.ecore#//GithubActions">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//GithubActions/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//GithubActions/on"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//GithubActions/jobs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//GithubActions/on"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//GithubActions/permissions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//GithubActions/concurrency"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//GithubActions/defaults"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//GithubActions/env"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Job">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Job/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Job/runsOn"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Job/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Job/needs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Job/if"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Job/uses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Job/steps"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Job/permissions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Job/environment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Job/strategy"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Job/container"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Job/services"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Job/defaults"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Job/env"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Job/with"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Job/outputs"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Step">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Step/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Step/uses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Step/run"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Step/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Step/if"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Step/workingDirectory"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Step/shell"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Step/continueOnError"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Step/timeoutMinutes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Step/env"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Step/with"/>
     </genClasses>
     <genClasses ecoreClass="yamlmde.ecore#//On">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//On/branchProtectionRule"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//On/push"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//On/pullRequest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//On/schedule"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference yamlmde.ecore#//On/workflowDispatch"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//On/workflowCall"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//On/pullRequestTarget"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//On/release"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference yamlmde.ecore#//On/issues"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//On/mergeGroup"/>
     </genClasses>
     <genClasses ecoreClass="yamlmde.ecore#//Push">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Push/branches"/>
@@ -25,32 +72,91 @@
     </genClasses>
     <genClasses ecoreClass="yamlmde.ecore#//Pull_request">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Pull_request/branches"/>
-    </genClasses>
-    <genClasses ecoreClass="yamlmde.ecore#//Job">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Job/id"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Job/runsOn"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Job/needs"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Job/steps"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Job/permissions"/>
-    </genClasses>
-    <genClasses ecoreClass="yamlmde.ecore#//Step">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Step/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Step/uses"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Step/run"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Step/with"/>
-    </genClasses>
-    <genClasses ecoreClass="yamlmde.ecore#//With">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//With/javaVersion"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//With/distribution"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//With/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//With/path"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//With/target"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//With/token"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//With/files"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//With/generateReleaseNotes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Pull_request/types"/>
     </genClasses>
     <genClasses ecoreClass="yamlmde.ecore#//Permissions">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Permissions/contents"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Permissions/securityEvents"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Permissions/actions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Permissions/pages"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Permissions/idToken"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Permissions/pullRequests"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Permissions/issues"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Permissions/packages"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Permissions/models"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Permissions/checks"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Schedule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Schedule/cron"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Workflow_dispatch">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Workflow_dispatch/inputs"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Environment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Environment/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Environment/url"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Concurrency">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Concurrency/group"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Concurrency/cancelInProgress"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Strategy">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Strategy/failFast"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Strategy/maxParallel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Strategy/matrix"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Matrix">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Matrix/include"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Matrix/exclude"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Matrix/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Include">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Include/entries"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Exclude">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Exclude/entries"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Workflow_call">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Workflow_call/secrets"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Secret">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Secret/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Secret/required"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Container">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Container/image"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Defaults">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Defaults/run"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Run">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Run/shell"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Release">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Release/types"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Issues">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Issues/types"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Input">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Input/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Input/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Input/default"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Input/required"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Input/type"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Merge_group">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Merge_group/branches"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Service">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Service/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Service/image"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Service/ports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Service/env"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//MatrixParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//MatrixParameter/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//MatrixParameter/values"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

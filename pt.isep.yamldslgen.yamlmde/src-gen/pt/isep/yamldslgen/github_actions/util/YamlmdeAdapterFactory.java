@@ -67,8 +67,23 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected YamlmdeSwitch<Adapter> modelSwitch = new YamlmdeSwitch<Adapter>() {
 		@Override
+		public Adapter caseKeyValuePair(KeyValuePair object) {
+			return createKeyValuePairAdapter();
+		}
+
+		@Override
 		public Adapter caseGithubActions(GithubActions object) {
 			return createGithubActionsAdapter();
+		}
+
+		@Override
+		public Adapter caseJob(Job object) {
+			return createJobAdapter();
+		}
+
+		@Override
+		public Adapter caseStep(Step object) {
+			return createStepAdapter();
 		}
 
 		@Override
@@ -87,23 +102,103 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseJob(Job object) {
-			return createJobAdapter();
-		}
-
-		@Override
-		public Adapter caseStep(Step object) {
-			return createStepAdapter();
-		}
-
-		@Override
-		public Adapter caseWith(With object) {
-			return createWithAdapter();
-		}
-
-		@Override
 		public Adapter casePermissions(Permissions object) {
 			return createPermissionsAdapter();
+		}
+
+		@Override
+		public Adapter caseSchedule(Schedule object) {
+			return createScheduleAdapter();
+		}
+
+		@Override
+		public Adapter caseWorkflow_dispatch(Workflow_dispatch object) {
+			return createWorkflow_dispatchAdapter();
+		}
+
+		@Override
+		public Adapter caseEnvironment(Environment object) {
+			return createEnvironmentAdapter();
+		}
+
+		@Override
+		public Adapter caseConcurrency(Concurrency object) {
+			return createConcurrencyAdapter();
+		}
+
+		@Override
+		public Adapter caseStrategy(Strategy object) {
+			return createStrategyAdapter();
+		}
+
+		@Override
+		public Adapter caseMatrix(Matrix object) {
+			return createMatrixAdapter();
+		}
+
+		@Override
+		public Adapter caseInclude(Include object) {
+			return createIncludeAdapter();
+		}
+
+		@Override
+		public Adapter caseExclude(Exclude object) {
+			return createExcludeAdapter();
+		}
+
+		@Override
+		public Adapter caseWorkflow_call(Workflow_call object) {
+			return createWorkflow_callAdapter();
+		}
+
+		@Override
+		public Adapter caseSecret(Secret object) {
+			return createSecretAdapter();
+		}
+
+		@Override
+		public Adapter caseContainer(Container object) {
+			return createContainerAdapter();
+		}
+
+		@Override
+		public Adapter caseDefaults(Defaults object) {
+			return createDefaultsAdapter();
+		}
+
+		@Override
+		public Adapter caseRun(Run object) {
+			return createRunAdapter();
+		}
+
+		@Override
+		public Adapter caseRelease(Release object) {
+			return createReleaseAdapter();
+		}
+
+		@Override
+		public Adapter caseIssues(Issues object) {
+			return createIssuesAdapter();
+		}
+
+		@Override
+		public Adapter caseInput(Input object) {
+			return createInputAdapter();
+		}
+
+		@Override
+		public Adapter caseMerge_group(Merge_group object) {
+			return createMerge_groupAdapter();
+		}
+
+		@Override
+		public Adapter caseService(Service object) {
+			return createServiceAdapter();
+		}
+
+		@Override
+		public Adapter caseMatrixParameter(MatrixParameter object) {
+			return createMatrixParameterAdapter();
 		}
 
 		@Override
@@ -123,6 +218,20 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 	@Override
 	public Adapter createAdapter(Notifier target) {
 		return modelSwitch.doSwitch((EObject) target);
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.KeyValuePair <em>Key Value Pair</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.KeyValuePair
+	 * @generated
+	 */
+	public Adapter createKeyValuePairAdapter() {
+		return null;
 	}
 
 	/**
@@ -210,20 +319,6 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.With <em>With</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see pt.isep.yamldslgen.github_actions.With
-	 * @generated
-	 */
-	public Adapter createWithAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Permissions <em>Permissions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -234,6 +329,272 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPermissionsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Schedule <em>Schedule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Schedule
+	 * @generated
+	 */
+	public Adapter createScheduleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Workflow_dispatch <em>Workflow dispatch</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Workflow_dispatch
+	 * @generated
+	 */
+	public Adapter createWorkflow_dispatchAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Environment <em>Environment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Environment
+	 * @generated
+	 */
+	public Adapter createEnvironmentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Concurrency <em>Concurrency</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Concurrency
+	 * @generated
+	 */
+	public Adapter createConcurrencyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Strategy <em>Strategy</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Strategy
+	 * @generated
+	 */
+	public Adapter createStrategyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Matrix <em>Matrix</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Matrix
+	 * @generated
+	 */
+	public Adapter createMatrixAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Include <em>Include</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Include
+	 * @generated
+	 */
+	public Adapter createIncludeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Exclude <em>Exclude</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Exclude
+	 * @generated
+	 */
+	public Adapter createExcludeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Workflow_call <em>Workflow call</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Workflow_call
+	 * @generated
+	 */
+	public Adapter createWorkflow_callAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Secret <em>Secret</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Secret
+	 * @generated
+	 */
+	public Adapter createSecretAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Container <em>Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Container
+	 * @generated
+	 */
+	public Adapter createContainerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Defaults <em>Defaults</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Defaults
+	 * @generated
+	 */
+	public Adapter createDefaultsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Run <em>Run</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Run
+	 * @generated
+	 */
+	public Adapter createRunAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Release <em>Release</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Release
+	 * @generated
+	 */
+	public Adapter createReleaseAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Issues <em>Issues</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Issues
+	 * @generated
+	 */
+	public Adapter createIssuesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Input <em>Input</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Input
+	 * @generated
+	 */
+	public Adapter createInputAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Merge_group <em>Merge group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Merge_group
+	 * @generated
+	 */
+	public Adapter createMerge_groupAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.Service <em>Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.Service
+	 * @generated
+	 */
+	public Adapter createServiceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.MatrixParameter <em>Matrix Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.MatrixParameter
+	 * @generated
+	 */
+	public Adapter createMatrixParameterAdapter() {
 		return null;
 	}
 

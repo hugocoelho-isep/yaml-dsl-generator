@@ -22,6 +22,15 @@ public interface YamlmdeFactory extends EFactory {
 	YamlmdeFactory eINSTANCE = pt.isep.yamldslgen.github_actions.impl.YamlmdeFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Key Value Pair</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Key Value Pair</em>'.
+	 * @generated
+	 */
+	KeyValuePair createKeyValuePair();
+
+	/**
 	 * Returns a new object of class '<em>Github Actions</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -76,15 +85,6 @@ public interface YamlmdeFactory extends EFactory {
 	Step createStep();
 
 	/**
-	 * Returns a new object of class '<em>With</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>With</em>'.
-	 * @generated
-	 */
-	With createWith();
-
-	/**
 	 * Returns a new object of class '<em>Permissions</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92,6 +92,177 @@ public interface YamlmdeFactory extends EFactory {
 	 * @generated
 	 */
 	Permissions createPermissions();
+
+	/**
+	 * Returns a new object of class '<em>Schedule</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Schedule</em>'.
+	 * @generated
+	 */
+	Schedule createSchedule();
+
+	/**
+	 * Returns a new object of class '<em>Workflow dispatch</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Workflow dispatch</em>'.
+	 * @generated
+	 */
+	Workflow_dispatch createWorkflow_dispatch();
+
+	/**
+	 * Returns a new object of class '<em>Environment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Environment</em>'.
+	 * @generated
+	 */
+	Environment createEnvironment();
+
+	/**
+	 * Returns a new object of class '<em>Concurrency</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Concurrency</em>'.
+	 * @generated
+	 */
+	Concurrency createConcurrency();
+
+	/**
+	 * Returns a new object of class '<em>Strategy</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Strategy</em>'.
+	 * @generated
+	 */
+	Strategy createStrategy();
+
+	/**
+	 * Returns a new object of class '<em>Matrix</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Matrix</em>'.
+	 * @generated
+	 */
+	Matrix createMatrix();
+
+	/**
+	 * Returns a new object of class '<em>Include</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Include</em>'.
+	 * @generated
+	 */
+	Include createInclude();
+
+	/**
+	 * Returns a new object of class '<em>Exclude</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Exclude</em>'.
+	 * @generated
+	 */
+	Exclude createExclude();
+
+	/**
+	 * Returns a new object of class '<em>Workflow call</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Workflow call</em>'.
+	 * @generated
+	 */
+	Workflow_call createWorkflow_call();
+
+	/**
+	 * Returns a new object of class '<em>Secret</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Secret</em>'.
+	 * @generated
+	 */
+	Secret createSecret();
+
+	/**
+	 * Returns a new object of class '<em>Container</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Container</em>'.
+	 * @generated
+	 */
+	Container createContainer();
+
+	/**
+	 * Returns a new object of class '<em>Defaults</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Defaults</em>'.
+	 * @generated
+	 */
+	Defaults createDefaults();
+
+	/**
+	 * Returns a new object of class '<em>Run</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Run</em>'.
+	 * @generated
+	 */
+	Run createRun();
+
+	/**
+	 * Returns a new object of class '<em>Release</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Release</em>'.
+	 * @generated
+	 */
+	Release createRelease();
+
+	/**
+	 * Returns a new object of class '<em>Issues</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Issues</em>'.
+	 * @generated
+	 */
+	Issues createIssues();
+
+	/**
+	 * Returns a new object of class '<em>Input</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Input</em>'.
+	 * @generated
+	 */
+	Input createInput();
+
+	/**
+	 * Returns a new object of class '<em>Merge group</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Merge group</em>'.
+	 * @generated
+	 */
+	Merge_group createMerge_group();
+
+	/**
+	 * Returns a new object of class '<em>Service</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Service</em>'.
+	 * @generated
+	 */
+	Service createService();
+
+	/**
+	 * Returns a new object of class '<em>Matrix Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Matrix Parameter</em>'.
+	 * @generated
+	 */
+	MatrixParameter createMatrixParameter();
 
 	/**
 	 * Returns the package supported by this factory.

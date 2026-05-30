@@ -58,7 +58,10 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 
 			addIdPropertyDescriptor(object);
 			addRunsOnPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 			addNeedsPropertyDescriptor(object);
+			addIfPropertyDescriptor(object);
+			addUsesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -94,6 +97,21 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 	}
 
 	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Job_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Job_name_feature", "_UI_Job_type"),
+						YamlmdePackage.Literals.JOB__NAME, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Needs feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -105,6 +123,36 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 						getResourceLocator(), getString("_UI_Job_needs_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_Job_needs_feature", "_UI_Job_type"),
 						YamlmdePackage.Literals.JOB__NEEDS, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the If feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIfPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Job_if_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Job_if_feature", "_UI_Job_type"),
+						YamlmdePackage.Literals.JOB__IF, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Uses feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUsesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Job_uses_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Job_uses_feature", "_UI_Job_type"),
+						YamlmdePackage.Literals.JOB__USES, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -122,6 +170,14 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(YamlmdePackage.Literals.JOB__STEPS);
 			childrenFeatures.add(YamlmdePackage.Literals.JOB__PERMISSIONS);
+			childrenFeatures.add(YamlmdePackage.Literals.JOB__ENVIRONMENT);
+			childrenFeatures.add(YamlmdePackage.Literals.JOB__STRATEGY);
+			childrenFeatures.add(YamlmdePackage.Literals.JOB__CONTAINER);
+			childrenFeatures.add(YamlmdePackage.Literals.JOB__SERVICES);
+			childrenFeatures.add(YamlmdePackage.Literals.JOB__DEFAULTS);
+			childrenFeatures.add(YamlmdePackage.Literals.JOB__ENV);
+			childrenFeatures.add(YamlmdePackage.Literals.JOB__WITH);
+			childrenFeatures.add(YamlmdePackage.Literals.JOB__OUTPUTS);
 		}
 		return childrenFeatures;
 	}
@@ -168,7 +224,7 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Job) object).getId();
+		String label = ((Job) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_Job_type")
 				: getString("_UI_Job_type") + " " + label;
 	}
@@ -187,11 +243,22 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 		switch (notification.getFeatureID(Job.class)) {
 		case YamlmdePackage.JOB__ID:
 		case YamlmdePackage.JOB__RUNS_ON:
+		case YamlmdePackage.JOB__NAME:
 		case YamlmdePackage.JOB__NEEDS:
+		case YamlmdePackage.JOB__IF:
+		case YamlmdePackage.JOB__USES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case YamlmdePackage.JOB__STEPS:
 		case YamlmdePackage.JOB__PERMISSIONS:
+		case YamlmdePackage.JOB__ENVIRONMENT:
+		case YamlmdePackage.JOB__STRATEGY:
+		case YamlmdePackage.JOB__CONTAINER:
+		case YamlmdePackage.JOB__SERVICES:
+		case YamlmdePackage.JOB__DEFAULTS:
+		case YamlmdePackage.JOB__ENV:
+		case YamlmdePackage.JOB__WITH:
+		case YamlmdePackage.JOB__OUTPUTS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -214,6 +281,52 @@ public class JobItemProvider extends ItemProviderAdapter implements IEditingDoma
 
 		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.JOB__PERMISSIONS,
 				YamlmdeFactory.eINSTANCE.createPermissions()));
+
+		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.JOB__ENVIRONMENT,
+				YamlmdeFactory.eINSTANCE.createEnvironment()));
+
+		newChildDescriptors.add(
+				createChildParameter(YamlmdePackage.Literals.JOB__STRATEGY, YamlmdeFactory.eINSTANCE.createStrategy()));
+
+		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.JOB__CONTAINER,
+				YamlmdeFactory.eINSTANCE.createContainer()));
+
+		newChildDescriptors.add(
+				createChildParameter(YamlmdePackage.Literals.JOB__SERVICES, YamlmdeFactory.eINSTANCE.createService()));
+
+		newChildDescriptors.add(
+				createChildParameter(YamlmdePackage.Literals.JOB__DEFAULTS, YamlmdeFactory.eINSTANCE.createDefaults()));
+
+		newChildDescriptors.add(
+				createChildParameter(YamlmdePackage.Literals.JOB__ENV, YamlmdeFactory.eINSTANCE.createKeyValuePair()));
+
+		newChildDescriptors.add(
+				createChildParameter(YamlmdePackage.Literals.JOB__WITH, YamlmdeFactory.eINSTANCE.createKeyValuePair()));
+
+		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.JOB__OUTPUTS,
+				YamlmdeFactory.eINSTANCE.createKeyValuePair()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify = childFeature == YamlmdePackage.Literals.JOB__ENV
+				|| childFeature == YamlmdePackage.Literals.JOB__WITH
+				|| childFeature == YamlmdePackage.Literals.JOB__OUTPUTS;
+
+		if (qualify) {
+			return getString("_UI_CreateChild_text2",
+					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**
