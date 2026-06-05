@@ -22,28 +22,37 @@ GithubActions returns GithubActions:
 // =============================================================================
 
 EString returns ecore::EString:
-	STRING | SQ_STRING | BlockString | ScalarSequence;
-
-// Junta múltiplos tokens separados por dois pontos (ex: docker:latest, http://...)
-// Como exige que o ':' seja seguido de outro texto, NUNCA engole o ':' estrutural do YAML.
-ScalarSequence returns ecore::EString:
-    (YAML_SCALAR | GH_EXPRESSION | SQ_STRING | ID | INT | 'true' | 'false')
-    ( ((':' | '-') (YAML_SCALAR | GH_EXPRESSION | SQ_STRING | ID | INT | 'true' | 'false'))
-    | GH_EXPRESSION
-    | SQ_STRING
-    | '-' )*;
+	STRING | SQ_STRING | BlockString
+	| YAML_SCALAR | GH_EXPRESSION | ID | INT | 'true' | 'false';
 	
 // Lida com 'run: >' ou 'run: |' consumindo o bloco inteiro
 // Aceita qualquer token do Xtext e pontuações do Bash (como [, ], ; e -)
 BlockString returns ecore::EString:
-	('>' | '|') BEG_BLOCK? (
-		YAML_SCALAR | GH_EXPRESSION | ID | INT | STRING 
+	('>' | '|' | '>-' | '>+' | '|-' | '|+') BEG_BLOCK? (
+		YAML_SCALAR | GH_EXPRESSION | ID | INT | STRING
 		| '-' | '[' | ']' | ';' | ':' | ',' | '{' | '}' | ANY_OTHER
+		| '>-' | '>+' | '|-' | '|+'
 	)* END_BLOCK?;
 
 // =============================================================================
 // KEY RULE
 // =============================================================================
+
+ReservedWord returns ecore::EString:
+	  'name' | 'on' | 'concurrency' | 'defaults' | 'jobs' | 'permissions' | 'env'
+	| 'branch_protection_rule' | 'push' | 'pull_request' | 'pull_request_target'
+	| 'schedule' | 'workflow_dispatch' | 'workflow_call' | 'release' | 'merge_group' | 'issues'
+	| 'branches' | 'tags' | 'types' | 'cron' | 'inputs' | 'description' | 'default'
+	| 'required' | 'type' | 'secrets' | 'group' | 'cancel-in-progress' | 'url'
+	| 'contents' | 'security-events' | 'actions' | 'pages' | 'id-token' | 'pull-requests'
+	| 'packages' | 'models' | 'checks' | 'runs-on' | 'needs' | 'if' | 'uses'
+	| 'environment' | 'strategy' | 'container' | 'services' | 'outputs' | 'steps' | 'with'
+	| 'image' | 'ports' | 'id' | 'run' | 'working-directory' | 'shell'
+	| 'continue-on-error' | 'timeout-minutes' | 'fail-fast' | 'max-parallel' | 'matrix'
+	| 'include' | 'exclude' | 'os' | 'build-type' | 'c-compiler' | 'cpp-compiler'
+	| 'otp' | 'elixir' | 'node-version' | 'cache' | 'python-version' | 'configuration'
+	| 'digests' | 'r-version' | 'ruby-version';
+
 
 // KeyName is used exclusively as the key in KeyValuePair.
 // Xtext keyword tokens ('name', 'run', etc.) cannot be matched by ID or
@@ -51,26 +60,7 @@ BlockString returns ecore::EString:
 // YAML key must be listed here explicitly.
 // ─── When adding a new DSL: add its keywords to this rule only. ───────────
 KeyName returns ecore::EString:
-	  ID | YAML_SCALAR | INT
-	| 'name' | 'on' | 'jobs' | 'permissions' | 'env'
-	| 'push' | 'pull_request' | 'branches' | 'tags'
-	| 'runs-on' | 'needs' | 'steps' | 'uses' | 'run' | 'with'
-	| 'shell' | 'contents' | 'security-events' | 'actions' 
-	| 'pages' | 'id-token' | 'types' | 'pull-requests' | 'if' 
-	| 'continue-on-error' | 'issues'
-	| 'strategy' | 'fail-fast' | 'max-parallel' | 'matrix'
-	| 'os' | 'build-type' 
-	| 'c-compiler' | 'cpp-compiler' | 'otp' | 'elixir' | 'include' 
-	| 'exclude' | 'workflow_call' | 'pull_request_target' 
-	| 'secrets' | 'required' | 'packages'
-	| 'container' | 'image'
-	| 'defaults' | 'outputs' | 'release' 
-	| 'inputs' | 'description' | 'default' 
-	| 'type' | 'node-version' | 'cache'
-	| 'python-version' | 'configuration' | 'digests'
-	| 'merge_group' | 'r-version'
-	| 'branch_protection_rule' | 'models' | 'ruby-version' | 'services' | 'ports'
-	| 'timeout-minutes' | 'checks';
+	ID | YAML_SCALAR | INT | ReservedWord;
 	
 // =============================================================================
 // KEY-VALUE PAIR  (generic block content — e.g. 'with:', 'env:')
@@ -385,8 +375,12 @@ terminal SQ_STRING: "'" !("'")* "'";
 // GitHub Actions expression ${{ ... }}
 // Mantemos o until-match ('->') para capturar expressões completas sem o Lexer se perder nas chavetas.
 terminal GH_EXPRESSION:
-    '$'? '{{' -> '}}'
-    | '$' ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-')*;
+    ('$'? '{{' -> '}}' | '$' ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-')*)
+    (
+        ('/' | '.' | '-' | '_' | '@') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-'|'.'|'/'|'@')*
+      | '$'? '{{' -> '}}'
+      | '$' ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-')*
+    )*;
     
 // Força o Lexer a dar prioridade a números puros antes do YAML_SCALAR
 @Override terminal INT returns ecore::EInt: ('0'..'9')+;

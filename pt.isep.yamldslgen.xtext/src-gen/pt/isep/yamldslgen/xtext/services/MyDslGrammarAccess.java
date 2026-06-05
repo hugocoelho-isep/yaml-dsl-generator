@@ -216,16 +216,23 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cSQ_STRINGTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cBlockStringParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cScalarSequenceParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cYAML_SCALARTerminalRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cGH_EXPRESSIONTerminalRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cIDTerminalRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cINTTerminalRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final Keyword cTrueKeyword_7 = (Keyword)cAlternatives.eContents().get(7);
+		private final Keyword cFalseKeyword_8 = (Keyword)cAlternatives.eContents().get(8);
 		
 		//// =============================================================================
 		//// VALUE RULES
 		//// =============================================================================
 		//EString returns ecore::EString:
-		//    STRING | SQ_STRING | BlockString | ScalarSequence;
+		//    STRING | SQ_STRING | BlockString
+		//    | YAML_SCALAR | GH_EXPRESSION | ID | INT | 'true' | 'false';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//STRING | SQ_STRING | BlockString | ScalarSequence
+		//STRING | SQ_STRING | BlockString
+		//| YAML_SCALAR | GH_EXPRESSION | ID | INT | 'true' | 'false'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//STRING
@@ -237,128 +244,23 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//BlockString
 		public RuleCall getBlockStringParserRuleCall_2() { return cBlockStringParserRuleCall_2; }
 		
-		//ScalarSequence
-		public RuleCall getScalarSequenceParserRuleCall_3() { return cScalarSequenceParserRuleCall_3; }
-	}
-	public class ScalarSequenceElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "pt.isep.yamldslgen.xtext.MyDsl.ScalarSequence");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final RuleCall cYAML_SCALARTerminalRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
-		private final RuleCall cGH_EXPRESSIONTerminalRuleCall_0_1 = (RuleCall)cAlternatives_0.eContents().get(1);
-		private final RuleCall cSQ_STRINGTerminalRuleCall_0_2 = (RuleCall)cAlternatives_0.eContents().get(2);
-		private final RuleCall cIDTerminalRuleCall_0_3 = (RuleCall)cAlternatives_0.eContents().get(3);
-		private final RuleCall cINTTerminalRuleCall_0_4 = (RuleCall)cAlternatives_0.eContents().get(4);
-		private final Keyword cTrueKeyword_0_5 = (Keyword)cAlternatives_0.eContents().get(5);
-		private final Keyword cFalseKeyword_0_6 = (Keyword)cAlternatives_0.eContents().get(6);
-		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
-		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
-		private final Alternatives cAlternatives_1_0_0 = (Alternatives)cGroup_1_0.eContents().get(0);
-		private final Keyword cColonKeyword_1_0_0_0 = (Keyword)cAlternatives_1_0_0.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_1_0_0_1 = (Keyword)cAlternatives_1_0_0.eContents().get(1);
-		private final Alternatives cAlternatives_1_0_1 = (Alternatives)cGroup_1_0.eContents().get(1);
-		private final RuleCall cYAML_SCALARTerminalRuleCall_1_0_1_0 = (RuleCall)cAlternatives_1_0_1.eContents().get(0);
-		private final RuleCall cGH_EXPRESSIONTerminalRuleCall_1_0_1_1 = (RuleCall)cAlternatives_1_0_1.eContents().get(1);
-		private final RuleCall cSQ_STRINGTerminalRuleCall_1_0_1_2 = (RuleCall)cAlternatives_1_0_1.eContents().get(2);
-		private final RuleCall cIDTerminalRuleCall_1_0_1_3 = (RuleCall)cAlternatives_1_0_1.eContents().get(3);
-		private final RuleCall cINTTerminalRuleCall_1_0_1_4 = (RuleCall)cAlternatives_1_0_1.eContents().get(4);
-		private final Keyword cTrueKeyword_1_0_1_5 = (Keyword)cAlternatives_1_0_1.eContents().get(5);
-		private final Keyword cFalseKeyword_1_0_1_6 = (Keyword)cAlternatives_1_0_1.eContents().get(6);
-		private final RuleCall cGH_EXPRESSIONTerminalRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
-		private final RuleCall cSQ_STRINGTerminalRuleCall_1_2 = (RuleCall)cAlternatives_1.eContents().get(2);
-		private final Keyword cHyphenMinusKeyword_1_3 = (Keyword)cAlternatives_1.eContents().get(3);
-		
-		//// Junta múltiplos tokens separados por dois pontos (ex: docker:latest, http://...)
-		//// Como exige que o ':' seja seguido de outro texto, NUNCA engole o ':' estrutural do YAML.
-		//ScalarSequence returns ecore::EString:
-		//    (YAML_SCALAR | GH_EXPRESSION | SQ_STRING | ID | INT | 'true' | 'false')
-		//    ( ((':' | '-') (YAML_SCALAR | GH_EXPRESSION | SQ_STRING | ID | INT | 'true' | 'false'))
-		//    | GH_EXPRESSION
-		//    | SQ_STRING
-		//    | '-' )*;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//(YAML_SCALAR | GH_EXPRESSION | SQ_STRING | ID | INT | 'true' | 'false')
-		//( ((':' | '-') (YAML_SCALAR | GH_EXPRESSION | SQ_STRING | ID | INT | 'true' | 'false'))
-		//| GH_EXPRESSION
-		//| SQ_STRING
-		//| '-' )*
-		public Group getGroup() { return cGroup; }
-		
-		//(YAML_SCALAR | GH_EXPRESSION | SQ_STRING | ID | INT | 'true' | 'false')
-		public Alternatives getAlternatives_0() { return cAlternatives_0; }
-		
 		//YAML_SCALAR
-		public RuleCall getYAML_SCALARTerminalRuleCall_0_0() { return cYAML_SCALARTerminalRuleCall_0_0; }
+		public RuleCall getYAML_SCALARTerminalRuleCall_3() { return cYAML_SCALARTerminalRuleCall_3; }
 		
 		//GH_EXPRESSION
-		public RuleCall getGH_EXPRESSIONTerminalRuleCall_0_1() { return cGH_EXPRESSIONTerminalRuleCall_0_1; }
-		
-		//SQ_STRING
-		public RuleCall getSQ_STRINGTerminalRuleCall_0_2() { return cSQ_STRINGTerminalRuleCall_0_2; }
+		public RuleCall getGH_EXPRESSIONTerminalRuleCall_4() { return cGH_EXPRESSIONTerminalRuleCall_4; }
 		
 		//ID
-		public RuleCall getIDTerminalRuleCall_0_3() { return cIDTerminalRuleCall_0_3; }
+		public RuleCall getIDTerminalRuleCall_5() { return cIDTerminalRuleCall_5; }
 		
 		//INT
-		public RuleCall getINTTerminalRuleCall_0_4() { return cINTTerminalRuleCall_0_4; }
+		public RuleCall getINTTerminalRuleCall_6() { return cINTTerminalRuleCall_6; }
 		
 		//'true'
-		public Keyword getTrueKeyword_0_5() { return cTrueKeyword_0_5; }
+		public Keyword getTrueKeyword_7() { return cTrueKeyword_7; }
 		
 		//'false'
-		public Keyword getFalseKeyword_0_6() { return cFalseKeyword_0_6; }
-		
-		//( ((':' | '-') (YAML_SCALAR | GH_EXPRESSION | SQ_STRING | ID | INT | 'true' | 'false'))
-		//| GH_EXPRESSION
-		//| SQ_STRING
-		//| '-' )*
-		public Alternatives getAlternatives_1() { return cAlternatives_1; }
-		
-		//((':' | '-') (YAML_SCALAR | GH_EXPRESSION | SQ_STRING | ID | INT | 'true' | 'false'))
-		public Group getGroup_1_0() { return cGroup_1_0; }
-		
-		//(':' | '-')
-		public Alternatives getAlternatives_1_0_0() { return cAlternatives_1_0_0; }
-		
-		//':'
-		public Keyword getColonKeyword_1_0_0_0() { return cColonKeyword_1_0_0_0; }
-		
-		//'-'
-		public Keyword getHyphenMinusKeyword_1_0_0_1() { return cHyphenMinusKeyword_1_0_0_1; }
-		
-		//(YAML_SCALAR | GH_EXPRESSION | SQ_STRING | ID | INT | 'true' | 'false')
-		public Alternatives getAlternatives_1_0_1() { return cAlternatives_1_0_1; }
-		
-		//YAML_SCALAR
-		public RuleCall getYAML_SCALARTerminalRuleCall_1_0_1_0() { return cYAML_SCALARTerminalRuleCall_1_0_1_0; }
-		
-		//GH_EXPRESSION
-		public RuleCall getGH_EXPRESSIONTerminalRuleCall_1_0_1_1() { return cGH_EXPRESSIONTerminalRuleCall_1_0_1_1; }
-		
-		//SQ_STRING
-		public RuleCall getSQ_STRINGTerminalRuleCall_1_0_1_2() { return cSQ_STRINGTerminalRuleCall_1_0_1_2; }
-		
-		//ID
-		public RuleCall getIDTerminalRuleCall_1_0_1_3() { return cIDTerminalRuleCall_1_0_1_3; }
-		
-		//INT
-		public RuleCall getINTTerminalRuleCall_1_0_1_4() { return cINTTerminalRuleCall_1_0_1_4; }
-		
-		//'true'
-		public Keyword getTrueKeyword_1_0_1_5() { return cTrueKeyword_1_0_1_5; }
-		
-		//'false'
-		public Keyword getFalseKeyword_1_0_1_6() { return cFalseKeyword_1_0_1_6; }
-		
-		//GH_EXPRESSION
-		public RuleCall getGH_EXPRESSIONTerminalRuleCall_1_1() { return cGH_EXPRESSIONTerminalRuleCall_1_1; }
-		
-		//SQ_STRING
-		public RuleCall getSQ_STRINGTerminalRuleCall_1_2() { return cSQ_STRINGTerminalRuleCall_1_2; }
-		
-		//'-'
-		public Keyword getHyphenMinusKeyword_1_3() { return cHyphenMinusKeyword_1_3; }
+		public Keyword getFalseKeyword_8() { return cFalseKeyword_8; }
 	}
 	public class BlockStringElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "pt.isep.yamldslgen.xtext.MyDsl.BlockString");
@@ -366,6 +268,10 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
 		private final Keyword cGreaterThanSignKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
 		private final Keyword cVerticalLineKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
+		private final Keyword cGreaterThanSignHyphenMinusKeyword_0_2 = (Keyword)cAlternatives_0.eContents().get(2);
+		private final Keyword cGreaterThanSignPlusSignKeyword_0_3 = (Keyword)cAlternatives_0.eContents().get(3);
+		private final Keyword cVerticalLineHyphenMinusKeyword_0_4 = (Keyword)cAlternatives_0.eContents().get(4);
+		private final Keyword cVerticalLinePlusSignKeyword_0_5 = (Keyword)cAlternatives_0.eContents().get(5);
 		private final RuleCall cBEG_BLOCKTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
 		private final RuleCall cYAML_SCALARTerminalRuleCall_2_0 = (RuleCall)cAlternatives_2.eContents().get(0);
@@ -382,24 +288,30 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cLeftCurlyBracketKeyword_2_11 = (Keyword)cAlternatives_2.eContents().get(11);
 		private final Keyword cRightCurlyBracketKeyword_2_12 = (Keyword)cAlternatives_2.eContents().get(12);
 		private final RuleCall cANY_OTHERTerminalRuleCall_2_13 = (RuleCall)cAlternatives_2.eContents().get(13);
+		private final Keyword cGreaterThanSignHyphenMinusKeyword_2_14 = (Keyword)cAlternatives_2.eContents().get(14);
+		private final Keyword cGreaterThanSignPlusSignKeyword_2_15 = (Keyword)cAlternatives_2.eContents().get(15);
+		private final Keyword cVerticalLineHyphenMinusKeyword_2_16 = (Keyword)cAlternatives_2.eContents().get(16);
+		private final Keyword cVerticalLinePlusSignKeyword_2_17 = (Keyword)cAlternatives_2.eContents().get(17);
 		private final RuleCall cEND_BLOCKTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//// Lida com 'run: >' ou 'run: |' consumindo o bloco inteiro
 		//// Aceita qualquer token do Xtext e pontuações do Bash (como [, ], ; e -)
 		//BlockString returns ecore::EString:
-		//    ('>' | '|') BEG_BLOCK? (
+		//    ('>' | '|' | '>-' | '>+' | '|-' | '|+') BEG_BLOCK? (
 		//        YAML_SCALAR | GH_EXPRESSION | ID | INT | STRING
 		//        | '-' | '[' | ']' | ';' | ':' | ',' | '{' | '}' | ANY_OTHER
+		//        | '>-' | '>+' | '|-' | '|+'
 		//    )* END_BLOCK?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('>' | '|') BEG_BLOCK? (
+		//('>' | '|' | '>-' | '>+' | '|-' | '|+') BEG_BLOCK? (
 		//    YAML_SCALAR | GH_EXPRESSION | ID | INT | STRING
 		//    | '-' | '[' | ']' | ';' | ':' | ',' | '{' | '}' | ANY_OTHER
+		//    | '>-' | '>+' | '|-' | '|+'
 		//)* END_BLOCK?
 		public Group getGroup() { return cGroup; }
 		
-		//('>' | '|')
+		//('>' | '|' | '>-' | '>+' | '|-' | '|+')
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 		
 		//'>'
@@ -408,12 +320,25 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'|'
 		public Keyword getVerticalLineKeyword_0_1() { return cVerticalLineKeyword_0_1; }
 		
+		//'>-'
+		public Keyword getGreaterThanSignHyphenMinusKeyword_0_2() { return cGreaterThanSignHyphenMinusKeyword_0_2; }
+		
+		//'>+'
+		public Keyword getGreaterThanSignPlusSignKeyword_0_3() { return cGreaterThanSignPlusSignKeyword_0_3; }
+		
+		//'|-'
+		public Keyword getVerticalLineHyphenMinusKeyword_0_4() { return cVerticalLineHyphenMinusKeyword_0_4; }
+		
+		//'|+'
+		public Keyword getVerticalLinePlusSignKeyword_0_5() { return cVerticalLinePlusSignKeyword_0_5; }
+		
 		//BEG_BLOCK?
 		public RuleCall getBEG_BLOCKTerminalRuleCall_1() { return cBEG_BLOCKTerminalRuleCall_1; }
 		
 		//(
 		//       YAML_SCALAR | GH_EXPRESSION | ID | INT | STRING
 		//       | '-' | '[' | ']' | ';' | ':' | ',' | '{' | '}' | ANY_OTHER
+		//       | '>-' | '>+' | '|-' | '|+'
 		//   )*
 		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 		
@@ -459,8 +384,362 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//ANY_OTHER
 		public RuleCall getANY_OTHERTerminalRuleCall_2_13() { return cANY_OTHERTerminalRuleCall_2_13; }
 		
+		//'>-'
+		public Keyword getGreaterThanSignHyphenMinusKeyword_2_14() { return cGreaterThanSignHyphenMinusKeyword_2_14; }
+		
+		//'>+'
+		public Keyword getGreaterThanSignPlusSignKeyword_2_15() { return cGreaterThanSignPlusSignKeyword_2_15; }
+		
+		//'|-'
+		public Keyword getVerticalLineHyphenMinusKeyword_2_16() { return cVerticalLineHyphenMinusKeyword_2_16; }
+		
+		//'|+'
+		public Keyword getVerticalLinePlusSignKeyword_2_17() { return cVerticalLinePlusSignKeyword_2_17; }
+		
 		//END_BLOCK?
 		public RuleCall getEND_BLOCKTerminalRuleCall_3() { return cEND_BLOCKTerminalRuleCall_3; }
+	}
+	public class ReservedWordElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "pt.isep.yamldslgen.xtext.MyDsl.ReservedWord");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cNameKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cOnKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cConcurrencyKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cDefaultsKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Keyword cJobsKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		private final Keyword cPermissionsKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
+		private final Keyword cEnvKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
+		private final Keyword cBranch_protection_ruleKeyword_7 = (Keyword)cAlternatives.eContents().get(7);
+		private final Keyword cPushKeyword_8 = (Keyword)cAlternatives.eContents().get(8);
+		private final Keyword cPull_requestKeyword_9 = (Keyword)cAlternatives.eContents().get(9);
+		private final Keyword cPull_request_targetKeyword_10 = (Keyword)cAlternatives.eContents().get(10);
+		private final Keyword cScheduleKeyword_11 = (Keyword)cAlternatives.eContents().get(11);
+		private final Keyword cWorkflow_dispatchKeyword_12 = (Keyword)cAlternatives.eContents().get(12);
+		private final Keyword cWorkflow_callKeyword_13 = (Keyword)cAlternatives.eContents().get(13);
+		private final Keyword cReleaseKeyword_14 = (Keyword)cAlternatives.eContents().get(14);
+		private final Keyword cMerge_groupKeyword_15 = (Keyword)cAlternatives.eContents().get(15);
+		private final Keyword cIssuesKeyword_16 = (Keyword)cAlternatives.eContents().get(16);
+		private final Keyword cBranchesKeyword_17 = (Keyword)cAlternatives.eContents().get(17);
+		private final Keyword cTagsKeyword_18 = (Keyword)cAlternatives.eContents().get(18);
+		private final Keyword cTypesKeyword_19 = (Keyword)cAlternatives.eContents().get(19);
+		private final Keyword cCronKeyword_20 = (Keyword)cAlternatives.eContents().get(20);
+		private final Keyword cInputsKeyword_21 = (Keyword)cAlternatives.eContents().get(21);
+		private final Keyword cDescriptionKeyword_22 = (Keyword)cAlternatives.eContents().get(22);
+		private final Keyword cDefaultKeyword_23 = (Keyword)cAlternatives.eContents().get(23);
+		private final Keyword cRequiredKeyword_24 = (Keyword)cAlternatives.eContents().get(24);
+		private final Keyword cTypeKeyword_25 = (Keyword)cAlternatives.eContents().get(25);
+		private final Keyword cSecretsKeyword_26 = (Keyword)cAlternatives.eContents().get(26);
+		private final Keyword cGroupKeyword_27 = (Keyword)cAlternatives.eContents().get(27);
+		private final Keyword cCancelInProgressKeyword_28 = (Keyword)cAlternatives.eContents().get(28);
+		private final Keyword cUrlKeyword_29 = (Keyword)cAlternatives.eContents().get(29);
+		private final Keyword cContentsKeyword_30 = (Keyword)cAlternatives.eContents().get(30);
+		private final Keyword cSecurityEventsKeyword_31 = (Keyword)cAlternatives.eContents().get(31);
+		private final Keyword cActionsKeyword_32 = (Keyword)cAlternatives.eContents().get(32);
+		private final Keyword cPagesKeyword_33 = (Keyword)cAlternatives.eContents().get(33);
+		private final Keyword cIdTokenKeyword_34 = (Keyword)cAlternatives.eContents().get(34);
+		private final Keyword cPullRequestsKeyword_35 = (Keyword)cAlternatives.eContents().get(35);
+		private final Keyword cPackagesKeyword_36 = (Keyword)cAlternatives.eContents().get(36);
+		private final Keyword cModelsKeyword_37 = (Keyword)cAlternatives.eContents().get(37);
+		private final Keyword cChecksKeyword_38 = (Keyword)cAlternatives.eContents().get(38);
+		private final Keyword cRunsOnKeyword_39 = (Keyword)cAlternatives.eContents().get(39);
+		private final Keyword cNeedsKeyword_40 = (Keyword)cAlternatives.eContents().get(40);
+		private final Keyword cIfKeyword_41 = (Keyword)cAlternatives.eContents().get(41);
+		private final Keyword cUsesKeyword_42 = (Keyword)cAlternatives.eContents().get(42);
+		private final Keyword cEnvironmentKeyword_43 = (Keyword)cAlternatives.eContents().get(43);
+		private final Keyword cStrategyKeyword_44 = (Keyword)cAlternatives.eContents().get(44);
+		private final Keyword cContainerKeyword_45 = (Keyword)cAlternatives.eContents().get(45);
+		private final Keyword cServicesKeyword_46 = (Keyword)cAlternatives.eContents().get(46);
+		private final Keyword cOutputsKeyword_47 = (Keyword)cAlternatives.eContents().get(47);
+		private final Keyword cStepsKeyword_48 = (Keyword)cAlternatives.eContents().get(48);
+		private final Keyword cWithKeyword_49 = (Keyword)cAlternatives.eContents().get(49);
+		private final Keyword cImageKeyword_50 = (Keyword)cAlternatives.eContents().get(50);
+		private final Keyword cPortsKeyword_51 = (Keyword)cAlternatives.eContents().get(51);
+		private final Keyword cIdKeyword_52 = (Keyword)cAlternatives.eContents().get(52);
+		private final Keyword cRunKeyword_53 = (Keyword)cAlternatives.eContents().get(53);
+		private final Keyword cWorkingDirectoryKeyword_54 = (Keyword)cAlternatives.eContents().get(54);
+		private final Keyword cShellKeyword_55 = (Keyword)cAlternatives.eContents().get(55);
+		private final Keyword cContinueOnErrorKeyword_56 = (Keyword)cAlternatives.eContents().get(56);
+		private final Keyword cTimeoutMinutesKeyword_57 = (Keyword)cAlternatives.eContents().get(57);
+		private final Keyword cFailFastKeyword_58 = (Keyword)cAlternatives.eContents().get(58);
+		private final Keyword cMaxParallelKeyword_59 = (Keyword)cAlternatives.eContents().get(59);
+		private final Keyword cMatrixKeyword_60 = (Keyword)cAlternatives.eContents().get(60);
+		private final Keyword cIncludeKeyword_61 = (Keyword)cAlternatives.eContents().get(61);
+		private final Keyword cExcludeKeyword_62 = (Keyword)cAlternatives.eContents().get(62);
+		private final Keyword cOsKeyword_63 = (Keyword)cAlternatives.eContents().get(63);
+		private final Keyword cBuildTypeKeyword_64 = (Keyword)cAlternatives.eContents().get(64);
+		private final Keyword cCCompilerKeyword_65 = (Keyword)cAlternatives.eContents().get(65);
+		private final Keyword cCppCompilerKeyword_66 = (Keyword)cAlternatives.eContents().get(66);
+		private final Keyword cOtpKeyword_67 = (Keyword)cAlternatives.eContents().get(67);
+		private final Keyword cElixirKeyword_68 = (Keyword)cAlternatives.eContents().get(68);
+		private final Keyword cNodeVersionKeyword_69 = (Keyword)cAlternatives.eContents().get(69);
+		private final Keyword cCacheKeyword_70 = (Keyword)cAlternatives.eContents().get(70);
+		private final Keyword cPythonVersionKeyword_71 = (Keyword)cAlternatives.eContents().get(71);
+		private final Keyword cConfigurationKeyword_72 = (Keyword)cAlternatives.eContents().get(72);
+		private final Keyword cDigestsKeyword_73 = (Keyword)cAlternatives.eContents().get(73);
+		private final Keyword cRVersionKeyword_74 = (Keyword)cAlternatives.eContents().get(74);
+		private final Keyword cRubyVersionKeyword_75 = (Keyword)cAlternatives.eContents().get(75);
+		
+		//// =============================================================================
+		//// KEY RULE
+		//// =============================================================================
+		//ReservedWord returns ecore::EString:
+		//      'name' | 'on' | 'concurrency' | 'defaults' | 'jobs' | 'permissions' | 'env'
+		//    | 'branch_protection_rule' | 'push' | 'pull_request' | 'pull_request_target'
+		//    | 'schedule' | 'workflow_dispatch' | 'workflow_call' | 'release' | 'merge_group' | 'issues'
+		//    | 'branches' | 'tags' | 'types' | 'cron' | 'inputs' | 'description' | 'default'
+		//    | 'required' | 'type' | 'secrets' | 'group' | 'cancel-in-progress' | 'url'
+		//    | 'contents' | 'security-events' | 'actions' | 'pages' | 'id-token' | 'pull-requests'
+		//    | 'packages' | 'models' | 'checks' | 'runs-on' | 'needs' | 'if' | 'uses'
+		//    | 'environment' | 'strategy' | 'container' | 'services' | 'outputs' | 'steps' | 'with'
+		//    | 'image' | 'ports' | 'id' | 'run' | 'working-directory' | 'shell'
+		//    | 'continue-on-error' | 'timeout-minutes' | 'fail-fast' | 'max-parallel' | 'matrix'
+		//    | 'include' | 'exclude' | 'os' | 'build-type' | 'c-compiler' | 'cpp-compiler'
+		//    | 'otp' | 'elixir' | 'node-version' | 'cache' | 'python-version' | 'configuration'
+		//    | 'digests' | 'r-version' | 'ruby-version';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//  'name' | 'on' | 'concurrency' | 'defaults' | 'jobs' | 'permissions' | 'env'
+		//| 'branch_protection_rule' | 'push' | 'pull_request' | 'pull_request_target'
+		//| 'schedule' | 'workflow_dispatch' | 'workflow_call' | 'release' | 'merge_group' | 'issues'
+		//| 'branches' | 'tags' | 'types' | 'cron' | 'inputs' | 'description' | 'default'
+		//| 'required' | 'type' | 'secrets' | 'group' | 'cancel-in-progress' | 'url'
+		//| 'contents' | 'security-events' | 'actions' | 'pages' | 'id-token' | 'pull-requests'
+		//| 'packages' | 'models' | 'checks' | 'runs-on' | 'needs' | 'if' | 'uses'
+		//| 'environment' | 'strategy' | 'container' | 'services' | 'outputs' | 'steps' | 'with'
+		//| 'image' | 'ports' | 'id' | 'run' | 'working-directory' | 'shell'
+		//| 'continue-on-error' | 'timeout-minutes' | 'fail-fast' | 'max-parallel' | 'matrix'
+		//| 'include' | 'exclude' | 'os' | 'build-type' | 'c-compiler' | 'cpp-compiler'
+		//| 'otp' | 'elixir' | 'node-version' | 'cache' | 'python-version' | 'configuration'
+		//| 'digests' | 'r-version' | 'ruby-version'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'name'
+		public Keyword getNameKeyword_0() { return cNameKeyword_0; }
+		
+		//'on'
+		public Keyword getOnKeyword_1() { return cOnKeyword_1; }
+		
+		//'concurrency'
+		public Keyword getConcurrencyKeyword_2() { return cConcurrencyKeyword_2; }
+		
+		//'defaults'
+		public Keyword getDefaultsKeyword_3() { return cDefaultsKeyword_3; }
+		
+		//'jobs'
+		public Keyword getJobsKeyword_4() { return cJobsKeyword_4; }
+		
+		//'permissions'
+		public Keyword getPermissionsKeyword_5() { return cPermissionsKeyword_5; }
+		
+		//'env'
+		public Keyword getEnvKeyword_6() { return cEnvKeyword_6; }
+		
+		//'branch_protection_rule'
+		public Keyword getBranch_protection_ruleKeyword_7() { return cBranch_protection_ruleKeyword_7; }
+		
+		//'push'
+		public Keyword getPushKeyword_8() { return cPushKeyword_8; }
+		
+		//'pull_request'
+		public Keyword getPull_requestKeyword_9() { return cPull_requestKeyword_9; }
+		
+		//'pull_request_target'
+		public Keyword getPull_request_targetKeyword_10() { return cPull_request_targetKeyword_10; }
+		
+		//'schedule'
+		public Keyword getScheduleKeyword_11() { return cScheduleKeyword_11; }
+		
+		//'workflow_dispatch'
+		public Keyword getWorkflow_dispatchKeyword_12() { return cWorkflow_dispatchKeyword_12; }
+		
+		//'workflow_call'
+		public Keyword getWorkflow_callKeyword_13() { return cWorkflow_callKeyword_13; }
+		
+		//'release'
+		public Keyword getReleaseKeyword_14() { return cReleaseKeyword_14; }
+		
+		//'merge_group'
+		public Keyword getMerge_groupKeyword_15() { return cMerge_groupKeyword_15; }
+		
+		//'issues'
+		public Keyword getIssuesKeyword_16() { return cIssuesKeyword_16; }
+		
+		//'branches'
+		public Keyword getBranchesKeyword_17() { return cBranchesKeyword_17; }
+		
+		//'tags'
+		public Keyword getTagsKeyword_18() { return cTagsKeyword_18; }
+		
+		//'types'
+		public Keyword getTypesKeyword_19() { return cTypesKeyword_19; }
+		
+		//'cron'
+		public Keyword getCronKeyword_20() { return cCronKeyword_20; }
+		
+		//'inputs'
+		public Keyword getInputsKeyword_21() { return cInputsKeyword_21; }
+		
+		//'description'
+		public Keyword getDescriptionKeyword_22() { return cDescriptionKeyword_22; }
+		
+		//'default'
+		public Keyword getDefaultKeyword_23() { return cDefaultKeyword_23; }
+		
+		//'required'
+		public Keyword getRequiredKeyword_24() { return cRequiredKeyword_24; }
+		
+		//'type'
+		public Keyword getTypeKeyword_25() { return cTypeKeyword_25; }
+		
+		//'secrets'
+		public Keyword getSecretsKeyword_26() { return cSecretsKeyword_26; }
+		
+		//'group'
+		public Keyword getGroupKeyword_27() { return cGroupKeyword_27; }
+		
+		//'cancel-in-progress'
+		public Keyword getCancelInProgressKeyword_28() { return cCancelInProgressKeyword_28; }
+		
+		//'url'
+		public Keyword getUrlKeyword_29() { return cUrlKeyword_29; }
+		
+		//'contents'
+		public Keyword getContentsKeyword_30() { return cContentsKeyword_30; }
+		
+		//'security-events'
+		public Keyword getSecurityEventsKeyword_31() { return cSecurityEventsKeyword_31; }
+		
+		//'actions'
+		public Keyword getActionsKeyword_32() { return cActionsKeyword_32; }
+		
+		//'pages'
+		public Keyword getPagesKeyword_33() { return cPagesKeyword_33; }
+		
+		//'id-token'
+		public Keyword getIdTokenKeyword_34() { return cIdTokenKeyword_34; }
+		
+		//'pull-requests'
+		public Keyword getPullRequestsKeyword_35() { return cPullRequestsKeyword_35; }
+		
+		//'packages'
+		public Keyword getPackagesKeyword_36() { return cPackagesKeyword_36; }
+		
+		//'models'
+		public Keyword getModelsKeyword_37() { return cModelsKeyword_37; }
+		
+		//'checks'
+		public Keyword getChecksKeyword_38() { return cChecksKeyword_38; }
+		
+		//'runs-on'
+		public Keyword getRunsOnKeyword_39() { return cRunsOnKeyword_39; }
+		
+		//'needs'
+		public Keyword getNeedsKeyword_40() { return cNeedsKeyword_40; }
+		
+		//'if'
+		public Keyword getIfKeyword_41() { return cIfKeyword_41; }
+		
+		//'uses'
+		public Keyword getUsesKeyword_42() { return cUsesKeyword_42; }
+		
+		//'environment'
+		public Keyword getEnvironmentKeyword_43() { return cEnvironmentKeyword_43; }
+		
+		//'strategy'
+		public Keyword getStrategyKeyword_44() { return cStrategyKeyword_44; }
+		
+		//'container'
+		public Keyword getContainerKeyword_45() { return cContainerKeyword_45; }
+		
+		//'services'
+		public Keyword getServicesKeyword_46() { return cServicesKeyword_46; }
+		
+		//'outputs'
+		public Keyword getOutputsKeyword_47() { return cOutputsKeyword_47; }
+		
+		//'steps'
+		public Keyword getStepsKeyword_48() { return cStepsKeyword_48; }
+		
+		//'with'
+		public Keyword getWithKeyword_49() { return cWithKeyword_49; }
+		
+		//'image'
+		public Keyword getImageKeyword_50() { return cImageKeyword_50; }
+		
+		//'ports'
+		public Keyword getPortsKeyword_51() { return cPortsKeyword_51; }
+		
+		//'id'
+		public Keyword getIdKeyword_52() { return cIdKeyword_52; }
+		
+		//'run'
+		public Keyword getRunKeyword_53() { return cRunKeyword_53; }
+		
+		//'working-directory'
+		public Keyword getWorkingDirectoryKeyword_54() { return cWorkingDirectoryKeyword_54; }
+		
+		//'shell'
+		public Keyword getShellKeyword_55() { return cShellKeyword_55; }
+		
+		//'continue-on-error'
+		public Keyword getContinueOnErrorKeyword_56() { return cContinueOnErrorKeyword_56; }
+		
+		//'timeout-minutes'
+		public Keyword getTimeoutMinutesKeyword_57() { return cTimeoutMinutesKeyword_57; }
+		
+		//'fail-fast'
+		public Keyword getFailFastKeyword_58() { return cFailFastKeyword_58; }
+		
+		//'max-parallel'
+		public Keyword getMaxParallelKeyword_59() { return cMaxParallelKeyword_59; }
+		
+		//'matrix'
+		public Keyword getMatrixKeyword_60() { return cMatrixKeyword_60; }
+		
+		//'include'
+		public Keyword getIncludeKeyword_61() { return cIncludeKeyword_61; }
+		
+		//'exclude'
+		public Keyword getExcludeKeyword_62() { return cExcludeKeyword_62; }
+		
+		//'os'
+		public Keyword getOsKeyword_63() { return cOsKeyword_63; }
+		
+		//'build-type'
+		public Keyword getBuildTypeKeyword_64() { return cBuildTypeKeyword_64; }
+		
+		//'c-compiler'
+		public Keyword getCCompilerKeyword_65() { return cCCompilerKeyword_65; }
+		
+		//'cpp-compiler'
+		public Keyword getCppCompilerKeyword_66() { return cCppCompilerKeyword_66; }
+		
+		//'otp'
+		public Keyword getOtpKeyword_67() { return cOtpKeyword_67; }
+		
+		//'elixir'
+		public Keyword getElixirKeyword_68() { return cElixirKeyword_68; }
+		
+		//'node-version'
+		public Keyword getNodeVersionKeyword_69() { return cNodeVersionKeyword_69; }
+		
+		//'cache'
+		public Keyword getCacheKeyword_70() { return cCacheKeyword_70; }
+		
+		//'python-version'
+		public Keyword getPythonVersionKeyword_71() { return cPythonVersionKeyword_71; }
+		
+		//'configuration'
+		public Keyword getConfigurationKeyword_72() { return cConfigurationKeyword_72; }
+		
+		//'digests'
+		public Keyword getDigestsKeyword_73() { return cDigestsKeyword_73; }
+		
+		//'r-version'
+		public Keyword getRVersionKeyword_74() { return cRVersionKeyword_74; }
+		
+		//'ruby-version'
+		public Keyword getRubyVersionKeyword_75() { return cRubyVersionKeyword_75; }
 	}
 	public class KeyNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "pt.isep.yamldslgen.xtext.MyDsl.KeyName");
@@ -468,124 +747,18 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cYAML_SCALARTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final Keyword cNameKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
-		private final Keyword cOnKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
-		private final Keyword cJobsKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
-		private final Keyword cPermissionsKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
-		private final Keyword cEnvKeyword_7 = (Keyword)cAlternatives.eContents().get(7);
-		private final Keyword cPushKeyword_8 = (Keyword)cAlternatives.eContents().get(8);
-		private final Keyword cPull_requestKeyword_9 = (Keyword)cAlternatives.eContents().get(9);
-		private final Keyword cBranchesKeyword_10 = (Keyword)cAlternatives.eContents().get(10);
-		private final Keyword cTagsKeyword_11 = (Keyword)cAlternatives.eContents().get(11);
-		private final Keyword cRunsOnKeyword_12 = (Keyword)cAlternatives.eContents().get(12);
-		private final Keyword cNeedsKeyword_13 = (Keyword)cAlternatives.eContents().get(13);
-		private final Keyword cStepsKeyword_14 = (Keyword)cAlternatives.eContents().get(14);
-		private final Keyword cUsesKeyword_15 = (Keyword)cAlternatives.eContents().get(15);
-		private final Keyword cRunKeyword_16 = (Keyword)cAlternatives.eContents().get(16);
-		private final Keyword cWithKeyword_17 = (Keyword)cAlternatives.eContents().get(17);
-		private final Keyword cShellKeyword_18 = (Keyword)cAlternatives.eContents().get(18);
-		private final Keyword cContentsKeyword_19 = (Keyword)cAlternatives.eContents().get(19);
-		private final Keyword cSecurityEventsKeyword_20 = (Keyword)cAlternatives.eContents().get(20);
-		private final Keyword cActionsKeyword_21 = (Keyword)cAlternatives.eContents().get(21);
-		private final Keyword cPagesKeyword_22 = (Keyword)cAlternatives.eContents().get(22);
-		private final Keyword cIdTokenKeyword_23 = (Keyword)cAlternatives.eContents().get(23);
-		private final Keyword cTypesKeyword_24 = (Keyword)cAlternatives.eContents().get(24);
-		private final Keyword cPullRequestsKeyword_25 = (Keyword)cAlternatives.eContents().get(25);
-		private final Keyword cIfKeyword_26 = (Keyword)cAlternatives.eContents().get(26);
-		private final Keyword cContinueOnErrorKeyword_27 = (Keyword)cAlternatives.eContents().get(27);
-		private final Keyword cIssuesKeyword_28 = (Keyword)cAlternatives.eContents().get(28);
-		private final Keyword cStrategyKeyword_29 = (Keyword)cAlternatives.eContents().get(29);
-		private final Keyword cFailFastKeyword_30 = (Keyword)cAlternatives.eContents().get(30);
-		private final Keyword cMaxParallelKeyword_31 = (Keyword)cAlternatives.eContents().get(31);
-		private final Keyword cMatrixKeyword_32 = (Keyword)cAlternatives.eContents().get(32);
-		private final Keyword cOsKeyword_33 = (Keyword)cAlternatives.eContents().get(33);
-		private final Keyword cBuildTypeKeyword_34 = (Keyword)cAlternatives.eContents().get(34);
-		private final Keyword cCCompilerKeyword_35 = (Keyword)cAlternatives.eContents().get(35);
-		private final Keyword cCppCompilerKeyword_36 = (Keyword)cAlternatives.eContents().get(36);
-		private final Keyword cOtpKeyword_37 = (Keyword)cAlternatives.eContents().get(37);
-		private final Keyword cElixirKeyword_38 = (Keyword)cAlternatives.eContents().get(38);
-		private final Keyword cIncludeKeyword_39 = (Keyword)cAlternatives.eContents().get(39);
-		private final Keyword cExcludeKeyword_40 = (Keyword)cAlternatives.eContents().get(40);
-		private final Keyword cWorkflow_callKeyword_41 = (Keyword)cAlternatives.eContents().get(41);
-		private final Keyword cPull_request_targetKeyword_42 = (Keyword)cAlternatives.eContents().get(42);
-		private final Keyword cSecretsKeyword_43 = (Keyword)cAlternatives.eContents().get(43);
-		private final Keyword cRequiredKeyword_44 = (Keyword)cAlternatives.eContents().get(44);
-		private final Keyword cPackagesKeyword_45 = (Keyword)cAlternatives.eContents().get(45);
-		private final Keyword cContainerKeyword_46 = (Keyword)cAlternatives.eContents().get(46);
-		private final Keyword cImageKeyword_47 = (Keyword)cAlternatives.eContents().get(47);
-		private final Keyword cDefaultsKeyword_48 = (Keyword)cAlternatives.eContents().get(48);
-		private final Keyword cOutputsKeyword_49 = (Keyword)cAlternatives.eContents().get(49);
-		private final Keyword cReleaseKeyword_50 = (Keyword)cAlternatives.eContents().get(50);
-		private final Keyword cInputsKeyword_51 = (Keyword)cAlternatives.eContents().get(51);
-		private final Keyword cDescriptionKeyword_52 = (Keyword)cAlternatives.eContents().get(52);
-		private final Keyword cDefaultKeyword_53 = (Keyword)cAlternatives.eContents().get(53);
-		private final Keyword cTypeKeyword_54 = (Keyword)cAlternatives.eContents().get(54);
-		private final Keyword cNodeVersionKeyword_55 = (Keyword)cAlternatives.eContents().get(55);
-		private final Keyword cCacheKeyword_56 = (Keyword)cAlternatives.eContents().get(56);
-		private final Keyword cPythonVersionKeyword_57 = (Keyword)cAlternatives.eContents().get(57);
-		private final Keyword cConfigurationKeyword_58 = (Keyword)cAlternatives.eContents().get(58);
-		private final Keyword cDigestsKeyword_59 = (Keyword)cAlternatives.eContents().get(59);
-		private final Keyword cMerge_groupKeyword_60 = (Keyword)cAlternatives.eContents().get(60);
-		private final Keyword cRVersionKeyword_61 = (Keyword)cAlternatives.eContents().get(61);
-		private final Keyword cBranch_protection_ruleKeyword_62 = (Keyword)cAlternatives.eContents().get(62);
-		private final Keyword cModelsKeyword_63 = (Keyword)cAlternatives.eContents().get(63);
-		private final Keyword cRubyVersionKeyword_64 = (Keyword)cAlternatives.eContents().get(64);
-		private final Keyword cServicesKeyword_65 = (Keyword)cAlternatives.eContents().get(65);
-		private final Keyword cPortsKeyword_66 = (Keyword)cAlternatives.eContents().get(66);
-		private final Keyword cTimeoutMinutesKeyword_67 = (Keyword)cAlternatives.eContents().get(67);
-		private final Keyword cChecksKeyword_68 = (Keyword)cAlternatives.eContents().get(68);
+		private final RuleCall cReservedWordParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
-		//// =============================================================================
-		//// KEY RULE
-		//// =============================================================================
 		//// KeyName is used exclusively as the key in KeyValuePair.
 		//// Xtext keyword tokens ('name', 'run', etc.) cannot be matched by ID or
 		//// PLAIN_SCALAR, so every grammar keyword that may appear as a free-form
 		//// YAML key must be listed here explicitly.
 		//// ─── When adding a new DSL: add its keywords to this rule only. ───────────
 		//KeyName returns ecore::EString:
-		//      ID | YAML_SCALAR | INT
-		//    | 'name' | 'on' | 'jobs' | 'permissions' | 'env'
-		//    | 'push' | 'pull_request' | 'branches' | 'tags'
-		//    | 'runs-on' | 'needs' | 'steps' | 'uses' | 'run' | 'with'
-		//    | 'shell' | 'contents' | 'security-events' | 'actions'
-		//    | 'pages' | 'id-token' | 'types' | 'pull-requests' | 'if'
-		//    | 'continue-on-error' | 'issues'
-		//    | 'strategy' | 'fail-fast' | 'max-parallel' | 'matrix'
-		//    | 'os' | 'build-type'
-		//    | 'c-compiler' | 'cpp-compiler' | 'otp' | 'elixir' | 'include'
-		//    | 'exclude' | 'workflow_call' | 'pull_request_target'
-		//    | 'secrets' | 'required' | 'packages'
-		//    | 'container' | 'image'
-		//    | 'defaults' | 'outputs' | 'release'
-		//    | 'inputs' | 'description' | 'default'
-		//    | 'type' | 'node-version' | 'cache'
-		//    | 'python-version' | 'configuration' | 'digests'
-		//    | 'merge_group' | 'r-version'
-		//    | 'branch_protection_rule' | 'models' | 'ruby-version' | 'services' | 'ports'
-		//    | 'timeout-minutes' | 'checks';
+		//    ID | YAML_SCALAR | INT | ReservedWord;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//  ID | YAML_SCALAR | INT
-		//| 'name' | 'on' | 'jobs' | 'permissions' | 'env'
-		//| 'push' | 'pull_request' | 'branches' | 'tags'
-		//| 'runs-on' | 'needs' | 'steps' | 'uses' | 'run' | 'with'
-		//| 'shell' | 'contents' | 'security-events' | 'actions'
-		//| 'pages' | 'id-token' | 'types' | 'pull-requests' | 'if'
-		//| 'continue-on-error' | 'issues'
-		//| 'strategy' | 'fail-fast' | 'max-parallel' | 'matrix'
-		//| 'os' | 'build-type'
-		//| 'c-compiler' | 'cpp-compiler' | 'otp' | 'elixir' | 'include'
-		//| 'exclude' | 'workflow_call' | 'pull_request_target'
-		//| 'secrets' | 'required' | 'packages'
-		//| 'container' | 'image'
-		//| 'defaults' | 'outputs' | 'release'
-		//| 'inputs' | 'description' | 'default'
-		//| 'type' | 'node-version' | 'cache'
-		//| 'python-version' | 'configuration' | 'digests'
-		//| 'merge_group' | 'r-version'
-		//| 'branch_protection_rule' | 'models' | 'ruby-version' | 'services' | 'ports'
-		//| 'timeout-minutes' | 'checks'
+		//ID | YAML_SCALAR | INT | ReservedWord
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ID
@@ -597,203 +770,8 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//INT
 		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
 		
-		//'name'
-		public Keyword getNameKeyword_3() { return cNameKeyword_3; }
-		
-		//'on'
-		public Keyword getOnKeyword_4() { return cOnKeyword_4; }
-		
-		//'jobs'
-		public Keyword getJobsKeyword_5() { return cJobsKeyword_5; }
-		
-		//'permissions'
-		public Keyword getPermissionsKeyword_6() { return cPermissionsKeyword_6; }
-		
-		//'env'
-		public Keyword getEnvKeyword_7() { return cEnvKeyword_7; }
-		
-		//'push'
-		public Keyword getPushKeyword_8() { return cPushKeyword_8; }
-		
-		//'pull_request'
-		public Keyword getPull_requestKeyword_9() { return cPull_requestKeyword_9; }
-		
-		//'branches'
-		public Keyword getBranchesKeyword_10() { return cBranchesKeyword_10; }
-		
-		//'tags'
-		public Keyword getTagsKeyword_11() { return cTagsKeyword_11; }
-		
-		//'runs-on'
-		public Keyword getRunsOnKeyword_12() { return cRunsOnKeyword_12; }
-		
-		//'needs'
-		public Keyword getNeedsKeyword_13() { return cNeedsKeyword_13; }
-		
-		//'steps'
-		public Keyword getStepsKeyword_14() { return cStepsKeyword_14; }
-		
-		//'uses'
-		public Keyword getUsesKeyword_15() { return cUsesKeyword_15; }
-		
-		//'run'
-		public Keyword getRunKeyword_16() { return cRunKeyword_16; }
-		
-		//'with'
-		public Keyword getWithKeyword_17() { return cWithKeyword_17; }
-		
-		//'shell'
-		public Keyword getShellKeyword_18() { return cShellKeyword_18; }
-		
-		//'contents'
-		public Keyword getContentsKeyword_19() { return cContentsKeyword_19; }
-		
-		//'security-events'
-		public Keyword getSecurityEventsKeyword_20() { return cSecurityEventsKeyword_20; }
-		
-		//'actions'
-		public Keyword getActionsKeyword_21() { return cActionsKeyword_21; }
-		
-		//'pages'
-		public Keyword getPagesKeyword_22() { return cPagesKeyword_22; }
-		
-		//'id-token'
-		public Keyword getIdTokenKeyword_23() { return cIdTokenKeyword_23; }
-		
-		//'types'
-		public Keyword getTypesKeyword_24() { return cTypesKeyword_24; }
-		
-		//'pull-requests'
-		public Keyword getPullRequestsKeyword_25() { return cPullRequestsKeyword_25; }
-		
-		//'if'
-		public Keyword getIfKeyword_26() { return cIfKeyword_26; }
-		
-		//'continue-on-error'
-		public Keyword getContinueOnErrorKeyword_27() { return cContinueOnErrorKeyword_27; }
-		
-		//'issues'
-		public Keyword getIssuesKeyword_28() { return cIssuesKeyword_28; }
-		
-		//'strategy'
-		public Keyword getStrategyKeyword_29() { return cStrategyKeyword_29; }
-		
-		//'fail-fast'
-		public Keyword getFailFastKeyword_30() { return cFailFastKeyword_30; }
-		
-		//'max-parallel'
-		public Keyword getMaxParallelKeyword_31() { return cMaxParallelKeyword_31; }
-		
-		//'matrix'
-		public Keyword getMatrixKeyword_32() { return cMatrixKeyword_32; }
-		
-		//'os'
-		public Keyword getOsKeyword_33() { return cOsKeyword_33; }
-		
-		//'build-type'
-		public Keyword getBuildTypeKeyword_34() { return cBuildTypeKeyword_34; }
-		
-		//'c-compiler'
-		public Keyword getCCompilerKeyword_35() { return cCCompilerKeyword_35; }
-		
-		//'cpp-compiler'
-		public Keyword getCppCompilerKeyword_36() { return cCppCompilerKeyword_36; }
-		
-		//'otp'
-		public Keyword getOtpKeyword_37() { return cOtpKeyword_37; }
-		
-		//'elixir'
-		public Keyword getElixirKeyword_38() { return cElixirKeyword_38; }
-		
-		//'include'
-		public Keyword getIncludeKeyword_39() { return cIncludeKeyword_39; }
-		
-		//'exclude'
-		public Keyword getExcludeKeyword_40() { return cExcludeKeyword_40; }
-		
-		//'workflow_call'
-		public Keyword getWorkflow_callKeyword_41() { return cWorkflow_callKeyword_41; }
-		
-		//'pull_request_target'
-		public Keyword getPull_request_targetKeyword_42() { return cPull_request_targetKeyword_42; }
-		
-		//'secrets'
-		public Keyword getSecretsKeyword_43() { return cSecretsKeyword_43; }
-		
-		//'required'
-		public Keyword getRequiredKeyword_44() { return cRequiredKeyword_44; }
-		
-		//'packages'
-		public Keyword getPackagesKeyword_45() { return cPackagesKeyword_45; }
-		
-		//'container'
-		public Keyword getContainerKeyword_46() { return cContainerKeyword_46; }
-		
-		//'image'
-		public Keyword getImageKeyword_47() { return cImageKeyword_47; }
-		
-		//'defaults'
-		public Keyword getDefaultsKeyword_48() { return cDefaultsKeyword_48; }
-		
-		//'outputs'
-		public Keyword getOutputsKeyword_49() { return cOutputsKeyword_49; }
-		
-		//'release'
-		public Keyword getReleaseKeyword_50() { return cReleaseKeyword_50; }
-		
-		//'inputs'
-		public Keyword getInputsKeyword_51() { return cInputsKeyword_51; }
-		
-		//'description'
-		public Keyword getDescriptionKeyword_52() { return cDescriptionKeyword_52; }
-		
-		//'default'
-		public Keyword getDefaultKeyword_53() { return cDefaultKeyword_53; }
-		
-		//'type'
-		public Keyword getTypeKeyword_54() { return cTypeKeyword_54; }
-		
-		//'node-version'
-		public Keyword getNodeVersionKeyword_55() { return cNodeVersionKeyword_55; }
-		
-		//'cache'
-		public Keyword getCacheKeyword_56() { return cCacheKeyword_56; }
-		
-		//'python-version'
-		public Keyword getPythonVersionKeyword_57() { return cPythonVersionKeyword_57; }
-		
-		//'configuration'
-		public Keyword getConfigurationKeyword_58() { return cConfigurationKeyword_58; }
-		
-		//'digests'
-		public Keyword getDigestsKeyword_59() { return cDigestsKeyword_59; }
-		
-		//'merge_group'
-		public Keyword getMerge_groupKeyword_60() { return cMerge_groupKeyword_60; }
-		
-		//'r-version'
-		public Keyword getRVersionKeyword_61() { return cRVersionKeyword_61; }
-		
-		//'branch_protection_rule'
-		public Keyword getBranch_protection_ruleKeyword_62() { return cBranch_protection_ruleKeyword_62; }
-		
-		//'models'
-		public Keyword getModelsKeyword_63() { return cModelsKeyword_63; }
-		
-		//'ruby-version'
-		public Keyword getRubyVersionKeyword_64() { return cRubyVersionKeyword_64; }
-		
-		//'services'
-		public Keyword getServicesKeyword_65() { return cServicesKeyword_65; }
-		
-		//'ports'
-		public Keyword getPortsKeyword_66() { return cPortsKeyword_66; }
-		
-		//'timeout-minutes'
-		public Keyword getTimeoutMinutesKeyword_67() { return cTimeoutMinutesKeyword_67; }
-		
-		//'checks'
-		public Keyword getChecksKeyword_68() { return cChecksKeyword_68; }
+		//ReservedWord
+		public RuleCall getReservedWordParserRuleCall_3() { return cReservedWordParserRuleCall_3; }
 	}
 	public class KeyValuePairElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "pt.isep.yamldslgen.xtext.MyDsl.KeyValuePair");
@@ -4431,8 +4409,8 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	private final GithubActionsElements pGithubActions;
 	private final EStringElements pEString;
-	private final ScalarSequenceElements pScalarSequence;
 	private final BlockStringElements pBlockString;
+	private final ReservedWordElements pReservedWord;
 	private final KeyNameElements pKeyName;
 	private final KeyValuePairElements pKeyValuePair;
 	private final OnElements pOn;
@@ -4480,8 +4458,8 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.gaTerminals = gaTerminals;
 		this.pGithubActions = new GithubActionsElements();
 		this.pEString = new EStringElements();
-		this.pScalarSequence = new ScalarSequenceElements();
 		this.pBlockString = new BlockStringElements();
+		this.pReservedWord = new ReservedWordElements();
 		this.pKeyName = new KeyNameElements();
 		this.pKeyValuePair = new KeyValuePairElements();
 		this.pOn = new OnElements();
@@ -4569,7 +4547,8 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//// VALUE RULES
 	//// =============================================================================
 	//EString returns ecore::EString:
-	//    STRING | SQ_STRING | BlockString | ScalarSequence;
+	//    STRING | SQ_STRING | BlockString
+	//    | YAML_SCALAR | GH_EXPRESSION | ID | INT | 'true' | 'false';
 	public EStringElements getEStringAccess() {
 		return pEString;
 	}
@@ -4578,28 +4557,13 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		return getEStringAccess().getRule();
 	}
 	
-	//// Junta múltiplos tokens separados por dois pontos (ex: docker:latest, http://...)
-	//// Como exige que o ':' seja seguido de outro texto, NUNCA engole o ':' estrutural do YAML.
-	//ScalarSequence returns ecore::EString:
-	//    (YAML_SCALAR | GH_EXPRESSION | SQ_STRING | ID | INT | 'true' | 'false')
-	//    ( ((':' | '-') (YAML_SCALAR | GH_EXPRESSION | SQ_STRING | ID | INT | 'true' | 'false'))
-	//    | GH_EXPRESSION
-	//    | SQ_STRING
-	//    | '-' )*;
-	public ScalarSequenceElements getScalarSequenceAccess() {
-		return pScalarSequence;
-	}
-	
-	public ParserRule getScalarSequenceRule() {
-		return getScalarSequenceAccess().getRule();
-	}
-	
 	//// Lida com 'run: >' ou 'run: |' consumindo o bloco inteiro
 	//// Aceita qualquer token do Xtext e pontuações do Bash (como [, ], ; e -)
 	//BlockString returns ecore::EString:
-	//    ('>' | '|') BEG_BLOCK? (
+	//    ('>' | '|' | '>-' | '>+' | '|-' | '|+') BEG_BLOCK? (
 	//        YAML_SCALAR | GH_EXPRESSION | ID | INT | STRING
 	//        | '-' | '[' | ']' | ';' | ':' | ',' | '{' | '}' | ANY_OTHER
+	//        | '>-' | '>+' | '|-' | '|+'
 	//    )* END_BLOCK?;
 	public BlockStringElements getBlockStringAccess() {
 		return pBlockString;
@@ -4612,32 +4576,35 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//// =============================================================================
 	//// KEY RULE
 	//// =============================================================================
+	//ReservedWord returns ecore::EString:
+	//      'name' | 'on' | 'concurrency' | 'defaults' | 'jobs' | 'permissions' | 'env'
+	//    | 'branch_protection_rule' | 'push' | 'pull_request' | 'pull_request_target'
+	//    | 'schedule' | 'workflow_dispatch' | 'workflow_call' | 'release' | 'merge_group' | 'issues'
+	//    | 'branches' | 'tags' | 'types' | 'cron' | 'inputs' | 'description' | 'default'
+	//    | 'required' | 'type' | 'secrets' | 'group' | 'cancel-in-progress' | 'url'
+	//    | 'contents' | 'security-events' | 'actions' | 'pages' | 'id-token' | 'pull-requests'
+	//    | 'packages' | 'models' | 'checks' | 'runs-on' | 'needs' | 'if' | 'uses'
+	//    | 'environment' | 'strategy' | 'container' | 'services' | 'outputs' | 'steps' | 'with'
+	//    | 'image' | 'ports' | 'id' | 'run' | 'working-directory' | 'shell'
+	//    | 'continue-on-error' | 'timeout-minutes' | 'fail-fast' | 'max-parallel' | 'matrix'
+	//    | 'include' | 'exclude' | 'os' | 'build-type' | 'c-compiler' | 'cpp-compiler'
+	//    | 'otp' | 'elixir' | 'node-version' | 'cache' | 'python-version' | 'configuration'
+	//    | 'digests' | 'r-version' | 'ruby-version';
+	public ReservedWordElements getReservedWordAccess() {
+		return pReservedWord;
+	}
+	
+	public ParserRule getReservedWordRule() {
+		return getReservedWordAccess().getRule();
+	}
+	
 	//// KeyName is used exclusively as the key in KeyValuePair.
 	//// Xtext keyword tokens ('name', 'run', etc.) cannot be matched by ID or
 	//// PLAIN_SCALAR, so every grammar keyword that may appear as a free-form
 	//// YAML key must be listed here explicitly.
 	//// ─── When adding a new DSL: add its keywords to this rule only. ───────────
 	//KeyName returns ecore::EString:
-	//      ID | YAML_SCALAR | INT
-	//    | 'name' | 'on' | 'jobs' | 'permissions' | 'env'
-	//    | 'push' | 'pull_request' | 'branches' | 'tags'
-	//    | 'runs-on' | 'needs' | 'steps' | 'uses' | 'run' | 'with'
-	//    | 'shell' | 'contents' | 'security-events' | 'actions'
-	//    | 'pages' | 'id-token' | 'types' | 'pull-requests' | 'if'
-	//    | 'continue-on-error' | 'issues'
-	//    | 'strategy' | 'fail-fast' | 'max-parallel' | 'matrix'
-	//    | 'os' | 'build-type'
-	//    | 'c-compiler' | 'cpp-compiler' | 'otp' | 'elixir' | 'include'
-	//    | 'exclude' | 'workflow_call' | 'pull_request_target'
-	//    | 'secrets' | 'required' | 'packages'
-	//    | 'container' | 'image'
-	//    | 'defaults' | 'outputs' | 'release'
-	//    | 'inputs' | 'description' | 'default'
-	//    | 'type' | 'node-version' | 'cache'
-	//    | 'python-version' | 'configuration' | 'digests'
-	//    | 'merge_group' | 'r-version'
-	//    | 'branch_protection_rule' | 'models' | 'ruby-version' | 'services' | 'ports'
-	//    | 'timeout-minutes' | 'checks';
+	//    ID | YAML_SCALAR | INT | ReservedWord;
 	public KeyNameElements getKeyNameAccess() {
 		return pKeyName;
 	}
@@ -5145,8 +5112,12 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//// GitHub Actions expression ${{ ... }}
 	//// Mantemos o until-match ('->') para capturar expressões completas sem o Lexer se perder nas chavetas.
 	//terminal GH_EXPRESSION:
-	//    '$'? '{{' -> '}}'
-	//    | '$' ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-')*;
+	//    ('$'? '{{' -> '}}' | '$' ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-')*)
+	//    (
+	//        ('/' | '.' | '-' | '_' | '@') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-'|'.'|'/'|'@')*
+	//      | '$'? '{{' -> '}}'
+	//      | '$' ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-')*
+	//    )*;
 	public TerminalRule getGH_EXPRESSIONRule() {
 		return tGH_EXPRESSION;
 	}

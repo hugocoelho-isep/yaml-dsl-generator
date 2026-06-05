@@ -32,12 +32,9 @@ public class MyDslParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, MyDslGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
-			builder.put(grammarAccess.getScalarSequenceAccess().getAlternatives_0(), "rule__ScalarSequence__Alternatives_0");
-			builder.put(grammarAccess.getScalarSequenceAccess().getAlternatives_1(), "rule__ScalarSequence__Alternatives_1");
-			builder.put(grammarAccess.getScalarSequenceAccess().getAlternatives_1_0_0(), "rule__ScalarSequence__Alternatives_1_0_0");
-			builder.put(grammarAccess.getScalarSequenceAccess().getAlternatives_1_0_1(), "rule__ScalarSequence__Alternatives_1_0_1");
 			builder.put(grammarAccess.getBlockStringAccess().getAlternatives_0(), "rule__BlockString__Alternatives_0");
 			builder.put(grammarAccess.getBlockStringAccess().getAlternatives_2(), "rule__BlockString__Alternatives_2");
+			builder.put(grammarAccess.getReservedWordAccess().getAlternatives(), "rule__ReservedWord__Alternatives");
 			builder.put(grammarAccess.getKeyNameAccess().getAlternatives(), "rule__KeyName__Alternatives");
 			builder.put(grammarAccess.getPushAccess().getAlternatives_2_0_2(), "rule__Push__Alternatives_2_0_2");
 			builder.put(grammarAccess.getPushAccess().getAlternatives_2_1_2(), "rule__Push__Alternatives_2_1_2");
@@ -60,8 +57,6 @@ public class MyDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getGithubActionsAccess().getGroup_5(), "rule__GithubActions__Group_5__0");
 			builder.put(grammarAccess.getGithubActionsAccess().getGroup_6(), "rule__GithubActions__Group_6__0");
 			builder.put(grammarAccess.getGithubActionsAccess().getGroup_6_2(), "rule__GithubActions__Group_6_2__0");
-			builder.put(grammarAccess.getScalarSequenceAccess().getGroup(), "rule__ScalarSequence__Group__0");
-			builder.put(grammarAccess.getScalarSequenceAccess().getGroup_1_0(), "rule__ScalarSequence__Group_1_0__0");
 			builder.put(grammarAccess.getBlockStringAccess().getGroup(), "rule__BlockString__Group__0");
 			builder.put(grammarAccess.getKeyValuePairAccess().getGroup(), "rule__KeyValuePair__Group__0");
 			builder.put(grammarAccess.getOnAccess().getGroup(), "rule__On__Group__0");
