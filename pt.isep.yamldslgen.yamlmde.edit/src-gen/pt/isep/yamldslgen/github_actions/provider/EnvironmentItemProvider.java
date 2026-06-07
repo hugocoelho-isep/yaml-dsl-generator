@@ -9,20 +9,13 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import pt.isep.yamldslgen.github_actions.Environment;
-import pt.isep.yamldslgen.github_actions.YamlmdePackage;
 
 /**
  * This is the item provider adapter for a {@link pt.isep.yamldslgen.github_actions.Environment} object.
@@ -53,42 +46,8 @@ public class EnvironmentItemProvider extends ItemProviderAdapter implements IEdi
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
-			addUrlPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Environment_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Environment_name_feature",
-								"_UI_Environment_type"),
-						YamlmdePackage.Literals.ENVIRONMENT__NAME, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Url feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addUrlPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Environment_url_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Environment_url_feature",
-								"_UI_Environment_type"),
-						YamlmdePackage.Literals.ENVIRONMENT__URL, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -120,9 +79,7 @@ public class EnvironmentItemProvider extends ItemProviderAdapter implements IEdi
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Environment) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Environment_type")
-				: getString("_UI_Environment_type") + " " + label;
+		return getString("_UI_Environment_type");
 	}
 
 	/**
@@ -135,13 +92,6 @@ public class EnvironmentItemProvider extends ItemProviderAdapter implements IEdi
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Environment.class)) {
-		case YamlmdePackage.ENVIRONMENT__NAME:
-		case YamlmdePackage.ENVIRONMENT__URL:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		}
 		super.notifyChanged(notification);
 	}
 

@@ -85,15 +85,6 @@ public interface YamlmdeFactory extends EFactory {
 	Step createStep();
 
 	/**
-	 * Returns a new object of class '<em>Permissions</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Permissions</em>'.
-	 * @generated
-	 */
-	Permissions createPermissions();
-
-	/**
 	 * Returns a new object of class '<em>Schedule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -112,15 +103,6 @@ public interface YamlmdeFactory extends EFactory {
 	Workflow_dispatch createWorkflow_dispatch();
 
 	/**
-	 * Returns a new object of class '<em>Environment</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Environment</em>'.
-	 * @generated
-	 */
-	Environment createEnvironment();
-
-	/**
 	 * Returns a new object of class '<em>Concurrency</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -137,15 +119,6 @@ public interface YamlmdeFactory extends EFactory {
 	 * @generated
 	 */
 	Strategy createStrategy();
-
-	/**
-	 * Returns a new object of class '<em>Matrix</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Matrix</em>'.
-	 * @generated
-	 */
-	Matrix createMatrix();
 
 	/**
 	 * Returns a new object of class '<em>Include</em>'.
@@ -254,6 +227,60 @@ public interface YamlmdeFactory extends EFactory {
 	 * @generated
 	 */
 	Service createService();
+
+	/**
+	 * Returns a new object of class '<em>Permissions Object</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Permissions Object</em>'.
+	 * @generated
+	 */
+	PermissionsObject createPermissionsObject();
+
+	/**
+	 * Returns a new object of class '<em>Permissions Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Permissions Value</em>'.
+	 * @generated
+	 */
+	PermissionsValue createPermissionsValue();
+
+	/**
+	 * Returns a new object of class '<em>Environment Object</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Environment Object</em>'.
+	 * @generated
+	 */
+	EnvironmentObject createEnvironmentObject();
+
+	/**
+	 * Returns a new object of class '<em>Environment Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Environment Value</em>'.
+	 * @generated
+	 */
+	EnvironmentValue createEnvironmentValue();
+
+	/**
+	 * Returns a new object of class '<em>Matrix Object</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Matrix Object</em>'.
+	 * @generated
+	 */
+	MatrixObject createMatrixObject();
+
+	/**
+	 * Returns a new object of class '<em>Matrix Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Matrix Value</em>'.
+	 * @generated
+	 */
+	MatrixValue createMatrixValue();
 
 	/**
 	 * Returns a new object of class '<em>Matrix Parameter</em>'.

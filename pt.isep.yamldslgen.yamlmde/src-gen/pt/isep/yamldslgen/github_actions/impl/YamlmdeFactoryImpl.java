@@ -60,30 +60,24 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 			return createKeyValuePair();
 		case YamlmdePackage.GITHUB_ACTIONS:
 			return createGithubActions();
-		case YamlmdePackage.JOB:
-			return createJob();
-		case YamlmdePackage.STEP:
-			return createStep();
 		case YamlmdePackage.ON:
 			return createOn();
 		case YamlmdePackage.PUSH:
 			return createPush();
 		case YamlmdePackage.PULL_REQUEST:
 			return createPull_request();
-		case YamlmdePackage.PERMISSIONS:
-			return createPermissions();
+		case YamlmdePackage.JOB:
+			return createJob();
+		case YamlmdePackage.STEP:
+			return createStep();
 		case YamlmdePackage.SCHEDULE:
 			return createSchedule();
 		case YamlmdePackage.WORKFLOW_DISPATCH:
 			return createWorkflow_dispatch();
-		case YamlmdePackage.ENVIRONMENT:
-			return createEnvironment();
 		case YamlmdePackage.CONCURRENCY:
 			return createConcurrency();
 		case YamlmdePackage.STRATEGY:
 			return createStrategy();
-		case YamlmdePackage.MATRIX:
-			return createMatrix();
 		case YamlmdePackage.INCLUDE:
 			return createInclude();
 		case YamlmdePackage.EXCLUDE:
@@ -108,6 +102,18 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 			return createMerge_group();
 		case YamlmdePackage.SERVICE:
 			return createService();
+		case YamlmdePackage.PERMISSIONS_OBJECT:
+			return createPermissionsObject();
+		case YamlmdePackage.PERMISSIONS_VALUE:
+			return createPermissionsValue();
+		case YamlmdePackage.ENVIRONMENT_OBJECT:
+			return createEnvironmentObject();
+		case YamlmdePackage.ENVIRONMENT_VALUE:
+			return createEnvironmentValue();
+		case YamlmdePackage.MATRIX_OBJECT:
+			return createMatrixObject();
+		case YamlmdePackage.MATRIX_VALUE:
+			return createMatrixValue();
 		case YamlmdePackage.MATRIX_PARAMETER:
 			return createMatrixParameter();
 		default:
@@ -198,17 +204,6 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 	 * @generated
 	 */
 	@Override
-	public Permissions createPermissions() {
-		PermissionsImpl permissions = new PermissionsImpl();
-		return permissions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Schedule createSchedule() {
 		ScheduleImpl schedule = new ScheduleImpl();
 		return schedule;
@@ -231,17 +226,6 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 	 * @generated
 	 */
 	@Override
-	public Environment createEnvironment() {
-		EnvironmentImpl environment = new EnvironmentImpl();
-		return environment;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Concurrency createConcurrency() {
 		ConcurrencyImpl concurrency = new ConcurrencyImpl();
 		return concurrency;
@@ -256,17 +240,6 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 	public Strategy createStrategy() {
 		StrategyImpl strategy = new StrategyImpl();
 		return strategy;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Matrix createMatrix() {
-		MatrixImpl matrix = new MatrixImpl();
-		return matrix;
 	}
 
 	/**
@@ -399,6 +372,72 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 	public Service createService() {
 		ServiceImpl service = new ServiceImpl();
 		return service;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public PermissionsObject createPermissionsObject() {
+		PermissionsObjectImpl permissionsObject = new PermissionsObjectImpl();
+		return permissionsObject;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public PermissionsValue createPermissionsValue() {
+		PermissionsValueImpl permissionsValue = new PermissionsValueImpl();
+		return permissionsValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EnvironmentObject createEnvironmentObject() {
+		EnvironmentObjectImpl environmentObject = new EnvironmentObjectImpl();
+		return environmentObject;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EnvironmentValue createEnvironmentValue() {
+		EnvironmentValueImpl environmentValue = new EnvironmentValueImpl();
+		return environmentValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MatrixObject createMatrixObject() {
+		MatrixObjectImpl matrixObject = new MatrixObjectImpl();
+		return matrixObject;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MatrixValue createMatrixValue() {
+		MatrixValueImpl matrixValue = new MatrixValueImpl();
+		return matrixValue;
 	}
 
 	/**

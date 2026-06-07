@@ -39,8 +39,8 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.StepImpl#getShell <em>Shell</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.StepImpl#isContinueOnError <em>Continue On Error</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.StepImpl#getTimeoutMinutes <em>Timeout Minutes</em>}</li>
- *   <li>{@link pt.isep.yamldslgen.github_actions.impl.StepImpl#getEnv <em>Env</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.StepImpl#getWith <em>With</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.StepImpl#getEnv <em>Env</em>}</li>
  * </ul>
  *
  * @generated
@@ -227,16 +227,6 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 	protected int timeoutMinutes = TIMEOUT_MINUTES_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getEnv() <em>Env</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEnv()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<KeyValuePair> env;
-
-	/**
 	 * The cached value of the '{@link #getWith() <em>With</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -245,6 +235,16 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 	 * @ordered
 	 */
 	protected EList<KeyValuePair> with;
+
+	/**
+	 * The cached value of the '{@link #getEnv() <em>Env</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnv()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<KeyValuePair> env;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -509,10 +509,10 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case YamlmdePackage.STEP__ENV:
-			return ((InternalEList<?>) getEnv()).basicRemove(otherEnd, msgs);
 		case YamlmdePackage.STEP__WITH:
 			return ((InternalEList<?>) getWith()).basicRemove(otherEnd, msgs);
+		case YamlmdePackage.STEP__ENV:
+			return ((InternalEList<?>) getEnv()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -543,10 +543,10 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 			return isContinueOnError();
 		case YamlmdePackage.STEP__TIMEOUT_MINUTES:
 			return getTimeoutMinutes();
-		case YamlmdePackage.STEP__ENV:
-			return getEnv();
 		case YamlmdePackage.STEP__WITH:
 			return getWith();
+		case YamlmdePackage.STEP__ENV:
+			return getEnv();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -587,13 +587,13 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 		case YamlmdePackage.STEP__TIMEOUT_MINUTES:
 			setTimeoutMinutes((Integer) newValue);
 			return;
-		case YamlmdePackage.STEP__ENV:
-			getEnv().clear();
-			getEnv().addAll((Collection<? extends KeyValuePair>) newValue);
-			return;
 		case YamlmdePackage.STEP__WITH:
 			getWith().clear();
 			getWith().addAll((Collection<? extends KeyValuePair>) newValue);
+			return;
+		case YamlmdePackage.STEP__ENV:
+			getEnv().clear();
+			getEnv().addAll((Collection<? extends KeyValuePair>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -634,11 +634,11 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 		case YamlmdePackage.STEP__TIMEOUT_MINUTES:
 			setTimeoutMinutes(TIMEOUT_MINUTES_EDEFAULT);
 			return;
-		case YamlmdePackage.STEP__ENV:
-			getEnv().clear();
-			return;
 		case YamlmdePackage.STEP__WITH:
 			getWith().clear();
+			return;
+		case YamlmdePackage.STEP__ENV:
+			getEnv().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -671,10 +671,10 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 			return continueOnError != CONTINUE_ON_ERROR_EDEFAULT;
 		case YamlmdePackage.STEP__TIMEOUT_MINUTES:
 			return timeoutMinutes != TIMEOUT_MINUTES_EDEFAULT;
-		case YamlmdePackage.STEP__ENV:
-			return env != null && !env.isEmpty();
 		case YamlmdePackage.STEP__WITH:
 			return with != null && !with.isEmpty();
+		case YamlmdePackage.STEP__ENV:
+			return env != null && !env.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

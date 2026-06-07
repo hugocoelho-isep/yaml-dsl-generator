@@ -92,7 +92,7 @@ On returns On:
 
 Push returns Push:
 	{Push}
-	BEG_BLOCK
+	(BEG_BLOCK
 		(('branches' ':' (
 			  BEG_BLOCK ('-' BEG_BLOCK branches+=EString END_BLOCK)+ END_BLOCK
 			| '[' branches+=EString (',' branches+=EString)* ']'
@@ -101,11 +101,11 @@ Push returns Push:
 			  BEG_BLOCK ('-' BEG_BLOCK tags+=EString END_BLOCK)+ END_BLOCK
 			| '[' tags+=EString (',' tags+=EString)* ']'
 		))?)
-	END_BLOCK;
+	END_BLOCK)?;
 
 Pull_request returns Pull_request:
 	{Pull_request}
-	BEG_BLOCK
+	(BEG_BLOCK
 		(('branches' ':' (
 			  BEG_BLOCK ('-' BEG_BLOCK branches+=EString END_BLOCK)+ END_BLOCK
 			| '[' branches+=EString (',' branches+=EString)* ']'
@@ -114,7 +114,7 @@ Pull_request returns Pull_request:
 			  BEG_BLOCK ('-' BEG_BLOCK types+=EString END_BLOCK)+ END_BLOCK
 			| '[' types+=EString (',' types+=EString)* ']'
 		))?)
-	END_BLOCK;
+	END_BLOCK)?;
 	
 Schedule returns Schedule:
 	'-' BEG_BLOCK?
@@ -176,16 +176,17 @@ Concurrency returns Concurrency:
 
 //in future try to infer this in metayaml
 Environment returns Environment:
-	{Environment}
-	(
-		name=EString              // environment: production
-	|
-		BEG_BLOCK
-			(('name' ':' name=EString)?
-			& ('url' ':' url=EString)?)
-		END_BLOCK?
-	);
-	
+	EnvironmentObject | EnvironmentValue;
+
+EnvironmentValue returns EnvironmentValue:
+	value=EString;                       // ex: environment: production
+
+EnvironmentObject returns EnvironmentObject:
+	{EnvironmentObject}
+	BEG_BLOCK
+		(('name' ':' name=EString)?
+		& ('url' ':' url=EString)?)
+	END_BLOCK?;
 
 	
 // =============================================================================
@@ -193,8 +194,14 @@ Environment returns Environment:
 // =============================================================================
 
 Permissions returns Permissions:
-	{Permissions}
-	BEG_BLOCK?
+	PermissionsObject | PermissionsValue;
+
+PermissionsValue returns PermissionsValue:
+	value=EString;                       // ex: permissions: read-all
+
+PermissionsObject returns PermissionsObject:
+	{PermissionsObject}
+	BEG_BLOCK
 		(('contents' ':' contents=EString)?
 		& ('security-events' ':' securityEvents=EString)?
 		& ('actions' ':' actions=EString)?
@@ -280,8 +287,14 @@ Strategy returns Strategy:
 // MatrixParameter entries. 'include' and 'exclude' are matched first so they are never
 // consumed as generic parameters.
 Matrix returns Matrix:
-	{Matrix}
-	BEG_BLOCK?
+	MatrixObject | MatrixValue;
+
+MatrixValue returns MatrixValue:
+	value=EString;                       // ex: matrix: ${{ fromJson(...) }}
+
+MatrixObject returns MatrixObject:
+	{MatrixObject}
+	BEG_BLOCK
 		(  'include' ':' BEG_BLOCK ('-' BEG_BLOCK? include+=Include END_BLOCK?)+ END_BLOCK
 		 | 'exclude' ':' BEG_BLOCK ('-' BEG_BLOCK? exclude+=Exclude END_BLOCK?)+ END_BLOCK
 		 | parameters+=MatrixParameter

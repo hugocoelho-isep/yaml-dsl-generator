@@ -106,6 +106,10 @@ package pt.isep.yamldslgen.xtext.parser.antlr;
       /** Column of the key that armed the current capture (for fold detection). */
       private int captureKeyColumn = 0;
 
+      /** Text of the key that armed the current capture; used to tell a free-form
+       *  (KeyValuePair) key from a structural/reserved key when the value is empty. */
+      private String captureKeyText = null;
+
       /** Flow-array nesting depth ('[' / ']'); capture is disabled inside arrays. */
       private int arrayDepth = 0;
 
@@ -187,6 +191,7 @@ package pt.isep.yamldslgen.xtext.parser.antlr;
           prevRealText = null;
           prevRealColumn = 0;
           captureKeyColumn = 0;
+          captureKeyText = null;
           arrayDepth = 0;
           nextBlockIsNamedCollection = false;
           namedCollectionLevels.clear();
@@ -337,6 +342,7 @@ package pt.isep.yamldslgen.xtext.parser.antlr;
                   if (!NON_SCALAR_VALUE_FIELDS.contains(prevRealText)) {
                       captureValueExpected = true;
                       captureKeyColumn = prevRealColumn;
+                      captureKeyText = prevRealText;
                   }
                   if (NAMED_COLLECTION_KEYS.contains(prevRealText)) {
                       nextBlockIsNamedCollection = true;
@@ -417,7 +423,7 @@ package pt.isep.yamldslgen.xtext.parser.antlr;
               if (blockFollowsAfterComment()) {
                   return null;
               }
-              return makeSynthetic(RULE_YAML_SCALAR, "");
+              return emptyValueToken();
           }
 
           // Block scalar with an explicit indentation indicator ('|2-', '>3',
@@ -430,8 +436,11 @@ package pt.isep.yamldslgen.xtext.parser.antlr;
               return captureExplicitIndentBlock();
           }
 
-          if (c == CharStream.EOF || c == '|' || c == '>'
-                  || c == '[' || c == '"' || c == '\'') {
+          // 'key:' at end of file -> genuinely empty value.
+          if (c == CharStream.EOF) {
+              return emptyValueToken();
+          }
+          if (c == '|' || c == '>' || c == '[' || c == '"' || c == '\'') {
               return null;
           }
 
@@ -450,6 +459,17 @@ package pt.isep.yamldslgen.xtext.parser.antlr;
           // so the BEG_BLOCK opens the block as before.
           if (c == '\n' || c == '\r') {
               if (!plainScalarBlockFollows()) {
+                  // Not a plain-scalar continuation. Either a nested mapping/
+                  // sequence (a real block -> let BEG_BLOCK open it) or a
+                  // genuinely empty value (a sibling/dedent/EOF follows). In the
+                  // empty case, emit a zero-length scalar so value=EString is
+                  // satisfied, mirroring the '#'-comment branch above. We reuse
+                  // blockFollowsAfterComment(): at this point LA(1) is the
+                  // newline, so it correctly reports whether the first real
+                  // child line is indented deeper than the key.
+                  if (!blockFollowsAfterComment()) {
+                      return emptyValueToken();
+                  }
                   return null;
               }
               // Advance to the first real content character, skipping line breaks,
@@ -963,6 +983,21 @@ package pt.isep.yamldslgen.xtext.parser.antlr;
           }
           String text = t.getText();
           return text != null && (text.indexOf('\n') >= 0 || text.indexOf('\r') >= 0);
+      }
+
+      /**
+       * Resolves an empty inline value ('key:' with nothing after it). For a
+       * free-form key (a KeyValuePair key such as an action input) it emits a
+       * zero-length YAML_SCALAR so the value feature can be set. For a reserved/
+       * structural key (push, pull_request, steps, ...) it returns null: such a
+       * key's empty body is handled by the grammar (an optional block), and
+       * injecting a scalar there would land where the parser expects a block.
+       */
+      private Token emptyValueToken() {
+          if (captureKeyText != null && !RESERVED_KEYWORDS.contains(captureKeyText)) {
+              return makeSynthetic(RULE_YAML_SCALAR, "");
+          }
+          return null;
       }
 
       /**

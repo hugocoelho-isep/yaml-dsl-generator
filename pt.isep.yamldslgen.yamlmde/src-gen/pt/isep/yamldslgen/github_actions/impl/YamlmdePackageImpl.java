@@ -12,6 +12,8 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import pt.isep.yamldslgen.github_actions.Concurrency;
 import pt.isep.yamldslgen.github_actions.Defaults;
 import pt.isep.yamldslgen.github_actions.Environment;
+import pt.isep.yamldslgen.github_actions.EnvironmentObject;
+import pt.isep.yamldslgen.github_actions.EnvironmentValue;
 import pt.isep.yamldslgen.github_actions.Exclude;
 import pt.isep.yamldslgen.github_actions.GithubActions;
 import pt.isep.yamldslgen.github_actions.Include;
@@ -20,10 +22,14 @@ import pt.isep.yamldslgen.github_actions.Issues;
 import pt.isep.yamldslgen.github_actions.Job;
 import pt.isep.yamldslgen.github_actions.KeyValuePair;
 import pt.isep.yamldslgen.github_actions.Matrix;
+import pt.isep.yamldslgen.github_actions.MatrixObject;
 import pt.isep.yamldslgen.github_actions.MatrixParameter;
+import pt.isep.yamldslgen.github_actions.MatrixValue;
 import pt.isep.yamldslgen.github_actions.Merge_group;
 import pt.isep.yamldslgen.github_actions.On;
 import pt.isep.yamldslgen.github_actions.Permissions;
+import pt.isep.yamldslgen.github_actions.PermissionsObject;
+import pt.isep.yamldslgen.github_actions.PermissionsValue;
 import pt.isep.yamldslgen.github_actions.Pull_request;
 import pt.isep.yamldslgen.github_actions.Push;
 import pt.isep.yamldslgen.github_actions.Release;
@@ -232,6 +238,48 @@ public class YamlmdePackageImpl extends EPackageImpl implements YamlmdePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass permissionsObjectEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass permissionsValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass environmentObjectEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass environmentValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass matrixObjectEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass matrixValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass matrixParameterEClass = null;
 
 	/**
@@ -355,7 +403,7 @@ public class YamlmdePackageImpl extends EPackageImpl implements YamlmdePackage {
 	 */
 	@Override
 	public EReference getGithubActions_On() {
-		return (EReference) githubActionsEClass.getEStructuralFeatures().get(2);
+		return (EReference) githubActionsEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -365,7 +413,7 @@ public class YamlmdePackageImpl extends EPackageImpl implements YamlmdePackage {
 	 */
 	@Override
 	public EReference getGithubActions_Jobs() {
-		return (EReference) githubActionsEClass.getEStructuralFeatures().get(1);
+		return (EReference) githubActionsEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -725,7 +773,7 @@ public class YamlmdePackageImpl extends EPackageImpl implements YamlmdePackage {
 	 */
 	@Override
 	public EReference getJob_With() {
-		return (EReference) jobEClass.getEStructuralFeatures().get(14);
+		return (EReference) jobEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -735,7 +783,7 @@ public class YamlmdePackageImpl extends EPackageImpl implements YamlmdePackage {
 	 */
 	@Override
 	public EReference getJob_Env() {
-		return (EReference) jobEClass.getEStructuralFeatures().get(13);
+		return (EReference) jobEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -855,7 +903,7 @@ public class YamlmdePackageImpl extends EPackageImpl implements YamlmdePackage {
 	 */
 	@Override
 	public EReference getStep_With() {
-		return (EReference) stepEClass.getEStructuralFeatures().get(10);
+		return (EReference) stepEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -865,7 +913,7 @@ public class YamlmdePackageImpl extends EPackageImpl implements YamlmdePackage {
 	 */
 	@Override
 	public EReference getStep_Env() {
-		return (EReference) stepEClass.getEStructuralFeatures().get(9);
+		return (EReference) stepEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -876,106 +924,6 @@ public class YamlmdePackageImpl extends EPackageImpl implements YamlmdePackage {
 	@Override
 	public EClass getPermissions() {
 		return permissionsEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPermissions_Contents() {
-		return (EAttribute) permissionsEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPermissions_SecurityEvents() {
-		return (EAttribute) permissionsEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPermissions_Actions() {
-		return (EAttribute) permissionsEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPermissions_Pages() {
-		return (EAttribute) permissionsEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPermissions_IdToken() {
-		return (EAttribute) permissionsEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPermissions_PullRequests() {
-		return (EAttribute) permissionsEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPermissions_Issues() {
-		return (EAttribute) permissionsEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPermissions_Packages() {
-		return (EAttribute) permissionsEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPermissions_Models() {
-		return (EAttribute) permissionsEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getPermissions_Checks() {
-		return (EAttribute) permissionsEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1026,26 +974,6 @@ public class YamlmdePackageImpl extends EPackageImpl implements YamlmdePackage {
 	@Override
 	public EClass getEnvironment() {
 		return environmentEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getEnvironment_Name() {
-		return (EAttribute) environmentEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getEnvironment_Url() {
-		return (EAttribute) environmentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1126,36 +1054,6 @@ public class YamlmdePackageImpl extends EPackageImpl implements YamlmdePackage {
 	@Override
 	public EClass getMatrix() {
 		return matrixEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getMatrix_Include() {
-		return (EReference) matrixEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getMatrix_Exclude() {
-		return (EReference) matrixEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getMatrix_Parameters() {
-		return (EReference) matrixEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1484,6 +1382,246 @@ public class YamlmdePackageImpl extends EPackageImpl implements YamlmdePackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getPermissionsObject() {
+		return permissionsObjectEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPermissionsObject_Contents() {
+		return (EAttribute) permissionsObjectEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPermissionsObject_SecurityEvents() {
+		return (EAttribute) permissionsObjectEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPermissionsObject_Actions() {
+		return (EAttribute) permissionsObjectEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPermissionsObject_Pages() {
+		return (EAttribute) permissionsObjectEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPermissionsObject_IdToken() {
+		return (EAttribute) permissionsObjectEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPermissionsObject_PullRequests() {
+		return (EAttribute) permissionsObjectEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPermissionsObject_Issues() {
+		return (EAttribute) permissionsObjectEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPermissionsObject_Packages() {
+		return (EAttribute) permissionsObjectEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPermissionsObject_Models() {
+		return (EAttribute) permissionsObjectEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPermissionsObject_Checks() {
+		return (EAttribute) permissionsObjectEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getPermissionsValue() {
+		return permissionsValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getPermissionsValue_Value() {
+		return (EAttribute) permissionsValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getEnvironmentObject() {
+		return environmentObjectEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEnvironmentObject_Name() {
+		return (EAttribute) environmentObjectEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEnvironmentObject_Url() {
+		return (EAttribute) environmentObjectEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getEnvironmentValue() {
+		return environmentValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEnvironmentValue_Value() {
+		return (EAttribute) environmentValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getMatrixObject() {
+		return matrixObjectEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMatrixObject_Include() {
+		return (EReference) matrixObjectEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMatrixObject_Exclude() {
+		return (EReference) matrixObjectEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMatrixObject_Parameters() {
+		return (EReference) matrixObjectEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getMatrixValue() {
+		return matrixValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMatrixValue_Value() {
+		return (EAttribute) matrixValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getMatrixParameter() {
 		return matrixParameterEClass;
 	}
@@ -1544,43 +1682,12 @@ public class YamlmdePackageImpl extends EPackageImpl implements YamlmdePackage {
 
 		githubActionsEClass = createEClass(GITHUB_ACTIONS);
 		createEAttribute(githubActionsEClass, GITHUB_ACTIONS__NAME);
-		createEReference(githubActionsEClass, GITHUB_ACTIONS__JOBS);
 		createEReference(githubActionsEClass, GITHUB_ACTIONS__ON);
+		createEReference(githubActionsEClass, GITHUB_ACTIONS__JOBS);
 		createEReference(githubActionsEClass, GITHUB_ACTIONS__PERMISSIONS);
 		createEReference(githubActionsEClass, GITHUB_ACTIONS__CONCURRENCY);
 		createEReference(githubActionsEClass, GITHUB_ACTIONS__DEFAULTS);
 		createEReference(githubActionsEClass, GITHUB_ACTIONS__ENV);
-
-		jobEClass = createEClass(JOB);
-		createEAttribute(jobEClass, JOB__ID);
-		createEAttribute(jobEClass, JOB__RUNS_ON);
-		createEAttribute(jobEClass, JOB__NAME);
-		createEAttribute(jobEClass, JOB__NEEDS);
-		createEAttribute(jobEClass, JOB__IF);
-		createEAttribute(jobEClass, JOB__USES);
-		createEReference(jobEClass, JOB__STEPS);
-		createEReference(jobEClass, JOB__PERMISSIONS);
-		createEReference(jobEClass, JOB__ENVIRONMENT);
-		createEReference(jobEClass, JOB__STRATEGY);
-		createEReference(jobEClass, JOB__CONTAINER);
-		createEReference(jobEClass, JOB__SERVICES);
-		createEReference(jobEClass, JOB__DEFAULTS);
-		createEReference(jobEClass, JOB__ENV);
-		createEReference(jobEClass, JOB__WITH);
-		createEReference(jobEClass, JOB__OUTPUTS);
-
-		stepEClass = createEClass(STEP);
-		createEAttribute(stepEClass, STEP__NAME);
-		createEAttribute(stepEClass, STEP__USES);
-		createEAttribute(stepEClass, STEP__RUN);
-		createEAttribute(stepEClass, STEP__ID);
-		createEAttribute(stepEClass, STEP__IF);
-		createEAttribute(stepEClass, STEP__WORKING_DIRECTORY);
-		createEAttribute(stepEClass, STEP__SHELL);
-		createEAttribute(stepEClass, STEP__CONTINUE_ON_ERROR);
-		createEAttribute(stepEClass, STEP__TIMEOUT_MINUTES);
-		createEReference(stepEClass, STEP__ENV);
-		createEReference(stepEClass, STEP__WITH);
 
 		onEClass = createEClass(ON);
 		createEAttribute(onEClass, ON__BRANCH_PROTECTION_RULE);
@@ -1602,17 +1709,38 @@ public class YamlmdePackageImpl extends EPackageImpl implements YamlmdePackage {
 		createEAttribute(pull_requestEClass, PULL_REQUEST__BRANCHES);
 		createEAttribute(pull_requestEClass, PULL_REQUEST__TYPES);
 
+		jobEClass = createEClass(JOB);
+		createEAttribute(jobEClass, JOB__ID);
+		createEAttribute(jobEClass, JOB__RUNS_ON);
+		createEAttribute(jobEClass, JOB__NAME);
+		createEAttribute(jobEClass, JOB__NEEDS);
+		createEAttribute(jobEClass, JOB__IF);
+		createEAttribute(jobEClass, JOB__USES);
+		createEReference(jobEClass, JOB__STEPS);
+		createEReference(jobEClass, JOB__PERMISSIONS);
+		createEReference(jobEClass, JOB__ENVIRONMENT);
+		createEReference(jobEClass, JOB__STRATEGY);
+		createEReference(jobEClass, JOB__CONTAINER);
+		createEReference(jobEClass, JOB__SERVICES);
+		createEReference(jobEClass, JOB__DEFAULTS);
+		createEReference(jobEClass, JOB__WITH);
+		createEReference(jobEClass, JOB__ENV);
+		createEReference(jobEClass, JOB__OUTPUTS);
+
+		stepEClass = createEClass(STEP);
+		createEAttribute(stepEClass, STEP__NAME);
+		createEAttribute(stepEClass, STEP__USES);
+		createEAttribute(stepEClass, STEP__RUN);
+		createEAttribute(stepEClass, STEP__ID);
+		createEAttribute(stepEClass, STEP__IF);
+		createEAttribute(stepEClass, STEP__WORKING_DIRECTORY);
+		createEAttribute(stepEClass, STEP__SHELL);
+		createEAttribute(stepEClass, STEP__CONTINUE_ON_ERROR);
+		createEAttribute(stepEClass, STEP__TIMEOUT_MINUTES);
+		createEReference(stepEClass, STEP__WITH);
+		createEReference(stepEClass, STEP__ENV);
+
 		permissionsEClass = createEClass(PERMISSIONS);
-		createEAttribute(permissionsEClass, PERMISSIONS__CONTENTS);
-		createEAttribute(permissionsEClass, PERMISSIONS__SECURITY_EVENTS);
-		createEAttribute(permissionsEClass, PERMISSIONS__ACTIONS);
-		createEAttribute(permissionsEClass, PERMISSIONS__PAGES);
-		createEAttribute(permissionsEClass, PERMISSIONS__ID_TOKEN);
-		createEAttribute(permissionsEClass, PERMISSIONS__PULL_REQUESTS);
-		createEAttribute(permissionsEClass, PERMISSIONS__ISSUES);
-		createEAttribute(permissionsEClass, PERMISSIONS__PACKAGES);
-		createEAttribute(permissionsEClass, PERMISSIONS__MODELS);
-		createEAttribute(permissionsEClass, PERMISSIONS__CHECKS);
 
 		scheduleEClass = createEClass(SCHEDULE);
 		createEAttribute(scheduleEClass, SCHEDULE__CRON);
@@ -1620,13 +1748,11 @@ public class YamlmdePackageImpl extends EPackageImpl implements YamlmdePackage {
 		workflow_dispatchEClass = createEClass(WORKFLOW_DISPATCH);
 		createEReference(workflow_dispatchEClass, WORKFLOW_DISPATCH__INPUTS);
 
-		environmentEClass = createEClass(ENVIRONMENT);
-		createEAttribute(environmentEClass, ENVIRONMENT__NAME);
-		createEAttribute(environmentEClass, ENVIRONMENT__URL);
-
 		concurrencyEClass = createEClass(CONCURRENCY);
 		createEAttribute(concurrencyEClass, CONCURRENCY__GROUP);
 		createEAttribute(concurrencyEClass, CONCURRENCY__CANCEL_IN_PROGRESS);
+
+		environmentEClass = createEClass(ENVIRONMENT);
 
 		strategyEClass = createEClass(STRATEGY);
 		createEAttribute(strategyEClass, STRATEGY__FAIL_FAST);
@@ -1634,9 +1760,6 @@ public class YamlmdePackageImpl extends EPackageImpl implements YamlmdePackage {
 		createEReference(strategyEClass, STRATEGY__MATRIX);
 
 		matrixEClass = createEClass(MATRIX);
-		createEReference(matrixEClass, MATRIX__INCLUDE);
-		createEReference(matrixEClass, MATRIX__EXCLUDE);
-		createEReference(matrixEClass, MATRIX__PARAMETERS);
 
 		includeEClass = createEClass(INCLUDE);
 		createEReference(includeEClass, INCLUDE__ENTRIES);
@@ -1682,6 +1805,36 @@ public class YamlmdePackageImpl extends EPackageImpl implements YamlmdePackage {
 		createEAttribute(serviceEClass, SERVICE__PORTS);
 		createEReference(serviceEClass, SERVICE__ENV);
 
+		permissionsObjectEClass = createEClass(PERMISSIONS_OBJECT);
+		createEAttribute(permissionsObjectEClass, PERMISSIONS_OBJECT__CONTENTS);
+		createEAttribute(permissionsObjectEClass, PERMISSIONS_OBJECT__SECURITY_EVENTS);
+		createEAttribute(permissionsObjectEClass, PERMISSIONS_OBJECT__ACTIONS);
+		createEAttribute(permissionsObjectEClass, PERMISSIONS_OBJECT__PAGES);
+		createEAttribute(permissionsObjectEClass, PERMISSIONS_OBJECT__ID_TOKEN);
+		createEAttribute(permissionsObjectEClass, PERMISSIONS_OBJECT__PULL_REQUESTS);
+		createEAttribute(permissionsObjectEClass, PERMISSIONS_OBJECT__ISSUES);
+		createEAttribute(permissionsObjectEClass, PERMISSIONS_OBJECT__PACKAGES);
+		createEAttribute(permissionsObjectEClass, PERMISSIONS_OBJECT__MODELS);
+		createEAttribute(permissionsObjectEClass, PERMISSIONS_OBJECT__CHECKS);
+
+		permissionsValueEClass = createEClass(PERMISSIONS_VALUE);
+		createEAttribute(permissionsValueEClass, PERMISSIONS_VALUE__VALUE);
+
+		environmentObjectEClass = createEClass(ENVIRONMENT_OBJECT);
+		createEAttribute(environmentObjectEClass, ENVIRONMENT_OBJECT__NAME);
+		createEAttribute(environmentObjectEClass, ENVIRONMENT_OBJECT__URL);
+
+		environmentValueEClass = createEClass(ENVIRONMENT_VALUE);
+		createEAttribute(environmentValueEClass, ENVIRONMENT_VALUE__VALUE);
+
+		matrixObjectEClass = createEClass(MATRIX_OBJECT);
+		createEReference(matrixObjectEClass, MATRIX_OBJECT__INCLUDE);
+		createEReference(matrixObjectEClass, MATRIX_OBJECT__EXCLUDE);
+		createEReference(matrixObjectEClass, MATRIX_OBJECT__PARAMETERS);
+
+		matrixValueEClass = createEClass(MATRIX_VALUE);
+		createEAttribute(matrixValueEClass, MATRIX_VALUE__VALUE);
+
 		matrixParameterEClass = createEClass(MATRIX_PARAMETER);
 		createEAttribute(matrixParameterEClass, MATRIX_PARAMETER__KEY);
 		createEAttribute(matrixParameterEClass, MATRIX_PARAMETER__VALUES);
@@ -1716,25 +1869,31 @@ public class YamlmdePackageImpl extends EPackageImpl implements YamlmdePackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		permissionsObjectEClass.getESuperTypes().add(this.getPermissions());
+		permissionsValueEClass.getESuperTypes().add(this.getPermissions());
+		environmentObjectEClass.getESuperTypes().add(this.getEnvironment());
+		environmentValueEClass.getESuperTypes().add(this.getEnvironment());
+		matrixObjectEClass.getESuperTypes().add(this.getMatrix());
+		matrixValueEClass.getESuperTypes().add(this.getMatrix());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(keyValuePairEClass, KeyValuePair.class, "KeyValuePair", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getKeyValuePair_Key(), ecorePackage.getEString(), "key", null, 1, 1, KeyValuePair.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getKeyValuePair_Value(), ecorePackage.getEString(), "value", null, 1, 1, KeyValuePair.class,
+		initEAttribute(getKeyValuePair_Value(), ecorePackage.getEString(), "value", null, 0, 1, KeyValuePair.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(githubActionsEClass, GithubActions.class, "GithubActions", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGithubActions_Name(), ecorePackage.getEString(), "name", null, 0, 1, GithubActions.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getGithubActions_Jobs(), this.getJob(), null, "jobs", null, 1, -1, GithubActions.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGithubActions_On(), this.getOn(), null, "on", null, 1, 1, GithubActions.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+		initEReference(getGithubActions_Jobs(), this.getJob(), null, "jobs", null, 1, -1, GithubActions.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGithubActions_Permissions(), this.getPermissions(), null, "permissions", null, 0, 1,
 				GithubActions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1747,77 +1906,6 @@ public class YamlmdePackageImpl extends EPackageImpl implements YamlmdePackage {
 		initEReference(getGithubActions_Env(), this.getKeyValuePair(), null, "env", null, 0, -1, GithubActions.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(jobEClass, Job.class, "Job", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getJob_Id(), ecorePackage.getEString(), "id", null, 1, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getJob_RunsOn(), ecorePackage.getEString(), "runsOn", null, 0, 1, Job.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getJob_Name(), ecorePackage.getEString(), "name", null, 0, 1, Job.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getJob_Needs(), ecorePackage.getEString(), "needs", null, 0, -1, Job.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getJob_If(), ecorePackage.getEString(), "if", null, 0, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getJob_Uses(), ecorePackage.getEString(), "uses", null, 0, 1, Job.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getJob_Steps(), this.getStep(), null, "steps", null, 0, -1, Job.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getJob_Permissions(), this.getPermissions(), null, "permissions", null, 0, 1, Job.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getJob_Environment(), this.getEnvironment(), null, "environment", null, 0, 1, Job.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getJob_Strategy(), this.getStrategy(), null, "strategy", null, 0, 1, Job.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getJob_Container(), this.getContainer(), null, "container", null, 0, 1, Job.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getJob_Services(), this.getService(), null, "services", null, 0, -1, Job.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getJob_Defaults(), this.getDefaults(), null, "defaults", null, 0, 1, Job.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getJob_Env(), this.getKeyValuePair(), null, "env", null, 0, -1, Job.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getJob_With(), this.getKeyValuePair(), null, "with", null, 0, -1, Job.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getJob_Outputs(), this.getKeyValuePair(), null, "outputs", null, 0, -1, Job.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-
-		initEClass(stepEClass, Step.class, "Step", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStep_Name(), ecorePackage.getEString(), "name", null, 0, 1, Step.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStep_Uses(), ecorePackage.getEString(), "uses", null, 0, 1, Step.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStep_Run(), ecorePackage.getEString(), "run", null, 0, 1, Step.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStep_Id(), ecorePackage.getEString(), "id", null, 0, 1, Step.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStep_If(), ecorePackage.getEString(), "if", null, 0, 1, Step.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStep_WorkingDirectory(), ecorePackage.getEString(), "workingDirectory", null, 0, 1,
-				Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEAttribute(getStep_Shell(), ecorePackage.getEString(), "shell", null, 0, 1, Step.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStep_ContinueOnError(), ecorePackage.getEBoolean(), "continueOnError", null, 0, 1, Step.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStep_TimeoutMinutes(), ecorePackage.getEInt(), "timeoutMinutes", null, 0, 1, Step.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStep_Env(), this.getKeyValuePair(), null, "env", null, 0, -1, Step.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getStep_With(), this.getKeyValuePair(), null, "with", null, 0, -1, Step.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
 
 		initEClass(onEClass, On.class, "On", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOn_BranchProtectionRule(), ecorePackage.getEString(), "branchProtectionRule", null, 0, 1,
@@ -1864,30 +1952,79 @@ public class YamlmdePackageImpl extends EPackageImpl implements YamlmdePackage {
 		initEAttribute(getPull_request_Types(), ecorePackage.getEString(), "types", null, 0, -1, Pull_request.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(permissionsEClass, Permissions.class, "Permissions", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(jobEClass, Job.class, "Job", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getJob_Id(), ecorePackage.getEString(), "id", null, 1, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getJob_RunsOn(), ecorePackage.getEString(), "runsOn", null, 0, 1, Job.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getJob_Name(), ecorePackage.getEString(), "name", null, 0, 1, Job.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getJob_Needs(), ecorePackage.getEString(), "needs", null, 0, -1, Job.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getJob_If(), ecorePackage.getEString(), "if", null, 0, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getJob_Uses(), ecorePackage.getEString(), "uses", null, 0, 1, Job.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getJob_Steps(), this.getStep(), null, "steps", null, 0, -1, Job.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getJob_Permissions(), this.getPermissions(), null, "permissions", null, 0, 1, Job.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getJob_Environment(), this.getEnvironment(), null, "environment", null, 0, 1, Job.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getJob_Strategy(), this.getStrategy(), null, "strategy", null, 0, 1, Job.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getJob_Container(), this.getContainer(), null, "container", null, 0, 1, Job.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getJob_Services(), this.getService(), null, "services", null, 0, -1, Job.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getJob_Defaults(), this.getDefaults(), null, "defaults", null, 0, 1, Job.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getJob_With(), this.getKeyValuePair(), null, "with", null, 0, -1, Job.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getJob_Env(), this.getKeyValuePair(), null, "env", null, 0, -1, Job.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getJob_Outputs(), this.getKeyValuePair(), null, "outputs", null, 0, -1, Job.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(stepEClass, Step.class, "Step", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getStep_Name(), ecorePackage.getEString(), "name", null, 0, 1, Step.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStep_Uses(), ecorePackage.getEString(), "uses", null, 0, 1, Step.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStep_Run(), ecorePackage.getEString(), "run", null, 0, 1, Step.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStep_Id(), ecorePackage.getEString(), "id", null, 0, 1, Step.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStep_If(), ecorePackage.getEString(), "if", null, 0, 1, Step.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStep_WorkingDirectory(), ecorePackage.getEString(), "workingDirectory", null, 0, 1,
+				Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getStep_Shell(), ecorePackage.getEString(), "shell", null, 0, 1, Step.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStep_ContinueOnError(), ecorePackage.getEBoolean(), "continueOnError", null, 0, 1, Step.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStep_TimeoutMinutes(), ecorePackage.getEInt(), "timeoutMinutes", null, 0, 1, Step.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStep_With(), this.getKeyValuePair(), null, "with", null, 0, -1, Step.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getStep_Env(), this.getKeyValuePair(), null, "env", null, 0, -1, Step.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(permissionsEClass, Permissions.class, "Permissions", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPermissions_Contents(), ecorePackage.getEString(), "contents", null, 0, 1, Permissions.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPermissions_SecurityEvents(), ecorePackage.getEString(), "securityEvents", null, 0, 1,
-				Permissions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPermissions_Actions(), ecorePackage.getEString(), "actions", null, 0, 1, Permissions.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPermissions_Pages(), ecorePackage.getEString(), "pages", null, 0, 1, Permissions.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPermissions_IdToken(), ecorePackage.getEString(), "idToken", null, 0, 1, Permissions.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPermissions_PullRequests(), ecorePackage.getEString(), "pullRequests", null, 0, 1,
-				Permissions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPermissions_Issues(), ecorePackage.getEString(), "issues", null, 0, 1, Permissions.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPermissions_Packages(), ecorePackage.getEString(), "packages", null, 0, 1, Permissions.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPermissions_Models(), ecorePackage.getEString(), "models", null, 0, 1, Permissions.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPermissions_Checks(), ecorePackage.getEString(), "checks", null, 0, 1, Permissions.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(scheduleEClass, Schedule.class, "Schedule", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1900,13 +2037,6 @@ public class YamlmdePackageImpl extends EPackageImpl implements YamlmdePackage {
 				Workflow_dispatch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(environmentEClass, Environment.class, "Environment", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEnvironment_Name(), ecorePackage.getEString(), "name", null, 1, 1, Environment.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEnvironment_Url(), ecorePackage.getEString(), "url", null, 0, 1, Environment.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(concurrencyEClass, Concurrency.class, "Concurrency", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConcurrency_Group(), ecorePackage.getEString(), "group", null, 1, 1, Concurrency.class,
@@ -1914,6 +2044,9 @@ public class YamlmdePackageImpl extends EPackageImpl implements YamlmdePackage {
 		initEAttribute(getConcurrency_CancelInProgress(), ecorePackage.getEBoolean(), "cancelInProgress", null, 1, 1,
 				Concurrency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(environmentEClass, Environment.class, "Environment", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(strategyEClass, Strategy.class, "Strategy", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1925,16 +2058,7 @@ public class YamlmdePackageImpl extends EPackageImpl implements YamlmdePackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(matrixEClass, Matrix.class, "Matrix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMatrix_Include(), this.getInclude(), null, "include", null, 0, -1, Matrix.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMatrix_Exclude(), this.getExclude(), null, "exclude", null, 0, -1, Matrix.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMatrix_Parameters(), this.getMatrixParameter(), null, "parameters", null, 0, -1, Matrix.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(matrixEClass, Matrix.class, "Matrix", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(includeEClass, Include.class, "Include", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInclude_Entries(), this.getKeyValuePair(), null, "entries", null, 1, -1, Include.class,
@@ -2009,6 +2133,77 @@ public class YamlmdePackageImpl extends EPackageImpl implements YamlmdePackage {
 		initEReference(getService_Env(), this.getKeyValuePair(), null, "env", null, 0, -1, Service.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+
+		initEClass(permissionsObjectEClass, PermissionsObject.class, "PermissionsObject", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPermissionsObject_Contents(), ecorePackage.getEString(), "contents", null, 0, 1,
+				PermissionsObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPermissionsObject_SecurityEvents(), ecorePackage.getEString(), "securityEvents", null, 0, 1,
+				PermissionsObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPermissionsObject_Actions(), ecorePackage.getEString(), "actions", null, 0, 1,
+				PermissionsObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPermissionsObject_Pages(), ecorePackage.getEString(), "pages", null, 0, 1,
+				PermissionsObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPermissionsObject_IdToken(), ecorePackage.getEString(), "idToken", null, 0, 1,
+				PermissionsObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPermissionsObject_PullRequests(), ecorePackage.getEString(), "pullRequests", null, 0, 1,
+				PermissionsObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPermissionsObject_Issues(), ecorePackage.getEString(), "issues", null, 0, 1,
+				PermissionsObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPermissionsObject_Packages(), ecorePackage.getEString(), "packages", null, 0, 1,
+				PermissionsObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPermissionsObject_Models(), ecorePackage.getEString(), "models", null, 0, 1,
+				PermissionsObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPermissionsObject_Checks(), ecorePackage.getEString(), "checks", null, 0, 1,
+				PermissionsObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(permissionsValueEClass, PermissionsValue.class, "PermissionsValue", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPermissionsValue_Value(), ecorePackage.getEString(), "value", null, 1, 1,
+				PermissionsValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(environmentObjectEClass, EnvironmentObject.class, "EnvironmentObject", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEnvironmentObject_Name(), ecorePackage.getEString(), "name", null, 1, 1,
+				EnvironmentObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEnvironmentObject_Url(), ecorePackage.getEString(), "url", null, 0, 1,
+				EnvironmentObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(environmentValueEClass, EnvironmentValue.class, "EnvironmentValue", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEnvironmentValue_Value(), ecorePackage.getEString(), "value", null, 1, 1,
+				EnvironmentValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(matrixObjectEClass, MatrixObject.class, "MatrixObject", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMatrixObject_Include(), this.getInclude(), null, "include", null, 0, -1, MatrixObject.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMatrixObject_Exclude(), this.getExclude(), null, "exclude", null, 0, -1, MatrixObject.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMatrixObject_Parameters(), this.getMatrixParameter(), null, "parameters", null, 0, -1,
+				MatrixObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(matrixValueEClass, MatrixValue.class, "MatrixValue", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMatrixValue_Value(), ecorePackage.getEString(), "value", null, 1, 1, MatrixValue.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(matrixParameterEClass, MatrixParameter.class, "MatrixParameter", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
