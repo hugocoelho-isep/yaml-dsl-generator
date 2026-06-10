@@ -22,28 +22,43 @@ GithubActions returns GithubActions:
 // =============================================================================
 
 EString returns ecore::EString:
-	STRING | SQ_STRING | BlockString | ScalarSequence;
-
-// Junta múltiplos tokens separados por dois pontos (ex: docker:latest, http://...)
-// Como exige que o ':' seja seguido de outro texto, NUNCA engole o ':' estrutural do YAML.
-ScalarSequence returns ecore::EString:
-    (YAML_SCALAR | GH_EXPRESSION | SQ_STRING | ID | INT | 'true' | 'false')
-    ( ((':' | '-') (YAML_SCALAR | GH_EXPRESSION | SQ_STRING | ID | INT | 'true' | 'false'))
-    | GH_EXPRESSION
-    | SQ_STRING
-    | '-' )*;
+	STRING | SQ_STRING | BlockString
+	| YAML_SCALAR | GH_EXPRESSION | ID | INT | 'true' | 'false';
 	
 // Lida com 'run: >' ou 'run: |' consumindo o bloco inteiro
 // Aceita qualquer token do Xtext e pontuações do Bash (como [, ], ; e -)
+//BlockString returns ecore::EString:
+//	('>' | '|' | '>-' | '>+' | '|-' | '|+') BEG_BLOCK? (
+//		YAML_SCALAR | GH_EXPRESSION | ID | INT | STRING
+//		| '-' | '[' | ']' | ';' | ':' | ',' | '{' | '}' | ANY_OTHER
+//		| '>-' | '>+' | '|-' | '|+'
+//	)* END_BLOCK?;
 BlockString returns ecore::EString:
-	('>' | '|') BEG_BLOCK? (
-		YAML_SCALAR | GH_EXPRESSION | ID | INT | STRING 
-		| '-' | '[' | ']' | ';' | ':' | ',' | '{' | '}' | ANY_OTHER
-	)* END_BLOCK?;
+    ('>' | '|' | '>-' | '>+' | '|-' | '|+') BEG_BLOCK? (
+        YAML_SCALAR | GH_EXPRESSION | ID | INT | STRING
+        | '-' | '[' | ']' | ';' | ':' | ',' | '{' | '}' | ANY_OTHER
+        | '|' | '>' | '>-' | '>+' | '|-' | '|+'
+    )* END_BLOCK?;
 
 // =============================================================================
 // KEY RULE
 // =============================================================================
+
+ReservedWord returns ecore::EString:
+	  'name' | 'on' | 'concurrency' | 'defaults' | 'jobs' | 'permissions' | 'env'
+	| 'branch_protection_rule' | 'push' | 'pull_request' | 'pull_request_target'
+	| 'schedule' | 'workflow_dispatch' | 'workflow_call' | 'release' | 'merge_group' | 'issues'
+	| 'branches' | 'tags' | 'types' | 'cron' | 'inputs' | 'description' | 'default'
+	| 'required' | 'type' | 'secrets' | 'group' | 'cancel-in-progress' | 'url'
+	| 'contents' | 'security-events' | 'actions' | 'pages' | 'id-token' | 'pull-requests'
+	| 'packages' | 'models' | 'checks' | 'runs-on' | 'needs' | 'if' | 'uses'
+	| 'environment' | 'strategy' | 'container' | 'services' | 'outputs' | 'steps' | 'with'
+	| 'image' | 'ports' | 'id' | 'run' | 'working-directory' | 'shell'
+	| 'continue-on-error' | 'timeout-minutes' | 'fail-fast' | 'max-parallel' | 'matrix'
+	| 'include' | 'exclude' | 'os' | 'build-type' | 'c-compiler' | 'cpp-compiler'
+	| 'otp' | 'elixir' | 'node-version' | 'cache' | 'python-version' | 'configuration'
+	| 'digests' | 'r-version' | 'ruby-version';
+
 
 // KeyName is used exclusively as the key in KeyValuePair.
 // Xtext keyword tokens ('name', 'run', etc.) cannot be matched by ID or
@@ -51,26 +66,7 @@ BlockString returns ecore::EString:
 // YAML key must be listed here explicitly.
 // ─── When adding a new DSL: add its keywords to this rule only. ───────────
 KeyName returns ecore::EString:
-	  ID | YAML_SCALAR | INT
-	| 'name' | 'on' | 'jobs' | 'permissions' | 'env'
-	| 'push' | 'pull_request' | 'branches' | 'tags'
-	| 'runs-on' | 'needs' | 'steps' | 'uses' | 'run' | 'with'
-	| 'shell' | 'contents' | 'security-events' | 'actions' 
-	| 'pages' | 'id-token' | 'types' | 'pull-requests' | 'if' 
-	| 'continue-on-error' | 'issues'
-	| 'strategy' | 'fail-fast' | 'max-parallel' | 'matrix'
-	| 'os' | 'build-type' 
-	| 'c-compiler' | 'cpp-compiler' | 'otp' | 'elixir' | 'include' 
-	| 'exclude' | 'workflow_call' | 'pull_request_target' 
-	| 'secrets' | 'required' | 'packages'
-	| 'container' | 'image'
-	| 'defaults' | 'outputs' | 'release' 
-	| 'inputs' | 'description' | 'default' 
-	| 'type' | 'node-version' | 'cache'
-	| 'python-version' | 'configuration' | 'digests'
-	| 'merge_group' | 'r-version'
-	| 'branch_protection_rule' | 'models' | 'ruby-version' | 'services' | 'ports'
-	| 'timeout-minutes' | 'checks';
+	ID | YAML_SCALAR | INT | ReservedWord;
 	
 // =============================================================================
 // KEY-VALUE PAIR  (generic block content — e.g. 'with:', 'env:')
@@ -86,10 +82,18 @@ KeyValuePair returns KeyValuePair:
 // =============================================================================
 
 On returns On:
-	{On}
-	BEG_BLOCK?
-		(('branch_protection_rule' ':' branchProtectionRule=EString)?
-		&('push' ':' push=Push)?
+	OnObject | OnValue;
+
+// on: push   |   on: [push, pull_request]
+OnValue returns OnValue:
+	  value+=EString
+	| '[' value+=EString (',' value+=EString)* ']';
+
+OnObject returns OnObject:
+	{OnObject}
+	BEG_BLOCK
+		(('branch_protection_rule' ':' branchProtectionRule=EString?)?
+		& ('push' ':' push=Push)?
 		& ('pull_request' ':' pullRequest=Pull_request)?
 		& ('pull_request_target' ':' pullRequestTarget=Pull_request)?
 		& ('schedule' ':' (BEG_BLOCK? schedule+=Schedule+ END_BLOCK?))?
@@ -102,7 +106,7 @@ On returns On:
 
 Push returns Push:
 	{Push}
-	BEG_BLOCK
+	(BEG_BLOCK
 		(('branches' ':' (
 			  BEG_BLOCK ('-' BEG_BLOCK branches+=EString END_BLOCK)+ END_BLOCK
 			| '[' branches+=EString (',' branches+=EString)* ']'
@@ -111,11 +115,11 @@ Push returns Push:
 			  BEG_BLOCK ('-' BEG_BLOCK tags+=EString END_BLOCK)+ END_BLOCK
 			| '[' tags+=EString (',' tags+=EString)* ']'
 		))?)
-	END_BLOCK;
+	END_BLOCK)?;
 
 Pull_request returns Pull_request:
 	{Pull_request}
-	BEG_BLOCK
+	(BEG_BLOCK
 		(('branches' ':' (
 			  BEG_BLOCK ('-' BEG_BLOCK branches+=EString END_BLOCK)+ END_BLOCK
 			| '[' branches+=EString (',' branches+=EString)* ']'
@@ -124,7 +128,7 @@ Pull_request returns Pull_request:
 			  BEG_BLOCK ('-' BEG_BLOCK types+=EString END_BLOCK)+ END_BLOCK
 			| '[' types+=EString (',' types+=EString)* ']'
 		))?)
-	END_BLOCK;
+	END_BLOCK)?;
 	
 Schedule returns Schedule:
 	'-' BEG_BLOCK?
@@ -186,16 +190,17 @@ Concurrency returns Concurrency:
 
 //in future try to infer this in metayaml
 Environment returns Environment:
-	{Environment}
-	(
-		name=EString              // environment: production
-	|
-		BEG_BLOCK
-			(('name' ':' name=EString)?
-			& ('url' ':' url=EString)?)
-		END_BLOCK?
-	);
-	
+	EnvironmentObject | EnvironmentValue;
+
+EnvironmentValue returns EnvironmentValue:
+	value=EString;                       // ex: environment: production
+
+EnvironmentObject returns EnvironmentObject:
+	{EnvironmentObject}
+	BEG_BLOCK
+		(('name' ':' name=EString)?
+		& ('url' ':' url=EString)?)
+	END_BLOCK?;
 
 	
 // =============================================================================
@@ -203,8 +208,14 @@ Environment returns Environment:
 // =============================================================================
 
 Permissions returns Permissions:
-	{Permissions}
-	BEG_BLOCK?
+	PermissionsObject | PermissionsValue;
+
+PermissionsValue returns PermissionsValue:
+	value=EString;                       // ex: permissions: read-all
+
+PermissionsObject returns PermissionsObject:
+	{PermissionsObject}
+	BEG_BLOCK
 		(('contents' ':' contents=EString)?
 		& ('security-events' ':' securityEvents=EString)?
 		& ('actions' ':' actions=EString)?
@@ -290,8 +301,14 @@ Strategy returns Strategy:
 // MatrixParameter entries. 'include' and 'exclude' are matched first so they are never
 // consumed as generic parameters.
 Matrix returns Matrix:
-	{Matrix}
-	BEG_BLOCK?
+	MatrixObject | MatrixValue;
+
+MatrixValue returns MatrixValue:
+	value=EString;                       // ex: matrix: ${{ fromJson(...) }}
+
+MatrixObject returns MatrixObject:
+	{MatrixObject}
+	BEG_BLOCK
 		(  'include' ':' BEG_BLOCK ('-' BEG_BLOCK? include+=Include END_BLOCK?)+ END_BLOCK
 		 | 'exclude' ':' BEG_BLOCK ('-' BEG_BLOCK? exclude+=Exclude END_BLOCK?)+ END_BLOCK
 		 | parameters+=MatrixParameter
@@ -385,9 +402,13 @@ terminal SQ_STRING: "'" !("'")* "'";
 // GitHub Actions expression ${{ ... }}
 // Mantemos o until-match ('->') para capturar expressões completas sem o Lexer se perder nas chavetas.
 terminal GH_EXPRESSION:
-    '$'? '{{' -> '}}'
-    | '$' ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-')*;
-    
+    ('$'? '{{' -> '}}' | '$' ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-')*)
+    (
+        ('/' | '.' | '-' | '_' | '@') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-'|'.'|'/'|'@')*
+      | '$'? '{{' -> '}}'
+      | '$' ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-')*
+    )*;
+
 // Força o Lexer a dar prioridade a números puros antes do YAML_SCALAR
 @Override terminal INT returns ecore::EInt: ('0'..'9')+;
 
@@ -395,4 +416,4 @@ terminal GH_EXPRESSION:
 // Pára automaticamente em vírgulas, parêntesis retos (para arrays funcionarem) e dois pontos (para as keys funcionarem).
 terminal YAML_SCALAR:
 	('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'.'|'/'|'@'|'*'|'$'|'='|'+'|'<'|'>'|'|'|'&'|'~'|'!'|'?'|'\\'|'('|')')
-	('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-'|'.'|'/'|'@'|'*'|'$'|'='|'+'|'<'|'>'|'|'|'&'|'~'|'!'|'?'|'\\'|'('|')'|' ')*;
+	('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-'|'.'|'/'|'@'|'*'|'$'|'='|'+'|'<'|'>'|'|'|'&'|'~'|'!'|'?'|'\\'|'('|')')*;

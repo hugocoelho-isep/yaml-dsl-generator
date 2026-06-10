@@ -192,7 +192,10 @@ public class StrategyItemProvider extends ItemProviderAdapter implements IEditin
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.STRATEGY__MATRIX,
-				YamlmdeFactory.eINSTANCE.createMatrix()));
+				YamlmdeFactory.eINSTANCE.createMatrixObject()));
+
+		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.STRATEGY__MATRIX,
+				YamlmdeFactory.eINSTANCE.createMatrixValue()));
 	}
 
 	/**

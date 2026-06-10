@@ -77,16 +77,6 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseJob(Job object) {
-			return createJobAdapter();
-		}
-
-		@Override
-		public Adapter caseStep(Step object) {
-			return createStepAdapter();
-		}
-
-		@Override
 		public Adapter caseOn(On object) {
 			return createOnAdapter();
 		}
@@ -99,6 +89,16 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter casePull_request(Pull_request object) {
 			return createPull_requestAdapter();
+		}
+
+		@Override
+		public Adapter caseJob(Job object) {
+			return createJobAdapter();
+		}
+
+		@Override
+		public Adapter caseStep(Step object) {
+			return createStepAdapter();
 		}
 
 		@Override
@@ -117,13 +117,13 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseEnvironment(Environment object) {
-			return createEnvironmentAdapter();
+		public Adapter caseConcurrency(Concurrency object) {
+			return createConcurrencyAdapter();
 		}
 
 		@Override
-		public Adapter caseConcurrency(Concurrency object) {
-			return createConcurrencyAdapter();
+		public Adapter caseEnvironment(Environment object) {
+			return createEnvironmentAdapter();
 		}
 
 		@Override
@@ -177,11 +177,6 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseIssues(Issues object) {
-			return createIssuesAdapter();
-		}
-
-		@Override
 		public Adapter caseInput(Input object) {
 			return createInputAdapter();
 		}
@@ -194,6 +189,51 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseService(Service object) {
 			return createServiceAdapter();
+		}
+
+		@Override
+		public Adapter caseIssues(Issues object) {
+			return createIssuesAdapter();
+		}
+
+		@Override
+		public Adapter casePermissionsObject(PermissionsObject object) {
+			return createPermissionsObjectAdapter();
+		}
+
+		@Override
+		public Adapter casePermissionsValue(PermissionsValue object) {
+			return createPermissionsValueAdapter();
+		}
+
+		@Override
+		public Adapter caseOnObject(OnObject object) {
+			return createOnObjectAdapter();
+		}
+
+		@Override
+		public Adapter caseOnValue(OnValue object) {
+			return createOnValueAdapter();
+		}
+
+		@Override
+		public Adapter caseEnvironmentObject(EnvironmentObject object) {
+			return createEnvironmentObjectAdapter();
+		}
+
+		@Override
+		public Adapter caseEnvironmentValue(EnvironmentValue object) {
+			return createEnvironmentValueAdapter();
+		}
+
+		@Override
+		public Adapter caseMatrixObject(MatrixObject object) {
+			return createMatrixObjectAdapter();
+		}
+
+		@Override
+		public Adapter caseMatrixValue(MatrixValue object) {
+			return createMatrixValueAdapter();
 		}
 
 		@Override
@@ -581,6 +621,118 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createServiceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.PermissionsObject <em>Permissions Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.PermissionsObject
+	 * @generated
+	 */
+	public Adapter createPermissionsObjectAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.PermissionsValue <em>Permissions Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.PermissionsValue
+	 * @generated
+	 */
+	public Adapter createPermissionsValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.OnObject <em>On Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.OnObject
+	 * @generated
+	 */
+	public Adapter createOnObjectAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.OnValue <em>On Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.OnValue
+	 * @generated
+	 */
+	public Adapter createOnValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.EnvironmentObject <em>Environment Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.EnvironmentObject
+	 * @generated
+	 */
+	public Adapter createEnvironmentObjectAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.EnvironmentValue <em>Environment Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.EnvironmentValue
+	 * @generated
+	 */
+	public Adapter createEnvironmentValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.MatrixObject <em>Matrix Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.MatrixObject
+	 * @generated
+	 */
+	public Adapter createMatrixObjectAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.MatrixValue <em>Matrix Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.MatrixValue
+	 * @generated
+	 */
+	public Adapter createMatrixValueAdapter() {
 		return null;
 	}
 

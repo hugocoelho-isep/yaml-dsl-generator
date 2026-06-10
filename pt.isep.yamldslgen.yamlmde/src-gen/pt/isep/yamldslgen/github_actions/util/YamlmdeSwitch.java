@@ -80,20 +80,6 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case YamlmdePackage.JOB: {
-			Job job = (Job) theEObject;
-			T result = caseJob(job);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case YamlmdePackage.STEP: {
-			Step step = (Step) theEObject;
-			T result = caseStep(step);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case YamlmdePackage.ON: {
 			On on = (On) theEObject;
 			T result = caseOn(on);
@@ -111,6 +97,20 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 		case YamlmdePackage.PULL_REQUEST: {
 			Pull_request pull_request = (Pull_request) theEObject;
 			T result = casePull_request(pull_request);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamlmdePackage.JOB: {
+			Job job = (Job) theEObject;
+			T result = caseJob(job);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamlmdePackage.STEP: {
+			Step step = (Step) theEObject;
+			T result = caseStep(step);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -136,16 +136,16 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case YamlmdePackage.ENVIRONMENT: {
-			Environment environment = (Environment) theEObject;
-			T result = caseEnvironment(environment);
+		case YamlmdePackage.CONCURRENCY: {
+			Concurrency concurrency = (Concurrency) theEObject;
+			T result = caseConcurrency(concurrency);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case YamlmdePackage.CONCURRENCY: {
-			Concurrency concurrency = (Concurrency) theEObject;
-			T result = caseConcurrency(concurrency);
+		case YamlmdePackage.ENVIRONMENT: {
+			Environment environment = (Environment) theEObject;
+			T result = caseEnvironment(environment);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -220,13 +220,6 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case YamlmdePackage.ISSUES: {
-			Issues issues = (Issues) theEObject;
-			T result = caseIssues(issues);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case YamlmdePackage.INPUT: {
 			Input input = (Input) theEObject;
 			T result = caseInput(input);
@@ -244,6 +237,85 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 		case YamlmdePackage.SERVICE: {
 			Service service = (Service) theEObject;
 			T result = caseService(service);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamlmdePackage.ISSUES: {
+			Issues issues = (Issues) theEObject;
+			T result = caseIssues(issues);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamlmdePackage.PERMISSIONS_OBJECT: {
+			PermissionsObject permissionsObject = (PermissionsObject) theEObject;
+			T result = casePermissionsObject(permissionsObject);
+			if (result == null)
+				result = casePermissions(permissionsObject);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamlmdePackage.PERMISSIONS_VALUE: {
+			PermissionsValue permissionsValue = (PermissionsValue) theEObject;
+			T result = casePermissionsValue(permissionsValue);
+			if (result == null)
+				result = casePermissions(permissionsValue);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamlmdePackage.ON_OBJECT: {
+			OnObject onObject = (OnObject) theEObject;
+			T result = caseOnObject(onObject);
+			if (result == null)
+				result = caseOn(onObject);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamlmdePackage.ON_VALUE: {
+			OnValue onValue = (OnValue) theEObject;
+			T result = caseOnValue(onValue);
+			if (result == null)
+				result = caseOn(onValue);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamlmdePackage.ENVIRONMENT_OBJECT: {
+			EnvironmentObject environmentObject = (EnvironmentObject) theEObject;
+			T result = caseEnvironmentObject(environmentObject);
+			if (result == null)
+				result = caseEnvironment(environmentObject);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamlmdePackage.ENVIRONMENT_VALUE: {
+			EnvironmentValue environmentValue = (EnvironmentValue) theEObject;
+			T result = caseEnvironmentValue(environmentValue);
+			if (result == null)
+				result = caseEnvironment(environmentValue);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamlmdePackage.MATRIX_OBJECT: {
+			MatrixObject matrixObject = (MatrixObject) theEObject;
+			T result = caseMatrixObject(matrixObject);
+			if (result == null)
+				result = caseMatrix(matrixObject);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamlmdePackage.MATRIX_VALUE: {
+			MatrixValue matrixValue = (MatrixValue) theEObject;
+			T result = caseMatrixValue(matrixValue);
+			if (result == null)
+				result = caseMatrix(matrixValue);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -647,6 +719,126 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseService(Service object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Permissions Object</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Permissions Object</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePermissionsObject(PermissionsObject object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Permissions Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Permissions Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePermissionsValue(PermissionsValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>On Object</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>On Object</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOnObject(OnObject object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>On Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>On Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOnValue(OnValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Environment Object</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Environment Object</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEnvironmentObject(EnvironmentObject object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Environment Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Environment Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEnvironmentValue(EnvironmentValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Matrix Object</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Matrix Object</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMatrixObject(MatrixObject object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Matrix Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Matrix Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMatrixValue(MatrixValue object) {
 		return null;
 	}
 

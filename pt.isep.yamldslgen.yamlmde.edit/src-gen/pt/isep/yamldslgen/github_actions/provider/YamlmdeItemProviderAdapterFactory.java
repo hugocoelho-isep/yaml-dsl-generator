@@ -119,29 +119,6 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.On} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected OnItemProvider onItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.On}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createOnAdapter() {
-		if (onItemProvider == null) {
-			onItemProvider = new OnItemProvider(this);
-		}
-
-		return onItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Push} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -234,29 +211,6 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Permissions} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PermissionsItemProvider permissionsItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Permissions}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPermissionsAdapter() {
-		if (permissionsItemProvider == null) {
-			permissionsItemProvider = new PermissionsItemProvider(this);
-		}
-
-		return permissionsItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Schedule} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -303,29 +257,6 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Environment} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EnvironmentItemProvider environmentItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Environment}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEnvironmentAdapter() {
-		if (environmentItemProvider == null) {
-			environmentItemProvider = new EnvironmentItemProvider(this);
-		}
-
-		return environmentItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Concurrency} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -369,29 +300,6 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 		}
 
 		return strategyItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Matrix} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MatrixItemProvider matrixItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.Matrix}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createMatrixAdapter() {
-		if (matrixItemProvider == null) {
-			matrixItemProvider = new MatrixItemProvider(this);
-		}
-
-		return matrixItemProvider;
 	}
 
 	/**
@@ -671,6 +579,190 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.PermissionsObject} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PermissionsObjectItemProvider permissionsObjectItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.PermissionsObject}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPermissionsObjectAdapter() {
+		if (permissionsObjectItemProvider == null) {
+			permissionsObjectItemProvider = new PermissionsObjectItemProvider(this);
+		}
+
+		return permissionsObjectItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.PermissionsValue} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PermissionsValueItemProvider permissionsValueItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.PermissionsValue}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPermissionsValueAdapter() {
+		if (permissionsValueItemProvider == null) {
+			permissionsValueItemProvider = new PermissionsValueItemProvider(this);
+		}
+
+		return permissionsValueItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.OnObject} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OnObjectItemProvider onObjectItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.OnObject}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOnObjectAdapter() {
+		if (onObjectItemProvider == null) {
+			onObjectItemProvider = new OnObjectItemProvider(this);
+		}
+
+		return onObjectItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.OnValue} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OnValueItemProvider onValueItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.OnValue}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOnValueAdapter() {
+		if (onValueItemProvider == null) {
+			onValueItemProvider = new OnValueItemProvider(this);
+		}
+
+		return onValueItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.EnvironmentObject} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EnvironmentObjectItemProvider environmentObjectItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.EnvironmentObject}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEnvironmentObjectAdapter() {
+		if (environmentObjectItemProvider == null) {
+			environmentObjectItemProvider = new EnvironmentObjectItemProvider(this);
+		}
+
+		return environmentObjectItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.EnvironmentValue} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EnvironmentValueItemProvider environmentValueItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.EnvironmentValue}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEnvironmentValueAdapter() {
+		if (environmentValueItemProvider == null) {
+			environmentValueItemProvider = new EnvironmentValueItemProvider(this);
+		}
+
+		return environmentValueItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.MatrixObject} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MatrixObjectItemProvider matrixObjectItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.MatrixObject}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMatrixObjectAdapter() {
+		if (matrixObjectItemProvider == null) {
+			matrixObjectItemProvider = new MatrixObjectItemProvider(this);
+		}
+
+		return matrixObjectItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.MatrixValue} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MatrixValueItemProvider matrixValueItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.MatrixValue}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMatrixValueAdapter() {
+		if (matrixValueItemProvider == null) {
+			matrixValueItemProvider = new MatrixValueItemProvider(this);
+		}
+
+		return matrixValueItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.MatrixParameter} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -802,30 +894,22 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 			keyValuePairItemProvider.dispose();
 		if (githubActionsItemProvider != null)
 			githubActionsItemProvider.dispose();
-		if (jobItemProvider != null)
-			jobItemProvider.dispose();
-		if (stepItemProvider != null)
-			stepItemProvider.dispose();
-		if (onItemProvider != null)
-			onItemProvider.dispose();
 		if (pushItemProvider != null)
 			pushItemProvider.dispose();
 		if (pull_requestItemProvider != null)
 			pull_requestItemProvider.dispose();
-		if (permissionsItemProvider != null)
-			permissionsItemProvider.dispose();
+		if (jobItemProvider != null)
+			jobItemProvider.dispose();
+		if (stepItemProvider != null)
+			stepItemProvider.dispose();
 		if (scheduleItemProvider != null)
 			scheduleItemProvider.dispose();
 		if (workflow_dispatchItemProvider != null)
 			workflow_dispatchItemProvider.dispose();
-		if (environmentItemProvider != null)
-			environmentItemProvider.dispose();
 		if (concurrencyItemProvider != null)
 			concurrencyItemProvider.dispose();
 		if (strategyItemProvider != null)
 			strategyItemProvider.dispose();
-		if (matrixItemProvider != null)
-			matrixItemProvider.dispose();
 		if (includeItemProvider != null)
 			includeItemProvider.dispose();
 		if (excludeItemProvider != null)
@@ -842,14 +926,30 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 			runItemProvider.dispose();
 		if (releaseItemProvider != null)
 			releaseItemProvider.dispose();
-		if (issuesItemProvider != null)
-			issuesItemProvider.dispose();
 		if (inputItemProvider != null)
 			inputItemProvider.dispose();
 		if (merge_groupItemProvider != null)
 			merge_groupItemProvider.dispose();
 		if (serviceItemProvider != null)
 			serviceItemProvider.dispose();
+		if (issuesItemProvider != null)
+			issuesItemProvider.dispose();
+		if (permissionsObjectItemProvider != null)
+			permissionsObjectItemProvider.dispose();
+		if (permissionsValueItemProvider != null)
+			permissionsValueItemProvider.dispose();
+		if (onObjectItemProvider != null)
+			onObjectItemProvider.dispose();
+		if (onValueItemProvider != null)
+			onValueItemProvider.dispose();
+		if (environmentObjectItemProvider != null)
+			environmentObjectItemProvider.dispose();
+		if (environmentValueItemProvider != null)
+			environmentValueItemProvider.dispose();
+		if (matrixObjectItemProvider != null)
+			matrixObjectItemProvider.dispose();
+		if (matrixValueItemProvider != null)
+			matrixValueItemProvider.dispose();
 		if (matrixParameterItemProvider != null)
 			matrixParameterItemProvider.dispose();
 	}

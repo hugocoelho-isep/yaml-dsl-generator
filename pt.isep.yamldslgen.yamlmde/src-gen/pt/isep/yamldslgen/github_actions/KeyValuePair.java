@@ -51,7 +51,7 @@ public interface KeyValuePair extends EObject {
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
 	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getKeyValuePair_Value()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	String getValue();

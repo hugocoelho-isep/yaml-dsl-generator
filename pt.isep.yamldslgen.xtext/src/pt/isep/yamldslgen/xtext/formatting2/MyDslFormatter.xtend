@@ -7,11 +7,11 @@ import com.google.inject.Inject
 import org.eclipse.xtext.formatting2.AbstractFormatter2
 import org.eclipse.xtext.formatting2.IFormattableDocument
 import pt.isep.yamldslgen.github_actions.GithubActions
-import pt.isep.yamldslgen.github_actions.On
+import pt.isep.yamldslgen.github_actions.OnObject
 import pt.isep.yamldslgen.xtext.services.MyDslGrammarAccess
 
 class MyDslFormatter extends AbstractFormatter2 {
-	
+
 	@Inject extension MyDslGrammarAccess
 
 	def dispatch void format(GithubActions githubActions, extension IFormattableDocument document) {
@@ -22,11 +22,11 @@ class MyDslFormatter extends AbstractFormatter2 {
 		}
 	}
 
-	def dispatch void format(On on, extension IFormattableDocument document) {
+	def dispatch void format(OnObject on, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
 		on.push.format
 		on.pullRequest.format
 	}
-	
+
 	// TODO: implement for Job, Step
 }

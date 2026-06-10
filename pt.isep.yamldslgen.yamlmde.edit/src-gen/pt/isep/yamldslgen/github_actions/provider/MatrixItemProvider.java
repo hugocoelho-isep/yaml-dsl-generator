@@ -9,8 +9,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -18,11 +16,6 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import pt.isep.yamldslgen.github_actions.Matrix;
-import pt.isep.yamldslgen.github_actions.YamlmdeFactory;
-import pt.isep.yamldslgen.github_actions.YamlmdePackage;
 
 /**
  * This is the item provider adapter for a {@link pt.isep.yamldslgen.github_actions.Matrix} object.
@@ -55,38 +48,6 @@ public class MatrixItemProvider extends ItemProviderAdapter implements IEditingD
 
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(YamlmdePackage.Literals.MATRIX__INCLUDE);
-			childrenFeatures.add(YamlmdePackage.Literals.MATRIX__EXCLUDE);
-			childrenFeatures.add(YamlmdePackage.Literals.MATRIX__PARAMETERS);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -131,14 +92,6 @@ public class MatrixItemProvider extends ItemProviderAdapter implements IEditingD
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Matrix.class)) {
-		case YamlmdePackage.MATRIX__INCLUDE:
-		case YamlmdePackage.MATRIX__EXCLUDE:
-		case YamlmdePackage.MATRIX__PARAMETERS:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-			return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -152,15 +105,6 @@ public class MatrixItemProvider extends ItemProviderAdapter implements IEditingD
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.MATRIX__INCLUDE,
-				YamlmdeFactory.eINSTANCE.createInclude()));
-
-		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.MATRIX__EXCLUDE,
-				YamlmdeFactory.eINSTANCE.createExclude()));
-
-		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.MATRIX__PARAMETERS,
-				YamlmdeFactory.eINSTANCE.createMatrixParameter()));
 	}
 
 	/**

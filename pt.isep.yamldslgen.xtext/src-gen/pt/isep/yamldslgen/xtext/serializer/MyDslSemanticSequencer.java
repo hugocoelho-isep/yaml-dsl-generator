@@ -17,7 +17,8 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransi
 import pt.isep.yamldslgen.github_actions.Concurrency;
 import pt.isep.yamldslgen.github_actions.Container;
 import pt.isep.yamldslgen.github_actions.Defaults;
-import pt.isep.yamldslgen.github_actions.Environment;
+import pt.isep.yamldslgen.github_actions.EnvironmentObject;
+import pt.isep.yamldslgen.github_actions.EnvironmentValue;
 import pt.isep.yamldslgen.github_actions.Exclude;
 import pt.isep.yamldslgen.github_actions.GithubActions;
 import pt.isep.yamldslgen.github_actions.Include;
@@ -25,11 +26,14 @@ import pt.isep.yamldslgen.github_actions.Input;
 import pt.isep.yamldslgen.github_actions.Issues;
 import pt.isep.yamldslgen.github_actions.Job;
 import pt.isep.yamldslgen.github_actions.KeyValuePair;
-import pt.isep.yamldslgen.github_actions.Matrix;
+import pt.isep.yamldslgen.github_actions.MatrixObject;
 import pt.isep.yamldslgen.github_actions.MatrixParameter;
+import pt.isep.yamldslgen.github_actions.MatrixValue;
 import pt.isep.yamldslgen.github_actions.Merge_group;
-import pt.isep.yamldslgen.github_actions.On;
-import pt.isep.yamldslgen.github_actions.Permissions;
+import pt.isep.yamldslgen.github_actions.OnObject;
+import pt.isep.yamldslgen.github_actions.OnValue;
+import pt.isep.yamldslgen.github_actions.PermissionsObject;
+import pt.isep.yamldslgen.github_actions.PermissionsValue;
 import pt.isep.yamldslgen.github_actions.Pull_request;
 import pt.isep.yamldslgen.github_actions.Push;
 import pt.isep.yamldslgen.github_actions.Release;
@@ -67,8 +71,11 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case YamlmdePackage.DEFAULTS:
 				sequence_Defaults(context, (Defaults) semanticObject); 
 				return; 
-			case YamlmdePackage.ENVIRONMENT:
-				sequence_Environment(context, (Environment) semanticObject); 
+			case YamlmdePackage.ENVIRONMENT_OBJECT:
+				sequence_EnvironmentObject(context, (EnvironmentObject) semanticObject); 
+				return; 
+			case YamlmdePackage.ENVIRONMENT_VALUE:
+				sequence_EnvironmentValue(context, (EnvironmentValue) semanticObject); 
 				return; 
 			case YamlmdePackage.EXCLUDE:
 				sequence_Exclude(context, (Exclude) semanticObject); 
@@ -91,20 +98,29 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case YamlmdePackage.KEY_VALUE_PAIR:
 				sequence_KeyValuePair(context, (KeyValuePair) semanticObject); 
 				return; 
-			case YamlmdePackage.MATRIX:
-				sequence_Matrix(context, (Matrix) semanticObject); 
+			case YamlmdePackage.MATRIX_OBJECT:
+				sequence_MatrixObject(context, (MatrixObject) semanticObject); 
 				return; 
 			case YamlmdePackage.MATRIX_PARAMETER:
 				sequence_MatrixParameter(context, (MatrixParameter) semanticObject); 
 				return; 
+			case YamlmdePackage.MATRIX_VALUE:
+				sequence_MatrixValue(context, (MatrixValue) semanticObject); 
+				return; 
 			case YamlmdePackage.MERGE_GROUP:
 				sequence_Merge_group(context, (Merge_group) semanticObject); 
 				return; 
-			case YamlmdePackage.ON:
-				sequence_On(context, (On) semanticObject); 
+			case YamlmdePackage.ON_OBJECT:
+				sequence_OnObject(context, (OnObject) semanticObject); 
 				return; 
-			case YamlmdePackage.PERMISSIONS:
-				sequence_Permissions(context, (Permissions) semanticObject); 
+			case YamlmdePackage.ON_VALUE:
+				sequence_OnValue(context, (OnValue) semanticObject); 
+				return; 
+			case YamlmdePackage.PERMISSIONS_OBJECT:
+				sequence_PermissionsObject(context, (PermissionsObject) semanticObject); 
+				return; 
+			case YamlmdePackage.PERMISSIONS_VALUE:
+				sequence_PermissionsValue(context, (PermissionsValue) semanticObject); 
 				return; 
 			case YamlmdePackage.PULL_REQUEST:
 				sequence_Pull_request(context, (Pull_request) semanticObject); 
@@ -201,14 +217,36 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Environment returns Environment
+	 *     Environment returns EnvironmentObject
+	 *     EnvironmentObject returns EnvironmentObject
 	 *
 	 * Constraint:
-	 *     (name=EString | (name=EString | url=EString)+)?
+	 *     (name=EString | url=EString)*
 	 * </pre>
 	 */
-	protected void sequence_Environment(ISerializationContext context, Environment semanticObject) {
+	protected void sequence_EnvironmentObject(ISerializationContext context, EnvironmentObject semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Environment returns EnvironmentValue
+	 *     EnvironmentValue returns EnvironmentValue
+	 *
+	 * Constraint:
+	 *     value=EString
+	 * </pre>
+	 */
+	protected void sequence_EnvironmentValue(ISerializationContext context, EnvironmentValue semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, YamlmdePackage.Literals.ENVIRONMENT_VALUE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, YamlmdePackage.Literals.ENVIRONMENT_VALUE__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEnvironmentValueAccess().getValueEStringParserRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	
@@ -353,6 +391,21 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Matrix returns MatrixObject
+	 *     MatrixObject returns MatrixObject
+	 *
+	 * Constraint:
+	 *     (include+=Include | exclude+=Exclude | parameters+=MatrixParameter)*
+	 * </pre>
+	 */
+	protected void sequence_MatrixObject(ISerializationContext context, MatrixObject semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     MatrixParameter returns MatrixParameter
 	 *
 	 * Constraint:
@@ -367,14 +420,21 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Matrix returns Matrix
+	 *     Matrix returns MatrixValue
+	 *     MatrixValue returns MatrixValue
 	 *
 	 * Constraint:
-	 *     (include+=Include | exclude+=Exclude | parameters+=MatrixParameter)*
+	 *     value=EString
 	 * </pre>
 	 */
-	protected void sequence_Matrix(ISerializationContext context, Matrix semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_MatrixValue(ISerializationContext context, MatrixValue semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, YamlmdePackage.Literals.MATRIX_VALUE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, YamlmdePackage.Literals.MATRIX_VALUE__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMatrixValueAccess().getValueEStringParserRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	
@@ -395,7 +455,8 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     On returns On
+	 *     On returns OnObject
+	 *     OnObject returns OnObject
 	 *
 	 * Constraint:
 	 *     (
@@ -412,7 +473,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     )*
 	 * </pre>
 	 */
-	protected void sequence_On(ISerializationContext context, On semanticObject) {
+	protected void sequence_OnObject(ISerializationContext context, OnObject semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -420,7 +481,23 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Permissions returns Permissions
+	 *     On returns OnValue
+	 *     OnValue returns OnValue
+	 *
+	 * Constraint:
+	 *     (value+=EString | (value+=EString value+=EString*))
+	 * </pre>
+	 */
+	protected void sequence_OnValue(ISerializationContext context, OnValue semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Permissions returns PermissionsObject
+	 *     PermissionsObject returns PermissionsObject
 	 *
 	 * Constraint:
 	 *     (
@@ -437,8 +514,29 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     )*
 	 * </pre>
 	 */
-	protected void sequence_Permissions(ISerializationContext context, Permissions semanticObject) {
+	protected void sequence_PermissionsObject(ISerializationContext context, PermissionsObject semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Permissions returns PermissionsValue
+	 *     PermissionsValue returns PermissionsValue
+	 *
+	 * Constraint:
+	 *     value=EString
+	 * </pre>
+	 */
+	protected void sequence_PermissionsValue(ISerializationContext context, PermissionsValue semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, YamlmdePackage.Literals.PERMISSIONS_VALUE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, YamlmdePackage.Literals.PERMISSIONS_VALUE__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPermissionsValueAccess().getValueEStringParserRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	
