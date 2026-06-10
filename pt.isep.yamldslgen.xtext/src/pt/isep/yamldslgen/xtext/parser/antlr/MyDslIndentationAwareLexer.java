@@ -213,7 +213,13 @@ package pt.isep.yamldslgen.xtext.parser.antlr;
               if (!insideBlockScalar) {
                   Token captured = tryCaptureValue();
                   if (captured != null) {
-                      firstContentOfLine = false;
+                      // Only clear firstContentOfLine for an INLINE value (still mid-line).
+                      // A block-scalar capture re-primes atLineStart and a fresh line, so
+                      // leave firstContentOfLine intact (Edit 2 set it true) -- otherwise
+                      // the next line's leading '-' would not open its step block.
+                      if (!atLineStart) {
+                          firstContentOfLine = false;
+                      }
                       prevRealText = captured.getText();
                       prevRealColumn = captured.getCharPositionInLine();
                       return captured;
@@ -277,9 +283,17 @@ package pt.isep.yamldslgen.xtext.parser.antlr;
               return t;
           }
 
-          // (6) Real content token.
+          // (6) Real content token. Whitespace / block comments are NOT content,
+          //     so they must not consume the line-start flag. After
+          //     captureBlockScalarBody() the newline of the last body line is
+          //     already consumed, so the dedented sibling line's leading indent
+          //     arrives here as a standalone WS token (not a line break); if that
+          //     WS cleared firstContentOfLine, the following '-' would lose
+          //     wasFirstOfLine and fail to open its step's BEG_BLOCK.
           boolean wasFirstOfLine = firstContentOfLine;
-          firstContentOfLine = false;
+          if (t.getType() != RULE_WS && t.getType() != RULE_ML_COMMENT) {
+              firstContentOfLine = false;
+          }
 
           // (6a) Keyword in value position (NOT followed by ':') is a YAML value,
           //      not a key -> re-tag as YAML_SCALAR. Mostly catches keyword array
@@ -433,14 +447,27 @@ package pt.isep.yamldslgen.xtext.parser.antlr;
           // one YAML_SCALAR (a valid EString). Plain headers ('|', '>', '|-',
           // ...) are left to the keyword + indentation path.
           if ((c == '|' || c == '>') && blockHeaderHasDigit()) {
-              return captureExplicitIndentBlock();
+              return captureBlockScalarBody();
           }
 
           // 'key:' at end of file -> genuinely empty value.
           if (c == CharStream.EOF) {
               return emptyValueToken();
           }
-          if (c == '|' || c == '>' || c == '[' || c == '"' || c == '\'') {
+
+          // Block scalar header ('|', '>', and the chomping/keep variants '|-',
+          // '|+', '>-', '>+', plus the digit-indent forms handled above): capture
+          // the WHOLE body as a single opaque YAML_SCALAR. A block scalar body is
+          // shell/JS/etc. text and must never be fine-tokenized by the DSL
+          // terminals -- doing so is what kept surfacing shell-variable lexer
+          // errors (GH_EXPRESSION committing to the double-brace form on a bare
+          // dollar-brace) and missing pipe/redirect tokens in BlockString's body.
+          // Capturing it raw here makes the body
+          // semantically opaque, so none of that can ever reach the parser.
+          if (c == '|' || c == '>') {
+              return captureBlockScalarBody();
+          }
+          if (c == '[' || c == '"' || c == '\'') {
               return null;
           }
 
@@ -708,16 +735,24 @@ package pt.isep.yamldslgen.xtext.parser.antlr;
       }
 
       /**
-       * Reads a block scalar with an explicit indentation indicator and returns
-       * its body as a single YAML_SCALAR. The first non-blank body line sets the
-       * content indentation; lines indented at least that much (plus blank lines)
-       * belong to the block, joined by newlines with the common indent stripped.
-       * If the block ends on a dedented sibling line, the indentation machinery
-       * is re-primed so the proper END_BLOCK(s) are emitted before it.
+       * Reads a YAML block scalar and returns its body as a single YAML_SCALAR.
+       * Handles two cases that the keyword + indentation (BlockString) path cannot
+       * tokenize correctly:
+       *   - an explicit indentation indicator ('|2-', '>3', '|-2', ...), and
+       *   - a plain header ('|' / '>' with optional chomping) that is followed by
+       *     trailing spaces and/or a comment on the same line (which would
+       *     otherwise be swallowed into a YAML_SCALAR by the terminal's space-aware
+       *     continuation set).
+       * The first non-blank body line sets the content indentation; lines indented
+       * at least that much (plus blank lines) belong to the block, joined by
+       * newlines with the common indent stripped. If the block ends on a dedented
+       * sibling line, the indentation machinery is re-primed so the proper
+       * END_BLOCK(s) are emitted before it.
        */
-      private Token captureExplicitIndentBlock() {
-          int startLine = input.getLine();
-          int startCol  = input.getCharPositionInLine();
+      private Token captureBlockScalarBody() {
+          int startLine  = input.getLine();
+          int startCol   = input.getCharPositionInLine();
+          int startIndex = input.index();   // first char of the '|'/'>' header
 
           // Consume the header: '|'/'>' then the digit / chomping indicators.
           input.consume();
@@ -801,10 +836,21 @@ package pt.isep.yamldslgen.xtext.parser.antlr;
           if (stoppedAtDedent) {
               pendingIndent = dedentIndent;
               atLineStart = true;
+              // The body was consumed directly (no line-break token passed through
+              // nextToken), so re-arm firstContentOfLine here. Without it the first
+              // token of the dedented line (typically a step '-') would carry
+              // wasFirstOfLine=false and fail to open its BEG_BLOCK.
+              firstContentOfLine = true;
           }
 
           CommonToken tok = new CommonToken(RULE_YAML_SCALAR, body.toString());
           tok.setChannel(Token.DEFAULT_CHANNEL);
+          // Anchor the token to its real source span. Without start/stop indices
+          // the node model uses 0/0, and since the block scalar sits deep in the
+          // file the region length comes out negative (end - offset), which
+          // crashes folding/outline ("length -N is < 0").
+          tok.setStartIndex(startIndex);
+          tok.setStopIndex(input.index() - 1);
           tok.setLine(startLine);
           tok.setCharPositionInLine(startCol);
           return tok;

@@ -15,6 +15,7 @@ import org.eclipse.xtext.xbase.lib.XbaseGenerated;
 import pt.isep.yamldslgen.github_actions.GithubActions;
 import pt.isep.yamldslgen.github_actions.Job;
 import pt.isep.yamldslgen.github_actions.On;
+import pt.isep.yamldslgen.github_actions.OnObject;
 import pt.isep.yamldslgen.github_actions.Pull_request;
 import pt.isep.yamldslgen.github_actions.Push;
 import pt.isep.yamldslgen.xtext.services.MyDslGrammarAccess;
@@ -33,34 +34,34 @@ public class MyDslFormatter extends AbstractFormatter2 {
     }
   }
 
-  protected void _format(final On on, @Extension final IFormattableDocument document) {
+  protected void _format(final OnObject on, @Extension final IFormattableDocument document) {
     document.<Push>format(on.getPush());
     document.<Pull_request>format(on.getPullRequest());
   }
 
   @XbaseGenerated
-  public void format(final Object githubActions, final IFormattableDocument document) {
-    if (githubActions instanceof XtextResource) {
-      _format((XtextResource)githubActions, document);
+  public void format(final Object on, final IFormattableDocument document) {
+    if (on instanceof XtextResource) {
+      _format((XtextResource)on, document);
       return;
-    } else if (githubActions instanceof GithubActions) {
-      _format((GithubActions)githubActions, document);
+    } else if (on instanceof OnObject) {
+      _format((OnObject)on, document);
       return;
-    } else if (githubActions instanceof On) {
-      _format((On)githubActions, document);
+    } else if (on instanceof GithubActions) {
+      _format((GithubActions)on, document);
       return;
-    } else if (githubActions instanceof EObject) {
-      _format((EObject)githubActions, document);
+    } else if (on instanceof EObject) {
+      _format((EObject)on, document);
       return;
-    } else if (githubActions == null) {
+    } else if (on == null) {
       _format((Void)null, document);
       return;
-    } else if (githubActions != null) {
-      _format(githubActions, document);
+    } else if (on != null) {
+      _format(on, document);
       return;
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(githubActions, document).toString());
+        Arrays.<Object>asList(on, document).toString());
     }
   }
 }

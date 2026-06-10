@@ -77,11 +77,12 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Merge_group_BEG_BLOCKTerminalRuleCall_2_2_0_1_1_q;
 	protected AbstractElementAlias match_Merge_group_END_BLOCKTerminalRuleCall_2_2_0_1_3_q;
 	protected AbstractElementAlias match_Merge_group_END_BLOCKTerminalRuleCall_3_q;
-	protected AbstractElementAlias match_On_BEG_BLOCKTerminalRuleCall_1_q;
-	protected AbstractElementAlias match_On_BEG_BLOCKTerminalRuleCall_2_4_2_0_q;
-	protected AbstractElementAlias match_On_END_BLOCKTerminalRuleCall_2_4_2_2_q;
-	protected AbstractElementAlias match_On_END_BLOCKTerminalRuleCall_3_q;
-	protected AbstractElementAlias match_On___END_BLOCKTerminalRuleCall_2_4_2_2_q_ScheduleKeyword_2_4_0_ColonKeyword_2_4_1_BEG_BLOCKTerminalRuleCall_2_4_2_0_q__q;
+	protected AbstractElementAlias match_OnObject_BEG_BLOCKTerminalRuleCall_2_4_2_0_q;
+	protected AbstractElementAlias match_OnObject_END_BLOCKTerminalRuleCall_2_4_2_2_q;
+	protected AbstractElementAlias match_OnObject_END_BLOCKTerminalRuleCall_3_q;
+	protected AbstractElementAlias match_OnObject___Branch_protection_ruleKeyword_2_0_0_ColonKeyword_2_0_1__a;
+	protected AbstractElementAlias match_OnObject___Branch_protection_ruleKeyword_2_0_0_ColonKeyword_2_0_1__p;
+	protected AbstractElementAlias match_OnObject___END_BLOCKTerminalRuleCall_2_4_2_2_q___Branch_protection_ruleKeyword_2_0_0_ColonKeyword_2_0_1__a_ScheduleKeyword_2_4_0_ColonKeyword_2_4_1_BEG_BLOCKTerminalRuleCall_2_4_2_0_q__q;
 	protected AbstractElementAlias match_PermissionsObject_END_BLOCKTerminalRuleCall_3_q;
 	protected AbstractElementAlias match_Pull_request___BEG_BLOCKTerminalRuleCall_1_0_END_BLOCKTerminalRuleCall_1_2__q;
 	protected AbstractElementAlias match_Pull_request___END_BLOCKTerminalRuleCall_1_1_0_2_0_2_BranchesKeyword_1_1_0_0_ColonKeyword_1_1_0_1_BEG_BLOCKTerminalRuleCall_1_1_0_2_0_0__q;
@@ -190,14 +191,15 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Merge_group_BEG_BLOCKTerminalRuleCall_2_2_0_1_1_q = new TokenAlias(false, true, grammarAccess.getMerge_groupAccess().getBEG_BLOCKTerminalRuleCall_2_2_0_1_1());
 		match_Merge_group_END_BLOCKTerminalRuleCall_2_2_0_1_3_q = new TokenAlias(false, true, grammarAccess.getMerge_groupAccess().getEND_BLOCKTerminalRuleCall_2_2_0_1_3());
 		match_Merge_group_END_BLOCKTerminalRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getMerge_groupAccess().getEND_BLOCKTerminalRuleCall_3());
-		match_On_BEG_BLOCKTerminalRuleCall_1_q = new TokenAlias(false, true, grammarAccess.getOnAccess().getBEG_BLOCKTerminalRuleCall_1());
-		match_On_BEG_BLOCKTerminalRuleCall_2_4_2_0_q = new TokenAlias(false, true, grammarAccess.getOnAccess().getBEG_BLOCKTerminalRuleCall_2_4_2_0());
-		match_On_END_BLOCKTerminalRuleCall_2_4_2_2_q = new TokenAlias(false, true, grammarAccess.getOnAccess().getEND_BLOCKTerminalRuleCall_2_4_2_2());
-		match_On_END_BLOCKTerminalRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getOnAccess().getEND_BLOCKTerminalRuleCall_3());
+		match_OnObject_BEG_BLOCKTerminalRuleCall_2_4_2_0_q = new TokenAlias(false, true, grammarAccess.getOnObjectAccess().getBEG_BLOCKTerminalRuleCall_2_4_2_0());
+		match_OnObject_END_BLOCKTerminalRuleCall_2_4_2_2_q = new TokenAlias(false, true, grammarAccess.getOnObjectAccess().getEND_BLOCKTerminalRuleCall_2_4_2_2());
+		match_OnObject_END_BLOCKTerminalRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getOnObjectAccess().getEND_BLOCKTerminalRuleCall_3());
+		match_OnObject___Branch_protection_ruleKeyword_2_0_0_ColonKeyword_2_0_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getOnObjectAccess().getBranch_protection_ruleKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getOnObjectAccess().getColonKeyword_2_0_1()));
 	}
 	
 	private void init1() {
-		match_On___END_BLOCKTerminalRuleCall_2_4_2_2_q_ScheduleKeyword_2_4_0_ColonKeyword_2_4_1_BEG_BLOCKTerminalRuleCall_2_4_2_0_q__q = new GroupAlias(false, true, new TokenAlias(false, true, grammarAccess.getOnAccess().getEND_BLOCKTerminalRuleCall_2_4_2_2()), new TokenAlias(false, false, grammarAccess.getOnAccess().getScheduleKeyword_2_4_0()), new TokenAlias(false, false, grammarAccess.getOnAccess().getColonKeyword_2_4_1()), new TokenAlias(false, true, grammarAccess.getOnAccess().getBEG_BLOCKTerminalRuleCall_2_4_2_0()));
+		match_OnObject___Branch_protection_ruleKeyword_2_0_0_ColonKeyword_2_0_1__p = new GroupAlias(true, false, new TokenAlias(false, false, grammarAccess.getOnObjectAccess().getBranch_protection_ruleKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getOnObjectAccess().getColonKeyword_2_0_1()));
+		match_OnObject___END_BLOCKTerminalRuleCall_2_4_2_2_q___Branch_protection_ruleKeyword_2_0_0_ColonKeyword_2_0_1__a_ScheduleKeyword_2_4_0_ColonKeyword_2_4_1_BEG_BLOCKTerminalRuleCall_2_4_2_0_q__q = new GroupAlias(false, true, new TokenAlias(false, true, grammarAccess.getOnObjectAccess().getEND_BLOCKTerminalRuleCall_2_4_2_2()), new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getOnObjectAccess().getBranch_protection_ruleKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getOnObjectAccess().getColonKeyword_2_0_1())), new TokenAlias(false, false, grammarAccess.getOnObjectAccess().getScheduleKeyword_2_4_0()), new TokenAlias(false, false, grammarAccess.getOnObjectAccess().getColonKeyword_2_4_1()), new TokenAlias(false, true, grammarAccess.getOnObjectAccess().getBEG_BLOCKTerminalRuleCall_2_4_2_0()));
 		match_PermissionsObject_END_BLOCKTerminalRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getPermissionsObjectAccess().getEND_BLOCKTerminalRuleCall_3());
 		match_Pull_request___BEG_BLOCKTerminalRuleCall_1_0_END_BLOCKTerminalRuleCall_1_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPull_requestAccess().getBEG_BLOCKTerminalRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getPull_requestAccess().getEND_BLOCKTerminalRuleCall_1_2()));
 		match_Pull_request___END_BLOCKTerminalRuleCall_1_1_0_2_0_2_BranchesKeyword_1_1_0_0_ColonKeyword_1_1_0_1_BEG_BLOCKTerminalRuleCall_1_1_0_2_0_0__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPull_requestAccess().getEND_BLOCKTerminalRuleCall_1_1_0_2_0_2()), new TokenAlias(false, false, grammarAccess.getPull_requestAccess().getBranchesKeyword_1_1_0_0()), new TokenAlias(false, false, grammarAccess.getPull_requestAccess().getColonKeyword_1_1_0_1()), new TokenAlias(false, false, grammarAccess.getPull_requestAccess().getBEG_BLOCKTerminalRuleCall_1_1_0_2_0_0()));
@@ -388,16 +390,18 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Merge_group_END_BLOCKTerminalRuleCall_2_2_0_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Merge_group_END_BLOCKTerminalRuleCall_3_q.equals(syntax))
 				emit_Merge_group_END_BLOCKTerminalRuleCall_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_On_BEG_BLOCKTerminalRuleCall_1_q.equals(syntax))
-				emit_On_BEG_BLOCKTerminalRuleCall_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_On_BEG_BLOCKTerminalRuleCall_2_4_2_0_q.equals(syntax))
-				emit_On_BEG_BLOCKTerminalRuleCall_2_4_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_On_END_BLOCKTerminalRuleCall_2_4_2_2_q.equals(syntax))
-				emit_On_END_BLOCKTerminalRuleCall_2_4_2_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_On_END_BLOCKTerminalRuleCall_3_q.equals(syntax))
-				emit_On_END_BLOCKTerminalRuleCall_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_On___END_BLOCKTerminalRuleCall_2_4_2_2_q_ScheduleKeyword_2_4_0_ColonKeyword_2_4_1_BEG_BLOCKTerminalRuleCall_2_4_2_0_q__q.equals(syntax))
-				emit_On___END_BLOCKTerminalRuleCall_2_4_2_2_q_ScheduleKeyword_2_4_0_ColonKeyword_2_4_1_BEG_BLOCKTerminalRuleCall_2_4_2_0_q__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_OnObject_BEG_BLOCKTerminalRuleCall_2_4_2_0_q.equals(syntax))
+				emit_OnObject_BEG_BLOCKTerminalRuleCall_2_4_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_OnObject_END_BLOCKTerminalRuleCall_2_4_2_2_q.equals(syntax))
+				emit_OnObject_END_BLOCKTerminalRuleCall_2_4_2_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_OnObject_END_BLOCKTerminalRuleCall_3_q.equals(syntax))
+				emit_OnObject_END_BLOCKTerminalRuleCall_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_OnObject___Branch_protection_ruleKeyword_2_0_0_ColonKeyword_2_0_1__a.equals(syntax))
+				emit_OnObject___Branch_protection_ruleKeyword_2_0_0_ColonKeyword_2_0_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_OnObject___Branch_protection_ruleKeyword_2_0_0_ColonKeyword_2_0_1__p.equals(syntax))
+				emit_OnObject___Branch_protection_ruleKeyword_2_0_0_ColonKeyword_2_0_1__p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_OnObject___END_BLOCKTerminalRuleCall_2_4_2_2_q___Branch_protection_ruleKeyword_2_0_0_ColonKeyword_2_0_1__a_ScheduleKeyword_2_4_0_ColonKeyword_2_4_1_BEG_BLOCKTerminalRuleCall_2_4_2_0_q__q.equals(syntax))
+				emit_OnObject___END_BLOCKTerminalRuleCall_2_4_2_2_q___Branch_protection_ruleKeyword_2_0_0_ColonKeyword_2_0_1__a_ScheduleKeyword_2_4_0_ColonKeyword_2_4_1_BEG_BLOCKTerminalRuleCall_2_4_2_0_q__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_PermissionsObject_END_BLOCKTerminalRuleCall_3_q.equals(syntax))
 				emit_PermissionsObject_END_BLOCKTerminalRuleCall_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Pull_request___BEG_BLOCKTerminalRuleCall_1_0_END_BLOCKTerminalRuleCall_1_2__q.equals(syntax))
@@ -1569,44 +1573,20 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     BEG_BLOCK?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) 'branch_protection_rule' ':' branchProtectionRule=EString
-	 *     (rule start) (ambiguity) 'issues' ':' issues=Issues
-	 *     (rule start) (ambiguity) 'merge_group' ':' mergeGroup=Merge_group
-	 *     (rule start) (ambiguity) 'pull_request' ':' pullRequest=Pull_request
-	 *     (rule start) (ambiguity) 'pull_request_target' ':' pullRequestTarget=Pull_request
-	 *     (rule start) (ambiguity) 'push' ':' push=Push
-	 *     (rule start) (ambiguity) 'release' ':' release=Release
-	 *     (rule start) (ambiguity) 'schedule' ':' BEG_BLOCK? schedule+=Schedule
-	 *     (rule start) (ambiguity) 'workflow_call' ':' workflowCall=Workflow_call
-	 *     (rule start) (ambiguity) 'workflow_dispatch' ':' workflowDispatch=Workflow_dispatch
-	 *     (rule start) (ambiguity) END_BLOCK? (rule start)
+	 *     (rule start) BEG_BLOCK ('branch_protection_rule' ':')* 'schedule' ':' (ambiguity) schedule+=Schedule
+	 *     branchProtectionRule=EString ('branch_protection_rule' ':')* 'schedule' ':' (ambiguity) schedule+=Schedule
+	 *     issues=Issues ('branch_protection_rule' ':')* 'schedule' ':' (ambiguity) schedule+=Schedule
+	 *     mergeGroup=Merge_group ('branch_protection_rule' ':')* 'schedule' ':' (ambiguity) schedule+=Schedule
+	 *     pullRequest=Pull_request ('branch_protection_rule' ':')* 'schedule' ':' (ambiguity) schedule+=Schedule
+	 *     pullRequestTarget=Pull_request ('branch_protection_rule' ':')* 'schedule' ':' (ambiguity) schedule+=Schedule
+	 *     push=Push ('branch_protection_rule' ':')* 'schedule' ':' (ambiguity) schedule+=Schedule
+	 *     release=Release ('branch_protection_rule' ':')* 'schedule' ':' (ambiguity) schedule+=Schedule
+	 *     workflowCall=Workflow_call ('branch_protection_rule' ':')* 'schedule' ':' (ambiguity) schedule+=Schedule
+	 *     workflowDispatch=Workflow_dispatch ('branch_protection_rule' ':')* 'schedule' ':' (ambiguity) schedule+=Schedule
 	 
 	 * </pre>
 	 */
-	protected void emit_On_BEG_BLOCKTerminalRuleCall_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
-	 *     BEG_BLOCK?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) BEG_BLOCK? 'schedule' ':' (ambiguity) schedule+=Schedule
-	 *     branchProtectionRule=EString 'schedule' ':' (ambiguity) schedule+=Schedule
-	 *     issues=Issues 'schedule' ':' (ambiguity) schedule+=Schedule
-	 *     mergeGroup=Merge_group 'schedule' ':' (ambiguity) schedule+=Schedule
-	 *     pullRequest=Pull_request 'schedule' ':' (ambiguity) schedule+=Schedule
-	 *     pullRequestTarget=Pull_request 'schedule' ':' (ambiguity) schedule+=Schedule
-	 *     push=Push 'schedule' ':' (ambiguity) schedule+=Schedule
-	 *     release=Release 'schedule' ':' (ambiguity) schedule+=Schedule
-	 *     workflowCall=Workflow_call 'schedule' ':' (ambiguity) schedule+=Schedule
-	 *     workflowDispatch=Workflow_dispatch 'schedule' ':' (ambiguity) schedule+=Schedule
-	 
-	 * </pre>
-	 */
-	protected void emit_On_BEG_BLOCKTerminalRuleCall_2_4_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_OnObject_BEG_BLOCKTerminalRuleCall_2_4_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -1616,20 +1596,20 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     END_BLOCK?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     schedule+=Schedule (ambiguity) 'branch_protection_rule' ':' branchProtectionRule=EString
-	 *     schedule+=Schedule (ambiguity) 'issues' ':' issues=Issues
-	 *     schedule+=Schedule (ambiguity) 'merge_group' ':' mergeGroup=Merge_group
-	 *     schedule+=Schedule (ambiguity) 'pull_request' ':' pullRequest=Pull_request
-	 *     schedule+=Schedule (ambiguity) 'pull_request_target' ':' pullRequestTarget=Pull_request
-	 *     schedule+=Schedule (ambiguity) 'push' ':' push=Push
-	 *     schedule+=Schedule (ambiguity) 'release' ':' release=Release
-	 *     schedule+=Schedule (ambiguity) 'workflow_call' ':' workflowCall=Workflow_call
-	 *     schedule+=Schedule (ambiguity) 'workflow_dispatch' ':' workflowDispatch=Workflow_dispatch
-	 *     schedule+=Schedule (ambiguity) END_BLOCK? (rule end)
+	 *     schedule+=Schedule (ambiguity) ('branch_protection_rule' ':')* 'issues' ':' issues=Issues
+	 *     schedule+=Schedule (ambiguity) ('branch_protection_rule' ':')* 'merge_group' ':' mergeGroup=Merge_group
+	 *     schedule+=Schedule (ambiguity) ('branch_protection_rule' ':')* 'pull_request' ':' pullRequest=Pull_request
+	 *     schedule+=Schedule (ambiguity) ('branch_protection_rule' ':')* 'pull_request_target' ':' pullRequestTarget=Pull_request
+	 *     schedule+=Schedule (ambiguity) ('branch_protection_rule' ':')* 'push' ':' push=Push
+	 *     schedule+=Schedule (ambiguity) ('branch_protection_rule' ':')* 'release' ':' release=Release
+	 *     schedule+=Schedule (ambiguity) ('branch_protection_rule' ':')* 'workflow_call' ':' workflowCall=Workflow_call
+	 *     schedule+=Schedule (ambiguity) ('branch_protection_rule' ':')* 'workflow_dispatch' ':' workflowDispatch=Workflow_dispatch
+	 *     schedule+=Schedule (ambiguity) ('branch_protection_rule' ':')* END_BLOCK? (rule end)
+	 *     schedule+=Schedule (ambiguity) ('branch_protection_rule' ':')+ branchProtectionRule=EString
 	 
 	 * </pre>
 	 */
-	protected void emit_On_END_BLOCKTerminalRuleCall_2_4_2_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_OnObject_END_BLOCKTerminalRuleCall_2_4_2_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -1639,35 +1619,181 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     END_BLOCK?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) BEG_BLOCK? (ambiguity) (rule start)
-	 *     branchProtectionRule=EString (ambiguity) (rule end)
-	 *     issues=Issues (ambiguity) (rule end)
-	 *     mergeGroup=Merge_group (ambiguity) (rule end)
-	 *     pullRequest=Pull_request (ambiguity) (rule end)
-	 *     pullRequestTarget=Pull_request (ambiguity) (rule end)
-	 *     push=Push (ambiguity) (rule end)
-	 *     release=Release (ambiguity) (rule end)
-	 *     schedule+=Schedule END_BLOCK? (ambiguity) (rule end)
-	 *     workflowCall=Workflow_call (ambiguity) (rule end)
-	 *     workflowDispatch=Workflow_dispatch (ambiguity) (rule end)
+	 *     (rule start) BEG_BLOCK ('branch_protection_rule' ':')* (ambiguity) (rule start)
+	 *     branchProtectionRule=EString ('branch_protection_rule' ':')* (ambiguity) (rule end)
+	 *     issues=Issues ('branch_protection_rule' ':')* (ambiguity) (rule end)
+	 *     mergeGroup=Merge_group ('branch_protection_rule' ':')* (ambiguity) (rule end)
+	 *     pullRequest=Pull_request ('branch_protection_rule' ':')* (ambiguity) (rule end)
+	 *     pullRequestTarget=Pull_request ('branch_protection_rule' ':')* (ambiguity) (rule end)
+	 *     push=Push ('branch_protection_rule' ':')* (ambiguity) (rule end)
+	 *     release=Release ('branch_protection_rule' ':')* (ambiguity) (rule end)
+	 *     schedule+=Schedule END_BLOCK? ('branch_protection_rule' ':')* (ambiguity) (rule end)
+	 *     workflowCall=Workflow_call ('branch_protection_rule' ':')* (ambiguity) (rule end)
+	 *     workflowDispatch=Workflow_dispatch ('branch_protection_rule' ':')* (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
-	protected void emit_On_END_BLOCKTerminalRuleCall_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_OnObject_END_BLOCKTerminalRuleCall_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
-	 *     (END_BLOCK? 'schedule' ':' BEG_BLOCK?)?
+	 *     ('branch_protection_rule' ':')*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) BEG_BLOCK (ambiguity) 'issues' ':' issues=Issues
+	 *     (rule start) BEG_BLOCK (ambiguity) 'merge_group' ':' mergeGroup=Merge_group
+	 *     (rule start) BEG_BLOCK (ambiguity) 'pull_request' ':' pullRequest=Pull_request
+	 *     (rule start) BEG_BLOCK (ambiguity) 'pull_request_target' ':' pullRequestTarget=Pull_request
+	 *     (rule start) BEG_BLOCK (ambiguity) 'push' ':' push=Push
+	 *     (rule start) BEG_BLOCK (ambiguity) 'release' ':' release=Release
+	 *     (rule start) BEG_BLOCK (ambiguity) 'schedule' ':' BEG_BLOCK? schedule+=Schedule
+	 *     (rule start) BEG_BLOCK (ambiguity) 'workflow_call' ':' workflowCall=Workflow_call
+	 *     (rule start) BEG_BLOCK (ambiguity) 'workflow_dispatch' ':' workflowDispatch=Workflow_dispatch
+	 *     (rule start) BEG_BLOCK (ambiguity) END_BLOCK? (rule start)
+	 *     branchProtectionRule=EString (ambiguity) 'issues' ':' issues=Issues
+	 *     branchProtectionRule=EString (ambiguity) 'merge_group' ':' mergeGroup=Merge_group
+	 *     branchProtectionRule=EString (ambiguity) 'pull_request' ':' pullRequest=Pull_request
+	 *     branchProtectionRule=EString (ambiguity) 'pull_request_target' ':' pullRequestTarget=Pull_request
+	 *     branchProtectionRule=EString (ambiguity) 'push' ':' push=Push
+	 *     branchProtectionRule=EString (ambiguity) 'release' ':' release=Release
+	 *     branchProtectionRule=EString (ambiguity) 'schedule' ':' BEG_BLOCK? schedule+=Schedule
+	 *     branchProtectionRule=EString (ambiguity) 'workflow_call' ':' workflowCall=Workflow_call
+	 *     branchProtectionRule=EString (ambiguity) 'workflow_dispatch' ':' workflowDispatch=Workflow_dispatch
+	 *     branchProtectionRule=EString (ambiguity) END_BLOCK? (rule end)
+	 *     issues=Issues (ambiguity) 'issues' ':' issues=Issues
+	 *     issues=Issues (ambiguity) 'merge_group' ':' mergeGroup=Merge_group
+	 *     issues=Issues (ambiguity) 'pull_request' ':' pullRequest=Pull_request
+	 *     issues=Issues (ambiguity) 'pull_request_target' ':' pullRequestTarget=Pull_request
+	 *     issues=Issues (ambiguity) 'push' ':' push=Push
+	 *     issues=Issues (ambiguity) 'release' ':' release=Release
+	 *     issues=Issues (ambiguity) 'schedule' ':' BEG_BLOCK? schedule+=Schedule
+	 *     issues=Issues (ambiguity) 'workflow_call' ':' workflowCall=Workflow_call
+	 *     issues=Issues (ambiguity) 'workflow_dispatch' ':' workflowDispatch=Workflow_dispatch
+	 *     issues=Issues (ambiguity) END_BLOCK? (rule end)
+	 *     mergeGroup=Merge_group (ambiguity) 'issues' ':' issues=Issues
+	 *     mergeGroup=Merge_group (ambiguity) 'merge_group' ':' mergeGroup=Merge_group
+	 *     mergeGroup=Merge_group (ambiguity) 'pull_request' ':' pullRequest=Pull_request
+	 *     mergeGroup=Merge_group (ambiguity) 'pull_request_target' ':' pullRequestTarget=Pull_request
+	 *     mergeGroup=Merge_group (ambiguity) 'push' ':' push=Push
+	 *     mergeGroup=Merge_group (ambiguity) 'release' ':' release=Release
+	 *     mergeGroup=Merge_group (ambiguity) 'schedule' ':' BEG_BLOCK? schedule+=Schedule
+	 *     mergeGroup=Merge_group (ambiguity) 'workflow_call' ':' workflowCall=Workflow_call
+	 *     mergeGroup=Merge_group (ambiguity) 'workflow_dispatch' ':' workflowDispatch=Workflow_dispatch
+	 *     mergeGroup=Merge_group (ambiguity) END_BLOCK? (rule end)
+	 *     pullRequest=Pull_request (ambiguity) 'issues' ':' issues=Issues
+	 *     pullRequest=Pull_request (ambiguity) 'merge_group' ':' mergeGroup=Merge_group
+	 *     pullRequest=Pull_request (ambiguity) 'pull_request' ':' pullRequest=Pull_request
+	 *     pullRequest=Pull_request (ambiguity) 'pull_request_target' ':' pullRequestTarget=Pull_request
+	 *     pullRequest=Pull_request (ambiguity) 'push' ':' push=Push
+	 *     pullRequest=Pull_request (ambiguity) 'release' ':' release=Release
+	 *     pullRequest=Pull_request (ambiguity) 'schedule' ':' BEG_BLOCK? schedule+=Schedule
+	 *     pullRequest=Pull_request (ambiguity) 'workflow_call' ':' workflowCall=Workflow_call
+	 *     pullRequest=Pull_request (ambiguity) 'workflow_dispatch' ':' workflowDispatch=Workflow_dispatch
+	 *     pullRequest=Pull_request (ambiguity) END_BLOCK? (rule end)
+	 *     pullRequestTarget=Pull_request (ambiguity) 'issues' ':' issues=Issues
+	 *     pullRequestTarget=Pull_request (ambiguity) 'merge_group' ':' mergeGroup=Merge_group
+	 *     pullRequestTarget=Pull_request (ambiguity) 'pull_request' ':' pullRequest=Pull_request
+	 *     pullRequestTarget=Pull_request (ambiguity) 'pull_request_target' ':' pullRequestTarget=Pull_request
+	 *     pullRequestTarget=Pull_request (ambiguity) 'push' ':' push=Push
+	 *     pullRequestTarget=Pull_request (ambiguity) 'release' ':' release=Release
+	 *     pullRequestTarget=Pull_request (ambiguity) 'schedule' ':' BEG_BLOCK? schedule+=Schedule
+	 *     pullRequestTarget=Pull_request (ambiguity) 'workflow_call' ':' workflowCall=Workflow_call
+	 *     pullRequestTarget=Pull_request (ambiguity) 'workflow_dispatch' ':' workflowDispatch=Workflow_dispatch
+	 *     pullRequestTarget=Pull_request (ambiguity) END_BLOCK? (rule end)
+	 *     push=Push (ambiguity) 'issues' ':' issues=Issues
+	 *     push=Push (ambiguity) 'merge_group' ':' mergeGroup=Merge_group
+	 *     push=Push (ambiguity) 'pull_request' ':' pullRequest=Pull_request
+	 *     push=Push (ambiguity) 'pull_request_target' ':' pullRequestTarget=Pull_request
+	 *     push=Push (ambiguity) 'push' ':' push=Push
+	 *     push=Push (ambiguity) 'release' ':' release=Release
+	 *     push=Push (ambiguity) 'schedule' ':' BEG_BLOCK? schedule+=Schedule
+	 *     push=Push (ambiguity) 'workflow_call' ':' workflowCall=Workflow_call
+	 *     push=Push (ambiguity) 'workflow_dispatch' ':' workflowDispatch=Workflow_dispatch
+	 *     push=Push (ambiguity) END_BLOCK? (rule end)
+	 *     release=Release (ambiguity) 'issues' ':' issues=Issues
+	 *     release=Release (ambiguity) 'merge_group' ':' mergeGroup=Merge_group
+	 *     release=Release (ambiguity) 'pull_request' ':' pullRequest=Pull_request
+	 *     release=Release (ambiguity) 'pull_request_target' ':' pullRequestTarget=Pull_request
+	 *     release=Release (ambiguity) 'push' ':' push=Push
+	 *     release=Release (ambiguity) 'release' ':' release=Release
+	 *     release=Release (ambiguity) 'schedule' ':' BEG_BLOCK? schedule+=Schedule
+	 *     release=Release (ambiguity) 'workflow_call' ':' workflowCall=Workflow_call
+	 *     release=Release (ambiguity) 'workflow_dispatch' ':' workflowDispatch=Workflow_dispatch
+	 *     release=Release (ambiguity) END_BLOCK? (rule end)
+	 *     schedule+=Schedule END_BLOCK? (ambiguity) 'issues' ':' issues=Issues
+	 *     schedule+=Schedule END_BLOCK? (ambiguity) 'merge_group' ':' mergeGroup=Merge_group
+	 *     schedule+=Schedule END_BLOCK? (ambiguity) 'pull_request' ':' pullRequest=Pull_request
+	 *     schedule+=Schedule END_BLOCK? (ambiguity) 'pull_request_target' ':' pullRequestTarget=Pull_request
+	 *     schedule+=Schedule END_BLOCK? (ambiguity) 'push' ':' push=Push
+	 *     schedule+=Schedule END_BLOCK? (ambiguity) 'release' ':' release=Release
+	 *     schedule+=Schedule END_BLOCK? (ambiguity) 'workflow_call' ':' workflowCall=Workflow_call
+	 *     schedule+=Schedule END_BLOCK? (ambiguity) 'workflow_dispatch' ':' workflowDispatch=Workflow_dispatch
+	 *     schedule+=Schedule END_BLOCK? (ambiguity) END_BLOCK? (rule end)
+	 *     workflowCall=Workflow_call (ambiguity) 'issues' ':' issues=Issues
+	 *     workflowCall=Workflow_call (ambiguity) 'merge_group' ':' mergeGroup=Merge_group
+	 *     workflowCall=Workflow_call (ambiguity) 'pull_request' ':' pullRequest=Pull_request
+	 *     workflowCall=Workflow_call (ambiguity) 'pull_request_target' ':' pullRequestTarget=Pull_request
+	 *     workflowCall=Workflow_call (ambiguity) 'push' ':' push=Push
+	 *     workflowCall=Workflow_call (ambiguity) 'release' ':' release=Release
+	 *     workflowCall=Workflow_call (ambiguity) 'schedule' ':' BEG_BLOCK? schedule+=Schedule
+	 *     workflowCall=Workflow_call (ambiguity) 'workflow_call' ':' workflowCall=Workflow_call
+	 *     workflowCall=Workflow_call (ambiguity) 'workflow_dispatch' ':' workflowDispatch=Workflow_dispatch
+	 *     workflowCall=Workflow_call (ambiguity) END_BLOCK? (rule end)
+	 *     workflowDispatch=Workflow_dispatch (ambiguity) 'issues' ':' issues=Issues
+	 *     workflowDispatch=Workflow_dispatch (ambiguity) 'merge_group' ':' mergeGroup=Merge_group
+	 *     workflowDispatch=Workflow_dispatch (ambiguity) 'pull_request' ':' pullRequest=Pull_request
+	 *     workflowDispatch=Workflow_dispatch (ambiguity) 'pull_request_target' ':' pullRequestTarget=Pull_request
+	 *     workflowDispatch=Workflow_dispatch (ambiguity) 'push' ':' push=Push
+	 *     workflowDispatch=Workflow_dispatch (ambiguity) 'release' ':' release=Release
+	 *     workflowDispatch=Workflow_dispatch (ambiguity) 'schedule' ':' BEG_BLOCK? schedule+=Schedule
+	 *     workflowDispatch=Workflow_dispatch (ambiguity) 'workflow_call' ':' workflowCall=Workflow_call
+	 *     workflowDispatch=Workflow_dispatch (ambiguity) 'workflow_dispatch' ':' workflowDispatch=Workflow_dispatch
+	 *     workflowDispatch=Workflow_dispatch (ambiguity) END_BLOCK? (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_OnObject___Branch_protection_ruleKeyword_2_0_0_ColonKeyword_2_0_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('branch_protection_rule' ':')+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) BEG_BLOCK (ambiguity) branchProtectionRule=EString
+	 *     branchProtectionRule=EString (ambiguity) branchProtectionRule=EString
+	 *     issues=Issues (ambiguity) branchProtectionRule=EString
+	 *     mergeGroup=Merge_group (ambiguity) branchProtectionRule=EString
+	 *     pullRequest=Pull_request (ambiguity) branchProtectionRule=EString
+	 *     pullRequestTarget=Pull_request (ambiguity) branchProtectionRule=EString
+	 *     push=Push (ambiguity) branchProtectionRule=EString
+	 *     release=Release (ambiguity) branchProtectionRule=EString
+	 *     schedule+=Schedule END_BLOCK? (ambiguity) branchProtectionRule=EString
+	 *     workflowCall=Workflow_call (ambiguity) branchProtectionRule=EString
+	 *     workflowDispatch=Workflow_dispatch (ambiguity) branchProtectionRule=EString
+	 
+	 * </pre>
+	 */
+	protected void emit_OnObject___Branch_protection_ruleKeyword_2_0_0_ColonKeyword_2_0_1__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END_BLOCK? ('branch_protection_rule' ':')* 'schedule' ':' BEG_BLOCK?)?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     schedule+=Schedule (ambiguity) schedule+=Schedule
 	 
 	 * </pre>
 	 */
-	protected void emit_On___END_BLOCKTerminalRuleCall_2_4_2_2_q_ScheduleKeyword_2_4_0_ColonKeyword_2_4_1_BEG_BLOCKTerminalRuleCall_2_4_2_0_q__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_OnObject___END_BLOCKTerminalRuleCall_2_4_2_2_q___Branch_protection_ruleKeyword_2_0_0_ColonKeyword_2_0_1__a_ScheduleKeyword_2_4_0_ColonKeyword_2_4_1_BEG_BLOCKTerminalRuleCall_2_4_2_0_q__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

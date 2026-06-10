@@ -288,26 +288,34 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cLeftCurlyBracketKeyword_2_11 = (Keyword)cAlternatives_2.eContents().get(11);
 		private final Keyword cRightCurlyBracketKeyword_2_12 = (Keyword)cAlternatives_2.eContents().get(12);
 		private final RuleCall cANY_OTHERTerminalRuleCall_2_13 = (RuleCall)cAlternatives_2.eContents().get(13);
-		private final Keyword cGreaterThanSignHyphenMinusKeyword_2_14 = (Keyword)cAlternatives_2.eContents().get(14);
-		private final Keyword cGreaterThanSignPlusSignKeyword_2_15 = (Keyword)cAlternatives_2.eContents().get(15);
-		private final Keyword cVerticalLineHyphenMinusKeyword_2_16 = (Keyword)cAlternatives_2.eContents().get(16);
-		private final Keyword cVerticalLinePlusSignKeyword_2_17 = (Keyword)cAlternatives_2.eContents().get(17);
+		private final Keyword cVerticalLineKeyword_2_14 = (Keyword)cAlternatives_2.eContents().get(14);
+		private final Keyword cGreaterThanSignKeyword_2_15 = (Keyword)cAlternatives_2.eContents().get(15);
+		private final Keyword cGreaterThanSignHyphenMinusKeyword_2_16 = (Keyword)cAlternatives_2.eContents().get(16);
+		private final Keyword cGreaterThanSignPlusSignKeyword_2_17 = (Keyword)cAlternatives_2.eContents().get(17);
+		private final Keyword cVerticalLineHyphenMinusKeyword_2_18 = (Keyword)cAlternatives_2.eContents().get(18);
+		private final Keyword cVerticalLinePlusSignKeyword_2_19 = (Keyword)cAlternatives_2.eContents().get(19);
 		private final RuleCall cEND_BLOCKTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//// Lida com 'run: >' ou 'run: |' consumindo o bloco inteiro
 		//// Aceita qualquer token do Xtext e pontuações do Bash (como [, ], ; e -)
+		////BlockString returns ecore::EString:
+		////    ('>' | '|' | '>-' | '>+' | '|-' | '|+') BEG_BLOCK? (
+		////        YAML_SCALAR | GH_EXPRESSION | ID | INT | STRING
+		////        | '-' | '[' | ']' | ';' | ':' | ',' | '{' | '}' | ANY_OTHER
+		////        | '>-' | '>+' | '|-' | '|+'
+		////    )* END_BLOCK?;
 		//BlockString returns ecore::EString:
 		//    ('>' | '|' | '>-' | '>+' | '|-' | '|+') BEG_BLOCK? (
 		//        YAML_SCALAR | GH_EXPRESSION | ID | INT | STRING
 		//        | '-' | '[' | ']' | ';' | ':' | ',' | '{' | '}' | ANY_OTHER
-		//        | '>-' | '>+' | '|-' | '|+'
+		//        | '|' | '>' | '>-' | '>+' | '|-' | '|+'
 		//    )* END_BLOCK?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//('>' | '|' | '>-' | '>+' | '|-' | '|+') BEG_BLOCK? (
 		//    YAML_SCALAR | GH_EXPRESSION | ID | INT | STRING
 		//    | '-' | '[' | ']' | ';' | ':' | ',' | '{' | '}' | ANY_OTHER
-		//    | '>-' | '>+' | '|-' | '|+'
+		//    | '|' | '>' | '>-' | '>+' | '|-' | '|+'
 		//)* END_BLOCK?
 		public Group getGroup() { return cGroup; }
 		
@@ -338,7 +346,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//(
 		//       YAML_SCALAR | GH_EXPRESSION | ID | INT | STRING
 		//       | '-' | '[' | ']' | ';' | ':' | ',' | '{' | '}' | ANY_OTHER
-		//       | '>-' | '>+' | '|-' | '|+'
+		//       | '|' | '>' | '>-' | '>+' | '|-' | '|+'
 		//   )*
 		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 		
@@ -384,17 +392,23 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//ANY_OTHER
 		public RuleCall getANY_OTHERTerminalRuleCall_2_13() { return cANY_OTHERTerminalRuleCall_2_13; }
 		
+		//'|'
+		public Keyword getVerticalLineKeyword_2_14() { return cVerticalLineKeyword_2_14; }
+		
+		//'>'
+		public Keyword getGreaterThanSignKeyword_2_15() { return cGreaterThanSignKeyword_2_15; }
+		
 		//'>-'
-		public Keyword getGreaterThanSignHyphenMinusKeyword_2_14() { return cGreaterThanSignHyphenMinusKeyword_2_14; }
+		public Keyword getGreaterThanSignHyphenMinusKeyword_2_16() { return cGreaterThanSignHyphenMinusKeyword_2_16; }
 		
 		//'>+'
-		public Keyword getGreaterThanSignPlusSignKeyword_2_15() { return cGreaterThanSignPlusSignKeyword_2_15; }
+		public Keyword getGreaterThanSignPlusSignKeyword_2_17() { return cGreaterThanSignPlusSignKeyword_2_17; }
 		
 		//'|-'
-		public Keyword getVerticalLineHyphenMinusKeyword_2_16() { return cVerticalLineHyphenMinusKeyword_2_16; }
+		public Keyword getVerticalLineHyphenMinusKeyword_2_18() { return cVerticalLineHyphenMinusKeyword_2_18; }
 		
 		//'|+'
-		public Keyword getVerticalLinePlusSignKeyword_2_17() { return cVerticalLinePlusSignKeyword_2_17; }
+		public Keyword getVerticalLinePlusSignKeyword_2_19() { return cVerticalLinePlusSignKeyword_2_19; }
 		
 		//END_BLOCK?
 		public RuleCall getEND_BLOCKTerminalRuleCall_3() { return cEND_BLOCKTerminalRuleCall_3; }
@@ -811,8 +825,88 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	public class OnElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "pt.isep.yamldslgen.xtext.MyDsl.On");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cOnObjectParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cOnValueParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//// =============================================================================
+		//// TRIGGER RULES
+		//// =============================================================================
+		//On returns On:
+		//    OnObject | OnValue;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//OnObject | OnValue
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//OnObject
+		public RuleCall getOnObjectParserRuleCall_0() { return cOnObjectParserRuleCall_0; }
+		
+		//OnValue
+		public RuleCall getOnValueParserRuleCall_1() { return cOnValueParserRuleCall_1; }
+	}
+	public class OnValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "pt.isep.yamldslgen.xtext.MyDsl.OnValue");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cValueAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cValueEStringParserRuleCall_0_0 = (RuleCall)cValueAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cValueEStringParserRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
+		private final Group cGroup_1_2 = (Group)cGroup_1.eContents().get(2);
+		private final Keyword cCommaKeyword_1_2_0 = (Keyword)cGroup_1_2.eContents().get(0);
+		private final Assignment cValueAssignment_1_2_1 = (Assignment)cGroup_1_2.eContents().get(1);
+		private final RuleCall cValueEStringParserRuleCall_1_2_1_0 = (RuleCall)cValueAssignment_1_2_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
+		
+		//// on: push   |   on: [push, pull_request]
+		//OnValue returns OnValue:
+		//      value+=EString
+		//    | '[' value+=EString (',' value+=EString)* ']';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//  value+=EString
+		//| '[' value+=EString (',' value+=EString)* ']'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//value+=EString
+		public Assignment getValueAssignment_0() { return cValueAssignment_0; }
+		
+		//EString
+		public RuleCall getValueEStringParserRuleCall_0_0() { return cValueEStringParserRuleCall_0_0; }
+		
+		//'[' value+=EString (',' value+=EString)* ']'
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'['
+		public Keyword getLeftSquareBracketKeyword_1_0() { return cLeftSquareBracketKeyword_1_0; }
+		
+		//value+=EString
+		public Assignment getValueAssignment_1_1() { return cValueAssignment_1_1; }
+		
+		//EString
+		public RuleCall getValueEStringParserRuleCall_1_1_0() { return cValueEStringParserRuleCall_1_1_0; }
+		
+		//(',' value+=EString)*
+		public Group getGroup_1_2() { return cGroup_1_2; }
+		
+		//','
+		public Keyword getCommaKeyword_1_2_0() { return cCommaKeyword_1_2_0; }
+		
+		//value+=EString
+		public Assignment getValueAssignment_1_2_1() { return cValueAssignment_1_2_1; }
+		
+		//EString
+		public RuleCall getValueEStringParserRuleCall_1_2_1_0() { return cValueEStringParserRuleCall_1_2_1_0; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_1_3() { return cRightSquareBracketKeyword_1_3; }
+	}
+	public class OnObjectElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "pt.isep.yamldslgen.xtext.MyDsl.OnObject");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cOnAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cOnObjectAction_0 = (Action)cGroup.eContents().get(0);
 		private final RuleCall cBEG_BLOCKTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		private final UnorderedGroup cUnorderedGroup_2 = (UnorderedGroup)cGroup.eContents().get(2);
 		private final Group cGroup_2_0 = (Group)cUnorderedGroup_2.eContents().get(0);
@@ -870,14 +964,11 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cIssuesIssuesParserRuleCall_2_9_2_0 = (RuleCall)cIssuesAssignment_2_9_2.eContents().get(0);
 		private final RuleCall cEND_BLOCKTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
-		//// =============================================================================
-		//// TRIGGER RULES
-		//// =============================================================================
-		//On returns On:
-		//    {On}
-		//    BEG_BLOCK?
-		//        (('branch_protection_rule' ':' branchProtectionRule=EString)?
-		//        &('push' ':' push=Push)?
+		//OnObject returns OnObject:
+		//    {OnObject}
+		//    BEG_BLOCK
+		//        (('branch_protection_rule' ':' branchProtectionRule=EString?)?
+		//        & ('push' ':' push=Push)?
 		//        & ('pull_request' ':' pullRequest=Pull_request)?
 		//        & ('pull_request_target' ':' pullRequestTarget=Pull_request)?
 		//        & ('schedule' ':' (BEG_BLOCK? schedule+=Schedule+ END_BLOCK?))?
@@ -889,10 +980,10 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//    END_BLOCK?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{On}
-		//BEG_BLOCK?
-		//    (('branch_protection_rule' ':' branchProtectionRule=EString)?
-		//    &('push' ':' push=Push)?
+		//{OnObject}
+		//BEG_BLOCK
+		//    (('branch_protection_rule' ':' branchProtectionRule=EString?)?
+		//    & ('push' ':' push=Push)?
 		//    & ('pull_request' ':' pullRequest=Pull_request)?
 		//    & ('pull_request_target' ':' pullRequestTarget=Pull_request)?
 		//    & ('schedule' ':' (BEG_BLOCK? schedule+=Schedule+ END_BLOCK?))?
@@ -904,14 +995,14 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//END_BLOCK?
 		public Group getGroup() { return cGroup; }
 		
-		//{On}
-		public Action getOnAction_0() { return cOnAction_0; }
+		//{OnObject}
+		public Action getOnObjectAction_0() { return cOnObjectAction_0; }
 		
-		//BEG_BLOCK?
+		//BEG_BLOCK
 		public RuleCall getBEG_BLOCKTerminalRuleCall_1() { return cBEG_BLOCKTerminalRuleCall_1; }
 		
-		//(('branch_protection_rule' ':' branchProtectionRule=EString)?
-		//&('push' ':' push=Push)?
+		//(('branch_protection_rule' ':' branchProtectionRule=EString?)?
+		//& ('push' ':' push=Push)?
 		//& ('pull_request' ':' pullRequest=Pull_request)?
 		//& ('pull_request_target' ':' pullRequestTarget=Pull_request)?
 		//& ('schedule' ':' (BEG_BLOCK? schedule+=Schedule+ END_BLOCK?))?
@@ -922,7 +1013,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//& ('issues' ':' issues=Issues)?)
 		public UnorderedGroup getUnorderedGroup_2() { return cUnorderedGroup_2; }
 		
-		//('branch_protection_rule' ':' branchProtectionRule=EString)?
+		//('branch_protection_rule' ':' branchProtectionRule=EString?)?
 		public Group getGroup_2_0() { return cGroup_2_0; }
 		
 		//'branch_protection_rule'
@@ -931,7 +1022,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//':'
 		public Keyword getColonKeyword_2_0_1() { return cColonKeyword_2_0_1; }
 		
-		//branchProtectionRule=EString
+		//branchProtectionRule=EString?
 		public Assignment getBranchProtectionRuleAssignment_2_0_2() { return cBranchProtectionRuleAssignment_2_0_2; }
 		
 		//EString
@@ -4511,6 +4602,8 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final KeyNameElements pKeyName;
 	private final KeyValuePairElements pKeyValuePair;
 	private final OnElements pOn;
+	private final OnValueElements pOnValue;
+	private final OnObjectElements pOnObject;
 	private final PushElements pPush;
 	private final Pull_requestElements pPull_request;
 	private final ScheduleElements pSchedule;
@@ -4566,6 +4659,8 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pKeyName = new KeyNameElements();
 		this.pKeyValuePair = new KeyValuePairElements();
 		this.pOn = new OnElements();
+		this.pOnValue = new OnValueElements();
+		this.pOnObject = new OnObjectElements();
 		this.pPush = new PushElements();
 		this.pPull_request = new Pull_requestElements();
 		this.pSchedule = new ScheduleElements();
@@ -4668,11 +4763,17 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	//// Lida com 'run: >' ou 'run: |' consumindo o bloco inteiro
 	//// Aceita qualquer token do Xtext e pontuações do Bash (como [, ], ; e -)
+	////BlockString returns ecore::EString:
+	////    ('>' | '|' | '>-' | '>+' | '|-' | '|+') BEG_BLOCK? (
+	////        YAML_SCALAR | GH_EXPRESSION | ID | INT | STRING
+	////        | '-' | '[' | ']' | ';' | ':' | ',' | '{' | '}' | ANY_OTHER
+	////        | '>-' | '>+' | '|-' | '|+'
+	////    )* END_BLOCK?;
 	//BlockString returns ecore::EString:
 	//    ('>' | '|' | '>-' | '>+' | '|-' | '|+') BEG_BLOCK? (
 	//        YAML_SCALAR | GH_EXPRESSION | ID | INT | STRING
 	//        | '-' | '[' | ']' | ';' | ':' | ',' | '{' | '}' | ANY_OTHER
-	//        | '>-' | '>+' | '|-' | '|+'
+	//        | '|' | '>' | '>-' | '>+' | '|-' | '|+'
 	//    )* END_BLOCK?;
 	public BlockStringElements getBlockStringAccess() {
 		return pBlockString;
@@ -4741,10 +4842,32 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//// TRIGGER RULES
 	//// =============================================================================
 	//On returns On:
-	//    {On}
-	//    BEG_BLOCK?
-	//        (('branch_protection_rule' ':' branchProtectionRule=EString)?
-	//        &('push' ':' push=Push)?
+	//    OnObject | OnValue;
+	public OnElements getOnAccess() {
+		return pOn;
+	}
+	
+	public ParserRule getOnRule() {
+		return getOnAccess().getRule();
+	}
+	
+	//// on: push   |   on: [push, pull_request]
+	//OnValue returns OnValue:
+	//      value+=EString
+	//    | '[' value+=EString (',' value+=EString)* ']';
+	public OnValueElements getOnValueAccess() {
+		return pOnValue;
+	}
+	
+	public ParserRule getOnValueRule() {
+		return getOnValueAccess().getRule();
+	}
+	
+	//OnObject returns OnObject:
+	//    {OnObject}
+	//    BEG_BLOCK
+	//        (('branch_protection_rule' ':' branchProtectionRule=EString?)?
+	//        & ('push' ':' push=Push)?
 	//        & ('pull_request' ':' pullRequest=Pull_request)?
 	//        & ('pull_request_target' ':' pullRequestTarget=Pull_request)?
 	//        & ('schedule' ':' (BEG_BLOCK? schedule+=Schedule+ END_BLOCK?))?
@@ -4754,12 +4877,12 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//        & ('merge_group' ':' mergeGroup=Merge_group)?
 	//        & ('issues' ':' issues=Issues)?)
 	//    END_BLOCK?;
-	public OnElements getOnAccess() {
-		return pOn;
+	public OnObjectElements getOnObjectAccess() {
+		return pOnObject;
 	}
 	
-	public ParserRule getOnRule() {
-		return getOnAccess().getRule();
+	public ParserRule getOnObjectRule() {
+		return getOnObjectAccess().getRule();
 	}
 	
 	//Push returns Push:
@@ -5300,7 +5423,7 @@ public class MyDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//// Pára automaticamente em vírgulas, parêntesis retos (para arrays funcionarem) e dois pontos (para as keys funcionarem).
 	//terminal YAML_SCALAR:
 	//    ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'.'|'/'|'@'|'*'|'$'|'='|'+'|'<'|'>'|'|'|'&'|'~'|'!'|'?'|'\\'|'('|')')
-	//    ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-'|'.'|'/'|'@'|'*'|'$'|'='|'+'|'<'|'>'|'|'|'&'|'~'|'!'|'?'|'\\'|'('|')'|' ')*;
+	//    ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-'|'.'|'/'|'@'|'*'|'$'|'='|'+'|'<'|'>'|'|'|'&'|'~'|'!'|'?'|'\\'|'('|')')*;
 	public TerminalRule getYAML_SCALARRule() {
 		return tYAML_SCALAR;
 	}

@@ -40,15 +40,6 @@ public interface YamlmdeFactory extends EFactory {
 	GithubActions createGithubActions();
 
 	/**
-	 * Returns a new object of class '<em>On</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>On</em>'.
-	 * @generated
-	 */
-	On createOn();
-
-	/**
 	 * Returns a new object of class '<em>Push</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -245,6 +236,24 @@ public interface YamlmdeFactory extends EFactory {
 	 * @generated
 	 */
 	PermissionsValue createPermissionsValue();
+
+	/**
+	 * Returns a new object of class '<em>On Object</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>On Object</em>'.
+	 * @generated
+	 */
+	OnObject createOnObject();
+
+	/**
+	 * Returns a new object of class '<em>On Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>On Value</em>'.
+	 * @generated
+	 */
+	OnValue createOnValue();
 
 	/**
 	 * Returns a new object of class '<em>Environment Object</em>'.

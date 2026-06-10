@@ -27,12 +27,18 @@ EString returns ecore::EString:
 	
 // Lida com 'run: >' ou 'run: |' consumindo o bloco inteiro
 // Aceita qualquer token do Xtext e pontuações do Bash (como [, ], ; e -)
+//BlockString returns ecore::EString:
+//	('>' | '|' | '>-' | '>+' | '|-' | '|+') BEG_BLOCK? (
+//		YAML_SCALAR | GH_EXPRESSION | ID | INT | STRING
+//		| '-' | '[' | ']' | ';' | ':' | ',' | '{' | '}' | ANY_OTHER
+//		| '>-' | '>+' | '|-' | '|+'
+//	)* END_BLOCK?;
 BlockString returns ecore::EString:
-	('>' | '|' | '>-' | '>+' | '|-' | '|+') BEG_BLOCK? (
-		YAML_SCALAR | GH_EXPRESSION | ID | INT | STRING
-		| '-' | '[' | ']' | ';' | ':' | ',' | '{' | '}' | ANY_OTHER
-		| '>-' | '>+' | '|-' | '|+'
-	)* END_BLOCK?;
+    ('>' | '|' | '>-' | '>+' | '|-' | '|+') BEG_BLOCK? (
+        YAML_SCALAR | GH_EXPRESSION | ID | INT | STRING
+        | '-' | '[' | ']' | ';' | ':' | ',' | '{' | '}' | ANY_OTHER
+        | '|' | '>' | '>-' | '>+' | '|-' | '|+'
+    )* END_BLOCK?;
 
 // =============================================================================
 // KEY RULE
@@ -76,10 +82,18 @@ KeyValuePair returns KeyValuePair:
 // =============================================================================
 
 On returns On:
-	{On}
-	BEG_BLOCK?
-		(('branch_protection_rule' ':' branchProtectionRule=EString)?
-		&('push' ':' push=Push)?
+	OnObject | OnValue;
+
+// on: push   |   on: [push, pull_request]
+OnValue returns OnValue:
+	  value+=EString
+	| '[' value+=EString (',' value+=EString)* ']';
+
+OnObject returns OnObject:
+	{OnObject}
+	BEG_BLOCK
+		(('branch_protection_rule' ':' branchProtectionRule=EString?)?
+		& ('push' ':' push=Push)?
 		& ('pull_request' ':' pullRequest=Pull_request)?
 		& ('pull_request_target' ':' pullRequestTarget=Pull_request)?
 		& ('schedule' ':' (BEG_BLOCK? schedule+=Schedule+ END_BLOCK?))?
@@ -394,7 +408,7 @@ terminal GH_EXPRESSION:
       | '$'? '{{' -> '}}'
       | '$' ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-')*
     )*;
-    
+
 // Força o Lexer a dar prioridade a números puros antes do YAML_SCALAR
 @Override terminal INT returns ecore::EInt: ('0'..'9')+;
 
@@ -402,4 +416,4 @@ terminal GH_EXPRESSION:
 // Pára automaticamente em vírgulas, parêntesis retos (para arrays funcionarem) e dois pontos (para as keys funcionarem).
 terminal YAML_SCALAR:
 	('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'.'|'/'|'@'|'*'|'$'|'='|'+'|'<'|'>'|'|'|'&'|'~'|'!'|'?'|'\\'|'('|')')
-	('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-'|'.'|'/'|'@'|'*'|'$'|'='|'+'|'<'|'>'|'|'|'&'|'~'|'!'|'?'|'\\'|'('|')'|' ')*;
+	('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-'|'.'|'/'|'@'|'*'|'$'|'='|'+'|'<'|'>'|'|'|'&'|'~'|'!'|'?'|'\\'|'('|')')*;

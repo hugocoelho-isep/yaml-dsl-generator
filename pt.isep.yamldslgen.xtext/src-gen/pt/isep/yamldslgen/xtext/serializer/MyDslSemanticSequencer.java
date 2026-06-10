@@ -30,7 +30,8 @@ import pt.isep.yamldslgen.github_actions.MatrixObject;
 import pt.isep.yamldslgen.github_actions.MatrixParameter;
 import pt.isep.yamldslgen.github_actions.MatrixValue;
 import pt.isep.yamldslgen.github_actions.Merge_group;
-import pt.isep.yamldslgen.github_actions.On;
+import pt.isep.yamldslgen.github_actions.OnObject;
+import pt.isep.yamldslgen.github_actions.OnValue;
 import pt.isep.yamldslgen.github_actions.PermissionsObject;
 import pt.isep.yamldslgen.github_actions.PermissionsValue;
 import pt.isep.yamldslgen.github_actions.Pull_request;
@@ -109,8 +110,11 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case YamlmdePackage.MERGE_GROUP:
 				sequence_Merge_group(context, (Merge_group) semanticObject); 
 				return; 
-			case YamlmdePackage.ON:
-				sequence_On(context, (On) semanticObject); 
+			case YamlmdePackage.ON_OBJECT:
+				sequence_OnObject(context, (OnObject) semanticObject); 
+				return; 
+			case YamlmdePackage.ON_VALUE:
+				sequence_OnValue(context, (OnValue) semanticObject); 
 				return; 
 			case YamlmdePackage.PERMISSIONS_OBJECT:
 				sequence_PermissionsObject(context, (PermissionsObject) semanticObject); 
@@ -451,7 +455,8 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     On returns On
+	 *     On returns OnObject
+	 *     OnObject returns OnObject
 	 *
 	 * Constraint:
 	 *     (
@@ -468,7 +473,22 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     )*
 	 * </pre>
 	 */
-	protected void sequence_On(ISerializationContext context, On semanticObject) {
+	protected void sequence_OnObject(ISerializationContext context, OnObject semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     On returns OnValue
+	 *     OnValue returns OnValue
+	 *
+	 * Constraint:
+	 *     (value+=EString | (value+=EString value+=EString*))
+	 * </pre>
+	 */
+	protected void sequence_OnValue(ISerializationContext context, OnValue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

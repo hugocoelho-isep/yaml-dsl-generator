@@ -60,8 +60,6 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 			return createKeyValuePair();
 		case YamlmdePackage.GITHUB_ACTIONS:
 			return createGithubActions();
-		case YamlmdePackage.ON:
-			return createOn();
 		case YamlmdePackage.PUSH:
 			return createPush();
 		case YamlmdePackage.PULL_REQUEST:
@@ -94,18 +92,22 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 			return createRun();
 		case YamlmdePackage.RELEASE:
 			return createRelease();
-		case YamlmdePackage.ISSUES:
-			return createIssues();
 		case YamlmdePackage.INPUT:
 			return createInput();
 		case YamlmdePackage.MERGE_GROUP:
 			return createMerge_group();
 		case YamlmdePackage.SERVICE:
 			return createService();
+		case YamlmdePackage.ISSUES:
+			return createIssues();
 		case YamlmdePackage.PERMISSIONS_OBJECT:
 			return createPermissionsObject();
 		case YamlmdePackage.PERMISSIONS_VALUE:
 			return createPermissionsValue();
+		case YamlmdePackage.ON_OBJECT:
+			return createOnObject();
+		case YamlmdePackage.ON_VALUE:
+			return createOnValue();
 		case YamlmdePackage.ENVIRONMENT_OBJECT:
 			return createEnvironmentObject();
 		case YamlmdePackage.ENVIRONMENT_VALUE:
@@ -141,17 +143,6 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 	public GithubActions createGithubActions() {
 		GithubActionsImpl githubActions = new GithubActionsImpl();
 		return githubActions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public On createOn() {
-		OnImpl on = new OnImpl();
-		return on;
 	}
 
 	/**
@@ -394,6 +385,28 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 	public PermissionsValue createPermissionsValue() {
 		PermissionsValueImpl permissionsValue = new PermissionsValueImpl();
 		return permissionsValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public OnObject createOnObject() {
+		OnObjectImpl onObject = new OnObjectImpl();
+		return onObject;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public OnValue createOnValue() {
+		OnValueImpl onValue = new OnValueImpl();
+		return onValue;
 	}
 
 	/**

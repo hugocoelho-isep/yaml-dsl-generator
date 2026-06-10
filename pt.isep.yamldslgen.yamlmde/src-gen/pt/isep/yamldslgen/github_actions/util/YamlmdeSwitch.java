@@ -220,13 +220,6 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case YamlmdePackage.ISSUES: {
-			Issues issues = (Issues) theEObject;
-			T result = caseIssues(issues);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case YamlmdePackage.INPUT: {
 			Input input = (Input) theEObject;
 			T result = caseInput(input);
@@ -248,6 +241,13 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case YamlmdePackage.ISSUES: {
+			Issues issues = (Issues) theEObject;
+			T result = caseIssues(issues);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case YamlmdePackage.PERMISSIONS_OBJECT: {
 			PermissionsObject permissionsObject = (PermissionsObject) theEObject;
 			T result = casePermissionsObject(permissionsObject);
@@ -262,6 +262,24 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 			T result = casePermissionsValue(permissionsValue);
 			if (result == null)
 				result = casePermissions(permissionsValue);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamlmdePackage.ON_OBJECT: {
+			OnObject onObject = (OnObject) theEObject;
+			T result = caseOnObject(onObject);
+			if (result == null)
+				result = caseOn(onObject);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamlmdePackage.ON_VALUE: {
+			OnValue onValue = (OnValue) theEObject;
+			T result = caseOnValue(onValue);
+			if (result == null)
+				result = caseOn(onValue);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -731,6 +749,36 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePermissionsValue(PermissionsValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>On Object</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>On Object</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOnObject(OnObject object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>On Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>On Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOnValue(OnValue object) {
 		return null;
 	}
 

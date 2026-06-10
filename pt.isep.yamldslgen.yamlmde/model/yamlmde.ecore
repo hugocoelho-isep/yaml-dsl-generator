@@ -21,26 +21,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="env" upperBound="-1" eType="#//KeyValuePair"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="On">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="branchProtectionRule" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="push" eType="#//Push" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pullRequest" eType="#//Pull_request"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="schedule" upperBound="-1"
-        eType="#//Schedule" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="workflowDispatch" eType="#//Workflow_dispatch"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="workflowCall" eType="#//Workflow_call"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pullRequestTarget" eType="#//Pull_request"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="release" eType="#//Release"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="issues" eType="#//Issues"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="mergeGroup" eType="#//Merge_group"
-        containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="On" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Push">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="branches" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -148,10 +129,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="types" lowerBound="1" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Issues">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="types" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Input">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" lowerBound="1"
@@ -174,6 +151,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="env" upperBound="-1" eType="#//KeyValuePair"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Issues">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="types" lowerBound="1" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PermissionsObject" eSuperTypes="#//Permissions">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contents" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="securityEvents" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -188,6 +169,30 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PermissionsValue" eSuperTypes="#//Permissions">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OnObject" eSuperTypes="#//On">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="branchProtectionRule" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="push" eType="#//Push" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pullRequest" eType="#//Pull_request"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="schedule" upperBound="-1"
+        eType="#//Schedule" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="workflowDispatch" eType="#//Workflow_dispatch"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="workflowCall" eType="#//Workflow_call"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pullRequestTarget" eType="#//Pull_request"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="release" eType="#//Release"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mergeGroup" eType="#//Merge_group"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="issues" eType="#//Issues"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OnValue" eSuperTypes="#//On">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EnvironmentObject" eSuperTypes="#//Environment">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

@@ -177,11 +177,6 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseIssues(Issues object) {
-			return createIssuesAdapter();
-		}
-
-		@Override
 		public Adapter caseInput(Input object) {
 			return createInputAdapter();
 		}
@@ -197,6 +192,11 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseIssues(Issues object) {
+			return createIssuesAdapter();
+		}
+
+		@Override
 		public Adapter casePermissionsObject(PermissionsObject object) {
 			return createPermissionsObjectAdapter();
 		}
@@ -204,6 +204,16 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter casePermissionsValue(PermissionsValue object) {
 			return createPermissionsValueAdapter();
+		}
+
+		@Override
+		public Adapter caseOnObject(OnObject object) {
+			return createOnObjectAdapter();
+		}
+
+		@Override
+		public Adapter caseOnValue(OnValue object) {
+			return createOnValueAdapter();
 		}
 
 		@Override
@@ -639,6 +649,34 @@ public class YamlmdeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPermissionsValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.OnObject <em>On Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.OnObject
+	 * @generated
+	 */
+	public Adapter createOnObjectAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.github_actions.OnValue <em>On Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.github_actions.OnValue
+	 * @generated
+	 */
+	public Adapter createOnValueAdapter() {
 		return null;
 	}
 

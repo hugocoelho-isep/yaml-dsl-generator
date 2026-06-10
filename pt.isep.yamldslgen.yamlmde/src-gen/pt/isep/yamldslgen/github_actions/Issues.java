@@ -30,7 +30,7 @@ public interface Issues extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Types</em>' attribute list.
 	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getIssues_Types()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	EList<String> getTypes();

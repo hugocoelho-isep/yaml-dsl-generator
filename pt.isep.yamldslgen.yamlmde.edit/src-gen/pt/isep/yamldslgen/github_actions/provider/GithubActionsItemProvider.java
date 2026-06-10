@@ -184,8 +184,11 @@ public class GithubActionsItemProvider extends ItemProviderAdapter implements IE
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(
-				createChildParameter(YamlmdePackage.Literals.GITHUB_ACTIONS__ON, YamlmdeFactory.eINSTANCE.createOn()));
+		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.GITHUB_ACTIONS__ON,
+				YamlmdeFactory.eINSTANCE.createOnObject()));
+
+		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.GITHUB_ACTIONS__ON,
+				YamlmdeFactory.eINSTANCE.createOnValue()));
 
 		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.GITHUB_ACTIONS__JOBS,
 				YamlmdeFactory.eINSTANCE.createJob()));

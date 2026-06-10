@@ -119,29 +119,6 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.On} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected OnItemProvider onItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.On}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createOnAdapter() {
-		if (onItemProvider == null) {
-			onItemProvider = new OnItemProvider(this);
-		}
-
-		return onItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.Push} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -648,6 +625,52 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.OnObject} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OnObjectItemProvider onObjectItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.OnObject}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOnObjectAdapter() {
+		if (onObjectItemProvider == null) {
+			onObjectItemProvider = new OnObjectItemProvider(this);
+		}
+
+		return onObjectItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.OnValue} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OnValueItemProvider onValueItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.github_actions.OnValue}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOnValueAdapter() {
+		if (onValueItemProvider == null) {
+			onValueItemProvider = new OnValueItemProvider(this);
+		}
+
+		return onValueItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.github_actions.EnvironmentObject} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -871,8 +894,6 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 			keyValuePairItemProvider.dispose();
 		if (githubActionsItemProvider != null)
 			githubActionsItemProvider.dispose();
-		if (onItemProvider != null)
-			onItemProvider.dispose();
 		if (pushItemProvider != null)
 			pushItemProvider.dispose();
 		if (pull_requestItemProvider != null)
@@ -905,18 +926,22 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 			runItemProvider.dispose();
 		if (releaseItemProvider != null)
 			releaseItemProvider.dispose();
-		if (issuesItemProvider != null)
-			issuesItemProvider.dispose();
 		if (inputItemProvider != null)
 			inputItemProvider.dispose();
 		if (merge_groupItemProvider != null)
 			merge_groupItemProvider.dispose();
 		if (serviceItemProvider != null)
 			serviceItemProvider.dispose();
+		if (issuesItemProvider != null)
+			issuesItemProvider.dispose();
 		if (permissionsObjectItemProvider != null)
 			permissionsObjectItemProvider.dispose();
 		if (permissionsValueItemProvider != null)
 			permissionsValueItemProvider.dispose();
+		if (onObjectItemProvider != null)
+			onObjectItemProvider.dispose();
+		if (onValueItemProvider != null)
+			onValueItemProvider.dispose();
 		if (environmentObjectItemProvider != null)
 			environmentObjectItemProvider.dispose();
 		if (environmentValueItemProvider != null)
