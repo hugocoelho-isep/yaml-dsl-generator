@@ -4,6 +4,14 @@
 package pt.isep.yamldslgen.xtext.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.ide.LexerIdeBindings;
+import org.eclipse.xtext.ide.editor.contentassist.antlr.internal.Lexer;
+
+import com.google.inject.Binder;
+import com.google.inject.name.Names;
+
+import pt.isep.yamldslgen.xtext.ui.contentassist.MyDslContentAssistIndentationLexer;
+
 
 /**
  * Use this class to register components to be used within the Eclipse IDE.
@@ -12,5 +20,30 @@ public class MyDslUiModule extends AbstractMyDslUiModule {
 
 	public MyDslUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
+	}
+	
+	/**
+	 * Make content assist context-sensitive.
+	 *
+	 * <p>By default the content-assist parser is fed by the plain generated
+	 * {@code InternalMyDslLexer} (from the {@code ...ide.contentassist.antlr.internal}
+	 * package), which does NOT emit the synthetic {@code BEG_BLOCK}/{@code END_BLOCK}
+	 * indentation tokens. Without those tokens the parser cannot see the block
+	 * nesting, so it always proposes the top-level {@code GithubActions} keys
+	 * regardless of where the cursor is.
+	 *
+	 * <p>This override binds our {@link MyDslContentAssistIndentationLexer} for the
+	 * {@link LexerIdeBindings#CONTENT_ASSIST} path. That lexer re-injects the block
+	 * tokens (mirroring the runtime {@code MyDslIndentationAwareLexer}) and, crucially,
+	 * does NOT close the blocks that are still open at the cursor, so proposals become
+	 * context-sensitive: triggers under {@code on:}, fields under a step, and so on.
+	 *
+	 * <p>It overrides the binding produced by {@code AbstractMyDslUiModule}.
+	 */
+	@Override
+	public void configureContentAssistLexer(Binder binder) {
+		binder.bind(Lexer.class)
+				.annotatedWith(Names.named(LexerIdeBindings.CONTENT_ASSIST))
+				.to(MyDslContentAssistIndentationLexer.class);
 	}
 }
