@@ -50,8 +50,8 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getContainer <em>Container</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getServices <em>Services</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getDefaults <em>Defaults</em>}</li>
- *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getWith <em>With</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getEnv <em>Env</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getWith <em>With</em>}</li>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.JobImpl#getOutputs <em>Outputs</em>}</li>
  * </ul>
  *
@@ -239,16 +239,6 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	protected Defaults defaults;
 
 	/**
-	 * The cached value of the '{@link #getWith() <em>With</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWith()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<KeyValuePair> with;
-
-	/**
 	 * The cached value of the '{@link #getEnv() <em>Env</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -257,6 +247,16 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 * @ordered
 	 */
 	protected EList<KeyValuePair> env;
+
+	/**
+	 * The cached value of the '{@link #getWith() <em>With</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWith()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<KeyValuePair> with;
 
 	/**
 	 * The cached value of the '{@link #getOutputs() <em>Outputs</em>}' containment reference list.
@@ -763,10 +763,10 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			return ((InternalEList<?>) getServices()).basicRemove(otherEnd, msgs);
 		case YamlmdePackage.JOB__DEFAULTS:
 			return basicSetDefaults(null, msgs);
-		case YamlmdePackage.JOB__WITH:
-			return ((InternalEList<?>) getWith()).basicRemove(otherEnd, msgs);
 		case YamlmdePackage.JOB__ENV:
 			return ((InternalEList<?>) getEnv()).basicRemove(otherEnd, msgs);
+		case YamlmdePackage.JOB__WITH:
+			return ((InternalEList<?>) getWith()).basicRemove(otherEnd, msgs);
 		case YamlmdePackage.JOB__OUTPUTS:
 			return ((InternalEList<?>) getOutputs()).basicRemove(otherEnd, msgs);
 		}
@@ -807,10 +807,10 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			return getServices();
 		case YamlmdePackage.JOB__DEFAULTS:
 			return getDefaults();
-		case YamlmdePackage.JOB__WITH:
-			return getWith();
 		case YamlmdePackage.JOB__ENV:
 			return getEnv();
+		case YamlmdePackage.JOB__WITH:
+			return getWith();
 		case YamlmdePackage.JOB__OUTPUTS:
 			return getOutputs();
 		}
@@ -868,13 +868,13 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		case YamlmdePackage.JOB__DEFAULTS:
 			setDefaults((Defaults) newValue);
 			return;
-		case YamlmdePackage.JOB__WITH:
-			getWith().clear();
-			getWith().addAll((Collection<? extends KeyValuePair>) newValue);
-			return;
 		case YamlmdePackage.JOB__ENV:
 			getEnv().clear();
 			getEnv().addAll((Collection<? extends KeyValuePair>) newValue);
+			return;
+		case YamlmdePackage.JOB__WITH:
+			getWith().clear();
+			getWith().addAll((Collection<? extends KeyValuePair>) newValue);
 			return;
 		case YamlmdePackage.JOB__OUTPUTS:
 			getOutputs().clear();
@@ -931,11 +931,11 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		case YamlmdePackage.JOB__DEFAULTS:
 			setDefaults((Defaults) null);
 			return;
-		case YamlmdePackage.JOB__WITH:
-			getWith().clear();
-			return;
 		case YamlmdePackage.JOB__ENV:
 			getEnv().clear();
+			return;
+		case YamlmdePackage.JOB__WITH:
+			getWith().clear();
 			return;
 		case YamlmdePackage.JOB__OUTPUTS:
 			getOutputs().clear();
@@ -978,10 +978,10 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			return services != null && !services.isEmpty();
 		case YamlmdePackage.JOB__DEFAULTS:
 			return defaults != null;
-		case YamlmdePackage.JOB__WITH:
-			return with != null && !with.isEmpty();
 		case YamlmdePackage.JOB__ENV:
 			return env != null && !env.isEmpty();
+		case YamlmdePackage.JOB__WITH:
+			return with != null && !with.isEmpty();
 		case YamlmdePackage.JOB__OUTPUTS:
 			return outputs != null && !outputs.isEmpty();
 		}
