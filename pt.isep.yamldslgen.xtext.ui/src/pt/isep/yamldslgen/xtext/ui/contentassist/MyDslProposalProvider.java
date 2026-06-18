@@ -4,9 +4,31 @@
 package pt.isep.yamldslgen.xtext.ui.contentassist;
 
 
+import org.eclipse.xtext.Keyword;
+import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
+import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
+
+import com.google.inject.Inject;
+
+import pt.isep.yamldslgen.xtext.ide.contentassist.KeywordContextFilter;
+
 /**
  * See https://www.eclipse.org/Xtext/documentation/310_eclipse_support.html#content-assist
  * on how to customize the content assistant.
  */
 public class MyDslProposalProvider extends AbstractMyDslProposalProvider {
+	
+	@Inject
+	private KeywordContextFilter keywordFilter;
+
+	@Override
+	public void completeKeyword(Keyword keyword, ContentAssistContext context,
+			ICompletionProposalAcceptor acceptor) {
+		if (!keywordFilter.keep(keyword, context.getCurrentModel(), context.getLastCompleteNode(),
+				context.getRootNode(), context.getOffset())) {
+			return; // not valid for the cursor's container -> drop it
+		}
+		super.completeKeyword(keyword, context, acceptor);
+	}
+	
 }

@@ -12,5 +12,6 @@ Require-Bundle: pt.isep.yamldslgen.xtext,
  org.eclipse.xtext.xbase.ide,
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: pt.isep.yamldslgen.xtext.ide.contentassist.antlr,
+Export-Package: pt.isep.yamldslgen.xtext.ide.contentassist,
+ pt.isep.yamldslgen.xtext.ide.contentassist.antlr,
  pt.isep.yamldslgen.xtext.ide.contentassist.antlr.internal
