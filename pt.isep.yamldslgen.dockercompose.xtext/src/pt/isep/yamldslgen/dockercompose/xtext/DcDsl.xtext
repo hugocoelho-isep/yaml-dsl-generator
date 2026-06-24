@@ -64,6 +64,13 @@ KeyName returns ecore::EString:
 
 KeyValuePair returns KeyValuePair:
 	key=KeyName ':' value=EString;
+	
+	
+// environment list form '- KEY=VALUE': whole 'KEY=VALUE' lands in key (no ':' to
+// split on). Round-trips; the '=' split is not modelled.
+EnvEntry returns KeyValuePair:
+	{KeyValuePair} key=EString
+;
 
 // =============================================================================
 // SERVICE
@@ -83,39 +90,43 @@ Service returns Service:
 		| ('stop_signal' ':' stopSignal=EString)
 		| ('stdin_open' ':' stdinOpen=EBoolean)
 		| ('ports' ':' (
-			  BEG_BLOCK ('-' ports+=EString)+ END_BLOCK
-			| '[' ports+=EString (',' ports+=EString)* ']'
-		))
+			BEG_BLOCK ('-' BEG_BLOCK? ports+=EString END_BLOCK?)+ END_BLOCK
+            | '[' ports+=EString (',' ports+=EString)* ']'
+        ))
 		| ('expose' ':' (
-			  BEG_BLOCK ('-' expose+=INT)+ END_BLOCK
+			  BEG_BLOCK ('-' BEG_BLOCK? expose+=INT END_BLOCK?)+ END_BLOCK
 			| '[' expose+=INT (',' expose+=INT)* ']'
 		))
 		| ('command' ':' (
-			  BEG_BLOCK ('-' command+=EString)+ END_BLOCK
+			  BEG_BLOCK ('-' BEG_BLOCK? command+=EString END_BLOCK?)+ END_BLOCK
 			| '[' command+=EString (',' command+=EString)* ']'
+			| command+=EString
 		))
 		| ('secrets' ':' (
-			  BEG_BLOCK ('-' secrets+=EString)+ END_BLOCK
+			  BEG_BLOCK ('-' BEG_BLOCK? secrets+=EString END_BLOCK?)+ END_BLOCK
 			| '[' secrets+=EString (',' secrets+=EString)* ']'
 		))
 		| ('cap_add' ':' (
-			  BEG_BLOCK ('-' capAdd+=EString)+ END_BLOCK
+			  BEG_BLOCK ('-' BEG_BLOCK? capAdd+=EString END_BLOCK?)+ END_BLOCK
 			| '[' capAdd+=EString (',' capAdd+=EString)* ']'
 		))
 		| ('labels' ':' (
-			  BEG_BLOCK ('-' labels+=EString)+ END_BLOCK
+			  BEG_BLOCK ('-' BEG_BLOCK? labels+=EString END_BLOCK?)+ END_BLOCK
 			| '[' labels+=EString (',' labels+=EString)* ']'
 		))
 		| ('sysctls' ':' (
-			  BEG_BLOCK ('-' sysctls+=EString)+ END_BLOCK
+			  BEG_BLOCK ('-' BEG_BLOCK? sysctls+=EString END_BLOCK?)+ END_BLOCK
 			| '[' sysctls+=EString (',' sysctls+=EString)* ']'
 		))
-		| ('environment' ':' BEG_BLOCK environment+=KeyValuePair+ END_BLOCK)
+		| ('environment' ':' BEG_BLOCK (
+			environment+=KeyValuePair+
+			| ('-' BEG_BLOCK? environment+=EnvEntry END_BLOCK?)+
+         ) END_BLOCK)
 		| ('depends_on' ':' dependsOn=Depends_on)
 		| ('networks' ':' networks=Networks)
 		| ('volumes' ':' BEG_BLOCK volumes+=ServiceVolume+ END_BLOCK)
 		| ('healthcheck' ':' healthcheck=Healthcheck)
-		| ('deploy' ':' BEG_BLOCK deploy+=Resource+ END_BLOCK)
+		| ('deploy' ':' BEG_BLOCK KeyName ':' BEG_BLOCK deploy+=Resource+ END_BLOCK END_BLOCK)
 		)*
 	END_BLOCK;
 
@@ -137,7 +148,7 @@ ServiceVolume returns Volume:
 // His model carries no body for named volumes, so no inner block (avoids the
 // inner/outer END_BLOCK ambiguity against the 'volumes' wrapper).
 NamedVolume returns VolumeObject:
-	id=EString ':';
+	id=EString ':' EString?;
 
 // =============================================================================
 // BUILD   (short '.' vs long block — union pattern, mirrors On/Environment)
@@ -157,7 +168,7 @@ BuildObject returns BuildObject:
 		| ('dockerfile' ':' dockerfile=EString)
 		| ('target' ':' target=EString)
 		| ('args' ':' (
-			  BEG_BLOCK ('-' args+=EString)+ END_BLOCK
+			  BEG_BLOCK ('-' BEG_BLOCK? args+=EString END_BLOCK?)+ END_BLOCK
 			| '[' args+=EString (',' args+=EString)* ']'
 		))
 		)*
@@ -168,48 +179,38 @@ BuildObject returns BuildObject:
 // =============================================================================
 
 Networks returns Networks:
-	NetworksObject | NetworksValue;
-
-// networks: [frontend, backend]
-NetworksValue returns NetworksValue:
-	  value+=EString
-	| '[' value+=EString (',' value+=EString)* ']';
-
-NetworksObject returns NetworksObject:
-	{NetworksObject}
-	BEG_BLOCK
-		network+=Network+
-	END_BLOCK;
+	BEG_BLOCK (
+		{NetworksValue} ('-' BEG_BLOCK? value+=EString END_BLOCK?)+   // networks:\n - react-spring
+			| {NetworksObject} network+=Network+                            // networks:\n my-net:\n driver: ...
+        ) END_BLOCK
+      | {NetworksValue} '[' value+=EString (',' value+=EString)* ']'       // networks: [a, b]
+      | {NetworksValue} value+=EString;                                   // networks: a
 
 Network returns Network:
-	id=EString ':' BEG_BLOCK
-		( ('driver' ':' driver=EString)
-		| ('ipv4_address' ':' ipv4Address=EString)
-		| ('ipam' ':' BEG_BLOCK ipam+=Config+ END_BLOCK)
-		)*
-	END_BLOCK;
+	id=EString ':' (
+		BEG_BLOCK (
+			('driver' ':' driver=EString)
+			| ('ipv4_address' ':' ipv4Address=EString)
+			| ('ipam' ':' BEG_BLOCK KeyName ':' BEG_BLOCK ipam+=Config+ END_BLOCK END_BLOCK)
+		)* END_BLOCK
+		| EString                       // 'react-spring: {}' (capturado "{}") ou vazio
+	)?;
 
 Config returns Config:
 	{Config}
-	'-' ('subnet' ':' subnet=EString);
+	'-' BEG_BLOCK ('subnet' ':' subnet=EString) END_BLOCK;
 
 // =============================================================================
 // DEPENDS_ON   (union: flow/list short form vs object with condition)
 // =============================================================================
 
 Depends_on returns Depends_on:
-	Depends_onObject | Depends_onValue;
-
-// depends_on: [db]
-Depends_onValue returns Depends_onValue:
-	  value+=EString
-	| '[' value+=EString (',' value+=EString)* ']';
-
-Depends_onObject returns Depends_onObject:
-	{Depends_onObject}
-	BEG_BLOCK
-		db=Db
-	END_BLOCK;
+          BEG_BLOCK (
+                  {Depends_onValue} ('-' BEG_BLOCK? value+=EString END_BLOCK?)+   //- backend
+                | {Depends_onObject} db=Db                                       // ddb:\n condition: ...
+          ) END_BLOCK
+        | {Depends_onValue} '[' value+=EString (',' value+=EString)* ']'      //depends_on: [db]
+        | {Depends_onValue} value+=EString;                                  // dependb
 
 Db returns Db:
 	{Db}
@@ -225,7 +226,7 @@ Healthcheck returns Healthcheck:
 	{Healthcheck}
 	BEG_BLOCK
 		( ('test' ':' (
-			  BEG_BLOCK ('-' test+=EString)+ END_BLOCK
+			  BEG_BLOCK ('-' BEG_BLOCK? test+=EString END_BLOCK?)+ END_BLOCK
 			| '[' test+=EString (',' test+=EString)* ']'
 		))
 		| ('interval' ':' interval=EString)

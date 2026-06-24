@@ -10,6 +10,7 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
@@ -21,14 +22,40 @@ import pt.isep.yamldslgen.dockercompose.xtext.services.DcDslGrammarAccess;
 public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected DcDslGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_BuildObject_BEG_BLOCKTerminalRuleCall_2_3_2_0_1_1_q;
+	protected AbstractElementAlias match_BuildObject_END_BLOCKTerminalRuleCall_2_3_2_0_1_3_q;
 	protected AbstractElementAlias match_BuildObject___END_BLOCKTerminalRuleCall_2_3_2_0_2_ArgsKeyword_2_3_0_ColonKeyword_2_3_1_BEG_BLOCKTerminalRuleCall_2_3_2_0_0__q;
+	protected AbstractElementAlias match_Depends_on_BEG_BLOCKTerminalRuleCall_0_1_0_1_1_q;
+	protected AbstractElementAlias match_Depends_on_END_BLOCKTerminalRuleCall_0_1_0_1_3_q;
 	protected AbstractElementAlias match_DockerCompose___END_BLOCKTerminalRuleCall_2_4_ServicesKeyword_2_0_ColonKeyword_2_1_BEG_BLOCKTerminalRuleCall_2_2__q;
 	protected AbstractElementAlias match_DockerCompose___END_BLOCKTerminalRuleCall_4_4_VolumesKeyword_4_0_ColonKeyword_4_1_BEG_BLOCKTerminalRuleCall_4_2__q;
 	protected AbstractElementAlias match_DockerCompose___END_BLOCKTerminalRuleCall_5_4_SecretsKeyword_5_0_ColonKeyword_5_1_BEG_BLOCKTerminalRuleCall_5_2__q;
+	protected AbstractElementAlias match_Healthcheck_BEG_BLOCKTerminalRuleCall_2_0_2_0_1_1_q;
+	protected AbstractElementAlias match_Healthcheck_END_BLOCKTerminalRuleCall_2_0_2_0_1_3_q;
 	protected AbstractElementAlias match_Healthcheck___END_BLOCKTerminalRuleCall_2_0_2_0_2_TestKeyword_2_0_0_ColonKeyword_2_0_1_BEG_BLOCKTerminalRuleCall_2_0_2_0_0__q;
-	protected AbstractElementAlias match_Network___END_BLOCKTerminalRuleCall_3_2_4_IpamKeyword_3_2_0_ColonKeyword_3_2_1_BEG_BLOCKTerminalRuleCall_3_2_2__q;
+	protected AbstractElementAlias match_NamedVolume_EStringParserRuleCall_2_q;
+	protected AbstractElementAlias match_Network___END_BLOCKTerminalRuleCall_2_0_1_2_7_END_BLOCKTerminalRuleCall_2_0_1_2_8_IpamKeyword_2_0_1_2_0_ColonKeyword_2_0_1_2_1_BEG_BLOCKTerminalRuleCall_2_0_1_2_2_KeyNameParserRuleCall_2_0_1_2_3_ColonKeyword_2_0_1_2_4_BEG_BLOCKTerminalRuleCall_2_0_1_2_5__q;
+	protected AbstractElementAlias match_Network___EStringParserRuleCall_2_1_or___BEG_BLOCKTerminalRuleCall_2_0_0_END_BLOCKTerminalRuleCall_2_0_2____q;
+	protected AbstractElementAlias match_Networks_BEG_BLOCKTerminalRuleCall_0_1_0_1_1_q;
+	protected AbstractElementAlias match_Networks_END_BLOCKTerminalRuleCall_0_1_0_1_3_q;
 	protected AbstractElementAlias match_ServiceVolume_BEG_BLOCKTerminalRuleCall_1_q;
 	protected AbstractElementAlias match_ServiceVolume_END_BLOCKTerminalRuleCall_3_q;
+	protected AbstractElementAlias match_Service_BEG_BLOCKTerminalRuleCall_3_11_2_0_1_1_q;
+	protected AbstractElementAlias match_Service_BEG_BLOCKTerminalRuleCall_3_12_2_0_1_1_q;
+	protected AbstractElementAlias match_Service_BEG_BLOCKTerminalRuleCall_3_13_2_0_1_1_q;
+	protected AbstractElementAlias match_Service_BEG_BLOCKTerminalRuleCall_3_14_2_0_1_1_q;
+	protected AbstractElementAlias match_Service_BEG_BLOCKTerminalRuleCall_3_15_2_0_1_1_q;
+	protected AbstractElementAlias match_Service_BEG_BLOCKTerminalRuleCall_3_16_2_0_1_1_q;
+	protected AbstractElementAlias match_Service_BEG_BLOCKTerminalRuleCall_3_17_2_0_1_1_q;
+	protected AbstractElementAlias match_Service_BEG_BLOCKTerminalRuleCall_3_18_3_1_1_q;
+	protected AbstractElementAlias match_Service_END_BLOCKTerminalRuleCall_3_11_2_0_1_3_q;
+	protected AbstractElementAlias match_Service_END_BLOCKTerminalRuleCall_3_12_2_0_1_3_q;
+	protected AbstractElementAlias match_Service_END_BLOCKTerminalRuleCall_3_13_2_0_1_3_q;
+	protected AbstractElementAlias match_Service_END_BLOCKTerminalRuleCall_3_14_2_0_1_3_q;
+	protected AbstractElementAlias match_Service_END_BLOCKTerminalRuleCall_3_15_2_0_1_3_q;
+	protected AbstractElementAlias match_Service_END_BLOCKTerminalRuleCall_3_16_2_0_1_3_q;
+	protected AbstractElementAlias match_Service_END_BLOCKTerminalRuleCall_3_17_2_0_1_3_q;
+	protected AbstractElementAlias match_Service_END_BLOCKTerminalRuleCall_3_18_3_1_3_q;
 	protected AbstractElementAlias match_Service___END_BLOCKTerminalRuleCall_3_11_2_0_2_PortsKeyword_3_11_0_ColonKeyword_3_11_1_BEG_BLOCKTerminalRuleCall_3_11_2_0_0__q;
 	protected AbstractElementAlias match_Service___END_BLOCKTerminalRuleCall_3_12_2_0_2_ExposeKeyword_3_12_0_ColonKeyword_3_12_1_BEG_BLOCKTerminalRuleCall_3_12_2_0_0__q;
 	protected AbstractElementAlias match_Service___END_BLOCKTerminalRuleCall_3_13_2_0_2_CommandKeyword_3_13_0_ColonKeyword_3_13_1_BEG_BLOCKTerminalRuleCall_3_13_2_0_0__q;
@@ -38,19 +65,45 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Service___END_BLOCKTerminalRuleCall_3_17_2_0_2_SysctlsKeyword_3_17_0_ColonKeyword_3_17_1_BEG_BLOCKTerminalRuleCall_3_17_2_0_0__q;
 	protected AbstractElementAlias match_Service___END_BLOCKTerminalRuleCall_3_18_4_EnvironmentKeyword_3_18_0_ColonKeyword_3_18_1_BEG_BLOCKTerminalRuleCall_3_18_2__q;
 	protected AbstractElementAlias match_Service___END_BLOCKTerminalRuleCall_3_21_4_VolumesKeyword_3_21_0_ColonKeyword_3_21_1_BEG_BLOCKTerminalRuleCall_3_21_2__q;
-	protected AbstractElementAlias match_Service___END_BLOCKTerminalRuleCall_3_23_4_DeployKeyword_3_23_0_ColonKeyword_3_23_1_BEG_BLOCKTerminalRuleCall_3_23_2__q;
+	protected AbstractElementAlias match_Service___END_BLOCKTerminalRuleCall_3_23_7_END_BLOCKTerminalRuleCall_3_23_8_DeployKeyword_3_23_0_ColonKeyword_3_23_1_BEG_BLOCKTerminalRuleCall_3_23_2_KeyNameParserRuleCall_3_23_3_ColonKeyword_3_23_4_BEG_BLOCKTerminalRuleCall_3_23_5__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (DcDslGrammarAccess) access;
+		match_BuildObject_BEG_BLOCKTerminalRuleCall_2_3_2_0_1_1_q = new TokenAlias(false, true, grammarAccess.getBuildObjectAccess().getBEG_BLOCKTerminalRuleCall_2_3_2_0_1_1());
+		match_BuildObject_END_BLOCKTerminalRuleCall_2_3_2_0_1_3_q = new TokenAlias(false, true, grammarAccess.getBuildObjectAccess().getEND_BLOCKTerminalRuleCall_2_3_2_0_1_3());
 		match_BuildObject___END_BLOCKTerminalRuleCall_2_3_2_0_2_ArgsKeyword_2_3_0_ColonKeyword_2_3_1_BEG_BLOCKTerminalRuleCall_2_3_2_0_0__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getBuildObjectAccess().getEND_BLOCKTerminalRuleCall_2_3_2_0_2()), new TokenAlias(false, false, grammarAccess.getBuildObjectAccess().getArgsKeyword_2_3_0()), new TokenAlias(false, false, grammarAccess.getBuildObjectAccess().getColonKeyword_2_3_1()), new TokenAlias(false, false, grammarAccess.getBuildObjectAccess().getBEG_BLOCKTerminalRuleCall_2_3_2_0_0()));
+		match_Depends_on_BEG_BLOCKTerminalRuleCall_0_1_0_1_1_q = new TokenAlias(false, true, grammarAccess.getDepends_onAccess().getBEG_BLOCKTerminalRuleCall_0_1_0_1_1());
+		match_Depends_on_END_BLOCKTerminalRuleCall_0_1_0_1_3_q = new TokenAlias(false, true, grammarAccess.getDepends_onAccess().getEND_BLOCKTerminalRuleCall_0_1_0_1_3());
 		match_DockerCompose___END_BLOCKTerminalRuleCall_2_4_ServicesKeyword_2_0_ColonKeyword_2_1_BEG_BLOCKTerminalRuleCall_2_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getDockerComposeAccess().getEND_BLOCKTerminalRuleCall_2_4()), new TokenAlias(false, false, grammarAccess.getDockerComposeAccess().getServicesKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getDockerComposeAccess().getColonKeyword_2_1()), new TokenAlias(false, false, grammarAccess.getDockerComposeAccess().getBEG_BLOCKTerminalRuleCall_2_2()));
 		match_DockerCompose___END_BLOCKTerminalRuleCall_4_4_VolumesKeyword_4_0_ColonKeyword_4_1_BEG_BLOCKTerminalRuleCall_4_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getDockerComposeAccess().getEND_BLOCKTerminalRuleCall_4_4()), new TokenAlias(false, false, grammarAccess.getDockerComposeAccess().getVolumesKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getDockerComposeAccess().getColonKeyword_4_1()), new TokenAlias(false, false, grammarAccess.getDockerComposeAccess().getBEG_BLOCKTerminalRuleCall_4_2()));
 		match_DockerCompose___END_BLOCKTerminalRuleCall_5_4_SecretsKeyword_5_0_ColonKeyword_5_1_BEG_BLOCKTerminalRuleCall_5_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getDockerComposeAccess().getEND_BLOCKTerminalRuleCall_5_4()), new TokenAlias(false, false, grammarAccess.getDockerComposeAccess().getSecretsKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getDockerComposeAccess().getColonKeyword_5_1()), new TokenAlias(false, false, grammarAccess.getDockerComposeAccess().getBEG_BLOCKTerminalRuleCall_5_2()));
+		match_Healthcheck_BEG_BLOCKTerminalRuleCall_2_0_2_0_1_1_q = new TokenAlias(false, true, grammarAccess.getHealthcheckAccess().getBEG_BLOCKTerminalRuleCall_2_0_2_0_1_1());
+		match_Healthcheck_END_BLOCKTerminalRuleCall_2_0_2_0_1_3_q = new TokenAlias(false, true, grammarAccess.getHealthcheckAccess().getEND_BLOCKTerminalRuleCall_2_0_2_0_1_3());
 		match_Healthcheck___END_BLOCKTerminalRuleCall_2_0_2_0_2_TestKeyword_2_0_0_ColonKeyword_2_0_1_BEG_BLOCKTerminalRuleCall_2_0_2_0_0__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getHealthcheckAccess().getEND_BLOCKTerminalRuleCall_2_0_2_0_2()), new TokenAlias(false, false, grammarAccess.getHealthcheckAccess().getTestKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getHealthcheckAccess().getColonKeyword_2_0_1()), new TokenAlias(false, false, grammarAccess.getHealthcheckAccess().getBEG_BLOCKTerminalRuleCall_2_0_2_0_0()));
-		match_Network___END_BLOCKTerminalRuleCall_3_2_4_IpamKeyword_3_2_0_ColonKeyword_3_2_1_BEG_BLOCKTerminalRuleCall_3_2_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNetworkAccess().getEND_BLOCKTerminalRuleCall_3_2_4()), new TokenAlias(false, false, grammarAccess.getNetworkAccess().getIpamKeyword_3_2_0()), new TokenAlias(false, false, grammarAccess.getNetworkAccess().getColonKeyword_3_2_1()), new TokenAlias(false, false, grammarAccess.getNetworkAccess().getBEG_BLOCKTerminalRuleCall_3_2_2()));
+		match_NamedVolume_EStringParserRuleCall_2_q = new TokenAlias(false, true, grammarAccess.getNamedVolumeAccess().getEStringParserRuleCall_2());
+		match_Network___END_BLOCKTerminalRuleCall_2_0_1_2_7_END_BLOCKTerminalRuleCall_2_0_1_2_8_IpamKeyword_2_0_1_2_0_ColonKeyword_2_0_1_2_1_BEG_BLOCKTerminalRuleCall_2_0_1_2_2_KeyNameParserRuleCall_2_0_1_2_3_ColonKeyword_2_0_1_2_4_BEG_BLOCKTerminalRuleCall_2_0_1_2_5__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNetworkAccess().getEND_BLOCKTerminalRuleCall_2_0_1_2_7()), new TokenAlias(false, false, grammarAccess.getNetworkAccess().getEND_BLOCKTerminalRuleCall_2_0_1_2_8()), new TokenAlias(false, false, grammarAccess.getNetworkAccess().getIpamKeyword_2_0_1_2_0()), new TokenAlias(false, false, grammarAccess.getNetworkAccess().getColonKeyword_2_0_1_2_1()), new TokenAlias(false, false, grammarAccess.getNetworkAccess().getBEG_BLOCKTerminalRuleCall_2_0_1_2_2()), new TokenAlias(false, false, grammarAccess.getNetworkAccess().getKeyNameParserRuleCall_2_0_1_2_3()), new TokenAlias(false, false, grammarAccess.getNetworkAccess().getColonKeyword_2_0_1_2_4()), new TokenAlias(false, false, grammarAccess.getNetworkAccess().getBEG_BLOCKTerminalRuleCall_2_0_1_2_5()));
+		match_Network___EStringParserRuleCall_2_1_or___BEG_BLOCKTerminalRuleCall_2_0_0_END_BLOCKTerminalRuleCall_2_0_2____q = new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNetworkAccess().getBEG_BLOCKTerminalRuleCall_2_0_0()), new TokenAlias(false, false, grammarAccess.getNetworkAccess().getEND_BLOCKTerminalRuleCall_2_0_2())), new TokenAlias(false, false, grammarAccess.getNetworkAccess().getEStringParserRuleCall_2_1()));
+		match_Networks_BEG_BLOCKTerminalRuleCall_0_1_0_1_1_q = new TokenAlias(false, true, grammarAccess.getNetworksAccess().getBEG_BLOCKTerminalRuleCall_0_1_0_1_1());
+		match_Networks_END_BLOCKTerminalRuleCall_0_1_0_1_3_q = new TokenAlias(false, true, grammarAccess.getNetworksAccess().getEND_BLOCKTerminalRuleCall_0_1_0_1_3());
 		match_ServiceVolume_BEG_BLOCKTerminalRuleCall_1_q = new TokenAlias(false, true, grammarAccess.getServiceVolumeAccess().getBEG_BLOCKTerminalRuleCall_1());
 		match_ServiceVolume_END_BLOCKTerminalRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getServiceVolumeAccess().getEND_BLOCKTerminalRuleCall_3());
+		match_Service_BEG_BLOCKTerminalRuleCall_3_11_2_0_1_1_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_11_2_0_1_1());
+		match_Service_BEG_BLOCKTerminalRuleCall_3_12_2_0_1_1_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_12_2_0_1_1());
+		match_Service_BEG_BLOCKTerminalRuleCall_3_13_2_0_1_1_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_13_2_0_1_1());
+		match_Service_BEG_BLOCKTerminalRuleCall_3_14_2_0_1_1_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_14_2_0_1_1());
+		match_Service_BEG_BLOCKTerminalRuleCall_3_15_2_0_1_1_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_15_2_0_1_1());
+		match_Service_BEG_BLOCKTerminalRuleCall_3_16_2_0_1_1_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_16_2_0_1_1());
+		match_Service_BEG_BLOCKTerminalRuleCall_3_17_2_0_1_1_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_17_2_0_1_1());
+		match_Service_BEG_BLOCKTerminalRuleCall_3_18_3_1_1_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_18_3_1_1());
+		match_Service_END_BLOCKTerminalRuleCall_3_11_2_0_1_3_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_11_2_0_1_3());
+		match_Service_END_BLOCKTerminalRuleCall_3_12_2_0_1_3_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_12_2_0_1_3());
+		match_Service_END_BLOCKTerminalRuleCall_3_13_2_0_1_3_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_13_2_0_1_3());
+		match_Service_END_BLOCKTerminalRuleCall_3_14_2_0_1_3_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_14_2_0_1_3());
+		match_Service_END_BLOCKTerminalRuleCall_3_15_2_0_1_3_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_15_2_0_1_3());
+		match_Service_END_BLOCKTerminalRuleCall_3_16_2_0_1_3_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_16_2_0_1_3());
+		match_Service_END_BLOCKTerminalRuleCall_3_17_2_0_1_3_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_17_2_0_1_3());
+		match_Service_END_BLOCKTerminalRuleCall_3_18_3_1_3_q = new TokenAlias(false, true, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_18_3_1_3());
 		match_Service___END_BLOCKTerminalRuleCall_3_11_2_0_2_PortsKeyword_3_11_0_ColonKeyword_3_11_1_BEG_BLOCKTerminalRuleCall_3_11_2_0_0__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_11_2_0_2()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getPortsKeyword_3_11_0()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getColonKeyword_3_11_1()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_11_2_0_0()));
 		match_Service___END_BLOCKTerminalRuleCall_3_12_2_0_2_ExposeKeyword_3_12_0_ColonKeyword_3_12_1_BEG_BLOCKTerminalRuleCall_3_12_2_0_0__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_12_2_0_2()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getExposeKeyword_3_12_0()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getColonKeyword_3_12_1()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_12_2_0_0()));
 		match_Service___END_BLOCKTerminalRuleCall_3_13_2_0_2_CommandKeyword_3_13_0_ColonKeyword_3_13_1_BEG_BLOCKTerminalRuleCall_3_13_2_0_0__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_13_2_0_2()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getCommandKeyword_3_13_0()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getColonKeyword_3_13_1()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_13_2_0_0()));
@@ -60,7 +113,7 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Service___END_BLOCKTerminalRuleCall_3_17_2_0_2_SysctlsKeyword_3_17_0_ColonKeyword_3_17_1_BEG_BLOCKTerminalRuleCall_3_17_2_0_0__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_17_2_0_2()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getSysctlsKeyword_3_17_0()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getColonKeyword_3_17_1()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_17_2_0_0()));
 		match_Service___END_BLOCKTerminalRuleCall_3_18_4_EnvironmentKeyword_3_18_0_ColonKeyword_3_18_1_BEG_BLOCKTerminalRuleCall_3_18_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_18_4()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getEnvironmentKeyword_3_18_0()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getColonKeyword_3_18_1()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_18_2()));
 		match_Service___END_BLOCKTerminalRuleCall_3_21_4_VolumesKeyword_3_21_0_ColonKeyword_3_21_1_BEG_BLOCKTerminalRuleCall_3_21_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_21_4()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getVolumesKeyword_3_21_0()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getColonKeyword_3_21_1()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_21_2()));
-		match_Service___END_BLOCKTerminalRuleCall_3_23_4_DeployKeyword_3_23_0_ColonKeyword_3_23_1_BEG_BLOCKTerminalRuleCall_3_23_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_23_4()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getDeployKeyword_3_23_0()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getColonKeyword_3_23_1()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_23_2()));
+		match_Service___END_BLOCKTerminalRuleCall_3_23_7_END_BLOCKTerminalRuleCall_3_23_8_DeployKeyword_3_23_0_ColonKeyword_3_23_1_BEG_BLOCKTerminalRuleCall_3_23_2_KeyNameParserRuleCall_3_23_3_ColonKeyword_3_23_4_BEG_BLOCKTerminalRuleCall_3_23_5__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_23_7()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_23_8()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getDeployKeyword_3_23_0()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getColonKeyword_3_23_1()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_23_2()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getKeyNameParserRuleCall_3_23_3()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getColonKeyword_3_23_4()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_23_5()));
 	}
 	
 	@Override
@@ -69,6 +122,8 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 			return getBEG_BLOCKToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getEND_BLOCKRule())
 			return getEND_BLOCKToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getEStringRule())
+			return getEStringToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getKeyNameRule())
 			return getKeyNameToken(semanticObject, ruleCall, node);
 		return "";
@@ -93,6 +148,17 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
+	 * EString returns ecore::EString:
+	 * 	STRING | SQ_STRING | BlockString
+	 * 	| YAML_SCALAR | GH_EXPRESSION | ID | INT | 'true' | 'false';
+	 */
+	protected String getEStringToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "\"\"";
+	}
+	
+	/**
 	 * KeyName returns ecore::EString:
 	 * 	ID | YAML_SCALAR | INT | ReservedWord;
 	 */
@@ -108,22 +174,74 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_BuildObject___END_BLOCKTerminalRuleCall_2_3_2_0_2_ArgsKeyword_2_3_0_ColonKeyword_2_3_1_BEG_BLOCKTerminalRuleCall_2_3_2_0_0__q.equals(syntax))
+			if (match_BuildObject_BEG_BLOCKTerminalRuleCall_2_3_2_0_1_1_q.equals(syntax))
+				emit_BuildObject_BEG_BLOCKTerminalRuleCall_2_3_2_0_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_BuildObject_END_BLOCKTerminalRuleCall_2_3_2_0_1_3_q.equals(syntax))
+				emit_BuildObject_END_BLOCKTerminalRuleCall_2_3_2_0_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_BuildObject___END_BLOCKTerminalRuleCall_2_3_2_0_2_ArgsKeyword_2_3_0_ColonKeyword_2_3_1_BEG_BLOCKTerminalRuleCall_2_3_2_0_0__q.equals(syntax))
 				emit_BuildObject___END_BLOCKTerminalRuleCall_2_3_2_0_2_ArgsKeyword_2_3_0_ColonKeyword_2_3_1_BEG_BLOCKTerminalRuleCall_2_3_2_0_0__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Depends_on_BEG_BLOCKTerminalRuleCall_0_1_0_1_1_q.equals(syntax))
+				emit_Depends_on_BEG_BLOCKTerminalRuleCall_0_1_0_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Depends_on_END_BLOCKTerminalRuleCall_0_1_0_1_3_q.equals(syntax))
+				emit_Depends_on_END_BLOCKTerminalRuleCall_0_1_0_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_DockerCompose___END_BLOCKTerminalRuleCall_2_4_ServicesKeyword_2_0_ColonKeyword_2_1_BEG_BLOCKTerminalRuleCall_2_2__q.equals(syntax))
 				emit_DockerCompose___END_BLOCKTerminalRuleCall_2_4_ServicesKeyword_2_0_ColonKeyword_2_1_BEG_BLOCKTerminalRuleCall_2_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_DockerCompose___END_BLOCKTerminalRuleCall_4_4_VolumesKeyword_4_0_ColonKeyword_4_1_BEG_BLOCKTerminalRuleCall_4_2__q.equals(syntax))
 				emit_DockerCompose___END_BLOCKTerminalRuleCall_4_4_VolumesKeyword_4_0_ColonKeyword_4_1_BEG_BLOCKTerminalRuleCall_4_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_DockerCompose___END_BLOCKTerminalRuleCall_5_4_SecretsKeyword_5_0_ColonKeyword_5_1_BEG_BLOCKTerminalRuleCall_5_2__q.equals(syntax))
 				emit_DockerCompose___END_BLOCKTerminalRuleCall_5_4_SecretsKeyword_5_0_ColonKeyword_5_1_BEG_BLOCKTerminalRuleCall_5_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Healthcheck_BEG_BLOCKTerminalRuleCall_2_0_2_0_1_1_q.equals(syntax))
+				emit_Healthcheck_BEG_BLOCKTerminalRuleCall_2_0_2_0_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Healthcheck_END_BLOCKTerminalRuleCall_2_0_2_0_1_3_q.equals(syntax))
+				emit_Healthcheck_END_BLOCKTerminalRuleCall_2_0_2_0_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Healthcheck___END_BLOCKTerminalRuleCall_2_0_2_0_2_TestKeyword_2_0_0_ColonKeyword_2_0_1_BEG_BLOCKTerminalRuleCall_2_0_2_0_0__q.equals(syntax))
 				emit_Healthcheck___END_BLOCKTerminalRuleCall_2_0_2_0_2_TestKeyword_2_0_0_ColonKeyword_2_0_1_BEG_BLOCKTerminalRuleCall_2_0_2_0_0__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Network___END_BLOCKTerminalRuleCall_3_2_4_IpamKeyword_3_2_0_ColonKeyword_3_2_1_BEG_BLOCKTerminalRuleCall_3_2_2__q.equals(syntax))
-				emit_Network___END_BLOCKTerminalRuleCall_3_2_4_IpamKeyword_3_2_0_ColonKeyword_3_2_1_BEG_BLOCKTerminalRuleCall_3_2_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_NamedVolume_EStringParserRuleCall_2_q.equals(syntax))
+				emit_NamedVolume_EStringParserRuleCall_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Network___END_BLOCKTerminalRuleCall_2_0_1_2_7_END_BLOCKTerminalRuleCall_2_0_1_2_8_IpamKeyword_2_0_1_2_0_ColonKeyword_2_0_1_2_1_BEG_BLOCKTerminalRuleCall_2_0_1_2_2_KeyNameParserRuleCall_2_0_1_2_3_ColonKeyword_2_0_1_2_4_BEG_BLOCKTerminalRuleCall_2_0_1_2_5__q.equals(syntax))
+				emit_Network___END_BLOCKTerminalRuleCall_2_0_1_2_7_END_BLOCKTerminalRuleCall_2_0_1_2_8_IpamKeyword_2_0_1_2_0_ColonKeyword_2_0_1_2_1_BEG_BLOCKTerminalRuleCall_2_0_1_2_2_KeyNameParserRuleCall_2_0_1_2_3_ColonKeyword_2_0_1_2_4_BEG_BLOCKTerminalRuleCall_2_0_1_2_5__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Network___EStringParserRuleCall_2_1_or___BEG_BLOCKTerminalRuleCall_2_0_0_END_BLOCKTerminalRuleCall_2_0_2____q.equals(syntax))
+				emit_Network___EStringParserRuleCall_2_1_or___BEG_BLOCKTerminalRuleCall_2_0_0_END_BLOCKTerminalRuleCall_2_0_2____q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Networks_BEG_BLOCKTerminalRuleCall_0_1_0_1_1_q.equals(syntax))
+				emit_Networks_BEG_BLOCKTerminalRuleCall_0_1_0_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Networks_END_BLOCKTerminalRuleCall_0_1_0_1_3_q.equals(syntax))
+				emit_Networks_END_BLOCKTerminalRuleCall_0_1_0_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ServiceVolume_BEG_BLOCKTerminalRuleCall_1_q.equals(syntax))
 				emit_ServiceVolume_BEG_BLOCKTerminalRuleCall_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ServiceVolume_END_BLOCKTerminalRuleCall_3_q.equals(syntax))
 				emit_ServiceVolume_END_BLOCKTerminalRuleCall_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service_BEG_BLOCKTerminalRuleCall_3_11_2_0_1_1_q.equals(syntax))
+				emit_Service_BEG_BLOCKTerminalRuleCall_3_11_2_0_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service_BEG_BLOCKTerminalRuleCall_3_12_2_0_1_1_q.equals(syntax))
+				emit_Service_BEG_BLOCKTerminalRuleCall_3_12_2_0_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service_BEG_BLOCKTerminalRuleCall_3_13_2_0_1_1_q.equals(syntax))
+				emit_Service_BEG_BLOCKTerminalRuleCall_3_13_2_0_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service_BEG_BLOCKTerminalRuleCall_3_14_2_0_1_1_q.equals(syntax))
+				emit_Service_BEG_BLOCKTerminalRuleCall_3_14_2_0_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service_BEG_BLOCKTerminalRuleCall_3_15_2_0_1_1_q.equals(syntax))
+				emit_Service_BEG_BLOCKTerminalRuleCall_3_15_2_0_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service_BEG_BLOCKTerminalRuleCall_3_16_2_0_1_1_q.equals(syntax))
+				emit_Service_BEG_BLOCKTerminalRuleCall_3_16_2_0_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service_BEG_BLOCKTerminalRuleCall_3_17_2_0_1_1_q.equals(syntax))
+				emit_Service_BEG_BLOCKTerminalRuleCall_3_17_2_0_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service_BEG_BLOCKTerminalRuleCall_3_18_3_1_1_q.equals(syntax))
+				emit_Service_BEG_BLOCKTerminalRuleCall_3_18_3_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service_END_BLOCKTerminalRuleCall_3_11_2_0_1_3_q.equals(syntax))
+				emit_Service_END_BLOCKTerminalRuleCall_3_11_2_0_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service_END_BLOCKTerminalRuleCall_3_12_2_0_1_3_q.equals(syntax))
+				emit_Service_END_BLOCKTerminalRuleCall_3_12_2_0_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service_END_BLOCKTerminalRuleCall_3_13_2_0_1_3_q.equals(syntax))
+				emit_Service_END_BLOCKTerminalRuleCall_3_13_2_0_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service_END_BLOCKTerminalRuleCall_3_14_2_0_1_3_q.equals(syntax))
+				emit_Service_END_BLOCKTerminalRuleCall_3_14_2_0_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service_END_BLOCKTerminalRuleCall_3_15_2_0_1_3_q.equals(syntax))
+				emit_Service_END_BLOCKTerminalRuleCall_3_15_2_0_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service_END_BLOCKTerminalRuleCall_3_16_2_0_1_3_q.equals(syntax))
+				emit_Service_END_BLOCKTerminalRuleCall_3_16_2_0_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service_END_BLOCKTerminalRuleCall_3_17_2_0_1_3_q.equals(syntax))
+				emit_Service_END_BLOCKTerminalRuleCall_3_17_2_0_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service_END_BLOCKTerminalRuleCall_3_18_3_1_3_q.equals(syntax))
+				emit_Service_END_BLOCKTerminalRuleCall_3_18_3_1_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Service___END_BLOCKTerminalRuleCall_3_11_2_0_2_PortsKeyword_3_11_0_ColonKeyword_3_11_1_BEG_BLOCKTerminalRuleCall_3_11_2_0_0__q.equals(syntax))
 				emit_Service___END_BLOCKTerminalRuleCall_3_11_2_0_2_PortsKeyword_3_11_0_ColonKeyword_3_11_1_BEG_BLOCKTerminalRuleCall_3_11_2_0_0__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Service___END_BLOCKTerminalRuleCall_3_12_2_0_2_ExposeKeyword_3_12_0_ColonKeyword_3_12_1_BEG_BLOCKTerminalRuleCall_3_12_2_0_0__q.equals(syntax))
@@ -142,8 +260,8 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Service___END_BLOCKTerminalRuleCall_3_18_4_EnvironmentKeyword_3_18_0_ColonKeyword_3_18_1_BEG_BLOCKTerminalRuleCall_3_18_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Service___END_BLOCKTerminalRuleCall_3_21_4_VolumesKeyword_3_21_0_ColonKeyword_3_21_1_BEG_BLOCKTerminalRuleCall_3_21_2__q.equals(syntax))
 				emit_Service___END_BLOCKTerminalRuleCall_3_21_4_VolumesKeyword_3_21_0_ColonKeyword_3_21_1_BEG_BLOCKTerminalRuleCall_3_21_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Service___END_BLOCKTerminalRuleCall_3_23_4_DeployKeyword_3_23_0_ColonKeyword_3_23_1_BEG_BLOCKTerminalRuleCall_3_23_2__q.equals(syntax))
-				emit_Service___END_BLOCKTerminalRuleCall_3_23_4_DeployKeyword_3_23_0_ColonKeyword_3_23_1_BEG_BLOCKTerminalRuleCall_3_23_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Service___END_BLOCKTerminalRuleCall_3_23_7_END_BLOCKTerminalRuleCall_3_23_8_DeployKeyword_3_23_0_ColonKeyword_3_23_1_BEG_BLOCKTerminalRuleCall_3_23_2_KeyNameParserRuleCall_3_23_3_ColonKeyword_3_23_4_BEG_BLOCKTerminalRuleCall_3_23_5__q.equals(syntax))
+				emit_Service___END_BLOCKTerminalRuleCall_3_23_7_END_BLOCKTerminalRuleCall_3_23_8_DeployKeyword_3_23_0_ColonKeyword_3_23_1_BEG_BLOCKTerminalRuleCall_3_23_2_KeyNameParserRuleCall_3_23_3_ColonKeyword_3_23_4_BEG_BLOCKTerminalRuleCall_3_23_5__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -151,14 +269,82 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
+	 *     BEG_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) BEG_BLOCK 'args' ':' BEG_BLOCK '-' (ambiguity) args+=EString
+	 *     args+=EString ']' 'args' ':' BEG_BLOCK '-' (ambiguity) args+=EString
+	 *     args+=EString END_BLOCK? (END_BLOCK 'args' ':' BEG_BLOCK)? '-' (ambiguity) args+=EString
+	 *     context=EString 'args' ':' BEG_BLOCK '-' (ambiguity) args+=EString
+	 *     dockerfile=EString 'args' ':' BEG_BLOCK '-' (ambiguity) args+=EString
+	 *     target=EString 'args' ':' BEG_BLOCK '-' (ambiguity) args+=EString
+	 
+	 * </pre>
+	 */
+	protected void emit_BuildObject_BEG_BLOCKTerminalRuleCall_2_3_2_0_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     END_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     args+=EString (ambiguity) (END_BLOCK 'args' ':' BEG_BLOCK)? '-' BEG_BLOCK? args+=EString
+	 *     args+=EString (ambiguity) END_BLOCK 'args' ':' '[' args+=EString
+	 *     args+=EString (ambiguity) END_BLOCK 'context' ':' context=EString
+	 *     args+=EString (ambiguity) END_BLOCK 'dockerfile' ':' dockerfile=EString
+	 *     args+=EString (ambiguity) END_BLOCK 'target' ':' target=EString
+	 *     args+=EString (ambiguity) END_BLOCK END_BLOCK (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_BuildObject_END_BLOCKTerminalRuleCall_2_3_2_0_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
 	 *     (END_BLOCK 'args' ':' BEG_BLOCK)?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     args+=EString (ambiguity) '-' args+=EString
+	 *     args+=EString END_BLOCK? (ambiguity) '-' BEG_BLOCK? args+=EString
 	 
 	 * </pre>
 	 */
 	protected void emit_BuildObject___END_BLOCKTerminalRuleCall_2_3_2_0_2_ArgsKeyword_2_3_0_ColonKeyword_2_3_1_BEG_BLOCKTerminalRuleCall_2_3_2_0_0__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     BEG_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) BEG_BLOCK '-' (ambiguity) value+=EString
+	 *     value+=EString END_BLOCK? '-' (ambiguity) value+=EString
+	 
+	 * </pre>
+	 */
+	protected void emit_Depends_on_BEG_BLOCKTerminalRuleCall_0_1_0_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     END_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     value+=EString (ambiguity) '-' BEG_BLOCK? value+=EString
+	 *     value+=EString (ambiguity) END_BLOCK (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Depends_on_END_BLOCKTerminalRuleCall_0_1_0_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -207,10 +393,50 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
+	 *     BEG_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) BEG_BLOCK 'test' ':' BEG_BLOCK '-' (ambiguity) test+=EString
+	 *     interval=EString 'test' ':' BEG_BLOCK '-' (ambiguity) test+=EString
+	 *     retries=INT 'test' ':' BEG_BLOCK '-' (ambiguity) test+=EString
+	 *     startPeriod=EString 'test' ':' BEG_BLOCK '-' (ambiguity) test+=EString
+	 *     test+=EString ']' 'test' ':' BEG_BLOCK '-' (ambiguity) test+=EString
+	 *     test+=EString END_BLOCK? (END_BLOCK 'test' ':' BEG_BLOCK)? '-' (ambiguity) test+=EString
+	 *     timeout=EString 'test' ':' BEG_BLOCK '-' (ambiguity) test+=EString
+	 
+	 * </pre>
+	 */
+	protected void emit_Healthcheck_BEG_BLOCKTerminalRuleCall_2_0_2_0_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     END_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     test+=EString (ambiguity) (END_BLOCK 'test' ':' BEG_BLOCK)? '-' BEG_BLOCK? test+=EString
+	 *     test+=EString (ambiguity) END_BLOCK 'interval' ':' interval=EString
+	 *     test+=EString (ambiguity) END_BLOCK 'retries' ':' retries=INT
+	 *     test+=EString (ambiguity) END_BLOCK 'start_period' ':' startPeriod=EString
+	 *     test+=EString (ambiguity) END_BLOCK 'test' ':' '[' test+=EString
+	 *     test+=EString (ambiguity) END_BLOCK 'timeout' ':' timeout=EString
+	 *     test+=EString (ambiguity) END_BLOCK END_BLOCK (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Healthcheck_END_BLOCKTerminalRuleCall_2_0_2_0_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
 	 *     (END_BLOCK 'test' ':' BEG_BLOCK)?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     test+=EString (ambiguity) '-' test+=EString
+	 *     test+=EString END_BLOCK? (ambiguity) '-' BEG_BLOCK? test+=EString
 	 
 	 * </pre>
 	 */
@@ -221,14 +447,81 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
-	 *     (END_BLOCK 'ipam' ':' BEG_BLOCK)?
+	 *     EString?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     id=EString ':' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_NamedVolume_EStringParserRuleCall_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (
+	  *         END_BLOCK 
+	  *         END_BLOCK 
+	  *         'ipam' 
+	  *         ':' 
+	  *         BEG_BLOCK 
+	  *         KeyName 
+	  *         ':' 
+	  *         BEG_BLOCK
+	  *     )?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     ipam+=Config (ambiguity) ipam+=Config
 	 
 	 * </pre>
 	 */
-	protected void emit_Network___END_BLOCKTerminalRuleCall_3_2_4_IpamKeyword_3_2_0_ColonKeyword_3_2_1_BEG_BLOCKTerminalRuleCall_3_2_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Network___END_BLOCKTerminalRuleCall_2_0_1_2_7_END_BLOCKTerminalRuleCall_2_0_1_2_8_IpamKeyword_2_0_1_2_0_ColonKeyword_2_0_1_2_1_BEG_BLOCKTerminalRuleCall_2_0_1_2_2_KeyNameParserRuleCall_2_0_1_2_3_ColonKeyword_2_0_1_2_4_BEG_BLOCKTerminalRuleCall_2_0_1_2_5__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ((BEG_BLOCK END_BLOCK) | EString)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     id=EString ':' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Network___EStringParserRuleCall_2_1_or___BEG_BLOCKTerminalRuleCall_2_0_0_END_BLOCKTerminalRuleCall_2_0_2____q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     BEG_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) BEG_BLOCK '-' (ambiguity) value+=EString
+	 *     value+=EString END_BLOCK? '-' (ambiguity) value+=EString
+	 
+	 * </pre>
+	 */
+	protected void emit_Networks_BEG_BLOCKTerminalRuleCall_0_1_0_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     END_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     value+=EString (ambiguity) '-' BEG_BLOCK? value+=EString
+	 *     value+=EString (ambiguity) END_BLOCK (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Networks_END_BLOCKTerminalRuleCall_0_1_0_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -273,10 +566,762 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
+	 *     BEG_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     build=Build 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     capAdd+=EString ']' 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     capAdd+=EString END_BLOCK? END_BLOCK 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     command+=EString ']' 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     command+=EString 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     command+=EString END_BLOCK? END_BLOCK 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     containerName=EString 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     dependsOn=Depends_on 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     deploy+=Resource END_BLOCK END_BLOCK 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     environment+=EnvEntry END_BLOCK? END_BLOCK 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     environment+=KeyValuePair END_BLOCK 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     expose+=INT ']' 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     expose+=INT END_BLOCK? END_BLOCK 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     healthcheck=Healthcheck 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     hostname=EString 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     id=EString ':' BEG_BLOCK 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     image=EString 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     labels+=EString ']' 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     labels+=EString END_BLOCK? END_BLOCK 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     networkMode=EString 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     networks=Networks 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     platform=EString 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     ports+=EString ']' 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     ports+=EString END_BLOCK? (END_BLOCK 'ports' ':' BEG_BLOCK)? '-' (ambiguity) ports+=EString
+	 *     restart=EString 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     runtime=EString 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     secrets+=EString ']' 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     secrets+=EString END_BLOCK? END_BLOCK 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     stdinOpen=EBoolean 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     stopSignal=EString 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     sysctls+=EString ']' 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     sysctls+=EString END_BLOCK? END_BLOCK 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     user=EString 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     volumes+=ServiceVolume END_BLOCK 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 
+	 * </pre>
+	 */
+	protected void emit_Service_BEG_BLOCKTerminalRuleCall_3_11_2_0_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     BEG_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     build=Build 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     capAdd+=EString ']' 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     capAdd+=EString END_BLOCK? END_BLOCK 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     command+=EString ']' 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     command+=EString 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     command+=EString END_BLOCK? END_BLOCK 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     containerName=EString 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     dependsOn=Depends_on 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     deploy+=Resource END_BLOCK END_BLOCK 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     environment+=EnvEntry END_BLOCK? END_BLOCK 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     environment+=KeyValuePair END_BLOCK 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     expose+=INT ']' 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     expose+=INT END_BLOCK? (END_BLOCK 'expose' ':' BEG_BLOCK)? '-' (ambiguity) expose+=INT
+	 *     healthcheck=Healthcheck 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     hostname=EString 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     id=EString ':' BEG_BLOCK 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     image=EString 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     labels+=EString ']' 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     labels+=EString END_BLOCK? END_BLOCK 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     networkMode=EString 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     networks=Networks 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     platform=EString 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     ports+=EString ']' 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     ports+=EString END_BLOCK? END_BLOCK 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     restart=EString 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     runtime=EString 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     secrets+=EString ']' 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     secrets+=EString END_BLOCK? END_BLOCK 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     stdinOpen=EBoolean 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     stopSignal=EString 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     sysctls+=EString ']' 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     sysctls+=EString END_BLOCK? END_BLOCK 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     user=EString 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     volumes+=ServiceVolume END_BLOCK 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 
+	 * </pre>
+	 */
+	protected void emit_Service_BEG_BLOCKTerminalRuleCall_3_12_2_0_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     BEG_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     build=Build 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     capAdd+=EString ']' 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     capAdd+=EString END_BLOCK? END_BLOCK 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     command+=EString ']' 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     command+=EString 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     command+=EString END_BLOCK? (END_BLOCK 'command' ':' BEG_BLOCK)? '-' (ambiguity) command+=EString
+	 *     containerName=EString 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     dependsOn=Depends_on 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     deploy+=Resource END_BLOCK END_BLOCK 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     environment+=EnvEntry END_BLOCK? END_BLOCK 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     environment+=KeyValuePair END_BLOCK 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     expose+=INT ']' 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     expose+=INT END_BLOCK? END_BLOCK 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     healthcheck=Healthcheck 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     hostname=EString 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     id=EString ':' BEG_BLOCK 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     image=EString 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     labels+=EString ']' 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     labels+=EString END_BLOCK? END_BLOCK 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     networkMode=EString 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     networks=Networks 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     platform=EString 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     ports+=EString ']' 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     ports+=EString END_BLOCK? END_BLOCK 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     restart=EString 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     runtime=EString 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     secrets+=EString ']' 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     secrets+=EString END_BLOCK? END_BLOCK 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     stdinOpen=EBoolean 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     stopSignal=EString 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     sysctls+=EString ']' 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     sysctls+=EString END_BLOCK? END_BLOCK 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     user=EString 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     volumes+=ServiceVolume END_BLOCK 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 
+	 * </pre>
+	 */
+	protected void emit_Service_BEG_BLOCKTerminalRuleCall_3_13_2_0_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     BEG_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     build=Build 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     capAdd+=EString ']' 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     capAdd+=EString END_BLOCK? END_BLOCK 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     command+=EString ']' 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     command+=EString 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     command+=EString END_BLOCK? END_BLOCK 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     containerName=EString 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     dependsOn=Depends_on 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     deploy+=Resource END_BLOCK END_BLOCK 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     environment+=EnvEntry END_BLOCK? END_BLOCK 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     environment+=KeyValuePair END_BLOCK 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     expose+=INT ']' 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     expose+=INT END_BLOCK? END_BLOCK 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     healthcheck=Healthcheck 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     hostname=EString 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     id=EString ':' BEG_BLOCK 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     image=EString 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     labels+=EString ']' 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     labels+=EString END_BLOCK? END_BLOCK 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     networkMode=EString 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     networks=Networks 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     platform=EString 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     ports+=EString ']' 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     ports+=EString END_BLOCK? END_BLOCK 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     restart=EString 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     runtime=EString 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     secrets+=EString ']' 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     secrets+=EString END_BLOCK? (END_BLOCK 'secrets' ':' BEG_BLOCK)? '-' (ambiguity) secrets+=EString
+	 *     stdinOpen=EBoolean 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     stopSignal=EString 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     sysctls+=EString ']' 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     sysctls+=EString END_BLOCK? END_BLOCK 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     user=EString 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     volumes+=ServiceVolume END_BLOCK 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 
+	 * </pre>
+	 */
+	protected void emit_Service_BEG_BLOCKTerminalRuleCall_3_14_2_0_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     BEG_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     build=Build 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     capAdd+=EString ']' 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     capAdd+=EString END_BLOCK? (END_BLOCK 'cap_add' ':' BEG_BLOCK)? '-' (ambiguity) capAdd+=EString
+	 *     command+=EString ']' 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     command+=EString 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     command+=EString END_BLOCK? END_BLOCK 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     containerName=EString 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     dependsOn=Depends_on 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     deploy+=Resource END_BLOCK END_BLOCK 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     environment+=EnvEntry END_BLOCK? END_BLOCK 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     environment+=KeyValuePair END_BLOCK 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     expose+=INT ']' 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     expose+=INT END_BLOCK? END_BLOCK 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     healthcheck=Healthcheck 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     hostname=EString 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     id=EString ':' BEG_BLOCK 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     image=EString 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     labels+=EString ']' 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     labels+=EString END_BLOCK? END_BLOCK 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     networkMode=EString 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     networks=Networks 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     platform=EString 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     ports+=EString ']' 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     ports+=EString END_BLOCK? END_BLOCK 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     restart=EString 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     runtime=EString 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     secrets+=EString ']' 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     secrets+=EString END_BLOCK? END_BLOCK 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     stdinOpen=EBoolean 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     stopSignal=EString 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     sysctls+=EString ']' 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     sysctls+=EString END_BLOCK? END_BLOCK 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     user=EString 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     volumes+=ServiceVolume END_BLOCK 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 
+	 * </pre>
+	 */
+	protected void emit_Service_BEG_BLOCKTerminalRuleCall_3_15_2_0_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     BEG_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     build=Build 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     capAdd+=EString ']' 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     capAdd+=EString END_BLOCK? END_BLOCK 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     command+=EString ']' 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     command+=EString 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     command+=EString END_BLOCK? END_BLOCK 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     containerName=EString 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     dependsOn=Depends_on 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     deploy+=Resource END_BLOCK END_BLOCK 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     environment+=EnvEntry END_BLOCK? END_BLOCK 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     environment+=KeyValuePair END_BLOCK 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     expose+=INT ']' 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     expose+=INT END_BLOCK? END_BLOCK 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     healthcheck=Healthcheck 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     hostname=EString 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     id=EString ':' BEG_BLOCK 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     image=EString 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     labels+=EString ']' 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     labels+=EString END_BLOCK? (END_BLOCK 'labels' ':' BEG_BLOCK)? '-' (ambiguity) labels+=EString
+	 *     networkMode=EString 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     networks=Networks 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     platform=EString 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     ports+=EString ']' 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     ports+=EString END_BLOCK? END_BLOCK 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     restart=EString 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     runtime=EString 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     secrets+=EString ']' 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     secrets+=EString END_BLOCK? END_BLOCK 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     stdinOpen=EBoolean 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     stopSignal=EString 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     sysctls+=EString ']' 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     sysctls+=EString END_BLOCK? END_BLOCK 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     user=EString 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     volumes+=ServiceVolume END_BLOCK 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 
+	 * </pre>
+	 */
+	protected void emit_Service_BEG_BLOCKTerminalRuleCall_3_16_2_0_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     BEG_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     build=Build 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     capAdd+=EString ']' 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     capAdd+=EString END_BLOCK? END_BLOCK 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     command+=EString ']' 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     command+=EString 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     command+=EString END_BLOCK? END_BLOCK 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     containerName=EString 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     dependsOn=Depends_on 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     deploy+=Resource END_BLOCK END_BLOCK 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     environment+=EnvEntry END_BLOCK? END_BLOCK 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     environment+=KeyValuePair END_BLOCK 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     expose+=INT ']' 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     expose+=INT END_BLOCK? END_BLOCK 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     healthcheck=Healthcheck 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     hostname=EString 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     id=EString ':' BEG_BLOCK 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     image=EString 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     labels+=EString ']' 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     labels+=EString END_BLOCK? END_BLOCK 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     networkMode=EString 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     networks=Networks 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     platform=EString 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     ports+=EString ']' 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     ports+=EString END_BLOCK? END_BLOCK 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     restart=EString 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     runtime=EString 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     secrets+=EString ']' 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     secrets+=EString END_BLOCK? END_BLOCK 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     stdinOpen=EBoolean 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     stopSignal=EString 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     sysctls+=EString ']' 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     sysctls+=EString END_BLOCK? (END_BLOCK 'sysctls' ':' BEG_BLOCK)? '-' (ambiguity) sysctls+=EString
+	 *     user=EString 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     volumes+=ServiceVolume END_BLOCK 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 
+	 * </pre>
+	 */
+	protected void emit_Service_BEG_BLOCKTerminalRuleCall_3_17_2_0_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     BEG_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     build=Build 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     capAdd+=EString ']' 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     capAdd+=EString END_BLOCK? END_BLOCK 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     command+=EString ']' 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     command+=EString 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     command+=EString END_BLOCK? END_BLOCK 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     containerName=EString 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     dependsOn=Depends_on 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     deploy+=Resource END_BLOCK END_BLOCK 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     environment+=EnvEntry END_BLOCK? (END_BLOCK 'environment' ':' BEG_BLOCK)? '-' (ambiguity) environment+=EnvEntry
+	 *     environment+=KeyValuePair END_BLOCK 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     expose+=INT ']' 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     expose+=INT END_BLOCK? END_BLOCK 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     healthcheck=Healthcheck 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     hostname=EString 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     id=EString ':' BEG_BLOCK 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     image=EString 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     labels+=EString ']' 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     labels+=EString END_BLOCK? END_BLOCK 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     networkMode=EString 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     networks=Networks 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     platform=EString 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     ports+=EString ']' 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     ports+=EString END_BLOCK? END_BLOCK 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     restart=EString 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     runtime=EString 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     secrets+=EString ']' 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     secrets+=EString END_BLOCK? END_BLOCK 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     stdinOpen=EBoolean 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     stopSignal=EString 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     sysctls+=EString ']' 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     sysctls+=EString END_BLOCK? END_BLOCK 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     user=EString 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     volumes+=ServiceVolume END_BLOCK 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 
+	 * </pre>
+	 */
+	protected void emit_Service_BEG_BLOCKTerminalRuleCall_3_18_3_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     END_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     ports+=EString (ambiguity) (END_BLOCK 'ports' ':' BEG_BLOCK)? '-' BEG_BLOCK? ports+=EString
+	 *     ports+=EString (ambiguity) END_BLOCK 'build' ':' build=Build
+	 *     ports+=EString (ambiguity) END_BLOCK 'cap_add' ':' '[' capAdd+=EString
+	 *     ports+=EString (ambiguity) END_BLOCK 'cap_add' ':' BEG_BLOCK '-' BEG_BLOCK? capAdd+=EString
+	 *     ports+=EString (ambiguity) END_BLOCK 'command' ':' '[' command+=EString
+	 *     ports+=EString (ambiguity) END_BLOCK 'command' ':' BEG_BLOCK '-' BEG_BLOCK? command+=EString
+	 *     ports+=EString (ambiguity) END_BLOCK 'command' ':' command+=EString
+	 *     ports+=EString (ambiguity) END_BLOCK 'container_name' ':' containerName=EString
+	 *     ports+=EString (ambiguity) END_BLOCK 'depends_on' ':' dependsOn=Depends_on
+	 *     ports+=EString (ambiguity) END_BLOCK 'deploy' ':' BEG_BLOCK KeyName ':' BEG_BLOCK deploy+=Resource
+	 *     ports+=EString (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK '-' BEG_BLOCK? environment+=EnvEntry
+	 *     ports+=EString (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK environment+=KeyValuePair
+	 *     ports+=EString (ambiguity) END_BLOCK 'expose' ':' '[' expose+=INT
+	 *     ports+=EString (ambiguity) END_BLOCK 'expose' ':' BEG_BLOCK '-' BEG_BLOCK? expose+=INT
+	 *     ports+=EString (ambiguity) END_BLOCK 'healthcheck' ':' healthcheck=Healthcheck
+	 *     ports+=EString (ambiguity) END_BLOCK 'hostname' ':' hostname=EString
+	 *     ports+=EString (ambiguity) END_BLOCK 'image' ':' image=EString
+	 *     ports+=EString (ambiguity) END_BLOCK 'labels' ':' '[' labels+=EString
+	 *     ports+=EString (ambiguity) END_BLOCK 'labels' ':' BEG_BLOCK '-' BEG_BLOCK? labels+=EString
+	 *     ports+=EString (ambiguity) END_BLOCK 'network_mode' ':' networkMode=EString
+	 *     ports+=EString (ambiguity) END_BLOCK 'networks' ':' networks=Networks
+	 *     ports+=EString (ambiguity) END_BLOCK 'platform' ':' platform=EString
+	 *     ports+=EString (ambiguity) END_BLOCK 'ports' ':' '[' ports+=EString
+	 *     ports+=EString (ambiguity) END_BLOCK 'restart' ':' restart=EString
+	 *     ports+=EString (ambiguity) END_BLOCK 'runtime' ':' runtime=EString
+	 *     ports+=EString (ambiguity) END_BLOCK 'secrets' ':' '[' secrets+=EString
+	 *     ports+=EString (ambiguity) END_BLOCK 'secrets' ':' BEG_BLOCK '-' BEG_BLOCK? secrets+=EString
+	 *     ports+=EString (ambiguity) END_BLOCK 'stdin_open' ':' stdinOpen=EBoolean
+	 *     ports+=EString (ambiguity) END_BLOCK 'stop_signal' ':' stopSignal=EString
+	 *     ports+=EString (ambiguity) END_BLOCK 'sysctls' ':' '[' sysctls+=EString
+	 *     ports+=EString (ambiguity) END_BLOCK 'sysctls' ':' BEG_BLOCK '-' BEG_BLOCK? sysctls+=EString
+	 *     ports+=EString (ambiguity) END_BLOCK 'user' ':' user=EString
+	 *     ports+=EString (ambiguity) END_BLOCK 'volumes' ':' BEG_BLOCK volumes+=ServiceVolume
+	 *     ports+=EString (ambiguity) END_BLOCK END_BLOCK (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Service_END_BLOCKTerminalRuleCall_3_11_2_0_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     END_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     expose+=INT (ambiguity) (END_BLOCK 'expose' ':' BEG_BLOCK)? '-' BEG_BLOCK? expose+=INT
+	 *     expose+=INT (ambiguity) END_BLOCK 'build' ':' build=Build
+	 *     expose+=INT (ambiguity) END_BLOCK 'cap_add' ':' '[' capAdd+=EString
+	 *     expose+=INT (ambiguity) END_BLOCK 'cap_add' ':' BEG_BLOCK '-' BEG_BLOCK? capAdd+=EString
+	 *     expose+=INT (ambiguity) END_BLOCK 'command' ':' '[' command+=EString
+	 *     expose+=INT (ambiguity) END_BLOCK 'command' ':' BEG_BLOCK '-' BEG_BLOCK? command+=EString
+	 *     expose+=INT (ambiguity) END_BLOCK 'command' ':' command+=EString
+	 *     expose+=INT (ambiguity) END_BLOCK 'container_name' ':' containerName=EString
+	 *     expose+=INT (ambiguity) END_BLOCK 'depends_on' ':' dependsOn=Depends_on
+	 *     expose+=INT (ambiguity) END_BLOCK 'deploy' ':' BEG_BLOCK KeyName ':' BEG_BLOCK deploy+=Resource
+	 *     expose+=INT (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK '-' BEG_BLOCK? environment+=EnvEntry
+	 *     expose+=INT (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK environment+=KeyValuePair
+	 *     expose+=INT (ambiguity) END_BLOCK 'expose' ':' '[' expose+=INT
+	 *     expose+=INT (ambiguity) END_BLOCK 'healthcheck' ':' healthcheck=Healthcheck
+	 *     expose+=INT (ambiguity) END_BLOCK 'hostname' ':' hostname=EString
+	 *     expose+=INT (ambiguity) END_BLOCK 'image' ':' image=EString
+	 *     expose+=INT (ambiguity) END_BLOCK 'labels' ':' '[' labels+=EString
+	 *     expose+=INT (ambiguity) END_BLOCK 'labels' ':' BEG_BLOCK '-' BEG_BLOCK? labels+=EString
+	 *     expose+=INT (ambiguity) END_BLOCK 'network_mode' ':' networkMode=EString
+	 *     expose+=INT (ambiguity) END_BLOCK 'networks' ':' networks=Networks
+	 *     expose+=INT (ambiguity) END_BLOCK 'platform' ':' platform=EString
+	 *     expose+=INT (ambiguity) END_BLOCK 'ports' ':' '[' ports+=EString
+	 *     expose+=INT (ambiguity) END_BLOCK 'ports' ':' BEG_BLOCK '-' BEG_BLOCK? ports+=EString
+	 *     expose+=INT (ambiguity) END_BLOCK 'restart' ':' restart=EString
+	 *     expose+=INT (ambiguity) END_BLOCK 'runtime' ':' runtime=EString
+	 *     expose+=INT (ambiguity) END_BLOCK 'secrets' ':' '[' secrets+=EString
+	 *     expose+=INT (ambiguity) END_BLOCK 'secrets' ':' BEG_BLOCK '-' BEG_BLOCK? secrets+=EString
+	 *     expose+=INT (ambiguity) END_BLOCK 'stdin_open' ':' stdinOpen=EBoolean
+	 *     expose+=INT (ambiguity) END_BLOCK 'stop_signal' ':' stopSignal=EString
+	 *     expose+=INT (ambiguity) END_BLOCK 'sysctls' ':' '[' sysctls+=EString
+	 *     expose+=INT (ambiguity) END_BLOCK 'sysctls' ':' BEG_BLOCK '-' BEG_BLOCK? sysctls+=EString
+	 *     expose+=INT (ambiguity) END_BLOCK 'user' ':' user=EString
+	 *     expose+=INT (ambiguity) END_BLOCK 'volumes' ':' BEG_BLOCK volumes+=ServiceVolume
+	 *     expose+=INT (ambiguity) END_BLOCK END_BLOCK (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Service_END_BLOCKTerminalRuleCall_3_12_2_0_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     END_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     command+=EString (ambiguity) (END_BLOCK 'command' ':' BEG_BLOCK)? '-' BEG_BLOCK? command+=EString
+	 *     command+=EString (ambiguity) END_BLOCK 'build' ':' build=Build
+	 *     command+=EString (ambiguity) END_BLOCK 'cap_add' ':' '[' capAdd+=EString
+	 *     command+=EString (ambiguity) END_BLOCK 'cap_add' ':' BEG_BLOCK '-' BEG_BLOCK? capAdd+=EString
+	 *     command+=EString (ambiguity) END_BLOCK 'command' ':' '[' command+=EString
+	 *     command+=EString (ambiguity) END_BLOCK 'command' ':' command+=EString
+	 *     command+=EString (ambiguity) END_BLOCK 'container_name' ':' containerName=EString
+	 *     command+=EString (ambiguity) END_BLOCK 'depends_on' ':' dependsOn=Depends_on
+	 *     command+=EString (ambiguity) END_BLOCK 'deploy' ':' BEG_BLOCK KeyName ':' BEG_BLOCK deploy+=Resource
+	 *     command+=EString (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK '-' BEG_BLOCK? environment+=EnvEntry
+	 *     command+=EString (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK environment+=KeyValuePair
+	 *     command+=EString (ambiguity) END_BLOCK 'expose' ':' '[' expose+=INT
+	 *     command+=EString (ambiguity) END_BLOCK 'expose' ':' BEG_BLOCK '-' BEG_BLOCK? expose+=INT
+	 *     command+=EString (ambiguity) END_BLOCK 'healthcheck' ':' healthcheck=Healthcheck
+	 *     command+=EString (ambiguity) END_BLOCK 'hostname' ':' hostname=EString
+	 *     command+=EString (ambiguity) END_BLOCK 'image' ':' image=EString
+	 *     command+=EString (ambiguity) END_BLOCK 'labels' ':' '[' labels+=EString
+	 *     command+=EString (ambiguity) END_BLOCK 'labels' ':' BEG_BLOCK '-' BEG_BLOCK? labels+=EString
+	 *     command+=EString (ambiguity) END_BLOCK 'network_mode' ':' networkMode=EString
+	 *     command+=EString (ambiguity) END_BLOCK 'networks' ':' networks=Networks
+	 *     command+=EString (ambiguity) END_BLOCK 'platform' ':' platform=EString
+	 *     command+=EString (ambiguity) END_BLOCK 'ports' ':' '[' ports+=EString
+	 *     command+=EString (ambiguity) END_BLOCK 'ports' ':' BEG_BLOCK '-' BEG_BLOCK? ports+=EString
+	 *     command+=EString (ambiguity) END_BLOCK 'restart' ':' restart=EString
+	 *     command+=EString (ambiguity) END_BLOCK 'runtime' ':' runtime=EString
+	 *     command+=EString (ambiguity) END_BLOCK 'secrets' ':' '[' secrets+=EString
+	 *     command+=EString (ambiguity) END_BLOCK 'secrets' ':' BEG_BLOCK '-' BEG_BLOCK? secrets+=EString
+	 *     command+=EString (ambiguity) END_BLOCK 'stdin_open' ':' stdinOpen=EBoolean
+	 *     command+=EString (ambiguity) END_BLOCK 'stop_signal' ':' stopSignal=EString
+	 *     command+=EString (ambiguity) END_BLOCK 'sysctls' ':' '[' sysctls+=EString
+	 *     command+=EString (ambiguity) END_BLOCK 'sysctls' ':' BEG_BLOCK '-' BEG_BLOCK? sysctls+=EString
+	 *     command+=EString (ambiguity) END_BLOCK 'user' ':' user=EString
+	 *     command+=EString (ambiguity) END_BLOCK 'volumes' ':' BEG_BLOCK volumes+=ServiceVolume
+	 *     command+=EString (ambiguity) END_BLOCK END_BLOCK (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Service_END_BLOCKTerminalRuleCall_3_13_2_0_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     END_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     secrets+=EString (ambiguity) (END_BLOCK 'secrets' ':' BEG_BLOCK)? '-' BEG_BLOCK? secrets+=EString
+	 *     secrets+=EString (ambiguity) END_BLOCK 'build' ':' build=Build
+	 *     secrets+=EString (ambiguity) END_BLOCK 'cap_add' ':' '[' capAdd+=EString
+	 *     secrets+=EString (ambiguity) END_BLOCK 'cap_add' ':' BEG_BLOCK '-' BEG_BLOCK? capAdd+=EString
+	 *     secrets+=EString (ambiguity) END_BLOCK 'command' ':' '[' command+=EString
+	 *     secrets+=EString (ambiguity) END_BLOCK 'command' ':' BEG_BLOCK '-' BEG_BLOCK? command+=EString
+	 *     secrets+=EString (ambiguity) END_BLOCK 'command' ':' command+=EString
+	 *     secrets+=EString (ambiguity) END_BLOCK 'container_name' ':' containerName=EString
+	 *     secrets+=EString (ambiguity) END_BLOCK 'depends_on' ':' dependsOn=Depends_on
+	 *     secrets+=EString (ambiguity) END_BLOCK 'deploy' ':' BEG_BLOCK KeyName ':' BEG_BLOCK deploy+=Resource
+	 *     secrets+=EString (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK '-' BEG_BLOCK? environment+=EnvEntry
+	 *     secrets+=EString (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK environment+=KeyValuePair
+	 *     secrets+=EString (ambiguity) END_BLOCK 'expose' ':' '[' expose+=INT
+	 *     secrets+=EString (ambiguity) END_BLOCK 'expose' ':' BEG_BLOCK '-' BEG_BLOCK? expose+=INT
+	 *     secrets+=EString (ambiguity) END_BLOCK 'healthcheck' ':' healthcheck=Healthcheck
+	 *     secrets+=EString (ambiguity) END_BLOCK 'hostname' ':' hostname=EString
+	 *     secrets+=EString (ambiguity) END_BLOCK 'image' ':' image=EString
+	 *     secrets+=EString (ambiguity) END_BLOCK 'labels' ':' '[' labels+=EString
+	 *     secrets+=EString (ambiguity) END_BLOCK 'labels' ':' BEG_BLOCK '-' BEG_BLOCK? labels+=EString
+	 *     secrets+=EString (ambiguity) END_BLOCK 'network_mode' ':' networkMode=EString
+	 *     secrets+=EString (ambiguity) END_BLOCK 'networks' ':' networks=Networks
+	 *     secrets+=EString (ambiguity) END_BLOCK 'platform' ':' platform=EString
+	 *     secrets+=EString (ambiguity) END_BLOCK 'ports' ':' '[' ports+=EString
+	 *     secrets+=EString (ambiguity) END_BLOCK 'ports' ':' BEG_BLOCK '-' BEG_BLOCK? ports+=EString
+	 *     secrets+=EString (ambiguity) END_BLOCK 'restart' ':' restart=EString
+	 *     secrets+=EString (ambiguity) END_BLOCK 'runtime' ':' runtime=EString
+	 *     secrets+=EString (ambiguity) END_BLOCK 'secrets' ':' '[' secrets+=EString
+	 *     secrets+=EString (ambiguity) END_BLOCK 'stdin_open' ':' stdinOpen=EBoolean
+	 *     secrets+=EString (ambiguity) END_BLOCK 'stop_signal' ':' stopSignal=EString
+	 *     secrets+=EString (ambiguity) END_BLOCK 'sysctls' ':' '[' sysctls+=EString
+	 *     secrets+=EString (ambiguity) END_BLOCK 'sysctls' ':' BEG_BLOCK '-' BEG_BLOCK? sysctls+=EString
+	 *     secrets+=EString (ambiguity) END_BLOCK 'user' ':' user=EString
+	 *     secrets+=EString (ambiguity) END_BLOCK 'volumes' ':' BEG_BLOCK volumes+=ServiceVolume
+	 *     secrets+=EString (ambiguity) END_BLOCK END_BLOCK (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Service_END_BLOCKTerminalRuleCall_3_14_2_0_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     END_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     capAdd+=EString (ambiguity) (END_BLOCK 'cap_add' ':' BEG_BLOCK)? '-' BEG_BLOCK? capAdd+=EString
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'build' ':' build=Build
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'cap_add' ':' '[' capAdd+=EString
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'command' ':' '[' command+=EString
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'command' ':' BEG_BLOCK '-' BEG_BLOCK? command+=EString
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'command' ':' command+=EString
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'container_name' ':' containerName=EString
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'depends_on' ':' dependsOn=Depends_on
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'deploy' ':' BEG_BLOCK KeyName ':' BEG_BLOCK deploy+=Resource
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK '-' BEG_BLOCK? environment+=EnvEntry
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK environment+=KeyValuePair
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'expose' ':' '[' expose+=INT
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'expose' ':' BEG_BLOCK '-' BEG_BLOCK? expose+=INT
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'healthcheck' ':' healthcheck=Healthcheck
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'hostname' ':' hostname=EString
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'image' ':' image=EString
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'labels' ':' '[' labels+=EString
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'labels' ':' BEG_BLOCK '-' BEG_BLOCK? labels+=EString
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'network_mode' ':' networkMode=EString
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'networks' ':' networks=Networks
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'platform' ':' platform=EString
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'ports' ':' '[' ports+=EString
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'ports' ':' BEG_BLOCK '-' BEG_BLOCK? ports+=EString
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'restart' ':' restart=EString
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'runtime' ':' runtime=EString
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'secrets' ':' '[' secrets+=EString
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'secrets' ':' BEG_BLOCK '-' BEG_BLOCK? secrets+=EString
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'stdin_open' ':' stdinOpen=EBoolean
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'stop_signal' ':' stopSignal=EString
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'sysctls' ':' '[' sysctls+=EString
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'sysctls' ':' BEG_BLOCK '-' BEG_BLOCK? sysctls+=EString
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'user' ':' user=EString
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'volumes' ':' BEG_BLOCK volumes+=ServiceVolume
+	 *     capAdd+=EString (ambiguity) END_BLOCK END_BLOCK (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Service_END_BLOCKTerminalRuleCall_3_15_2_0_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     END_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     labels+=EString (ambiguity) (END_BLOCK 'labels' ':' BEG_BLOCK)? '-' BEG_BLOCK? labels+=EString
+	 *     labels+=EString (ambiguity) END_BLOCK 'build' ':' build=Build
+	 *     labels+=EString (ambiguity) END_BLOCK 'cap_add' ':' '[' capAdd+=EString
+	 *     labels+=EString (ambiguity) END_BLOCK 'cap_add' ':' BEG_BLOCK '-' BEG_BLOCK? capAdd+=EString
+	 *     labels+=EString (ambiguity) END_BLOCK 'command' ':' '[' command+=EString
+	 *     labels+=EString (ambiguity) END_BLOCK 'command' ':' BEG_BLOCK '-' BEG_BLOCK? command+=EString
+	 *     labels+=EString (ambiguity) END_BLOCK 'command' ':' command+=EString
+	 *     labels+=EString (ambiguity) END_BLOCK 'container_name' ':' containerName=EString
+	 *     labels+=EString (ambiguity) END_BLOCK 'depends_on' ':' dependsOn=Depends_on
+	 *     labels+=EString (ambiguity) END_BLOCK 'deploy' ':' BEG_BLOCK KeyName ':' BEG_BLOCK deploy+=Resource
+	 *     labels+=EString (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK '-' BEG_BLOCK? environment+=EnvEntry
+	 *     labels+=EString (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK environment+=KeyValuePair
+	 *     labels+=EString (ambiguity) END_BLOCK 'expose' ':' '[' expose+=INT
+	 *     labels+=EString (ambiguity) END_BLOCK 'expose' ':' BEG_BLOCK '-' BEG_BLOCK? expose+=INT
+	 *     labels+=EString (ambiguity) END_BLOCK 'healthcheck' ':' healthcheck=Healthcheck
+	 *     labels+=EString (ambiguity) END_BLOCK 'hostname' ':' hostname=EString
+	 *     labels+=EString (ambiguity) END_BLOCK 'image' ':' image=EString
+	 *     labels+=EString (ambiguity) END_BLOCK 'labels' ':' '[' labels+=EString
+	 *     labels+=EString (ambiguity) END_BLOCK 'network_mode' ':' networkMode=EString
+	 *     labels+=EString (ambiguity) END_BLOCK 'networks' ':' networks=Networks
+	 *     labels+=EString (ambiguity) END_BLOCK 'platform' ':' platform=EString
+	 *     labels+=EString (ambiguity) END_BLOCK 'ports' ':' '[' ports+=EString
+	 *     labels+=EString (ambiguity) END_BLOCK 'ports' ':' BEG_BLOCK '-' BEG_BLOCK? ports+=EString
+	 *     labels+=EString (ambiguity) END_BLOCK 'restart' ':' restart=EString
+	 *     labels+=EString (ambiguity) END_BLOCK 'runtime' ':' runtime=EString
+	 *     labels+=EString (ambiguity) END_BLOCK 'secrets' ':' '[' secrets+=EString
+	 *     labels+=EString (ambiguity) END_BLOCK 'secrets' ':' BEG_BLOCK '-' BEG_BLOCK? secrets+=EString
+	 *     labels+=EString (ambiguity) END_BLOCK 'stdin_open' ':' stdinOpen=EBoolean
+	 *     labels+=EString (ambiguity) END_BLOCK 'stop_signal' ':' stopSignal=EString
+	 *     labels+=EString (ambiguity) END_BLOCK 'sysctls' ':' '[' sysctls+=EString
+	 *     labels+=EString (ambiguity) END_BLOCK 'sysctls' ':' BEG_BLOCK '-' BEG_BLOCK? sysctls+=EString
+	 *     labels+=EString (ambiguity) END_BLOCK 'user' ':' user=EString
+	 *     labels+=EString (ambiguity) END_BLOCK 'volumes' ':' BEG_BLOCK volumes+=ServiceVolume
+	 *     labels+=EString (ambiguity) END_BLOCK END_BLOCK (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Service_END_BLOCKTerminalRuleCall_3_16_2_0_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     END_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     sysctls+=EString (ambiguity) (END_BLOCK 'sysctls' ':' BEG_BLOCK)? '-' BEG_BLOCK? sysctls+=EString
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'build' ':' build=Build
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'cap_add' ':' '[' capAdd+=EString
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'cap_add' ':' BEG_BLOCK '-' BEG_BLOCK? capAdd+=EString
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'command' ':' '[' command+=EString
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'command' ':' BEG_BLOCK '-' BEG_BLOCK? command+=EString
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'command' ':' command+=EString
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'container_name' ':' containerName=EString
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'depends_on' ':' dependsOn=Depends_on
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'deploy' ':' BEG_BLOCK KeyName ':' BEG_BLOCK deploy+=Resource
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK '-' BEG_BLOCK? environment+=EnvEntry
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK environment+=KeyValuePair
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'expose' ':' '[' expose+=INT
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'expose' ':' BEG_BLOCK '-' BEG_BLOCK? expose+=INT
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'healthcheck' ':' healthcheck=Healthcheck
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'hostname' ':' hostname=EString
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'image' ':' image=EString
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'labels' ':' '[' labels+=EString
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'labels' ':' BEG_BLOCK '-' BEG_BLOCK? labels+=EString
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'network_mode' ':' networkMode=EString
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'networks' ':' networks=Networks
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'platform' ':' platform=EString
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'ports' ':' '[' ports+=EString
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'ports' ':' BEG_BLOCK '-' BEG_BLOCK? ports+=EString
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'restart' ':' restart=EString
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'runtime' ':' runtime=EString
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'secrets' ':' '[' secrets+=EString
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'secrets' ':' BEG_BLOCK '-' BEG_BLOCK? secrets+=EString
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'stdin_open' ':' stdinOpen=EBoolean
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'stop_signal' ':' stopSignal=EString
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'sysctls' ':' '[' sysctls+=EString
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'user' ':' user=EString
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'volumes' ':' BEG_BLOCK volumes+=ServiceVolume
+	 *     sysctls+=EString (ambiguity) END_BLOCK END_BLOCK (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Service_END_BLOCKTerminalRuleCall_3_17_2_0_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     END_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     environment+=EnvEntry (ambiguity) (END_BLOCK 'environment' ':' BEG_BLOCK)? '-' BEG_BLOCK? environment+=EnvEntry
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'build' ':' build=Build
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'cap_add' ':' '[' capAdd+=EString
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'cap_add' ':' BEG_BLOCK '-' BEG_BLOCK? capAdd+=EString
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'command' ':' '[' command+=EString
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'command' ':' BEG_BLOCK '-' BEG_BLOCK? command+=EString
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'command' ':' command+=EString
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'container_name' ':' containerName=EString
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'depends_on' ':' dependsOn=Depends_on
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'deploy' ':' BEG_BLOCK KeyName ':' BEG_BLOCK deploy+=Resource
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK environment+=KeyValuePair
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'expose' ':' '[' expose+=INT
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'expose' ':' BEG_BLOCK '-' BEG_BLOCK? expose+=INT
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'healthcheck' ':' healthcheck=Healthcheck
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'hostname' ':' hostname=EString
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'image' ':' image=EString
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'labels' ':' '[' labels+=EString
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'labels' ':' BEG_BLOCK '-' BEG_BLOCK? labels+=EString
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'network_mode' ':' networkMode=EString
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'networks' ':' networks=Networks
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'platform' ':' platform=EString
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'ports' ':' '[' ports+=EString
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'ports' ':' BEG_BLOCK '-' BEG_BLOCK? ports+=EString
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'restart' ':' restart=EString
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'runtime' ':' runtime=EString
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'secrets' ':' '[' secrets+=EString
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'secrets' ':' BEG_BLOCK '-' BEG_BLOCK? secrets+=EString
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'stdin_open' ':' stdinOpen=EBoolean
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'stop_signal' ':' stopSignal=EString
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'sysctls' ':' '[' sysctls+=EString
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'sysctls' ':' BEG_BLOCK '-' BEG_BLOCK? sysctls+=EString
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'user' ':' user=EString
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'volumes' ':' BEG_BLOCK volumes+=ServiceVolume
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK END_BLOCK (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Service_END_BLOCKTerminalRuleCall_3_18_3_1_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
 	 *     (END_BLOCK 'ports' ':' BEG_BLOCK)?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     ports+=EString (ambiguity) '-' ports+=EString
+	 *     ports+=EString END_BLOCK? (ambiguity) '-' BEG_BLOCK? ports+=EString
 	 
 	 * </pre>
 	 */
@@ -290,7 +1335,7 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (END_BLOCK 'expose' ':' BEG_BLOCK)?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     expose+=INT (ambiguity) '-' expose+=INT
+	 *     expose+=INT END_BLOCK? (ambiguity) '-' BEG_BLOCK? expose+=INT
 	 
 	 * </pre>
 	 */
@@ -304,7 +1349,7 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (END_BLOCK 'command' ':' BEG_BLOCK)?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     command+=EString (ambiguity) '-' command+=EString
+	 *     command+=EString END_BLOCK? (ambiguity) '-' BEG_BLOCK? command+=EString
 	 
 	 * </pre>
 	 */
@@ -318,7 +1363,7 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (END_BLOCK 'secrets' ':' BEG_BLOCK)?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     secrets+=EString (ambiguity) '-' secrets+=EString
+	 *     secrets+=EString END_BLOCK? (ambiguity) '-' BEG_BLOCK? secrets+=EString
 	 
 	 * </pre>
 	 */
@@ -332,7 +1377,7 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (END_BLOCK 'cap_add' ':' BEG_BLOCK)?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     capAdd+=EString (ambiguity) '-' capAdd+=EString
+	 *     capAdd+=EString END_BLOCK? (ambiguity) '-' BEG_BLOCK? capAdd+=EString
 	 
 	 * </pre>
 	 */
@@ -346,7 +1391,7 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (END_BLOCK 'labels' ':' BEG_BLOCK)?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     labels+=EString (ambiguity) '-' labels+=EString
+	 *     labels+=EString END_BLOCK? (ambiguity) '-' BEG_BLOCK? labels+=EString
 	 
 	 * </pre>
 	 */
@@ -360,7 +1405,7 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (END_BLOCK 'sysctls' ':' BEG_BLOCK)?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     sysctls+=EString (ambiguity) '-' sysctls+=EString
+	 *     sysctls+=EString END_BLOCK? (ambiguity) '-' BEG_BLOCK? sysctls+=EString
 	 
 	 * </pre>
 	 */
@@ -374,6 +1419,7 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (END_BLOCK 'environment' ':' BEG_BLOCK)?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     environment+=EnvEntry END_BLOCK? (ambiguity) '-' BEG_BLOCK? environment+=EnvEntry
 	 *     environment+=KeyValuePair (ambiguity) environment+=KeyValuePair
 	 
 	 * </pre>
@@ -399,14 +1445,23 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
-	 *     (END_BLOCK 'deploy' ':' BEG_BLOCK)?
+	 *     (
+	  *         END_BLOCK 
+	  *         END_BLOCK 
+	  *         'deploy' 
+	  *         ':' 
+	  *         BEG_BLOCK 
+	  *         KeyName 
+	  *         ':' 
+	  *         BEG_BLOCK
+	  *     )?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     deploy+=Resource (ambiguity) deploy+=Resource
 	 
 	 * </pre>
 	 */
-	protected void emit_Service___END_BLOCKTerminalRuleCall_3_23_4_DeployKeyword_3_23_0_ColonKeyword_3_23_1_BEG_BLOCKTerminalRuleCall_3_23_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Service___END_BLOCKTerminalRuleCall_3_23_7_END_BLOCKTerminalRuleCall_3_23_8_DeployKeyword_3_23_0_ColonKeyword_3_23_1_BEG_BLOCKTerminalRuleCall_3_23_2_KeyNameParserRuleCall_3_23_3_ColonKeyword_3_23_4_BEG_BLOCKTerminalRuleCall_3_23_5__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -72,7 +72,8 @@ public class MyDslIndentationAwareLexer extends InternalDcDslLexer{
     /** Keys whose value is boolean/int (need the typed token, not a scalar). */
     private static final Set<String> NON_SCALAR_VALUE_FIELDS = new HashSet<>(Arrays.asList(
         "required", "cancel-in-progress", "continue-on-error",
-        "fail-fast", "timeout-minutes", "max-parallel"
+        "fail-fast", "timeout-minutes", "max-parallel",
+        "retries", "stdin_open", "read_only"
     ));
 
     /** Container keys whose direct children are object ids, not fields. A keyword
@@ -342,7 +343,15 @@ public class MyDslIndentationAwareLexer extends InternalDcDslLexer{
             int virtualIndent = t.getCharPositionInLine() + 1 + spaces;
             indentStack.push(virtualIndent);
             pending.addLast(makeSynthetic(RULE_BEG_BLOCK, "<BEG_BLOCK>"));
+            
+            if (dashItemIsPlainScalar()) {
+                captureValueExpected = true;
+                captureKeyColumn = t.getCharPositionInLine();
+                captureKeyText = null;
+            }
         }
+        
+        
 
         return t;
     }
@@ -1011,6 +1020,37 @@ public class MyDslIndentationAwareLexer extends InternalDcDslLexer{
         tok.setLine(input.getLine());
         tok.setCharPositionInLine(input.getCharPositionInLine());
         return tok;
+    }
+    
+    private boolean dashItemIsPlainScalar() {
+        int off = 1;
+        int c = input.LA(off);
+        while (c == ' ' || c == '\t') { off++; c = input.LA(off); }
+        // empty / comment / flow / quoted / block-scalar start -> not a plain inline scalar
+        if (c == CharStream.EOF || c == '\n' || c == '\r' || c == '#'
+                || c == '[' || c == '{' || c == '"' || c == '\''
+                || c == '|' || c == '>') {
+            return false;
+        }
+        boolean allDigits = true;
+        int prev = -1;
+        while (c != CharStream.EOF && c != '\n' && c != '\r') {
+            if (c == '#' && (prev == ' ' || prev == '\t')) {
+                break; // trailing ' #' comment
+            }
+            if (c == ':') {
+                int nx = input.LA(off + 1);
+                if (nx == ' ' || nx == '\t' || nx == '\n' || nx == '\r'
+                        || nx == CharStream.EOF) {
+                    return false; // mapping colon -> '- key: value', not a scalar
+                }
+            }
+            if (c != ' ' && c != '\t' && (c < '0' || c > '9')) allDigits = false;
+            prev = c;
+            off++;
+            c = input.LA(off);
+        }
+        return !allDigits;   // capture every plain scalar EXCEPT a pure integer (keep INT for expose)
     }
 
 }

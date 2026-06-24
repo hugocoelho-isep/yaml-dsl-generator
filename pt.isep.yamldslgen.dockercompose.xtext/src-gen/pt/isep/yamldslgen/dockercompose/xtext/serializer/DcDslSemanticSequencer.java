@@ -61,10 +61,10 @@ public class DcDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				sequence_Db(context, (Db) semanticObject); 
 				return; 
 			case DockercomposePackage.DEPENDS_ON_OBJECT:
-				sequence_Depends_onObject(context, (Depends_onObject) semanticObject); 
+				sequence_Depends_on(context, (Depends_onObject) semanticObject); 
 				return; 
 			case DockercomposePackage.DEPENDS_ON_VALUE:
-				sequence_Depends_onValue(context, (Depends_onValue) semanticObject); 
+				sequence_Depends_on(context, (Depends_onValue) semanticObject); 
 				return; 
 			case DockercomposePackage.DOCKER_COMPOSE:
 				sequence_DockerCompose(context, (DockerCompose) semanticObject); 
@@ -73,16 +73,23 @@ public class DcDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				sequence_Healthcheck(context, (Healthcheck) semanticObject); 
 				return; 
 			case DockercomposePackage.KEY_VALUE_PAIR:
-				sequence_KeyValuePair(context, (KeyValuePair) semanticObject); 
-				return; 
+				if (rule == grammarAccess.getEnvEntryRule()) {
+					sequence_EnvEntry(context, (KeyValuePair) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getKeyValuePairRule()) {
+					sequence_KeyValuePair(context, (KeyValuePair) semanticObject); 
+					return; 
+				}
+				else break;
 			case DockercomposePackage.NETWORK:
 				sequence_Network(context, (Network) semanticObject); 
 				return; 
 			case DockercomposePackage.NETWORKS_OBJECT:
-				sequence_NetworksObject(context, (NetworksObject) semanticObject); 
+				sequence_Networks(context, (NetworksObject) semanticObject); 
 				return; 
 			case DockercomposePackage.NETWORKS_VALUE:
-				sequence_NetworksValue(context, (NetworksValue) semanticObject); 
+				sequence_Networks(context, (NetworksValue) semanticObject); 
 				return; 
 			case DockercomposePackage.RESOURCE:
 				sequence_Resource(context, (Resource) semanticObject); 
@@ -162,7 +169,7 @@ public class DcDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DockercomposePackage.Literals.CONFIG__SUBNET));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getConfigAccess().getSubnetEStringParserRuleCall_2_2_0(), semanticObject.getSubnet());
+		feeder.accept(grammarAccess.getConfigAccess().getSubnetEStringParserRuleCall_3_2_0(), semanticObject.getSubnet());
 		feeder.finish();
 	}
 	
@@ -191,19 +198,18 @@ public class DcDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * <pre>
 	 * Contexts:
 	 *     Depends_on returns Depends_onObject
-	 *     Depends_onObject returns Depends_onObject
 	 *
 	 * Constraint:
 	 *     db=Db
 	 * </pre>
 	 */
-	protected void sequence_Depends_onObject(ISerializationContext context, Depends_onObject semanticObject) {
+	protected void sequence_Depends_on(ISerializationContext context, Depends_onObject semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, DockercomposePackage.Literals.DEPENDS_ON_OBJECT__DB) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DockercomposePackage.Literals.DEPENDS_ON_OBJECT__DB));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDepends_onObjectAccess().getDbDbParserRuleCall_2_0(), semanticObject.getDb());
+		feeder.accept(grammarAccess.getDepends_onAccess().getDbDbParserRuleCall_0_1_1_1_0(), semanticObject.getDb());
 		feeder.finish();
 	}
 	
@@ -212,13 +218,12 @@ public class DcDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * <pre>
 	 * Contexts:
 	 *     Depends_on returns Depends_onValue
-	 *     Depends_onValue returns Depends_onValue
 	 *
 	 * Constraint:
-	 *     (value+=EString | (value+=EString value+=EString*))
+	 *     (value+=EString+ | (value+=EString value+=EString*) | value+=EString)
 	 * </pre>
 	 */
-	protected void sequence_Depends_onValue(ISerializationContext context, Depends_onValue semanticObject) {
+	protected void sequence_Depends_on(ISerializationContext context, Depends_onValue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -241,6 +246,26 @@ public class DcDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 */
 	protected void sequence_DockerCompose(ISerializationContext context, DockerCompose semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     EnvEntry returns KeyValuePair
+	 *
+	 * Constraint:
+	 *     key=EString
+	 * </pre>
+	 */
+	protected void sequence_EnvEntry(ISerializationContext context, KeyValuePair semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, DockercomposePackage.Literals.KEY_VALUE_PAIR__KEY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DockercomposePackage.Literals.KEY_VALUE_PAIR__KEY));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEnvEntryAccess().getKeyEStringParserRuleCall_1_0(), semanticObject.getKey());
+		feeder.finish();
 	}
 	
 	
@@ -319,13 +344,12 @@ public class DcDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * <pre>
 	 * Contexts:
 	 *     Networks returns NetworksObject
-	 *     NetworksObject returns NetworksObject
 	 *
 	 * Constraint:
 	 *     network+=Network+
 	 * </pre>
 	 */
-	protected void sequence_NetworksObject(ISerializationContext context, NetworksObject semanticObject) {
+	protected void sequence_Networks(ISerializationContext context, NetworksObject semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -334,13 +358,12 @@ public class DcDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * <pre>
 	 * Contexts:
 	 *     Networks returns NetworksValue
-	 *     NetworksValue returns NetworksValue
 	 *
 	 * Constraint:
-	 *     (value+=EString | (value+=EString value+=EString*))
+	 *     (value+=EString+ | (value+=EString value+=EString*) | value+=EString)
 	 * </pre>
 	 */
-	protected void sequence_NetworksValue(ISerializationContext context, NetworksValue semanticObject) {
+	protected void sequence_Networks(ISerializationContext context, NetworksValue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -425,11 +448,13 @@ public class DcDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *                 ports+=EString | 
 	 *                 expose+=INT | 
 	 *                 command+=EString | 
+	 *                 command+=EString | 
 	 *                 secrets+=EString | 
 	 *                 capAdd+=EString | 
 	 *                 labels+=EString | 
 	 *                 sysctls+=EString | 
 	 *                 environment+=KeyValuePair | 
+	 *                 environment+=EnvEntry | 
 	 *                 dependsOn=Depends_on | 
 	 *                 networks=Networks | 
 	 *                 volumes+=ServiceVolume | 

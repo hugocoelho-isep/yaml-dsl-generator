@@ -2601,8 +2601,126 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleKeyValuePair"
 
 
+    // $ANTLR start "entryRuleEnvEntry"
+    // InternalDcDsl.g:990:1: entryRuleEnvEntry returns [EObject current=null] : iv_ruleEnvEntry= ruleEnvEntry EOF ;
+    public final EObject entryRuleEnvEntry() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleEnvEntry = null;
+
+
+        try {
+            // InternalDcDsl.g:990:49: (iv_ruleEnvEntry= ruleEnvEntry EOF )
+            // InternalDcDsl.g:991:2: iv_ruleEnvEntry= ruleEnvEntry EOF
+            {
+             newCompositeNode(grammarAccess.getEnvEntryRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleEnvEntry=ruleEnvEntry();
+
+            state._fsp--;
+
+             current =iv_ruleEnvEntry; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleEnvEntry"
+
+
+    // $ANTLR start "ruleEnvEntry"
+    // InternalDcDsl.g:997:1: ruleEnvEntry returns [EObject current=null] : ( () ( (lv_key_1_0= ruleEString ) ) ) ;
+    public final EObject ruleEnvEntry() throws RecognitionException {
+        EObject current = null;
+
+        AntlrDatatypeRuleToken lv_key_1_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalDcDsl.g:1003:2: ( ( () ( (lv_key_1_0= ruleEString ) ) ) )
+            // InternalDcDsl.g:1004:2: ( () ( (lv_key_1_0= ruleEString ) ) )
+            {
+            // InternalDcDsl.g:1004:2: ( () ( (lv_key_1_0= ruleEString ) ) )
+            // InternalDcDsl.g:1005:3: () ( (lv_key_1_0= ruleEString ) )
+            {
+            // InternalDcDsl.g:1005:3: ()
+            // InternalDcDsl.g:1006:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getEnvEntryAccess().getKeyValuePairAction_0(),
+            					current);
+            			
+
+            }
+
+            // InternalDcDsl.g:1012:3: ( (lv_key_1_0= ruleEString ) )
+            // InternalDcDsl.g:1013:4: (lv_key_1_0= ruleEString )
+            {
+            // InternalDcDsl.g:1013:4: (lv_key_1_0= ruleEString )
+            // InternalDcDsl.g:1014:5: lv_key_1_0= ruleEString
+            {
+
+            					newCompositeNode(grammarAccess.getEnvEntryAccess().getKeyEStringParserRuleCall_1_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_key_1_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getEnvEntryRule());
+            					}
+            					set(
+            						current,
+            						"key",
+            						lv_key_1_0,
+            						"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleEnvEntry"
+
+
     // $ANTLR start "entryRuleService"
-    // InternalDcDsl.g:990:1: entryRuleService returns [EObject current=null] : iv_ruleService= ruleService EOF ;
+    // InternalDcDsl.g:1035:1: entryRuleService returns [EObject current=null] : iv_ruleService= ruleService EOF ;
     public final EObject entryRuleService() throws RecognitionException {
         EObject current = null;
 
@@ -2610,8 +2728,8 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDcDsl.g:990:48: (iv_ruleService= ruleService EOF )
-            // InternalDcDsl.g:991:2: iv_ruleService= ruleService EOF
+            // InternalDcDsl.g:1035:48: (iv_ruleService= ruleService EOF )
+            // InternalDcDsl.g:1036:2: iv_ruleService= ruleService EOF
             {
              newCompositeNode(grammarAccess.getServiceRule()); 
             pushFollow(FOLLOW_1);
@@ -2638,7 +2756,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleService"
-    // InternalDcDsl.g:997:1: ruleService returns [EObject current=null] : ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK ( (otherlv_3= 'image' otherlv_4= ':' ( (lv_image_5_0= ruleEString ) ) ) | (otherlv_6= 'build' otherlv_7= ':' ( (lv_build_8_0= ruleBuild ) ) ) | (otherlv_9= 'container_name' otherlv_10= ':' ( (lv_containerName_11_0= ruleEString ) ) ) | (otherlv_12= 'restart' otherlv_13= ':' ( (lv_restart_14_0= ruleEString ) ) ) | (otherlv_15= 'user' otherlv_16= ':' ( (lv_user_17_0= ruleEString ) ) ) | (otherlv_18= 'hostname' otherlv_19= ':' ( (lv_hostname_20_0= ruleEString ) ) ) | (otherlv_21= 'network_mode' otherlv_22= ':' ( (lv_networkMode_23_0= ruleEString ) ) ) | (otherlv_24= 'platform' otherlv_25= ':' ( (lv_platform_26_0= ruleEString ) ) ) | (otherlv_27= 'runtime' otherlv_28= ':' ( (lv_runtime_29_0= ruleEString ) ) ) | (otherlv_30= 'stop_signal' otherlv_31= ':' ( (lv_stopSignal_32_0= ruleEString ) ) ) | (otherlv_33= 'stdin_open' otherlv_34= ':' ( (lv_stdinOpen_35_0= ruleEBoolean ) ) ) | (otherlv_36= 'ports' otherlv_37= ':' ( (this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' ( (lv_ports_40_0= ruleEString ) ) )+ this_END_BLOCK_41= RULE_END_BLOCK ) | (otherlv_42= '[' ( (lv_ports_43_0= ruleEString ) ) (otherlv_44= ',' ( (lv_ports_45_0= ruleEString ) ) )* otherlv_46= ']' ) ) ) | (otherlv_47= 'expose' otherlv_48= ':' ( (this_BEG_BLOCK_49= RULE_BEG_BLOCK (otherlv_50= '-' ( (lv_expose_51_0= RULE_INT ) ) )+ this_END_BLOCK_52= RULE_END_BLOCK ) | (otherlv_53= '[' ( (lv_expose_54_0= RULE_INT ) ) (otherlv_55= ',' ( (lv_expose_56_0= RULE_INT ) ) )* otherlv_57= ']' ) ) ) | (otherlv_58= 'command' otherlv_59= ':' ( (this_BEG_BLOCK_60= RULE_BEG_BLOCK (otherlv_61= '-' ( (lv_command_62_0= ruleEString ) ) )+ this_END_BLOCK_63= RULE_END_BLOCK ) | (otherlv_64= '[' ( (lv_command_65_0= ruleEString ) ) (otherlv_66= ',' ( (lv_command_67_0= ruleEString ) ) )* otherlv_68= ']' ) ) ) | (otherlv_69= 'secrets' otherlv_70= ':' ( (this_BEG_BLOCK_71= RULE_BEG_BLOCK (otherlv_72= '-' ( (lv_secrets_73_0= ruleEString ) ) )+ this_END_BLOCK_74= RULE_END_BLOCK ) | (otherlv_75= '[' ( (lv_secrets_76_0= ruleEString ) ) (otherlv_77= ',' ( (lv_secrets_78_0= ruleEString ) ) )* otherlv_79= ']' ) ) ) | (otherlv_80= 'cap_add' otherlv_81= ':' ( (this_BEG_BLOCK_82= RULE_BEG_BLOCK (otherlv_83= '-' ( (lv_capAdd_84_0= ruleEString ) ) )+ this_END_BLOCK_85= RULE_END_BLOCK ) | (otherlv_86= '[' ( (lv_capAdd_87_0= ruleEString ) ) (otherlv_88= ',' ( (lv_capAdd_89_0= ruleEString ) ) )* otherlv_90= ']' ) ) ) | (otherlv_91= 'labels' otherlv_92= ':' ( (this_BEG_BLOCK_93= RULE_BEG_BLOCK (otherlv_94= '-' ( (lv_labels_95_0= ruleEString ) ) )+ this_END_BLOCK_96= RULE_END_BLOCK ) | (otherlv_97= '[' ( (lv_labels_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_labels_100_0= ruleEString ) ) )* otherlv_101= ']' ) ) ) | (otherlv_102= 'sysctls' otherlv_103= ':' ( (this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' ( (lv_sysctls_106_0= ruleEString ) ) )+ this_END_BLOCK_107= RULE_END_BLOCK ) | (otherlv_108= '[' ( (lv_sysctls_109_0= ruleEString ) ) (otherlv_110= ',' ( (lv_sysctls_111_0= ruleEString ) ) )* otherlv_112= ']' ) ) ) | (otherlv_113= 'environment' otherlv_114= ':' this_BEG_BLOCK_115= RULE_BEG_BLOCK ( (lv_environment_116_0= ruleKeyValuePair ) )+ this_END_BLOCK_117= RULE_END_BLOCK ) | (otherlv_118= 'depends_on' otherlv_119= ':' ( (lv_dependsOn_120_0= ruleDepends_on ) ) ) | (otherlv_121= 'networks' otherlv_122= ':' ( (lv_networks_123_0= ruleNetworks ) ) ) | (otherlv_124= 'volumes' otherlv_125= ':' this_BEG_BLOCK_126= RULE_BEG_BLOCK ( (lv_volumes_127_0= ruleServiceVolume ) )+ this_END_BLOCK_128= RULE_END_BLOCK ) | (otherlv_129= 'healthcheck' otherlv_130= ':' ( (lv_healthcheck_131_0= ruleHealthcheck ) ) ) | (otherlv_132= 'deploy' otherlv_133= ':' this_BEG_BLOCK_134= RULE_BEG_BLOCK ( (lv_deploy_135_0= ruleResource ) )+ this_END_BLOCK_136= RULE_END_BLOCK ) )* this_END_BLOCK_137= RULE_END_BLOCK ) ;
+    // InternalDcDsl.g:1042:1: ruleService returns [EObject current=null] : ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK ( (otherlv_3= 'image' otherlv_4= ':' ( (lv_image_5_0= ruleEString ) ) ) | (otherlv_6= 'build' otherlv_7= ':' ( (lv_build_8_0= ruleBuild ) ) ) | (otherlv_9= 'container_name' otherlv_10= ':' ( (lv_containerName_11_0= ruleEString ) ) ) | (otherlv_12= 'restart' otherlv_13= ':' ( (lv_restart_14_0= ruleEString ) ) ) | (otherlv_15= 'user' otherlv_16= ':' ( (lv_user_17_0= ruleEString ) ) ) | (otherlv_18= 'hostname' otherlv_19= ':' ( (lv_hostname_20_0= ruleEString ) ) ) | (otherlv_21= 'network_mode' otherlv_22= ':' ( (lv_networkMode_23_0= ruleEString ) ) ) | (otherlv_24= 'platform' otherlv_25= ':' ( (lv_platform_26_0= ruleEString ) ) ) | (otherlv_27= 'runtime' otherlv_28= ':' ( (lv_runtime_29_0= ruleEString ) ) ) | (otherlv_30= 'stop_signal' otherlv_31= ':' ( (lv_stopSignal_32_0= ruleEString ) ) ) | (otherlv_33= 'stdin_open' otherlv_34= ':' ( (lv_stdinOpen_35_0= ruleEBoolean ) ) ) | (otherlv_36= 'ports' otherlv_37= ':' ( (this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' (this_BEG_BLOCK_40= RULE_BEG_BLOCK )? ( (lv_ports_41_0= ruleEString ) ) (this_END_BLOCK_42= RULE_END_BLOCK )? )+ this_END_BLOCK_43= RULE_END_BLOCK ) | (otherlv_44= '[' ( (lv_ports_45_0= ruleEString ) ) (otherlv_46= ',' ( (lv_ports_47_0= ruleEString ) ) )* otherlv_48= ']' ) ) ) | (otherlv_49= 'expose' otherlv_50= ':' ( (this_BEG_BLOCK_51= RULE_BEG_BLOCK (otherlv_52= '-' (this_BEG_BLOCK_53= RULE_BEG_BLOCK )? ( (lv_expose_54_0= RULE_INT ) ) (this_END_BLOCK_55= RULE_END_BLOCK )? )+ this_END_BLOCK_56= RULE_END_BLOCK ) | (otherlv_57= '[' ( (lv_expose_58_0= RULE_INT ) ) (otherlv_59= ',' ( (lv_expose_60_0= RULE_INT ) ) )* otherlv_61= ']' ) ) ) | (otherlv_62= 'command' otherlv_63= ':' ( (this_BEG_BLOCK_64= RULE_BEG_BLOCK (otherlv_65= '-' (this_BEG_BLOCK_66= RULE_BEG_BLOCK )? ( (lv_command_67_0= ruleEString ) ) (this_END_BLOCK_68= RULE_END_BLOCK )? )+ this_END_BLOCK_69= RULE_END_BLOCK ) | (otherlv_70= '[' ( (lv_command_71_0= ruleEString ) ) (otherlv_72= ',' ( (lv_command_73_0= ruleEString ) ) )* otherlv_74= ']' ) | ( (lv_command_75_0= ruleEString ) ) ) ) | (otherlv_76= 'secrets' otherlv_77= ':' ( (this_BEG_BLOCK_78= RULE_BEG_BLOCK (otherlv_79= '-' (this_BEG_BLOCK_80= RULE_BEG_BLOCK )? ( (lv_secrets_81_0= ruleEString ) ) (this_END_BLOCK_82= RULE_END_BLOCK )? )+ this_END_BLOCK_83= RULE_END_BLOCK ) | (otherlv_84= '[' ( (lv_secrets_85_0= ruleEString ) ) (otherlv_86= ',' ( (lv_secrets_87_0= ruleEString ) ) )* otherlv_88= ']' ) ) ) | (otherlv_89= 'cap_add' otherlv_90= ':' ( (this_BEG_BLOCK_91= RULE_BEG_BLOCK (otherlv_92= '-' (this_BEG_BLOCK_93= RULE_BEG_BLOCK )? ( (lv_capAdd_94_0= ruleEString ) ) (this_END_BLOCK_95= RULE_END_BLOCK )? )+ this_END_BLOCK_96= RULE_END_BLOCK ) | (otherlv_97= '[' ( (lv_capAdd_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_capAdd_100_0= ruleEString ) ) )* otherlv_101= ']' ) ) ) | (otherlv_102= 'labels' otherlv_103= ':' ( (this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' (this_BEG_BLOCK_106= RULE_BEG_BLOCK )? ( (lv_labels_107_0= ruleEString ) ) (this_END_BLOCK_108= RULE_END_BLOCK )? )+ this_END_BLOCK_109= RULE_END_BLOCK ) | (otherlv_110= '[' ( (lv_labels_111_0= ruleEString ) ) (otherlv_112= ',' ( (lv_labels_113_0= ruleEString ) ) )* otherlv_114= ']' ) ) ) | (otherlv_115= 'sysctls' otherlv_116= ':' ( (this_BEG_BLOCK_117= RULE_BEG_BLOCK (otherlv_118= '-' (this_BEG_BLOCK_119= RULE_BEG_BLOCK )? ( (lv_sysctls_120_0= ruleEString ) ) (this_END_BLOCK_121= RULE_END_BLOCK )? )+ this_END_BLOCK_122= RULE_END_BLOCK ) | (otherlv_123= '[' ( (lv_sysctls_124_0= ruleEString ) ) (otherlv_125= ',' ( (lv_sysctls_126_0= ruleEString ) ) )* otherlv_127= ']' ) ) ) | (otherlv_128= 'environment' otherlv_129= ':' this_BEG_BLOCK_130= RULE_BEG_BLOCK ( ( (lv_environment_131_0= ruleKeyValuePair ) )+ | (otherlv_132= '-' (this_BEG_BLOCK_133= RULE_BEG_BLOCK )? ( (lv_environment_134_0= ruleEnvEntry ) ) (this_END_BLOCK_135= RULE_END_BLOCK )? )+ ) this_END_BLOCK_136= RULE_END_BLOCK ) | (otherlv_137= 'depends_on' otherlv_138= ':' ( (lv_dependsOn_139_0= ruleDepends_on ) ) ) | (otherlv_140= 'networks' otherlv_141= ':' ( (lv_networks_142_0= ruleNetworks ) ) ) | (otherlv_143= 'volumes' otherlv_144= ':' this_BEG_BLOCK_145= RULE_BEG_BLOCK ( (lv_volumes_146_0= ruleServiceVolume ) )+ this_END_BLOCK_147= RULE_END_BLOCK ) | (otherlv_148= 'healthcheck' otherlv_149= ':' ( (lv_healthcheck_150_0= ruleHealthcheck ) ) ) | (otherlv_151= 'deploy' otherlv_152= ':' this_BEG_BLOCK_153= RULE_BEG_BLOCK ruleKeyName otherlv_155= ':' this_BEG_BLOCK_156= RULE_BEG_BLOCK ( (lv_deploy_157_0= ruleResource ) )+ this_END_BLOCK_158= RULE_END_BLOCK this_END_BLOCK_159= RULE_END_BLOCK ) )* this_END_BLOCK_160= RULE_END_BLOCK ) ;
     public final EObject ruleService() throws RecognitionException {
         EObject current = null;
 
@@ -2670,49 +2788,51 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
         Token otherlv_37=null;
         Token this_BEG_BLOCK_38=null;
         Token otherlv_39=null;
-        Token this_END_BLOCK_41=null;
-        Token otherlv_42=null;
+        Token this_BEG_BLOCK_40=null;
+        Token this_END_BLOCK_42=null;
+        Token this_END_BLOCK_43=null;
         Token otherlv_44=null;
         Token otherlv_46=null;
-        Token otherlv_47=null;
         Token otherlv_48=null;
-        Token this_BEG_BLOCK_49=null;
+        Token otherlv_49=null;
         Token otherlv_50=null;
-        Token lv_expose_51_0=null;
-        Token this_END_BLOCK_52=null;
-        Token otherlv_53=null;
+        Token this_BEG_BLOCK_51=null;
+        Token otherlv_52=null;
+        Token this_BEG_BLOCK_53=null;
         Token lv_expose_54_0=null;
-        Token otherlv_55=null;
-        Token lv_expose_56_0=null;
+        Token this_END_BLOCK_55=null;
+        Token this_END_BLOCK_56=null;
         Token otherlv_57=null;
-        Token otherlv_58=null;
+        Token lv_expose_58_0=null;
         Token otherlv_59=null;
-        Token this_BEG_BLOCK_60=null;
+        Token lv_expose_60_0=null;
         Token otherlv_61=null;
-        Token this_END_BLOCK_63=null;
-        Token otherlv_64=null;
-        Token otherlv_66=null;
-        Token otherlv_68=null;
-        Token otherlv_69=null;
+        Token otherlv_62=null;
+        Token otherlv_63=null;
+        Token this_BEG_BLOCK_64=null;
+        Token otherlv_65=null;
+        Token this_BEG_BLOCK_66=null;
+        Token this_END_BLOCK_68=null;
+        Token this_END_BLOCK_69=null;
         Token otherlv_70=null;
-        Token this_BEG_BLOCK_71=null;
         Token otherlv_72=null;
-        Token this_END_BLOCK_74=null;
-        Token otherlv_75=null;
+        Token otherlv_74=null;
+        Token otherlv_76=null;
         Token otherlv_77=null;
+        Token this_BEG_BLOCK_78=null;
         Token otherlv_79=null;
-        Token otherlv_80=null;
-        Token otherlv_81=null;
-        Token this_BEG_BLOCK_82=null;
-        Token otherlv_83=null;
-        Token this_END_BLOCK_85=null;
+        Token this_BEG_BLOCK_80=null;
+        Token this_END_BLOCK_82=null;
+        Token this_END_BLOCK_83=null;
+        Token otherlv_84=null;
         Token otherlv_86=null;
         Token otherlv_88=null;
+        Token otherlv_89=null;
         Token otherlv_90=null;
-        Token otherlv_91=null;
+        Token this_BEG_BLOCK_91=null;
         Token otherlv_92=null;
         Token this_BEG_BLOCK_93=null;
-        Token otherlv_94=null;
+        Token this_END_BLOCK_95=null;
         Token this_END_BLOCK_96=null;
         Token otherlv_97=null;
         Token otherlv_99=null;
@@ -2721,29 +2841,47 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
         Token otherlv_103=null;
         Token this_BEG_BLOCK_104=null;
         Token otherlv_105=null;
-        Token this_END_BLOCK_107=null;
-        Token otherlv_108=null;
+        Token this_BEG_BLOCK_106=null;
+        Token this_END_BLOCK_108=null;
+        Token this_END_BLOCK_109=null;
         Token otherlv_110=null;
         Token otherlv_112=null;
-        Token otherlv_113=null;
         Token otherlv_114=null;
-        Token this_BEG_BLOCK_115=null;
-        Token this_END_BLOCK_117=null;
+        Token otherlv_115=null;
+        Token otherlv_116=null;
+        Token this_BEG_BLOCK_117=null;
         Token otherlv_118=null;
-        Token otherlv_119=null;
-        Token otherlv_121=null;
-        Token otherlv_122=null;
-        Token otherlv_124=null;
+        Token this_BEG_BLOCK_119=null;
+        Token this_END_BLOCK_121=null;
+        Token this_END_BLOCK_122=null;
+        Token otherlv_123=null;
         Token otherlv_125=null;
-        Token this_BEG_BLOCK_126=null;
-        Token this_END_BLOCK_128=null;
+        Token otherlv_127=null;
+        Token otherlv_128=null;
         Token otherlv_129=null;
-        Token otherlv_130=null;
+        Token this_BEG_BLOCK_130=null;
         Token otherlv_132=null;
-        Token otherlv_133=null;
-        Token this_BEG_BLOCK_134=null;
+        Token this_BEG_BLOCK_133=null;
+        Token this_END_BLOCK_135=null;
         Token this_END_BLOCK_136=null;
-        Token this_END_BLOCK_137=null;
+        Token otherlv_137=null;
+        Token otherlv_138=null;
+        Token otherlv_140=null;
+        Token otherlv_141=null;
+        Token otherlv_143=null;
+        Token otherlv_144=null;
+        Token this_BEG_BLOCK_145=null;
+        Token this_END_BLOCK_147=null;
+        Token otherlv_148=null;
+        Token otherlv_149=null;
+        Token otherlv_151=null;
+        Token otherlv_152=null;
+        Token this_BEG_BLOCK_153=null;
+        Token otherlv_155=null;
+        Token this_BEG_BLOCK_156=null;
+        Token this_END_BLOCK_158=null;
+        Token this_END_BLOCK_159=null;
+        Token this_END_BLOCK_160=null;
         AntlrDatatypeRuleToken lv_id_0_0 = null;
 
         AntlrDatatypeRuleToken lv_image_5_0 = null;
@@ -2768,70 +2906,74 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
         AntlrDatatypeRuleToken lv_stdinOpen_35_0 = null;
 
-        AntlrDatatypeRuleToken lv_ports_40_0 = null;
-
-        AntlrDatatypeRuleToken lv_ports_43_0 = null;
+        AntlrDatatypeRuleToken lv_ports_41_0 = null;
 
         AntlrDatatypeRuleToken lv_ports_45_0 = null;
 
-        AntlrDatatypeRuleToken lv_command_62_0 = null;
-
-        AntlrDatatypeRuleToken lv_command_65_0 = null;
+        AntlrDatatypeRuleToken lv_ports_47_0 = null;
 
         AntlrDatatypeRuleToken lv_command_67_0 = null;
 
-        AntlrDatatypeRuleToken lv_secrets_73_0 = null;
+        AntlrDatatypeRuleToken lv_command_71_0 = null;
 
-        AntlrDatatypeRuleToken lv_secrets_76_0 = null;
+        AntlrDatatypeRuleToken lv_command_73_0 = null;
 
-        AntlrDatatypeRuleToken lv_secrets_78_0 = null;
+        AntlrDatatypeRuleToken lv_command_75_0 = null;
 
-        AntlrDatatypeRuleToken lv_capAdd_84_0 = null;
+        AntlrDatatypeRuleToken lv_secrets_81_0 = null;
 
-        AntlrDatatypeRuleToken lv_capAdd_87_0 = null;
+        AntlrDatatypeRuleToken lv_secrets_85_0 = null;
 
-        AntlrDatatypeRuleToken lv_capAdd_89_0 = null;
+        AntlrDatatypeRuleToken lv_secrets_87_0 = null;
 
-        AntlrDatatypeRuleToken lv_labels_95_0 = null;
+        AntlrDatatypeRuleToken lv_capAdd_94_0 = null;
 
-        AntlrDatatypeRuleToken lv_labels_98_0 = null;
+        AntlrDatatypeRuleToken lv_capAdd_98_0 = null;
 
-        AntlrDatatypeRuleToken lv_labels_100_0 = null;
+        AntlrDatatypeRuleToken lv_capAdd_100_0 = null;
 
-        AntlrDatatypeRuleToken lv_sysctls_106_0 = null;
+        AntlrDatatypeRuleToken lv_labels_107_0 = null;
 
-        AntlrDatatypeRuleToken lv_sysctls_109_0 = null;
+        AntlrDatatypeRuleToken lv_labels_111_0 = null;
 
-        AntlrDatatypeRuleToken lv_sysctls_111_0 = null;
+        AntlrDatatypeRuleToken lv_labels_113_0 = null;
 
-        EObject lv_environment_116_0 = null;
+        AntlrDatatypeRuleToken lv_sysctls_120_0 = null;
 
-        EObject lv_dependsOn_120_0 = null;
+        AntlrDatatypeRuleToken lv_sysctls_124_0 = null;
 
-        EObject lv_networks_123_0 = null;
+        AntlrDatatypeRuleToken lv_sysctls_126_0 = null;
 
-        EObject lv_volumes_127_0 = null;
+        EObject lv_environment_131_0 = null;
 
-        EObject lv_healthcheck_131_0 = null;
+        EObject lv_environment_134_0 = null;
 
-        EObject lv_deploy_135_0 = null;
+        EObject lv_dependsOn_139_0 = null;
+
+        EObject lv_networks_142_0 = null;
+
+        EObject lv_volumes_146_0 = null;
+
+        EObject lv_healthcheck_150_0 = null;
+
+        EObject lv_deploy_157_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalDcDsl.g:1003:2: ( ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK ( (otherlv_3= 'image' otherlv_4= ':' ( (lv_image_5_0= ruleEString ) ) ) | (otherlv_6= 'build' otherlv_7= ':' ( (lv_build_8_0= ruleBuild ) ) ) | (otherlv_9= 'container_name' otherlv_10= ':' ( (lv_containerName_11_0= ruleEString ) ) ) | (otherlv_12= 'restart' otherlv_13= ':' ( (lv_restart_14_0= ruleEString ) ) ) | (otherlv_15= 'user' otherlv_16= ':' ( (lv_user_17_0= ruleEString ) ) ) | (otherlv_18= 'hostname' otherlv_19= ':' ( (lv_hostname_20_0= ruleEString ) ) ) | (otherlv_21= 'network_mode' otherlv_22= ':' ( (lv_networkMode_23_0= ruleEString ) ) ) | (otherlv_24= 'platform' otherlv_25= ':' ( (lv_platform_26_0= ruleEString ) ) ) | (otherlv_27= 'runtime' otherlv_28= ':' ( (lv_runtime_29_0= ruleEString ) ) ) | (otherlv_30= 'stop_signal' otherlv_31= ':' ( (lv_stopSignal_32_0= ruleEString ) ) ) | (otherlv_33= 'stdin_open' otherlv_34= ':' ( (lv_stdinOpen_35_0= ruleEBoolean ) ) ) | (otherlv_36= 'ports' otherlv_37= ':' ( (this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' ( (lv_ports_40_0= ruleEString ) ) )+ this_END_BLOCK_41= RULE_END_BLOCK ) | (otherlv_42= '[' ( (lv_ports_43_0= ruleEString ) ) (otherlv_44= ',' ( (lv_ports_45_0= ruleEString ) ) )* otherlv_46= ']' ) ) ) | (otherlv_47= 'expose' otherlv_48= ':' ( (this_BEG_BLOCK_49= RULE_BEG_BLOCK (otherlv_50= '-' ( (lv_expose_51_0= RULE_INT ) ) )+ this_END_BLOCK_52= RULE_END_BLOCK ) | (otherlv_53= '[' ( (lv_expose_54_0= RULE_INT ) ) (otherlv_55= ',' ( (lv_expose_56_0= RULE_INT ) ) )* otherlv_57= ']' ) ) ) | (otherlv_58= 'command' otherlv_59= ':' ( (this_BEG_BLOCK_60= RULE_BEG_BLOCK (otherlv_61= '-' ( (lv_command_62_0= ruleEString ) ) )+ this_END_BLOCK_63= RULE_END_BLOCK ) | (otherlv_64= '[' ( (lv_command_65_0= ruleEString ) ) (otherlv_66= ',' ( (lv_command_67_0= ruleEString ) ) )* otherlv_68= ']' ) ) ) | (otherlv_69= 'secrets' otherlv_70= ':' ( (this_BEG_BLOCK_71= RULE_BEG_BLOCK (otherlv_72= '-' ( (lv_secrets_73_0= ruleEString ) ) )+ this_END_BLOCK_74= RULE_END_BLOCK ) | (otherlv_75= '[' ( (lv_secrets_76_0= ruleEString ) ) (otherlv_77= ',' ( (lv_secrets_78_0= ruleEString ) ) )* otherlv_79= ']' ) ) ) | (otherlv_80= 'cap_add' otherlv_81= ':' ( (this_BEG_BLOCK_82= RULE_BEG_BLOCK (otherlv_83= '-' ( (lv_capAdd_84_0= ruleEString ) ) )+ this_END_BLOCK_85= RULE_END_BLOCK ) | (otherlv_86= '[' ( (lv_capAdd_87_0= ruleEString ) ) (otherlv_88= ',' ( (lv_capAdd_89_0= ruleEString ) ) )* otherlv_90= ']' ) ) ) | (otherlv_91= 'labels' otherlv_92= ':' ( (this_BEG_BLOCK_93= RULE_BEG_BLOCK (otherlv_94= '-' ( (lv_labels_95_0= ruleEString ) ) )+ this_END_BLOCK_96= RULE_END_BLOCK ) | (otherlv_97= '[' ( (lv_labels_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_labels_100_0= ruleEString ) ) )* otherlv_101= ']' ) ) ) | (otherlv_102= 'sysctls' otherlv_103= ':' ( (this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' ( (lv_sysctls_106_0= ruleEString ) ) )+ this_END_BLOCK_107= RULE_END_BLOCK ) | (otherlv_108= '[' ( (lv_sysctls_109_0= ruleEString ) ) (otherlv_110= ',' ( (lv_sysctls_111_0= ruleEString ) ) )* otherlv_112= ']' ) ) ) | (otherlv_113= 'environment' otherlv_114= ':' this_BEG_BLOCK_115= RULE_BEG_BLOCK ( (lv_environment_116_0= ruleKeyValuePair ) )+ this_END_BLOCK_117= RULE_END_BLOCK ) | (otherlv_118= 'depends_on' otherlv_119= ':' ( (lv_dependsOn_120_0= ruleDepends_on ) ) ) | (otherlv_121= 'networks' otherlv_122= ':' ( (lv_networks_123_0= ruleNetworks ) ) ) | (otherlv_124= 'volumes' otherlv_125= ':' this_BEG_BLOCK_126= RULE_BEG_BLOCK ( (lv_volumes_127_0= ruleServiceVolume ) )+ this_END_BLOCK_128= RULE_END_BLOCK ) | (otherlv_129= 'healthcheck' otherlv_130= ':' ( (lv_healthcheck_131_0= ruleHealthcheck ) ) ) | (otherlv_132= 'deploy' otherlv_133= ':' this_BEG_BLOCK_134= RULE_BEG_BLOCK ( (lv_deploy_135_0= ruleResource ) )+ this_END_BLOCK_136= RULE_END_BLOCK ) )* this_END_BLOCK_137= RULE_END_BLOCK ) )
-            // InternalDcDsl.g:1004:2: ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK ( (otherlv_3= 'image' otherlv_4= ':' ( (lv_image_5_0= ruleEString ) ) ) | (otherlv_6= 'build' otherlv_7= ':' ( (lv_build_8_0= ruleBuild ) ) ) | (otherlv_9= 'container_name' otherlv_10= ':' ( (lv_containerName_11_0= ruleEString ) ) ) | (otherlv_12= 'restart' otherlv_13= ':' ( (lv_restart_14_0= ruleEString ) ) ) | (otherlv_15= 'user' otherlv_16= ':' ( (lv_user_17_0= ruleEString ) ) ) | (otherlv_18= 'hostname' otherlv_19= ':' ( (lv_hostname_20_0= ruleEString ) ) ) | (otherlv_21= 'network_mode' otherlv_22= ':' ( (lv_networkMode_23_0= ruleEString ) ) ) | (otherlv_24= 'platform' otherlv_25= ':' ( (lv_platform_26_0= ruleEString ) ) ) | (otherlv_27= 'runtime' otherlv_28= ':' ( (lv_runtime_29_0= ruleEString ) ) ) | (otherlv_30= 'stop_signal' otherlv_31= ':' ( (lv_stopSignal_32_0= ruleEString ) ) ) | (otherlv_33= 'stdin_open' otherlv_34= ':' ( (lv_stdinOpen_35_0= ruleEBoolean ) ) ) | (otherlv_36= 'ports' otherlv_37= ':' ( (this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' ( (lv_ports_40_0= ruleEString ) ) )+ this_END_BLOCK_41= RULE_END_BLOCK ) | (otherlv_42= '[' ( (lv_ports_43_0= ruleEString ) ) (otherlv_44= ',' ( (lv_ports_45_0= ruleEString ) ) )* otherlv_46= ']' ) ) ) | (otherlv_47= 'expose' otherlv_48= ':' ( (this_BEG_BLOCK_49= RULE_BEG_BLOCK (otherlv_50= '-' ( (lv_expose_51_0= RULE_INT ) ) )+ this_END_BLOCK_52= RULE_END_BLOCK ) | (otherlv_53= '[' ( (lv_expose_54_0= RULE_INT ) ) (otherlv_55= ',' ( (lv_expose_56_0= RULE_INT ) ) )* otherlv_57= ']' ) ) ) | (otherlv_58= 'command' otherlv_59= ':' ( (this_BEG_BLOCK_60= RULE_BEG_BLOCK (otherlv_61= '-' ( (lv_command_62_0= ruleEString ) ) )+ this_END_BLOCK_63= RULE_END_BLOCK ) | (otherlv_64= '[' ( (lv_command_65_0= ruleEString ) ) (otherlv_66= ',' ( (lv_command_67_0= ruleEString ) ) )* otherlv_68= ']' ) ) ) | (otherlv_69= 'secrets' otherlv_70= ':' ( (this_BEG_BLOCK_71= RULE_BEG_BLOCK (otherlv_72= '-' ( (lv_secrets_73_0= ruleEString ) ) )+ this_END_BLOCK_74= RULE_END_BLOCK ) | (otherlv_75= '[' ( (lv_secrets_76_0= ruleEString ) ) (otherlv_77= ',' ( (lv_secrets_78_0= ruleEString ) ) )* otherlv_79= ']' ) ) ) | (otherlv_80= 'cap_add' otherlv_81= ':' ( (this_BEG_BLOCK_82= RULE_BEG_BLOCK (otherlv_83= '-' ( (lv_capAdd_84_0= ruleEString ) ) )+ this_END_BLOCK_85= RULE_END_BLOCK ) | (otherlv_86= '[' ( (lv_capAdd_87_0= ruleEString ) ) (otherlv_88= ',' ( (lv_capAdd_89_0= ruleEString ) ) )* otherlv_90= ']' ) ) ) | (otherlv_91= 'labels' otherlv_92= ':' ( (this_BEG_BLOCK_93= RULE_BEG_BLOCK (otherlv_94= '-' ( (lv_labels_95_0= ruleEString ) ) )+ this_END_BLOCK_96= RULE_END_BLOCK ) | (otherlv_97= '[' ( (lv_labels_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_labels_100_0= ruleEString ) ) )* otherlv_101= ']' ) ) ) | (otherlv_102= 'sysctls' otherlv_103= ':' ( (this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' ( (lv_sysctls_106_0= ruleEString ) ) )+ this_END_BLOCK_107= RULE_END_BLOCK ) | (otherlv_108= '[' ( (lv_sysctls_109_0= ruleEString ) ) (otherlv_110= ',' ( (lv_sysctls_111_0= ruleEString ) ) )* otherlv_112= ']' ) ) ) | (otherlv_113= 'environment' otherlv_114= ':' this_BEG_BLOCK_115= RULE_BEG_BLOCK ( (lv_environment_116_0= ruleKeyValuePair ) )+ this_END_BLOCK_117= RULE_END_BLOCK ) | (otherlv_118= 'depends_on' otherlv_119= ':' ( (lv_dependsOn_120_0= ruleDepends_on ) ) ) | (otherlv_121= 'networks' otherlv_122= ':' ( (lv_networks_123_0= ruleNetworks ) ) ) | (otherlv_124= 'volumes' otherlv_125= ':' this_BEG_BLOCK_126= RULE_BEG_BLOCK ( (lv_volumes_127_0= ruleServiceVolume ) )+ this_END_BLOCK_128= RULE_END_BLOCK ) | (otherlv_129= 'healthcheck' otherlv_130= ':' ( (lv_healthcheck_131_0= ruleHealthcheck ) ) ) | (otherlv_132= 'deploy' otherlv_133= ':' this_BEG_BLOCK_134= RULE_BEG_BLOCK ( (lv_deploy_135_0= ruleResource ) )+ this_END_BLOCK_136= RULE_END_BLOCK ) )* this_END_BLOCK_137= RULE_END_BLOCK )
+            // InternalDcDsl.g:1048:2: ( ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK ( (otherlv_3= 'image' otherlv_4= ':' ( (lv_image_5_0= ruleEString ) ) ) | (otherlv_6= 'build' otherlv_7= ':' ( (lv_build_8_0= ruleBuild ) ) ) | (otherlv_9= 'container_name' otherlv_10= ':' ( (lv_containerName_11_0= ruleEString ) ) ) | (otherlv_12= 'restart' otherlv_13= ':' ( (lv_restart_14_0= ruleEString ) ) ) | (otherlv_15= 'user' otherlv_16= ':' ( (lv_user_17_0= ruleEString ) ) ) | (otherlv_18= 'hostname' otherlv_19= ':' ( (lv_hostname_20_0= ruleEString ) ) ) | (otherlv_21= 'network_mode' otherlv_22= ':' ( (lv_networkMode_23_0= ruleEString ) ) ) | (otherlv_24= 'platform' otherlv_25= ':' ( (lv_platform_26_0= ruleEString ) ) ) | (otherlv_27= 'runtime' otherlv_28= ':' ( (lv_runtime_29_0= ruleEString ) ) ) | (otherlv_30= 'stop_signal' otherlv_31= ':' ( (lv_stopSignal_32_0= ruleEString ) ) ) | (otherlv_33= 'stdin_open' otherlv_34= ':' ( (lv_stdinOpen_35_0= ruleEBoolean ) ) ) | (otherlv_36= 'ports' otherlv_37= ':' ( (this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' (this_BEG_BLOCK_40= RULE_BEG_BLOCK )? ( (lv_ports_41_0= ruleEString ) ) (this_END_BLOCK_42= RULE_END_BLOCK )? )+ this_END_BLOCK_43= RULE_END_BLOCK ) | (otherlv_44= '[' ( (lv_ports_45_0= ruleEString ) ) (otherlv_46= ',' ( (lv_ports_47_0= ruleEString ) ) )* otherlv_48= ']' ) ) ) | (otherlv_49= 'expose' otherlv_50= ':' ( (this_BEG_BLOCK_51= RULE_BEG_BLOCK (otherlv_52= '-' (this_BEG_BLOCK_53= RULE_BEG_BLOCK )? ( (lv_expose_54_0= RULE_INT ) ) (this_END_BLOCK_55= RULE_END_BLOCK )? )+ this_END_BLOCK_56= RULE_END_BLOCK ) | (otherlv_57= '[' ( (lv_expose_58_0= RULE_INT ) ) (otherlv_59= ',' ( (lv_expose_60_0= RULE_INT ) ) )* otherlv_61= ']' ) ) ) | (otherlv_62= 'command' otherlv_63= ':' ( (this_BEG_BLOCK_64= RULE_BEG_BLOCK (otherlv_65= '-' (this_BEG_BLOCK_66= RULE_BEG_BLOCK )? ( (lv_command_67_0= ruleEString ) ) (this_END_BLOCK_68= RULE_END_BLOCK )? )+ this_END_BLOCK_69= RULE_END_BLOCK ) | (otherlv_70= '[' ( (lv_command_71_0= ruleEString ) ) (otherlv_72= ',' ( (lv_command_73_0= ruleEString ) ) )* otherlv_74= ']' ) | ( (lv_command_75_0= ruleEString ) ) ) ) | (otherlv_76= 'secrets' otherlv_77= ':' ( (this_BEG_BLOCK_78= RULE_BEG_BLOCK (otherlv_79= '-' (this_BEG_BLOCK_80= RULE_BEG_BLOCK )? ( (lv_secrets_81_0= ruleEString ) ) (this_END_BLOCK_82= RULE_END_BLOCK )? )+ this_END_BLOCK_83= RULE_END_BLOCK ) | (otherlv_84= '[' ( (lv_secrets_85_0= ruleEString ) ) (otherlv_86= ',' ( (lv_secrets_87_0= ruleEString ) ) )* otherlv_88= ']' ) ) ) | (otherlv_89= 'cap_add' otherlv_90= ':' ( (this_BEG_BLOCK_91= RULE_BEG_BLOCK (otherlv_92= '-' (this_BEG_BLOCK_93= RULE_BEG_BLOCK )? ( (lv_capAdd_94_0= ruleEString ) ) (this_END_BLOCK_95= RULE_END_BLOCK )? )+ this_END_BLOCK_96= RULE_END_BLOCK ) | (otherlv_97= '[' ( (lv_capAdd_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_capAdd_100_0= ruleEString ) ) )* otherlv_101= ']' ) ) ) | (otherlv_102= 'labels' otherlv_103= ':' ( (this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' (this_BEG_BLOCK_106= RULE_BEG_BLOCK )? ( (lv_labels_107_0= ruleEString ) ) (this_END_BLOCK_108= RULE_END_BLOCK )? )+ this_END_BLOCK_109= RULE_END_BLOCK ) | (otherlv_110= '[' ( (lv_labels_111_0= ruleEString ) ) (otherlv_112= ',' ( (lv_labels_113_0= ruleEString ) ) )* otherlv_114= ']' ) ) ) | (otherlv_115= 'sysctls' otherlv_116= ':' ( (this_BEG_BLOCK_117= RULE_BEG_BLOCK (otherlv_118= '-' (this_BEG_BLOCK_119= RULE_BEG_BLOCK )? ( (lv_sysctls_120_0= ruleEString ) ) (this_END_BLOCK_121= RULE_END_BLOCK )? )+ this_END_BLOCK_122= RULE_END_BLOCK ) | (otherlv_123= '[' ( (lv_sysctls_124_0= ruleEString ) ) (otherlv_125= ',' ( (lv_sysctls_126_0= ruleEString ) ) )* otherlv_127= ']' ) ) ) | (otherlv_128= 'environment' otherlv_129= ':' this_BEG_BLOCK_130= RULE_BEG_BLOCK ( ( (lv_environment_131_0= ruleKeyValuePair ) )+ | (otherlv_132= '-' (this_BEG_BLOCK_133= RULE_BEG_BLOCK )? ( (lv_environment_134_0= ruleEnvEntry ) ) (this_END_BLOCK_135= RULE_END_BLOCK )? )+ ) this_END_BLOCK_136= RULE_END_BLOCK ) | (otherlv_137= 'depends_on' otherlv_138= ':' ( (lv_dependsOn_139_0= ruleDepends_on ) ) ) | (otherlv_140= 'networks' otherlv_141= ':' ( (lv_networks_142_0= ruleNetworks ) ) ) | (otherlv_143= 'volumes' otherlv_144= ':' this_BEG_BLOCK_145= RULE_BEG_BLOCK ( (lv_volumes_146_0= ruleServiceVolume ) )+ this_END_BLOCK_147= RULE_END_BLOCK ) | (otherlv_148= 'healthcheck' otherlv_149= ':' ( (lv_healthcheck_150_0= ruleHealthcheck ) ) ) | (otherlv_151= 'deploy' otherlv_152= ':' this_BEG_BLOCK_153= RULE_BEG_BLOCK ruleKeyName otherlv_155= ':' this_BEG_BLOCK_156= RULE_BEG_BLOCK ( (lv_deploy_157_0= ruleResource ) )+ this_END_BLOCK_158= RULE_END_BLOCK this_END_BLOCK_159= RULE_END_BLOCK ) )* this_END_BLOCK_160= RULE_END_BLOCK ) )
+            // InternalDcDsl.g:1049:2: ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK ( (otherlv_3= 'image' otherlv_4= ':' ( (lv_image_5_0= ruleEString ) ) ) | (otherlv_6= 'build' otherlv_7= ':' ( (lv_build_8_0= ruleBuild ) ) ) | (otherlv_9= 'container_name' otherlv_10= ':' ( (lv_containerName_11_0= ruleEString ) ) ) | (otherlv_12= 'restart' otherlv_13= ':' ( (lv_restart_14_0= ruleEString ) ) ) | (otherlv_15= 'user' otherlv_16= ':' ( (lv_user_17_0= ruleEString ) ) ) | (otherlv_18= 'hostname' otherlv_19= ':' ( (lv_hostname_20_0= ruleEString ) ) ) | (otherlv_21= 'network_mode' otherlv_22= ':' ( (lv_networkMode_23_0= ruleEString ) ) ) | (otherlv_24= 'platform' otherlv_25= ':' ( (lv_platform_26_0= ruleEString ) ) ) | (otherlv_27= 'runtime' otherlv_28= ':' ( (lv_runtime_29_0= ruleEString ) ) ) | (otherlv_30= 'stop_signal' otherlv_31= ':' ( (lv_stopSignal_32_0= ruleEString ) ) ) | (otherlv_33= 'stdin_open' otherlv_34= ':' ( (lv_stdinOpen_35_0= ruleEBoolean ) ) ) | (otherlv_36= 'ports' otherlv_37= ':' ( (this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' (this_BEG_BLOCK_40= RULE_BEG_BLOCK )? ( (lv_ports_41_0= ruleEString ) ) (this_END_BLOCK_42= RULE_END_BLOCK )? )+ this_END_BLOCK_43= RULE_END_BLOCK ) | (otherlv_44= '[' ( (lv_ports_45_0= ruleEString ) ) (otherlv_46= ',' ( (lv_ports_47_0= ruleEString ) ) )* otherlv_48= ']' ) ) ) | (otherlv_49= 'expose' otherlv_50= ':' ( (this_BEG_BLOCK_51= RULE_BEG_BLOCK (otherlv_52= '-' (this_BEG_BLOCK_53= RULE_BEG_BLOCK )? ( (lv_expose_54_0= RULE_INT ) ) (this_END_BLOCK_55= RULE_END_BLOCK )? )+ this_END_BLOCK_56= RULE_END_BLOCK ) | (otherlv_57= '[' ( (lv_expose_58_0= RULE_INT ) ) (otherlv_59= ',' ( (lv_expose_60_0= RULE_INT ) ) )* otherlv_61= ']' ) ) ) | (otherlv_62= 'command' otherlv_63= ':' ( (this_BEG_BLOCK_64= RULE_BEG_BLOCK (otherlv_65= '-' (this_BEG_BLOCK_66= RULE_BEG_BLOCK )? ( (lv_command_67_0= ruleEString ) ) (this_END_BLOCK_68= RULE_END_BLOCK )? )+ this_END_BLOCK_69= RULE_END_BLOCK ) | (otherlv_70= '[' ( (lv_command_71_0= ruleEString ) ) (otherlv_72= ',' ( (lv_command_73_0= ruleEString ) ) )* otherlv_74= ']' ) | ( (lv_command_75_0= ruleEString ) ) ) ) | (otherlv_76= 'secrets' otherlv_77= ':' ( (this_BEG_BLOCK_78= RULE_BEG_BLOCK (otherlv_79= '-' (this_BEG_BLOCK_80= RULE_BEG_BLOCK )? ( (lv_secrets_81_0= ruleEString ) ) (this_END_BLOCK_82= RULE_END_BLOCK )? )+ this_END_BLOCK_83= RULE_END_BLOCK ) | (otherlv_84= '[' ( (lv_secrets_85_0= ruleEString ) ) (otherlv_86= ',' ( (lv_secrets_87_0= ruleEString ) ) )* otherlv_88= ']' ) ) ) | (otherlv_89= 'cap_add' otherlv_90= ':' ( (this_BEG_BLOCK_91= RULE_BEG_BLOCK (otherlv_92= '-' (this_BEG_BLOCK_93= RULE_BEG_BLOCK )? ( (lv_capAdd_94_0= ruleEString ) ) (this_END_BLOCK_95= RULE_END_BLOCK )? )+ this_END_BLOCK_96= RULE_END_BLOCK ) | (otherlv_97= '[' ( (lv_capAdd_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_capAdd_100_0= ruleEString ) ) )* otherlv_101= ']' ) ) ) | (otherlv_102= 'labels' otherlv_103= ':' ( (this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' (this_BEG_BLOCK_106= RULE_BEG_BLOCK )? ( (lv_labels_107_0= ruleEString ) ) (this_END_BLOCK_108= RULE_END_BLOCK )? )+ this_END_BLOCK_109= RULE_END_BLOCK ) | (otherlv_110= '[' ( (lv_labels_111_0= ruleEString ) ) (otherlv_112= ',' ( (lv_labels_113_0= ruleEString ) ) )* otherlv_114= ']' ) ) ) | (otherlv_115= 'sysctls' otherlv_116= ':' ( (this_BEG_BLOCK_117= RULE_BEG_BLOCK (otherlv_118= '-' (this_BEG_BLOCK_119= RULE_BEG_BLOCK )? ( (lv_sysctls_120_0= ruleEString ) ) (this_END_BLOCK_121= RULE_END_BLOCK )? )+ this_END_BLOCK_122= RULE_END_BLOCK ) | (otherlv_123= '[' ( (lv_sysctls_124_0= ruleEString ) ) (otherlv_125= ',' ( (lv_sysctls_126_0= ruleEString ) ) )* otherlv_127= ']' ) ) ) | (otherlv_128= 'environment' otherlv_129= ':' this_BEG_BLOCK_130= RULE_BEG_BLOCK ( ( (lv_environment_131_0= ruleKeyValuePair ) )+ | (otherlv_132= '-' (this_BEG_BLOCK_133= RULE_BEG_BLOCK )? ( (lv_environment_134_0= ruleEnvEntry ) ) (this_END_BLOCK_135= RULE_END_BLOCK )? )+ ) this_END_BLOCK_136= RULE_END_BLOCK ) | (otherlv_137= 'depends_on' otherlv_138= ':' ( (lv_dependsOn_139_0= ruleDepends_on ) ) ) | (otherlv_140= 'networks' otherlv_141= ':' ( (lv_networks_142_0= ruleNetworks ) ) ) | (otherlv_143= 'volumes' otherlv_144= ':' this_BEG_BLOCK_145= RULE_BEG_BLOCK ( (lv_volumes_146_0= ruleServiceVolume ) )+ this_END_BLOCK_147= RULE_END_BLOCK ) | (otherlv_148= 'healthcheck' otherlv_149= ':' ( (lv_healthcheck_150_0= ruleHealthcheck ) ) ) | (otherlv_151= 'deploy' otherlv_152= ':' this_BEG_BLOCK_153= RULE_BEG_BLOCK ruleKeyName otherlv_155= ':' this_BEG_BLOCK_156= RULE_BEG_BLOCK ( (lv_deploy_157_0= ruleResource ) )+ this_END_BLOCK_158= RULE_END_BLOCK this_END_BLOCK_159= RULE_END_BLOCK ) )* this_END_BLOCK_160= RULE_END_BLOCK )
             {
-            // InternalDcDsl.g:1004:2: ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK ( (otherlv_3= 'image' otherlv_4= ':' ( (lv_image_5_0= ruleEString ) ) ) | (otherlv_6= 'build' otherlv_7= ':' ( (lv_build_8_0= ruleBuild ) ) ) | (otherlv_9= 'container_name' otherlv_10= ':' ( (lv_containerName_11_0= ruleEString ) ) ) | (otherlv_12= 'restart' otherlv_13= ':' ( (lv_restart_14_0= ruleEString ) ) ) | (otherlv_15= 'user' otherlv_16= ':' ( (lv_user_17_0= ruleEString ) ) ) | (otherlv_18= 'hostname' otherlv_19= ':' ( (lv_hostname_20_0= ruleEString ) ) ) | (otherlv_21= 'network_mode' otherlv_22= ':' ( (lv_networkMode_23_0= ruleEString ) ) ) | (otherlv_24= 'platform' otherlv_25= ':' ( (lv_platform_26_0= ruleEString ) ) ) | (otherlv_27= 'runtime' otherlv_28= ':' ( (lv_runtime_29_0= ruleEString ) ) ) | (otherlv_30= 'stop_signal' otherlv_31= ':' ( (lv_stopSignal_32_0= ruleEString ) ) ) | (otherlv_33= 'stdin_open' otherlv_34= ':' ( (lv_stdinOpen_35_0= ruleEBoolean ) ) ) | (otherlv_36= 'ports' otherlv_37= ':' ( (this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' ( (lv_ports_40_0= ruleEString ) ) )+ this_END_BLOCK_41= RULE_END_BLOCK ) | (otherlv_42= '[' ( (lv_ports_43_0= ruleEString ) ) (otherlv_44= ',' ( (lv_ports_45_0= ruleEString ) ) )* otherlv_46= ']' ) ) ) | (otherlv_47= 'expose' otherlv_48= ':' ( (this_BEG_BLOCK_49= RULE_BEG_BLOCK (otherlv_50= '-' ( (lv_expose_51_0= RULE_INT ) ) )+ this_END_BLOCK_52= RULE_END_BLOCK ) | (otherlv_53= '[' ( (lv_expose_54_0= RULE_INT ) ) (otherlv_55= ',' ( (lv_expose_56_0= RULE_INT ) ) )* otherlv_57= ']' ) ) ) | (otherlv_58= 'command' otherlv_59= ':' ( (this_BEG_BLOCK_60= RULE_BEG_BLOCK (otherlv_61= '-' ( (lv_command_62_0= ruleEString ) ) )+ this_END_BLOCK_63= RULE_END_BLOCK ) | (otherlv_64= '[' ( (lv_command_65_0= ruleEString ) ) (otherlv_66= ',' ( (lv_command_67_0= ruleEString ) ) )* otherlv_68= ']' ) ) ) | (otherlv_69= 'secrets' otherlv_70= ':' ( (this_BEG_BLOCK_71= RULE_BEG_BLOCK (otherlv_72= '-' ( (lv_secrets_73_0= ruleEString ) ) )+ this_END_BLOCK_74= RULE_END_BLOCK ) | (otherlv_75= '[' ( (lv_secrets_76_0= ruleEString ) ) (otherlv_77= ',' ( (lv_secrets_78_0= ruleEString ) ) )* otherlv_79= ']' ) ) ) | (otherlv_80= 'cap_add' otherlv_81= ':' ( (this_BEG_BLOCK_82= RULE_BEG_BLOCK (otherlv_83= '-' ( (lv_capAdd_84_0= ruleEString ) ) )+ this_END_BLOCK_85= RULE_END_BLOCK ) | (otherlv_86= '[' ( (lv_capAdd_87_0= ruleEString ) ) (otherlv_88= ',' ( (lv_capAdd_89_0= ruleEString ) ) )* otherlv_90= ']' ) ) ) | (otherlv_91= 'labels' otherlv_92= ':' ( (this_BEG_BLOCK_93= RULE_BEG_BLOCK (otherlv_94= '-' ( (lv_labels_95_0= ruleEString ) ) )+ this_END_BLOCK_96= RULE_END_BLOCK ) | (otherlv_97= '[' ( (lv_labels_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_labels_100_0= ruleEString ) ) )* otherlv_101= ']' ) ) ) | (otherlv_102= 'sysctls' otherlv_103= ':' ( (this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' ( (lv_sysctls_106_0= ruleEString ) ) )+ this_END_BLOCK_107= RULE_END_BLOCK ) | (otherlv_108= '[' ( (lv_sysctls_109_0= ruleEString ) ) (otherlv_110= ',' ( (lv_sysctls_111_0= ruleEString ) ) )* otherlv_112= ']' ) ) ) | (otherlv_113= 'environment' otherlv_114= ':' this_BEG_BLOCK_115= RULE_BEG_BLOCK ( (lv_environment_116_0= ruleKeyValuePair ) )+ this_END_BLOCK_117= RULE_END_BLOCK ) | (otherlv_118= 'depends_on' otherlv_119= ':' ( (lv_dependsOn_120_0= ruleDepends_on ) ) ) | (otherlv_121= 'networks' otherlv_122= ':' ( (lv_networks_123_0= ruleNetworks ) ) ) | (otherlv_124= 'volumes' otherlv_125= ':' this_BEG_BLOCK_126= RULE_BEG_BLOCK ( (lv_volumes_127_0= ruleServiceVolume ) )+ this_END_BLOCK_128= RULE_END_BLOCK ) | (otherlv_129= 'healthcheck' otherlv_130= ':' ( (lv_healthcheck_131_0= ruleHealthcheck ) ) ) | (otherlv_132= 'deploy' otherlv_133= ':' this_BEG_BLOCK_134= RULE_BEG_BLOCK ( (lv_deploy_135_0= ruleResource ) )+ this_END_BLOCK_136= RULE_END_BLOCK ) )* this_END_BLOCK_137= RULE_END_BLOCK )
-            // InternalDcDsl.g:1005:3: ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK ( (otherlv_3= 'image' otherlv_4= ':' ( (lv_image_5_0= ruleEString ) ) ) | (otherlv_6= 'build' otherlv_7= ':' ( (lv_build_8_0= ruleBuild ) ) ) | (otherlv_9= 'container_name' otherlv_10= ':' ( (lv_containerName_11_0= ruleEString ) ) ) | (otherlv_12= 'restart' otherlv_13= ':' ( (lv_restart_14_0= ruleEString ) ) ) | (otherlv_15= 'user' otherlv_16= ':' ( (lv_user_17_0= ruleEString ) ) ) | (otherlv_18= 'hostname' otherlv_19= ':' ( (lv_hostname_20_0= ruleEString ) ) ) | (otherlv_21= 'network_mode' otherlv_22= ':' ( (lv_networkMode_23_0= ruleEString ) ) ) | (otherlv_24= 'platform' otherlv_25= ':' ( (lv_platform_26_0= ruleEString ) ) ) | (otherlv_27= 'runtime' otherlv_28= ':' ( (lv_runtime_29_0= ruleEString ) ) ) | (otherlv_30= 'stop_signal' otherlv_31= ':' ( (lv_stopSignal_32_0= ruleEString ) ) ) | (otherlv_33= 'stdin_open' otherlv_34= ':' ( (lv_stdinOpen_35_0= ruleEBoolean ) ) ) | (otherlv_36= 'ports' otherlv_37= ':' ( (this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' ( (lv_ports_40_0= ruleEString ) ) )+ this_END_BLOCK_41= RULE_END_BLOCK ) | (otherlv_42= '[' ( (lv_ports_43_0= ruleEString ) ) (otherlv_44= ',' ( (lv_ports_45_0= ruleEString ) ) )* otherlv_46= ']' ) ) ) | (otherlv_47= 'expose' otherlv_48= ':' ( (this_BEG_BLOCK_49= RULE_BEG_BLOCK (otherlv_50= '-' ( (lv_expose_51_0= RULE_INT ) ) )+ this_END_BLOCK_52= RULE_END_BLOCK ) | (otherlv_53= '[' ( (lv_expose_54_0= RULE_INT ) ) (otherlv_55= ',' ( (lv_expose_56_0= RULE_INT ) ) )* otherlv_57= ']' ) ) ) | (otherlv_58= 'command' otherlv_59= ':' ( (this_BEG_BLOCK_60= RULE_BEG_BLOCK (otherlv_61= '-' ( (lv_command_62_0= ruleEString ) ) )+ this_END_BLOCK_63= RULE_END_BLOCK ) | (otherlv_64= '[' ( (lv_command_65_0= ruleEString ) ) (otherlv_66= ',' ( (lv_command_67_0= ruleEString ) ) )* otherlv_68= ']' ) ) ) | (otherlv_69= 'secrets' otherlv_70= ':' ( (this_BEG_BLOCK_71= RULE_BEG_BLOCK (otherlv_72= '-' ( (lv_secrets_73_0= ruleEString ) ) )+ this_END_BLOCK_74= RULE_END_BLOCK ) | (otherlv_75= '[' ( (lv_secrets_76_0= ruleEString ) ) (otherlv_77= ',' ( (lv_secrets_78_0= ruleEString ) ) )* otherlv_79= ']' ) ) ) | (otherlv_80= 'cap_add' otherlv_81= ':' ( (this_BEG_BLOCK_82= RULE_BEG_BLOCK (otherlv_83= '-' ( (lv_capAdd_84_0= ruleEString ) ) )+ this_END_BLOCK_85= RULE_END_BLOCK ) | (otherlv_86= '[' ( (lv_capAdd_87_0= ruleEString ) ) (otherlv_88= ',' ( (lv_capAdd_89_0= ruleEString ) ) )* otherlv_90= ']' ) ) ) | (otherlv_91= 'labels' otherlv_92= ':' ( (this_BEG_BLOCK_93= RULE_BEG_BLOCK (otherlv_94= '-' ( (lv_labels_95_0= ruleEString ) ) )+ this_END_BLOCK_96= RULE_END_BLOCK ) | (otherlv_97= '[' ( (lv_labels_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_labels_100_0= ruleEString ) ) )* otherlv_101= ']' ) ) ) | (otherlv_102= 'sysctls' otherlv_103= ':' ( (this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' ( (lv_sysctls_106_0= ruleEString ) ) )+ this_END_BLOCK_107= RULE_END_BLOCK ) | (otherlv_108= '[' ( (lv_sysctls_109_0= ruleEString ) ) (otherlv_110= ',' ( (lv_sysctls_111_0= ruleEString ) ) )* otherlv_112= ']' ) ) ) | (otherlv_113= 'environment' otherlv_114= ':' this_BEG_BLOCK_115= RULE_BEG_BLOCK ( (lv_environment_116_0= ruleKeyValuePair ) )+ this_END_BLOCK_117= RULE_END_BLOCK ) | (otherlv_118= 'depends_on' otherlv_119= ':' ( (lv_dependsOn_120_0= ruleDepends_on ) ) ) | (otherlv_121= 'networks' otherlv_122= ':' ( (lv_networks_123_0= ruleNetworks ) ) ) | (otherlv_124= 'volumes' otherlv_125= ':' this_BEG_BLOCK_126= RULE_BEG_BLOCK ( (lv_volumes_127_0= ruleServiceVolume ) )+ this_END_BLOCK_128= RULE_END_BLOCK ) | (otherlv_129= 'healthcheck' otherlv_130= ':' ( (lv_healthcheck_131_0= ruleHealthcheck ) ) ) | (otherlv_132= 'deploy' otherlv_133= ':' this_BEG_BLOCK_134= RULE_BEG_BLOCK ( (lv_deploy_135_0= ruleResource ) )+ this_END_BLOCK_136= RULE_END_BLOCK ) )* this_END_BLOCK_137= RULE_END_BLOCK
+            // InternalDcDsl.g:1049:2: ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK ( (otherlv_3= 'image' otherlv_4= ':' ( (lv_image_5_0= ruleEString ) ) ) | (otherlv_6= 'build' otherlv_7= ':' ( (lv_build_8_0= ruleBuild ) ) ) | (otherlv_9= 'container_name' otherlv_10= ':' ( (lv_containerName_11_0= ruleEString ) ) ) | (otherlv_12= 'restart' otherlv_13= ':' ( (lv_restart_14_0= ruleEString ) ) ) | (otherlv_15= 'user' otherlv_16= ':' ( (lv_user_17_0= ruleEString ) ) ) | (otherlv_18= 'hostname' otherlv_19= ':' ( (lv_hostname_20_0= ruleEString ) ) ) | (otherlv_21= 'network_mode' otherlv_22= ':' ( (lv_networkMode_23_0= ruleEString ) ) ) | (otherlv_24= 'platform' otherlv_25= ':' ( (lv_platform_26_0= ruleEString ) ) ) | (otherlv_27= 'runtime' otherlv_28= ':' ( (lv_runtime_29_0= ruleEString ) ) ) | (otherlv_30= 'stop_signal' otherlv_31= ':' ( (lv_stopSignal_32_0= ruleEString ) ) ) | (otherlv_33= 'stdin_open' otherlv_34= ':' ( (lv_stdinOpen_35_0= ruleEBoolean ) ) ) | (otherlv_36= 'ports' otherlv_37= ':' ( (this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' (this_BEG_BLOCK_40= RULE_BEG_BLOCK )? ( (lv_ports_41_0= ruleEString ) ) (this_END_BLOCK_42= RULE_END_BLOCK )? )+ this_END_BLOCK_43= RULE_END_BLOCK ) | (otherlv_44= '[' ( (lv_ports_45_0= ruleEString ) ) (otherlv_46= ',' ( (lv_ports_47_0= ruleEString ) ) )* otherlv_48= ']' ) ) ) | (otherlv_49= 'expose' otherlv_50= ':' ( (this_BEG_BLOCK_51= RULE_BEG_BLOCK (otherlv_52= '-' (this_BEG_BLOCK_53= RULE_BEG_BLOCK )? ( (lv_expose_54_0= RULE_INT ) ) (this_END_BLOCK_55= RULE_END_BLOCK )? )+ this_END_BLOCK_56= RULE_END_BLOCK ) | (otherlv_57= '[' ( (lv_expose_58_0= RULE_INT ) ) (otherlv_59= ',' ( (lv_expose_60_0= RULE_INT ) ) )* otherlv_61= ']' ) ) ) | (otherlv_62= 'command' otherlv_63= ':' ( (this_BEG_BLOCK_64= RULE_BEG_BLOCK (otherlv_65= '-' (this_BEG_BLOCK_66= RULE_BEG_BLOCK )? ( (lv_command_67_0= ruleEString ) ) (this_END_BLOCK_68= RULE_END_BLOCK )? )+ this_END_BLOCK_69= RULE_END_BLOCK ) | (otherlv_70= '[' ( (lv_command_71_0= ruleEString ) ) (otherlv_72= ',' ( (lv_command_73_0= ruleEString ) ) )* otherlv_74= ']' ) | ( (lv_command_75_0= ruleEString ) ) ) ) | (otherlv_76= 'secrets' otherlv_77= ':' ( (this_BEG_BLOCK_78= RULE_BEG_BLOCK (otherlv_79= '-' (this_BEG_BLOCK_80= RULE_BEG_BLOCK )? ( (lv_secrets_81_0= ruleEString ) ) (this_END_BLOCK_82= RULE_END_BLOCK )? )+ this_END_BLOCK_83= RULE_END_BLOCK ) | (otherlv_84= '[' ( (lv_secrets_85_0= ruleEString ) ) (otherlv_86= ',' ( (lv_secrets_87_0= ruleEString ) ) )* otherlv_88= ']' ) ) ) | (otherlv_89= 'cap_add' otherlv_90= ':' ( (this_BEG_BLOCK_91= RULE_BEG_BLOCK (otherlv_92= '-' (this_BEG_BLOCK_93= RULE_BEG_BLOCK )? ( (lv_capAdd_94_0= ruleEString ) ) (this_END_BLOCK_95= RULE_END_BLOCK )? )+ this_END_BLOCK_96= RULE_END_BLOCK ) | (otherlv_97= '[' ( (lv_capAdd_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_capAdd_100_0= ruleEString ) ) )* otherlv_101= ']' ) ) ) | (otherlv_102= 'labels' otherlv_103= ':' ( (this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' (this_BEG_BLOCK_106= RULE_BEG_BLOCK )? ( (lv_labels_107_0= ruleEString ) ) (this_END_BLOCK_108= RULE_END_BLOCK )? )+ this_END_BLOCK_109= RULE_END_BLOCK ) | (otherlv_110= '[' ( (lv_labels_111_0= ruleEString ) ) (otherlv_112= ',' ( (lv_labels_113_0= ruleEString ) ) )* otherlv_114= ']' ) ) ) | (otherlv_115= 'sysctls' otherlv_116= ':' ( (this_BEG_BLOCK_117= RULE_BEG_BLOCK (otherlv_118= '-' (this_BEG_BLOCK_119= RULE_BEG_BLOCK )? ( (lv_sysctls_120_0= ruleEString ) ) (this_END_BLOCK_121= RULE_END_BLOCK )? )+ this_END_BLOCK_122= RULE_END_BLOCK ) | (otherlv_123= '[' ( (lv_sysctls_124_0= ruleEString ) ) (otherlv_125= ',' ( (lv_sysctls_126_0= ruleEString ) ) )* otherlv_127= ']' ) ) ) | (otherlv_128= 'environment' otherlv_129= ':' this_BEG_BLOCK_130= RULE_BEG_BLOCK ( ( (lv_environment_131_0= ruleKeyValuePair ) )+ | (otherlv_132= '-' (this_BEG_BLOCK_133= RULE_BEG_BLOCK )? ( (lv_environment_134_0= ruleEnvEntry ) ) (this_END_BLOCK_135= RULE_END_BLOCK )? )+ ) this_END_BLOCK_136= RULE_END_BLOCK ) | (otherlv_137= 'depends_on' otherlv_138= ':' ( (lv_dependsOn_139_0= ruleDepends_on ) ) ) | (otherlv_140= 'networks' otherlv_141= ':' ( (lv_networks_142_0= ruleNetworks ) ) ) | (otherlv_143= 'volumes' otherlv_144= ':' this_BEG_BLOCK_145= RULE_BEG_BLOCK ( (lv_volumes_146_0= ruleServiceVolume ) )+ this_END_BLOCK_147= RULE_END_BLOCK ) | (otherlv_148= 'healthcheck' otherlv_149= ':' ( (lv_healthcheck_150_0= ruleHealthcheck ) ) ) | (otherlv_151= 'deploy' otherlv_152= ':' this_BEG_BLOCK_153= RULE_BEG_BLOCK ruleKeyName otherlv_155= ':' this_BEG_BLOCK_156= RULE_BEG_BLOCK ( (lv_deploy_157_0= ruleResource ) )+ this_END_BLOCK_158= RULE_END_BLOCK this_END_BLOCK_159= RULE_END_BLOCK ) )* this_END_BLOCK_160= RULE_END_BLOCK )
+            // InternalDcDsl.g:1050:3: ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK ( (otherlv_3= 'image' otherlv_4= ':' ( (lv_image_5_0= ruleEString ) ) ) | (otherlv_6= 'build' otherlv_7= ':' ( (lv_build_8_0= ruleBuild ) ) ) | (otherlv_9= 'container_name' otherlv_10= ':' ( (lv_containerName_11_0= ruleEString ) ) ) | (otherlv_12= 'restart' otherlv_13= ':' ( (lv_restart_14_0= ruleEString ) ) ) | (otherlv_15= 'user' otherlv_16= ':' ( (lv_user_17_0= ruleEString ) ) ) | (otherlv_18= 'hostname' otherlv_19= ':' ( (lv_hostname_20_0= ruleEString ) ) ) | (otherlv_21= 'network_mode' otherlv_22= ':' ( (lv_networkMode_23_0= ruleEString ) ) ) | (otherlv_24= 'platform' otherlv_25= ':' ( (lv_platform_26_0= ruleEString ) ) ) | (otherlv_27= 'runtime' otherlv_28= ':' ( (lv_runtime_29_0= ruleEString ) ) ) | (otherlv_30= 'stop_signal' otherlv_31= ':' ( (lv_stopSignal_32_0= ruleEString ) ) ) | (otherlv_33= 'stdin_open' otherlv_34= ':' ( (lv_stdinOpen_35_0= ruleEBoolean ) ) ) | (otherlv_36= 'ports' otherlv_37= ':' ( (this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' (this_BEG_BLOCK_40= RULE_BEG_BLOCK )? ( (lv_ports_41_0= ruleEString ) ) (this_END_BLOCK_42= RULE_END_BLOCK )? )+ this_END_BLOCK_43= RULE_END_BLOCK ) | (otherlv_44= '[' ( (lv_ports_45_0= ruleEString ) ) (otherlv_46= ',' ( (lv_ports_47_0= ruleEString ) ) )* otherlv_48= ']' ) ) ) | (otherlv_49= 'expose' otherlv_50= ':' ( (this_BEG_BLOCK_51= RULE_BEG_BLOCK (otherlv_52= '-' (this_BEG_BLOCK_53= RULE_BEG_BLOCK )? ( (lv_expose_54_0= RULE_INT ) ) (this_END_BLOCK_55= RULE_END_BLOCK )? )+ this_END_BLOCK_56= RULE_END_BLOCK ) | (otherlv_57= '[' ( (lv_expose_58_0= RULE_INT ) ) (otherlv_59= ',' ( (lv_expose_60_0= RULE_INT ) ) )* otherlv_61= ']' ) ) ) | (otherlv_62= 'command' otherlv_63= ':' ( (this_BEG_BLOCK_64= RULE_BEG_BLOCK (otherlv_65= '-' (this_BEG_BLOCK_66= RULE_BEG_BLOCK )? ( (lv_command_67_0= ruleEString ) ) (this_END_BLOCK_68= RULE_END_BLOCK )? )+ this_END_BLOCK_69= RULE_END_BLOCK ) | (otherlv_70= '[' ( (lv_command_71_0= ruleEString ) ) (otherlv_72= ',' ( (lv_command_73_0= ruleEString ) ) )* otherlv_74= ']' ) | ( (lv_command_75_0= ruleEString ) ) ) ) | (otherlv_76= 'secrets' otherlv_77= ':' ( (this_BEG_BLOCK_78= RULE_BEG_BLOCK (otherlv_79= '-' (this_BEG_BLOCK_80= RULE_BEG_BLOCK )? ( (lv_secrets_81_0= ruleEString ) ) (this_END_BLOCK_82= RULE_END_BLOCK )? )+ this_END_BLOCK_83= RULE_END_BLOCK ) | (otherlv_84= '[' ( (lv_secrets_85_0= ruleEString ) ) (otherlv_86= ',' ( (lv_secrets_87_0= ruleEString ) ) )* otherlv_88= ']' ) ) ) | (otherlv_89= 'cap_add' otherlv_90= ':' ( (this_BEG_BLOCK_91= RULE_BEG_BLOCK (otherlv_92= '-' (this_BEG_BLOCK_93= RULE_BEG_BLOCK )? ( (lv_capAdd_94_0= ruleEString ) ) (this_END_BLOCK_95= RULE_END_BLOCK )? )+ this_END_BLOCK_96= RULE_END_BLOCK ) | (otherlv_97= '[' ( (lv_capAdd_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_capAdd_100_0= ruleEString ) ) )* otherlv_101= ']' ) ) ) | (otherlv_102= 'labels' otherlv_103= ':' ( (this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' (this_BEG_BLOCK_106= RULE_BEG_BLOCK )? ( (lv_labels_107_0= ruleEString ) ) (this_END_BLOCK_108= RULE_END_BLOCK )? )+ this_END_BLOCK_109= RULE_END_BLOCK ) | (otherlv_110= '[' ( (lv_labels_111_0= ruleEString ) ) (otherlv_112= ',' ( (lv_labels_113_0= ruleEString ) ) )* otherlv_114= ']' ) ) ) | (otherlv_115= 'sysctls' otherlv_116= ':' ( (this_BEG_BLOCK_117= RULE_BEG_BLOCK (otherlv_118= '-' (this_BEG_BLOCK_119= RULE_BEG_BLOCK )? ( (lv_sysctls_120_0= ruleEString ) ) (this_END_BLOCK_121= RULE_END_BLOCK )? )+ this_END_BLOCK_122= RULE_END_BLOCK ) | (otherlv_123= '[' ( (lv_sysctls_124_0= ruleEString ) ) (otherlv_125= ',' ( (lv_sysctls_126_0= ruleEString ) ) )* otherlv_127= ']' ) ) ) | (otherlv_128= 'environment' otherlv_129= ':' this_BEG_BLOCK_130= RULE_BEG_BLOCK ( ( (lv_environment_131_0= ruleKeyValuePair ) )+ | (otherlv_132= '-' (this_BEG_BLOCK_133= RULE_BEG_BLOCK )? ( (lv_environment_134_0= ruleEnvEntry ) ) (this_END_BLOCK_135= RULE_END_BLOCK )? )+ ) this_END_BLOCK_136= RULE_END_BLOCK ) | (otherlv_137= 'depends_on' otherlv_138= ':' ( (lv_dependsOn_139_0= ruleDepends_on ) ) ) | (otherlv_140= 'networks' otherlv_141= ':' ( (lv_networks_142_0= ruleNetworks ) ) ) | (otherlv_143= 'volumes' otherlv_144= ':' this_BEG_BLOCK_145= RULE_BEG_BLOCK ( (lv_volumes_146_0= ruleServiceVolume ) )+ this_END_BLOCK_147= RULE_END_BLOCK ) | (otherlv_148= 'healthcheck' otherlv_149= ':' ( (lv_healthcheck_150_0= ruleHealthcheck ) ) ) | (otherlv_151= 'deploy' otherlv_152= ':' this_BEG_BLOCK_153= RULE_BEG_BLOCK ruleKeyName otherlv_155= ':' this_BEG_BLOCK_156= RULE_BEG_BLOCK ( (lv_deploy_157_0= ruleResource ) )+ this_END_BLOCK_158= RULE_END_BLOCK this_END_BLOCK_159= RULE_END_BLOCK ) )* this_END_BLOCK_160= RULE_END_BLOCK
             {
-            // InternalDcDsl.g:1005:3: ( (lv_id_0_0= ruleEString ) )
-            // InternalDcDsl.g:1006:4: (lv_id_0_0= ruleEString )
+            // InternalDcDsl.g:1050:3: ( (lv_id_0_0= ruleEString ) )
+            // InternalDcDsl.g:1051:4: (lv_id_0_0= ruleEString )
             {
-            // InternalDcDsl.g:1006:4: (lv_id_0_0= ruleEString )
-            // InternalDcDsl.g:1007:5: lv_id_0_0= ruleEString
+            // InternalDcDsl.g:1051:4: (lv_id_0_0= ruleEString )
+            // InternalDcDsl.g:1052:5: lv_id_0_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getServiceAccess().getIdEStringParserRuleCall_0_0());
@@ -2866,140 +3008,140 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(this_BEG_BLOCK_2, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_2());
             		
-            // InternalDcDsl.g:1032:3: ( (otherlv_3= 'image' otherlv_4= ':' ( (lv_image_5_0= ruleEString ) ) ) | (otherlv_6= 'build' otherlv_7= ':' ( (lv_build_8_0= ruleBuild ) ) ) | (otherlv_9= 'container_name' otherlv_10= ':' ( (lv_containerName_11_0= ruleEString ) ) ) | (otherlv_12= 'restart' otherlv_13= ':' ( (lv_restart_14_0= ruleEString ) ) ) | (otherlv_15= 'user' otherlv_16= ':' ( (lv_user_17_0= ruleEString ) ) ) | (otherlv_18= 'hostname' otherlv_19= ':' ( (lv_hostname_20_0= ruleEString ) ) ) | (otherlv_21= 'network_mode' otherlv_22= ':' ( (lv_networkMode_23_0= ruleEString ) ) ) | (otherlv_24= 'platform' otherlv_25= ':' ( (lv_platform_26_0= ruleEString ) ) ) | (otherlv_27= 'runtime' otherlv_28= ':' ( (lv_runtime_29_0= ruleEString ) ) ) | (otherlv_30= 'stop_signal' otherlv_31= ':' ( (lv_stopSignal_32_0= ruleEString ) ) ) | (otherlv_33= 'stdin_open' otherlv_34= ':' ( (lv_stdinOpen_35_0= ruleEBoolean ) ) ) | (otherlv_36= 'ports' otherlv_37= ':' ( (this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' ( (lv_ports_40_0= ruleEString ) ) )+ this_END_BLOCK_41= RULE_END_BLOCK ) | (otherlv_42= '[' ( (lv_ports_43_0= ruleEString ) ) (otherlv_44= ',' ( (lv_ports_45_0= ruleEString ) ) )* otherlv_46= ']' ) ) ) | (otherlv_47= 'expose' otherlv_48= ':' ( (this_BEG_BLOCK_49= RULE_BEG_BLOCK (otherlv_50= '-' ( (lv_expose_51_0= RULE_INT ) ) )+ this_END_BLOCK_52= RULE_END_BLOCK ) | (otherlv_53= '[' ( (lv_expose_54_0= RULE_INT ) ) (otherlv_55= ',' ( (lv_expose_56_0= RULE_INT ) ) )* otherlv_57= ']' ) ) ) | (otherlv_58= 'command' otherlv_59= ':' ( (this_BEG_BLOCK_60= RULE_BEG_BLOCK (otherlv_61= '-' ( (lv_command_62_0= ruleEString ) ) )+ this_END_BLOCK_63= RULE_END_BLOCK ) | (otherlv_64= '[' ( (lv_command_65_0= ruleEString ) ) (otherlv_66= ',' ( (lv_command_67_0= ruleEString ) ) )* otherlv_68= ']' ) ) ) | (otherlv_69= 'secrets' otherlv_70= ':' ( (this_BEG_BLOCK_71= RULE_BEG_BLOCK (otherlv_72= '-' ( (lv_secrets_73_0= ruleEString ) ) )+ this_END_BLOCK_74= RULE_END_BLOCK ) | (otherlv_75= '[' ( (lv_secrets_76_0= ruleEString ) ) (otherlv_77= ',' ( (lv_secrets_78_0= ruleEString ) ) )* otherlv_79= ']' ) ) ) | (otherlv_80= 'cap_add' otherlv_81= ':' ( (this_BEG_BLOCK_82= RULE_BEG_BLOCK (otherlv_83= '-' ( (lv_capAdd_84_0= ruleEString ) ) )+ this_END_BLOCK_85= RULE_END_BLOCK ) | (otherlv_86= '[' ( (lv_capAdd_87_0= ruleEString ) ) (otherlv_88= ',' ( (lv_capAdd_89_0= ruleEString ) ) )* otherlv_90= ']' ) ) ) | (otherlv_91= 'labels' otherlv_92= ':' ( (this_BEG_BLOCK_93= RULE_BEG_BLOCK (otherlv_94= '-' ( (lv_labels_95_0= ruleEString ) ) )+ this_END_BLOCK_96= RULE_END_BLOCK ) | (otherlv_97= '[' ( (lv_labels_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_labels_100_0= ruleEString ) ) )* otherlv_101= ']' ) ) ) | (otherlv_102= 'sysctls' otherlv_103= ':' ( (this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' ( (lv_sysctls_106_0= ruleEString ) ) )+ this_END_BLOCK_107= RULE_END_BLOCK ) | (otherlv_108= '[' ( (lv_sysctls_109_0= ruleEString ) ) (otherlv_110= ',' ( (lv_sysctls_111_0= ruleEString ) ) )* otherlv_112= ']' ) ) ) | (otherlv_113= 'environment' otherlv_114= ':' this_BEG_BLOCK_115= RULE_BEG_BLOCK ( (lv_environment_116_0= ruleKeyValuePair ) )+ this_END_BLOCK_117= RULE_END_BLOCK ) | (otherlv_118= 'depends_on' otherlv_119= ':' ( (lv_dependsOn_120_0= ruleDepends_on ) ) ) | (otherlv_121= 'networks' otherlv_122= ':' ( (lv_networks_123_0= ruleNetworks ) ) ) | (otherlv_124= 'volumes' otherlv_125= ':' this_BEG_BLOCK_126= RULE_BEG_BLOCK ( (lv_volumes_127_0= ruleServiceVolume ) )+ this_END_BLOCK_128= RULE_END_BLOCK ) | (otherlv_129= 'healthcheck' otherlv_130= ':' ( (lv_healthcheck_131_0= ruleHealthcheck ) ) ) | (otherlv_132= 'deploy' otherlv_133= ':' this_BEG_BLOCK_134= RULE_BEG_BLOCK ( (lv_deploy_135_0= ruleResource ) )+ this_END_BLOCK_136= RULE_END_BLOCK ) )*
-            loop36:
+            // InternalDcDsl.g:1077:3: ( (otherlv_3= 'image' otherlv_4= ':' ( (lv_image_5_0= ruleEString ) ) ) | (otherlv_6= 'build' otherlv_7= ':' ( (lv_build_8_0= ruleBuild ) ) ) | (otherlv_9= 'container_name' otherlv_10= ':' ( (lv_containerName_11_0= ruleEString ) ) ) | (otherlv_12= 'restart' otherlv_13= ':' ( (lv_restart_14_0= ruleEString ) ) ) | (otherlv_15= 'user' otherlv_16= ':' ( (lv_user_17_0= ruleEString ) ) ) | (otherlv_18= 'hostname' otherlv_19= ':' ( (lv_hostname_20_0= ruleEString ) ) ) | (otherlv_21= 'network_mode' otherlv_22= ':' ( (lv_networkMode_23_0= ruleEString ) ) ) | (otherlv_24= 'platform' otherlv_25= ':' ( (lv_platform_26_0= ruleEString ) ) ) | (otherlv_27= 'runtime' otherlv_28= ':' ( (lv_runtime_29_0= ruleEString ) ) ) | (otherlv_30= 'stop_signal' otherlv_31= ':' ( (lv_stopSignal_32_0= ruleEString ) ) ) | (otherlv_33= 'stdin_open' otherlv_34= ':' ( (lv_stdinOpen_35_0= ruleEBoolean ) ) ) | (otherlv_36= 'ports' otherlv_37= ':' ( (this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' (this_BEG_BLOCK_40= RULE_BEG_BLOCK )? ( (lv_ports_41_0= ruleEString ) ) (this_END_BLOCK_42= RULE_END_BLOCK )? )+ this_END_BLOCK_43= RULE_END_BLOCK ) | (otherlv_44= '[' ( (lv_ports_45_0= ruleEString ) ) (otherlv_46= ',' ( (lv_ports_47_0= ruleEString ) ) )* otherlv_48= ']' ) ) ) | (otherlv_49= 'expose' otherlv_50= ':' ( (this_BEG_BLOCK_51= RULE_BEG_BLOCK (otherlv_52= '-' (this_BEG_BLOCK_53= RULE_BEG_BLOCK )? ( (lv_expose_54_0= RULE_INT ) ) (this_END_BLOCK_55= RULE_END_BLOCK )? )+ this_END_BLOCK_56= RULE_END_BLOCK ) | (otherlv_57= '[' ( (lv_expose_58_0= RULE_INT ) ) (otherlv_59= ',' ( (lv_expose_60_0= RULE_INT ) ) )* otherlv_61= ']' ) ) ) | (otherlv_62= 'command' otherlv_63= ':' ( (this_BEG_BLOCK_64= RULE_BEG_BLOCK (otherlv_65= '-' (this_BEG_BLOCK_66= RULE_BEG_BLOCK )? ( (lv_command_67_0= ruleEString ) ) (this_END_BLOCK_68= RULE_END_BLOCK )? )+ this_END_BLOCK_69= RULE_END_BLOCK ) | (otherlv_70= '[' ( (lv_command_71_0= ruleEString ) ) (otherlv_72= ',' ( (lv_command_73_0= ruleEString ) ) )* otherlv_74= ']' ) | ( (lv_command_75_0= ruleEString ) ) ) ) | (otherlv_76= 'secrets' otherlv_77= ':' ( (this_BEG_BLOCK_78= RULE_BEG_BLOCK (otherlv_79= '-' (this_BEG_BLOCK_80= RULE_BEG_BLOCK )? ( (lv_secrets_81_0= ruleEString ) ) (this_END_BLOCK_82= RULE_END_BLOCK )? )+ this_END_BLOCK_83= RULE_END_BLOCK ) | (otherlv_84= '[' ( (lv_secrets_85_0= ruleEString ) ) (otherlv_86= ',' ( (lv_secrets_87_0= ruleEString ) ) )* otherlv_88= ']' ) ) ) | (otherlv_89= 'cap_add' otherlv_90= ':' ( (this_BEG_BLOCK_91= RULE_BEG_BLOCK (otherlv_92= '-' (this_BEG_BLOCK_93= RULE_BEG_BLOCK )? ( (lv_capAdd_94_0= ruleEString ) ) (this_END_BLOCK_95= RULE_END_BLOCK )? )+ this_END_BLOCK_96= RULE_END_BLOCK ) | (otherlv_97= '[' ( (lv_capAdd_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_capAdd_100_0= ruleEString ) ) )* otherlv_101= ']' ) ) ) | (otherlv_102= 'labels' otherlv_103= ':' ( (this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' (this_BEG_BLOCK_106= RULE_BEG_BLOCK )? ( (lv_labels_107_0= ruleEString ) ) (this_END_BLOCK_108= RULE_END_BLOCK )? )+ this_END_BLOCK_109= RULE_END_BLOCK ) | (otherlv_110= '[' ( (lv_labels_111_0= ruleEString ) ) (otherlv_112= ',' ( (lv_labels_113_0= ruleEString ) ) )* otherlv_114= ']' ) ) ) | (otherlv_115= 'sysctls' otherlv_116= ':' ( (this_BEG_BLOCK_117= RULE_BEG_BLOCK (otherlv_118= '-' (this_BEG_BLOCK_119= RULE_BEG_BLOCK )? ( (lv_sysctls_120_0= ruleEString ) ) (this_END_BLOCK_121= RULE_END_BLOCK )? )+ this_END_BLOCK_122= RULE_END_BLOCK ) | (otherlv_123= '[' ( (lv_sysctls_124_0= ruleEString ) ) (otherlv_125= ',' ( (lv_sysctls_126_0= ruleEString ) ) )* otherlv_127= ']' ) ) ) | (otherlv_128= 'environment' otherlv_129= ':' this_BEG_BLOCK_130= RULE_BEG_BLOCK ( ( (lv_environment_131_0= ruleKeyValuePair ) )+ | (otherlv_132= '-' (this_BEG_BLOCK_133= RULE_BEG_BLOCK )? ( (lv_environment_134_0= ruleEnvEntry ) ) (this_END_BLOCK_135= RULE_END_BLOCK )? )+ ) this_END_BLOCK_136= RULE_END_BLOCK ) | (otherlv_137= 'depends_on' otherlv_138= ':' ( (lv_dependsOn_139_0= ruleDepends_on ) ) ) | (otherlv_140= 'networks' otherlv_141= ':' ( (lv_networks_142_0= ruleNetworks ) ) ) | (otherlv_143= 'volumes' otherlv_144= ':' this_BEG_BLOCK_145= RULE_BEG_BLOCK ( (lv_volumes_146_0= ruleServiceVolume ) )+ this_END_BLOCK_147= RULE_END_BLOCK ) | (otherlv_148= 'healthcheck' otherlv_149= ':' ( (lv_healthcheck_150_0= ruleHealthcheck ) ) ) | (otherlv_151= 'deploy' otherlv_152= ':' this_BEG_BLOCK_153= RULE_BEG_BLOCK ruleKeyName otherlv_155= ':' this_BEG_BLOCK_156= RULE_BEG_BLOCK ( (lv_deploy_157_0= ruleResource ) )+ this_END_BLOCK_158= RULE_END_BLOCK this_END_BLOCK_159= RULE_END_BLOCK ) )*
+            loop54:
             do {
-                int alt36=25;
+                int alt54=25;
                 switch ( input.LA(1) ) {
                 case 38:
                     {
-                    alt36=1;
+                    alt54=1;
                     }
                     break;
                 case 39:
                     {
-                    alt36=2;
+                    alt54=2;
                     }
                     break;
                 case 40:
                     {
-                    alt36=3;
+                    alt54=3;
                     }
                     break;
                 case 41:
                     {
-                    alt36=4;
+                    alt54=4;
                     }
                     break;
                 case 42:
                     {
-                    alt36=5;
+                    alt54=5;
                     }
                     break;
                 case 43:
                     {
-                    alt36=6;
+                    alt54=6;
                     }
                     break;
                 case 44:
                     {
-                    alt36=7;
+                    alt54=7;
                     }
                     break;
                 case 45:
                     {
-                    alt36=8;
+                    alt54=8;
                     }
                     break;
                 case 46:
                     {
-                    alt36=9;
+                    alt54=9;
                     }
                     break;
                 case 47:
                     {
-                    alt36=10;
+                    alt54=10;
                     }
                     break;
                 case 48:
                     {
-                    alt36=11;
+                    alt54=11;
                     }
                     break;
                 case 49:
                     {
-                    alt36=12;
+                    alt54=12;
                     }
                     break;
                 case 50:
                     {
-                    alt36=13;
+                    alt54=13;
                     }
                     break;
                 case 51:
                     {
-                    alt36=14;
+                    alt54=14;
                     }
                     break;
                 case 22:
                     {
-                    alt36=15;
+                    alt54=15;
                     }
                     break;
                 case 52:
                     {
-                    alt36=16;
+                    alt54=16;
                     }
                     break;
                 case 53:
                     {
-                    alt36=17;
+                    alt54=17;
                     }
                     break;
                 case 54:
                     {
-                    alt36=18;
+                    alt54=18;
                     }
                     break;
                 case 55:
                     {
-                    alt36=19;
+                    alt54=19;
                     }
                     break;
                 case 56:
                     {
-                    alt36=20;
+                    alt54=20;
                     }
                     break;
                 case 20:
                     {
-                    alt36=21;
+                    alt54=21;
                     }
                     break;
                 case 21:
                     {
-                    alt36=22;
+                    alt54=22;
                     }
                     break;
                 case 57:
                     {
-                    alt36=23;
+                    alt54=23;
                     }
                     break;
                 case 58:
                     {
-                    alt36=24;
+                    alt54=24;
                     }
                     break;
 
                 }
 
-                switch (alt36) {
+                switch (alt54) {
             	case 1 :
-            	    // InternalDcDsl.g:1033:4: (otherlv_3= 'image' otherlv_4= ':' ( (lv_image_5_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:1078:4: (otherlv_3= 'image' otherlv_4= ':' ( (lv_image_5_0= ruleEString ) ) )
             	    {
-            	    // InternalDcDsl.g:1033:4: (otherlv_3= 'image' otherlv_4= ':' ( (lv_image_5_0= ruleEString ) ) )
-            	    // InternalDcDsl.g:1034:5: otherlv_3= 'image' otherlv_4= ':' ( (lv_image_5_0= ruleEString ) )
+            	    // InternalDcDsl.g:1078:4: (otherlv_3= 'image' otherlv_4= ':' ( (lv_image_5_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:1079:5: otherlv_3= 'image' otherlv_4= ':' ( (lv_image_5_0= ruleEString ) )
             	    {
             	    otherlv_3=(Token)match(input,38,FOLLOW_3); 
 
@@ -3009,11 +3151,11 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	    					newLeafNode(otherlv_4, grammarAccess.getServiceAccess().getColonKeyword_3_0_1());
             	    				
-            	    // InternalDcDsl.g:1042:5: ( (lv_image_5_0= ruleEString ) )
-            	    // InternalDcDsl.g:1043:6: (lv_image_5_0= ruleEString )
+            	    // InternalDcDsl.g:1087:5: ( (lv_image_5_0= ruleEString ) )
+            	    // InternalDcDsl.g:1088:6: (lv_image_5_0= ruleEString )
             	    {
-            	    // InternalDcDsl.g:1043:6: (lv_image_5_0= ruleEString )
-            	    // InternalDcDsl.g:1044:7: lv_image_5_0= ruleEString
+            	    // InternalDcDsl.g:1088:6: (lv_image_5_0= ruleEString )
+            	    // InternalDcDsl.g:1089:7: lv_image_5_0= ruleEString
             	    {
 
             	    							newCompositeNode(grammarAccess.getServiceAccess().getImageEStringParserRuleCall_3_0_2_0());
@@ -3047,10 +3189,10 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalDcDsl.g:1063:4: (otherlv_6= 'build' otherlv_7= ':' ( (lv_build_8_0= ruleBuild ) ) )
+            	    // InternalDcDsl.g:1108:4: (otherlv_6= 'build' otherlv_7= ':' ( (lv_build_8_0= ruleBuild ) ) )
             	    {
-            	    // InternalDcDsl.g:1063:4: (otherlv_6= 'build' otherlv_7= ':' ( (lv_build_8_0= ruleBuild ) ) )
-            	    // InternalDcDsl.g:1064:5: otherlv_6= 'build' otherlv_7= ':' ( (lv_build_8_0= ruleBuild ) )
+            	    // InternalDcDsl.g:1108:4: (otherlv_6= 'build' otherlv_7= ':' ( (lv_build_8_0= ruleBuild ) ) )
+            	    // InternalDcDsl.g:1109:5: otherlv_6= 'build' otherlv_7= ':' ( (lv_build_8_0= ruleBuild ) )
             	    {
             	    otherlv_6=(Token)match(input,39,FOLLOW_3); 
 
@@ -3060,11 +3202,11 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	    					newLeafNode(otherlv_7, grammarAccess.getServiceAccess().getColonKeyword_3_1_1());
             	    				
-            	    // InternalDcDsl.g:1072:5: ( (lv_build_8_0= ruleBuild ) )
-            	    // InternalDcDsl.g:1073:6: (lv_build_8_0= ruleBuild )
+            	    // InternalDcDsl.g:1117:5: ( (lv_build_8_0= ruleBuild ) )
+            	    // InternalDcDsl.g:1118:6: (lv_build_8_0= ruleBuild )
             	    {
-            	    // InternalDcDsl.g:1073:6: (lv_build_8_0= ruleBuild )
-            	    // InternalDcDsl.g:1074:7: lv_build_8_0= ruleBuild
+            	    // InternalDcDsl.g:1118:6: (lv_build_8_0= ruleBuild )
+            	    // InternalDcDsl.g:1119:7: lv_build_8_0= ruleBuild
             	    {
 
             	    							newCompositeNode(grammarAccess.getServiceAccess().getBuildBuildParserRuleCall_3_1_2_0());
@@ -3098,10 +3240,10 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // InternalDcDsl.g:1093:4: (otherlv_9= 'container_name' otherlv_10= ':' ( (lv_containerName_11_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:1138:4: (otherlv_9= 'container_name' otherlv_10= ':' ( (lv_containerName_11_0= ruleEString ) ) )
             	    {
-            	    // InternalDcDsl.g:1093:4: (otherlv_9= 'container_name' otherlv_10= ':' ( (lv_containerName_11_0= ruleEString ) ) )
-            	    // InternalDcDsl.g:1094:5: otherlv_9= 'container_name' otherlv_10= ':' ( (lv_containerName_11_0= ruleEString ) )
+            	    // InternalDcDsl.g:1138:4: (otherlv_9= 'container_name' otherlv_10= ':' ( (lv_containerName_11_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:1139:5: otherlv_9= 'container_name' otherlv_10= ':' ( (lv_containerName_11_0= ruleEString ) )
             	    {
             	    otherlv_9=(Token)match(input,40,FOLLOW_3); 
 
@@ -3111,11 +3253,11 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	    					newLeafNode(otherlv_10, grammarAccess.getServiceAccess().getColonKeyword_3_2_1());
             	    				
-            	    // InternalDcDsl.g:1102:5: ( (lv_containerName_11_0= ruleEString ) )
-            	    // InternalDcDsl.g:1103:6: (lv_containerName_11_0= ruleEString )
+            	    // InternalDcDsl.g:1147:5: ( (lv_containerName_11_0= ruleEString ) )
+            	    // InternalDcDsl.g:1148:6: (lv_containerName_11_0= ruleEString )
             	    {
-            	    // InternalDcDsl.g:1103:6: (lv_containerName_11_0= ruleEString )
-            	    // InternalDcDsl.g:1104:7: lv_containerName_11_0= ruleEString
+            	    // InternalDcDsl.g:1148:6: (lv_containerName_11_0= ruleEString )
+            	    // InternalDcDsl.g:1149:7: lv_containerName_11_0= ruleEString
             	    {
 
             	    							newCompositeNode(grammarAccess.getServiceAccess().getContainerNameEStringParserRuleCall_3_2_2_0());
@@ -3149,10 +3291,10 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 4 :
-            	    // InternalDcDsl.g:1123:4: (otherlv_12= 'restart' otherlv_13= ':' ( (lv_restart_14_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:1168:4: (otherlv_12= 'restart' otherlv_13= ':' ( (lv_restart_14_0= ruleEString ) ) )
             	    {
-            	    // InternalDcDsl.g:1123:4: (otherlv_12= 'restart' otherlv_13= ':' ( (lv_restart_14_0= ruleEString ) ) )
-            	    // InternalDcDsl.g:1124:5: otherlv_12= 'restart' otherlv_13= ':' ( (lv_restart_14_0= ruleEString ) )
+            	    // InternalDcDsl.g:1168:4: (otherlv_12= 'restart' otherlv_13= ':' ( (lv_restart_14_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:1169:5: otherlv_12= 'restart' otherlv_13= ':' ( (lv_restart_14_0= ruleEString ) )
             	    {
             	    otherlv_12=(Token)match(input,41,FOLLOW_3); 
 
@@ -3162,11 +3304,11 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	    					newLeafNode(otherlv_13, grammarAccess.getServiceAccess().getColonKeyword_3_3_1());
             	    				
-            	    // InternalDcDsl.g:1132:5: ( (lv_restart_14_0= ruleEString ) )
-            	    // InternalDcDsl.g:1133:6: (lv_restart_14_0= ruleEString )
+            	    // InternalDcDsl.g:1177:5: ( (lv_restart_14_0= ruleEString ) )
+            	    // InternalDcDsl.g:1178:6: (lv_restart_14_0= ruleEString )
             	    {
-            	    // InternalDcDsl.g:1133:6: (lv_restart_14_0= ruleEString )
-            	    // InternalDcDsl.g:1134:7: lv_restart_14_0= ruleEString
+            	    // InternalDcDsl.g:1178:6: (lv_restart_14_0= ruleEString )
+            	    // InternalDcDsl.g:1179:7: lv_restart_14_0= ruleEString
             	    {
 
             	    							newCompositeNode(grammarAccess.getServiceAccess().getRestartEStringParserRuleCall_3_3_2_0());
@@ -3200,10 +3342,10 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 5 :
-            	    // InternalDcDsl.g:1153:4: (otherlv_15= 'user' otherlv_16= ':' ( (lv_user_17_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:1198:4: (otherlv_15= 'user' otherlv_16= ':' ( (lv_user_17_0= ruleEString ) ) )
             	    {
-            	    // InternalDcDsl.g:1153:4: (otherlv_15= 'user' otherlv_16= ':' ( (lv_user_17_0= ruleEString ) ) )
-            	    // InternalDcDsl.g:1154:5: otherlv_15= 'user' otherlv_16= ':' ( (lv_user_17_0= ruleEString ) )
+            	    // InternalDcDsl.g:1198:4: (otherlv_15= 'user' otherlv_16= ':' ( (lv_user_17_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:1199:5: otherlv_15= 'user' otherlv_16= ':' ( (lv_user_17_0= ruleEString ) )
             	    {
             	    otherlv_15=(Token)match(input,42,FOLLOW_3); 
 
@@ -3213,11 +3355,11 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	    					newLeafNode(otherlv_16, grammarAccess.getServiceAccess().getColonKeyword_3_4_1());
             	    				
-            	    // InternalDcDsl.g:1162:5: ( (lv_user_17_0= ruleEString ) )
-            	    // InternalDcDsl.g:1163:6: (lv_user_17_0= ruleEString )
+            	    // InternalDcDsl.g:1207:5: ( (lv_user_17_0= ruleEString ) )
+            	    // InternalDcDsl.g:1208:6: (lv_user_17_0= ruleEString )
             	    {
-            	    // InternalDcDsl.g:1163:6: (lv_user_17_0= ruleEString )
-            	    // InternalDcDsl.g:1164:7: lv_user_17_0= ruleEString
+            	    // InternalDcDsl.g:1208:6: (lv_user_17_0= ruleEString )
+            	    // InternalDcDsl.g:1209:7: lv_user_17_0= ruleEString
             	    {
 
             	    							newCompositeNode(grammarAccess.getServiceAccess().getUserEStringParserRuleCall_3_4_2_0());
@@ -3251,10 +3393,10 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 6 :
-            	    // InternalDcDsl.g:1183:4: (otherlv_18= 'hostname' otherlv_19= ':' ( (lv_hostname_20_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:1228:4: (otherlv_18= 'hostname' otherlv_19= ':' ( (lv_hostname_20_0= ruleEString ) ) )
             	    {
-            	    // InternalDcDsl.g:1183:4: (otherlv_18= 'hostname' otherlv_19= ':' ( (lv_hostname_20_0= ruleEString ) ) )
-            	    // InternalDcDsl.g:1184:5: otherlv_18= 'hostname' otherlv_19= ':' ( (lv_hostname_20_0= ruleEString ) )
+            	    // InternalDcDsl.g:1228:4: (otherlv_18= 'hostname' otherlv_19= ':' ( (lv_hostname_20_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:1229:5: otherlv_18= 'hostname' otherlv_19= ':' ( (lv_hostname_20_0= ruleEString ) )
             	    {
             	    otherlv_18=(Token)match(input,43,FOLLOW_3); 
 
@@ -3264,11 +3406,11 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	    					newLeafNode(otherlv_19, grammarAccess.getServiceAccess().getColonKeyword_3_5_1());
             	    				
-            	    // InternalDcDsl.g:1192:5: ( (lv_hostname_20_0= ruleEString ) )
-            	    // InternalDcDsl.g:1193:6: (lv_hostname_20_0= ruleEString )
+            	    // InternalDcDsl.g:1237:5: ( (lv_hostname_20_0= ruleEString ) )
+            	    // InternalDcDsl.g:1238:6: (lv_hostname_20_0= ruleEString )
             	    {
-            	    // InternalDcDsl.g:1193:6: (lv_hostname_20_0= ruleEString )
-            	    // InternalDcDsl.g:1194:7: lv_hostname_20_0= ruleEString
+            	    // InternalDcDsl.g:1238:6: (lv_hostname_20_0= ruleEString )
+            	    // InternalDcDsl.g:1239:7: lv_hostname_20_0= ruleEString
             	    {
 
             	    							newCompositeNode(grammarAccess.getServiceAccess().getHostnameEStringParserRuleCall_3_5_2_0());
@@ -3302,10 +3444,10 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 7 :
-            	    // InternalDcDsl.g:1213:4: (otherlv_21= 'network_mode' otherlv_22= ':' ( (lv_networkMode_23_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:1258:4: (otherlv_21= 'network_mode' otherlv_22= ':' ( (lv_networkMode_23_0= ruleEString ) ) )
             	    {
-            	    // InternalDcDsl.g:1213:4: (otherlv_21= 'network_mode' otherlv_22= ':' ( (lv_networkMode_23_0= ruleEString ) ) )
-            	    // InternalDcDsl.g:1214:5: otherlv_21= 'network_mode' otherlv_22= ':' ( (lv_networkMode_23_0= ruleEString ) )
+            	    // InternalDcDsl.g:1258:4: (otherlv_21= 'network_mode' otherlv_22= ':' ( (lv_networkMode_23_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:1259:5: otherlv_21= 'network_mode' otherlv_22= ':' ( (lv_networkMode_23_0= ruleEString ) )
             	    {
             	    otherlv_21=(Token)match(input,44,FOLLOW_3); 
 
@@ -3315,11 +3457,11 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	    					newLeafNode(otherlv_22, grammarAccess.getServiceAccess().getColonKeyword_3_6_1());
             	    				
-            	    // InternalDcDsl.g:1222:5: ( (lv_networkMode_23_0= ruleEString ) )
-            	    // InternalDcDsl.g:1223:6: (lv_networkMode_23_0= ruleEString )
+            	    // InternalDcDsl.g:1267:5: ( (lv_networkMode_23_0= ruleEString ) )
+            	    // InternalDcDsl.g:1268:6: (lv_networkMode_23_0= ruleEString )
             	    {
-            	    // InternalDcDsl.g:1223:6: (lv_networkMode_23_0= ruleEString )
-            	    // InternalDcDsl.g:1224:7: lv_networkMode_23_0= ruleEString
+            	    // InternalDcDsl.g:1268:6: (lv_networkMode_23_0= ruleEString )
+            	    // InternalDcDsl.g:1269:7: lv_networkMode_23_0= ruleEString
             	    {
 
             	    							newCompositeNode(grammarAccess.getServiceAccess().getNetworkModeEStringParserRuleCall_3_6_2_0());
@@ -3353,10 +3495,10 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 8 :
-            	    // InternalDcDsl.g:1243:4: (otherlv_24= 'platform' otherlv_25= ':' ( (lv_platform_26_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:1288:4: (otherlv_24= 'platform' otherlv_25= ':' ( (lv_platform_26_0= ruleEString ) ) )
             	    {
-            	    // InternalDcDsl.g:1243:4: (otherlv_24= 'platform' otherlv_25= ':' ( (lv_platform_26_0= ruleEString ) ) )
-            	    // InternalDcDsl.g:1244:5: otherlv_24= 'platform' otherlv_25= ':' ( (lv_platform_26_0= ruleEString ) )
+            	    // InternalDcDsl.g:1288:4: (otherlv_24= 'platform' otherlv_25= ':' ( (lv_platform_26_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:1289:5: otherlv_24= 'platform' otherlv_25= ':' ( (lv_platform_26_0= ruleEString ) )
             	    {
             	    otherlv_24=(Token)match(input,45,FOLLOW_3); 
 
@@ -3366,11 +3508,11 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	    					newLeafNode(otherlv_25, grammarAccess.getServiceAccess().getColonKeyword_3_7_1());
             	    				
-            	    // InternalDcDsl.g:1252:5: ( (lv_platform_26_0= ruleEString ) )
-            	    // InternalDcDsl.g:1253:6: (lv_platform_26_0= ruleEString )
+            	    // InternalDcDsl.g:1297:5: ( (lv_platform_26_0= ruleEString ) )
+            	    // InternalDcDsl.g:1298:6: (lv_platform_26_0= ruleEString )
             	    {
-            	    // InternalDcDsl.g:1253:6: (lv_platform_26_0= ruleEString )
-            	    // InternalDcDsl.g:1254:7: lv_platform_26_0= ruleEString
+            	    // InternalDcDsl.g:1298:6: (lv_platform_26_0= ruleEString )
+            	    // InternalDcDsl.g:1299:7: lv_platform_26_0= ruleEString
             	    {
 
             	    							newCompositeNode(grammarAccess.getServiceAccess().getPlatformEStringParserRuleCall_3_7_2_0());
@@ -3404,10 +3546,10 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 9 :
-            	    // InternalDcDsl.g:1273:4: (otherlv_27= 'runtime' otherlv_28= ':' ( (lv_runtime_29_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:1318:4: (otherlv_27= 'runtime' otherlv_28= ':' ( (lv_runtime_29_0= ruleEString ) ) )
             	    {
-            	    // InternalDcDsl.g:1273:4: (otherlv_27= 'runtime' otherlv_28= ':' ( (lv_runtime_29_0= ruleEString ) ) )
-            	    // InternalDcDsl.g:1274:5: otherlv_27= 'runtime' otherlv_28= ':' ( (lv_runtime_29_0= ruleEString ) )
+            	    // InternalDcDsl.g:1318:4: (otherlv_27= 'runtime' otherlv_28= ':' ( (lv_runtime_29_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:1319:5: otherlv_27= 'runtime' otherlv_28= ':' ( (lv_runtime_29_0= ruleEString ) )
             	    {
             	    otherlv_27=(Token)match(input,46,FOLLOW_3); 
 
@@ -3417,11 +3559,11 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	    					newLeafNode(otherlv_28, grammarAccess.getServiceAccess().getColonKeyword_3_8_1());
             	    				
-            	    // InternalDcDsl.g:1282:5: ( (lv_runtime_29_0= ruleEString ) )
-            	    // InternalDcDsl.g:1283:6: (lv_runtime_29_0= ruleEString )
+            	    // InternalDcDsl.g:1327:5: ( (lv_runtime_29_0= ruleEString ) )
+            	    // InternalDcDsl.g:1328:6: (lv_runtime_29_0= ruleEString )
             	    {
-            	    // InternalDcDsl.g:1283:6: (lv_runtime_29_0= ruleEString )
-            	    // InternalDcDsl.g:1284:7: lv_runtime_29_0= ruleEString
+            	    // InternalDcDsl.g:1328:6: (lv_runtime_29_0= ruleEString )
+            	    // InternalDcDsl.g:1329:7: lv_runtime_29_0= ruleEString
             	    {
 
             	    							newCompositeNode(grammarAccess.getServiceAccess().getRuntimeEStringParserRuleCall_3_8_2_0());
@@ -3455,10 +3597,10 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 10 :
-            	    // InternalDcDsl.g:1303:4: (otherlv_30= 'stop_signal' otherlv_31= ':' ( (lv_stopSignal_32_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:1348:4: (otherlv_30= 'stop_signal' otherlv_31= ':' ( (lv_stopSignal_32_0= ruleEString ) ) )
             	    {
-            	    // InternalDcDsl.g:1303:4: (otherlv_30= 'stop_signal' otherlv_31= ':' ( (lv_stopSignal_32_0= ruleEString ) ) )
-            	    // InternalDcDsl.g:1304:5: otherlv_30= 'stop_signal' otherlv_31= ':' ( (lv_stopSignal_32_0= ruleEString ) )
+            	    // InternalDcDsl.g:1348:4: (otherlv_30= 'stop_signal' otherlv_31= ':' ( (lv_stopSignal_32_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:1349:5: otherlv_30= 'stop_signal' otherlv_31= ':' ( (lv_stopSignal_32_0= ruleEString ) )
             	    {
             	    otherlv_30=(Token)match(input,47,FOLLOW_3); 
 
@@ -3468,11 +3610,11 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	    					newLeafNode(otherlv_31, grammarAccess.getServiceAccess().getColonKeyword_3_9_1());
             	    				
-            	    // InternalDcDsl.g:1312:5: ( (lv_stopSignal_32_0= ruleEString ) )
-            	    // InternalDcDsl.g:1313:6: (lv_stopSignal_32_0= ruleEString )
+            	    // InternalDcDsl.g:1357:5: ( (lv_stopSignal_32_0= ruleEString ) )
+            	    // InternalDcDsl.g:1358:6: (lv_stopSignal_32_0= ruleEString )
             	    {
-            	    // InternalDcDsl.g:1313:6: (lv_stopSignal_32_0= ruleEString )
-            	    // InternalDcDsl.g:1314:7: lv_stopSignal_32_0= ruleEString
+            	    // InternalDcDsl.g:1358:6: (lv_stopSignal_32_0= ruleEString )
+            	    // InternalDcDsl.g:1359:7: lv_stopSignal_32_0= ruleEString
             	    {
 
             	    							newCompositeNode(grammarAccess.getServiceAccess().getStopSignalEStringParserRuleCall_3_9_2_0());
@@ -3506,10 +3648,10 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 11 :
-            	    // InternalDcDsl.g:1333:4: (otherlv_33= 'stdin_open' otherlv_34= ':' ( (lv_stdinOpen_35_0= ruleEBoolean ) ) )
+            	    // InternalDcDsl.g:1378:4: (otherlv_33= 'stdin_open' otherlv_34= ':' ( (lv_stdinOpen_35_0= ruleEBoolean ) ) )
             	    {
-            	    // InternalDcDsl.g:1333:4: (otherlv_33= 'stdin_open' otherlv_34= ':' ( (lv_stdinOpen_35_0= ruleEBoolean ) ) )
-            	    // InternalDcDsl.g:1334:5: otherlv_33= 'stdin_open' otherlv_34= ':' ( (lv_stdinOpen_35_0= ruleEBoolean ) )
+            	    // InternalDcDsl.g:1378:4: (otherlv_33= 'stdin_open' otherlv_34= ':' ( (lv_stdinOpen_35_0= ruleEBoolean ) ) )
+            	    // InternalDcDsl.g:1379:5: otherlv_33= 'stdin_open' otherlv_34= ':' ( (lv_stdinOpen_35_0= ruleEBoolean ) )
             	    {
             	    otherlv_33=(Token)match(input,48,FOLLOW_3); 
 
@@ -3519,11 +3661,11 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	    					newLeafNode(otherlv_34, grammarAccess.getServiceAccess().getColonKeyword_3_10_1());
             	    				
-            	    // InternalDcDsl.g:1342:5: ( (lv_stdinOpen_35_0= ruleEBoolean ) )
-            	    // InternalDcDsl.g:1343:6: (lv_stdinOpen_35_0= ruleEBoolean )
+            	    // InternalDcDsl.g:1387:5: ( (lv_stdinOpen_35_0= ruleEBoolean ) )
+            	    // InternalDcDsl.g:1388:6: (lv_stdinOpen_35_0= ruleEBoolean )
             	    {
-            	    // InternalDcDsl.g:1343:6: (lv_stdinOpen_35_0= ruleEBoolean )
-            	    // InternalDcDsl.g:1344:7: lv_stdinOpen_35_0= ruleEBoolean
+            	    // InternalDcDsl.g:1388:6: (lv_stdinOpen_35_0= ruleEBoolean )
+            	    // InternalDcDsl.g:1389:7: lv_stdinOpen_35_0= ruleEBoolean
             	    {
 
             	    							newCompositeNode(grammarAccess.getServiceAccess().getStdinOpenEBooleanParserRuleCall_3_10_2_0());
@@ -3557,10 +3699,10 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 12 :
-            	    // InternalDcDsl.g:1363:4: (otherlv_36= 'ports' otherlv_37= ':' ( (this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' ( (lv_ports_40_0= ruleEString ) ) )+ this_END_BLOCK_41= RULE_END_BLOCK ) | (otherlv_42= '[' ( (lv_ports_43_0= ruleEString ) ) (otherlv_44= ',' ( (lv_ports_45_0= ruleEString ) ) )* otherlv_46= ']' ) ) )
+            	    // InternalDcDsl.g:1408:4: (otherlv_36= 'ports' otherlv_37= ':' ( (this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' (this_BEG_BLOCK_40= RULE_BEG_BLOCK )? ( (lv_ports_41_0= ruleEString ) ) (this_END_BLOCK_42= RULE_END_BLOCK )? )+ this_END_BLOCK_43= RULE_END_BLOCK ) | (otherlv_44= '[' ( (lv_ports_45_0= ruleEString ) ) (otherlv_46= ',' ( (lv_ports_47_0= ruleEString ) ) )* otherlv_48= ']' ) ) )
             	    {
-            	    // InternalDcDsl.g:1363:4: (otherlv_36= 'ports' otherlv_37= ':' ( (this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' ( (lv_ports_40_0= ruleEString ) ) )+ this_END_BLOCK_41= RULE_END_BLOCK ) | (otherlv_42= '[' ( (lv_ports_43_0= ruleEString ) ) (otherlv_44= ',' ( (lv_ports_45_0= ruleEString ) ) )* otherlv_46= ']' ) ) )
-            	    // InternalDcDsl.g:1364:5: otherlv_36= 'ports' otherlv_37= ':' ( (this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' ( (lv_ports_40_0= ruleEString ) ) )+ this_END_BLOCK_41= RULE_END_BLOCK ) | (otherlv_42= '[' ( (lv_ports_43_0= ruleEString ) ) (otherlv_44= ',' ( (lv_ports_45_0= ruleEString ) ) )* otherlv_46= ']' ) )
+            	    // InternalDcDsl.g:1408:4: (otherlv_36= 'ports' otherlv_37= ':' ( (this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' (this_BEG_BLOCK_40= RULE_BEG_BLOCK )? ( (lv_ports_41_0= ruleEString ) ) (this_END_BLOCK_42= RULE_END_BLOCK )? )+ this_END_BLOCK_43= RULE_END_BLOCK ) | (otherlv_44= '[' ( (lv_ports_45_0= ruleEString ) ) (otherlv_46= ',' ( (lv_ports_47_0= ruleEString ) ) )* otherlv_48= ']' ) ) )
+            	    // InternalDcDsl.g:1409:5: otherlv_36= 'ports' otherlv_37= ':' ( (this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' (this_BEG_BLOCK_40= RULE_BEG_BLOCK )? ( (lv_ports_41_0= ruleEString ) ) (this_END_BLOCK_42= RULE_END_BLOCK )? )+ this_END_BLOCK_43= RULE_END_BLOCK ) | (otherlv_44= '[' ( (lv_ports_45_0= ruleEString ) ) (otherlv_46= ',' ( (lv_ports_47_0= ruleEString ) ) )* otherlv_48= ']' ) )
             	    {
             	    otherlv_36=(Token)match(input,49,FOLLOW_3); 
 
@@ -3570,64 +3712,85 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	    					newLeafNode(otherlv_37, grammarAccess.getServiceAccess().getColonKeyword_3_11_1());
             	    				
-            	    // InternalDcDsl.g:1372:5: ( (this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' ( (lv_ports_40_0= ruleEString ) ) )+ this_END_BLOCK_41= RULE_END_BLOCK ) | (otherlv_42= '[' ( (lv_ports_43_0= ruleEString ) ) (otherlv_44= ',' ( (lv_ports_45_0= ruleEString ) ) )* otherlv_46= ']' ) )
-            	    int alt14=2;
-            	    int LA14_0 = input.LA(1);
+            	    // InternalDcDsl.g:1417:5: ( (this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' (this_BEG_BLOCK_40= RULE_BEG_BLOCK )? ( (lv_ports_41_0= ruleEString ) ) (this_END_BLOCK_42= RULE_END_BLOCK )? )+ this_END_BLOCK_43= RULE_END_BLOCK ) | (otherlv_44= '[' ( (lv_ports_45_0= ruleEString ) ) (otherlv_46= ',' ( (lv_ports_47_0= ruleEString ) ) )* otherlv_48= ']' ) )
+            	    int alt16=2;
+            	    int LA16_0 = input.LA(1);
 
-            	    if ( (LA14_0==RULE_BEG_BLOCK) ) {
-            	        alt14=1;
+            	    if ( (LA16_0==RULE_BEG_BLOCK) ) {
+            	        alt16=1;
             	    }
-            	    else if ( (LA14_0==32) ) {
-            	        alt14=2;
+            	    else if ( (LA16_0==32) ) {
+            	        alt16=2;
             	    }
             	    else {
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 14, 0, input);
+            	            new NoViableAltException("", 16, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt14) {
+            	    switch (alt16) {
             	        case 1 :
-            	            // InternalDcDsl.g:1373:6: (this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' ( (lv_ports_40_0= ruleEString ) ) )+ this_END_BLOCK_41= RULE_END_BLOCK )
+            	            // InternalDcDsl.g:1418:6: (this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' (this_BEG_BLOCK_40= RULE_BEG_BLOCK )? ( (lv_ports_41_0= ruleEString ) ) (this_END_BLOCK_42= RULE_END_BLOCK )? )+ this_END_BLOCK_43= RULE_END_BLOCK )
             	            {
-            	            // InternalDcDsl.g:1373:6: (this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' ( (lv_ports_40_0= ruleEString ) ) )+ this_END_BLOCK_41= RULE_END_BLOCK )
-            	            // InternalDcDsl.g:1374:7: this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' ( (lv_ports_40_0= ruleEString ) ) )+ this_END_BLOCK_41= RULE_END_BLOCK
+            	            // InternalDcDsl.g:1418:6: (this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' (this_BEG_BLOCK_40= RULE_BEG_BLOCK )? ( (lv_ports_41_0= ruleEString ) ) (this_END_BLOCK_42= RULE_END_BLOCK )? )+ this_END_BLOCK_43= RULE_END_BLOCK )
+            	            // InternalDcDsl.g:1419:7: this_BEG_BLOCK_38= RULE_BEG_BLOCK (otherlv_39= '-' (this_BEG_BLOCK_40= RULE_BEG_BLOCK )? ( (lv_ports_41_0= ruleEString ) ) (this_END_BLOCK_42= RULE_END_BLOCK )? )+ this_END_BLOCK_43= RULE_END_BLOCK
             	            {
             	            this_BEG_BLOCK_38=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_15); 
 
             	            							newLeafNode(this_BEG_BLOCK_38, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_11_2_0_0());
             	            						
-            	            // InternalDcDsl.g:1378:7: (otherlv_39= '-' ( (lv_ports_40_0= ruleEString ) ) )+
-            	            int cnt12=0;
-            	            loop12:
+            	            // InternalDcDsl.g:1423:7: (otherlv_39= '-' (this_BEG_BLOCK_40= RULE_BEG_BLOCK )? ( (lv_ports_41_0= ruleEString ) ) (this_END_BLOCK_42= RULE_END_BLOCK )? )+
+            	            int cnt14=0;
+            	            loop14:
             	            do {
-            	                int alt12=2;
-            	                int LA12_0 = input.LA(1);
+            	                int alt14=2;
+            	                int LA14_0 = input.LA(1);
 
-            	                if ( (LA12_0==31) ) {
-            	                    alt12=1;
+            	                if ( (LA14_0==31) ) {
+            	                    alt14=1;
             	                }
 
 
-            	                switch (alt12) {
+            	                switch (alt14) {
             	            	case 1 :
-            	            	    // InternalDcDsl.g:1379:8: otherlv_39= '-' ( (lv_ports_40_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:1424:8: otherlv_39= '-' (this_BEG_BLOCK_40= RULE_BEG_BLOCK )? ( (lv_ports_41_0= ruleEString ) ) (this_END_BLOCK_42= RULE_END_BLOCK )?
             	            	    {
-            	            	    otherlv_39=(Token)match(input,31,FOLLOW_4); 
+            	            	    otherlv_39=(Token)match(input,31,FOLLOW_12); 
 
             	            	    								newLeafNode(otherlv_39, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_11_2_0_1_0());
             	            	    							
-            	            	    // InternalDcDsl.g:1383:8: ( (lv_ports_40_0= ruleEString ) )
-            	            	    // InternalDcDsl.g:1384:9: (lv_ports_40_0= ruleEString )
+            	            	    // InternalDcDsl.g:1428:8: (this_BEG_BLOCK_40= RULE_BEG_BLOCK )?
+            	            	    int alt12=2;
+            	            	    int LA12_0 = input.LA(1);
+
+            	            	    if ( (LA12_0==RULE_BEG_BLOCK) ) {
+            	            	        alt12=1;
+            	            	    }
+            	            	    switch (alt12) {
+            	            	        case 1 :
+            	            	            // InternalDcDsl.g:1429:9: this_BEG_BLOCK_40= RULE_BEG_BLOCK
+            	            	            {
+            	            	            this_BEG_BLOCK_40=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_4); 
+
+            	            	            									newLeafNode(this_BEG_BLOCK_40, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_11_2_0_1_1());
+            	            	            								
+
+            	            	            }
+            	            	            break;
+
+            	            	    }
+
+            	            	    // InternalDcDsl.g:1434:8: ( (lv_ports_41_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:1435:9: (lv_ports_41_0= ruleEString )
             	            	    {
-            	            	    // InternalDcDsl.g:1384:9: (lv_ports_40_0= ruleEString )
-            	            	    // InternalDcDsl.g:1385:10: lv_ports_40_0= ruleEString
+            	            	    // InternalDcDsl.g:1435:9: (lv_ports_41_0= ruleEString )
+            	            	    // InternalDcDsl.g:1436:10: lv_ports_41_0= ruleEString
             	            	    {
 
-            	            	    										newCompositeNode(grammarAccess.getServiceAccess().getPortsEStringParserRuleCall_3_11_2_0_1_1_0());
+            	            	    										newCompositeNode(grammarAccess.getServiceAccess().getPortsEStringParserRuleCall_3_11_2_0_1_2_0());
             	            	    									
             	            	    pushFollow(FOLLOW_16);
-            	            	    lv_ports_40_0=ruleEString();
+            	            	    lv_ports_41_0=ruleEString();
 
             	            	    state._fsp--;
 
@@ -3638,7 +3801,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            	    										add(
             	            	    											current,
             	            	    											"ports",
-            	            	    											lv_ports_40_0,
+            	            	    											lv_ports_41_0,
             	            	    											"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
             	            	    										afterParserOrEnumRuleCall();
             	            	    									
@@ -3648,22 +3811,68 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	            	    }
 
+            	            	    // InternalDcDsl.g:1453:8: (this_END_BLOCK_42= RULE_END_BLOCK )?
+            	            	    int alt13=2;
+            	            	    int LA13_0 = input.LA(1);
+
+            	            	    if ( (LA13_0==RULE_END_BLOCK) ) {
+            	            	        int LA13_1 = input.LA(2);
+
+            	            	        if ( (LA13_1==RULE_END_BLOCK) ) {
+            	            	            int LA13_3 = input.LA(3);
+
+            	            	            if ( (LA13_3==RULE_END_BLOCK) ) {
+            	            	                int LA13_5 = input.LA(4);
+
+            	            	                if ( (LA13_5==EOF) ) {
+            	            	                    int LA13_6 = input.LA(5);
+
+            	            	                    if ( (LA13_6==EOF) ) {
+            	            	                        alt13=1;
+            	            	                    }
+            	            	                }
+            	            	                else if ( ((LA13_5>=RULE_END_BLOCK && LA13_5<=RULE_INT)||(LA13_5>=23 && LA13_5<=30)) ) {
+            	            	                    alt13=1;
+            	            	                }
+            	            	            }
+            	            	            else if ( ((LA13_3>=20 && LA13_3<=22)||(LA13_3>=38 && LA13_3<=58)) ) {
+            	            	                alt13=1;
+            	            	            }
+            	            	        }
+            	            	        else if ( (LA13_1==31) ) {
+            	            	            alt13=1;
+            	            	        }
+            	            	    }
+            	            	    switch (alt13) {
+            	            	        case 1 :
+            	            	            // InternalDcDsl.g:1454:9: this_END_BLOCK_42= RULE_END_BLOCK
+            	            	            {
+            	            	            this_END_BLOCK_42=(Token)match(input,RULE_END_BLOCK,FOLLOW_16); 
+
+            	            	            									newLeafNode(this_END_BLOCK_42, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_11_2_0_1_3());
+            	            	            								
+
+            	            	            }
+            	            	            break;
+
+            	            	    }
+
 
             	            	    }
             	            	    break;
 
             	            	default :
-            	            	    if ( cnt12 >= 1 ) break loop12;
+            	            	    if ( cnt14 >= 1 ) break loop14;
             	                        EarlyExitException eee =
-            	                            new EarlyExitException(12, input);
+            	                            new EarlyExitException(14, input);
             	                        throw eee;
             	                }
-            	                cnt12++;
+            	                cnt14++;
             	            } while (true);
 
-            	            this_END_BLOCK_41=(Token)match(input,RULE_END_BLOCK,FOLLOW_11); 
+            	            this_END_BLOCK_43=(Token)match(input,RULE_END_BLOCK,FOLLOW_11); 
 
-            	            							newLeafNode(this_END_BLOCK_41, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_11_2_0_2());
+            	            							newLeafNode(this_END_BLOCK_43, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_11_2_0_2());
             	            						
 
             	            }
@@ -3672,26 +3881,26 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalDcDsl.g:1409:6: (otherlv_42= '[' ( (lv_ports_43_0= ruleEString ) ) (otherlv_44= ',' ( (lv_ports_45_0= ruleEString ) ) )* otherlv_46= ']' )
+            	            // InternalDcDsl.g:1466:6: (otherlv_44= '[' ( (lv_ports_45_0= ruleEString ) ) (otherlv_46= ',' ( (lv_ports_47_0= ruleEString ) ) )* otherlv_48= ']' )
             	            {
-            	            // InternalDcDsl.g:1409:6: (otherlv_42= '[' ( (lv_ports_43_0= ruleEString ) ) (otherlv_44= ',' ( (lv_ports_45_0= ruleEString ) ) )* otherlv_46= ']' )
-            	            // InternalDcDsl.g:1410:7: otherlv_42= '[' ( (lv_ports_43_0= ruleEString ) ) (otherlv_44= ',' ( (lv_ports_45_0= ruleEString ) ) )* otherlv_46= ']'
+            	            // InternalDcDsl.g:1466:6: (otherlv_44= '[' ( (lv_ports_45_0= ruleEString ) ) (otherlv_46= ',' ( (lv_ports_47_0= ruleEString ) ) )* otherlv_48= ']' )
+            	            // InternalDcDsl.g:1467:7: otherlv_44= '[' ( (lv_ports_45_0= ruleEString ) ) (otherlv_46= ',' ( (lv_ports_47_0= ruleEString ) ) )* otherlv_48= ']'
             	            {
-            	            otherlv_42=(Token)match(input,32,FOLLOW_4); 
+            	            otherlv_44=(Token)match(input,32,FOLLOW_4); 
 
-            	            							newLeafNode(otherlv_42, grammarAccess.getServiceAccess().getLeftSquareBracketKeyword_3_11_2_1_0());
+            	            							newLeafNode(otherlv_44, grammarAccess.getServiceAccess().getLeftSquareBracketKeyword_3_11_2_1_0());
             	            						
-            	            // InternalDcDsl.g:1414:7: ( (lv_ports_43_0= ruleEString ) )
-            	            // InternalDcDsl.g:1415:8: (lv_ports_43_0= ruleEString )
+            	            // InternalDcDsl.g:1471:7: ( (lv_ports_45_0= ruleEString ) )
+            	            // InternalDcDsl.g:1472:8: (lv_ports_45_0= ruleEString )
             	            {
-            	            // InternalDcDsl.g:1415:8: (lv_ports_43_0= ruleEString )
-            	            // InternalDcDsl.g:1416:9: lv_ports_43_0= ruleEString
+            	            // InternalDcDsl.g:1472:8: (lv_ports_45_0= ruleEString )
+            	            // InternalDcDsl.g:1473:9: lv_ports_45_0= ruleEString
             	            {
 
             	            									newCompositeNode(grammarAccess.getServiceAccess().getPortsEStringParserRuleCall_3_11_2_1_1_0());
             	            								
             	            pushFollow(FOLLOW_17);
-            	            lv_ports_43_0=ruleEString();
+            	            lv_ports_45_0=ruleEString();
 
             	            state._fsp--;
 
@@ -3702,7 +3911,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            									add(
             	            										current,
             	            										"ports",
-            	            										lv_ports_43_0,
+            	            										lv_ports_45_0,
             	            										"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
             	            									afterParserOrEnumRuleCall();
             	            								
@@ -3712,36 +3921,36 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	            }
 
-            	            // InternalDcDsl.g:1433:7: (otherlv_44= ',' ( (lv_ports_45_0= ruleEString ) ) )*
-            	            loop13:
+            	            // InternalDcDsl.g:1490:7: (otherlv_46= ',' ( (lv_ports_47_0= ruleEString ) ) )*
+            	            loop15:
             	            do {
-            	                int alt13=2;
-            	                int LA13_0 = input.LA(1);
+            	                int alt15=2;
+            	                int LA15_0 = input.LA(1);
 
-            	                if ( (LA13_0==35) ) {
-            	                    alt13=1;
+            	                if ( (LA15_0==35) ) {
+            	                    alt15=1;
             	                }
 
 
-            	                switch (alt13) {
+            	                switch (alt15) {
             	            	case 1 :
-            	            	    // InternalDcDsl.g:1434:8: otherlv_44= ',' ( (lv_ports_45_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:1491:8: otherlv_46= ',' ( (lv_ports_47_0= ruleEString ) )
             	            	    {
-            	            	    otherlv_44=(Token)match(input,35,FOLLOW_4); 
+            	            	    otherlv_46=(Token)match(input,35,FOLLOW_4); 
 
-            	            	    								newLeafNode(otherlv_44, grammarAccess.getServiceAccess().getCommaKeyword_3_11_2_1_2_0());
+            	            	    								newLeafNode(otherlv_46, grammarAccess.getServiceAccess().getCommaKeyword_3_11_2_1_2_0());
             	            	    							
-            	            	    // InternalDcDsl.g:1438:8: ( (lv_ports_45_0= ruleEString ) )
-            	            	    // InternalDcDsl.g:1439:9: (lv_ports_45_0= ruleEString )
+            	            	    // InternalDcDsl.g:1495:8: ( (lv_ports_47_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:1496:9: (lv_ports_47_0= ruleEString )
             	            	    {
-            	            	    // InternalDcDsl.g:1439:9: (lv_ports_45_0= ruleEString )
-            	            	    // InternalDcDsl.g:1440:10: lv_ports_45_0= ruleEString
+            	            	    // InternalDcDsl.g:1496:9: (lv_ports_47_0= ruleEString )
+            	            	    // InternalDcDsl.g:1497:10: lv_ports_47_0= ruleEString
             	            	    {
 
             	            	    										newCompositeNode(grammarAccess.getServiceAccess().getPortsEStringParserRuleCall_3_11_2_1_2_1_0());
             	            	    									
             	            	    pushFollow(FOLLOW_17);
-            	            	    lv_ports_45_0=ruleEString();
+            	            	    lv_ports_47_0=ruleEString();
 
             	            	    state._fsp--;
 
@@ -3752,7 +3961,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            	    										add(
             	            	    											current,
             	            	    											"ports",
-            	            	    											lv_ports_45_0,
+            	            	    											lv_ports_47_0,
             	            	    											"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
             	            	    										afterParserOrEnumRuleCall();
             	            	    									
@@ -3767,13 +3976,13 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            	    break;
 
             	            	default :
-            	            	    break loop13;
+            	            	    break loop15;
             	                }
             	            } while (true);
 
-            	            otherlv_46=(Token)match(input,33,FOLLOW_11); 
+            	            otherlv_48=(Token)match(input,33,FOLLOW_11); 
 
-            	            							newLeafNode(otherlv_46, grammarAccess.getServiceAccess().getRightSquareBracketKeyword_3_11_2_1_3());
+            	            							newLeafNode(otherlv_48, grammarAccess.getServiceAccess().getRightSquareBracketKeyword_3_11_2_1_3());
             	            						
 
             	            }
@@ -3791,75 +4000,96 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 13 :
-            	    // InternalDcDsl.g:1466:4: (otherlv_47= 'expose' otherlv_48= ':' ( (this_BEG_BLOCK_49= RULE_BEG_BLOCK (otherlv_50= '-' ( (lv_expose_51_0= RULE_INT ) ) )+ this_END_BLOCK_52= RULE_END_BLOCK ) | (otherlv_53= '[' ( (lv_expose_54_0= RULE_INT ) ) (otherlv_55= ',' ( (lv_expose_56_0= RULE_INT ) ) )* otherlv_57= ']' ) ) )
+            	    // InternalDcDsl.g:1523:4: (otherlv_49= 'expose' otherlv_50= ':' ( (this_BEG_BLOCK_51= RULE_BEG_BLOCK (otherlv_52= '-' (this_BEG_BLOCK_53= RULE_BEG_BLOCK )? ( (lv_expose_54_0= RULE_INT ) ) (this_END_BLOCK_55= RULE_END_BLOCK )? )+ this_END_BLOCK_56= RULE_END_BLOCK ) | (otherlv_57= '[' ( (lv_expose_58_0= RULE_INT ) ) (otherlv_59= ',' ( (lv_expose_60_0= RULE_INT ) ) )* otherlv_61= ']' ) ) )
             	    {
-            	    // InternalDcDsl.g:1466:4: (otherlv_47= 'expose' otherlv_48= ':' ( (this_BEG_BLOCK_49= RULE_BEG_BLOCK (otherlv_50= '-' ( (lv_expose_51_0= RULE_INT ) ) )+ this_END_BLOCK_52= RULE_END_BLOCK ) | (otherlv_53= '[' ( (lv_expose_54_0= RULE_INT ) ) (otherlv_55= ',' ( (lv_expose_56_0= RULE_INT ) ) )* otherlv_57= ']' ) ) )
-            	    // InternalDcDsl.g:1467:5: otherlv_47= 'expose' otherlv_48= ':' ( (this_BEG_BLOCK_49= RULE_BEG_BLOCK (otherlv_50= '-' ( (lv_expose_51_0= RULE_INT ) ) )+ this_END_BLOCK_52= RULE_END_BLOCK ) | (otherlv_53= '[' ( (lv_expose_54_0= RULE_INT ) ) (otherlv_55= ',' ( (lv_expose_56_0= RULE_INT ) ) )* otherlv_57= ']' ) )
+            	    // InternalDcDsl.g:1523:4: (otherlv_49= 'expose' otherlv_50= ':' ( (this_BEG_BLOCK_51= RULE_BEG_BLOCK (otherlv_52= '-' (this_BEG_BLOCK_53= RULE_BEG_BLOCK )? ( (lv_expose_54_0= RULE_INT ) ) (this_END_BLOCK_55= RULE_END_BLOCK )? )+ this_END_BLOCK_56= RULE_END_BLOCK ) | (otherlv_57= '[' ( (lv_expose_58_0= RULE_INT ) ) (otherlv_59= ',' ( (lv_expose_60_0= RULE_INT ) ) )* otherlv_61= ']' ) ) )
+            	    // InternalDcDsl.g:1524:5: otherlv_49= 'expose' otherlv_50= ':' ( (this_BEG_BLOCK_51= RULE_BEG_BLOCK (otherlv_52= '-' (this_BEG_BLOCK_53= RULE_BEG_BLOCK )? ( (lv_expose_54_0= RULE_INT ) ) (this_END_BLOCK_55= RULE_END_BLOCK )? )+ this_END_BLOCK_56= RULE_END_BLOCK ) | (otherlv_57= '[' ( (lv_expose_58_0= RULE_INT ) ) (otherlv_59= ',' ( (lv_expose_60_0= RULE_INT ) ) )* otherlv_61= ']' ) )
             	    {
-            	    otherlv_47=(Token)match(input,50,FOLLOW_3); 
+            	    otherlv_49=(Token)match(input,50,FOLLOW_3); 
 
-            	    					newLeafNode(otherlv_47, grammarAccess.getServiceAccess().getExposeKeyword_3_12_0());
+            	    					newLeafNode(otherlv_49, grammarAccess.getServiceAccess().getExposeKeyword_3_12_0());
             	    				
-            	    otherlv_48=(Token)match(input,17,FOLLOW_14); 
+            	    otherlv_50=(Token)match(input,17,FOLLOW_14); 
 
-            	    					newLeafNode(otherlv_48, grammarAccess.getServiceAccess().getColonKeyword_3_12_1());
+            	    					newLeafNode(otherlv_50, grammarAccess.getServiceAccess().getColonKeyword_3_12_1());
             	    				
-            	    // InternalDcDsl.g:1475:5: ( (this_BEG_BLOCK_49= RULE_BEG_BLOCK (otherlv_50= '-' ( (lv_expose_51_0= RULE_INT ) ) )+ this_END_BLOCK_52= RULE_END_BLOCK ) | (otherlv_53= '[' ( (lv_expose_54_0= RULE_INT ) ) (otherlv_55= ',' ( (lv_expose_56_0= RULE_INT ) ) )* otherlv_57= ']' ) )
-            	    int alt17=2;
-            	    int LA17_0 = input.LA(1);
+            	    // InternalDcDsl.g:1532:5: ( (this_BEG_BLOCK_51= RULE_BEG_BLOCK (otherlv_52= '-' (this_BEG_BLOCK_53= RULE_BEG_BLOCK )? ( (lv_expose_54_0= RULE_INT ) ) (this_END_BLOCK_55= RULE_END_BLOCK )? )+ this_END_BLOCK_56= RULE_END_BLOCK ) | (otherlv_57= '[' ( (lv_expose_58_0= RULE_INT ) ) (otherlv_59= ',' ( (lv_expose_60_0= RULE_INT ) ) )* otherlv_61= ']' ) )
+            	    int alt21=2;
+            	    int LA21_0 = input.LA(1);
 
-            	    if ( (LA17_0==RULE_BEG_BLOCK) ) {
-            	        alt17=1;
+            	    if ( (LA21_0==RULE_BEG_BLOCK) ) {
+            	        alt21=1;
             	    }
-            	    else if ( (LA17_0==32) ) {
-            	        alt17=2;
+            	    else if ( (LA21_0==32) ) {
+            	        alt21=2;
             	    }
             	    else {
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 17, 0, input);
+            	            new NoViableAltException("", 21, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt17) {
+            	    switch (alt21) {
             	        case 1 :
-            	            // InternalDcDsl.g:1476:6: (this_BEG_BLOCK_49= RULE_BEG_BLOCK (otherlv_50= '-' ( (lv_expose_51_0= RULE_INT ) ) )+ this_END_BLOCK_52= RULE_END_BLOCK )
+            	            // InternalDcDsl.g:1533:6: (this_BEG_BLOCK_51= RULE_BEG_BLOCK (otherlv_52= '-' (this_BEG_BLOCK_53= RULE_BEG_BLOCK )? ( (lv_expose_54_0= RULE_INT ) ) (this_END_BLOCK_55= RULE_END_BLOCK )? )+ this_END_BLOCK_56= RULE_END_BLOCK )
             	            {
-            	            // InternalDcDsl.g:1476:6: (this_BEG_BLOCK_49= RULE_BEG_BLOCK (otherlv_50= '-' ( (lv_expose_51_0= RULE_INT ) ) )+ this_END_BLOCK_52= RULE_END_BLOCK )
-            	            // InternalDcDsl.g:1477:7: this_BEG_BLOCK_49= RULE_BEG_BLOCK (otherlv_50= '-' ( (lv_expose_51_0= RULE_INT ) ) )+ this_END_BLOCK_52= RULE_END_BLOCK
+            	            // InternalDcDsl.g:1533:6: (this_BEG_BLOCK_51= RULE_BEG_BLOCK (otherlv_52= '-' (this_BEG_BLOCK_53= RULE_BEG_BLOCK )? ( (lv_expose_54_0= RULE_INT ) ) (this_END_BLOCK_55= RULE_END_BLOCK )? )+ this_END_BLOCK_56= RULE_END_BLOCK )
+            	            // InternalDcDsl.g:1534:7: this_BEG_BLOCK_51= RULE_BEG_BLOCK (otherlv_52= '-' (this_BEG_BLOCK_53= RULE_BEG_BLOCK )? ( (lv_expose_54_0= RULE_INT ) ) (this_END_BLOCK_55= RULE_END_BLOCK )? )+ this_END_BLOCK_56= RULE_END_BLOCK
             	            {
-            	            this_BEG_BLOCK_49=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_15); 
+            	            this_BEG_BLOCK_51=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_15); 
 
-            	            							newLeafNode(this_BEG_BLOCK_49, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_12_2_0_0());
+            	            							newLeafNode(this_BEG_BLOCK_51, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_12_2_0_0());
             	            						
-            	            // InternalDcDsl.g:1481:7: (otherlv_50= '-' ( (lv_expose_51_0= RULE_INT ) ) )+
-            	            int cnt15=0;
-            	            loop15:
+            	            // InternalDcDsl.g:1538:7: (otherlv_52= '-' (this_BEG_BLOCK_53= RULE_BEG_BLOCK )? ( (lv_expose_54_0= RULE_INT ) ) (this_END_BLOCK_55= RULE_END_BLOCK )? )+
+            	            int cnt19=0;
+            	            loop19:
             	            do {
-            	                int alt15=2;
-            	                int LA15_0 = input.LA(1);
+            	                int alt19=2;
+            	                int LA19_0 = input.LA(1);
 
-            	                if ( (LA15_0==31) ) {
-            	                    alt15=1;
+            	                if ( (LA19_0==31) ) {
+            	                    alt19=1;
             	                }
 
 
-            	                switch (alt15) {
+            	                switch (alt19) {
             	            	case 1 :
-            	            	    // InternalDcDsl.g:1482:8: otherlv_50= '-' ( (lv_expose_51_0= RULE_INT ) )
+            	            	    // InternalDcDsl.g:1539:8: otherlv_52= '-' (this_BEG_BLOCK_53= RULE_BEG_BLOCK )? ( (lv_expose_54_0= RULE_INT ) ) (this_END_BLOCK_55= RULE_END_BLOCK )?
             	            	    {
-            	            	    otherlv_50=(Token)match(input,31,FOLLOW_18); 
+            	            	    otherlv_52=(Token)match(input,31,FOLLOW_18); 
 
-            	            	    								newLeafNode(otherlv_50, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_12_2_0_1_0());
+            	            	    								newLeafNode(otherlv_52, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_12_2_0_1_0());
             	            	    							
-            	            	    // InternalDcDsl.g:1486:8: ( (lv_expose_51_0= RULE_INT ) )
-            	            	    // InternalDcDsl.g:1487:9: (lv_expose_51_0= RULE_INT )
-            	            	    {
-            	            	    // InternalDcDsl.g:1487:9: (lv_expose_51_0= RULE_INT )
-            	            	    // InternalDcDsl.g:1488:10: lv_expose_51_0= RULE_INT
-            	            	    {
-            	            	    lv_expose_51_0=(Token)match(input,RULE_INT,FOLLOW_16); 
+            	            	    // InternalDcDsl.g:1543:8: (this_BEG_BLOCK_53= RULE_BEG_BLOCK )?
+            	            	    int alt17=2;
+            	            	    int LA17_0 = input.LA(1);
 
-            	            	    										newLeafNode(lv_expose_51_0, grammarAccess.getServiceAccess().getExposeINTTerminalRuleCall_3_12_2_0_1_1_0());
+            	            	    if ( (LA17_0==RULE_BEG_BLOCK) ) {
+            	            	        alt17=1;
+            	            	    }
+            	            	    switch (alt17) {
+            	            	        case 1 :
+            	            	            // InternalDcDsl.g:1544:9: this_BEG_BLOCK_53= RULE_BEG_BLOCK
+            	            	            {
+            	            	            this_BEG_BLOCK_53=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_19); 
+
+            	            	            									newLeafNode(this_BEG_BLOCK_53, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_12_2_0_1_1());
+            	            	            								
+
+            	            	            }
+            	            	            break;
+
+            	            	    }
+
+            	            	    // InternalDcDsl.g:1549:8: ( (lv_expose_54_0= RULE_INT ) )
+            	            	    // InternalDcDsl.g:1550:9: (lv_expose_54_0= RULE_INT )
+            	            	    {
+            	            	    // InternalDcDsl.g:1550:9: (lv_expose_54_0= RULE_INT )
+            	            	    // InternalDcDsl.g:1551:10: lv_expose_54_0= RULE_INT
+            	            	    {
+            	            	    lv_expose_54_0=(Token)match(input,RULE_INT,FOLLOW_16); 
+
+            	            	    										newLeafNode(lv_expose_54_0, grammarAccess.getServiceAccess().getExposeINTTerminalRuleCall_3_12_2_0_1_2_0());
             	            	    									
 
             	            	    										if (current==null) {
@@ -3868,7 +4098,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            	    										addWithLastConsumed(
             	            	    											current,
             	            	    											"expose",
-            	            	    											lv_expose_51_0,
+            	            	    											lv_expose_54_0,
             	            	    											"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.INT");
             	            	    									
 
@@ -3877,22 +4107,68 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	            	    }
 
+            	            	    // InternalDcDsl.g:1567:8: (this_END_BLOCK_55= RULE_END_BLOCK )?
+            	            	    int alt18=2;
+            	            	    int LA18_0 = input.LA(1);
+
+            	            	    if ( (LA18_0==RULE_END_BLOCK) ) {
+            	            	        int LA18_1 = input.LA(2);
+
+            	            	        if ( (LA18_1==RULE_END_BLOCK) ) {
+            	            	            int LA18_3 = input.LA(3);
+
+            	            	            if ( (LA18_3==RULE_END_BLOCK) ) {
+            	            	                int LA18_5 = input.LA(4);
+
+            	            	                if ( (LA18_5==EOF) ) {
+            	            	                    int LA18_6 = input.LA(5);
+
+            	            	                    if ( (LA18_6==EOF) ) {
+            	            	                        alt18=1;
+            	            	                    }
+            	            	                }
+            	            	                else if ( ((LA18_5>=RULE_END_BLOCK && LA18_5<=RULE_INT)||(LA18_5>=23 && LA18_5<=30)) ) {
+            	            	                    alt18=1;
+            	            	                }
+            	            	            }
+            	            	            else if ( ((LA18_3>=20 && LA18_3<=22)||(LA18_3>=38 && LA18_3<=58)) ) {
+            	            	                alt18=1;
+            	            	            }
+            	            	        }
+            	            	        else if ( (LA18_1==31) ) {
+            	            	            alt18=1;
+            	            	        }
+            	            	    }
+            	            	    switch (alt18) {
+            	            	        case 1 :
+            	            	            // InternalDcDsl.g:1568:9: this_END_BLOCK_55= RULE_END_BLOCK
+            	            	            {
+            	            	            this_END_BLOCK_55=(Token)match(input,RULE_END_BLOCK,FOLLOW_16); 
+
+            	            	            									newLeafNode(this_END_BLOCK_55, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_12_2_0_1_3());
+            	            	            								
+
+            	            	            }
+            	            	            break;
+
+            	            	    }
+
 
             	            	    }
             	            	    break;
 
             	            	default :
-            	            	    if ( cnt15 >= 1 ) break loop15;
+            	            	    if ( cnt19 >= 1 ) break loop19;
             	                        EarlyExitException eee =
-            	                            new EarlyExitException(15, input);
+            	                            new EarlyExitException(19, input);
             	                        throw eee;
             	                }
-            	                cnt15++;
+            	                cnt19++;
             	            } while (true);
 
-            	            this_END_BLOCK_52=(Token)match(input,RULE_END_BLOCK,FOLLOW_11); 
+            	            this_END_BLOCK_56=(Token)match(input,RULE_END_BLOCK,FOLLOW_11); 
 
-            	            							newLeafNode(this_END_BLOCK_52, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_12_2_0_2());
+            	            							newLeafNode(this_END_BLOCK_56, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_12_2_0_2());
             	            						
 
             	            }
@@ -3901,24 +4177,24 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalDcDsl.g:1511:6: (otherlv_53= '[' ( (lv_expose_54_0= RULE_INT ) ) (otherlv_55= ',' ( (lv_expose_56_0= RULE_INT ) ) )* otherlv_57= ']' )
+            	            // InternalDcDsl.g:1580:6: (otherlv_57= '[' ( (lv_expose_58_0= RULE_INT ) ) (otherlv_59= ',' ( (lv_expose_60_0= RULE_INT ) ) )* otherlv_61= ']' )
             	            {
-            	            // InternalDcDsl.g:1511:6: (otherlv_53= '[' ( (lv_expose_54_0= RULE_INT ) ) (otherlv_55= ',' ( (lv_expose_56_0= RULE_INT ) ) )* otherlv_57= ']' )
-            	            // InternalDcDsl.g:1512:7: otherlv_53= '[' ( (lv_expose_54_0= RULE_INT ) ) (otherlv_55= ',' ( (lv_expose_56_0= RULE_INT ) ) )* otherlv_57= ']'
+            	            // InternalDcDsl.g:1580:6: (otherlv_57= '[' ( (lv_expose_58_0= RULE_INT ) ) (otherlv_59= ',' ( (lv_expose_60_0= RULE_INT ) ) )* otherlv_61= ']' )
+            	            // InternalDcDsl.g:1581:7: otherlv_57= '[' ( (lv_expose_58_0= RULE_INT ) ) (otherlv_59= ',' ( (lv_expose_60_0= RULE_INT ) ) )* otherlv_61= ']'
             	            {
-            	            otherlv_53=(Token)match(input,32,FOLLOW_18); 
+            	            otherlv_57=(Token)match(input,32,FOLLOW_19); 
 
-            	            							newLeafNode(otherlv_53, grammarAccess.getServiceAccess().getLeftSquareBracketKeyword_3_12_2_1_0());
+            	            							newLeafNode(otherlv_57, grammarAccess.getServiceAccess().getLeftSquareBracketKeyword_3_12_2_1_0());
             	            						
-            	            // InternalDcDsl.g:1516:7: ( (lv_expose_54_0= RULE_INT ) )
-            	            // InternalDcDsl.g:1517:8: (lv_expose_54_0= RULE_INT )
+            	            // InternalDcDsl.g:1585:7: ( (lv_expose_58_0= RULE_INT ) )
+            	            // InternalDcDsl.g:1586:8: (lv_expose_58_0= RULE_INT )
             	            {
-            	            // InternalDcDsl.g:1517:8: (lv_expose_54_0= RULE_INT )
-            	            // InternalDcDsl.g:1518:9: lv_expose_54_0= RULE_INT
+            	            // InternalDcDsl.g:1586:8: (lv_expose_58_0= RULE_INT )
+            	            // InternalDcDsl.g:1587:9: lv_expose_58_0= RULE_INT
             	            {
-            	            lv_expose_54_0=(Token)match(input,RULE_INT,FOLLOW_17); 
+            	            lv_expose_58_0=(Token)match(input,RULE_INT,FOLLOW_17); 
 
-            	            									newLeafNode(lv_expose_54_0, grammarAccess.getServiceAccess().getExposeINTTerminalRuleCall_3_12_2_1_1_0());
+            	            									newLeafNode(lv_expose_58_0, grammarAccess.getServiceAccess().getExposeINTTerminalRuleCall_3_12_2_1_1_0());
             	            								
 
             	            									if (current==null) {
@@ -3927,7 +4203,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            									addWithLastConsumed(
             	            										current,
             	            										"expose",
-            	            										lv_expose_54_0,
+            	            										lv_expose_58_0,
             	            										"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.INT");
             	            								
 
@@ -3936,34 +4212,34 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	            }
 
-            	            // InternalDcDsl.g:1534:7: (otherlv_55= ',' ( (lv_expose_56_0= RULE_INT ) ) )*
-            	            loop16:
+            	            // InternalDcDsl.g:1603:7: (otherlv_59= ',' ( (lv_expose_60_0= RULE_INT ) ) )*
+            	            loop20:
             	            do {
-            	                int alt16=2;
-            	                int LA16_0 = input.LA(1);
+            	                int alt20=2;
+            	                int LA20_0 = input.LA(1);
 
-            	                if ( (LA16_0==35) ) {
-            	                    alt16=1;
+            	                if ( (LA20_0==35) ) {
+            	                    alt20=1;
             	                }
 
 
-            	                switch (alt16) {
+            	                switch (alt20) {
             	            	case 1 :
-            	            	    // InternalDcDsl.g:1535:8: otherlv_55= ',' ( (lv_expose_56_0= RULE_INT ) )
+            	            	    // InternalDcDsl.g:1604:8: otherlv_59= ',' ( (lv_expose_60_0= RULE_INT ) )
             	            	    {
-            	            	    otherlv_55=(Token)match(input,35,FOLLOW_18); 
+            	            	    otherlv_59=(Token)match(input,35,FOLLOW_19); 
 
-            	            	    								newLeafNode(otherlv_55, grammarAccess.getServiceAccess().getCommaKeyword_3_12_2_1_2_0());
+            	            	    								newLeafNode(otherlv_59, grammarAccess.getServiceAccess().getCommaKeyword_3_12_2_1_2_0());
             	            	    							
-            	            	    // InternalDcDsl.g:1539:8: ( (lv_expose_56_0= RULE_INT ) )
-            	            	    // InternalDcDsl.g:1540:9: (lv_expose_56_0= RULE_INT )
+            	            	    // InternalDcDsl.g:1608:8: ( (lv_expose_60_0= RULE_INT ) )
+            	            	    // InternalDcDsl.g:1609:9: (lv_expose_60_0= RULE_INT )
             	            	    {
-            	            	    // InternalDcDsl.g:1540:9: (lv_expose_56_0= RULE_INT )
-            	            	    // InternalDcDsl.g:1541:10: lv_expose_56_0= RULE_INT
+            	            	    // InternalDcDsl.g:1609:9: (lv_expose_60_0= RULE_INT )
+            	            	    // InternalDcDsl.g:1610:10: lv_expose_60_0= RULE_INT
             	            	    {
-            	            	    lv_expose_56_0=(Token)match(input,RULE_INT,FOLLOW_17); 
+            	            	    lv_expose_60_0=(Token)match(input,RULE_INT,FOLLOW_17); 
 
-            	            	    										newLeafNode(lv_expose_56_0, grammarAccess.getServiceAccess().getExposeINTTerminalRuleCall_3_12_2_1_2_1_0());
+            	            	    										newLeafNode(lv_expose_60_0, grammarAccess.getServiceAccess().getExposeINTTerminalRuleCall_3_12_2_1_2_1_0());
             	            	    									
 
             	            	    										if (current==null) {
@@ -3972,7 +4248,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            	    										addWithLastConsumed(
             	            	    											current,
             	            	    											"expose",
-            	            	    											lv_expose_56_0,
+            	            	    											lv_expose_60_0,
             	            	    											"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.INT");
             	            	    									
 
@@ -3986,13 +4262,13 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            	    break;
 
             	            	default :
-            	            	    break loop16;
+            	            	    break loop20;
             	                }
             	            } while (true);
 
-            	            otherlv_57=(Token)match(input,33,FOLLOW_11); 
+            	            otherlv_61=(Token)match(input,33,FOLLOW_11); 
 
-            	            							newLeafNode(otherlv_57, grammarAccess.getServiceAccess().getRightSquareBracketKeyword_3_12_2_1_3());
+            	            							newLeafNode(otherlv_61, grammarAccess.getServiceAccess().getRightSquareBracketKeyword_3_12_2_1_3());
             	            						
 
             	            }
@@ -4010,190 +4286,119 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 14 :
-            	    // InternalDcDsl.g:1566:4: (otherlv_58= 'command' otherlv_59= ':' ( (this_BEG_BLOCK_60= RULE_BEG_BLOCK (otherlv_61= '-' ( (lv_command_62_0= ruleEString ) ) )+ this_END_BLOCK_63= RULE_END_BLOCK ) | (otherlv_64= '[' ( (lv_command_65_0= ruleEString ) ) (otherlv_66= ',' ( (lv_command_67_0= ruleEString ) ) )* otherlv_68= ']' ) ) )
+            	    // InternalDcDsl.g:1635:4: (otherlv_62= 'command' otherlv_63= ':' ( (this_BEG_BLOCK_64= RULE_BEG_BLOCK (otherlv_65= '-' (this_BEG_BLOCK_66= RULE_BEG_BLOCK )? ( (lv_command_67_0= ruleEString ) ) (this_END_BLOCK_68= RULE_END_BLOCK )? )+ this_END_BLOCK_69= RULE_END_BLOCK ) | (otherlv_70= '[' ( (lv_command_71_0= ruleEString ) ) (otherlv_72= ',' ( (lv_command_73_0= ruleEString ) ) )* otherlv_74= ']' ) | ( (lv_command_75_0= ruleEString ) ) ) )
             	    {
-            	    // InternalDcDsl.g:1566:4: (otherlv_58= 'command' otherlv_59= ':' ( (this_BEG_BLOCK_60= RULE_BEG_BLOCK (otherlv_61= '-' ( (lv_command_62_0= ruleEString ) ) )+ this_END_BLOCK_63= RULE_END_BLOCK ) | (otherlv_64= '[' ( (lv_command_65_0= ruleEString ) ) (otherlv_66= ',' ( (lv_command_67_0= ruleEString ) ) )* otherlv_68= ']' ) ) )
-            	    // InternalDcDsl.g:1567:5: otherlv_58= 'command' otherlv_59= ':' ( (this_BEG_BLOCK_60= RULE_BEG_BLOCK (otherlv_61= '-' ( (lv_command_62_0= ruleEString ) ) )+ this_END_BLOCK_63= RULE_END_BLOCK ) | (otherlv_64= '[' ( (lv_command_65_0= ruleEString ) ) (otherlv_66= ',' ( (lv_command_67_0= ruleEString ) ) )* otherlv_68= ']' ) )
+            	    // InternalDcDsl.g:1635:4: (otherlv_62= 'command' otherlv_63= ':' ( (this_BEG_BLOCK_64= RULE_BEG_BLOCK (otherlv_65= '-' (this_BEG_BLOCK_66= RULE_BEG_BLOCK )? ( (lv_command_67_0= ruleEString ) ) (this_END_BLOCK_68= RULE_END_BLOCK )? )+ this_END_BLOCK_69= RULE_END_BLOCK ) | (otherlv_70= '[' ( (lv_command_71_0= ruleEString ) ) (otherlv_72= ',' ( (lv_command_73_0= ruleEString ) ) )* otherlv_74= ']' ) | ( (lv_command_75_0= ruleEString ) ) ) )
+            	    // InternalDcDsl.g:1636:5: otherlv_62= 'command' otherlv_63= ':' ( (this_BEG_BLOCK_64= RULE_BEG_BLOCK (otherlv_65= '-' (this_BEG_BLOCK_66= RULE_BEG_BLOCK )? ( (lv_command_67_0= ruleEString ) ) (this_END_BLOCK_68= RULE_END_BLOCK )? )+ this_END_BLOCK_69= RULE_END_BLOCK ) | (otherlv_70= '[' ( (lv_command_71_0= ruleEString ) ) (otherlv_72= ',' ( (lv_command_73_0= ruleEString ) ) )* otherlv_74= ']' ) | ( (lv_command_75_0= ruleEString ) ) )
             	    {
-            	    otherlv_58=(Token)match(input,51,FOLLOW_3); 
+            	    otherlv_62=(Token)match(input,51,FOLLOW_3); 
 
-            	    					newLeafNode(otherlv_58, grammarAccess.getServiceAccess().getCommandKeyword_3_13_0());
+            	    					newLeafNode(otherlv_62, grammarAccess.getServiceAccess().getCommandKeyword_3_13_0());
             	    				
-            	    otherlv_59=(Token)match(input,17,FOLLOW_14); 
+            	    otherlv_63=(Token)match(input,17,FOLLOW_8); 
 
-            	    					newLeafNode(otherlv_59, grammarAccess.getServiceAccess().getColonKeyword_3_13_1());
+            	    					newLeafNode(otherlv_63, grammarAccess.getServiceAccess().getColonKeyword_3_13_1());
             	    				
-            	    // InternalDcDsl.g:1575:5: ( (this_BEG_BLOCK_60= RULE_BEG_BLOCK (otherlv_61= '-' ( (lv_command_62_0= ruleEString ) ) )+ this_END_BLOCK_63= RULE_END_BLOCK ) | (otherlv_64= '[' ( (lv_command_65_0= ruleEString ) ) (otherlv_66= ',' ( (lv_command_67_0= ruleEString ) ) )* otherlv_68= ']' ) )
-            	    int alt20=2;
-            	    int LA20_0 = input.LA(1);
-
-            	    if ( (LA20_0==RULE_BEG_BLOCK) ) {
-            	        alt20=1;
-            	    }
-            	    else if ( (LA20_0==32) ) {
-            	        alt20=2;
-            	    }
-            	    else {
+            	    // InternalDcDsl.g:1644:5: ( (this_BEG_BLOCK_64= RULE_BEG_BLOCK (otherlv_65= '-' (this_BEG_BLOCK_66= RULE_BEG_BLOCK )? ( (lv_command_67_0= ruleEString ) ) (this_END_BLOCK_68= RULE_END_BLOCK )? )+ this_END_BLOCK_69= RULE_END_BLOCK ) | (otherlv_70= '[' ( (lv_command_71_0= ruleEString ) ) (otherlv_72= ',' ( (lv_command_73_0= ruleEString ) ) )* otherlv_74= ']' ) | ( (lv_command_75_0= ruleEString ) ) )
+            	    int alt26=3;
+            	    switch ( input.LA(1) ) {
+            	    case RULE_BEG_BLOCK:
+            	        {
+            	        alt26=1;
+            	        }
+            	        break;
+            	    case 32:
+            	        {
+            	        alt26=2;
+            	        }
+            	        break;
+            	    case RULE_STRING:
+            	    case RULE_SQ_STRING:
+            	    case RULE_YAML_SCALAR:
+            	    case RULE_GH_EXPRESSION:
+            	    case RULE_ID:
+            	    case RULE_INT:
+            	    case 23:
+            	    case 24:
+            	    case 25:
+            	    case 26:
+            	    case 27:
+            	    case 28:
+            	    case 29:
+            	    case 30:
+            	        {
+            	        alt26=3;
+            	        }
+            	        break;
+            	    default:
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 20, 0, input);
+            	            new NoViableAltException("", 26, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt20) {
+
+            	    switch (alt26) {
             	        case 1 :
-            	            // InternalDcDsl.g:1576:6: (this_BEG_BLOCK_60= RULE_BEG_BLOCK (otherlv_61= '-' ( (lv_command_62_0= ruleEString ) ) )+ this_END_BLOCK_63= RULE_END_BLOCK )
+            	            // InternalDcDsl.g:1645:6: (this_BEG_BLOCK_64= RULE_BEG_BLOCK (otherlv_65= '-' (this_BEG_BLOCK_66= RULE_BEG_BLOCK )? ( (lv_command_67_0= ruleEString ) ) (this_END_BLOCK_68= RULE_END_BLOCK )? )+ this_END_BLOCK_69= RULE_END_BLOCK )
             	            {
-            	            // InternalDcDsl.g:1576:6: (this_BEG_BLOCK_60= RULE_BEG_BLOCK (otherlv_61= '-' ( (lv_command_62_0= ruleEString ) ) )+ this_END_BLOCK_63= RULE_END_BLOCK )
-            	            // InternalDcDsl.g:1577:7: this_BEG_BLOCK_60= RULE_BEG_BLOCK (otherlv_61= '-' ( (lv_command_62_0= ruleEString ) ) )+ this_END_BLOCK_63= RULE_END_BLOCK
+            	            // InternalDcDsl.g:1645:6: (this_BEG_BLOCK_64= RULE_BEG_BLOCK (otherlv_65= '-' (this_BEG_BLOCK_66= RULE_BEG_BLOCK )? ( (lv_command_67_0= ruleEString ) ) (this_END_BLOCK_68= RULE_END_BLOCK )? )+ this_END_BLOCK_69= RULE_END_BLOCK )
+            	            // InternalDcDsl.g:1646:7: this_BEG_BLOCK_64= RULE_BEG_BLOCK (otherlv_65= '-' (this_BEG_BLOCK_66= RULE_BEG_BLOCK )? ( (lv_command_67_0= ruleEString ) ) (this_END_BLOCK_68= RULE_END_BLOCK )? )+ this_END_BLOCK_69= RULE_END_BLOCK
             	            {
-            	            this_BEG_BLOCK_60=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_15); 
+            	            this_BEG_BLOCK_64=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_15); 
 
-            	            							newLeafNode(this_BEG_BLOCK_60, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_13_2_0_0());
+            	            							newLeafNode(this_BEG_BLOCK_64, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_13_2_0_0());
             	            						
-            	            // InternalDcDsl.g:1581:7: (otherlv_61= '-' ( (lv_command_62_0= ruleEString ) ) )+
-            	            int cnt18=0;
-            	            loop18:
+            	            // InternalDcDsl.g:1650:7: (otherlv_65= '-' (this_BEG_BLOCK_66= RULE_BEG_BLOCK )? ( (lv_command_67_0= ruleEString ) ) (this_END_BLOCK_68= RULE_END_BLOCK )? )+
+            	            int cnt24=0;
+            	            loop24:
             	            do {
-            	                int alt18=2;
-            	                int LA18_0 = input.LA(1);
+            	                int alt24=2;
+            	                int LA24_0 = input.LA(1);
 
-            	                if ( (LA18_0==31) ) {
-            	                    alt18=1;
+            	                if ( (LA24_0==31) ) {
+            	                    alt24=1;
             	                }
 
 
-            	                switch (alt18) {
+            	                switch (alt24) {
             	            	case 1 :
-            	            	    // InternalDcDsl.g:1582:8: otherlv_61= '-' ( (lv_command_62_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:1651:8: otherlv_65= '-' (this_BEG_BLOCK_66= RULE_BEG_BLOCK )? ( (lv_command_67_0= ruleEString ) ) (this_END_BLOCK_68= RULE_END_BLOCK )?
             	            	    {
-            	            	    otherlv_61=(Token)match(input,31,FOLLOW_4); 
+            	            	    otherlv_65=(Token)match(input,31,FOLLOW_12); 
 
-            	            	    								newLeafNode(otherlv_61, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_13_2_0_1_0());
+            	            	    								newLeafNode(otherlv_65, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_13_2_0_1_0());
             	            	    							
-            	            	    // InternalDcDsl.g:1586:8: ( (lv_command_62_0= ruleEString ) )
-            	            	    // InternalDcDsl.g:1587:9: (lv_command_62_0= ruleEString )
+            	            	    // InternalDcDsl.g:1655:8: (this_BEG_BLOCK_66= RULE_BEG_BLOCK )?
+            	            	    int alt22=2;
+            	            	    int LA22_0 = input.LA(1);
+
+            	            	    if ( (LA22_0==RULE_BEG_BLOCK) ) {
+            	            	        alt22=1;
+            	            	    }
+            	            	    switch (alt22) {
+            	            	        case 1 :
+            	            	            // InternalDcDsl.g:1656:9: this_BEG_BLOCK_66= RULE_BEG_BLOCK
+            	            	            {
+            	            	            this_BEG_BLOCK_66=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_4); 
+
+            	            	            									newLeafNode(this_BEG_BLOCK_66, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_13_2_0_1_1());
+            	            	            								
+
+            	            	            }
+            	            	            break;
+
+            	            	    }
+
+            	            	    // InternalDcDsl.g:1661:8: ( (lv_command_67_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:1662:9: (lv_command_67_0= ruleEString )
             	            	    {
-            	            	    // InternalDcDsl.g:1587:9: (lv_command_62_0= ruleEString )
-            	            	    // InternalDcDsl.g:1588:10: lv_command_62_0= ruleEString
+            	            	    // InternalDcDsl.g:1662:9: (lv_command_67_0= ruleEString )
+            	            	    // InternalDcDsl.g:1663:10: lv_command_67_0= ruleEString
             	            	    {
 
-            	            	    										newCompositeNode(grammarAccess.getServiceAccess().getCommandEStringParserRuleCall_3_13_2_0_1_1_0());
+            	            	    										newCompositeNode(grammarAccess.getServiceAccess().getCommandEStringParserRuleCall_3_13_2_0_1_2_0());
             	            	    									
             	            	    pushFollow(FOLLOW_16);
-            	            	    lv_command_62_0=ruleEString();
-
-            	            	    state._fsp--;
-
-
-            	            	    										if (current==null) {
-            	            	    											current = createModelElementForParent(grammarAccess.getServiceRule());
-            	            	    										}
-            	            	    										add(
-            	            	    											current,
-            	            	    											"command",
-            	            	    											lv_command_62_0,
-            	            	    											"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
-            	            	    										afterParserOrEnumRuleCall();
-            	            	    									
-
-            	            	    }
-
-
-            	            	    }
-
-
-            	            	    }
-            	            	    break;
-
-            	            	default :
-            	            	    if ( cnt18 >= 1 ) break loop18;
-            	                        EarlyExitException eee =
-            	                            new EarlyExitException(18, input);
-            	                        throw eee;
-            	                }
-            	                cnt18++;
-            	            } while (true);
-
-            	            this_END_BLOCK_63=(Token)match(input,RULE_END_BLOCK,FOLLOW_11); 
-
-            	            							newLeafNode(this_END_BLOCK_63, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_13_2_0_2());
-            	            						
-
-            	            }
-
-
-            	            }
-            	            break;
-            	        case 2 :
-            	            // InternalDcDsl.g:1612:6: (otherlv_64= '[' ( (lv_command_65_0= ruleEString ) ) (otherlv_66= ',' ( (lv_command_67_0= ruleEString ) ) )* otherlv_68= ']' )
-            	            {
-            	            // InternalDcDsl.g:1612:6: (otherlv_64= '[' ( (lv_command_65_0= ruleEString ) ) (otherlv_66= ',' ( (lv_command_67_0= ruleEString ) ) )* otherlv_68= ']' )
-            	            // InternalDcDsl.g:1613:7: otherlv_64= '[' ( (lv_command_65_0= ruleEString ) ) (otherlv_66= ',' ( (lv_command_67_0= ruleEString ) ) )* otherlv_68= ']'
-            	            {
-            	            otherlv_64=(Token)match(input,32,FOLLOW_4); 
-
-            	            							newLeafNode(otherlv_64, grammarAccess.getServiceAccess().getLeftSquareBracketKeyword_3_13_2_1_0());
-            	            						
-            	            // InternalDcDsl.g:1617:7: ( (lv_command_65_0= ruleEString ) )
-            	            // InternalDcDsl.g:1618:8: (lv_command_65_0= ruleEString )
-            	            {
-            	            // InternalDcDsl.g:1618:8: (lv_command_65_0= ruleEString )
-            	            // InternalDcDsl.g:1619:9: lv_command_65_0= ruleEString
-            	            {
-
-            	            									newCompositeNode(grammarAccess.getServiceAccess().getCommandEStringParserRuleCall_3_13_2_1_1_0());
-            	            								
-            	            pushFollow(FOLLOW_17);
-            	            lv_command_65_0=ruleEString();
-
-            	            state._fsp--;
-
-
-            	            									if (current==null) {
-            	            										current = createModelElementForParent(grammarAccess.getServiceRule());
-            	            									}
-            	            									add(
-            	            										current,
-            	            										"command",
-            	            										lv_command_65_0,
-            	            										"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
-            	            									afterParserOrEnumRuleCall();
-            	            								
-
-            	            }
-
-
-            	            }
-
-            	            // InternalDcDsl.g:1636:7: (otherlv_66= ',' ( (lv_command_67_0= ruleEString ) ) )*
-            	            loop19:
-            	            do {
-            	                int alt19=2;
-            	                int LA19_0 = input.LA(1);
-
-            	                if ( (LA19_0==35) ) {
-            	                    alt19=1;
-            	                }
-
-
-            	                switch (alt19) {
-            	            	case 1 :
-            	            	    // InternalDcDsl.g:1637:8: otherlv_66= ',' ( (lv_command_67_0= ruleEString ) )
-            	            	    {
-            	            	    otherlv_66=(Token)match(input,35,FOLLOW_4); 
-
-            	            	    								newLeafNode(otherlv_66, grammarAccess.getServiceAccess().getCommaKeyword_3_13_2_1_2_0());
-            	            	    							
-            	            	    // InternalDcDsl.g:1641:8: ( (lv_command_67_0= ruleEString ) )
-            	            	    // InternalDcDsl.g:1642:9: (lv_command_67_0= ruleEString )
-            	            	    {
-            	            	    // InternalDcDsl.g:1642:9: (lv_command_67_0= ruleEString )
-            	            	    // InternalDcDsl.g:1643:10: lv_command_67_0= ruleEString
-            	            	    {
-
-            	            	    										newCompositeNode(grammarAccess.getServiceAccess().getCommandEStringParserRuleCall_3_13_2_1_2_1_0());
-            	            	    									
-            	            	    pushFollow(FOLLOW_17);
             	            	    lv_command_67_0=ruleEString();
 
             	            	    state._fsp--;
@@ -4215,357 +4420,49 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	            	    }
 
+            	            	    // InternalDcDsl.g:1680:8: (this_END_BLOCK_68= RULE_END_BLOCK )?
+            	            	    int alt23=2;
+            	            	    int LA23_0 = input.LA(1);
 
+            	            	    if ( (LA23_0==RULE_END_BLOCK) ) {
+            	            	        int LA23_1 = input.LA(2);
+
+            	            	        if ( (LA23_1==RULE_END_BLOCK) ) {
+            	            	            int LA23_3 = input.LA(3);
+
+            	            	            if ( (LA23_3==RULE_END_BLOCK) ) {
+            	            	                int LA23_5 = input.LA(4);
+
+            	            	                if ( (LA23_5==EOF) ) {
+            	            	                    int LA23_6 = input.LA(5);
+
+            	            	                    if ( (LA23_6==EOF) ) {
+            	            	                        alt23=1;
+            	            	                    }
+            	            	                }
+            	            	                else if ( ((LA23_5>=RULE_END_BLOCK && LA23_5<=RULE_INT)||(LA23_5>=23 && LA23_5<=30)) ) {
+            	            	                    alt23=1;
+            	            	                }
+            	            	            }
+            	            	            else if ( ((LA23_3>=20 && LA23_3<=22)||(LA23_3>=38 && LA23_3<=58)) ) {
+            	            	                alt23=1;
+            	            	            }
+            	            	        }
+            	            	        else if ( (LA23_1==31) ) {
+            	            	            alt23=1;
+            	            	        }
             	            	    }
-            	            	    break;
-
-            	            	default :
-            	            	    break loop19;
-            	                }
-            	            } while (true);
-
-            	            otherlv_68=(Token)match(input,33,FOLLOW_11); 
-
-            	            							newLeafNode(otherlv_68, grammarAccess.getServiceAccess().getRightSquareBracketKeyword_3_13_2_1_3());
-            	            						
-
-            	            }
-
-
-            	            }
-            	            break;
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 15 :
-            	    // InternalDcDsl.g:1669:4: (otherlv_69= 'secrets' otherlv_70= ':' ( (this_BEG_BLOCK_71= RULE_BEG_BLOCK (otherlv_72= '-' ( (lv_secrets_73_0= ruleEString ) ) )+ this_END_BLOCK_74= RULE_END_BLOCK ) | (otherlv_75= '[' ( (lv_secrets_76_0= ruleEString ) ) (otherlv_77= ',' ( (lv_secrets_78_0= ruleEString ) ) )* otherlv_79= ']' ) ) )
-            	    {
-            	    // InternalDcDsl.g:1669:4: (otherlv_69= 'secrets' otherlv_70= ':' ( (this_BEG_BLOCK_71= RULE_BEG_BLOCK (otherlv_72= '-' ( (lv_secrets_73_0= ruleEString ) ) )+ this_END_BLOCK_74= RULE_END_BLOCK ) | (otherlv_75= '[' ( (lv_secrets_76_0= ruleEString ) ) (otherlv_77= ',' ( (lv_secrets_78_0= ruleEString ) ) )* otherlv_79= ']' ) ) )
-            	    // InternalDcDsl.g:1670:5: otherlv_69= 'secrets' otherlv_70= ':' ( (this_BEG_BLOCK_71= RULE_BEG_BLOCK (otherlv_72= '-' ( (lv_secrets_73_0= ruleEString ) ) )+ this_END_BLOCK_74= RULE_END_BLOCK ) | (otherlv_75= '[' ( (lv_secrets_76_0= ruleEString ) ) (otherlv_77= ',' ( (lv_secrets_78_0= ruleEString ) ) )* otherlv_79= ']' ) )
-            	    {
-            	    otherlv_69=(Token)match(input,22,FOLLOW_3); 
-
-            	    					newLeafNode(otherlv_69, grammarAccess.getServiceAccess().getSecretsKeyword_3_14_0());
-            	    				
-            	    otherlv_70=(Token)match(input,17,FOLLOW_14); 
-
-            	    					newLeafNode(otherlv_70, grammarAccess.getServiceAccess().getColonKeyword_3_14_1());
-            	    				
-            	    // InternalDcDsl.g:1678:5: ( (this_BEG_BLOCK_71= RULE_BEG_BLOCK (otherlv_72= '-' ( (lv_secrets_73_0= ruleEString ) ) )+ this_END_BLOCK_74= RULE_END_BLOCK ) | (otherlv_75= '[' ( (lv_secrets_76_0= ruleEString ) ) (otherlv_77= ',' ( (lv_secrets_78_0= ruleEString ) ) )* otherlv_79= ']' ) )
-            	    int alt23=2;
-            	    int LA23_0 = input.LA(1);
-
-            	    if ( (LA23_0==RULE_BEG_BLOCK) ) {
-            	        alt23=1;
-            	    }
-            	    else if ( (LA23_0==32) ) {
-            	        alt23=2;
-            	    }
-            	    else {
-            	        NoViableAltException nvae =
-            	            new NoViableAltException("", 23, 0, input);
-
-            	        throw nvae;
-            	    }
-            	    switch (alt23) {
-            	        case 1 :
-            	            // InternalDcDsl.g:1679:6: (this_BEG_BLOCK_71= RULE_BEG_BLOCK (otherlv_72= '-' ( (lv_secrets_73_0= ruleEString ) ) )+ this_END_BLOCK_74= RULE_END_BLOCK )
-            	            {
-            	            // InternalDcDsl.g:1679:6: (this_BEG_BLOCK_71= RULE_BEG_BLOCK (otherlv_72= '-' ( (lv_secrets_73_0= ruleEString ) ) )+ this_END_BLOCK_74= RULE_END_BLOCK )
-            	            // InternalDcDsl.g:1680:7: this_BEG_BLOCK_71= RULE_BEG_BLOCK (otherlv_72= '-' ( (lv_secrets_73_0= ruleEString ) ) )+ this_END_BLOCK_74= RULE_END_BLOCK
-            	            {
-            	            this_BEG_BLOCK_71=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_15); 
-
-            	            							newLeafNode(this_BEG_BLOCK_71, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_14_2_0_0());
-            	            						
-            	            // InternalDcDsl.g:1684:7: (otherlv_72= '-' ( (lv_secrets_73_0= ruleEString ) ) )+
-            	            int cnt21=0;
-            	            loop21:
-            	            do {
-            	                int alt21=2;
-            	                int LA21_0 = input.LA(1);
-
-            	                if ( (LA21_0==31) ) {
-            	                    alt21=1;
-            	                }
-
-
-            	                switch (alt21) {
-            	            	case 1 :
-            	            	    // InternalDcDsl.g:1685:8: otherlv_72= '-' ( (lv_secrets_73_0= ruleEString ) )
-            	            	    {
-            	            	    otherlv_72=(Token)match(input,31,FOLLOW_4); 
-
-            	            	    								newLeafNode(otherlv_72, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_14_2_0_1_0());
-            	            	    							
-            	            	    // InternalDcDsl.g:1689:8: ( (lv_secrets_73_0= ruleEString ) )
-            	            	    // InternalDcDsl.g:1690:9: (lv_secrets_73_0= ruleEString )
-            	            	    {
-            	            	    // InternalDcDsl.g:1690:9: (lv_secrets_73_0= ruleEString )
-            	            	    // InternalDcDsl.g:1691:10: lv_secrets_73_0= ruleEString
-            	            	    {
-
-            	            	    										newCompositeNode(grammarAccess.getServiceAccess().getSecretsEStringParserRuleCall_3_14_2_0_1_1_0());
-            	            	    									
-            	            	    pushFollow(FOLLOW_16);
-            	            	    lv_secrets_73_0=ruleEString();
-
-            	            	    state._fsp--;
-
-
-            	            	    										if (current==null) {
-            	            	    											current = createModelElementForParent(grammarAccess.getServiceRule());
-            	            	    										}
-            	            	    										add(
-            	            	    											current,
-            	            	    											"secrets",
-            	            	    											lv_secrets_73_0,
-            	            	    											"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
-            	            	    										afterParserOrEnumRuleCall();
-            	            	    									
-
-            	            	    }
-
-
-            	            	    }
-
-
-            	            	    }
-            	            	    break;
-
-            	            	default :
-            	            	    if ( cnt21 >= 1 ) break loop21;
-            	                        EarlyExitException eee =
-            	                            new EarlyExitException(21, input);
-            	                        throw eee;
-            	                }
-            	                cnt21++;
-            	            } while (true);
-
-            	            this_END_BLOCK_74=(Token)match(input,RULE_END_BLOCK,FOLLOW_11); 
-
-            	            							newLeafNode(this_END_BLOCK_74, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_14_2_0_2());
-            	            						
-
-            	            }
-
-
-            	            }
-            	            break;
-            	        case 2 :
-            	            // InternalDcDsl.g:1715:6: (otherlv_75= '[' ( (lv_secrets_76_0= ruleEString ) ) (otherlv_77= ',' ( (lv_secrets_78_0= ruleEString ) ) )* otherlv_79= ']' )
-            	            {
-            	            // InternalDcDsl.g:1715:6: (otherlv_75= '[' ( (lv_secrets_76_0= ruleEString ) ) (otherlv_77= ',' ( (lv_secrets_78_0= ruleEString ) ) )* otherlv_79= ']' )
-            	            // InternalDcDsl.g:1716:7: otherlv_75= '[' ( (lv_secrets_76_0= ruleEString ) ) (otherlv_77= ',' ( (lv_secrets_78_0= ruleEString ) ) )* otherlv_79= ']'
-            	            {
-            	            otherlv_75=(Token)match(input,32,FOLLOW_4); 
-
-            	            							newLeafNode(otherlv_75, grammarAccess.getServiceAccess().getLeftSquareBracketKeyword_3_14_2_1_0());
-            	            						
-            	            // InternalDcDsl.g:1720:7: ( (lv_secrets_76_0= ruleEString ) )
-            	            // InternalDcDsl.g:1721:8: (lv_secrets_76_0= ruleEString )
-            	            {
-            	            // InternalDcDsl.g:1721:8: (lv_secrets_76_0= ruleEString )
-            	            // InternalDcDsl.g:1722:9: lv_secrets_76_0= ruleEString
-            	            {
-
-            	            									newCompositeNode(grammarAccess.getServiceAccess().getSecretsEStringParserRuleCall_3_14_2_1_1_0());
-            	            								
-            	            pushFollow(FOLLOW_17);
-            	            lv_secrets_76_0=ruleEString();
-
-            	            state._fsp--;
-
-
-            	            									if (current==null) {
-            	            										current = createModelElementForParent(grammarAccess.getServiceRule());
-            	            									}
-            	            									add(
-            	            										current,
-            	            										"secrets",
-            	            										lv_secrets_76_0,
-            	            										"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
-            	            									afterParserOrEnumRuleCall();
-            	            								
-
-            	            }
-
-
-            	            }
-
-            	            // InternalDcDsl.g:1739:7: (otherlv_77= ',' ( (lv_secrets_78_0= ruleEString ) ) )*
-            	            loop22:
-            	            do {
-            	                int alt22=2;
-            	                int LA22_0 = input.LA(1);
-
-            	                if ( (LA22_0==35) ) {
-            	                    alt22=1;
-            	                }
-
-
-            	                switch (alt22) {
-            	            	case 1 :
-            	            	    // InternalDcDsl.g:1740:8: otherlv_77= ',' ( (lv_secrets_78_0= ruleEString ) )
-            	            	    {
-            	            	    otherlv_77=(Token)match(input,35,FOLLOW_4); 
-
-            	            	    								newLeafNode(otherlv_77, grammarAccess.getServiceAccess().getCommaKeyword_3_14_2_1_2_0());
-            	            	    							
-            	            	    // InternalDcDsl.g:1744:8: ( (lv_secrets_78_0= ruleEString ) )
-            	            	    // InternalDcDsl.g:1745:9: (lv_secrets_78_0= ruleEString )
-            	            	    {
-            	            	    // InternalDcDsl.g:1745:9: (lv_secrets_78_0= ruleEString )
-            	            	    // InternalDcDsl.g:1746:10: lv_secrets_78_0= ruleEString
-            	            	    {
-
-            	            	    										newCompositeNode(grammarAccess.getServiceAccess().getSecretsEStringParserRuleCall_3_14_2_1_2_1_0());
-            	            	    									
-            	            	    pushFollow(FOLLOW_17);
-            	            	    lv_secrets_78_0=ruleEString();
-
-            	            	    state._fsp--;
-
-
-            	            	    										if (current==null) {
-            	            	    											current = createModelElementForParent(grammarAccess.getServiceRule());
-            	            	    										}
-            	            	    										add(
-            	            	    											current,
-            	            	    											"secrets",
-            	            	    											lv_secrets_78_0,
-            	            	    											"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
-            	            	    										afterParserOrEnumRuleCall();
-            	            	    									
-
-            	            	    }
-
-
-            	            	    }
-
-
-            	            	    }
-            	            	    break;
-
-            	            	default :
-            	            	    break loop22;
-            	                }
-            	            } while (true);
-
-            	            otherlv_79=(Token)match(input,33,FOLLOW_11); 
-
-            	            							newLeafNode(otherlv_79, grammarAccess.getServiceAccess().getRightSquareBracketKeyword_3_14_2_1_3());
-            	            						
-
-            	            }
-
-
-            	            }
-            	            break;
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 16 :
-            	    // InternalDcDsl.g:1772:4: (otherlv_80= 'cap_add' otherlv_81= ':' ( (this_BEG_BLOCK_82= RULE_BEG_BLOCK (otherlv_83= '-' ( (lv_capAdd_84_0= ruleEString ) ) )+ this_END_BLOCK_85= RULE_END_BLOCK ) | (otherlv_86= '[' ( (lv_capAdd_87_0= ruleEString ) ) (otherlv_88= ',' ( (lv_capAdd_89_0= ruleEString ) ) )* otherlv_90= ']' ) ) )
-            	    {
-            	    // InternalDcDsl.g:1772:4: (otherlv_80= 'cap_add' otherlv_81= ':' ( (this_BEG_BLOCK_82= RULE_BEG_BLOCK (otherlv_83= '-' ( (lv_capAdd_84_0= ruleEString ) ) )+ this_END_BLOCK_85= RULE_END_BLOCK ) | (otherlv_86= '[' ( (lv_capAdd_87_0= ruleEString ) ) (otherlv_88= ',' ( (lv_capAdd_89_0= ruleEString ) ) )* otherlv_90= ']' ) ) )
-            	    // InternalDcDsl.g:1773:5: otherlv_80= 'cap_add' otherlv_81= ':' ( (this_BEG_BLOCK_82= RULE_BEG_BLOCK (otherlv_83= '-' ( (lv_capAdd_84_0= ruleEString ) ) )+ this_END_BLOCK_85= RULE_END_BLOCK ) | (otherlv_86= '[' ( (lv_capAdd_87_0= ruleEString ) ) (otherlv_88= ',' ( (lv_capAdd_89_0= ruleEString ) ) )* otherlv_90= ']' ) )
-            	    {
-            	    otherlv_80=(Token)match(input,52,FOLLOW_3); 
-
-            	    					newLeafNode(otherlv_80, grammarAccess.getServiceAccess().getCap_addKeyword_3_15_0());
-            	    				
-            	    otherlv_81=(Token)match(input,17,FOLLOW_14); 
-
-            	    					newLeafNode(otherlv_81, grammarAccess.getServiceAccess().getColonKeyword_3_15_1());
-            	    				
-            	    // InternalDcDsl.g:1781:5: ( (this_BEG_BLOCK_82= RULE_BEG_BLOCK (otherlv_83= '-' ( (lv_capAdd_84_0= ruleEString ) ) )+ this_END_BLOCK_85= RULE_END_BLOCK ) | (otherlv_86= '[' ( (lv_capAdd_87_0= ruleEString ) ) (otherlv_88= ',' ( (lv_capAdd_89_0= ruleEString ) ) )* otherlv_90= ']' ) )
-            	    int alt26=2;
-            	    int LA26_0 = input.LA(1);
-
-            	    if ( (LA26_0==RULE_BEG_BLOCK) ) {
-            	        alt26=1;
-            	    }
-            	    else if ( (LA26_0==32) ) {
-            	        alt26=2;
-            	    }
-            	    else {
-            	        NoViableAltException nvae =
-            	            new NoViableAltException("", 26, 0, input);
-
-            	        throw nvae;
-            	    }
-            	    switch (alt26) {
-            	        case 1 :
-            	            // InternalDcDsl.g:1782:6: (this_BEG_BLOCK_82= RULE_BEG_BLOCK (otherlv_83= '-' ( (lv_capAdd_84_0= ruleEString ) ) )+ this_END_BLOCK_85= RULE_END_BLOCK )
-            	            {
-            	            // InternalDcDsl.g:1782:6: (this_BEG_BLOCK_82= RULE_BEG_BLOCK (otherlv_83= '-' ( (lv_capAdd_84_0= ruleEString ) ) )+ this_END_BLOCK_85= RULE_END_BLOCK )
-            	            // InternalDcDsl.g:1783:7: this_BEG_BLOCK_82= RULE_BEG_BLOCK (otherlv_83= '-' ( (lv_capAdd_84_0= ruleEString ) ) )+ this_END_BLOCK_85= RULE_END_BLOCK
-            	            {
-            	            this_BEG_BLOCK_82=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_15); 
-
-            	            							newLeafNode(this_BEG_BLOCK_82, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_15_2_0_0());
-            	            						
-            	            // InternalDcDsl.g:1787:7: (otherlv_83= '-' ( (lv_capAdd_84_0= ruleEString ) ) )+
-            	            int cnt24=0;
-            	            loop24:
-            	            do {
-            	                int alt24=2;
-            	                int LA24_0 = input.LA(1);
-
-            	                if ( (LA24_0==31) ) {
-            	                    alt24=1;
-            	                }
-
-
-            	                switch (alt24) {
-            	            	case 1 :
-            	            	    // InternalDcDsl.g:1788:8: otherlv_83= '-' ( (lv_capAdd_84_0= ruleEString ) )
-            	            	    {
-            	            	    otherlv_83=(Token)match(input,31,FOLLOW_4); 
-
-            	            	    								newLeafNode(otherlv_83, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_15_2_0_1_0());
-            	            	    							
-            	            	    // InternalDcDsl.g:1792:8: ( (lv_capAdd_84_0= ruleEString ) )
-            	            	    // InternalDcDsl.g:1793:9: (lv_capAdd_84_0= ruleEString )
-            	            	    {
-            	            	    // InternalDcDsl.g:1793:9: (lv_capAdd_84_0= ruleEString )
-            	            	    // InternalDcDsl.g:1794:10: lv_capAdd_84_0= ruleEString
-            	            	    {
-
-            	            	    										newCompositeNode(grammarAccess.getServiceAccess().getCapAddEStringParserRuleCall_3_15_2_0_1_1_0());
-            	            	    									
-            	            	    pushFollow(FOLLOW_16);
-            	            	    lv_capAdd_84_0=ruleEString();
-
-            	            	    state._fsp--;
-
-
-            	            	    										if (current==null) {
-            	            	    											current = createModelElementForParent(grammarAccess.getServiceRule());
-            	            	    										}
-            	            	    										add(
-            	            	    											current,
-            	            	    											"capAdd",
-            	            	    											lv_capAdd_84_0,
-            	            	    											"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
-            	            	    										afterParserOrEnumRuleCall();
-            	            	    									
-
-            	            	    }
-
+            	            	    switch (alt23) {
+            	            	        case 1 :
+            	            	            // InternalDcDsl.g:1681:9: this_END_BLOCK_68= RULE_END_BLOCK
+            	            	            {
+            	            	            this_END_BLOCK_68=(Token)match(input,RULE_END_BLOCK,FOLLOW_16); 
+
+            	            	            									newLeafNode(this_END_BLOCK_68, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_13_2_0_1_3());
+            	            	            								
+
+            	            	            }
+            	            	            break;
 
             	            	    }
 
@@ -4582,9 +4479,9 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	                cnt24++;
             	            } while (true);
 
-            	            this_END_BLOCK_85=(Token)match(input,RULE_END_BLOCK,FOLLOW_11); 
+            	            this_END_BLOCK_69=(Token)match(input,RULE_END_BLOCK,FOLLOW_11); 
 
-            	            							newLeafNode(this_END_BLOCK_85, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_15_2_0_2());
+            	            							newLeafNode(this_END_BLOCK_69, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_13_2_0_2());
             	            						
 
             	            }
@@ -4593,26 +4490,26 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalDcDsl.g:1818:6: (otherlv_86= '[' ( (lv_capAdd_87_0= ruleEString ) ) (otherlv_88= ',' ( (lv_capAdd_89_0= ruleEString ) ) )* otherlv_90= ']' )
+            	            // InternalDcDsl.g:1693:6: (otherlv_70= '[' ( (lv_command_71_0= ruleEString ) ) (otherlv_72= ',' ( (lv_command_73_0= ruleEString ) ) )* otherlv_74= ']' )
             	            {
-            	            // InternalDcDsl.g:1818:6: (otherlv_86= '[' ( (lv_capAdd_87_0= ruleEString ) ) (otherlv_88= ',' ( (lv_capAdd_89_0= ruleEString ) ) )* otherlv_90= ']' )
-            	            // InternalDcDsl.g:1819:7: otherlv_86= '[' ( (lv_capAdd_87_0= ruleEString ) ) (otherlv_88= ',' ( (lv_capAdd_89_0= ruleEString ) ) )* otherlv_90= ']'
+            	            // InternalDcDsl.g:1693:6: (otherlv_70= '[' ( (lv_command_71_0= ruleEString ) ) (otherlv_72= ',' ( (lv_command_73_0= ruleEString ) ) )* otherlv_74= ']' )
+            	            // InternalDcDsl.g:1694:7: otherlv_70= '[' ( (lv_command_71_0= ruleEString ) ) (otherlv_72= ',' ( (lv_command_73_0= ruleEString ) ) )* otherlv_74= ']'
             	            {
-            	            otherlv_86=(Token)match(input,32,FOLLOW_4); 
+            	            otherlv_70=(Token)match(input,32,FOLLOW_4); 
 
-            	            							newLeafNode(otherlv_86, grammarAccess.getServiceAccess().getLeftSquareBracketKeyword_3_15_2_1_0());
+            	            							newLeafNode(otherlv_70, grammarAccess.getServiceAccess().getLeftSquareBracketKeyword_3_13_2_1_0());
             	            						
-            	            // InternalDcDsl.g:1823:7: ( (lv_capAdd_87_0= ruleEString ) )
-            	            // InternalDcDsl.g:1824:8: (lv_capAdd_87_0= ruleEString )
+            	            // InternalDcDsl.g:1698:7: ( (lv_command_71_0= ruleEString ) )
+            	            // InternalDcDsl.g:1699:8: (lv_command_71_0= ruleEString )
             	            {
-            	            // InternalDcDsl.g:1824:8: (lv_capAdd_87_0= ruleEString )
-            	            // InternalDcDsl.g:1825:9: lv_capAdd_87_0= ruleEString
+            	            // InternalDcDsl.g:1699:8: (lv_command_71_0= ruleEString )
+            	            // InternalDcDsl.g:1700:9: lv_command_71_0= ruleEString
             	            {
 
-            	            									newCompositeNode(grammarAccess.getServiceAccess().getCapAddEStringParserRuleCall_3_15_2_1_1_0());
+            	            									newCompositeNode(grammarAccess.getServiceAccess().getCommandEStringParserRuleCall_3_13_2_1_1_0());
             	            								
             	            pushFollow(FOLLOW_17);
-            	            lv_capAdd_87_0=ruleEString();
+            	            lv_command_71_0=ruleEString();
 
             	            state._fsp--;
 
@@ -4622,8 +4519,8 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            									}
             	            									add(
             	            										current,
-            	            										"capAdd",
-            	            										lv_capAdd_87_0,
+            	            										"command",
+            	            										lv_command_71_0,
             	            										"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
             	            									afterParserOrEnumRuleCall();
             	            								
@@ -4633,7 +4530,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	            }
 
-            	            // InternalDcDsl.g:1842:7: (otherlv_88= ',' ( (lv_capAdd_89_0= ruleEString ) ) )*
+            	            // InternalDcDsl.g:1717:7: (otherlv_72= ',' ( (lv_command_73_0= ruleEString ) ) )*
             	            loop25:
             	            do {
             	                int alt25=2;
@@ -4646,23 +4543,23 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	                switch (alt25) {
             	            	case 1 :
-            	            	    // InternalDcDsl.g:1843:8: otherlv_88= ',' ( (lv_capAdd_89_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:1718:8: otherlv_72= ',' ( (lv_command_73_0= ruleEString ) )
             	            	    {
-            	            	    otherlv_88=(Token)match(input,35,FOLLOW_4); 
+            	            	    otherlv_72=(Token)match(input,35,FOLLOW_4); 
 
-            	            	    								newLeafNode(otherlv_88, grammarAccess.getServiceAccess().getCommaKeyword_3_15_2_1_2_0());
+            	            	    								newLeafNode(otherlv_72, grammarAccess.getServiceAccess().getCommaKeyword_3_13_2_1_2_0());
             	            	    							
-            	            	    // InternalDcDsl.g:1847:8: ( (lv_capAdd_89_0= ruleEString ) )
-            	            	    // InternalDcDsl.g:1848:9: (lv_capAdd_89_0= ruleEString )
+            	            	    // InternalDcDsl.g:1722:8: ( (lv_command_73_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:1723:9: (lv_command_73_0= ruleEString )
             	            	    {
-            	            	    // InternalDcDsl.g:1848:9: (lv_capAdd_89_0= ruleEString )
-            	            	    // InternalDcDsl.g:1849:10: lv_capAdd_89_0= ruleEString
+            	            	    // InternalDcDsl.g:1723:9: (lv_command_73_0= ruleEString )
+            	            	    // InternalDcDsl.g:1724:10: lv_command_73_0= ruleEString
             	            	    {
 
-            	            	    										newCompositeNode(grammarAccess.getServiceAccess().getCapAddEStringParserRuleCall_3_15_2_1_2_1_0());
+            	            	    										newCompositeNode(grammarAccess.getServiceAccess().getCommandEStringParserRuleCall_3_13_2_1_2_1_0());
             	            	    									
             	            	    pushFollow(FOLLOW_17);
-            	            	    lv_capAdd_89_0=ruleEString();
+            	            	    lv_command_73_0=ruleEString();
 
             	            	    state._fsp--;
 
@@ -4672,8 +4569,8 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            	    										}
             	            	    										add(
             	            	    											current,
-            	            	    											"capAdd",
-            	            	    											lv_capAdd_89_0,
+            	            	    											"command",
+            	            	    											lv_command_73_0,
             	            	    											"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
             	            	    										afterParserOrEnumRuleCall();
             	            	    									
@@ -4692,9 +4589,648 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	                }
             	            } while (true);
 
-            	            otherlv_90=(Token)match(input,33,FOLLOW_11); 
+            	            otherlv_74=(Token)match(input,33,FOLLOW_11); 
 
-            	            							newLeafNode(otherlv_90, grammarAccess.getServiceAccess().getRightSquareBracketKeyword_3_15_2_1_3());
+            	            							newLeafNode(otherlv_74, grammarAccess.getServiceAccess().getRightSquareBracketKeyword_3_13_2_1_3());
+            	            						
+
+            	            }
+
+
+            	            }
+            	            break;
+            	        case 3 :
+            	            // InternalDcDsl.g:1748:6: ( (lv_command_75_0= ruleEString ) )
+            	            {
+            	            // InternalDcDsl.g:1748:6: ( (lv_command_75_0= ruleEString ) )
+            	            // InternalDcDsl.g:1749:7: (lv_command_75_0= ruleEString )
+            	            {
+            	            // InternalDcDsl.g:1749:7: (lv_command_75_0= ruleEString )
+            	            // InternalDcDsl.g:1750:8: lv_command_75_0= ruleEString
+            	            {
+
+            	            								newCompositeNode(grammarAccess.getServiceAccess().getCommandEStringParserRuleCall_3_13_2_2_0());
+            	            							
+            	            pushFollow(FOLLOW_11);
+            	            lv_command_75_0=ruleEString();
+
+            	            state._fsp--;
+
+
+            	            								if (current==null) {
+            	            									current = createModelElementForParent(grammarAccess.getServiceRule());
+            	            								}
+            	            								add(
+            	            									current,
+            	            									"command",
+            	            									lv_command_75_0,
+            	            									"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
+            	            								afterParserOrEnumRuleCall();
+            	            							
+
+            	            }
+
+
+            	            }
+
+
+            	            }
+            	            break;
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+            	case 15 :
+            	    // InternalDcDsl.g:1770:4: (otherlv_76= 'secrets' otherlv_77= ':' ( (this_BEG_BLOCK_78= RULE_BEG_BLOCK (otherlv_79= '-' (this_BEG_BLOCK_80= RULE_BEG_BLOCK )? ( (lv_secrets_81_0= ruleEString ) ) (this_END_BLOCK_82= RULE_END_BLOCK )? )+ this_END_BLOCK_83= RULE_END_BLOCK ) | (otherlv_84= '[' ( (lv_secrets_85_0= ruleEString ) ) (otherlv_86= ',' ( (lv_secrets_87_0= ruleEString ) ) )* otherlv_88= ']' ) ) )
+            	    {
+            	    // InternalDcDsl.g:1770:4: (otherlv_76= 'secrets' otherlv_77= ':' ( (this_BEG_BLOCK_78= RULE_BEG_BLOCK (otherlv_79= '-' (this_BEG_BLOCK_80= RULE_BEG_BLOCK )? ( (lv_secrets_81_0= ruleEString ) ) (this_END_BLOCK_82= RULE_END_BLOCK )? )+ this_END_BLOCK_83= RULE_END_BLOCK ) | (otherlv_84= '[' ( (lv_secrets_85_0= ruleEString ) ) (otherlv_86= ',' ( (lv_secrets_87_0= ruleEString ) ) )* otherlv_88= ']' ) ) )
+            	    // InternalDcDsl.g:1771:5: otherlv_76= 'secrets' otherlv_77= ':' ( (this_BEG_BLOCK_78= RULE_BEG_BLOCK (otherlv_79= '-' (this_BEG_BLOCK_80= RULE_BEG_BLOCK )? ( (lv_secrets_81_0= ruleEString ) ) (this_END_BLOCK_82= RULE_END_BLOCK )? )+ this_END_BLOCK_83= RULE_END_BLOCK ) | (otherlv_84= '[' ( (lv_secrets_85_0= ruleEString ) ) (otherlv_86= ',' ( (lv_secrets_87_0= ruleEString ) ) )* otherlv_88= ']' ) )
+            	    {
+            	    otherlv_76=(Token)match(input,22,FOLLOW_3); 
+
+            	    					newLeafNode(otherlv_76, grammarAccess.getServiceAccess().getSecretsKeyword_3_14_0());
+            	    				
+            	    otherlv_77=(Token)match(input,17,FOLLOW_14); 
+
+            	    					newLeafNode(otherlv_77, grammarAccess.getServiceAccess().getColonKeyword_3_14_1());
+            	    				
+            	    // InternalDcDsl.g:1779:5: ( (this_BEG_BLOCK_78= RULE_BEG_BLOCK (otherlv_79= '-' (this_BEG_BLOCK_80= RULE_BEG_BLOCK )? ( (lv_secrets_81_0= ruleEString ) ) (this_END_BLOCK_82= RULE_END_BLOCK )? )+ this_END_BLOCK_83= RULE_END_BLOCK ) | (otherlv_84= '[' ( (lv_secrets_85_0= ruleEString ) ) (otherlv_86= ',' ( (lv_secrets_87_0= ruleEString ) ) )* otherlv_88= ']' ) )
+            	    int alt31=2;
+            	    int LA31_0 = input.LA(1);
+
+            	    if ( (LA31_0==RULE_BEG_BLOCK) ) {
+            	        alt31=1;
+            	    }
+            	    else if ( (LA31_0==32) ) {
+            	        alt31=2;
+            	    }
+            	    else {
+            	        NoViableAltException nvae =
+            	            new NoViableAltException("", 31, 0, input);
+
+            	        throw nvae;
+            	    }
+            	    switch (alt31) {
+            	        case 1 :
+            	            // InternalDcDsl.g:1780:6: (this_BEG_BLOCK_78= RULE_BEG_BLOCK (otherlv_79= '-' (this_BEG_BLOCK_80= RULE_BEG_BLOCK )? ( (lv_secrets_81_0= ruleEString ) ) (this_END_BLOCK_82= RULE_END_BLOCK )? )+ this_END_BLOCK_83= RULE_END_BLOCK )
+            	            {
+            	            // InternalDcDsl.g:1780:6: (this_BEG_BLOCK_78= RULE_BEG_BLOCK (otherlv_79= '-' (this_BEG_BLOCK_80= RULE_BEG_BLOCK )? ( (lv_secrets_81_0= ruleEString ) ) (this_END_BLOCK_82= RULE_END_BLOCK )? )+ this_END_BLOCK_83= RULE_END_BLOCK )
+            	            // InternalDcDsl.g:1781:7: this_BEG_BLOCK_78= RULE_BEG_BLOCK (otherlv_79= '-' (this_BEG_BLOCK_80= RULE_BEG_BLOCK )? ( (lv_secrets_81_0= ruleEString ) ) (this_END_BLOCK_82= RULE_END_BLOCK )? )+ this_END_BLOCK_83= RULE_END_BLOCK
+            	            {
+            	            this_BEG_BLOCK_78=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_15); 
+
+            	            							newLeafNode(this_BEG_BLOCK_78, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_14_2_0_0());
+            	            						
+            	            // InternalDcDsl.g:1785:7: (otherlv_79= '-' (this_BEG_BLOCK_80= RULE_BEG_BLOCK )? ( (lv_secrets_81_0= ruleEString ) ) (this_END_BLOCK_82= RULE_END_BLOCK )? )+
+            	            int cnt29=0;
+            	            loop29:
+            	            do {
+            	                int alt29=2;
+            	                int LA29_0 = input.LA(1);
+
+            	                if ( (LA29_0==31) ) {
+            	                    alt29=1;
+            	                }
+
+
+            	                switch (alt29) {
+            	            	case 1 :
+            	            	    // InternalDcDsl.g:1786:8: otherlv_79= '-' (this_BEG_BLOCK_80= RULE_BEG_BLOCK )? ( (lv_secrets_81_0= ruleEString ) ) (this_END_BLOCK_82= RULE_END_BLOCK )?
+            	            	    {
+            	            	    otherlv_79=(Token)match(input,31,FOLLOW_12); 
+
+            	            	    								newLeafNode(otherlv_79, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_14_2_0_1_0());
+            	            	    							
+            	            	    // InternalDcDsl.g:1790:8: (this_BEG_BLOCK_80= RULE_BEG_BLOCK )?
+            	            	    int alt27=2;
+            	            	    int LA27_0 = input.LA(1);
+
+            	            	    if ( (LA27_0==RULE_BEG_BLOCK) ) {
+            	            	        alt27=1;
+            	            	    }
+            	            	    switch (alt27) {
+            	            	        case 1 :
+            	            	            // InternalDcDsl.g:1791:9: this_BEG_BLOCK_80= RULE_BEG_BLOCK
+            	            	            {
+            	            	            this_BEG_BLOCK_80=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_4); 
+
+            	            	            									newLeafNode(this_BEG_BLOCK_80, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_14_2_0_1_1());
+            	            	            								
+
+            	            	            }
+            	            	            break;
+
+            	            	    }
+
+            	            	    // InternalDcDsl.g:1796:8: ( (lv_secrets_81_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:1797:9: (lv_secrets_81_0= ruleEString )
+            	            	    {
+            	            	    // InternalDcDsl.g:1797:9: (lv_secrets_81_0= ruleEString )
+            	            	    // InternalDcDsl.g:1798:10: lv_secrets_81_0= ruleEString
+            	            	    {
+
+            	            	    										newCompositeNode(grammarAccess.getServiceAccess().getSecretsEStringParserRuleCall_3_14_2_0_1_2_0());
+            	            	    									
+            	            	    pushFollow(FOLLOW_16);
+            	            	    lv_secrets_81_0=ruleEString();
+
+            	            	    state._fsp--;
+
+
+            	            	    										if (current==null) {
+            	            	    											current = createModelElementForParent(grammarAccess.getServiceRule());
+            	            	    										}
+            	            	    										add(
+            	            	    											current,
+            	            	    											"secrets",
+            	            	    											lv_secrets_81_0,
+            	            	    											"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
+            	            	    										afterParserOrEnumRuleCall();
+            	            	    									
+
+            	            	    }
+
+
+            	            	    }
+
+            	            	    // InternalDcDsl.g:1815:8: (this_END_BLOCK_82= RULE_END_BLOCK )?
+            	            	    int alt28=2;
+            	            	    int LA28_0 = input.LA(1);
+
+            	            	    if ( (LA28_0==RULE_END_BLOCK) ) {
+            	            	        int LA28_1 = input.LA(2);
+
+            	            	        if ( (LA28_1==RULE_END_BLOCK) ) {
+            	            	            int LA28_3 = input.LA(3);
+
+            	            	            if ( (LA28_3==RULE_END_BLOCK) ) {
+            	            	                int LA28_5 = input.LA(4);
+
+            	            	                if ( (LA28_5==EOF) ) {
+            	            	                    int LA28_6 = input.LA(5);
+
+            	            	                    if ( (LA28_6==EOF) ) {
+            	            	                        alt28=1;
+            	            	                    }
+            	            	                }
+            	            	                else if ( ((LA28_5>=RULE_END_BLOCK && LA28_5<=RULE_INT)||(LA28_5>=23 && LA28_5<=30)) ) {
+            	            	                    alt28=1;
+            	            	                }
+            	            	            }
+            	            	            else if ( ((LA28_3>=20 && LA28_3<=22)||(LA28_3>=38 && LA28_3<=58)) ) {
+            	            	                alt28=1;
+            	            	            }
+            	            	        }
+            	            	        else if ( (LA28_1==31) ) {
+            	            	            alt28=1;
+            	            	        }
+            	            	    }
+            	            	    switch (alt28) {
+            	            	        case 1 :
+            	            	            // InternalDcDsl.g:1816:9: this_END_BLOCK_82= RULE_END_BLOCK
+            	            	            {
+            	            	            this_END_BLOCK_82=(Token)match(input,RULE_END_BLOCK,FOLLOW_16); 
+
+            	            	            									newLeafNode(this_END_BLOCK_82, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_14_2_0_1_3());
+            	            	            								
+
+            	            	            }
+            	            	            break;
+
+            	            	    }
+
+
+            	            	    }
+            	            	    break;
+
+            	            	default :
+            	            	    if ( cnt29 >= 1 ) break loop29;
+            	                        EarlyExitException eee =
+            	                            new EarlyExitException(29, input);
+            	                        throw eee;
+            	                }
+            	                cnt29++;
+            	            } while (true);
+
+            	            this_END_BLOCK_83=(Token)match(input,RULE_END_BLOCK,FOLLOW_11); 
+
+            	            							newLeafNode(this_END_BLOCK_83, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_14_2_0_2());
+            	            						
+
+            	            }
+
+
+            	            }
+            	            break;
+            	        case 2 :
+            	            // InternalDcDsl.g:1828:6: (otherlv_84= '[' ( (lv_secrets_85_0= ruleEString ) ) (otherlv_86= ',' ( (lv_secrets_87_0= ruleEString ) ) )* otherlv_88= ']' )
+            	            {
+            	            // InternalDcDsl.g:1828:6: (otherlv_84= '[' ( (lv_secrets_85_0= ruleEString ) ) (otherlv_86= ',' ( (lv_secrets_87_0= ruleEString ) ) )* otherlv_88= ']' )
+            	            // InternalDcDsl.g:1829:7: otherlv_84= '[' ( (lv_secrets_85_0= ruleEString ) ) (otherlv_86= ',' ( (lv_secrets_87_0= ruleEString ) ) )* otherlv_88= ']'
+            	            {
+            	            otherlv_84=(Token)match(input,32,FOLLOW_4); 
+
+            	            							newLeafNode(otherlv_84, grammarAccess.getServiceAccess().getLeftSquareBracketKeyword_3_14_2_1_0());
+            	            						
+            	            // InternalDcDsl.g:1833:7: ( (lv_secrets_85_0= ruleEString ) )
+            	            // InternalDcDsl.g:1834:8: (lv_secrets_85_0= ruleEString )
+            	            {
+            	            // InternalDcDsl.g:1834:8: (lv_secrets_85_0= ruleEString )
+            	            // InternalDcDsl.g:1835:9: lv_secrets_85_0= ruleEString
+            	            {
+
+            	            									newCompositeNode(grammarAccess.getServiceAccess().getSecretsEStringParserRuleCall_3_14_2_1_1_0());
+            	            								
+            	            pushFollow(FOLLOW_17);
+            	            lv_secrets_85_0=ruleEString();
+
+            	            state._fsp--;
+
+
+            	            									if (current==null) {
+            	            										current = createModelElementForParent(grammarAccess.getServiceRule());
+            	            									}
+            	            									add(
+            	            										current,
+            	            										"secrets",
+            	            										lv_secrets_85_0,
+            	            										"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
+            	            									afterParserOrEnumRuleCall();
+            	            								
+
+            	            }
+
+
+            	            }
+
+            	            // InternalDcDsl.g:1852:7: (otherlv_86= ',' ( (lv_secrets_87_0= ruleEString ) ) )*
+            	            loop30:
+            	            do {
+            	                int alt30=2;
+            	                int LA30_0 = input.LA(1);
+
+            	                if ( (LA30_0==35) ) {
+            	                    alt30=1;
+            	                }
+
+
+            	                switch (alt30) {
+            	            	case 1 :
+            	            	    // InternalDcDsl.g:1853:8: otherlv_86= ',' ( (lv_secrets_87_0= ruleEString ) )
+            	            	    {
+            	            	    otherlv_86=(Token)match(input,35,FOLLOW_4); 
+
+            	            	    								newLeafNode(otherlv_86, grammarAccess.getServiceAccess().getCommaKeyword_3_14_2_1_2_0());
+            	            	    							
+            	            	    // InternalDcDsl.g:1857:8: ( (lv_secrets_87_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:1858:9: (lv_secrets_87_0= ruleEString )
+            	            	    {
+            	            	    // InternalDcDsl.g:1858:9: (lv_secrets_87_0= ruleEString )
+            	            	    // InternalDcDsl.g:1859:10: lv_secrets_87_0= ruleEString
+            	            	    {
+
+            	            	    										newCompositeNode(grammarAccess.getServiceAccess().getSecretsEStringParserRuleCall_3_14_2_1_2_1_0());
+            	            	    									
+            	            	    pushFollow(FOLLOW_17);
+            	            	    lv_secrets_87_0=ruleEString();
+
+            	            	    state._fsp--;
+
+
+            	            	    										if (current==null) {
+            	            	    											current = createModelElementForParent(grammarAccess.getServiceRule());
+            	            	    										}
+            	            	    										add(
+            	            	    											current,
+            	            	    											"secrets",
+            	            	    											lv_secrets_87_0,
+            	            	    											"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
+            	            	    										afterParserOrEnumRuleCall();
+            	            	    									
+
+            	            	    }
+
+
+            	            	    }
+
+
+            	            	    }
+            	            	    break;
+
+            	            	default :
+            	            	    break loop30;
+            	                }
+            	            } while (true);
+
+            	            otherlv_88=(Token)match(input,33,FOLLOW_11); 
+
+            	            							newLeafNode(otherlv_88, grammarAccess.getServiceAccess().getRightSquareBracketKeyword_3_14_2_1_3());
+            	            						
+
+            	            }
+
+
+            	            }
+            	            break;
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+            	case 16 :
+            	    // InternalDcDsl.g:1885:4: (otherlv_89= 'cap_add' otherlv_90= ':' ( (this_BEG_BLOCK_91= RULE_BEG_BLOCK (otherlv_92= '-' (this_BEG_BLOCK_93= RULE_BEG_BLOCK )? ( (lv_capAdd_94_0= ruleEString ) ) (this_END_BLOCK_95= RULE_END_BLOCK )? )+ this_END_BLOCK_96= RULE_END_BLOCK ) | (otherlv_97= '[' ( (lv_capAdd_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_capAdd_100_0= ruleEString ) ) )* otherlv_101= ']' ) ) )
+            	    {
+            	    // InternalDcDsl.g:1885:4: (otherlv_89= 'cap_add' otherlv_90= ':' ( (this_BEG_BLOCK_91= RULE_BEG_BLOCK (otherlv_92= '-' (this_BEG_BLOCK_93= RULE_BEG_BLOCK )? ( (lv_capAdd_94_0= ruleEString ) ) (this_END_BLOCK_95= RULE_END_BLOCK )? )+ this_END_BLOCK_96= RULE_END_BLOCK ) | (otherlv_97= '[' ( (lv_capAdd_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_capAdd_100_0= ruleEString ) ) )* otherlv_101= ']' ) ) )
+            	    // InternalDcDsl.g:1886:5: otherlv_89= 'cap_add' otherlv_90= ':' ( (this_BEG_BLOCK_91= RULE_BEG_BLOCK (otherlv_92= '-' (this_BEG_BLOCK_93= RULE_BEG_BLOCK )? ( (lv_capAdd_94_0= ruleEString ) ) (this_END_BLOCK_95= RULE_END_BLOCK )? )+ this_END_BLOCK_96= RULE_END_BLOCK ) | (otherlv_97= '[' ( (lv_capAdd_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_capAdd_100_0= ruleEString ) ) )* otherlv_101= ']' ) )
+            	    {
+            	    otherlv_89=(Token)match(input,52,FOLLOW_3); 
+
+            	    					newLeafNode(otherlv_89, grammarAccess.getServiceAccess().getCap_addKeyword_3_15_0());
+            	    				
+            	    otherlv_90=(Token)match(input,17,FOLLOW_14); 
+
+            	    					newLeafNode(otherlv_90, grammarAccess.getServiceAccess().getColonKeyword_3_15_1());
+            	    				
+            	    // InternalDcDsl.g:1894:5: ( (this_BEG_BLOCK_91= RULE_BEG_BLOCK (otherlv_92= '-' (this_BEG_BLOCK_93= RULE_BEG_BLOCK )? ( (lv_capAdd_94_0= ruleEString ) ) (this_END_BLOCK_95= RULE_END_BLOCK )? )+ this_END_BLOCK_96= RULE_END_BLOCK ) | (otherlv_97= '[' ( (lv_capAdd_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_capAdd_100_0= ruleEString ) ) )* otherlv_101= ']' ) )
+            	    int alt36=2;
+            	    int LA36_0 = input.LA(1);
+
+            	    if ( (LA36_0==RULE_BEG_BLOCK) ) {
+            	        alt36=1;
+            	    }
+            	    else if ( (LA36_0==32) ) {
+            	        alt36=2;
+            	    }
+            	    else {
+            	        NoViableAltException nvae =
+            	            new NoViableAltException("", 36, 0, input);
+
+            	        throw nvae;
+            	    }
+            	    switch (alt36) {
+            	        case 1 :
+            	            // InternalDcDsl.g:1895:6: (this_BEG_BLOCK_91= RULE_BEG_BLOCK (otherlv_92= '-' (this_BEG_BLOCK_93= RULE_BEG_BLOCK )? ( (lv_capAdd_94_0= ruleEString ) ) (this_END_BLOCK_95= RULE_END_BLOCK )? )+ this_END_BLOCK_96= RULE_END_BLOCK )
+            	            {
+            	            // InternalDcDsl.g:1895:6: (this_BEG_BLOCK_91= RULE_BEG_BLOCK (otherlv_92= '-' (this_BEG_BLOCK_93= RULE_BEG_BLOCK )? ( (lv_capAdd_94_0= ruleEString ) ) (this_END_BLOCK_95= RULE_END_BLOCK )? )+ this_END_BLOCK_96= RULE_END_BLOCK )
+            	            // InternalDcDsl.g:1896:7: this_BEG_BLOCK_91= RULE_BEG_BLOCK (otherlv_92= '-' (this_BEG_BLOCK_93= RULE_BEG_BLOCK )? ( (lv_capAdd_94_0= ruleEString ) ) (this_END_BLOCK_95= RULE_END_BLOCK )? )+ this_END_BLOCK_96= RULE_END_BLOCK
+            	            {
+            	            this_BEG_BLOCK_91=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_15); 
+
+            	            							newLeafNode(this_BEG_BLOCK_91, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_15_2_0_0());
+            	            						
+            	            // InternalDcDsl.g:1900:7: (otherlv_92= '-' (this_BEG_BLOCK_93= RULE_BEG_BLOCK )? ( (lv_capAdd_94_0= ruleEString ) ) (this_END_BLOCK_95= RULE_END_BLOCK )? )+
+            	            int cnt34=0;
+            	            loop34:
+            	            do {
+            	                int alt34=2;
+            	                int LA34_0 = input.LA(1);
+
+            	                if ( (LA34_0==31) ) {
+            	                    alt34=1;
+            	                }
+
+
+            	                switch (alt34) {
+            	            	case 1 :
+            	            	    // InternalDcDsl.g:1901:8: otherlv_92= '-' (this_BEG_BLOCK_93= RULE_BEG_BLOCK )? ( (lv_capAdd_94_0= ruleEString ) ) (this_END_BLOCK_95= RULE_END_BLOCK )?
+            	            	    {
+            	            	    otherlv_92=(Token)match(input,31,FOLLOW_12); 
+
+            	            	    								newLeafNode(otherlv_92, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_15_2_0_1_0());
+            	            	    							
+            	            	    // InternalDcDsl.g:1905:8: (this_BEG_BLOCK_93= RULE_BEG_BLOCK )?
+            	            	    int alt32=2;
+            	            	    int LA32_0 = input.LA(1);
+
+            	            	    if ( (LA32_0==RULE_BEG_BLOCK) ) {
+            	            	        alt32=1;
+            	            	    }
+            	            	    switch (alt32) {
+            	            	        case 1 :
+            	            	            // InternalDcDsl.g:1906:9: this_BEG_BLOCK_93= RULE_BEG_BLOCK
+            	            	            {
+            	            	            this_BEG_BLOCK_93=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_4); 
+
+            	            	            									newLeafNode(this_BEG_BLOCK_93, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_15_2_0_1_1());
+            	            	            								
+
+            	            	            }
+            	            	            break;
+
+            	            	    }
+
+            	            	    // InternalDcDsl.g:1911:8: ( (lv_capAdd_94_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:1912:9: (lv_capAdd_94_0= ruleEString )
+            	            	    {
+            	            	    // InternalDcDsl.g:1912:9: (lv_capAdd_94_0= ruleEString )
+            	            	    // InternalDcDsl.g:1913:10: lv_capAdd_94_0= ruleEString
+            	            	    {
+
+            	            	    										newCompositeNode(grammarAccess.getServiceAccess().getCapAddEStringParserRuleCall_3_15_2_0_1_2_0());
+            	            	    									
+            	            	    pushFollow(FOLLOW_16);
+            	            	    lv_capAdd_94_0=ruleEString();
+
+            	            	    state._fsp--;
+
+
+            	            	    										if (current==null) {
+            	            	    											current = createModelElementForParent(grammarAccess.getServiceRule());
+            	            	    										}
+            	            	    										add(
+            	            	    											current,
+            	            	    											"capAdd",
+            	            	    											lv_capAdd_94_0,
+            	            	    											"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
+            	            	    										afterParserOrEnumRuleCall();
+            	            	    									
+
+            	            	    }
+
+
+            	            	    }
+
+            	            	    // InternalDcDsl.g:1930:8: (this_END_BLOCK_95= RULE_END_BLOCK )?
+            	            	    int alt33=2;
+            	            	    int LA33_0 = input.LA(1);
+
+            	            	    if ( (LA33_0==RULE_END_BLOCK) ) {
+            	            	        int LA33_1 = input.LA(2);
+
+            	            	        if ( (LA33_1==RULE_END_BLOCK) ) {
+            	            	            int LA33_3 = input.LA(3);
+
+            	            	            if ( (LA33_3==RULE_END_BLOCK) ) {
+            	            	                int LA33_5 = input.LA(4);
+
+            	            	                if ( (LA33_5==EOF) ) {
+            	            	                    int LA33_6 = input.LA(5);
+
+            	            	                    if ( (LA33_6==EOF) ) {
+            	            	                        alt33=1;
+            	            	                    }
+            	            	                }
+            	            	                else if ( ((LA33_5>=RULE_END_BLOCK && LA33_5<=RULE_INT)||(LA33_5>=23 && LA33_5<=30)) ) {
+            	            	                    alt33=1;
+            	            	                }
+            	            	            }
+            	            	            else if ( ((LA33_3>=20 && LA33_3<=22)||(LA33_3>=38 && LA33_3<=58)) ) {
+            	            	                alt33=1;
+            	            	            }
+            	            	        }
+            	            	        else if ( (LA33_1==31) ) {
+            	            	            alt33=1;
+            	            	        }
+            	            	    }
+            	            	    switch (alt33) {
+            	            	        case 1 :
+            	            	            // InternalDcDsl.g:1931:9: this_END_BLOCK_95= RULE_END_BLOCK
+            	            	            {
+            	            	            this_END_BLOCK_95=(Token)match(input,RULE_END_BLOCK,FOLLOW_16); 
+
+            	            	            									newLeafNode(this_END_BLOCK_95, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_15_2_0_1_3());
+            	            	            								
+
+            	            	            }
+            	            	            break;
+
+            	            	    }
+
+
+            	            	    }
+            	            	    break;
+
+            	            	default :
+            	            	    if ( cnt34 >= 1 ) break loop34;
+            	                        EarlyExitException eee =
+            	                            new EarlyExitException(34, input);
+            	                        throw eee;
+            	                }
+            	                cnt34++;
+            	            } while (true);
+
+            	            this_END_BLOCK_96=(Token)match(input,RULE_END_BLOCK,FOLLOW_11); 
+
+            	            							newLeafNode(this_END_BLOCK_96, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_15_2_0_2());
+            	            						
+
+            	            }
+
+
+            	            }
+            	            break;
+            	        case 2 :
+            	            // InternalDcDsl.g:1943:6: (otherlv_97= '[' ( (lv_capAdd_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_capAdd_100_0= ruleEString ) ) )* otherlv_101= ']' )
+            	            {
+            	            // InternalDcDsl.g:1943:6: (otherlv_97= '[' ( (lv_capAdd_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_capAdd_100_0= ruleEString ) ) )* otherlv_101= ']' )
+            	            // InternalDcDsl.g:1944:7: otherlv_97= '[' ( (lv_capAdd_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_capAdd_100_0= ruleEString ) ) )* otherlv_101= ']'
+            	            {
+            	            otherlv_97=(Token)match(input,32,FOLLOW_4); 
+
+            	            							newLeafNode(otherlv_97, grammarAccess.getServiceAccess().getLeftSquareBracketKeyword_3_15_2_1_0());
+            	            						
+            	            // InternalDcDsl.g:1948:7: ( (lv_capAdd_98_0= ruleEString ) )
+            	            // InternalDcDsl.g:1949:8: (lv_capAdd_98_0= ruleEString )
+            	            {
+            	            // InternalDcDsl.g:1949:8: (lv_capAdd_98_0= ruleEString )
+            	            // InternalDcDsl.g:1950:9: lv_capAdd_98_0= ruleEString
+            	            {
+
+            	            									newCompositeNode(grammarAccess.getServiceAccess().getCapAddEStringParserRuleCall_3_15_2_1_1_0());
+            	            								
+            	            pushFollow(FOLLOW_17);
+            	            lv_capAdd_98_0=ruleEString();
+
+            	            state._fsp--;
+
+
+            	            									if (current==null) {
+            	            										current = createModelElementForParent(grammarAccess.getServiceRule());
+            	            									}
+            	            									add(
+            	            										current,
+            	            										"capAdd",
+            	            										lv_capAdd_98_0,
+            	            										"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
+            	            									afterParserOrEnumRuleCall();
+            	            								
+
+            	            }
+
+
+            	            }
+
+            	            // InternalDcDsl.g:1967:7: (otherlv_99= ',' ( (lv_capAdd_100_0= ruleEString ) ) )*
+            	            loop35:
+            	            do {
+            	                int alt35=2;
+            	                int LA35_0 = input.LA(1);
+
+            	                if ( (LA35_0==35) ) {
+            	                    alt35=1;
+            	                }
+
+
+            	                switch (alt35) {
+            	            	case 1 :
+            	            	    // InternalDcDsl.g:1968:8: otherlv_99= ',' ( (lv_capAdd_100_0= ruleEString ) )
+            	            	    {
+            	            	    otherlv_99=(Token)match(input,35,FOLLOW_4); 
+
+            	            	    								newLeafNode(otherlv_99, grammarAccess.getServiceAccess().getCommaKeyword_3_15_2_1_2_0());
+            	            	    							
+            	            	    // InternalDcDsl.g:1972:8: ( (lv_capAdd_100_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:1973:9: (lv_capAdd_100_0= ruleEString )
+            	            	    {
+            	            	    // InternalDcDsl.g:1973:9: (lv_capAdd_100_0= ruleEString )
+            	            	    // InternalDcDsl.g:1974:10: lv_capAdd_100_0= ruleEString
+            	            	    {
+
+            	            	    										newCompositeNode(grammarAccess.getServiceAccess().getCapAddEStringParserRuleCall_3_15_2_1_2_1_0());
+            	            	    									
+            	            	    pushFollow(FOLLOW_17);
+            	            	    lv_capAdd_100_0=ruleEString();
+
+            	            	    state._fsp--;
+
+
+            	            	    										if (current==null) {
+            	            	    											current = createModelElementForParent(grammarAccess.getServiceRule());
+            	            	    										}
+            	            	    										add(
+            	            	    											current,
+            	            	    											"capAdd",
+            	            	    											lv_capAdd_100_0,
+            	            	    											"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
+            	            	    										afterParserOrEnumRuleCall();
+            	            	    									
+
+            	            	    }
+
+
+            	            	    }
+
+
+            	            	    }
+            	            	    break;
+
+            	            	default :
+            	            	    break loop35;
+            	                }
+            	            } while (true);
+
+            	            otherlv_101=(Token)match(input,33,FOLLOW_11); 
+
+            	            							newLeafNode(otherlv_101, grammarAccess.getServiceAccess().getRightSquareBracketKeyword_3_15_2_1_3());
             	            						
 
             	            }
@@ -4712,77 +5248,98 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 17 :
-            	    // InternalDcDsl.g:1875:4: (otherlv_91= 'labels' otherlv_92= ':' ( (this_BEG_BLOCK_93= RULE_BEG_BLOCK (otherlv_94= '-' ( (lv_labels_95_0= ruleEString ) ) )+ this_END_BLOCK_96= RULE_END_BLOCK ) | (otherlv_97= '[' ( (lv_labels_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_labels_100_0= ruleEString ) ) )* otherlv_101= ']' ) ) )
+            	    // InternalDcDsl.g:2000:4: (otherlv_102= 'labels' otherlv_103= ':' ( (this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' (this_BEG_BLOCK_106= RULE_BEG_BLOCK )? ( (lv_labels_107_0= ruleEString ) ) (this_END_BLOCK_108= RULE_END_BLOCK )? )+ this_END_BLOCK_109= RULE_END_BLOCK ) | (otherlv_110= '[' ( (lv_labels_111_0= ruleEString ) ) (otherlv_112= ',' ( (lv_labels_113_0= ruleEString ) ) )* otherlv_114= ']' ) ) )
             	    {
-            	    // InternalDcDsl.g:1875:4: (otherlv_91= 'labels' otherlv_92= ':' ( (this_BEG_BLOCK_93= RULE_BEG_BLOCK (otherlv_94= '-' ( (lv_labels_95_0= ruleEString ) ) )+ this_END_BLOCK_96= RULE_END_BLOCK ) | (otherlv_97= '[' ( (lv_labels_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_labels_100_0= ruleEString ) ) )* otherlv_101= ']' ) ) )
-            	    // InternalDcDsl.g:1876:5: otherlv_91= 'labels' otherlv_92= ':' ( (this_BEG_BLOCK_93= RULE_BEG_BLOCK (otherlv_94= '-' ( (lv_labels_95_0= ruleEString ) ) )+ this_END_BLOCK_96= RULE_END_BLOCK ) | (otherlv_97= '[' ( (lv_labels_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_labels_100_0= ruleEString ) ) )* otherlv_101= ']' ) )
+            	    // InternalDcDsl.g:2000:4: (otherlv_102= 'labels' otherlv_103= ':' ( (this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' (this_BEG_BLOCK_106= RULE_BEG_BLOCK )? ( (lv_labels_107_0= ruleEString ) ) (this_END_BLOCK_108= RULE_END_BLOCK )? )+ this_END_BLOCK_109= RULE_END_BLOCK ) | (otherlv_110= '[' ( (lv_labels_111_0= ruleEString ) ) (otherlv_112= ',' ( (lv_labels_113_0= ruleEString ) ) )* otherlv_114= ']' ) ) )
+            	    // InternalDcDsl.g:2001:5: otherlv_102= 'labels' otherlv_103= ':' ( (this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' (this_BEG_BLOCK_106= RULE_BEG_BLOCK )? ( (lv_labels_107_0= ruleEString ) ) (this_END_BLOCK_108= RULE_END_BLOCK )? )+ this_END_BLOCK_109= RULE_END_BLOCK ) | (otherlv_110= '[' ( (lv_labels_111_0= ruleEString ) ) (otherlv_112= ',' ( (lv_labels_113_0= ruleEString ) ) )* otherlv_114= ']' ) )
             	    {
-            	    otherlv_91=(Token)match(input,53,FOLLOW_3); 
+            	    otherlv_102=(Token)match(input,53,FOLLOW_3); 
 
-            	    					newLeafNode(otherlv_91, grammarAccess.getServiceAccess().getLabelsKeyword_3_16_0());
+            	    					newLeafNode(otherlv_102, grammarAccess.getServiceAccess().getLabelsKeyword_3_16_0());
             	    				
-            	    otherlv_92=(Token)match(input,17,FOLLOW_14); 
+            	    otherlv_103=(Token)match(input,17,FOLLOW_14); 
 
-            	    					newLeafNode(otherlv_92, grammarAccess.getServiceAccess().getColonKeyword_3_16_1());
+            	    					newLeafNode(otherlv_103, grammarAccess.getServiceAccess().getColonKeyword_3_16_1());
             	    				
-            	    // InternalDcDsl.g:1884:5: ( (this_BEG_BLOCK_93= RULE_BEG_BLOCK (otherlv_94= '-' ( (lv_labels_95_0= ruleEString ) ) )+ this_END_BLOCK_96= RULE_END_BLOCK ) | (otherlv_97= '[' ( (lv_labels_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_labels_100_0= ruleEString ) ) )* otherlv_101= ']' ) )
-            	    int alt29=2;
-            	    int LA29_0 = input.LA(1);
+            	    // InternalDcDsl.g:2009:5: ( (this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' (this_BEG_BLOCK_106= RULE_BEG_BLOCK )? ( (lv_labels_107_0= ruleEString ) ) (this_END_BLOCK_108= RULE_END_BLOCK )? )+ this_END_BLOCK_109= RULE_END_BLOCK ) | (otherlv_110= '[' ( (lv_labels_111_0= ruleEString ) ) (otherlv_112= ',' ( (lv_labels_113_0= ruleEString ) ) )* otherlv_114= ']' ) )
+            	    int alt41=2;
+            	    int LA41_0 = input.LA(1);
 
-            	    if ( (LA29_0==RULE_BEG_BLOCK) ) {
-            	        alt29=1;
+            	    if ( (LA41_0==RULE_BEG_BLOCK) ) {
+            	        alt41=1;
             	    }
-            	    else if ( (LA29_0==32) ) {
-            	        alt29=2;
+            	    else if ( (LA41_0==32) ) {
+            	        alt41=2;
             	    }
             	    else {
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 29, 0, input);
+            	            new NoViableAltException("", 41, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt29) {
+            	    switch (alt41) {
             	        case 1 :
-            	            // InternalDcDsl.g:1885:6: (this_BEG_BLOCK_93= RULE_BEG_BLOCK (otherlv_94= '-' ( (lv_labels_95_0= ruleEString ) ) )+ this_END_BLOCK_96= RULE_END_BLOCK )
+            	            // InternalDcDsl.g:2010:6: (this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' (this_BEG_BLOCK_106= RULE_BEG_BLOCK )? ( (lv_labels_107_0= ruleEString ) ) (this_END_BLOCK_108= RULE_END_BLOCK )? )+ this_END_BLOCK_109= RULE_END_BLOCK )
             	            {
-            	            // InternalDcDsl.g:1885:6: (this_BEG_BLOCK_93= RULE_BEG_BLOCK (otherlv_94= '-' ( (lv_labels_95_0= ruleEString ) ) )+ this_END_BLOCK_96= RULE_END_BLOCK )
-            	            // InternalDcDsl.g:1886:7: this_BEG_BLOCK_93= RULE_BEG_BLOCK (otherlv_94= '-' ( (lv_labels_95_0= ruleEString ) ) )+ this_END_BLOCK_96= RULE_END_BLOCK
+            	            // InternalDcDsl.g:2010:6: (this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' (this_BEG_BLOCK_106= RULE_BEG_BLOCK )? ( (lv_labels_107_0= ruleEString ) ) (this_END_BLOCK_108= RULE_END_BLOCK )? )+ this_END_BLOCK_109= RULE_END_BLOCK )
+            	            // InternalDcDsl.g:2011:7: this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' (this_BEG_BLOCK_106= RULE_BEG_BLOCK )? ( (lv_labels_107_0= ruleEString ) ) (this_END_BLOCK_108= RULE_END_BLOCK )? )+ this_END_BLOCK_109= RULE_END_BLOCK
             	            {
-            	            this_BEG_BLOCK_93=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_15); 
+            	            this_BEG_BLOCK_104=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_15); 
 
-            	            							newLeafNode(this_BEG_BLOCK_93, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_16_2_0_0());
+            	            							newLeafNode(this_BEG_BLOCK_104, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_16_2_0_0());
             	            						
-            	            // InternalDcDsl.g:1890:7: (otherlv_94= '-' ( (lv_labels_95_0= ruleEString ) ) )+
-            	            int cnt27=0;
-            	            loop27:
+            	            // InternalDcDsl.g:2015:7: (otherlv_105= '-' (this_BEG_BLOCK_106= RULE_BEG_BLOCK )? ( (lv_labels_107_0= ruleEString ) ) (this_END_BLOCK_108= RULE_END_BLOCK )? )+
+            	            int cnt39=0;
+            	            loop39:
             	            do {
-            	                int alt27=2;
-            	                int LA27_0 = input.LA(1);
+            	                int alt39=2;
+            	                int LA39_0 = input.LA(1);
 
-            	                if ( (LA27_0==31) ) {
-            	                    alt27=1;
+            	                if ( (LA39_0==31) ) {
+            	                    alt39=1;
             	                }
 
 
-            	                switch (alt27) {
+            	                switch (alt39) {
             	            	case 1 :
-            	            	    // InternalDcDsl.g:1891:8: otherlv_94= '-' ( (lv_labels_95_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:2016:8: otherlv_105= '-' (this_BEG_BLOCK_106= RULE_BEG_BLOCK )? ( (lv_labels_107_0= ruleEString ) ) (this_END_BLOCK_108= RULE_END_BLOCK )?
             	            	    {
-            	            	    otherlv_94=(Token)match(input,31,FOLLOW_4); 
+            	            	    otherlv_105=(Token)match(input,31,FOLLOW_12); 
 
-            	            	    								newLeafNode(otherlv_94, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_16_2_0_1_0());
+            	            	    								newLeafNode(otherlv_105, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_16_2_0_1_0());
             	            	    							
-            	            	    // InternalDcDsl.g:1895:8: ( (lv_labels_95_0= ruleEString ) )
-            	            	    // InternalDcDsl.g:1896:9: (lv_labels_95_0= ruleEString )
+            	            	    // InternalDcDsl.g:2020:8: (this_BEG_BLOCK_106= RULE_BEG_BLOCK )?
+            	            	    int alt37=2;
+            	            	    int LA37_0 = input.LA(1);
+
+            	            	    if ( (LA37_0==RULE_BEG_BLOCK) ) {
+            	            	        alt37=1;
+            	            	    }
+            	            	    switch (alt37) {
+            	            	        case 1 :
+            	            	            // InternalDcDsl.g:2021:9: this_BEG_BLOCK_106= RULE_BEG_BLOCK
+            	            	            {
+            	            	            this_BEG_BLOCK_106=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_4); 
+
+            	            	            									newLeafNode(this_BEG_BLOCK_106, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_16_2_0_1_1());
+            	            	            								
+
+            	            	            }
+            	            	            break;
+
+            	            	    }
+
+            	            	    // InternalDcDsl.g:2026:8: ( (lv_labels_107_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:2027:9: (lv_labels_107_0= ruleEString )
             	            	    {
-            	            	    // InternalDcDsl.g:1896:9: (lv_labels_95_0= ruleEString )
-            	            	    // InternalDcDsl.g:1897:10: lv_labels_95_0= ruleEString
+            	            	    // InternalDcDsl.g:2027:9: (lv_labels_107_0= ruleEString )
+            	            	    // InternalDcDsl.g:2028:10: lv_labels_107_0= ruleEString
             	            	    {
 
-            	            	    										newCompositeNode(grammarAccess.getServiceAccess().getLabelsEStringParserRuleCall_3_16_2_0_1_1_0());
+            	            	    										newCompositeNode(grammarAccess.getServiceAccess().getLabelsEStringParserRuleCall_3_16_2_0_1_2_0());
             	            	    									
             	            	    pushFollow(FOLLOW_16);
-            	            	    lv_labels_95_0=ruleEString();
+            	            	    lv_labels_107_0=ruleEString();
 
             	            	    state._fsp--;
 
@@ -4793,7 +5350,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            	    										add(
             	            	    											current,
             	            	    											"labels",
-            	            	    											lv_labels_95_0,
+            	            	    											lv_labels_107_0,
             	            	    											"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
             	            	    										afterParserOrEnumRuleCall();
             	            	    									
@@ -4803,22 +5360,68 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	            	    }
 
+            	            	    // InternalDcDsl.g:2045:8: (this_END_BLOCK_108= RULE_END_BLOCK )?
+            	            	    int alt38=2;
+            	            	    int LA38_0 = input.LA(1);
+
+            	            	    if ( (LA38_0==RULE_END_BLOCK) ) {
+            	            	        int LA38_1 = input.LA(2);
+
+            	            	        if ( (LA38_1==RULE_END_BLOCK) ) {
+            	            	            int LA38_3 = input.LA(3);
+
+            	            	            if ( (LA38_3==RULE_END_BLOCK) ) {
+            	            	                int LA38_5 = input.LA(4);
+
+            	            	                if ( (LA38_5==EOF) ) {
+            	            	                    int LA38_6 = input.LA(5);
+
+            	            	                    if ( (LA38_6==EOF) ) {
+            	            	                        alt38=1;
+            	            	                    }
+            	            	                }
+            	            	                else if ( ((LA38_5>=RULE_END_BLOCK && LA38_5<=RULE_INT)||(LA38_5>=23 && LA38_5<=30)) ) {
+            	            	                    alt38=1;
+            	            	                }
+            	            	            }
+            	            	            else if ( ((LA38_3>=20 && LA38_3<=22)||(LA38_3>=38 && LA38_3<=58)) ) {
+            	            	                alt38=1;
+            	            	            }
+            	            	        }
+            	            	        else if ( (LA38_1==31) ) {
+            	            	            alt38=1;
+            	            	        }
+            	            	    }
+            	            	    switch (alt38) {
+            	            	        case 1 :
+            	            	            // InternalDcDsl.g:2046:9: this_END_BLOCK_108= RULE_END_BLOCK
+            	            	            {
+            	            	            this_END_BLOCK_108=(Token)match(input,RULE_END_BLOCK,FOLLOW_16); 
+
+            	            	            									newLeafNode(this_END_BLOCK_108, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_16_2_0_1_3());
+            	            	            								
+
+            	            	            }
+            	            	            break;
+
+            	            	    }
+
 
             	            	    }
             	            	    break;
 
             	            	default :
-            	            	    if ( cnt27 >= 1 ) break loop27;
+            	            	    if ( cnt39 >= 1 ) break loop39;
             	                        EarlyExitException eee =
-            	                            new EarlyExitException(27, input);
+            	                            new EarlyExitException(39, input);
             	                        throw eee;
             	                }
-            	                cnt27++;
+            	                cnt39++;
             	            } while (true);
 
-            	            this_END_BLOCK_96=(Token)match(input,RULE_END_BLOCK,FOLLOW_11); 
+            	            this_END_BLOCK_109=(Token)match(input,RULE_END_BLOCK,FOLLOW_11); 
 
-            	            							newLeafNode(this_END_BLOCK_96, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_16_2_0_2());
+            	            							newLeafNode(this_END_BLOCK_109, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_16_2_0_2());
             	            						
 
             	            }
@@ -4827,26 +5430,26 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalDcDsl.g:1921:6: (otherlv_97= '[' ( (lv_labels_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_labels_100_0= ruleEString ) ) )* otherlv_101= ']' )
+            	            // InternalDcDsl.g:2058:6: (otherlv_110= '[' ( (lv_labels_111_0= ruleEString ) ) (otherlv_112= ',' ( (lv_labels_113_0= ruleEString ) ) )* otherlv_114= ']' )
             	            {
-            	            // InternalDcDsl.g:1921:6: (otherlv_97= '[' ( (lv_labels_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_labels_100_0= ruleEString ) ) )* otherlv_101= ']' )
-            	            // InternalDcDsl.g:1922:7: otherlv_97= '[' ( (lv_labels_98_0= ruleEString ) ) (otherlv_99= ',' ( (lv_labels_100_0= ruleEString ) ) )* otherlv_101= ']'
+            	            // InternalDcDsl.g:2058:6: (otherlv_110= '[' ( (lv_labels_111_0= ruleEString ) ) (otherlv_112= ',' ( (lv_labels_113_0= ruleEString ) ) )* otherlv_114= ']' )
+            	            // InternalDcDsl.g:2059:7: otherlv_110= '[' ( (lv_labels_111_0= ruleEString ) ) (otherlv_112= ',' ( (lv_labels_113_0= ruleEString ) ) )* otherlv_114= ']'
             	            {
-            	            otherlv_97=(Token)match(input,32,FOLLOW_4); 
+            	            otherlv_110=(Token)match(input,32,FOLLOW_4); 
 
-            	            							newLeafNode(otherlv_97, grammarAccess.getServiceAccess().getLeftSquareBracketKeyword_3_16_2_1_0());
+            	            							newLeafNode(otherlv_110, grammarAccess.getServiceAccess().getLeftSquareBracketKeyword_3_16_2_1_0());
             	            						
-            	            // InternalDcDsl.g:1926:7: ( (lv_labels_98_0= ruleEString ) )
-            	            // InternalDcDsl.g:1927:8: (lv_labels_98_0= ruleEString )
+            	            // InternalDcDsl.g:2063:7: ( (lv_labels_111_0= ruleEString ) )
+            	            // InternalDcDsl.g:2064:8: (lv_labels_111_0= ruleEString )
             	            {
-            	            // InternalDcDsl.g:1927:8: (lv_labels_98_0= ruleEString )
-            	            // InternalDcDsl.g:1928:9: lv_labels_98_0= ruleEString
+            	            // InternalDcDsl.g:2064:8: (lv_labels_111_0= ruleEString )
+            	            // InternalDcDsl.g:2065:9: lv_labels_111_0= ruleEString
             	            {
 
             	            									newCompositeNode(grammarAccess.getServiceAccess().getLabelsEStringParserRuleCall_3_16_2_1_1_0());
             	            								
             	            pushFollow(FOLLOW_17);
-            	            lv_labels_98_0=ruleEString();
+            	            lv_labels_111_0=ruleEString();
 
             	            state._fsp--;
 
@@ -4857,7 +5460,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            									add(
             	            										current,
             	            										"labels",
-            	            										lv_labels_98_0,
+            	            										lv_labels_111_0,
             	            										"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
             	            									afterParserOrEnumRuleCall();
             	            								
@@ -4867,36 +5470,36 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	            }
 
-            	            // InternalDcDsl.g:1945:7: (otherlv_99= ',' ( (lv_labels_100_0= ruleEString ) ) )*
-            	            loop28:
+            	            // InternalDcDsl.g:2082:7: (otherlv_112= ',' ( (lv_labels_113_0= ruleEString ) ) )*
+            	            loop40:
             	            do {
-            	                int alt28=2;
-            	                int LA28_0 = input.LA(1);
+            	                int alt40=2;
+            	                int LA40_0 = input.LA(1);
 
-            	                if ( (LA28_0==35) ) {
-            	                    alt28=1;
+            	                if ( (LA40_0==35) ) {
+            	                    alt40=1;
             	                }
 
 
-            	                switch (alt28) {
+            	                switch (alt40) {
             	            	case 1 :
-            	            	    // InternalDcDsl.g:1946:8: otherlv_99= ',' ( (lv_labels_100_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:2083:8: otherlv_112= ',' ( (lv_labels_113_0= ruleEString ) )
             	            	    {
-            	            	    otherlv_99=(Token)match(input,35,FOLLOW_4); 
+            	            	    otherlv_112=(Token)match(input,35,FOLLOW_4); 
 
-            	            	    								newLeafNode(otherlv_99, grammarAccess.getServiceAccess().getCommaKeyword_3_16_2_1_2_0());
+            	            	    								newLeafNode(otherlv_112, grammarAccess.getServiceAccess().getCommaKeyword_3_16_2_1_2_0());
             	            	    							
-            	            	    // InternalDcDsl.g:1950:8: ( (lv_labels_100_0= ruleEString ) )
-            	            	    // InternalDcDsl.g:1951:9: (lv_labels_100_0= ruleEString )
+            	            	    // InternalDcDsl.g:2087:8: ( (lv_labels_113_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:2088:9: (lv_labels_113_0= ruleEString )
             	            	    {
-            	            	    // InternalDcDsl.g:1951:9: (lv_labels_100_0= ruleEString )
-            	            	    // InternalDcDsl.g:1952:10: lv_labels_100_0= ruleEString
+            	            	    // InternalDcDsl.g:2088:9: (lv_labels_113_0= ruleEString )
+            	            	    // InternalDcDsl.g:2089:10: lv_labels_113_0= ruleEString
             	            	    {
 
             	            	    										newCompositeNode(grammarAccess.getServiceAccess().getLabelsEStringParserRuleCall_3_16_2_1_2_1_0());
             	            	    									
             	            	    pushFollow(FOLLOW_17);
-            	            	    lv_labels_100_0=ruleEString();
+            	            	    lv_labels_113_0=ruleEString();
 
             	            	    state._fsp--;
 
@@ -4907,7 +5510,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            	    										add(
             	            	    											current,
             	            	    											"labels",
-            	            	    											lv_labels_100_0,
+            	            	    											lv_labels_113_0,
             	            	    											"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
             	            	    										afterParserOrEnumRuleCall();
             	            	    									
@@ -4922,13 +5525,13 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            	    break;
 
             	            	default :
-            	            	    break loop28;
+            	            	    break loop40;
             	                }
             	            } while (true);
 
-            	            otherlv_101=(Token)match(input,33,FOLLOW_11); 
+            	            otherlv_114=(Token)match(input,33,FOLLOW_11); 
 
-            	            							newLeafNode(otherlv_101, grammarAccess.getServiceAccess().getRightSquareBracketKeyword_3_16_2_1_3());
+            	            							newLeafNode(otherlv_114, grammarAccess.getServiceAccess().getRightSquareBracketKeyword_3_16_2_1_3());
             	            						
 
             	            }
@@ -4946,77 +5549,98 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 18 :
-            	    // InternalDcDsl.g:1978:4: (otherlv_102= 'sysctls' otherlv_103= ':' ( (this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' ( (lv_sysctls_106_0= ruleEString ) ) )+ this_END_BLOCK_107= RULE_END_BLOCK ) | (otherlv_108= '[' ( (lv_sysctls_109_0= ruleEString ) ) (otherlv_110= ',' ( (lv_sysctls_111_0= ruleEString ) ) )* otherlv_112= ']' ) ) )
+            	    // InternalDcDsl.g:2115:4: (otherlv_115= 'sysctls' otherlv_116= ':' ( (this_BEG_BLOCK_117= RULE_BEG_BLOCK (otherlv_118= '-' (this_BEG_BLOCK_119= RULE_BEG_BLOCK )? ( (lv_sysctls_120_0= ruleEString ) ) (this_END_BLOCK_121= RULE_END_BLOCK )? )+ this_END_BLOCK_122= RULE_END_BLOCK ) | (otherlv_123= '[' ( (lv_sysctls_124_0= ruleEString ) ) (otherlv_125= ',' ( (lv_sysctls_126_0= ruleEString ) ) )* otherlv_127= ']' ) ) )
             	    {
-            	    // InternalDcDsl.g:1978:4: (otherlv_102= 'sysctls' otherlv_103= ':' ( (this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' ( (lv_sysctls_106_0= ruleEString ) ) )+ this_END_BLOCK_107= RULE_END_BLOCK ) | (otherlv_108= '[' ( (lv_sysctls_109_0= ruleEString ) ) (otherlv_110= ',' ( (lv_sysctls_111_0= ruleEString ) ) )* otherlv_112= ']' ) ) )
-            	    // InternalDcDsl.g:1979:5: otherlv_102= 'sysctls' otherlv_103= ':' ( (this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' ( (lv_sysctls_106_0= ruleEString ) ) )+ this_END_BLOCK_107= RULE_END_BLOCK ) | (otherlv_108= '[' ( (lv_sysctls_109_0= ruleEString ) ) (otherlv_110= ',' ( (lv_sysctls_111_0= ruleEString ) ) )* otherlv_112= ']' ) )
+            	    // InternalDcDsl.g:2115:4: (otherlv_115= 'sysctls' otherlv_116= ':' ( (this_BEG_BLOCK_117= RULE_BEG_BLOCK (otherlv_118= '-' (this_BEG_BLOCK_119= RULE_BEG_BLOCK )? ( (lv_sysctls_120_0= ruleEString ) ) (this_END_BLOCK_121= RULE_END_BLOCK )? )+ this_END_BLOCK_122= RULE_END_BLOCK ) | (otherlv_123= '[' ( (lv_sysctls_124_0= ruleEString ) ) (otherlv_125= ',' ( (lv_sysctls_126_0= ruleEString ) ) )* otherlv_127= ']' ) ) )
+            	    // InternalDcDsl.g:2116:5: otherlv_115= 'sysctls' otherlv_116= ':' ( (this_BEG_BLOCK_117= RULE_BEG_BLOCK (otherlv_118= '-' (this_BEG_BLOCK_119= RULE_BEG_BLOCK )? ( (lv_sysctls_120_0= ruleEString ) ) (this_END_BLOCK_121= RULE_END_BLOCK )? )+ this_END_BLOCK_122= RULE_END_BLOCK ) | (otherlv_123= '[' ( (lv_sysctls_124_0= ruleEString ) ) (otherlv_125= ',' ( (lv_sysctls_126_0= ruleEString ) ) )* otherlv_127= ']' ) )
             	    {
-            	    otherlv_102=(Token)match(input,54,FOLLOW_3); 
+            	    otherlv_115=(Token)match(input,54,FOLLOW_3); 
 
-            	    					newLeafNode(otherlv_102, grammarAccess.getServiceAccess().getSysctlsKeyword_3_17_0());
+            	    					newLeafNode(otherlv_115, grammarAccess.getServiceAccess().getSysctlsKeyword_3_17_0());
             	    				
-            	    otherlv_103=(Token)match(input,17,FOLLOW_14); 
+            	    otherlv_116=(Token)match(input,17,FOLLOW_14); 
 
-            	    					newLeafNode(otherlv_103, grammarAccess.getServiceAccess().getColonKeyword_3_17_1());
+            	    					newLeafNode(otherlv_116, grammarAccess.getServiceAccess().getColonKeyword_3_17_1());
             	    				
-            	    // InternalDcDsl.g:1987:5: ( (this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' ( (lv_sysctls_106_0= ruleEString ) ) )+ this_END_BLOCK_107= RULE_END_BLOCK ) | (otherlv_108= '[' ( (lv_sysctls_109_0= ruleEString ) ) (otherlv_110= ',' ( (lv_sysctls_111_0= ruleEString ) ) )* otherlv_112= ']' ) )
-            	    int alt32=2;
-            	    int LA32_0 = input.LA(1);
+            	    // InternalDcDsl.g:2124:5: ( (this_BEG_BLOCK_117= RULE_BEG_BLOCK (otherlv_118= '-' (this_BEG_BLOCK_119= RULE_BEG_BLOCK )? ( (lv_sysctls_120_0= ruleEString ) ) (this_END_BLOCK_121= RULE_END_BLOCK )? )+ this_END_BLOCK_122= RULE_END_BLOCK ) | (otherlv_123= '[' ( (lv_sysctls_124_0= ruleEString ) ) (otherlv_125= ',' ( (lv_sysctls_126_0= ruleEString ) ) )* otherlv_127= ']' ) )
+            	    int alt46=2;
+            	    int LA46_0 = input.LA(1);
 
-            	    if ( (LA32_0==RULE_BEG_BLOCK) ) {
-            	        alt32=1;
+            	    if ( (LA46_0==RULE_BEG_BLOCK) ) {
+            	        alt46=1;
             	    }
-            	    else if ( (LA32_0==32) ) {
-            	        alt32=2;
+            	    else if ( (LA46_0==32) ) {
+            	        alt46=2;
             	    }
             	    else {
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 32, 0, input);
+            	            new NoViableAltException("", 46, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt32) {
+            	    switch (alt46) {
             	        case 1 :
-            	            // InternalDcDsl.g:1988:6: (this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' ( (lv_sysctls_106_0= ruleEString ) ) )+ this_END_BLOCK_107= RULE_END_BLOCK )
+            	            // InternalDcDsl.g:2125:6: (this_BEG_BLOCK_117= RULE_BEG_BLOCK (otherlv_118= '-' (this_BEG_BLOCK_119= RULE_BEG_BLOCK )? ( (lv_sysctls_120_0= ruleEString ) ) (this_END_BLOCK_121= RULE_END_BLOCK )? )+ this_END_BLOCK_122= RULE_END_BLOCK )
             	            {
-            	            // InternalDcDsl.g:1988:6: (this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' ( (lv_sysctls_106_0= ruleEString ) ) )+ this_END_BLOCK_107= RULE_END_BLOCK )
-            	            // InternalDcDsl.g:1989:7: this_BEG_BLOCK_104= RULE_BEG_BLOCK (otherlv_105= '-' ( (lv_sysctls_106_0= ruleEString ) ) )+ this_END_BLOCK_107= RULE_END_BLOCK
+            	            // InternalDcDsl.g:2125:6: (this_BEG_BLOCK_117= RULE_BEG_BLOCK (otherlv_118= '-' (this_BEG_BLOCK_119= RULE_BEG_BLOCK )? ( (lv_sysctls_120_0= ruleEString ) ) (this_END_BLOCK_121= RULE_END_BLOCK )? )+ this_END_BLOCK_122= RULE_END_BLOCK )
+            	            // InternalDcDsl.g:2126:7: this_BEG_BLOCK_117= RULE_BEG_BLOCK (otherlv_118= '-' (this_BEG_BLOCK_119= RULE_BEG_BLOCK )? ( (lv_sysctls_120_0= ruleEString ) ) (this_END_BLOCK_121= RULE_END_BLOCK )? )+ this_END_BLOCK_122= RULE_END_BLOCK
             	            {
-            	            this_BEG_BLOCK_104=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_15); 
+            	            this_BEG_BLOCK_117=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_15); 
 
-            	            							newLeafNode(this_BEG_BLOCK_104, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_17_2_0_0());
+            	            							newLeafNode(this_BEG_BLOCK_117, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_17_2_0_0());
             	            						
-            	            // InternalDcDsl.g:1993:7: (otherlv_105= '-' ( (lv_sysctls_106_0= ruleEString ) ) )+
-            	            int cnt30=0;
-            	            loop30:
+            	            // InternalDcDsl.g:2130:7: (otherlv_118= '-' (this_BEG_BLOCK_119= RULE_BEG_BLOCK )? ( (lv_sysctls_120_0= ruleEString ) ) (this_END_BLOCK_121= RULE_END_BLOCK )? )+
+            	            int cnt44=0;
+            	            loop44:
             	            do {
-            	                int alt30=2;
-            	                int LA30_0 = input.LA(1);
+            	                int alt44=2;
+            	                int LA44_0 = input.LA(1);
 
-            	                if ( (LA30_0==31) ) {
-            	                    alt30=1;
+            	                if ( (LA44_0==31) ) {
+            	                    alt44=1;
             	                }
 
 
-            	                switch (alt30) {
+            	                switch (alt44) {
             	            	case 1 :
-            	            	    // InternalDcDsl.g:1994:8: otherlv_105= '-' ( (lv_sysctls_106_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:2131:8: otherlv_118= '-' (this_BEG_BLOCK_119= RULE_BEG_BLOCK )? ( (lv_sysctls_120_0= ruleEString ) ) (this_END_BLOCK_121= RULE_END_BLOCK )?
             	            	    {
-            	            	    otherlv_105=(Token)match(input,31,FOLLOW_4); 
+            	            	    otherlv_118=(Token)match(input,31,FOLLOW_12); 
 
-            	            	    								newLeafNode(otherlv_105, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_17_2_0_1_0());
+            	            	    								newLeafNode(otherlv_118, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_17_2_0_1_0());
             	            	    							
-            	            	    // InternalDcDsl.g:1998:8: ( (lv_sysctls_106_0= ruleEString ) )
-            	            	    // InternalDcDsl.g:1999:9: (lv_sysctls_106_0= ruleEString )
+            	            	    // InternalDcDsl.g:2135:8: (this_BEG_BLOCK_119= RULE_BEG_BLOCK )?
+            	            	    int alt42=2;
+            	            	    int LA42_0 = input.LA(1);
+
+            	            	    if ( (LA42_0==RULE_BEG_BLOCK) ) {
+            	            	        alt42=1;
+            	            	    }
+            	            	    switch (alt42) {
+            	            	        case 1 :
+            	            	            // InternalDcDsl.g:2136:9: this_BEG_BLOCK_119= RULE_BEG_BLOCK
+            	            	            {
+            	            	            this_BEG_BLOCK_119=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_4); 
+
+            	            	            									newLeafNode(this_BEG_BLOCK_119, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_17_2_0_1_1());
+            	            	            								
+
+            	            	            }
+            	            	            break;
+
+            	            	    }
+
+            	            	    // InternalDcDsl.g:2141:8: ( (lv_sysctls_120_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:2142:9: (lv_sysctls_120_0= ruleEString )
             	            	    {
-            	            	    // InternalDcDsl.g:1999:9: (lv_sysctls_106_0= ruleEString )
-            	            	    // InternalDcDsl.g:2000:10: lv_sysctls_106_0= ruleEString
+            	            	    // InternalDcDsl.g:2142:9: (lv_sysctls_120_0= ruleEString )
+            	            	    // InternalDcDsl.g:2143:10: lv_sysctls_120_0= ruleEString
             	            	    {
 
-            	            	    										newCompositeNode(grammarAccess.getServiceAccess().getSysctlsEStringParserRuleCall_3_17_2_0_1_1_0());
+            	            	    										newCompositeNode(grammarAccess.getServiceAccess().getSysctlsEStringParserRuleCall_3_17_2_0_1_2_0());
             	            	    									
             	            	    pushFollow(FOLLOW_16);
-            	            	    lv_sysctls_106_0=ruleEString();
+            	            	    lv_sysctls_120_0=ruleEString();
 
             	            	    state._fsp--;
 
@@ -5027,7 +5651,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            	    										add(
             	            	    											current,
             	            	    											"sysctls",
-            	            	    											lv_sysctls_106_0,
+            	            	    											lv_sysctls_120_0,
             	            	    											"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
             	            	    										afterParserOrEnumRuleCall();
             	            	    									
@@ -5037,22 +5661,68 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	            	    }
 
+            	            	    // InternalDcDsl.g:2160:8: (this_END_BLOCK_121= RULE_END_BLOCK )?
+            	            	    int alt43=2;
+            	            	    int LA43_0 = input.LA(1);
+
+            	            	    if ( (LA43_0==RULE_END_BLOCK) ) {
+            	            	        int LA43_1 = input.LA(2);
+
+            	            	        if ( (LA43_1==RULE_END_BLOCK) ) {
+            	            	            int LA43_3 = input.LA(3);
+
+            	            	            if ( (LA43_3==RULE_END_BLOCK) ) {
+            	            	                int LA43_5 = input.LA(4);
+
+            	            	                if ( (LA43_5==EOF) ) {
+            	            	                    int LA43_6 = input.LA(5);
+
+            	            	                    if ( (LA43_6==EOF) ) {
+            	            	                        alt43=1;
+            	            	                    }
+            	            	                }
+            	            	                else if ( ((LA43_5>=RULE_END_BLOCK && LA43_5<=RULE_INT)||(LA43_5>=23 && LA43_5<=30)) ) {
+            	            	                    alt43=1;
+            	            	                }
+            	            	            }
+            	            	            else if ( ((LA43_3>=20 && LA43_3<=22)||(LA43_3>=38 && LA43_3<=58)) ) {
+            	            	                alt43=1;
+            	            	            }
+            	            	        }
+            	            	        else if ( (LA43_1==31) ) {
+            	            	            alt43=1;
+            	            	        }
+            	            	    }
+            	            	    switch (alt43) {
+            	            	        case 1 :
+            	            	            // InternalDcDsl.g:2161:9: this_END_BLOCK_121= RULE_END_BLOCK
+            	            	            {
+            	            	            this_END_BLOCK_121=(Token)match(input,RULE_END_BLOCK,FOLLOW_16); 
+
+            	            	            									newLeafNode(this_END_BLOCK_121, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_17_2_0_1_3());
+            	            	            								
+
+            	            	            }
+            	            	            break;
+
+            	            	    }
+
 
             	            	    }
             	            	    break;
 
             	            	default :
-            	            	    if ( cnt30 >= 1 ) break loop30;
+            	            	    if ( cnt44 >= 1 ) break loop44;
             	                        EarlyExitException eee =
-            	                            new EarlyExitException(30, input);
+            	                            new EarlyExitException(44, input);
             	                        throw eee;
             	                }
-            	                cnt30++;
+            	                cnt44++;
             	            } while (true);
 
-            	            this_END_BLOCK_107=(Token)match(input,RULE_END_BLOCK,FOLLOW_11); 
+            	            this_END_BLOCK_122=(Token)match(input,RULE_END_BLOCK,FOLLOW_11); 
 
-            	            							newLeafNode(this_END_BLOCK_107, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_17_2_0_2());
+            	            							newLeafNode(this_END_BLOCK_122, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_17_2_0_2());
             	            						
 
             	            }
@@ -5061,26 +5731,26 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalDcDsl.g:2024:6: (otherlv_108= '[' ( (lv_sysctls_109_0= ruleEString ) ) (otherlv_110= ',' ( (lv_sysctls_111_0= ruleEString ) ) )* otherlv_112= ']' )
+            	            // InternalDcDsl.g:2173:6: (otherlv_123= '[' ( (lv_sysctls_124_0= ruleEString ) ) (otherlv_125= ',' ( (lv_sysctls_126_0= ruleEString ) ) )* otherlv_127= ']' )
             	            {
-            	            // InternalDcDsl.g:2024:6: (otherlv_108= '[' ( (lv_sysctls_109_0= ruleEString ) ) (otherlv_110= ',' ( (lv_sysctls_111_0= ruleEString ) ) )* otherlv_112= ']' )
-            	            // InternalDcDsl.g:2025:7: otherlv_108= '[' ( (lv_sysctls_109_0= ruleEString ) ) (otherlv_110= ',' ( (lv_sysctls_111_0= ruleEString ) ) )* otherlv_112= ']'
+            	            // InternalDcDsl.g:2173:6: (otherlv_123= '[' ( (lv_sysctls_124_0= ruleEString ) ) (otherlv_125= ',' ( (lv_sysctls_126_0= ruleEString ) ) )* otherlv_127= ']' )
+            	            // InternalDcDsl.g:2174:7: otherlv_123= '[' ( (lv_sysctls_124_0= ruleEString ) ) (otherlv_125= ',' ( (lv_sysctls_126_0= ruleEString ) ) )* otherlv_127= ']'
             	            {
-            	            otherlv_108=(Token)match(input,32,FOLLOW_4); 
+            	            otherlv_123=(Token)match(input,32,FOLLOW_4); 
 
-            	            							newLeafNode(otherlv_108, grammarAccess.getServiceAccess().getLeftSquareBracketKeyword_3_17_2_1_0());
+            	            							newLeafNode(otherlv_123, grammarAccess.getServiceAccess().getLeftSquareBracketKeyword_3_17_2_1_0());
             	            						
-            	            // InternalDcDsl.g:2029:7: ( (lv_sysctls_109_0= ruleEString ) )
-            	            // InternalDcDsl.g:2030:8: (lv_sysctls_109_0= ruleEString )
+            	            // InternalDcDsl.g:2178:7: ( (lv_sysctls_124_0= ruleEString ) )
+            	            // InternalDcDsl.g:2179:8: (lv_sysctls_124_0= ruleEString )
             	            {
-            	            // InternalDcDsl.g:2030:8: (lv_sysctls_109_0= ruleEString )
-            	            // InternalDcDsl.g:2031:9: lv_sysctls_109_0= ruleEString
+            	            // InternalDcDsl.g:2179:8: (lv_sysctls_124_0= ruleEString )
+            	            // InternalDcDsl.g:2180:9: lv_sysctls_124_0= ruleEString
             	            {
 
             	            									newCompositeNode(grammarAccess.getServiceAccess().getSysctlsEStringParserRuleCall_3_17_2_1_1_0());
             	            								
             	            pushFollow(FOLLOW_17);
-            	            lv_sysctls_109_0=ruleEString();
+            	            lv_sysctls_124_0=ruleEString();
 
             	            state._fsp--;
 
@@ -5091,7 +5761,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            									add(
             	            										current,
             	            										"sysctls",
-            	            										lv_sysctls_109_0,
+            	            										lv_sysctls_124_0,
             	            										"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
             	            									afterParserOrEnumRuleCall();
             	            								
@@ -5101,36 +5771,36 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	            }
 
-            	            // InternalDcDsl.g:2048:7: (otherlv_110= ',' ( (lv_sysctls_111_0= ruleEString ) ) )*
-            	            loop31:
+            	            // InternalDcDsl.g:2197:7: (otherlv_125= ',' ( (lv_sysctls_126_0= ruleEString ) ) )*
+            	            loop45:
             	            do {
-            	                int alt31=2;
-            	                int LA31_0 = input.LA(1);
+            	                int alt45=2;
+            	                int LA45_0 = input.LA(1);
 
-            	                if ( (LA31_0==35) ) {
-            	                    alt31=1;
+            	                if ( (LA45_0==35) ) {
+            	                    alt45=1;
             	                }
 
 
-            	                switch (alt31) {
+            	                switch (alt45) {
             	            	case 1 :
-            	            	    // InternalDcDsl.g:2049:8: otherlv_110= ',' ( (lv_sysctls_111_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:2198:8: otherlv_125= ',' ( (lv_sysctls_126_0= ruleEString ) )
             	            	    {
-            	            	    otherlv_110=(Token)match(input,35,FOLLOW_4); 
+            	            	    otherlv_125=(Token)match(input,35,FOLLOW_4); 
 
-            	            	    								newLeafNode(otherlv_110, grammarAccess.getServiceAccess().getCommaKeyword_3_17_2_1_2_0());
+            	            	    								newLeafNode(otherlv_125, grammarAccess.getServiceAccess().getCommaKeyword_3_17_2_1_2_0());
             	            	    							
-            	            	    // InternalDcDsl.g:2053:8: ( (lv_sysctls_111_0= ruleEString ) )
-            	            	    // InternalDcDsl.g:2054:9: (lv_sysctls_111_0= ruleEString )
+            	            	    // InternalDcDsl.g:2202:8: ( (lv_sysctls_126_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:2203:9: (lv_sysctls_126_0= ruleEString )
             	            	    {
-            	            	    // InternalDcDsl.g:2054:9: (lv_sysctls_111_0= ruleEString )
-            	            	    // InternalDcDsl.g:2055:10: lv_sysctls_111_0= ruleEString
+            	            	    // InternalDcDsl.g:2203:9: (lv_sysctls_126_0= ruleEString )
+            	            	    // InternalDcDsl.g:2204:10: lv_sysctls_126_0= ruleEString
             	            	    {
 
             	            	    										newCompositeNode(grammarAccess.getServiceAccess().getSysctlsEStringParserRuleCall_3_17_2_1_2_1_0());
             	            	    									
             	            	    pushFollow(FOLLOW_17);
-            	            	    lv_sysctls_111_0=ruleEString();
+            	            	    lv_sysctls_126_0=ruleEString();
 
             	            	    state._fsp--;
 
@@ -5141,7 +5811,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            	    										add(
             	            	    											current,
             	            	    											"sysctls",
-            	            	    											lv_sysctls_111_0,
+            	            	    											lv_sysctls_126_0,
             	            	    											"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
             	            	    										afterParserOrEnumRuleCall();
             	            	    									
@@ -5156,13 +5826,13 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            	    break;
 
             	            	default :
-            	            	    break loop31;
+            	            	    break loop45;
             	                }
             	            } while (true);
 
-            	            otherlv_112=(Token)match(input,33,FOLLOW_11); 
+            	            otherlv_127=(Token)match(input,33,FOLLOW_11); 
 
-            	            							newLeafNode(otherlv_112, grammarAccess.getServiceAccess().getRightSquareBracketKeyword_3_17_2_1_3());
+            	            							newLeafNode(otherlv_127, grammarAccess.getServiceAccess().getRightSquareBracketKeyword_3_17_2_1_3());
             	            						
 
             	            }
@@ -5180,80 +5850,243 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 19 :
-            	    // InternalDcDsl.g:2081:4: (otherlv_113= 'environment' otherlv_114= ':' this_BEG_BLOCK_115= RULE_BEG_BLOCK ( (lv_environment_116_0= ruleKeyValuePair ) )+ this_END_BLOCK_117= RULE_END_BLOCK )
+            	    // InternalDcDsl.g:2230:4: (otherlv_128= 'environment' otherlv_129= ':' this_BEG_BLOCK_130= RULE_BEG_BLOCK ( ( (lv_environment_131_0= ruleKeyValuePair ) )+ | (otherlv_132= '-' (this_BEG_BLOCK_133= RULE_BEG_BLOCK )? ( (lv_environment_134_0= ruleEnvEntry ) ) (this_END_BLOCK_135= RULE_END_BLOCK )? )+ ) this_END_BLOCK_136= RULE_END_BLOCK )
             	    {
-            	    // InternalDcDsl.g:2081:4: (otherlv_113= 'environment' otherlv_114= ':' this_BEG_BLOCK_115= RULE_BEG_BLOCK ( (lv_environment_116_0= ruleKeyValuePair ) )+ this_END_BLOCK_117= RULE_END_BLOCK )
-            	    // InternalDcDsl.g:2082:5: otherlv_113= 'environment' otherlv_114= ':' this_BEG_BLOCK_115= RULE_BEG_BLOCK ( (lv_environment_116_0= ruleKeyValuePair ) )+ this_END_BLOCK_117= RULE_END_BLOCK
+            	    // InternalDcDsl.g:2230:4: (otherlv_128= 'environment' otherlv_129= ':' this_BEG_BLOCK_130= RULE_BEG_BLOCK ( ( (lv_environment_131_0= ruleKeyValuePair ) )+ | (otherlv_132= '-' (this_BEG_BLOCK_133= RULE_BEG_BLOCK )? ( (lv_environment_134_0= ruleEnvEntry ) ) (this_END_BLOCK_135= RULE_END_BLOCK )? )+ ) this_END_BLOCK_136= RULE_END_BLOCK )
+            	    // InternalDcDsl.g:2231:5: otherlv_128= 'environment' otherlv_129= ':' this_BEG_BLOCK_130= RULE_BEG_BLOCK ( ( (lv_environment_131_0= ruleKeyValuePair ) )+ | (otherlv_132= '-' (this_BEG_BLOCK_133= RULE_BEG_BLOCK )? ( (lv_environment_134_0= ruleEnvEntry ) ) (this_END_BLOCK_135= RULE_END_BLOCK )? )+ ) this_END_BLOCK_136= RULE_END_BLOCK
             	    {
-            	    otherlv_113=(Token)match(input,55,FOLLOW_3); 
+            	    otherlv_128=(Token)match(input,55,FOLLOW_3); 
 
-            	    					newLeafNode(otherlv_113, grammarAccess.getServiceAccess().getEnvironmentKeyword_3_18_0());
+            	    					newLeafNode(otherlv_128, grammarAccess.getServiceAccess().getEnvironmentKeyword_3_18_0());
             	    				
-            	    otherlv_114=(Token)match(input,17,FOLLOW_6); 
+            	    otherlv_129=(Token)match(input,17,FOLLOW_6); 
 
-            	    					newLeafNode(otherlv_114, grammarAccess.getServiceAccess().getColonKeyword_3_18_1());
+            	    					newLeafNode(otherlv_129, grammarAccess.getServiceAccess().getColonKeyword_3_18_1());
             	    				
-            	    this_BEG_BLOCK_115=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_19); 
+            	    this_BEG_BLOCK_130=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_20); 
 
-            	    					newLeafNode(this_BEG_BLOCK_115, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_18_2());
+            	    					newLeafNode(this_BEG_BLOCK_130, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_18_2());
             	    				
-            	    // InternalDcDsl.g:2094:5: ( (lv_environment_116_0= ruleKeyValuePair ) )+
-            	    int cnt33=0;
-            	    loop33:
-            	    do {
-            	        int alt33=2;
-            	        int LA33_0 = input.LA(1);
+            	    // InternalDcDsl.g:2243:5: ( ( (lv_environment_131_0= ruleKeyValuePair ) )+ | (otherlv_132= '-' (this_BEG_BLOCK_133= RULE_BEG_BLOCK )? ( (lv_environment_134_0= ruleEnvEntry ) ) (this_END_BLOCK_135= RULE_END_BLOCK )? )+ )
+            	    int alt51=2;
+            	    int LA51_0 = input.LA(1);
 
-            	        if ( (LA33_0==RULE_YAML_SCALAR||(LA33_0>=RULE_ID && LA33_0<=RULE_INT)||LA33_0==16||(LA33_0>=18 && LA33_0<=22)||(LA33_0>=38 && LA33_0<=77)) ) {
-            	            alt33=1;
-            	        }
+            	    if ( (LA51_0==RULE_YAML_SCALAR||(LA51_0>=RULE_ID && LA51_0<=RULE_INT)||LA51_0==16||(LA51_0>=18 && LA51_0<=22)||(LA51_0>=38 && LA51_0<=77)) ) {
+            	        alt51=1;
+            	    }
+            	    else if ( (LA51_0==31) ) {
+            	        alt51=2;
+            	    }
+            	    else {
+            	        NoViableAltException nvae =
+            	            new NoViableAltException("", 51, 0, input);
 
+            	        throw nvae;
+            	    }
+            	    switch (alt51) {
+            	        case 1 :
+            	            // InternalDcDsl.g:2244:6: ( (lv_environment_131_0= ruleKeyValuePair ) )+
+            	            {
+            	            // InternalDcDsl.g:2244:6: ( (lv_environment_131_0= ruleKeyValuePair ) )+
+            	            int cnt47=0;
+            	            loop47:
+            	            do {
+            	                int alt47=2;
+            	                int LA47_0 = input.LA(1);
 
-            	        switch (alt33) {
-            	    	case 1 :
-            	    	    // InternalDcDsl.g:2095:6: (lv_environment_116_0= ruleKeyValuePair )
-            	    	    {
-            	    	    // InternalDcDsl.g:2095:6: (lv_environment_116_0= ruleKeyValuePair )
-            	    	    // InternalDcDsl.g:2096:7: lv_environment_116_0= ruleKeyValuePair
-            	    	    {
-
-            	    	    							newCompositeNode(grammarAccess.getServiceAccess().getEnvironmentKeyValuePairParserRuleCall_3_18_3_0());
-            	    	    						
-            	    	    pushFollow(FOLLOW_20);
-            	    	    lv_environment_116_0=ruleKeyValuePair();
-
-            	    	    state._fsp--;
-
-
-            	    	    							if (current==null) {
-            	    	    								current = createModelElementForParent(grammarAccess.getServiceRule());
-            	    	    							}
-            	    	    							add(
-            	    	    								current,
-            	    	    								"environment",
-            	    	    								lv_environment_116_0,
-            	    	    								"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.KeyValuePair");
-            	    	    							afterParserOrEnumRuleCall();
-            	    	    						
-
-            	    	    }
+            	                if ( (LA47_0==RULE_YAML_SCALAR||(LA47_0>=RULE_ID && LA47_0<=RULE_INT)||LA47_0==16||(LA47_0>=18 && LA47_0<=22)||(LA47_0>=38 && LA47_0<=77)) ) {
+            	                    alt47=1;
+            	                }
 
 
-            	    	    }
-            	    	    break;
+            	                switch (alt47) {
+            	            	case 1 :
+            	            	    // InternalDcDsl.g:2245:7: (lv_environment_131_0= ruleKeyValuePair )
+            	            	    {
+            	            	    // InternalDcDsl.g:2245:7: (lv_environment_131_0= ruleKeyValuePair )
+            	            	    // InternalDcDsl.g:2246:8: lv_environment_131_0= ruleKeyValuePair
+            	            	    {
 
-            	    	default :
-            	    	    if ( cnt33 >= 1 ) break loop33;
-            	                EarlyExitException eee =
-            	                    new EarlyExitException(33, input);
-            	                throw eee;
-            	        }
-            	        cnt33++;
-            	    } while (true);
+            	            	    								newCompositeNode(grammarAccess.getServiceAccess().getEnvironmentKeyValuePairParserRuleCall_3_18_3_0_0());
+            	            	    							
+            	            	    pushFollow(FOLLOW_21);
+            	            	    lv_environment_131_0=ruleKeyValuePair();
 
-            	    this_END_BLOCK_117=(Token)match(input,RULE_END_BLOCK,FOLLOW_11); 
+            	            	    state._fsp--;
 
-            	    					newLeafNode(this_END_BLOCK_117, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_18_4());
+
+            	            	    								if (current==null) {
+            	            	    									current = createModelElementForParent(grammarAccess.getServiceRule());
+            	            	    								}
+            	            	    								add(
+            	            	    									current,
+            	            	    									"environment",
+            	            	    									lv_environment_131_0,
+            	            	    									"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.KeyValuePair");
+            	            	    								afterParserOrEnumRuleCall();
+            	            	    							
+
+            	            	    }
+
+
+            	            	    }
+            	            	    break;
+
+            	            	default :
+            	            	    if ( cnt47 >= 1 ) break loop47;
+            	                        EarlyExitException eee =
+            	                            new EarlyExitException(47, input);
+            	                        throw eee;
+            	                }
+            	                cnt47++;
+            	            } while (true);
+
+
+            	            }
+            	            break;
+            	        case 2 :
+            	            // InternalDcDsl.g:2264:6: (otherlv_132= '-' (this_BEG_BLOCK_133= RULE_BEG_BLOCK )? ( (lv_environment_134_0= ruleEnvEntry ) ) (this_END_BLOCK_135= RULE_END_BLOCK )? )+
+            	            {
+            	            // InternalDcDsl.g:2264:6: (otherlv_132= '-' (this_BEG_BLOCK_133= RULE_BEG_BLOCK )? ( (lv_environment_134_0= ruleEnvEntry ) ) (this_END_BLOCK_135= RULE_END_BLOCK )? )+
+            	            int cnt50=0;
+            	            loop50:
+            	            do {
+            	                int alt50=2;
+            	                int LA50_0 = input.LA(1);
+
+            	                if ( (LA50_0==31) ) {
+            	                    alt50=1;
+            	                }
+
+
+            	                switch (alt50) {
+            	            	case 1 :
+            	            	    // InternalDcDsl.g:2265:7: otherlv_132= '-' (this_BEG_BLOCK_133= RULE_BEG_BLOCK )? ( (lv_environment_134_0= ruleEnvEntry ) ) (this_END_BLOCK_135= RULE_END_BLOCK )?
+            	            	    {
+            	            	    otherlv_132=(Token)match(input,31,FOLLOW_12); 
+
+            	            	    							newLeafNode(otherlv_132, grammarAccess.getServiceAccess().getHyphenMinusKeyword_3_18_3_1_0());
+            	            	    						
+            	            	    // InternalDcDsl.g:2269:7: (this_BEG_BLOCK_133= RULE_BEG_BLOCK )?
+            	            	    int alt48=2;
+            	            	    int LA48_0 = input.LA(1);
+
+            	            	    if ( (LA48_0==RULE_BEG_BLOCK) ) {
+            	            	        alt48=1;
+            	            	    }
+            	            	    switch (alt48) {
+            	            	        case 1 :
+            	            	            // InternalDcDsl.g:2270:8: this_BEG_BLOCK_133= RULE_BEG_BLOCK
+            	            	            {
+            	            	            this_BEG_BLOCK_133=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_12); 
+
+            	            	            								newLeafNode(this_BEG_BLOCK_133, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_18_3_1_1());
+            	            	            							
+
+            	            	            }
+            	            	            break;
+
+            	            	    }
+
+            	            	    // InternalDcDsl.g:2275:7: ( (lv_environment_134_0= ruleEnvEntry ) )
+            	            	    // InternalDcDsl.g:2276:8: (lv_environment_134_0= ruleEnvEntry )
+            	            	    {
+            	            	    // InternalDcDsl.g:2276:8: (lv_environment_134_0= ruleEnvEntry )
+            	            	    // InternalDcDsl.g:2277:9: lv_environment_134_0= ruleEnvEntry
+            	            	    {
+
+            	            	    									newCompositeNode(grammarAccess.getServiceAccess().getEnvironmentEnvEntryParserRuleCall_3_18_3_1_2_0());
+            	            	    								
+            	            	    pushFollow(FOLLOW_16);
+            	            	    lv_environment_134_0=ruleEnvEntry();
+
+            	            	    state._fsp--;
+
+
+            	            	    									if (current==null) {
+            	            	    										current = createModelElementForParent(grammarAccess.getServiceRule());
+            	            	    									}
+            	            	    									add(
+            	            	    										current,
+            	            	    										"environment",
+            	            	    										lv_environment_134_0,
+            	            	    										"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EnvEntry");
+            	            	    									afterParserOrEnumRuleCall();
+            	            	    								
+
+            	            	    }
+
+
+            	            	    }
+
+            	            	    // InternalDcDsl.g:2294:7: (this_END_BLOCK_135= RULE_END_BLOCK )?
+            	            	    int alt49=2;
+            	            	    int LA49_0 = input.LA(1);
+
+            	            	    if ( (LA49_0==RULE_END_BLOCK) ) {
+            	            	        int LA49_1 = input.LA(2);
+
+            	            	        if ( (LA49_1==RULE_END_BLOCK) ) {
+            	            	            int LA49_3 = input.LA(3);
+
+            	            	            if ( (LA49_3==RULE_END_BLOCK) ) {
+            	            	                int LA49_5 = input.LA(4);
+
+            	            	                if ( (LA49_5==EOF) ) {
+            	            	                    int LA49_6 = input.LA(5);
+
+            	            	                    if ( (LA49_6==EOF) ) {
+            	            	                        alt49=1;
+            	            	                    }
+            	            	                }
+            	            	                else if ( ((LA49_5>=RULE_END_BLOCK && LA49_5<=RULE_INT)||(LA49_5>=23 && LA49_5<=30)) ) {
+            	            	                    alt49=1;
+            	            	                }
+            	            	            }
+            	            	            else if ( ((LA49_3>=20 && LA49_3<=22)||(LA49_3>=38 && LA49_3<=58)) ) {
+            	            	                alt49=1;
+            	            	            }
+            	            	        }
+            	            	        else if ( (LA49_1==31) ) {
+            	            	            alt49=1;
+            	            	        }
+            	            	    }
+            	            	    switch (alt49) {
+            	            	        case 1 :
+            	            	            // InternalDcDsl.g:2295:8: this_END_BLOCK_135= RULE_END_BLOCK
+            	            	            {
+            	            	            this_END_BLOCK_135=(Token)match(input,RULE_END_BLOCK,FOLLOW_16); 
+
+            	            	            								newLeafNode(this_END_BLOCK_135, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_18_3_1_3());
+            	            	            							
+
+            	            	            }
+            	            	            break;
+
+            	            	    }
+
+
+            	            	    }
+            	            	    break;
+
+            	            	default :
+            	            	    if ( cnt50 >= 1 ) break loop50;
+            	                        EarlyExitException eee =
+            	                            new EarlyExitException(50, input);
+            	                        throw eee;
+            	                }
+            	                cnt50++;
+            	            } while (true);
+
+
+            	            }
+            	            break;
+
+            	    }
+
+            	    this_END_BLOCK_136=(Token)match(input,RULE_END_BLOCK,FOLLOW_11); 
+
+            	    					newLeafNode(this_END_BLOCK_136, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_18_4());
             	    				
 
             	    }
@@ -5262,30 +6095,30 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 20 :
-            	    // InternalDcDsl.g:2119:4: (otherlv_118= 'depends_on' otherlv_119= ':' ( (lv_dependsOn_120_0= ruleDepends_on ) ) )
+            	    // InternalDcDsl.g:2308:4: (otherlv_137= 'depends_on' otherlv_138= ':' ( (lv_dependsOn_139_0= ruleDepends_on ) ) )
             	    {
-            	    // InternalDcDsl.g:2119:4: (otherlv_118= 'depends_on' otherlv_119= ':' ( (lv_dependsOn_120_0= ruleDepends_on ) ) )
-            	    // InternalDcDsl.g:2120:5: otherlv_118= 'depends_on' otherlv_119= ':' ( (lv_dependsOn_120_0= ruleDepends_on ) )
+            	    // InternalDcDsl.g:2308:4: (otherlv_137= 'depends_on' otherlv_138= ':' ( (lv_dependsOn_139_0= ruleDepends_on ) ) )
+            	    // InternalDcDsl.g:2309:5: otherlv_137= 'depends_on' otherlv_138= ':' ( (lv_dependsOn_139_0= ruleDepends_on ) )
             	    {
-            	    otherlv_118=(Token)match(input,56,FOLLOW_3); 
+            	    otherlv_137=(Token)match(input,56,FOLLOW_3); 
 
-            	    					newLeafNode(otherlv_118, grammarAccess.getServiceAccess().getDepends_onKeyword_3_19_0());
+            	    					newLeafNode(otherlv_137, grammarAccess.getServiceAccess().getDepends_onKeyword_3_19_0());
             	    				
-            	    otherlv_119=(Token)match(input,17,FOLLOW_8); 
+            	    otherlv_138=(Token)match(input,17,FOLLOW_8); 
 
-            	    					newLeafNode(otherlv_119, grammarAccess.getServiceAccess().getColonKeyword_3_19_1());
+            	    					newLeafNode(otherlv_138, grammarAccess.getServiceAccess().getColonKeyword_3_19_1());
             	    				
-            	    // InternalDcDsl.g:2128:5: ( (lv_dependsOn_120_0= ruleDepends_on ) )
-            	    // InternalDcDsl.g:2129:6: (lv_dependsOn_120_0= ruleDepends_on )
+            	    // InternalDcDsl.g:2317:5: ( (lv_dependsOn_139_0= ruleDepends_on ) )
+            	    // InternalDcDsl.g:2318:6: (lv_dependsOn_139_0= ruleDepends_on )
             	    {
-            	    // InternalDcDsl.g:2129:6: (lv_dependsOn_120_0= ruleDepends_on )
-            	    // InternalDcDsl.g:2130:7: lv_dependsOn_120_0= ruleDepends_on
+            	    // InternalDcDsl.g:2318:6: (lv_dependsOn_139_0= ruleDepends_on )
+            	    // InternalDcDsl.g:2319:7: lv_dependsOn_139_0= ruleDepends_on
             	    {
 
             	    							newCompositeNode(grammarAccess.getServiceAccess().getDependsOnDepends_onParserRuleCall_3_19_2_0());
             	    						
             	    pushFollow(FOLLOW_11);
-            	    lv_dependsOn_120_0=ruleDepends_on();
+            	    lv_dependsOn_139_0=ruleDepends_on();
 
             	    state._fsp--;
 
@@ -5296,7 +6129,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    							set(
             	    								current,
             	    								"dependsOn",
-            	    								lv_dependsOn_120_0,
+            	    								lv_dependsOn_139_0,
             	    								"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.Depends_on");
             	    							afterParserOrEnumRuleCall();
             	    						
@@ -5313,30 +6146,30 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 21 :
-            	    // InternalDcDsl.g:2149:4: (otherlv_121= 'networks' otherlv_122= ':' ( (lv_networks_123_0= ruleNetworks ) ) )
+            	    // InternalDcDsl.g:2338:4: (otherlv_140= 'networks' otherlv_141= ':' ( (lv_networks_142_0= ruleNetworks ) ) )
             	    {
-            	    // InternalDcDsl.g:2149:4: (otherlv_121= 'networks' otherlv_122= ':' ( (lv_networks_123_0= ruleNetworks ) ) )
-            	    // InternalDcDsl.g:2150:5: otherlv_121= 'networks' otherlv_122= ':' ( (lv_networks_123_0= ruleNetworks ) )
+            	    // InternalDcDsl.g:2338:4: (otherlv_140= 'networks' otherlv_141= ':' ( (lv_networks_142_0= ruleNetworks ) ) )
+            	    // InternalDcDsl.g:2339:5: otherlv_140= 'networks' otherlv_141= ':' ( (lv_networks_142_0= ruleNetworks ) )
             	    {
-            	    otherlv_121=(Token)match(input,20,FOLLOW_3); 
+            	    otherlv_140=(Token)match(input,20,FOLLOW_3); 
 
-            	    					newLeafNode(otherlv_121, grammarAccess.getServiceAccess().getNetworksKeyword_3_20_0());
+            	    					newLeafNode(otherlv_140, grammarAccess.getServiceAccess().getNetworksKeyword_3_20_0());
             	    				
-            	    otherlv_122=(Token)match(input,17,FOLLOW_8); 
+            	    otherlv_141=(Token)match(input,17,FOLLOW_8); 
 
-            	    					newLeafNode(otherlv_122, grammarAccess.getServiceAccess().getColonKeyword_3_20_1());
+            	    					newLeafNode(otherlv_141, grammarAccess.getServiceAccess().getColonKeyword_3_20_1());
             	    				
-            	    // InternalDcDsl.g:2158:5: ( (lv_networks_123_0= ruleNetworks ) )
-            	    // InternalDcDsl.g:2159:6: (lv_networks_123_0= ruleNetworks )
+            	    // InternalDcDsl.g:2347:5: ( (lv_networks_142_0= ruleNetworks ) )
+            	    // InternalDcDsl.g:2348:6: (lv_networks_142_0= ruleNetworks )
             	    {
-            	    // InternalDcDsl.g:2159:6: (lv_networks_123_0= ruleNetworks )
-            	    // InternalDcDsl.g:2160:7: lv_networks_123_0= ruleNetworks
+            	    // InternalDcDsl.g:2348:6: (lv_networks_142_0= ruleNetworks )
+            	    // InternalDcDsl.g:2349:7: lv_networks_142_0= ruleNetworks
             	    {
 
             	    							newCompositeNode(grammarAccess.getServiceAccess().getNetworksNetworksParserRuleCall_3_20_2_0());
             	    						
             	    pushFollow(FOLLOW_11);
-            	    lv_networks_123_0=ruleNetworks();
+            	    lv_networks_142_0=ruleNetworks();
 
             	    state._fsp--;
 
@@ -5347,7 +6180,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    							set(
             	    								current,
             	    								"networks",
-            	    								lv_networks_123_0,
+            	    								lv_networks_142_0,
             	    								"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.Networks");
             	    							afterParserOrEnumRuleCall();
             	    						
@@ -5364,47 +6197,47 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 22 :
-            	    // InternalDcDsl.g:2179:4: (otherlv_124= 'volumes' otherlv_125= ':' this_BEG_BLOCK_126= RULE_BEG_BLOCK ( (lv_volumes_127_0= ruleServiceVolume ) )+ this_END_BLOCK_128= RULE_END_BLOCK )
+            	    // InternalDcDsl.g:2368:4: (otherlv_143= 'volumes' otherlv_144= ':' this_BEG_BLOCK_145= RULE_BEG_BLOCK ( (lv_volumes_146_0= ruleServiceVolume ) )+ this_END_BLOCK_147= RULE_END_BLOCK )
             	    {
-            	    // InternalDcDsl.g:2179:4: (otherlv_124= 'volumes' otherlv_125= ':' this_BEG_BLOCK_126= RULE_BEG_BLOCK ( (lv_volumes_127_0= ruleServiceVolume ) )+ this_END_BLOCK_128= RULE_END_BLOCK )
-            	    // InternalDcDsl.g:2180:5: otherlv_124= 'volumes' otherlv_125= ':' this_BEG_BLOCK_126= RULE_BEG_BLOCK ( (lv_volumes_127_0= ruleServiceVolume ) )+ this_END_BLOCK_128= RULE_END_BLOCK
+            	    // InternalDcDsl.g:2368:4: (otherlv_143= 'volumes' otherlv_144= ':' this_BEG_BLOCK_145= RULE_BEG_BLOCK ( (lv_volumes_146_0= ruleServiceVolume ) )+ this_END_BLOCK_147= RULE_END_BLOCK )
+            	    // InternalDcDsl.g:2369:5: otherlv_143= 'volumes' otherlv_144= ':' this_BEG_BLOCK_145= RULE_BEG_BLOCK ( (lv_volumes_146_0= ruleServiceVolume ) )+ this_END_BLOCK_147= RULE_END_BLOCK
             	    {
-            	    otherlv_124=(Token)match(input,21,FOLLOW_3); 
+            	    otherlv_143=(Token)match(input,21,FOLLOW_3); 
 
-            	    					newLeafNode(otherlv_124, grammarAccess.getServiceAccess().getVolumesKeyword_3_21_0());
+            	    					newLeafNode(otherlv_143, grammarAccess.getServiceAccess().getVolumesKeyword_3_21_0());
             	    				
-            	    otherlv_125=(Token)match(input,17,FOLLOW_6); 
+            	    otherlv_144=(Token)match(input,17,FOLLOW_6); 
 
-            	    					newLeafNode(otherlv_125, grammarAccess.getServiceAccess().getColonKeyword_3_21_1());
+            	    					newLeafNode(otherlv_144, grammarAccess.getServiceAccess().getColonKeyword_3_21_1());
             	    				
-            	    this_BEG_BLOCK_126=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_15); 
+            	    this_BEG_BLOCK_145=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_15); 
 
-            	    					newLeafNode(this_BEG_BLOCK_126, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_21_2());
+            	    					newLeafNode(this_BEG_BLOCK_145, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_21_2());
             	    				
-            	    // InternalDcDsl.g:2192:5: ( (lv_volumes_127_0= ruleServiceVolume ) )+
-            	    int cnt34=0;
-            	    loop34:
+            	    // InternalDcDsl.g:2381:5: ( (lv_volumes_146_0= ruleServiceVolume ) )+
+            	    int cnt52=0;
+            	    loop52:
             	    do {
-            	        int alt34=2;
-            	        int LA34_0 = input.LA(1);
+            	        int alt52=2;
+            	        int LA52_0 = input.LA(1);
 
-            	        if ( (LA34_0==31) ) {
-            	            alt34=1;
+            	        if ( (LA52_0==31) ) {
+            	            alt52=1;
             	        }
 
 
-            	        switch (alt34) {
+            	        switch (alt52) {
             	    	case 1 :
-            	    	    // InternalDcDsl.g:2193:6: (lv_volumes_127_0= ruleServiceVolume )
+            	    	    // InternalDcDsl.g:2382:6: (lv_volumes_146_0= ruleServiceVolume )
             	    	    {
-            	    	    // InternalDcDsl.g:2193:6: (lv_volumes_127_0= ruleServiceVolume )
-            	    	    // InternalDcDsl.g:2194:7: lv_volumes_127_0= ruleServiceVolume
+            	    	    // InternalDcDsl.g:2382:6: (lv_volumes_146_0= ruleServiceVolume )
+            	    	    // InternalDcDsl.g:2383:7: lv_volumes_146_0= ruleServiceVolume
             	    	    {
 
             	    	    							newCompositeNode(grammarAccess.getServiceAccess().getVolumesServiceVolumeParserRuleCall_3_21_3_0());
             	    	    						
             	    	    pushFollow(FOLLOW_16);
-            	    	    lv_volumes_127_0=ruleServiceVolume();
+            	    	    lv_volumes_146_0=ruleServiceVolume();
 
             	    	    state._fsp--;
 
@@ -5415,7 +6248,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    	    							add(
             	    	    								current,
             	    	    								"volumes",
-            	    	    								lv_volumes_127_0,
+            	    	    								lv_volumes_146_0,
             	    	    								"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.ServiceVolume");
             	    	    							afterParserOrEnumRuleCall();
             	    	    						
@@ -5427,17 +6260,17 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    	    break;
 
             	    	default :
-            	    	    if ( cnt34 >= 1 ) break loop34;
+            	    	    if ( cnt52 >= 1 ) break loop52;
             	                EarlyExitException eee =
-            	                    new EarlyExitException(34, input);
+            	                    new EarlyExitException(52, input);
             	                throw eee;
             	        }
-            	        cnt34++;
+            	        cnt52++;
             	    } while (true);
 
-            	    this_END_BLOCK_128=(Token)match(input,RULE_END_BLOCK,FOLLOW_11); 
+            	    this_END_BLOCK_147=(Token)match(input,RULE_END_BLOCK,FOLLOW_11); 
 
-            	    					newLeafNode(this_END_BLOCK_128, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_21_4());
+            	    					newLeafNode(this_END_BLOCK_147, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_21_4());
             	    				
 
             	    }
@@ -5446,30 +6279,30 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 23 :
-            	    // InternalDcDsl.g:2217:4: (otherlv_129= 'healthcheck' otherlv_130= ':' ( (lv_healthcheck_131_0= ruleHealthcheck ) ) )
+            	    // InternalDcDsl.g:2406:4: (otherlv_148= 'healthcheck' otherlv_149= ':' ( (lv_healthcheck_150_0= ruleHealthcheck ) ) )
             	    {
-            	    // InternalDcDsl.g:2217:4: (otherlv_129= 'healthcheck' otherlv_130= ':' ( (lv_healthcheck_131_0= ruleHealthcheck ) ) )
-            	    // InternalDcDsl.g:2218:5: otherlv_129= 'healthcheck' otherlv_130= ':' ( (lv_healthcheck_131_0= ruleHealthcheck ) )
+            	    // InternalDcDsl.g:2406:4: (otherlv_148= 'healthcheck' otherlv_149= ':' ( (lv_healthcheck_150_0= ruleHealthcheck ) ) )
+            	    // InternalDcDsl.g:2407:5: otherlv_148= 'healthcheck' otherlv_149= ':' ( (lv_healthcheck_150_0= ruleHealthcheck ) )
             	    {
-            	    otherlv_129=(Token)match(input,57,FOLLOW_3); 
+            	    otherlv_148=(Token)match(input,57,FOLLOW_3); 
 
-            	    					newLeafNode(otherlv_129, grammarAccess.getServiceAccess().getHealthcheckKeyword_3_22_0());
+            	    					newLeafNode(otherlv_148, grammarAccess.getServiceAccess().getHealthcheckKeyword_3_22_0());
             	    				
-            	    otherlv_130=(Token)match(input,17,FOLLOW_6); 
+            	    otherlv_149=(Token)match(input,17,FOLLOW_6); 
 
-            	    					newLeafNode(otherlv_130, grammarAccess.getServiceAccess().getColonKeyword_3_22_1());
+            	    					newLeafNode(otherlv_149, grammarAccess.getServiceAccess().getColonKeyword_3_22_1());
             	    				
-            	    // InternalDcDsl.g:2226:5: ( (lv_healthcheck_131_0= ruleHealthcheck ) )
-            	    // InternalDcDsl.g:2227:6: (lv_healthcheck_131_0= ruleHealthcheck )
+            	    // InternalDcDsl.g:2415:5: ( (lv_healthcheck_150_0= ruleHealthcheck ) )
+            	    // InternalDcDsl.g:2416:6: (lv_healthcheck_150_0= ruleHealthcheck )
             	    {
-            	    // InternalDcDsl.g:2227:6: (lv_healthcheck_131_0= ruleHealthcheck )
-            	    // InternalDcDsl.g:2228:7: lv_healthcheck_131_0= ruleHealthcheck
+            	    // InternalDcDsl.g:2416:6: (lv_healthcheck_150_0= ruleHealthcheck )
+            	    // InternalDcDsl.g:2417:7: lv_healthcheck_150_0= ruleHealthcheck
             	    {
 
             	    							newCompositeNode(grammarAccess.getServiceAccess().getHealthcheckHealthcheckParserRuleCall_3_22_2_0());
             	    						
             	    pushFollow(FOLLOW_11);
-            	    lv_healthcheck_131_0=ruleHealthcheck();
+            	    lv_healthcheck_150_0=ruleHealthcheck();
 
             	    state._fsp--;
 
@@ -5480,7 +6313,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    							set(
             	    								current,
             	    								"healthcheck",
-            	    								lv_healthcheck_131_0,
+            	    								lv_healthcheck_150_0,
             	    								"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.Healthcheck");
             	    							afterParserOrEnumRuleCall();
             	    						
@@ -5497,47 +6330,66 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 24 :
-            	    // InternalDcDsl.g:2247:4: (otherlv_132= 'deploy' otherlv_133= ':' this_BEG_BLOCK_134= RULE_BEG_BLOCK ( (lv_deploy_135_0= ruleResource ) )+ this_END_BLOCK_136= RULE_END_BLOCK )
+            	    // InternalDcDsl.g:2436:4: (otherlv_151= 'deploy' otherlv_152= ':' this_BEG_BLOCK_153= RULE_BEG_BLOCK ruleKeyName otherlv_155= ':' this_BEG_BLOCK_156= RULE_BEG_BLOCK ( (lv_deploy_157_0= ruleResource ) )+ this_END_BLOCK_158= RULE_END_BLOCK this_END_BLOCK_159= RULE_END_BLOCK )
             	    {
-            	    // InternalDcDsl.g:2247:4: (otherlv_132= 'deploy' otherlv_133= ':' this_BEG_BLOCK_134= RULE_BEG_BLOCK ( (lv_deploy_135_0= ruleResource ) )+ this_END_BLOCK_136= RULE_END_BLOCK )
-            	    // InternalDcDsl.g:2248:5: otherlv_132= 'deploy' otherlv_133= ':' this_BEG_BLOCK_134= RULE_BEG_BLOCK ( (lv_deploy_135_0= ruleResource ) )+ this_END_BLOCK_136= RULE_END_BLOCK
+            	    // InternalDcDsl.g:2436:4: (otherlv_151= 'deploy' otherlv_152= ':' this_BEG_BLOCK_153= RULE_BEG_BLOCK ruleKeyName otherlv_155= ':' this_BEG_BLOCK_156= RULE_BEG_BLOCK ( (lv_deploy_157_0= ruleResource ) )+ this_END_BLOCK_158= RULE_END_BLOCK this_END_BLOCK_159= RULE_END_BLOCK )
+            	    // InternalDcDsl.g:2437:5: otherlv_151= 'deploy' otherlv_152= ':' this_BEG_BLOCK_153= RULE_BEG_BLOCK ruleKeyName otherlv_155= ':' this_BEG_BLOCK_156= RULE_BEG_BLOCK ( (lv_deploy_157_0= ruleResource ) )+ this_END_BLOCK_158= RULE_END_BLOCK this_END_BLOCK_159= RULE_END_BLOCK
             	    {
-            	    otherlv_132=(Token)match(input,58,FOLLOW_3); 
+            	    otherlv_151=(Token)match(input,58,FOLLOW_3); 
 
-            	    					newLeafNode(otherlv_132, grammarAccess.getServiceAccess().getDeployKeyword_3_23_0());
+            	    					newLeafNode(otherlv_151, grammarAccess.getServiceAccess().getDeployKeyword_3_23_0());
             	    				
-            	    otherlv_133=(Token)match(input,17,FOLLOW_6); 
+            	    otherlv_152=(Token)match(input,17,FOLLOW_6); 
 
-            	    					newLeafNode(otherlv_133, grammarAccess.getServiceAccess().getColonKeyword_3_23_1());
+            	    					newLeafNode(otherlv_152, grammarAccess.getServiceAccess().getColonKeyword_3_23_1());
             	    				
-            	    this_BEG_BLOCK_134=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_4); 
+            	    this_BEG_BLOCK_153=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_22); 
 
-            	    					newLeafNode(this_BEG_BLOCK_134, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_23_2());
+            	    					newLeafNode(this_BEG_BLOCK_153, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_23_2());
             	    				
-            	    // InternalDcDsl.g:2260:5: ( (lv_deploy_135_0= ruleResource ) )+
-            	    int cnt35=0;
-            	    loop35:
+
+            	    					newCompositeNode(grammarAccess.getServiceAccess().getKeyNameParserRuleCall_3_23_3());
+            	    				
+            	    pushFollow(FOLLOW_3);
+            	    ruleKeyName();
+
+            	    state._fsp--;
+
+
+            	    					afterParserOrEnumRuleCall();
+            	    				
+            	    otherlv_155=(Token)match(input,17,FOLLOW_6); 
+
+            	    					newLeafNode(otherlv_155, grammarAccess.getServiceAccess().getColonKeyword_3_23_4());
+            	    				
+            	    this_BEG_BLOCK_156=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_4); 
+
+            	    					newLeafNode(this_BEG_BLOCK_156, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_23_5());
+            	    				
+            	    // InternalDcDsl.g:2464:5: ( (lv_deploy_157_0= ruleResource ) )+
+            	    int cnt53=0;
+            	    loop53:
             	    do {
-            	        int alt35=2;
-            	        int LA35_0 = input.LA(1);
+            	        int alt53=2;
+            	        int LA53_0 = input.LA(1);
 
-            	        if ( ((LA35_0>=RULE_STRING && LA35_0<=RULE_INT)||(LA35_0>=23 && LA35_0<=30)) ) {
-            	            alt35=1;
+            	        if ( ((LA53_0>=RULE_STRING && LA53_0<=RULE_INT)||(LA53_0>=23 && LA53_0<=30)) ) {
+            	            alt53=1;
             	        }
 
 
-            	        switch (alt35) {
+            	        switch (alt53) {
             	    	case 1 :
-            	    	    // InternalDcDsl.g:2261:6: (lv_deploy_135_0= ruleResource )
+            	    	    // InternalDcDsl.g:2465:6: (lv_deploy_157_0= ruleResource )
             	    	    {
-            	    	    // InternalDcDsl.g:2261:6: (lv_deploy_135_0= ruleResource )
-            	    	    // InternalDcDsl.g:2262:7: lv_deploy_135_0= ruleResource
+            	    	    // InternalDcDsl.g:2465:6: (lv_deploy_157_0= ruleResource )
+            	    	    // InternalDcDsl.g:2466:7: lv_deploy_157_0= ruleResource
             	    	    {
 
-            	    	    							newCompositeNode(grammarAccess.getServiceAccess().getDeployResourceParserRuleCall_3_23_3_0());
+            	    	    							newCompositeNode(grammarAccess.getServiceAccess().getDeployResourceParserRuleCall_3_23_6_0());
             	    	    						
             	    	    pushFollow(FOLLOW_7);
-            	    	    lv_deploy_135_0=ruleResource();
+            	    	    lv_deploy_157_0=ruleResource();
 
             	    	    state._fsp--;
 
@@ -5548,7 +6400,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    	    							add(
             	    	    								current,
             	    	    								"deploy",
-            	    	    								lv_deploy_135_0,
+            	    	    								lv_deploy_157_0,
             	    	    								"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.Resource");
             	    	    							afterParserOrEnumRuleCall();
             	    	    						
@@ -5560,17 +6412,21 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    	    break;
 
             	    	default :
-            	    	    if ( cnt35 >= 1 ) break loop35;
+            	    	    if ( cnt53 >= 1 ) break loop53;
             	                EarlyExitException eee =
-            	                    new EarlyExitException(35, input);
+            	                    new EarlyExitException(53, input);
             	                throw eee;
             	        }
-            	        cnt35++;
+            	        cnt53++;
             	    } while (true);
 
-            	    this_END_BLOCK_136=(Token)match(input,RULE_END_BLOCK,FOLLOW_11); 
+            	    this_END_BLOCK_158=(Token)match(input,RULE_END_BLOCK,FOLLOW_23); 
 
-            	    					newLeafNode(this_END_BLOCK_136, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_23_4());
+            	    					newLeafNode(this_END_BLOCK_158, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_23_7());
+            	    				
+            	    this_END_BLOCK_159=(Token)match(input,RULE_END_BLOCK,FOLLOW_11); 
+
+            	    					newLeafNode(this_END_BLOCK_159, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_23_8());
             	    				
 
             	    }
@@ -5580,13 +6436,13 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop36;
+            	    break loop54;
                 }
             } while (true);
 
-            this_END_BLOCK_137=(Token)match(input,RULE_END_BLOCK,FOLLOW_2); 
+            this_END_BLOCK_160=(Token)match(input,RULE_END_BLOCK,FOLLOW_2); 
 
-            			newLeafNode(this_END_BLOCK_137, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_4());
+            			newLeafNode(this_END_BLOCK_160, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_4());
             		
 
             }
@@ -5611,7 +6467,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleServiceVolume"
-    // InternalDcDsl.g:2293:1: entryRuleServiceVolume returns [EObject current=null] : iv_ruleServiceVolume= ruleServiceVolume EOF ;
+    // InternalDcDsl.g:2501:1: entryRuleServiceVolume returns [EObject current=null] : iv_ruleServiceVolume= ruleServiceVolume EOF ;
     public final EObject entryRuleServiceVolume() throws RecognitionException {
         EObject current = null;
 
@@ -5619,8 +6475,8 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDcDsl.g:2293:54: (iv_ruleServiceVolume= ruleServiceVolume EOF )
-            // InternalDcDsl.g:2294:2: iv_ruleServiceVolume= ruleServiceVolume EOF
+            // InternalDcDsl.g:2501:54: (iv_ruleServiceVolume= ruleServiceVolume EOF )
+            // InternalDcDsl.g:2502:2: iv_ruleServiceVolume= ruleServiceVolume EOF
             {
              newCompositeNode(grammarAccess.getServiceVolumeRule()); 
             pushFollow(FOLLOW_1);
@@ -5647,7 +6503,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleServiceVolume"
-    // InternalDcDsl.g:2300:1: ruleServiceVolume returns [EObject current=null] : (otherlv_0= '-' (this_BEG_BLOCK_1= RULE_BEG_BLOCK )? ( ( () ( (lv_value_3_0= ruleEString ) ) ) | ( () ( (otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) ) ) | (otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) ) ) | (otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) ) ) | (otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) ) ) )* ) ) (this_END_BLOCK_17= RULE_END_BLOCK )? ) ;
+    // InternalDcDsl.g:2508:1: ruleServiceVolume returns [EObject current=null] : (otherlv_0= '-' (this_BEG_BLOCK_1= RULE_BEG_BLOCK )? ( ( () ( (lv_value_3_0= ruleEString ) ) ) | ( () ( (otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) ) ) | (otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) ) ) | (otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) ) ) | (otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) ) ) )* ) ) (this_END_BLOCK_17= RULE_END_BLOCK )? ) ;
     public final EObject ruleServiceVolume() throws RecognitionException {
         EObject current = null;
 
@@ -5677,28 +6533,28 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDcDsl.g:2306:2: ( (otherlv_0= '-' (this_BEG_BLOCK_1= RULE_BEG_BLOCK )? ( ( () ( (lv_value_3_0= ruleEString ) ) ) | ( () ( (otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) ) ) | (otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) ) ) | (otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) ) ) | (otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) ) ) )* ) ) (this_END_BLOCK_17= RULE_END_BLOCK )? ) )
-            // InternalDcDsl.g:2307:2: (otherlv_0= '-' (this_BEG_BLOCK_1= RULE_BEG_BLOCK )? ( ( () ( (lv_value_3_0= ruleEString ) ) ) | ( () ( (otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) ) ) | (otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) ) ) | (otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) ) ) | (otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) ) ) )* ) ) (this_END_BLOCK_17= RULE_END_BLOCK )? )
+            // InternalDcDsl.g:2514:2: ( (otherlv_0= '-' (this_BEG_BLOCK_1= RULE_BEG_BLOCK )? ( ( () ( (lv_value_3_0= ruleEString ) ) ) | ( () ( (otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) ) ) | (otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) ) ) | (otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) ) ) | (otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) ) ) )* ) ) (this_END_BLOCK_17= RULE_END_BLOCK )? ) )
+            // InternalDcDsl.g:2515:2: (otherlv_0= '-' (this_BEG_BLOCK_1= RULE_BEG_BLOCK )? ( ( () ( (lv_value_3_0= ruleEString ) ) ) | ( () ( (otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) ) ) | (otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) ) ) | (otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) ) ) | (otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) ) ) )* ) ) (this_END_BLOCK_17= RULE_END_BLOCK )? )
             {
-            // InternalDcDsl.g:2307:2: (otherlv_0= '-' (this_BEG_BLOCK_1= RULE_BEG_BLOCK )? ( ( () ( (lv_value_3_0= ruleEString ) ) ) | ( () ( (otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) ) ) | (otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) ) ) | (otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) ) ) | (otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) ) ) )* ) ) (this_END_BLOCK_17= RULE_END_BLOCK )? )
-            // InternalDcDsl.g:2308:3: otherlv_0= '-' (this_BEG_BLOCK_1= RULE_BEG_BLOCK )? ( ( () ( (lv_value_3_0= ruleEString ) ) ) | ( () ( (otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) ) ) | (otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) ) ) | (otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) ) ) | (otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) ) ) )* ) ) (this_END_BLOCK_17= RULE_END_BLOCK )?
+            // InternalDcDsl.g:2515:2: (otherlv_0= '-' (this_BEG_BLOCK_1= RULE_BEG_BLOCK )? ( ( () ( (lv_value_3_0= ruleEString ) ) ) | ( () ( (otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) ) ) | (otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) ) ) | (otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) ) ) | (otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) ) ) )* ) ) (this_END_BLOCK_17= RULE_END_BLOCK )? )
+            // InternalDcDsl.g:2516:3: otherlv_0= '-' (this_BEG_BLOCK_1= RULE_BEG_BLOCK )? ( ( () ( (lv_value_3_0= ruleEString ) ) ) | ( () ( (otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) ) ) | (otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) ) ) | (otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) ) ) | (otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) ) ) )* ) ) (this_END_BLOCK_17= RULE_END_BLOCK )?
             {
-            otherlv_0=(Token)match(input,31,FOLLOW_21); 
+            otherlv_0=(Token)match(input,31,FOLLOW_24); 
 
             			newLeafNode(otherlv_0, grammarAccess.getServiceVolumeAccess().getHyphenMinusKeyword_0());
             		
-            // InternalDcDsl.g:2312:3: (this_BEG_BLOCK_1= RULE_BEG_BLOCK )?
-            int alt37=2;
-            int LA37_0 = input.LA(1);
+            // InternalDcDsl.g:2520:3: (this_BEG_BLOCK_1= RULE_BEG_BLOCK )?
+            int alt55=2;
+            int LA55_0 = input.LA(1);
 
-            if ( (LA37_0==RULE_BEG_BLOCK) ) {
-                alt37=1;
+            if ( (LA55_0==RULE_BEG_BLOCK) ) {
+                alt55=1;
             }
-            switch (alt37) {
+            switch (alt55) {
                 case 1 :
-                    // InternalDcDsl.g:2313:4: this_BEG_BLOCK_1= RULE_BEG_BLOCK
+                    // InternalDcDsl.g:2521:4: this_BEG_BLOCK_1= RULE_BEG_BLOCK
                     {
-                    this_BEG_BLOCK_1=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_22); 
+                    this_BEG_BLOCK_1=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_25); 
 
                     				newLeafNode(this_BEG_BLOCK_1, grammarAccess.getServiceVolumeAccess().getBEG_BLOCKTerminalRuleCall_1());
                     			
@@ -5708,31 +6564,31 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDcDsl.g:2318:3: ( ( () ( (lv_value_3_0= ruleEString ) ) ) | ( () ( (otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) ) ) | (otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) ) ) | (otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) ) ) | (otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) ) ) )* ) )
-            int alt39=2;
-            int LA39_0 = input.LA(1);
+            // InternalDcDsl.g:2526:3: ( ( () ( (lv_value_3_0= ruleEString ) ) ) | ( () ( (otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) ) ) | (otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) ) ) | (otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) ) ) | (otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) ) ) )* ) )
+            int alt57=2;
+            int LA57_0 = input.LA(1);
 
-            if ( ((LA39_0>=RULE_STRING && LA39_0<=RULE_INT)||(LA39_0>=23 && LA39_0<=30)) ) {
-                alt39=1;
+            if ( ((LA57_0>=RULE_STRING && LA57_0<=RULE_INT)||(LA57_0>=23 && LA57_0<=30)) ) {
+                alt57=1;
             }
-            else if ( (LA39_0==EOF||LA39_0==RULE_END_BLOCK||LA39_0==31||LA39_0==61||(LA39_0>=68 && LA39_0<=70)) ) {
-                alt39=2;
+            else if ( (LA57_0==EOF||LA57_0==RULE_END_BLOCK||LA57_0==31||LA57_0==61||(LA57_0>=68 && LA57_0<=70)) ) {
+                alt57=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 39, 0, input);
+                    new NoViableAltException("", 57, 0, input);
 
                 throw nvae;
             }
-            switch (alt39) {
+            switch (alt57) {
                 case 1 :
-                    // InternalDcDsl.g:2319:4: ( () ( (lv_value_3_0= ruleEString ) ) )
+                    // InternalDcDsl.g:2527:4: ( () ( (lv_value_3_0= ruleEString ) ) )
                     {
-                    // InternalDcDsl.g:2319:4: ( () ( (lv_value_3_0= ruleEString ) ) )
-                    // InternalDcDsl.g:2320:5: () ( (lv_value_3_0= ruleEString ) )
+                    // InternalDcDsl.g:2527:4: ( () ( (lv_value_3_0= ruleEString ) ) )
+                    // InternalDcDsl.g:2528:5: () ( (lv_value_3_0= ruleEString ) )
                     {
-                    // InternalDcDsl.g:2320:5: ()
-                    // InternalDcDsl.g:2321:6: 
+                    // InternalDcDsl.g:2528:5: ()
+                    // InternalDcDsl.g:2529:6: 
                     {
 
                     						current = forceCreateModelElement(
@@ -5742,16 +6598,16 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalDcDsl.g:2327:5: ( (lv_value_3_0= ruleEString ) )
-                    // InternalDcDsl.g:2328:6: (lv_value_3_0= ruleEString )
+                    // InternalDcDsl.g:2535:5: ( (lv_value_3_0= ruleEString ) )
+                    // InternalDcDsl.g:2536:6: (lv_value_3_0= ruleEString )
                     {
-                    // InternalDcDsl.g:2328:6: (lv_value_3_0= ruleEString )
-                    // InternalDcDsl.g:2329:7: lv_value_3_0= ruleEString
+                    // InternalDcDsl.g:2536:6: (lv_value_3_0= ruleEString )
+                    // InternalDcDsl.g:2537:7: lv_value_3_0= ruleEString
                     {
 
                     							newCompositeNode(grammarAccess.getServiceVolumeAccess().getValueEStringParserRuleCall_2_0_1_0());
                     						
-                    pushFollow(FOLLOW_23);
+                    pushFollow(FOLLOW_26);
                     lv_value_3_0=ruleEString();
 
                     state._fsp--;
@@ -5780,13 +6636,13 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDcDsl.g:2348:4: ( () ( (otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) ) ) | (otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) ) ) | (otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) ) ) | (otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) ) ) )* )
+                    // InternalDcDsl.g:2556:4: ( () ( (otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) ) ) | (otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) ) ) | (otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) ) ) | (otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) ) ) )* )
                     {
-                    // InternalDcDsl.g:2348:4: ( () ( (otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) ) ) | (otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) ) ) | (otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) ) ) | (otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) ) ) )* )
-                    // InternalDcDsl.g:2349:5: () ( (otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) ) ) | (otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) ) ) | (otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) ) ) | (otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) ) ) )*
+                    // InternalDcDsl.g:2556:4: ( () ( (otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) ) ) | (otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) ) ) | (otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) ) ) | (otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) ) ) )* )
+                    // InternalDcDsl.g:2557:5: () ( (otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) ) ) | (otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) ) ) | (otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) ) ) | (otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) ) ) )*
                     {
-                    // InternalDcDsl.g:2349:5: ()
-                    // InternalDcDsl.g:2350:6: 
+                    // InternalDcDsl.g:2557:5: ()
+                    // InternalDcDsl.g:2558:6: 
                     {
 
                     						current = forceCreateModelElement(
@@ -5796,40 +6652,40 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalDcDsl.g:2356:5: ( (otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) ) ) | (otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) ) ) | (otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) ) ) | (otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) ) ) )*
-                    loop38:
+                    // InternalDcDsl.g:2564:5: ( (otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) ) ) | (otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) ) ) | (otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) ) ) | (otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) ) ) )*
+                    loop56:
                     do {
-                        int alt38=5;
+                        int alt56=5;
                         switch ( input.LA(1) ) {
                         case 68:
                             {
-                            alt38=1;
+                            alt56=1;
                             }
                             break;
                         case 69:
                             {
-                            alt38=2;
+                            alt56=2;
                             }
                             break;
                         case 61:
                             {
-                            alt38=3;
+                            alt56=3;
                             }
                             break;
                         case 70:
                             {
-                            alt38=4;
+                            alt56=4;
                             }
                             break;
 
                         }
 
-                        switch (alt38) {
+                        switch (alt56) {
                     	case 1 :
-                    	    // InternalDcDsl.g:2357:6: (otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) ) )
+                    	    // InternalDcDsl.g:2565:6: (otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) ) )
                     	    {
-                    	    // InternalDcDsl.g:2357:6: (otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) ) )
-                    	    // InternalDcDsl.g:2358:7: otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) )
+                    	    // InternalDcDsl.g:2565:6: (otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) ) )
+                    	    // InternalDcDsl.g:2566:7: otherlv_5= 'type' otherlv_6= ':' ( (lv_type_7_0= ruleEString ) )
                     	    {
                     	    otherlv_5=(Token)match(input,68,FOLLOW_3); 
 
@@ -5839,16 +6695,16 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
                     	    							newLeafNode(otherlv_6, grammarAccess.getServiceVolumeAccess().getColonKeyword_2_1_1_0_1());
                     	    						
-                    	    // InternalDcDsl.g:2366:7: ( (lv_type_7_0= ruleEString ) )
-                    	    // InternalDcDsl.g:2367:8: (lv_type_7_0= ruleEString )
+                    	    // InternalDcDsl.g:2574:7: ( (lv_type_7_0= ruleEString ) )
+                    	    // InternalDcDsl.g:2575:8: (lv_type_7_0= ruleEString )
                     	    {
-                    	    // InternalDcDsl.g:2367:8: (lv_type_7_0= ruleEString )
-                    	    // InternalDcDsl.g:2368:9: lv_type_7_0= ruleEString
+                    	    // InternalDcDsl.g:2575:8: (lv_type_7_0= ruleEString )
+                    	    // InternalDcDsl.g:2576:9: lv_type_7_0= ruleEString
                     	    {
 
                     	    									newCompositeNode(grammarAccess.getServiceVolumeAccess().getTypeEStringParserRuleCall_2_1_1_0_2_0());
                     	    								
-                    	    pushFollow(FOLLOW_24);
+                    	    pushFollow(FOLLOW_27);
                     	    lv_type_7_0=ruleEString();
 
                     	    state._fsp--;
@@ -5877,10 +6733,10 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalDcDsl.g:2387:6: (otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) ) )
+                    	    // InternalDcDsl.g:2595:6: (otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) ) )
                     	    {
-                    	    // InternalDcDsl.g:2387:6: (otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) ) )
-                    	    // InternalDcDsl.g:2388:7: otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) )
+                    	    // InternalDcDsl.g:2595:6: (otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) ) )
+                    	    // InternalDcDsl.g:2596:7: otherlv_8= 'source' otherlv_9= ':' ( (lv_source_10_0= ruleEString ) )
                     	    {
                     	    otherlv_8=(Token)match(input,69,FOLLOW_3); 
 
@@ -5890,16 +6746,16 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
                     	    							newLeafNode(otherlv_9, grammarAccess.getServiceVolumeAccess().getColonKeyword_2_1_1_1_1());
                     	    						
-                    	    // InternalDcDsl.g:2396:7: ( (lv_source_10_0= ruleEString ) )
-                    	    // InternalDcDsl.g:2397:8: (lv_source_10_0= ruleEString )
+                    	    // InternalDcDsl.g:2604:7: ( (lv_source_10_0= ruleEString ) )
+                    	    // InternalDcDsl.g:2605:8: (lv_source_10_0= ruleEString )
                     	    {
-                    	    // InternalDcDsl.g:2397:8: (lv_source_10_0= ruleEString )
-                    	    // InternalDcDsl.g:2398:9: lv_source_10_0= ruleEString
+                    	    // InternalDcDsl.g:2605:8: (lv_source_10_0= ruleEString )
+                    	    // InternalDcDsl.g:2606:9: lv_source_10_0= ruleEString
                     	    {
 
                     	    									newCompositeNode(grammarAccess.getServiceVolumeAccess().getSourceEStringParserRuleCall_2_1_1_1_2_0());
                     	    								
-                    	    pushFollow(FOLLOW_24);
+                    	    pushFollow(FOLLOW_27);
                     	    lv_source_10_0=ruleEString();
 
                     	    state._fsp--;
@@ -5928,10 +6784,10 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
                     	    }
                     	    break;
                     	case 3 :
-                    	    // InternalDcDsl.g:2417:6: (otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) ) )
+                    	    // InternalDcDsl.g:2625:6: (otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) ) )
                     	    {
-                    	    // InternalDcDsl.g:2417:6: (otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) ) )
-                    	    // InternalDcDsl.g:2418:7: otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) )
+                    	    // InternalDcDsl.g:2625:6: (otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) ) )
+                    	    // InternalDcDsl.g:2626:7: otherlv_11= 'target' otherlv_12= ':' ( (lv_target_13_0= ruleEString ) )
                     	    {
                     	    otherlv_11=(Token)match(input,61,FOLLOW_3); 
 
@@ -5941,16 +6797,16 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
                     	    							newLeafNode(otherlv_12, grammarAccess.getServiceVolumeAccess().getColonKeyword_2_1_1_2_1());
                     	    						
-                    	    // InternalDcDsl.g:2426:7: ( (lv_target_13_0= ruleEString ) )
-                    	    // InternalDcDsl.g:2427:8: (lv_target_13_0= ruleEString )
+                    	    // InternalDcDsl.g:2634:7: ( (lv_target_13_0= ruleEString ) )
+                    	    // InternalDcDsl.g:2635:8: (lv_target_13_0= ruleEString )
                     	    {
-                    	    // InternalDcDsl.g:2427:8: (lv_target_13_0= ruleEString )
-                    	    // InternalDcDsl.g:2428:9: lv_target_13_0= ruleEString
+                    	    // InternalDcDsl.g:2635:8: (lv_target_13_0= ruleEString )
+                    	    // InternalDcDsl.g:2636:9: lv_target_13_0= ruleEString
                     	    {
 
                     	    									newCompositeNode(grammarAccess.getServiceVolumeAccess().getTargetEStringParserRuleCall_2_1_1_2_2_0());
                     	    								
-                    	    pushFollow(FOLLOW_24);
+                    	    pushFollow(FOLLOW_27);
                     	    lv_target_13_0=ruleEString();
 
                     	    state._fsp--;
@@ -5979,10 +6835,10 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
                     	    }
                     	    break;
                     	case 4 :
-                    	    // InternalDcDsl.g:2447:6: (otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) ) )
+                    	    // InternalDcDsl.g:2655:6: (otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) ) )
                     	    {
-                    	    // InternalDcDsl.g:2447:6: (otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) ) )
-                    	    // InternalDcDsl.g:2448:7: otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) )
+                    	    // InternalDcDsl.g:2655:6: (otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) ) )
+                    	    // InternalDcDsl.g:2656:7: otherlv_14= 'read_only' otherlv_15= ':' ( (lv_readOnly_16_0= ruleEBoolean ) )
                     	    {
                     	    otherlv_14=(Token)match(input,70,FOLLOW_3); 
 
@@ -5992,16 +6848,16 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
                     	    							newLeafNode(otherlv_15, grammarAccess.getServiceVolumeAccess().getColonKeyword_2_1_1_3_1());
                     	    						
-                    	    // InternalDcDsl.g:2456:7: ( (lv_readOnly_16_0= ruleEBoolean ) )
-                    	    // InternalDcDsl.g:2457:8: (lv_readOnly_16_0= ruleEBoolean )
+                    	    // InternalDcDsl.g:2664:7: ( (lv_readOnly_16_0= ruleEBoolean ) )
+                    	    // InternalDcDsl.g:2665:8: (lv_readOnly_16_0= ruleEBoolean )
                     	    {
-                    	    // InternalDcDsl.g:2457:8: (lv_readOnly_16_0= ruleEBoolean )
-                    	    // InternalDcDsl.g:2458:9: lv_readOnly_16_0= ruleEBoolean
+                    	    // InternalDcDsl.g:2665:8: (lv_readOnly_16_0= ruleEBoolean )
+                    	    // InternalDcDsl.g:2666:9: lv_readOnly_16_0= ruleEBoolean
                     	    {
 
                     	    									newCompositeNode(grammarAccess.getServiceVolumeAccess().getReadOnlyEBooleanParserRuleCall_2_1_1_3_2_0());
                     	    								
-                    	    pushFollow(FOLLOW_24);
+                    	    pushFollow(FOLLOW_27);
                     	    lv_readOnly_16_0=ruleEBoolean();
 
                     	    state._fsp--;
@@ -6031,7 +6887,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop38;
+                    	    break loop56;
                         }
                     } while (true);
 
@@ -6044,41 +6900,41 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDcDsl.g:2479:3: (this_END_BLOCK_17= RULE_END_BLOCK )?
-            int alt40=2;
-            int LA40_0 = input.LA(1);
+            // InternalDcDsl.g:2687:3: (this_END_BLOCK_17= RULE_END_BLOCK )?
+            int alt58=2;
+            int LA58_0 = input.LA(1);
 
-            if ( (LA40_0==RULE_END_BLOCK) ) {
-                int LA40_1 = input.LA(2);
+            if ( (LA58_0==RULE_END_BLOCK) ) {
+                int LA58_1 = input.LA(2);
 
-                if ( (LA40_1==RULE_END_BLOCK) ) {
-                    int LA40_3 = input.LA(3);
+                if ( (LA58_1==RULE_END_BLOCK) ) {
+                    int LA58_3 = input.LA(3);
 
-                    if ( (LA40_3==RULE_END_BLOCK) ) {
-                        int LA40_5 = input.LA(4);
+                    if ( (LA58_3==RULE_END_BLOCK) ) {
+                        int LA58_5 = input.LA(4);
 
-                        if ( (LA40_5==EOF) ) {
-                            int LA40_6 = input.LA(5);
+                        if ( (LA58_5==EOF) ) {
+                            int LA58_6 = input.LA(5);
 
-                            if ( (LA40_6==EOF) ) {
-                                alt40=1;
+                            if ( (LA58_6==EOF) ) {
+                                alt58=1;
                             }
                         }
-                        else if ( ((LA40_5>=RULE_END_BLOCK && LA40_5<=RULE_INT)||(LA40_5>=23 && LA40_5<=30)) ) {
-                            alt40=1;
+                        else if ( ((LA58_5>=RULE_END_BLOCK && LA58_5<=RULE_INT)||(LA58_5>=23 && LA58_5<=30)) ) {
+                            alt58=1;
                         }
                     }
-                    else if ( ((LA40_3>=20 && LA40_3<=22)||(LA40_3>=38 && LA40_3<=58)) ) {
-                        alt40=1;
+                    else if ( ((LA58_3>=20 && LA58_3<=22)||(LA58_3>=38 && LA58_3<=58)) ) {
+                        alt58=1;
                     }
                 }
-                else if ( (LA40_1==EOF||LA40_1==31) ) {
-                    alt40=1;
+                else if ( (LA58_1==EOF||LA58_1==31) ) {
+                    alt58=1;
                 }
             }
-            switch (alt40) {
+            switch (alt58) {
                 case 1 :
-                    // InternalDcDsl.g:2480:4: this_END_BLOCK_17= RULE_END_BLOCK
+                    // InternalDcDsl.g:2688:4: this_END_BLOCK_17= RULE_END_BLOCK
                     {
                     this_END_BLOCK_17=(Token)match(input,RULE_END_BLOCK,FOLLOW_2); 
 
@@ -6113,7 +6969,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNamedVolume"
-    // InternalDcDsl.g:2489:1: entryRuleNamedVolume returns [EObject current=null] : iv_ruleNamedVolume= ruleNamedVolume EOF ;
+    // InternalDcDsl.g:2697:1: entryRuleNamedVolume returns [EObject current=null] : iv_ruleNamedVolume= ruleNamedVolume EOF ;
     public final EObject entryRuleNamedVolume() throws RecognitionException {
         EObject current = null;
 
@@ -6121,8 +6977,8 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDcDsl.g:2489:52: (iv_ruleNamedVolume= ruleNamedVolume EOF )
-            // InternalDcDsl.g:2490:2: iv_ruleNamedVolume= ruleNamedVolume EOF
+            // InternalDcDsl.g:2697:52: (iv_ruleNamedVolume= ruleNamedVolume EOF )
+            // InternalDcDsl.g:2698:2: iv_ruleNamedVolume= ruleNamedVolume EOF
             {
              newCompositeNode(grammarAccess.getNamedVolumeRule()); 
             pushFollow(FOLLOW_1);
@@ -6149,7 +7005,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNamedVolume"
-    // InternalDcDsl.g:2496:1: ruleNamedVolume returns [EObject current=null] : ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' ) ;
+    // InternalDcDsl.g:2704:1: ruleNamedVolume returns [EObject current=null] : ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' ( ruleEString )? ) ;
     public final EObject ruleNamedVolume() throws RecognitionException {
         EObject current = null;
 
@@ -6161,17 +7017,17 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDcDsl.g:2502:2: ( ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' ) )
-            // InternalDcDsl.g:2503:2: ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' )
+            // InternalDcDsl.g:2710:2: ( ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' ( ruleEString )? ) )
+            // InternalDcDsl.g:2711:2: ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' ( ruleEString )? )
             {
-            // InternalDcDsl.g:2503:2: ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' )
-            // InternalDcDsl.g:2504:3: ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':'
+            // InternalDcDsl.g:2711:2: ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' ( ruleEString )? )
+            // InternalDcDsl.g:2712:3: ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' ( ruleEString )?
             {
-            // InternalDcDsl.g:2504:3: ( (lv_id_0_0= ruleEString ) )
-            // InternalDcDsl.g:2505:4: (lv_id_0_0= ruleEString )
+            // InternalDcDsl.g:2712:3: ( (lv_id_0_0= ruleEString ) )
+            // InternalDcDsl.g:2713:4: (lv_id_0_0= ruleEString )
             {
-            // InternalDcDsl.g:2505:4: (lv_id_0_0= ruleEString )
-            // InternalDcDsl.g:2506:5: lv_id_0_0= ruleEString
+            // InternalDcDsl.g:2713:4: (lv_id_0_0= ruleEString )
+            // InternalDcDsl.g:2714:5: lv_id_0_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getNamedVolumeAccess().getIdEStringParserRuleCall_0_0());
@@ -6198,10 +7054,34 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,17,FOLLOW_2); 
+            otherlv_1=(Token)match(input,17,FOLLOW_28); 
 
             			newLeafNode(otherlv_1, grammarAccess.getNamedVolumeAccess().getColonKeyword_1());
             		
+            // InternalDcDsl.g:2735:3: ( ruleEString )?
+            int alt59=2;
+            alt59 = dfa59.predict(input);
+            switch (alt59) {
+                case 1 :
+                    // InternalDcDsl.g:2736:4: ruleEString
+                    {
+
+                    				newCompositeNode(grammarAccess.getNamedVolumeAccess().getEStringParserRuleCall_2());
+                    			
+                    pushFollow(FOLLOW_2);
+                    ruleEString();
+
+                    state._fsp--;
+
+
+                    				afterParserOrEnumRuleCall();
+                    			
+
+                    }
+                    break;
+
+            }
+
 
             }
 
@@ -6225,7 +7105,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBuild"
-    // InternalDcDsl.g:2531:1: entryRuleBuild returns [EObject current=null] : iv_ruleBuild= ruleBuild EOF ;
+    // InternalDcDsl.g:2748:1: entryRuleBuild returns [EObject current=null] : iv_ruleBuild= ruleBuild EOF ;
     public final EObject entryRuleBuild() throws RecognitionException {
         EObject current = null;
 
@@ -6233,8 +7113,8 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDcDsl.g:2531:46: (iv_ruleBuild= ruleBuild EOF )
-            // InternalDcDsl.g:2532:2: iv_ruleBuild= ruleBuild EOF
+            // InternalDcDsl.g:2748:46: (iv_ruleBuild= ruleBuild EOF )
+            // InternalDcDsl.g:2749:2: iv_ruleBuild= ruleBuild EOF
             {
              newCompositeNode(grammarAccess.getBuildRule()); 
             pushFollow(FOLLOW_1);
@@ -6261,7 +7141,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBuild"
-    // InternalDcDsl.g:2538:1: ruleBuild returns [EObject current=null] : (this_BuildObject_0= ruleBuildObject | this_BuildValue_1= ruleBuildValue ) ;
+    // InternalDcDsl.g:2755:1: ruleBuild returns [EObject current=null] : (this_BuildObject_0= ruleBuildObject | this_BuildValue_1= ruleBuildValue ) ;
     public final EObject ruleBuild() throws RecognitionException {
         EObject current = null;
 
@@ -6274,28 +7154,28 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDcDsl.g:2544:2: ( (this_BuildObject_0= ruleBuildObject | this_BuildValue_1= ruleBuildValue ) )
-            // InternalDcDsl.g:2545:2: (this_BuildObject_0= ruleBuildObject | this_BuildValue_1= ruleBuildValue )
+            // InternalDcDsl.g:2761:2: ( (this_BuildObject_0= ruleBuildObject | this_BuildValue_1= ruleBuildValue ) )
+            // InternalDcDsl.g:2762:2: (this_BuildObject_0= ruleBuildObject | this_BuildValue_1= ruleBuildValue )
             {
-            // InternalDcDsl.g:2545:2: (this_BuildObject_0= ruleBuildObject | this_BuildValue_1= ruleBuildValue )
-            int alt41=2;
-            int LA41_0 = input.LA(1);
+            // InternalDcDsl.g:2762:2: (this_BuildObject_0= ruleBuildObject | this_BuildValue_1= ruleBuildValue )
+            int alt60=2;
+            int LA60_0 = input.LA(1);
 
-            if ( (LA41_0==RULE_BEG_BLOCK) ) {
-                alt41=1;
+            if ( (LA60_0==RULE_BEG_BLOCK) ) {
+                alt60=1;
             }
-            else if ( ((LA41_0>=RULE_STRING && LA41_0<=RULE_INT)||(LA41_0>=23 && LA41_0<=30)) ) {
-                alt41=2;
+            else if ( ((LA60_0>=RULE_STRING && LA60_0<=RULE_INT)||(LA60_0>=23 && LA60_0<=30)) ) {
+                alt60=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 41, 0, input);
+                    new NoViableAltException("", 60, 0, input);
 
                 throw nvae;
             }
-            switch (alt41) {
+            switch (alt60) {
                 case 1 :
-                    // InternalDcDsl.g:2546:3: this_BuildObject_0= ruleBuildObject
+                    // InternalDcDsl.g:2763:3: this_BuildObject_0= ruleBuildObject
                     {
 
                     			newCompositeNode(grammarAccess.getBuildAccess().getBuildObjectParserRuleCall_0());
@@ -6313,7 +7193,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDcDsl.g:2555:3: this_BuildValue_1= ruleBuildValue
+                    // InternalDcDsl.g:2772:3: this_BuildValue_1= ruleBuildValue
                     {
 
                     			newCompositeNode(grammarAccess.getBuildAccess().getBuildValueParserRuleCall_1());
@@ -6353,7 +7233,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBuildValue"
-    // InternalDcDsl.g:2567:1: entryRuleBuildValue returns [EObject current=null] : iv_ruleBuildValue= ruleBuildValue EOF ;
+    // InternalDcDsl.g:2784:1: entryRuleBuildValue returns [EObject current=null] : iv_ruleBuildValue= ruleBuildValue EOF ;
     public final EObject entryRuleBuildValue() throws RecognitionException {
         EObject current = null;
 
@@ -6361,8 +7241,8 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDcDsl.g:2567:51: (iv_ruleBuildValue= ruleBuildValue EOF )
-            // InternalDcDsl.g:2568:2: iv_ruleBuildValue= ruleBuildValue EOF
+            // InternalDcDsl.g:2784:51: (iv_ruleBuildValue= ruleBuildValue EOF )
+            // InternalDcDsl.g:2785:2: iv_ruleBuildValue= ruleBuildValue EOF
             {
              newCompositeNode(grammarAccess.getBuildValueRule()); 
             pushFollow(FOLLOW_1);
@@ -6389,7 +7269,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBuildValue"
-    // InternalDcDsl.g:2574:1: ruleBuildValue returns [EObject current=null] : ( (lv_value_0_0= ruleEString ) ) ;
+    // InternalDcDsl.g:2791:1: ruleBuildValue returns [EObject current=null] : ( (lv_value_0_0= ruleEString ) ) ;
     public final EObject ruleBuildValue() throws RecognitionException {
         EObject current = null;
 
@@ -6400,14 +7280,14 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDcDsl.g:2580:2: ( ( (lv_value_0_0= ruleEString ) ) )
-            // InternalDcDsl.g:2581:2: ( (lv_value_0_0= ruleEString ) )
+            // InternalDcDsl.g:2797:2: ( ( (lv_value_0_0= ruleEString ) ) )
+            // InternalDcDsl.g:2798:2: ( (lv_value_0_0= ruleEString ) )
             {
-            // InternalDcDsl.g:2581:2: ( (lv_value_0_0= ruleEString ) )
-            // InternalDcDsl.g:2582:3: (lv_value_0_0= ruleEString )
+            // InternalDcDsl.g:2798:2: ( (lv_value_0_0= ruleEString ) )
+            // InternalDcDsl.g:2799:3: (lv_value_0_0= ruleEString )
             {
-            // InternalDcDsl.g:2582:3: (lv_value_0_0= ruleEString )
-            // InternalDcDsl.g:2583:4: lv_value_0_0= ruleEString
+            // InternalDcDsl.g:2799:3: (lv_value_0_0= ruleEString )
+            // InternalDcDsl.g:2800:4: lv_value_0_0= ruleEString
             {
 
             				newCompositeNode(grammarAccess.getBuildValueAccess().getValueEStringParserRuleCall_0());
@@ -6454,7 +7334,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBuildObject"
-    // InternalDcDsl.g:2603:1: entryRuleBuildObject returns [EObject current=null] : iv_ruleBuildObject= ruleBuildObject EOF ;
+    // InternalDcDsl.g:2820:1: entryRuleBuildObject returns [EObject current=null] : iv_ruleBuildObject= ruleBuildObject EOF ;
     public final EObject entryRuleBuildObject() throws RecognitionException {
         EObject current = null;
 
@@ -6462,8 +7342,8 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDcDsl.g:2603:52: (iv_ruleBuildObject= ruleBuildObject EOF )
-            // InternalDcDsl.g:2604:2: iv_ruleBuildObject= ruleBuildObject EOF
+            // InternalDcDsl.g:2820:52: (iv_ruleBuildObject= ruleBuildObject EOF )
+            // InternalDcDsl.g:2821:2: iv_ruleBuildObject= ruleBuildObject EOF
             {
              newCompositeNode(grammarAccess.getBuildObjectRule()); 
             pushFollow(FOLLOW_1);
@@ -6490,7 +7370,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBuildObject"
-    // InternalDcDsl.g:2610:1: ruleBuildObject returns [EObject current=null] : ( () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (otherlv_2= 'context' otherlv_3= ':' ( (lv_context_4_0= ruleEString ) ) ) | (otherlv_5= 'dockerfile' otherlv_6= ':' ( (lv_dockerfile_7_0= ruleEString ) ) ) | (otherlv_8= 'target' otherlv_9= ':' ( (lv_target_10_0= ruleEString ) ) ) | (otherlv_11= 'args' otherlv_12= ':' ( (this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' ( (lv_args_15_0= ruleEString ) ) )+ this_END_BLOCK_16= RULE_END_BLOCK ) | (otherlv_17= '[' ( (lv_args_18_0= ruleEString ) ) (otherlv_19= ',' ( (lv_args_20_0= ruleEString ) ) )* otherlv_21= ']' ) ) ) )* this_END_BLOCK_22= RULE_END_BLOCK ) ;
+    // InternalDcDsl.g:2827:1: ruleBuildObject returns [EObject current=null] : ( () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (otherlv_2= 'context' otherlv_3= ':' ( (lv_context_4_0= ruleEString ) ) ) | (otherlv_5= 'dockerfile' otherlv_6= ':' ( (lv_dockerfile_7_0= ruleEString ) ) ) | (otherlv_8= 'target' otherlv_9= ':' ( (lv_target_10_0= ruleEString ) ) ) | (otherlv_11= 'args' otherlv_12= ':' ( (this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' (this_BEG_BLOCK_15= RULE_BEG_BLOCK )? ( (lv_args_16_0= ruleEString ) ) (this_END_BLOCK_17= RULE_END_BLOCK )? )+ this_END_BLOCK_18= RULE_END_BLOCK ) | (otherlv_19= '[' ( (lv_args_20_0= ruleEString ) ) (otherlv_21= ',' ( (lv_args_22_0= ruleEString ) ) )* otherlv_23= ']' ) ) ) )* this_END_BLOCK_24= RULE_END_BLOCK ) ;
     public final EObject ruleBuildObject() throws RecognitionException {
         EObject current = null;
 
@@ -6505,36 +7385,38 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
         Token otherlv_12=null;
         Token this_BEG_BLOCK_13=null;
         Token otherlv_14=null;
-        Token this_END_BLOCK_16=null;
-        Token otherlv_17=null;
+        Token this_BEG_BLOCK_15=null;
+        Token this_END_BLOCK_17=null;
+        Token this_END_BLOCK_18=null;
         Token otherlv_19=null;
         Token otherlv_21=null;
-        Token this_END_BLOCK_22=null;
+        Token otherlv_23=null;
+        Token this_END_BLOCK_24=null;
         AntlrDatatypeRuleToken lv_context_4_0 = null;
 
         AntlrDatatypeRuleToken lv_dockerfile_7_0 = null;
 
         AntlrDatatypeRuleToken lv_target_10_0 = null;
 
-        AntlrDatatypeRuleToken lv_args_15_0 = null;
-
-        AntlrDatatypeRuleToken lv_args_18_0 = null;
+        AntlrDatatypeRuleToken lv_args_16_0 = null;
 
         AntlrDatatypeRuleToken lv_args_20_0 = null;
+
+        AntlrDatatypeRuleToken lv_args_22_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalDcDsl.g:2616:2: ( ( () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (otherlv_2= 'context' otherlv_3= ':' ( (lv_context_4_0= ruleEString ) ) ) | (otherlv_5= 'dockerfile' otherlv_6= ':' ( (lv_dockerfile_7_0= ruleEString ) ) ) | (otherlv_8= 'target' otherlv_9= ':' ( (lv_target_10_0= ruleEString ) ) ) | (otherlv_11= 'args' otherlv_12= ':' ( (this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' ( (lv_args_15_0= ruleEString ) ) )+ this_END_BLOCK_16= RULE_END_BLOCK ) | (otherlv_17= '[' ( (lv_args_18_0= ruleEString ) ) (otherlv_19= ',' ( (lv_args_20_0= ruleEString ) ) )* otherlv_21= ']' ) ) ) )* this_END_BLOCK_22= RULE_END_BLOCK ) )
-            // InternalDcDsl.g:2617:2: ( () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (otherlv_2= 'context' otherlv_3= ':' ( (lv_context_4_0= ruleEString ) ) ) | (otherlv_5= 'dockerfile' otherlv_6= ':' ( (lv_dockerfile_7_0= ruleEString ) ) ) | (otherlv_8= 'target' otherlv_9= ':' ( (lv_target_10_0= ruleEString ) ) ) | (otherlv_11= 'args' otherlv_12= ':' ( (this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' ( (lv_args_15_0= ruleEString ) ) )+ this_END_BLOCK_16= RULE_END_BLOCK ) | (otherlv_17= '[' ( (lv_args_18_0= ruleEString ) ) (otherlv_19= ',' ( (lv_args_20_0= ruleEString ) ) )* otherlv_21= ']' ) ) ) )* this_END_BLOCK_22= RULE_END_BLOCK )
+            // InternalDcDsl.g:2833:2: ( ( () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (otherlv_2= 'context' otherlv_3= ':' ( (lv_context_4_0= ruleEString ) ) ) | (otherlv_5= 'dockerfile' otherlv_6= ':' ( (lv_dockerfile_7_0= ruleEString ) ) ) | (otherlv_8= 'target' otherlv_9= ':' ( (lv_target_10_0= ruleEString ) ) ) | (otherlv_11= 'args' otherlv_12= ':' ( (this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' (this_BEG_BLOCK_15= RULE_BEG_BLOCK )? ( (lv_args_16_0= ruleEString ) ) (this_END_BLOCK_17= RULE_END_BLOCK )? )+ this_END_BLOCK_18= RULE_END_BLOCK ) | (otherlv_19= '[' ( (lv_args_20_0= ruleEString ) ) (otherlv_21= ',' ( (lv_args_22_0= ruleEString ) ) )* otherlv_23= ']' ) ) ) )* this_END_BLOCK_24= RULE_END_BLOCK ) )
+            // InternalDcDsl.g:2834:2: ( () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (otherlv_2= 'context' otherlv_3= ':' ( (lv_context_4_0= ruleEString ) ) ) | (otherlv_5= 'dockerfile' otherlv_6= ':' ( (lv_dockerfile_7_0= ruleEString ) ) ) | (otherlv_8= 'target' otherlv_9= ':' ( (lv_target_10_0= ruleEString ) ) ) | (otherlv_11= 'args' otherlv_12= ':' ( (this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' (this_BEG_BLOCK_15= RULE_BEG_BLOCK )? ( (lv_args_16_0= ruleEString ) ) (this_END_BLOCK_17= RULE_END_BLOCK )? )+ this_END_BLOCK_18= RULE_END_BLOCK ) | (otherlv_19= '[' ( (lv_args_20_0= ruleEString ) ) (otherlv_21= ',' ( (lv_args_22_0= ruleEString ) ) )* otherlv_23= ']' ) ) ) )* this_END_BLOCK_24= RULE_END_BLOCK )
             {
-            // InternalDcDsl.g:2617:2: ( () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (otherlv_2= 'context' otherlv_3= ':' ( (lv_context_4_0= ruleEString ) ) ) | (otherlv_5= 'dockerfile' otherlv_6= ':' ( (lv_dockerfile_7_0= ruleEString ) ) ) | (otherlv_8= 'target' otherlv_9= ':' ( (lv_target_10_0= ruleEString ) ) ) | (otherlv_11= 'args' otherlv_12= ':' ( (this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' ( (lv_args_15_0= ruleEString ) ) )+ this_END_BLOCK_16= RULE_END_BLOCK ) | (otherlv_17= '[' ( (lv_args_18_0= ruleEString ) ) (otherlv_19= ',' ( (lv_args_20_0= ruleEString ) ) )* otherlv_21= ']' ) ) ) )* this_END_BLOCK_22= RULE_END_BLOCK )
-            // InternalDcDsl.g:2618:3: () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (otherlv_2= 'context' otherlv_3= ':' ( (lv_context_4_0= ruleEString ) ) ) | (otherlv_5= 'dockerfile' otherlv_6= ':' ( (lv_dockerfile_7_0= ruleEString ) ) ) | (otherlv_8= 'target' otherlv_9= ':' ( (lv_target_10_0= ruleEString ) ) ) | (otherlv_11= 'args' otherlv_12= ':' ( (this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' ( (lv_args_15_0= ruleEString ) ) )+ this_END_BLOCK_16= RULE_END_BLOCK ) | (otherlv_17= '[' ( (lv_args_18_0= ruleEString ) ) (otherlv_19= ',' ( (lv_args_20_0= ruleEString ) ) )* otherlv_21= ']' ) ) ) )* this_END_BLOCK_22= RULE_END_BLOCK
+            // InternalDcDsl.g:2834:2: ( () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (otherlv_2= 'context' otherlv_3= ':' ( (lv_context_4_0= ruleEString ) ) ) | (otherlv_5= 'dockerfile' otherlv_6= ':' ( (lv_dockerfile_7_0= ruleEString ) ) ) | (otherlv_8= 'target' otherlv_9= ':' ( (lv_target_10_0= ruleEString ) ) ) | (otherlv_11= 'args' otherlv_12= ':' ( (this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' (this_BEG_BLOCK_15= RULE_BEG_BLOCK )? ( (lv_args_16_0= ruleEString ) ) (this_END_BLOCK_17= RULE_END_BLOCK )? )+ this_END_BLOCK_18= RULE_END_BLOCK ) | (otherlv_19= '[' ( (lv_args_20_0= ruleEString ) ) (otherlv_21= ',' ( (lv_args_22_0= ruleEString ) ) )* otherlv_23= ']' ) ) ) )* this_END_BLOCK_24= RULE_END_BLOCK )
+            // InternalDcDsl.g:2835:3: () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (otherlv_2= 'context' otherlv_3= ':' ( (lv_context_4_0= ruleEString ) ) ) | (otherlv_5= 'dockerfile' otherlv_6= ':' ( (lv_dockerfile_7_0= ruleEString ) ) ) | (otherlv_8= 'target' otherlv_9= ':' ( (lv_target_10_0= ruleEString ) ) ) | (otherlv_11= 'args' otherlv_12= ':' ( (this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' (this_BEG_BLOCK_15= RULE_BEG_BLOCK )? ( (lv_args_16_0= ruleEString ) ) (this_END_BLOCK_17= RULE_END_BLOCK )? )+ this_END_BLOCK_18= RULE_END_BLOCK ) | (otherlv_19= '[' ( (lv_args_20_0= ruleEString ) ) (otherlv_21= ',' ( (lv_args_22_0= ruleEString ) ) )* otherlv_23= ']' ) ) ) )* this_END_BLOCK_24= RULE_END_BLOCK
             {
-            // InternalDcDsl.g:2618:3: ()
-            // InternalDcDsl.g:2619:4: 
+            // InternalDcDsl.g:2835:3: ()
+            // InternalDcDsl.g:2836:4: 
             {
 
             				current = forceCreateModelElement(
@@ -6544,44 +7426,44 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_BEG_BLOCK_1=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_25); 
+            this_BEG_BLOCK_1=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_29); 
 
             			newLeafNode(this_BEG_BLOCK_1, grammarAccess.getBuildObjectAccess().getBEG_BLOCKTerminalRuleCall_1());
             		
-            // InternalDcDsl.g:2629:3: ( (otherlv_2= 'context' otherlv_3= ':' ( (lv_context_4_0= ruleEString ) ) ) | (otherlv_5= 'dockerfile' otherlv_6= ':' ( (lv_dockerfile_7_0= ruleEString ) ) ) | (otherlv_8= 'target' otherlv_9= ':' ( (lv_target_10_0= ruleEString ) ) ) | (otherlv_11= 'args' otherlv_12= ':' ( (this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' ( (lv_args_15_0= ruleEString ) ) )+ this_END_BLOCK_16= RULE_END_BLOCK ) | (otherlv_17= '[' ( (lv_args_18_0= ruleEString ) ) (otherlv_19= ',' ( (lv_args_20_0= ruleEString ) ) )* otherlv_21= ']' ) ) ) )*
-            loop45:
+            // InternalDcDsl.g:2846:3: ( (otherlv_2= 'context' otherlv_3= ':' ( (lv_context_4_0= ruleEString ) ) ) | (otherlv_5= 'dockerfile' otherlv_6= ':' ( (lv_dockerfile_7_0= ruleEString ) ) ) | (otherlv_8= 'target' otherlv_9= ':' ( (lv_target_10_0= ruleEString ) ) ) | (otherlv_11= 'args' otherlv_12= ':' ( (this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' (this_BEG_BLOCK_15= RULE_BEG_BLOCK )? ( (lv_args_16_0= ruleEString ) ) (this_END_BLOCK_17= RULE_END_BLOCK )? )+ this_END_BLOCK_18= RULE_END_BLOCK ) | (otherlv_19= '[' ( (lv_args_20_0= ruleEString ) ) (otherlv_21= ',' ( (lv_args_22_0= ruleEString ) ) )* otherlv_23= ']' ) ) ) )*
+            loop66:
             do {
-                int alt45=5;
+                int alt66=5;
                 switch ( input.LA(1) ) {
                 case 59:
                     {
-                    alt45=1;
+                    alt66=1;
                     }
                     break;
                 case 60:
                     {
-                    alt45=2;
+                    alt66=2;
                     }
                     break;
                 case 61:
                     {
-                    alt45=3;
+                    alt66=3;
                     }
                     break;
                 case 62:
                     {
-                    alt45=4;
+                    alt66=4;
                     }
                     break;
 
                 }
 
-                switch (alt45) {
+                switch (alt66) {
             	case 1 :
-            	    // InternalDcDsl.g:2630:4: (otherlv_2= 'context' otherlv_3= ':' ( (lv_context_4_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:2847:4: (otherlv_2= 'context' otherlv_3= ':' ( (lv_context_4_0= ruleEString ) ) )
             	    {
-            	    // InternalDcDsl.g:2630:4: (otherlv_2= 'context' otherlv_3= ':' ( (lv_context_4_0= ruleEString ) ) )
-            	    // InternalDcDsl.g:2631:5: otherlv_2= 'context' otherlv_3= ':' ( (lv_context_4_0= ruleEString ) )
+            	    // InternalDcDsl.g:2847:4: (otherlv_2= 'context' otherlv_3= ':' ( (lv_context_4_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:2848:5: otherlv_2= 'context' otherlv_3= ':' ( (lv_context_4_0= ruleEString ) )
             	    {
             	    otherlv_2=(Token)match(input,59,FOLLOW_3); 
 
@@ -6591,16 +7473,16 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	    					newLeafNode(otherlv_3, grammarAccess.getBuildObjectAccess().getColonKeyword_2_0_1());
             	    				
-            	    // InternalDcDsl.g:2639:5: ( (lv_context_4_0= ruleEString ) )
-            	    // InternalDcDsl.g:2640:6: (lv_context_4_0= ruleEString )
+            	    // InternalDcDsl.g:2856:5: ( (lv_context_4_0= ruleEString ) )
+            	    // InternalDcDsl.g:2857:6: (lv_context_4_0= ruleEString )
             	    {
-            	    // InternalDcDsl.g:2640:6: (lv_context_4_0= ruleEString )
-            	    // InternalDcDsl.g:2641:7: lv_context_4_0= ruleEString
+            	    // InternalDcDsl.g:2857:6: (lv_context_4_0= ruleEString )
+            	    // InternalDcDsl.g:2858:7: lv_context_4_0= ruleEString
             	    {
 
             	    							newCompositeNode(grammarAccess.getBuildObjectAccess().getContextEStringParserRuleCall_2_0_2_0());
             	    						
-            	    pushFollow(FOLLOW_25);
+            	    pushFollow(FOLLOW_29);
             	    lv_context_4_0=ruleEString();
 
             	    state._fsp--;
@@ -6629,10 +7511,10 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalDcDsl.g:2660:4: (otherlv_5= 'dockerfile' otherlv_6= ':' ( (lv_dockerfile_7_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:2877:4: (otherlv_5= 'dockerfile' otherlv_6= ':' ( (lv_dockerfile_7_0= ruleEString ) ) )
             	    {
-            	    // InternalDcDsl.g:2660:4: (otherlv_5= 'dockerfile' otherlv_6= ':' ( (lv_dockerfile_7_0= ruleEString ) ) )
-            	    // InternalDcDsl.g:2661:5: otherlv_5= 'dockerfile' otherlv_6= ':' ( (lv_dockerfile_7_0= ruleEString ) )
+            	    // InternalDcDsl.g:2877:4: (otherlv_5= 'dockerfile' otherlv_6= ':' ( (lv_dockerfile_7_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:2878:5: otherlv_5= 'dockerfile' otherlv_6= ':' ( (lv_dockerfile_7_0= ruleEString ) )
             	    {
             	    otherlv_5=(Token)match(input,60,FOLLOW_3); 
 
@@ -6642,16 +7524,16 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	    					newLeafNode(otherlv_6, grammarAccess.getBuildObjectAccess().getColonKeyword_2_1_1());
             	    				
-            	    // InternalDcDsl.g:2669:5: ( (lv_dockerfile_7_0= ruleEString ) )
-            	    // InternalDcDsl.g:2670:6: (lv_dockerfile_7_0= ruleEString )
+            	    // InternalDcDsl.g:2886:5: ( (lv_dockerfile_7_0= ruleEString ) )
+            	    // InternalDcDsl.g:2887:6: (lv_dockerfile_7_0= ruleEString )
             	    {
-            	    // InternalDcDsl.g:2670:6: (lv_dockerfile_7_0= ruleEString )
-            	    // InternalDcDsl.g:2671:7: lv_dockerfile_7_0= ruleEString
+            	    // InternalDcDsl.g:2887:6: (lv_dockerfile_7_0= ruleEString )
+            	    // InternalDcDsl.g:2888:7: lv_dockerfile_7_0= ruleEString
             	    {
 
             	    							newCompositeNode(grammarAccess.getBuildObjectAccess().getDockerfileEStringParserRuleCall_2_1_2_0());
             	    						
-            	    pushFollow(FOLLOW_25);
+            	    pushFollow(FOLLOW_29);
             	    lv_dockerfile_7_0=ruleEString();
 
             	    state._fsp--;
@@ -6680,10 +7562,10 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // InternalDcDsl.g:2690:4: (otherlv_8= 'target' otherlv_9= ':' ( (lv_target_10_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:2907:4: (otherlv_8= 'target' otherlv_9= ':' ( (lv_target_10_0= ruleEString ) ) )
             	    {
-            	    // InternalDcDsl.g:2690:4: (otherlv_8= 'target' otherlv_9= ':' ( (lv_target_10_0= ruleEString ) ) )
-            	    // InternalDcDsl.g:2691:5: otherlv_8= 'target' otherlv_9= ':' ( (lv_target_10_0= ruleEString ) )
+            	    // InternalDcDsl.g:2907:4: (otherlv_8= 'target' otherlv_9= ':' ( (lv_target_10_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:2908:5: otherlv_8= 'target' otherlv_9= ':' ( (lv_target_10_0= ruleEString ) )
             	    {
             	    otherlv_8=(Token)match(input,61,FOLLOW_3); 
 
@@ -6693,16 +7575,16 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	    					newLeafNode(otherlv_9, grammarAccess.getBuildObjectAccess().getColonKeyword_2_2_1());
             	    				
-            	    // InternalDcDsl.g:2699:5: ( (lv_target_10_0= ruleEString ) )
-            	    // InternalDcDsl.g:2700:6: (lv_target_10_0= ruleEString )
+            	    // InternalDcDsl.g:2916:5: ( (lv_target_10_0= ruleEString ) )
+            	    // InternalDcDsl.g:2917:6: (lv_target_10_0= ruleEString )
             	    {
-            	    // InternalDcDsl.g:2700:6: (lv_target_10_0= ruleEString )
-            	    // InternalDcDsl.g:2701:7: lv_target_10_0= ruleEString
+            	    // InternalDcDsl.g:2917:6: (lv_target_10_0= ruleEString )
+            	    // InternalDcDsl.g:2918:7: lv_target_10_0= ruleEString
             	    {
 
             	    							newCompositeNode(grammarAccess.getBuildObjectAccess().getTargetEStringParserRuleCall_2_2_2_0());
             	    						
-            	    pushFollow(FOLLOW_25);
+            	    pushFollow(FOLLOW_29);
             	    lv_target_10_0=ruleEString();
 
             	    state._fsp--;
@@ -6731,10 +7613,10 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 4 :
-            	    // InternalDcDsl.g:2720:4: (otherlv_11= 'args' otherlv_12= ':' ( (this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' ( (lv_args_15_0= ruleEString ) ) )+ this_END_BLOCK_16= RULE_END_BLOCK ) | (otherlv_17= '[' ( (lv_args_18_0= ruleEString ) ) (otherlv_19= ',' ( (lv_args_20_0= ruleEString ) ) )* otherlv_21= ']' ) ) )
+            	    // InternalDcDsl.g:2937:4: (otherlv_11= 'args' otherlv_12= ':' ( (this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' (this_BEG_BLOCK_15= RULE_BEG_BLOCK )? ( (lv_args_16_0= ruleEString ) ) (this_END_BLOCK_17= RULE_END_BLOCK )? )+ this_END_BLOCK_18= RULE_END_BLOCK ) | (otherlv_19= '[' ( (lv_args_20_0= ruleEString ) ) (otherlv_21= ',' ( (lv_args_22_0= ruleEString ) ) )* otherlv_23= ']' ) ) )
             	    {
-            	    // InternalDcDsl.g:2720:4: (otherlv_11= 'args' otherlv_12= ':' ( (this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' ( (lv_args_15_0= ruleEString ) ) )+ this_END_BLOCK_16= RULE_END_BLOCK ) | (otherlv_17= '[' ( (lv_args_18_0= ruleEString ) ) (otherlv_19= ',' ( (lv_args_20_0= ruleEString ) ) )* otherlv_21= ']' ) ) )
-            	    // InternalDcDsl.g:2721:5: otherlv_11= 'args' otherlv_12= ':' ( (this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' ( (lv_args_15_0= ruleEString ) ) )+ this_END_BLOCK_16= RULE_END_BLOCK ) | (otherlv_17= '[' ( (lv_args_18_0= ruleEString ) ) (otherlv_19= ',' ( (lv_args_20_0= ruleEString ) ) )* otherlv_21= ']' ) )
+            	    // InternalDcDsl.g:2937:4: (otherlv_11= 'args' otherlv_12= ':' ( (this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' (this_BEG_BLOCK_15= RULE_BEG_BLOCK )? ( (lv_args_16_0= ruleEString ) ) (this_END_BLOCK_17= RULE_END_BLOCK )? )+ this_END_BLOCK_18= RULE_END_BLOCK ) | (otherlv_19= '[' ( (lv_args_20_0= ruleEString ) ) (otherlv_21= ',' ( (lv_args_22_0= ruleEString ) ) )* otherlv_23= ']' ) ) )
+            	    // InternalDcDsl.g:2938:5: otherlv_11= 'args' otherlv_12= ':' ( (this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' (this_BEG_BLOCK_15= RULE_BEG_BLOCK )? ( (lv_args_16_0= ruleEString ) ) (this_END_BLOCK_17= RULE_END_BLOCK )? )+ this_END_BLOCK_18= RULE_END_BLOCK ) | (otherlv_19= '[' ( (lv_args_20_0= ruleEString ) ) (otherlv_21= ',' ( (lv_args_22_0= ruleEString ) ) )* otherlv_23= ']' ) )
             	    {
             	    otherlv_11=(Token)match(input,62,FOLLOW_3); 
 
@@ -6744,64 +7626,85 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	    					newLeafNode(otherlv_12, grammarAccess.getBuildObjectAccess().getColonKeyword_2_3_1());
             	    				
-            	    // InternalDcDsl.g:2729:5: ( (this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' ( (lv_args_15_0= ruleEString ) ) )+ this_END_BLOCK_16= RULE_END_BLOCK ) | (otherlv_17= '[' ( (lv_args_18_0= ruleEString ) ) (otherlv_19= ',' ( (lv_args_20_0= ruleEString ) ) )* otherlv_21= ']' ) )
-            	    int alt44=2;
-            	    int LA44_0 = input.LA(1);
+            	    // InternalDcDsl.g:2946:5: ( (this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' (this_BEG_BLOCK_15= RULE_BEG_BLOCK )? ( (lv_args_16_0= ruleEString ) ) (this_END_BLOCK_17= RULE_END_BLOCK )? )+ this_END_BLOCK_18= RULE_END_BLOCK ) | (otherlv_19= '[' ( (lv_args_20_0= ruleEString ) ) (otherlv_21= ',' ( (lv_args_22_0= ruleEString ) ) )* otherlv_23= ']' ) )
+            	    int alt65=2;
+            	    int LA65_0 = input.LA(1);
 
-            	    if ( (LA44_0==RULE_BEG_BLOCK) ) {
-            	        alt44=1;
+            	    if ( (LA65_0==RULE_BEG_BLOCK) ) {
+            	        alt65=1;
             	    }
-            	    else if ( (LA44_0==32) ) {
-            	        alt44=2;
+            	    else if ( (LA65_0==32) ) {
+            	        alt65=2;
             	    }
             	    else {
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 44, 0, input);
+            	            new NoViableAltException("", 65, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt44) {
+            	    switch (alt65) {
             	        case 1 :
-            	            // InternalDcDsl.g:2730:6: (this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' ( (lv_args_15_0= ruleEString ) ) )+ this_END_BLOCK_16= RULE_END_BLOCK )
+            	            // InternalDcDsl.g:2947:6: (this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' (this_BEG_BLOCK_15= RULE_BEG_BLOCK )? ( (lv_args_16_0= ruleEString ) ) (this_END_BLOCK_17= RULE_END_BLOCK )? )+ this_END_BLOCK_18= RULE_END_BLOCK )
             	            {
-            	            // InternalDcDsl.g:2730:6: (this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' ( (lv_args_15_0= ruleEString ) ) )+ this_END_BLOCK_16= RULE_END_BLOCK )
-            	            // InternalDcDsl.g:2731:7: this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' ( (lv_args_15_0= ruleEString ) ) )+ this_END_BLOCK_16= RULE_END_BLOCK
+            	            // InternalDcDsl.g:2947:6: (this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' (this_BEG_BLOCK_15= RULE_BEG_BLOCK )? ( (lv_args_16_0= ruleEString ) ) (this_END_BLOCK_17= RULE_END_BLOCK )? )+ this_END_BLOCK_18= RULE_END_BLOCK )
+            	            // InternalDcDsl.g:2948:7: this_BEG_BLOCK_13= RULE_BEG_BLOCK (otherlv_14= '-' (this_BEG_BLOCK_15= RULE_BEG_BLOCK )? ( (lv_args_16_0= ruleEString ) ) (this_END_BLOCK_17= RULE_END_BLOCK )? )+ this_END_BLOCK_18= RULE_END_BLOCK
             	            {
             	            this_BEG_BLOCK_13=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_15); 
 
             	            							newLeafNode(this_BEG_BLOCK_13, grammarAccess.getBuildObjectAccess().getBEG_BLOCKTerminalRuleCall_2_3_2_0_0());
             	            						
-            	            // InternalDcDsl.g:2735:7: (otherlv_14= '-' ( (lv_args_15_0= ruleEString ) ) )+
-            	            int cnt42=0;
-            	            loop42:
+            	            // InternalDcDsl.g:2952:7: (otherlv_14= '-' (this_BEG_BLOCK_15= RULE_BEG_BLOCK )? ( (lv_args_16_0= ruleEString ) ) (this_END_BLOCK_17= RULE_END_BLOCK )? )+
+            	            int cnt63=0;
+            	            loop63:
             	            do {
-            	                int alt42=2;
-            	                int LA42_0 = input.LA(1);
+            	                int alt63=2;
+            	                int LA63_0 = input.LA(1);
 
-            	                if ( (LA42_0==31) ) {
-            	                    alt42=1;
+            	                if ( (LA63_0==31) ) {
+            	                    alt63=1;
             	                }
 
 
-            	                switch (alt42) {
+            	                switch (alt63) {
             	            	case 1 :
-            	            	    // InternalDcDsl.g:2736:8: otherlv_14= '-' ( (lv_args_15_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:2953:8: otherlv_14= '-' (this_BEG_BLOCK_15= RULE_BEG_BLOCK )? ( (lv_args_16_0= ruleEString ) ) (this_END_BLOCK_17= RULE_END_BLOCK )?
             	            	    {
-            	            	    otherlv_14=(Token)match(input,31,FOLLOW_4); 
+            	            	    otherlv_14=(Token)match(input,31,FOLLOW_12); 
 
             	            	    								newLeafNode(otherlv_14, grammarAccess.getBuildObjectAccess().getHyphenMinusKeyword_2_3_2_0_1_0());
             	            	    							
-            	            	    // InternalDcDsl.g:2740:8: ( (lv_args_15_0= ruleEString ) )
-            	            	    // InternalDcDsl.g:2741:9: (lv_args_15_0= ruleEString )
+            	            	    // InternalDcDsl.g:2957:8: (this_BEG_BLOCK_15= RULE_BEG_BLOCK )?
+            	            	    int alt61=2;
+            	            	    int LA61_0 = input.LA(1);
+
+            	            	    if ( (LA61_0==RULE_BEG_BLOCK) ) {
+            	            	        alt61=1;
+            	            	    }
+            	            	    switch (alt61) {
+            	            	        case 1 :
+            	            	            // InternalDcDsl.g:2958:9: this_BEG_BLOCK_15= RULE_BEG_BLOCK
+            	            	            {
+            	            	            this_BEG_BLOCK_15=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_4); 
+
+            	            	            									newLeafNode(this_BEG_BLOCK_15, grammarAccess.getBuildObjectAccess().getBEG_BLOCKTerminalRuleCall_2_3_2_0_1_1());
+            	            	            								
+
+            	            	            }
+            	            	            break;
+
+            	            	    }
+
+            	            	    // InternalDcDsl.g:2963:8: ( (lv_args_16_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:2964:9: (lv_args_16_0= ruleEString )
             	            	    {
-            	            	    // InternalDcDsl.g:2741:9: (lv_args_15_0= ruleEString )
-            	            	    // InternalDcDsl.g:2742:10: lv_args_15_0= ruleEString
+            	            	    // InternalDcDsl.g:2964:9: (lv_args_16_0= ruleEString )
+            	            	    // InternalDcDsl.g:2965:10: lv_args_16_0= ruleEString
             	            	    {
 
-            	            	    										newCompositeNode(grammarAccess.getBuildObjectAccess().getArgsEStringParserRuleCall_2_3_2_0_1_1_0());
+            	            	    										newCompositeNode(grammarAccess.getBuildObjectAccess().getArgsEStringParserRuleCall_2_3_2_0_1_2_0());
             	            	    									
             	            	    pushFollow(FOLLOW_16);
-            	            	    lv_args_15_0=ruleEString();
+            	            	    lv_args_16_0=ruleEString();
 
             	            	    state._fsp--;
 
@@ -6812,7 +7715,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            	    										add(
             	            	    											current,
             	            	    											"args",
-            	            	    											lv_args_15_0,
+            	            	    											lv_args_16_0,
             	            	    											"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
             	            	    										afterParserOrEnumRuleCall();
             	            	    									
@@ -6822,22 +7725,39 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	            	    }
 
+            	            	    // InternalDcDsl.g:2982:8: (this_END_BLOCK_17= RULE_END_BLOCK )?
+            	            	    int alt62=2;
+            	            	    alt62 = dfa62.predict(input);
+            	            	    switch (alt62) {
+            	            	        case 1 :
+            	            	            // InternalDcDsl.g:2983:9: this_END_BLOCK_17= RULE_END_BLOCK
+            	            	            {
+            	            	            this_END_BLOCK_17=(Token)match(input,RULE_END_BLOCK,FOLLOW_16); 
+
+            	            	            									newLeafNode(this_END_BLOCK_17, grammarAccess.getBuildObjectAccess().getEND_BLOCKTerminalRuleCall_2_3_2_0_1_3());
+            	            	            								
+
+            	            	            }
+            	            	            break;
+
+            	            	    }
+
 
             	            	    }
             	            	    break;
 
             	            	default :
-            	            	    if ( cnt42 >= 1 ) break loop42;
+            	            	    if ( cnt63 >= 1 ) break loop63;
             	                        EarlyExitException eee =
-            	                            new EarlyExitException(42, input);
+            	                            new EarlyExitException(63, input);
             	                        throw eee;
             	                }
-            	                cnt42++;
+            	                cnt63++;
             	            } while (true);
 
-            	            this_END_BLOCK_16=(Token)match(input,RULE_END_BLOCK,FOLLOW_25); 
+            	            this_END_BLOCK_18=(Token)match(input,RULE_END_BLOCK,FOLLOW_29); 
 
-            	            							newLeafNode(this_END_BLOCK_16, grammarAccess.getBuildObjectAccess().getEND_BLOCKTerminalRuleCall_2_3_2_0_2());
+            	            							newLeafNode(this_END_BLOCK_18, grammarAccess.getBuildObjectAccess().getEND_BLOCKTerminalRuleCall_2_3_2_0_2());
             	            						
 
             	            }
@@ -6846,26 +7766,26 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalDcDsl.g:2766:6: (otherlv_17= '[' ( (lv_args_18_0= ruleEString ) ) (otherlv_19= ',' ( (lv_args_20_0= ruleEString ) ) )* otherlv_21= ']' )
+            	            // InternalDcDsl.g:2995:6: (otherlv_19= '[' ( (lv_args_20_0= ruleEString ) ) (otherlv_21= ',' ( (lv_args_22_0= ruleEString ) ) )* otherlv_23= ']' )
             	            {
-            	            // InternalDcDsl.g:2766:6: (otherlv_17= '[' ( (lv_args_18_0= ruleEString ) ) (otherlv_19= ',' ( (lv_args_20_0= ruleEString ) ) )* otherlv_21= ']' )
-            	            // InternalDcDsl.g:2767:7: otherlv_17= '[' ( (lv_args_18_0= ruleEString ) ) (otherlv_19= ',' ( (lv_args_20_0= ruleEString ) ) )* otherlv_21= ']'
+            	            // InternalDcDsl.g:2995:6: (otherlv_19= '[' ( (lv_args_20_0= ruleEString ) ) (otherlv_21= ',' ( (lv_args_22_0= ruleEString ) ) )* otherlv_23= ']' )
+            	            // InternalDcDsl.g:2996:7: otherlv_19= '[' ( (lv_args_20_0= ruleEString ) ) (otherlv_21= ',' ( (lv_args_22_0= ruleEString ) ) )* otherlv_23= ']'
             	            {
-            	            otherlv_17=(Token)match(input,32,FOLLOW_4); 
+            	            otherlv_19=(Token)match(input,32,FOLLOW_4); 
 
-            	            							newLeafNode(otherlv_17, grammarAccess.getBuildObjectAccess().getLeftSquareBracketKeyword_2_3_2_1_0());
+            	            							newLeafNode(otherlv_19, grammarAccess.getBuildObjectAccess().getLeftSquareBracketKeyword_2_3_2_1_0());
             	            						
-            	            // InternalDcDsl.g:2771:7: ( (lv_args_18_0= ruleEString ) )
-            	            // InternalDcDsl.g:2772:8: (lv_args_18_0= ruleEString )
+            	            // InternalDcDsl.g:3000:7: ( (lv_args_20_0= ruleEString ) )
+            	            // InternalDcDsl.g:3001:8: (lv_args_20_0= ruleEString )
             	            {
-            	            // InternalDcDsl.g:2772:8: (lv_args_18_0= ruleEString )
-            	            // InternalDcDsl.g:2773:9: lv_args_18_0= ruleEString
+            	            // InternalDcDsl.g:3001:8: (lv_args_20_0= ruleEString )
+            	            // InternalDcDsl.g:3002:9: lv_args_20_0= ruleEString
             	            {
 
             	            									newCompositeNode(grammarAccess.getBuildObjectAccess().getArgsEStringParserRuleCall_2_3_2_1_1_0());
             	            								
             	            pushFollow(FOLLOW_17);
-            	            lv_args_18_0=ruleEString();
+            	            lv_args_20_0=ruleEString();
 
             	            state._fsp--;
 
@@ -6876,7 +7796,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            									add(
             	            										current,
             	            										"args",
-            	            										lv_args_18_0,
+            	            										lv_args_20_0,
             	            										"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
             	            									afterParserOrEnumRuleCall();
             	            								
@@ -6886,36 +7806,36 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	            }
 
-            	            // InternalDcDsl.g:2790:7: (otherlv_19= ',' ( (lv_args_20_0= ruleEString ) ) )*
-            	            loop43:
+            	            // InternalDcDsl.g:3019:7: (otherlv_21= ',' ( (lv_args_22_0= ruleEString ) ) )*
+            	            loop64:
             	            do {
-            	                int alt43=2;
-            	                int LA43_0 = input.LA(1);
+            	                int alt64=2;
+            	                int LA64_0 = input.LA(1);
 
-            	                if ( (LA43_0==35) ) {
-            	                    alt43=1;
+            	                if ( (LA64_0==35) ) {
+            	                    alt64=1;
             	                }
 
 
-            	                switch (alt43) {
+            	                switch (alt64) {
             	            	case 1 :
-            	            	    // InternalDcDsl.g:2791:8: otherlv_19= ',' ( (lv_args_20_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:3020:8: otherlv_21= ',' ( (lv_args_22_0= ruleEString ) )
             	            	    {
-            	            	    otherlv_19=(Token)match(input,35,FOLLOW_4); 
+            	            	    otherlv_21=(Token)match(input,35,FOLLOW_4); 
 
-            	            	    								newLeafNode(otherlv_19, grammarAccess.getBuildObjectAccess().getCommaKeyword_2_3_2_1_2_0());
+            	            	    								newLeafNode(otherlv_21, grammarAccess.getBuildObjectAccess().getCommaKeyword_2_3_2_1_2_0());
             	            	    							
-            	            	    // InternalDcDsl.g:2795:8: ( (lv_args_20_0= ruleEString ) )
-            	            	    // InternalDcDsl.g:2796:9: (lv_args_20_0= ruleEString )
+            	            	    // InternalDcDsl.g:3024:8: ( (lv_args_22_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:3025:9: (lv_args_22_0= ruleEString )
             	            	    {
-            	            	    // InternalDcDsl.g:2796:9: (lv_args_20_0= ruleEString )
-            	            	    // InternalDcDsl.g:2797:10: lv_args_20_0= ruleEString
+            	            	    // InternalDcDsl.g:3025:9: (lv_args_22_0= ruleEString )
+            	            	    // InternalDcDsl.g:3026:10: lv_args_22_0= ruleEString
             	            	    {
 
             	            	    										newCompositeNode(grammarAccess.getBuildObjectAccess().getArgsEStringParserRuleCall_2_3_2_1_2_1_0());
             	            	    									
             	            	    pushFollow(FOLLOW_17);
-            	            	    lv_args_20_0=ruleEString();
+            	            	    lv_args_22_0=ruleEString();
 
             	            	    state._fsp--;
 
@@ -6926,7 +7846,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            	    										add(
             	            	    											current,
             	            	    											"args",
-            	            	    											lv_args_20_0,
+            	            	    											lv_args_22_0,
             	            	    											"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
             	            	    										afterParserOrEnumRuleCall();
             	            	    									
@@ -6941,13 +7861,13 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            	    break;
 
             	            	default :
-            	            	    break loop43;
+            	            	    break loop64;
             	                }
             	            } while (true);
 
-            	            otherlv_21=(Token)match(input,33,FOLLOW_25); 
+            	            otherlv_23=(Token)match(input,33,FOLLOW_29); 
 
-            	            							newLeafNode(otherlv_21, grammarAccess.getBuildObjectAccess().getRightSquareBracketKeyword_2_3_2_1_3());
+            	            							newLeafNode(otherlv_23, grammarAccess.getBuildObjectAccess().getRightSquareBracketKeyword_2_3_2_1_3());
             	            						
 
             	            }
@@ -6966,13 +7886,13 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop45;
+            	    break loop66;
                 }
             } while (true);
 
-            this_END_BLOCK_22=(Token)match(input,RULE_END_BLOCK,FOLLOW_2); 
+            this_END_BLOCK_24=(Token)match(input,RULE_END_BLOCK,FOLLOW_2); 
 
-            			newLeafNode(this_END_BLOCK_22, grammarAccess.getBuildObjectAccess().getEND_BLOCKTerminalRuleCall_3());
+            			newLeafNode(this_END_BLOCK_24, grammarAccess.getBuildObjectAccess().getEND_BLOCKTerminalRuleCall_3());
             		
 
             }
@@ -6997,7 +7917,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNetworks"
-    // InternalDcDsl.g:2831:1: entryRuleNetworks returns [EObject current=null] : iv_ruleNetworks= ruleNetworks EOF ;
+    // InternalDcDsl.g:3060:1: entryRuleNetworks returns [EObject current=null] : iv_ruleNetworks= ruleNetworks EOF ;
     public final EObject entryRuleNetworks() throws RecognitionException {
         EObject current = null;
 
@@ -7005,8 +7925,8 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDcDsl.g:2831:49: (iv_ruleNetworks= ruleNetworks EOF )
-            // InternalDcDsl.g:2832:2: iv_ruleNetworks= ruleNetworks EOF
+            // InternalDcDsl.g:3060:49: (iv_ruleNetworks= ruleNetworks EOF )
+            // InternalDcDsl.g:3061:2: iv_ruleNetworks= ruleNetworks EOF
             {
              newCompositeNode(grammarAccess.getNetworksRule()); 
             pushFollow(FOLLOW_1);
@@ -7033,72 +7953,489 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNetworks"
-    // InternalDcDsl.g:2838:1: ruleNetworks returns [EObject current=null] : (this_NetworksObject_0= ruleNetworksObject | this_NetworksValue_1= ruleNetworksValue ) ;
+    // InternalDcDsl.g:3067:1: ruleNetworks returns [EObject current=null] : ( (this_BEG_BLOCK_0= RULE_BEG_BLOCK ( ( () (otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )? )+ ) | ( () ( (lv_network_7_0= ruleNetwork ) )+ ) ) this_END_BLOCK_8= RULE_END_BLOCK ) | ( () otherlv_10= '[' ( (lv_value_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_value_13_0= ruleEString ) ) )* otherlv_14= ']' ) | ( () ( (lv_value_16_0= ruleEString ) ) ) ) ;
     public final EObject ruleNetworks() throws RecognitionException {
         EObject current = null;
 
-        EObject this_NetworksObject_0 = null;
+        Token this_BEG_BLOCK_0=null;
+        Token otherlv_2=null;
+        Token this_BEG_BLOCK_3=null;
+        Token this_END_BLOCK_5=null;
+        Token this_END_BLOCK_8=null;
+        Token otherlv_10=null;
+        Token otherlv_12=null;
+        Token otherlv_14=null;
+        AntlrDatatypeRuleToken lv_value_4_0 = null;
 
-        EObject this_NetworksValue_1 = null;
+        EObject lv_network_7_0 = null;
+
+        AntlrDatatypeRuleToken lv_value_11_0 = null;
+
+        AntlrDatatypeRuleToken lv_value_13_0 = null;
+
+        AntlrDatatypeRuleToken lv_value_16_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalDcDsl.g:2844:2: ( (this_NetworksObject_0= ruleNetworksObject | this_NetworksValue_1= ruleNetworksValue ) )
-            // InternalDcDsl.g:2845:2: (this_NetworksObject_0= ruleNetworksObject | this_NetworksValue_1= ruleNetworksValue )
+            // InternalDcDsl.g:3073:2: ( ( (this_BEG_BLOCK_0= RULE_BEG_BLOCK ( ( () (otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )? )+ ) | ( () ( (lv_network_7_0= ruleNetwork ) )+ ) ) this_END_BLOCK_8= RULE_END_BLOCK ) | ( () otherlv_10= '[' ( (lv_value_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_value_13_0= ruleEString ) ) )* otherlv_14= ']' ) | ( () ( (lv_value_16_0= ruleEString ) ) ) ) )
+            // InternalDcDsl.g:3074:2: ( (this_BEG_BLOCK_0= RULE_BEG_BLOCK ( ( () (otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )? )+ ) | ( () ( (lv_network_7_0= ruleNetwork ) )+ ) ) this_END_BLOCK_8= RULE_END_BLOCK ) | ( () otherlv_10= '[' ( (lv_value_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_value_13_0= ruleEString ) ) )* otherlv_14= ']' ) | ( () ( (lv_value_16_0= ruleEString ) ) ) )
             {
-            // InternalDcDsl.g:2845:2: (this_NetworksObject_0= ruleNetworksObject | this_NetworksValue_1= ruleNetworksValue )
-            int alt46=2;
-            int LA46_0 = input.LA(1);
-
-            if ( (LA46_0==RULE_BEG_BLOCK) ) {
-                alt46=1;
-            }
-            else if ( ((LA46_0>=RULE_STRING && LA46_0<=RULE_INT)||(LA46_0>=23 && LA46_0<=30)||LA46_0==32) ) {
-                alt46=2;
-            }
-            else {
+            // InternalDcDsl.g:3074:2: ( (this_BEG_BLOCK_0= RULE_BEG_BLOCK ( ( () (otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )? )+ ) | ( () ( (lv_network_7_0= ruleNetwork ) )+ ) ) this_END_BLOCK_8= RULE_END_BLOCK ) | ( () otherlv_10= '[' ( (lv_value_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_value_13_0= ruleEString ) ) )* otherlv_14= ']' ) | ( () ( (lv_value_16_0= ruleEString ) ) ) )
+            int alt73=3;
+            switch ( input.LA(1) ) {
+            case RULE_BEG_BLOCK:
+                {
+                alt73=1;
+                }
+                break;
+            case 32:
+                {
+                alt73=2;
+                }
+                break;
+            case RULE_STRING:
+            case RULE_SQ_STRING:
+            case RULE_YAML_SCALAR:
+            case RULE_GH_EXPRESSION:
+            case RULE_ID:
+            case RULE_INT:
+            case 23:
+            case 24:
+            case 25:
+            case 26:
+            case 27:
+            case 28:
+            case 29:
+            case 30:
+                {
+                alt73=3;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 46, 0, input);
+                    new NoViableAltException("", 73, 0, input);
 
                 throw nvae;
             }
-            switch (alt46) {
+
+            switch (alt73) {
                 case 1 :
-                    // InternalDcDsl.g:2846:3: this_NetworksObject_0= ruleNetworksObject
+                    // InternalDcDsl.g:3075:3: (this_BEG_BLOCK_0= RULE_BEG_BLOCK ( ( () (otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )? )+ ) | ( () ( (lv_network_7_0= ruleNetwork ) )+ ) ) this_END_BLOCK_8= RULE_END_BLOCK )
                     {
+                    // InternalDcDsl.g:3075:3: (this_BEG_BLOCK_0= RULE_BEG_BLOCK ( ( () (otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )? )+ ) | ( () ( (lv_network_7_0= ruleNetwork ) )+ ) ) this_END_BLOCK_8= RULE_END_BLOCK )
+                    // InternalDcDsl.g:3076:4: this_BEG_BLOCK_0= RULE_BEG_BLOCK ( ( () (otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )? )+ ) | ( () ( (lv_network_7_0= ruleNetwork ) )+ ) ) this_END_BLOCK_8= RULE_END_BLOCK
+                    {
+                    this_BEG_BLOCK_0=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_30); 
 
-                    			newCompositeNode(grammarAccess.getNetworksAccess().getNetworksObjectParserRuleCall_0());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_NetworksObject_0=ruleNetworksObject();
+                    				newLeafNode(this_BEG_BLOCK_0, grammarAccess.getNetworksAccess().getBEG_BLOCKTerminalRuleCall_0_0());
+                    			
+                    // InternalDcDsl.g:3080:4: ( ( () (otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )? )+ ) | ( () ( (lv_network_7_0= ruleNetwork ) )+ ) )
+                    int alt71=2;
+                    int LA71_0 = input.LA(1);
 
-                    state._fsp--;
+                    if ( (LA71_0==31) ) {
+                        alt71=1;
+                    }
+                    else if ( ((LA71_0>=RULE_STRING && LA71_0<=RULE_INT)||(LA71_0>=23 && LA71_0<=30)) ) {
+                        alt71=2;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 71, 0, input);
+
+                        throw nvae;
+                    }
+                    switch (alt71) {
+                        case 1 :
+                            // InternalDcDsl.g:3081:5: ( () (otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )? )+ )
+                            {
+                            // InternalDcDsl.g:3081:5: ( () (otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )? )+ )
+                            // InternalDcDsl.g:3082:6: () (otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )? )+
+                            {
+                            // InternalDcDsl.g:3082:6: ()
+                            // InternalDcDsl.g:3083:7: 
+                            {
+
+                            							current = forceCreateModelElement(
+                            								grammarAccess.getNetworksAccess().getNetworksValueAction_0_1_0_0(),
+                            								current);
+                            						
+
+                            }
+
+                            // InternalDcDsl.g:3089:6: (otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )? )+
+                            int cnt69=0;
+                            loop69:
+                            do {
+                                int alt69=2;
+                                int LA69_0 = input.LA(1);
+
+                                if ( (LA69_0==31) ) {
+                                    alt69=1;
+                                }
 
 
-                    			current = this_NetworksObject_0;
-                    			afterParserOrEnumRuleCall();
-                    		
+                                switch (alt69) {
+                            	case 1 :
+                            	    // InternalDcDsl.g:3090:7: otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )?
+                            	    {
+                            	    otherlv_2=(Token)match(input,31,FOLLOW_12); 
+
+                            	    							newLeafNode(otherlv_2, grammarAccess.getNetworksAccess().getHyphenMinusKeyword_0_1_0_1_0());
+                            	    						
+                            	    // InternalDcDsl.g:3094:7: (this_BEG_BLOCK_3= RULE_BEG_BLOCK )?
+                            	    int alt67=2;
+                            	    int LA67_0 = input.LA(1);
+
+                            	    if ( (LA67_0==RULE_BEG_BLOCK) ) {
+                            	        alt67=1;
+                            	    }
+                            	    switch (alt67) {
+                            	        case 1 :
+                            	            // InternalDcDsl.g:3095:8: this_BEG_BLOCK_3= RULE_BEG_BLOCK
+                            	            {
+                            	            this_BEG_BLOCK_3=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_4); 
+
+                            	            								newLeafNode(this_BEG_BLOCK_3, grammarAccess.getNetworksAccess().getBEG_BLOCKTerminalRuleCall_0_1_0_1_1());
+                            	            							
+
+                            	            }
+                            	            break;
+
+                            	    }
+
+                            	    // InternalDcDsl.g:3100:7: ( (lv_value_4_0= ruleEString ) )
+                            	    // InternalDcDsl.g:3101:8: (lv_value_4_0= ruleEString )
+                            	    {
+                            	    // InternalDcDsl.g:3101:8: (lv_value_4_0= ruleEString )
+                            	    // InternalDcDsl.g:3102:9: lv_value_4_0= ruleEString
+                            	    {
+
+                            	    									newCompositeNode(grammarAccess.getNetworksAccess().getValueEStringParserRuleCall_0_1_0_1_2_0());
+                            	    								
+                            	    pushFollow(FOLLOW_16);
+                            	    lv_value_4_0=ruleEString();
+
+                            	    state._fsp--;
+
+
+                            	    									if (current==null) {
+                            	    										current = createModelElementForParent(grammarAccess.getNetworksRule());
+                            	    									}
+                            	    									add(
+                            	    										current,
+                            	    										"value",
+                            	    										lv_value_4_0,
+                            	    										"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
+                            	    									afterParserOrEnumRuleCall();
+                            	    								
+
+                            	    }
+
+
+                            	    }
+
+                            	    // InternalDcDsl.g:3119:7: (this_END_BLOCK_5= RULE_END_BLOCK )?
+                            	    int alt68=2;
+                            	    alt68 = dfa68.predict(input);
+                            	    switch (alt68) {
+                            	        case 1 :
+                            	            // InternalDcDsl.g:3120:8: this_END_BLOCK_5= RULE_END_BLOCK
+                            	            {
+                            	            this_END_BLOCK_5=(Token)match(input,RULE_END_BLOCK,FOLLOW_16); 
+
+                            	            								newLeafNode(this_END_BLOCK_5, grammarAccess.getNetworksAccess().getEND_BLOCKTerminalRuleCall_0_1_0_1_3());
+                            	            							
+
+                            	            }
+                            	            break;
+
+                            	    }
+
+
+                            	    }
+                            	    break;
+
+                            	default :
+                            	    if ( cnt69 >= 1 ) break loop69;
+                                        EarlyExitException eee =
+                                            new EarlyExitException(69, input);
+                                        throw eee;
+                                }
+                                cnt69++;
+                            } while (true);
+
+
+                            }
+
+
+                            }
+                            break;
+                        case 2 :
+                            // InternalDcDsl.g:3128:5: ( () ( (lv_network_7_0= ruleNetwork ) )+ )
+                            {
+                            // InternalDcDsl.g:3128:5: ( () ( (lv_network_7_0= ruleNetwork ) )+ )
+                            // InternalDcDsl.g:3129:6: () ( (lv_network_7_0= ruleNetwork ) )+
+                            {
+                            // InternalDcDsl.g:3129:6: ()
+                            // InternalDcDsl.g:3130:7: 
+                            {
+
+                            							current = forceCreateModelElement(
+                            								grammarAccess.getNetworksAccess().getNetworksObjectAction_0_1_1_0(),
+                            								current);
+                            						
+
+                            }
+
+                            // InternalDcDsl.g:3136:6: ( (lv_network_7_0= ruleNetwork ) )+
+                            int cnt70=0;
+                            loop70:
+                            do {
+                                int alt70=2;
+                                int LA70_0 = input.LA(1);
+
+                                if ( ((LA70_0>=RULE_STRING && LA70_0<=RULE_INT)||(LA70_0>=23 && LA70_0<=30)) ) {
+                                    alt70=1;
+                                }
+
+
+                                switch (alt70) {
+                            	case 1 :
+                            	    // InternalDcDsl.g:3137:7: (lv_network_7_0= ruleNetwork )
+                            	    {
+                            	    // InternalDcDsl.g:3137:7: (lv_network_7_0= ruleNetwork )
+                            	    // InternalDcDsl.g:3138:8: lv_network_7_0= ruleNetwork
+                            	    {
+
+                            	    								newCompositeNode(grammarAccess.getNetworksAccess().getNetworkNetworkParserRuleCall_0_1_1_1_0());
+                            	    							
+                            	    pushFollow(FOLLOW_31);
+                            	    lv_network_7_0=ruleNetwork();
+
+                            	    state._fsp--;
+
+
+                            	    								if (current==null) {
+                            	    									current = createModelElementForParent(grammarAccess.getNetworksRule());
+                            	    								}
+                            	    								add(
+                            	    									current,
+                            	    									"network",
+                            	    									lv_network_7_0,
+                            	    									"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.Network");
+                            	    								afterParserOrEnumRuleCall();
+                            	    							
+
+                            	    }
+
+
+                            	    }
+                            	    break;
+
+                            	default :
+                            	    if ( cnt70 >= 1 ) break loop70;
+                                        EarlyExitException eee =
+                                            new EarlyExitException(70, input);
+                                        throw eee;
+                                }
+                                cnt70++;
+                            } while (true);
+
+
+                            }
+
+
+                            }
+                            break;
+
+                    }
+
+                    this_END_BLOCK_8=(Token)match(input,RULE_END_BLOCK,FOLLOW_2); 
+
+                    				newLeafNode(this_END_BLOCK_8, grammarAccess.getNetworksAccess().getEND_BLOCKTerminalRuleCall_0_2());
+                    			
+
+                    }
+
 
                     }
                     break;
                 case 2 :
-                    // InternalDcDsl.g:2855:3: this_NetworksValue_1= ruleNetworksValue
+                    // InternalDcDsl.g:3163:3: ( () otherlv_10= '[' ( (lv_value_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_value_13_0= ruleEString ) ) )* otherlv_14= ']' )
+                    {
+                    // InternalDcDsl.g:3163:3: ( () otherlv_10= '[' ( (lv_value_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_value_13_0= ruleEString ) ) )* otherlv_14= ']' )
+                    // InternalDcDsl.g:3164:4: () otherlv_10= '[' ( (lv_value_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_value_13_0= ruleEString ) ) )* otherlv_14= ']'
+                    {
+                    // InternalDcDsl.g:3164:4: ()
+                    // InternalDcDsl.g:3165:5: 
                     {
 
-                    			newCompositeNode(grammarAccess.getNetworksAccess().getNetworksValueParserRuleCall_1());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_NetworksValue_1=ruleNetworksValue();
+                    					current = forceCreateModelElement(
+                    						grammarAccess.getNetworksAccess().getNetworksValueAction_1_0(),
+                    						current);
+                    				
+
+                    }
+
+                    otherlv_10=(Token)match(input,32,FOLLOW_4); 
+
+                    				newLeafNode(otherlv_10, grammarAccess.getNetworksAccess().getLeftSquareBracketKeyword_1_1());
+                    			
+                    // InternalDcDsl.g:3175:4: ( (lv_value_11_0= ruleEString ) )
+                    // InternalDcDsl.g:3176:5: (lv_value_11_0= ruleEString )
+                    {
+                    // InternalDcDsl.g:3176:5: (lv_value_11_0= ruleEString )
+                    // InternalDcDsl.g:3177:6: lv_value_11_0= ruleEString
+                    {
+
+                    						newCompositeNode(grammarAccess.getNetworksAccess().getValueEStringParserRuleCall_1_2_0());
+                    					
+                    pushFollow(FOLLOW_17);
+                    lv_value_11_0=ruleEString();
 
                     state._fsp--;
 
 
-                    			current = this_NetworksValue_1;
-                    			afterParserOrEnumRuleCall();
-                    		
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getNetworksRule());
+                    						}
+                    						add(
+                    							current,
+                    							"value",
+                    							lv_value_11_0,
+                    							"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+                    // InternalDcDsl.g:3194:4: (otherlv_12= ',' ( (lv_value_13_0= ruleEString ) ) )*
+                    loop72:
+                    do {
+                        int alt72=2;
+                        int LA72_0 = input.LA(1);
+
+                        if ( (LA72_0==35) ) {
+                            alt72=1;
+                        }
+
+
+                        switch (alt72) {
+                    	case 1 :
+                    	    // InternalDcDsl.g:3195:5: otherlv_12= ',' ( (lv_value_13_0= ruleEString ) )
+                    	    {
+                    	    otherlv_12=(Token)match(input,35,FOLLOW_4); 
+
+                    	    					newLeafNode(otherlv_12, grammarAccess.getNetworksAccess().getCommaKeyword_1_3_0());
+                    	    				
+                    	    // InternalDcDsl.g:3199:5: ( (lv_value_13_0= ruleEString ) )
+                    	    // InternalDcDsl.g:3200:6: (lv_value_13_0= ruleEString )
+                    	    {
+                    	    // InternalDcDsl.g:3200:6: (lv_value_13_0= ruleEString )
+                    	    // InternalDcDsl.g:3201:7: lv_value_13_0= ruleEString
+                    	    {
+
+                    	    							newCompositeNode(grammarAccess.getNetworksAccess().getValueEStringParserRuleCall_1_3_1_0());
+                    	    						
+                    	    pushFollow(FOLLOW_17);
+                    	    lv_value_13_0=ruleEString();
+
+                    	    state._fsp--;
+
+
+                    	    							if (current==null) {
+                    	    								current = createModelElementForParent(grammarAccess.getNetworksRule());
+                    	    							}
+                    	    							add(
+                    	    								current,
+                    	    								"value",
+                    	    								lv_value_13_0,
+                    	    								"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
+                    	    							afterParserOrEnumRuleCall();
+                    	    						
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop72;
+                        }
+                    } while (true);
+
+                    otherlv_14=(Token)match(input,33,FOLLOW_2); 
+
+                    				newLeafNode(otherlv_14, grammarAccess.getNetworksAccess().getRightSquareBracketKeyword_1_4());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalDcDsl.g:3225:3: ( () ( (lv_value_16_0= ruleEString ) ) )
+                    {
+                    // InternalDcDsl.g:3225:3: ( () ( (lv_value_16_0= ruleEString ) ) )
+                    // InternalDcDsl.g:3226:4: () ( (lv_value_16_0= ruleEString ) )
+                    {
+                    // InternalDcDsl.g:3226:4: ()
+                    // InternalDcDsl.g:3227:5: 
+                    {
+
+                    					current = forceCreateModelElement(
+                    						grammarAccess.getNetworksAccess().getNetworksValueAction_2_0(),
+                    						current);
+                    				
+
+                    }
+
+                    // InternalDcDsl.g:3233:4: ( (lv_value_16_0= ruleEString ) )
+                    // InternalDcDsl.g:3234:5: (lv_value_16_0= ruleEString )
+                    {
+                    // InternalDcDsl.g:3234:5: (lv_value_16_0= ruleEString )
+                    // InternalDcDsl.g:3235:6: lv_value_16_0= ruleEString
+                    {
+
+                    						newCompositeNode(grammarAccess.getNetworksAccess().getValueEStringParserRuleCall_2_1_0());
+                    					
+                    pushFollow(FOLLOW_2);
+                    lv_value_16_0=ruleEString();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getNetworksRule());
+                    						}
+                    						add(
+                    							current,
+                    							"value",
+                    							lv_value_16_0,
+                    							"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+
 
                     }
                     break;
@@ -7124,403 +8461,8 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleNetworks"
 
 
-    // $ANTLR start "entryRuleNetworksValue"
-    // InternalDcDsl.g:2867:1: entryRuleNetworksValue returns [EObject current=null] : iv_ruleNetworksValue= ruleNetworksValue EOF ;
-    public final EObject entryRuleNetworksValue() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleNetworksValue = null;
-
-
-        try {
-            // InternalDcDsl.g:2867:54: (iv_ruleNetworksValue= ruleNetworksValue EOF )
-            // InternalDcDsl.g:2868:2: iv_ruleNetworksValue= ruleNetworksValue EOF
-            {
-             newCompositeNode(grammarAccess.getNetworksValueRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleNetworksValue=ruleNetworksValue();
-
-            state._fsp--;
-
-             current =iv_ruleNetworksValue; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleNetworksValue"
-
-
-    // $ANTLR start "ruleNetworksValue"
-    // InternalDcDsl.g:2874:1: ruleNetworksValue returns [EObject current=null] : ( ( (lv_value_0_0= ruleEString ) ) | (otherlv_1= '[' ( (lv_value_2_0= ruleEString ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleEString ) ) )* otherlv_5= ']' ) ) ;
-    public final EObject ruleNetworksValue() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_1=null;
-        Token otherlv_3=null;
-        Token otherlv_5=null;
-        AntlrDatatypeRuleToken lv_value_0_0 = null;
-
-        AntlrDatatypeRuleToken lv_value_2_0 = null;
-
-        AntlrDatatypeRuleToken lv_value_4_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalDcDsl.g:2880:2: ( ( ( (lv_value_0_0= ruleEString ) ) | (otherlv_1= '[' ( (lv_value_2_0= ruleEString ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleEString ) ) )* otherlv_5= ']' ) ) )
-            // InternalDcDsl.g:2881:2: ( ( (lv_value_0_0= ruleEString ) ) | (otherlv_1= '[' ( (lv_value_2_0= ruleEString ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleEString ) ) )* otherlv_5= ']' ) )
-            {
-            // InternalDcDsl.g:2881:2: ( ( (lv_value_0_0= ruleEString ) ) | (otherlv_1= '[' ( (lv_value_2_0= ruleEString ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleEString ) ) )* otherlv_5= ']' ) )
-            int alt48=2;
-            int LA48_0 = input.LA(1);
-
-            if ( ((LA48_0>=RULE_STRING && LA48_0<=RULE_INT)||(LA48_0>=23 && LA48_0<=30)) ) {
-                alt48=1;
-            }
-            else if ( (LA48_0==32) ) {
-                alt48=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 48, 0, input);
-
-                throw nvae;
-            }
-            switch (alt48) {
-                case 1 :
-                    // InternalDcDsl.g:2882:3: ( (lv_value_0_0= ruleEString ) )
-                    {
-                    // InternalDcDsl.g:2882:3: ( (lv_value_0_0= ruleEString ) )
-                    // InternalDcDsl.g:2883:4: (lv_value_0_0= ruleEString )
-                    {
-                    // InternalDcDsl.g:2883:4: (lv_value_0_0= ruleEString )
-                    // InternalDcDsl.g:2884:5: lv_value_0_0= ruleEString
-                    {
-
-                    					newCompositeNode(grammarAccess.getNetworksValueAccess().getValueEStringParserRuleCall_0_0());
-                    				
-                    pushFollow(FOLLOW_2);
-                    lv_value_0_0=ruleEString();
-
-                    state._fsp--;
-
-
-                    					if (current==null) {
-                    						current = createModelElementForParent(grammarAccess.getNetworksValueRule());
-                    					}
-                    					add(
-                    						current,
-                    						"value",
-                    						lv_value_0_0,
-                    						"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
-                    					afterParserOrEnumRuleCall();
-                    				
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalDcDsl.g:2902:3: (otherlv_1= '[' ( (lv_value_2_0= ruleEString ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleEString ) ) )* otherlv_5= ']' )
-                    {
-                    // InternalDcDsl.g:2902:3: (otherlv_1= '[' ( (lv_value_2_0= ruleEString ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleEString ) ) )* otherlv_5= ']' )
-                    // InternalDcDsl.g:2903:4: otherlv_1= '[' ( (lv_value_2_0= ruleEString ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleEString ) ) )* otherlv_5= ']'
-                    {
-                    otherlv_1=(Token)match(input,32,FOLLOW_4); 
-
-                    				newLeafNode(otherlv_1, grammarAccess.getNetworksValueAccess().getLeftSquareBracketKeyword_1_0());
-                    			
-                    // InternalDcDsl.g:2907:4: ( (lv_value_2_0= ruleEString ) )
-                    // InternalDcDsl.g:2908:5: (lv_value_2_0= ruleEString )
-                    {
-                    // InternalDcDsl.g:2908:5: (lv_value_2_0= ruleEString )
-                    // InternalDcDsl.g:2909:6: lv_value_2_0= ruleEString
-                    {
-
-                    						newCompositeNode(grammarAccess.getNetworksValueAccess().getValueEStringParserRuleCall_1_1_0());
-                    					
-                    pushFollow(FOLLOW_17);
-                    lv_value_2_0=ruleEString();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getNetworksValueRule());
-                    						}
-                    						add(
-                    							current,
-                    							"value",
-                    							lv_value_2_0,
-                    							"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    // InternalDcDsl.g:2926:4: (otherlv_3= ',' ( (lv_value_4_0= ruleEString ) ) )*
-                    loop47:
-                    do {
-                        int alt47=2;
-                        int LA47_0 = input.LA(1);
-
-                        if ( (LA47_0==35) ) {
-                            alt47=1;
-                        }
-
-
-                        switch (alt47) {
-                    	case 1 :
-                    	    // InternalDcDsl.g:2927:5: otherlv_3= ',' ( (lv_value_4_0= ruleEString ) )
-                    	    {
-                    	    otherlv_3=(Token)match(input,35,FOLLOW_4); 
-
-                    	    					newLeafNode(otherlv_3, grammarAccess.getNetworksValueAccess().getCommaKeyword_1_2_0());
-                    	    				
-                    	    // InternalDcDsl.g:2931:5: ( (lv_value_4_0= ruleEString ) )
-                    	    // InternalDcDsl.g:2932:6: (lv_value_4_0= ruleEString )
-                    	    {
-                    	    // InternalDcDsl.g:2932:6: (lv_value_4_0= ruleEString )
-                    	    // InternalDcDsl.g:2933:7: lv_value_4_0= ruleEString
-                    	    {
-
-                    	    							newCompositeNode(grammarAccess.getNetworksValueAccess().getValueEStringParserRuleCall_1_2_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_17);
-                    	    lv_value_4_0=ruleEString();
-
-                    	    state._fsp--;
-
-
-                    	    							if (current==null) {
-                    	    								current = createModelElementForParent(grammarAccess.getNetworksValueRule());
-                    	    							}
-                    	    							add(
-                    	    								current,
-                    	    								"value",
-                    	    								lv_value_4_0,
-                    	    								"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop47;
-                        }
-                    } while (true);
-
-                    otherlv_5=(Token)match(input,33,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_5, grammarAccess.getNetworksValueAccess().getRightSquareBracketKeyword_1_3());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleNetworksValue"
-
-
-    // $ANTLR start "entryRuleNetworksObject"
-    // InternalDcDsl.g:2960:1: entryRuleNetworksObject returns [EObject current=null] : iv_ruleNetworksObject= ruleNetworksObject EOF ;
-    public final EObject entryRuleNetworksObject() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleNetworksObject = null;
-
-
-        try {
-            // InternalDcDsl.g:2960:55: (iv_ruleNetworksObject= ruleNetworksObject EOF )
-            // InternalDcDsl.g:2961:2: iv_ruleNetworksObject= ruleNetworksObject EOF
-            {
-             newCompositeNode(grammarAccess.getNetworksObjectRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleNetworksObject=ruleNetworksObject();
-
-            state._fsp--;
-
-             current =iv_ruleNetworksObject; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleNetworksObject"
-
-
-    // $ANTLR start "ruleNetworksObject"
-    // InternalDcDsl.g:2967:1: ruleNetworksObject returns [EObject current=null] : ( () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (lv_network_2_0= ruleNetwork ) )+ this_END_BLOCK_3= RULE_END_BLOCK ) ;
-    public final EObject ruleNetworksObject() throws RecognitionException {
-        EObject current = null;
-
-        Token this_BEG_BLOCK_1=null;
-        Token this_END_BLOCK_3=null;
-        EObject lv_network_2_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalDcDsl.g:2973:2: ( ( () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (lv_network_2_0= ruleNetwork ) )+ this_END_BLOCK_3= RULE_END_BLOCK ) )
-            // InternalDcDsl.g:2974:2: ( () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (lv_network_2_0= ruleNetwork ) )+ this_END_BLOCK_3= RULE_END_BLOCK )
-            {
-            // InternalDcDsl.g:2974:2: ( () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (lv_network_2_0= ruleNetwork ) )+ this_END_BLOCK_3= RULE_END_BLOCK )
-            // InternalDcDsl.g:2975:3: () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (lv_network_2_0= ruleNetwork ) )+ this_END_BLOCK_3= RULE_END_BLOCK
-            {
-            // InternalDcDsl.g:2975:3: ()
-            // InternalDcDsl.g:2976:4: 
-            {
-
-            				current = forceCreateModelElement(
-            					grammarAccess.getNetworksObjectAccess().getNetworksObjectAction_0(),
-            					current);
-            			
-
-            }
-
-            this_BEG_BLOCK_1=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_4); 
-
-            			newLeafNode(this_BEG_BLOCK_1, grammarAccess.getNetworksObjectAccess().getBEG_BLOCKTerminalRuleCall_1());
-            		
-            // InternalDcDsl.g:2986:3: ( (lv_network_2_0= ruleNetwork ) )+
-            int cnt49=0;
-            loop49:
-            do {
-                int alt49=2;
-                int LA49_0 = input.LA(1);
-
-                if ( ((LA49_0>=RULE_STRING && LA49_0<=RULE_INT)||(LA49_0>=23 && LA49_0<=30)) ) {
-                    alt49=1;
-                }
-
-
-                switch (alt49) {
-            	case 1 :
-            	    // InternalDcDsl.g:2987:4: (lv_network_2_0= ruleNetwork )
-            	    {
-            	    // InternalDcDsl.g:2987:4: (lv_network_2_0= ruleNetwork )
-            	    // InternalDcDsl.g:2988:5: lv_network_2_0= ruleNetwork
-            	    {
-
-            	    					newCompositeNode(grammarAccess.getNetworksObjectAccess().getNetworkNetworkParserRuleCall_2_0());
-            	    				
-            	    pushFollow(FOLLOW_7);
-            	    lv_network_2_0=ruleNetwork();
-
-            	    state._fsp--;
-
-
-            	    					if (current==null) {
-            	    						current = createModelElementForParent(grammarAccess.getNetworksObjectRule());
-            	    					}
-            	    					add(
-            	    						current,
-            	    						"network",
-            	    						lv_network_2_0,
-            	    						"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.Network");
-            	    					afterParserOrEnumRuleCall();
-            	    				
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    if ( cnt49 >= 1 ) break loop49;
-                        EarlyExitException eee =
-                            new EarlyExitException(49, input);
-                        throw eee;
-                }
-                cnt49++;
-            } while (true);
-
-            this_END_BLOCK_3=(Token)match(input,RULE_END_BLOCK,FOLLOW_2); 
-
-            			newLeafNode(this_END_BLOCK_3, grammarAccess.getNetworksObjectAccess().getEND_BLOCKTerminalRuleCall_3());
-            		
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleNetworksObject"
-
-
     // $ANTLR start "entryRuleNetwork"
-    // InternalDcDsl.g:3013:1: entryRuleNetwork returns [EObject current=null] : iv_ruleNetwork= ruleNetwork EOF ;
+    // InternalDcDsl.g:3257:1: entryRuleNetwork returns [EObject current=null] : iv_ruleNetwork= ruleNetwork EOF ;
     public final EObject entryRuleNetwork() throws RecognitionException {
         EObject current = null;
 
@@ -7528,8 +8470,8 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDcDsl.g:3013:48: (iv_ruleNetwork= ruleNetwork EOF )
-            // InternalDcDsl.g:3014:2: iv_ruleNetwork= ruleNetwork EOF
+            // InternalDcDsl.g:3257:48: (iv_ruleNetwork= ruleNetwork EOF )
+            // InternalDcDsl.g:3258:2: iv_ruleNetwork= ruleNetwork EOF
             {
              newCompositeNode(grammarAccess.getNetworkRule()); 
             pushFollow(FOLLOW_1);
@@ -7556,7 +8498,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNetwork"
-    // InternalDcDsl.g:3020:1: ruleNetwork returns [EObject current=null] : ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK ( (otherlv_3= 'driver' otherlv_4= ':' ( (lv_driver_5_0= ruleEString ) ) ) | (otherlv_6= 'ipv4_address' otherlv_7= ':' ( (lv_ipv4Address_8_0= ruleEString ) ) ) | (otherlv_9= 'ipam' otherlv_10= ':' this_BEG_BLOCK_11= RULE_BEG_BLOCK ( (lv_ipam_12_0= ruleConfig ) )+ this_END_BLOCK_13= RULE_END_BLOCK ) )* this_END_BLOCK_14= RULE_END_BLOCK ) ;
+    // InternalDcDsl.g:3264:1: ruleNetwork returns [EObject current=null] : ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' ( (this_BEG_BLOCK_2= RULE_BEG_BLOCK ( (otherlv_3= 'driver' otherlv_4= ':' ( (lv_driver_5_0= ruleEString ) ) ) | (otherlv_6= 'ipv4_address' otherlv_7= ':' ( (lv_ipv4Address_8_0= ruleEString ) ) ) | (otherlv_9= 'ipam' otherlv_10= ':' this_BEG_BLOCK_11= RULE_BEG_BLOCK ruleKeyName otherlv_13= ':' this_BEG_BLOCK_14= RULE_BEG_BLOCK ( (lv_ipam_15_0= ruleConfig ) )+ this_END_BLOCK_16= RULE_END_BLOCK this_END_BLOCK_17= RULE_END_BLOCK ) )* this_END_BLOCK_18= RULE_END_BLOCK ) | ruleEString )? ) ;
     public final EObject ruleNetwork() throws RecognitionException {
         EObject current = null;
 
@@ -7569,32 +8511,35 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
         Token otherlv_9=null;
         Token otherlv_10=null;
         Token this_BEG_BLOCK_11=null;
-        Token this_END_BLOCK_13=null;
-        Token this_END_BLOCK_14=null;
+        Token otherlv_13=null;
+        Token this_BEG_BLOCK_14=null;
+        Token this_END_BLOCK_16=null;
+        Token this_END_BLOCK_17=null;
+        Token this_END_BLOCK_18=null;
         AntlrDatatypeRuleToken lv_id_0_0 = null;
 
         AntlrDatatypeRuleToken lv_driver_5_0 = null;
 
         AntlrDatatypeRuleToken lv_ipv4Address_8_0 = null;
 
-        EObject lv_ipam_12_0 = null;
+        EObject lv_ipam_15_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalDcDsl.g:3026:2: ( ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK ( (otherlv_3= 'driver' otherlv_4= ':' ( (lv_driver_5_0= ruleEString ) ) ) | (otherlv_6= 'ipv4_address' otherlv_7= ':' ( (lv_ipv4Address_8_0= ruleEString ) ) ) | (otherlv_9= 'ipam' otherlv_10= ':' this_BEG_BLOCK_11= RULE_BEG_BLOCK ( (lv_ipam_12_0= ruleConfig ) )+ this_END_BLOCK_13= RULE_END_BLOCK ) )* this_END_BLOCK_14= RULE_END_BLOCK ) )
-            // InternalDcDsl.g:3027:2: ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK ( (otherlv_3= 'driver' otherlv_4= ':' ( (lv_driver_5_0= ruleEString ) ) ) | (otherlv_6= 'ipv4_address' otherlv_7= ':' ( (lv_ipv4Address_8_0= ruleEString ) ) ) | (otherlv_9= 'ipam' otherlv_10= ':' this_BEG_BLOCK_11= RULE_BEG_BLOCK ( (lv_ipam_12_0= ruleConfig ) )+ this_END_BLOCK_13= RULE_END_BLOCK ) )* this_END_BLOCK_14= RULE_END_BLOCK )
+            // InternalDcDsl.g:3270:2: ( ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' ( (this_BEG_BLOCK_2= RULE_BEG_BLOCK ( (otherlv_3= 'driver' otherlv_4= ':' ( (lv_driver_5_0= ruleEString ) ) ) | (otherlv_6= 'ipv4_address' otherlv_7= ':' ( (lv_ipv4Address_8_0= ruleEString ) ) ) | (otherlv_9= 'ipam' otherlv_10= ':' this_BEG_BLOCK_11= RULE_BEG_BLOCK ruleKeyName otherlv_13= ':' this_BEG_BLOCK_14= RULE_BEG_BLOCK ( (lv_ipam_15_0= ruleConfig ) )+ this_END_BLOCK_16= RULE_END_BLOCK this_END_BLOCK_17= RULE_END_BLOCK ) )* this_END_BLOCK_18= RULE_END_BLOCK ) | ruleEString )? ) )
+            // InternalDcDsl.g:3271:2: ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' ( (this_BEG_BLOCK_2= RULE_BEG_BLOCK ( (otherlv_3= 'driver' otherlv_4= ':' ( (lv_driver_5_0= ruleEString ) ) ) | (otherlv_6= 'ipv4_address' otherlv_7= ':' ( (lv_ipv4Address_8_0= ruleEString ) ) ) | (otherlv_9= 'ipam' otherlv_10= ':' this_BEG_BLOCK_11= RULE_BEG_BLOCK ruleKeyName otherlv_13= ':' this_BEG_BLOCK_14= RULE_BEG_BLOCK ( (lv_ipam_15_0= ruleConfig ) )+ this_END_BLOCK_16= RULE_END_BLOCK this_END_BLOCK_17= RULE_END_BLOCK ) )* this_END_BLOCK_18= RULE_END_BLOCK ) | ruleEString )? )
             {
-            // InternalDcDsl.g:3027:2: ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK ( (otherlv_3= 'driver' otherlv_4= ':' ( (lv_driver_5_0= ruleEString ) ) ) | (otherlv_6= 'ipv4_address' otherlv_7= ':' ( (lv_ipv4Address_8_0= ruleEString ) ) ) | (otherlv_9= 'ipam' otherlv_10= ':' this_BEG_BLOCK_11= RULE_BEG_BLOCK ( (lv_ipam_12_0= ruleConfig ) )+ this_END_BLOCK_13= RULE_END_BLOCK ) )* this_END_BLOCK_14= RULE_END_BLOCK )
-            // InternalDcDsl.g:3028:3: ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK ( (otherlv_3= 'driver' otherlv_4= ':' ( (lv_driver_5_0= ruleEString ) ) ) | (otherlv_6= 'ipv4_address' otherlv_7= ':' ( (lv_ipv4Address_8_0= ruleEString ) ) ) | (otherlv_9= 'ipam' otherlv_10= ':' this_BEG_BLOCK_11= RULE_BEG_BLOCK ( (lv_ipam_12_0= ruleConfig ) )+ this_END_BLOCK_13= RULE_END_BLOCK ) )* this_END_BLOCK_14= RULE_END_BLOCK
+            // InternalDcDsl.g:3271:2: ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' ( (this_BEG_BLOCK_2= RULE_BEG_BLOCK ( (otherlv_3= 'driver' otherlv_4= ':' ( (lv_driver_5_0= ruleEString ) ) ) | (otherlv_6= 'ipv4_address' otherlv_7= ':' ( (lv_ipv4Address_8_0= ruleEString ) ) ) | (otherlv_9= 'ipam' otherlv_10= ':' this_BEG_BLOCK_11= RULE_BEG_BLOCK ruleKeyName otherlv_13= ':' this_BEG_BLOCK_14= RULE_BEG_BLOCK ( (lv_ipam_15_0= ruleConfig ) )+ this_END_BLOCK_16= RULE_END_BLOCK this_END_BLOCK_17= RULE_END_BLOCK ) )* this_END_BLOCK_18= RULE_END_BLOCK ) | ruleEString )? )
+            // InternalDcDsl.g:3272:3: ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' ( (this_BEG_BLOCK_2= RULE_BEG_BLOCK ( (otherlv_3= 'driver' otherlv_4= ':' ( (lv_driver_5_0= ruleEString ) ) ) | (otherlv_6= 'ipv4_address' otherlv_7= ':' ( (lv_ipv4Address_8_0= ruleEString ) ) ) | (otherlv_9= 'ipam' otherlv_10= ':' this_BEG_BLOCK_11= RULE_BEG_BLOCK ruleKeyName otherlv_13= ':' this_BEG_BLOCK_14= RULE_BEG_BLOCK ( (lv_ipam_15_0= ruleConfig ) )+ this_END_BLOCK_16= RULE_END_BLOCK this_END_BLOCK_17= RULE_END_BLOCK ) )* this_END_BLOCK_18= RULE_END_BLOCK ) | ruleEString )?
             {
-            // InternalDcDsl.g:3028:3: ( (lv_id_0_0= ruleEString ) )
-            // InternalDcDsl.g:3029:4: (lv_id_0_0= ruleEString )
+            // InternalDcDsl.g:3272:3: ( (lv_id_0_0= ruleEString ) )
+            // InternalDcDsl.g:3273:4: (lv_id_0_0= ruleEString )
             {
-            // InternalDcDsl.g:3029:4: (lv_id_0_0= ruleEString )
-            // InternalDcDsl.g:3030:5: lv_id_0_0= ruleEString
+            // InternalDcDsl.g:3273:4: (lv_id_0_0= ruleEString )
+            // InternalDcDsl.g:3274:5: lv_id_0_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getNetworkAccess().getIdEStringParserRuleCall_0_0());
@@ -7621,232 +8566,291 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,17,FOLLOW_6); 
+            otherlv_1=(Token)match(input,17,FOLLOW_32); 
 
             			newLeafNode(otherlv_1, grammarAccess.getNetworkAccess().getColonKeyword_1());
             		
-            this_BEG_BLOCK_2=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_26); 
-
-            			newLeafNode(this_BEG_BLOCK_2, grammarAccess.getNetworkAccess().getBEG_BLOCKTerminalRuleCall_2());
-            		
-            // InternalDcDsl.g:3055:3: ( (otherlv_3= 'driver' otherlv_4= ':' ( (lv_driver_5_0= ruleEString ) ) ) | (otherlv_6= 'ipv4_address' otherlv_7= ':' ( (lv_ipv4Address_8_0= ruleEString ) ) ) | (otherlv_9= 'ipam' otherlv_10= ':' this_BEG_BLOCK_11= RULE_BEG_BLOCK ( (lv_ipam_12_0= ruleConfig ) )+ this_END_BLOCK_13= RULE_END_BLOCK ) )*
-            loop51:
-            do {
-                int alt51=4;
-                switch ( input.LA(1) ) {
-                case 63:
+            // InternalDcDsl.g:3295:3: ( (this_BEG_BLOCK_2= RULE_BEG_BLOCK ( (otherlv_3= 'driver' otherlv_4= ':' ( (lv_driver_5_0= ruleEString ) ) ) | (otherlv_6= 'ipv4_address' otherlv_7= ':' ( (lv_ipv4Address_8_0= ruleEString ) ) ) | (otherlv_9= 'ipam' otherlv_10= ':' this_BEG_BLOCK_11= RULE_BEG_BLOCK ruleKeyName otherlv_13= ':' this_BEG_BLOCK_14= RULE_BEG_BLOCK ( (lv_ipam_15_0= ruleConfig ) )+ this_END_BLOCK_16= RULE_END_BLOCK this_END_BLOCK_17= RULE_END_BLOCK ) )* this_END_BLOCK_18= RULE_END_BLOCK ) | ruleEString )?
+            int alt76=3;
+            alt76 = dfa76.predict(input);
+            switch (alt76) {
+                case 1 :
+                    // InternalDcDsl.g:3296:4: (this_BEG_BLOCK_2= RULE_BEG_BLOCK ( (otherlv_3= 'driver' otherlv_4= ':' ( (lv_driver_5_0= ruleEString ) ) ) | (otherlv_6= 'ipv4_address' otherlv_7= ':' ( (lv_ipv4Address_8_0= ruleEString ) ) ) | (otherlv_9= 'ipam' otherlv_10= ':' this_BEG_BLOCK_11= RULE_BEG_BLOCK ruleKeyName otherlv_13= ':' this_BEG_BLOCK_14= RULE_BEG_BLOCK ( (lv_ipam_15_0= ruleConfig ) )+ this_END_BLOCK_16= RULE_END_BLOCK this_END_BLOCK_17= RULE_END_BLOCK ) )* this_END_BLOCK_18= RULE_END_BLOCK )
                     {
-                    alt51=1;
+                    // InternalDcDsl.g:3296:4: (this_BEG_BLOCK_2= RULE_BEG_BLOCK ( (otherlv_3= 'driver' otherlv_4= ':' ( (lv_driver_5_0= ruleEString ) ) ) | (otherlv_6= 'ipv4_address' otherlv_7= ':' ( (lv_ipv4Address_8_0= ruleEString ) ) ) | (otherlv_9= 'ipam' otherlv_10= ':' this_BEG_BLOCK_11= RULE_BEG_BLOCK ruleKeyName otherlv_13= ':' this_BEG_BLOCK_14= RULE_BEG_BLOCK ( (lv_ipam_15_0= ruleConfig ) )+ this_END_BLOCK_16= RULE_END_BLOCK this_END_BLOCK_17= RULE_END_BLOCK ) )* this_END_BLOCK_18= RULE_END_BLOCK )
+                    // InternalDcDsl.g:3297:5: this_BEG_BLOCK_2= RULE_BEG_BLOCK ( (otherlv_3= 'driver' otherlv_4= ':' ( (lv_driver_5_0= ruleEString ) ) ) | (otherlv_6= 'ipv4_address' otherlv_7= ':' ( (lv_ipv4Address_8_0= ruleEString ) ) ) | (otherlv_9= 'ipam' otherlv_10= ':' this_BEG_BLOCK_11= RULE_BEG_BLOCK ruleKeyName otherlv_13= ':' this_BEG_BLOCK_14= RULE_BEG_BLOCK ( (lv_ipam_15_0= ruleConfig ) )+ this_END_BLOCK_16= RULE_END_BLOCK this_END_BLOCK_17= RULE_END_BLOCK ) )* this_END_BLOCK_18= RULE_END_BLOCK
+                    {
+                    this_BEG_BLOCK_2=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_33); 
+
+                    					newLeafNode(this_BEG_BLOCK_2, grammarAccess.getNetworkAccess().getBEG_BLOCKTerminalRuleCall_2_0_0());
+                    				
+                    // InternalDcDsl.g:3301:5: ( (otherlv_3= 'driver' otherlv_4= ':' ( (lv_driver_5_0= ruleEString ) ) ) | (otherlv_6= 'ipv4_address' otherlv_7= ':' ( (lv_ipv4Address_8_0= ruleEString ) ) ) | (otherlv_9= 'ipam' otherlv_10= ':' this_BEG_BLOCK_11= RULE_BEG_BLOCK ruleKeyName otherlv_13= ':' this_BEG_BLOCK_14= RULE_BEG_BLOCK ( (lv_ipam_15_0= ruleConfig ) )+ this_END_BLOCK_16= RULE_END_BLOCK this_END_BLOCK_17= RULE_END_BLOCK ) )*
+                    loop75:
+                    do {
+                        int alt75=4;
+                        switch ( input.LA(1) ) {
+                        case 63:
+                            {
+                            alt75=1;
+                            }
+                            break;
+                        case 64:
+                            {
+                            alt75=2;
+                            }
+                            break;
+                        case 65:
+                            {
+                            alt75=3;
+                            }
+                            break;
+
+                        }
+
+                        switch (alt75) {
+                    	case 1 :
+                    	    // InternalDcDsl.g:3302:6: (otherlv_3= 'driver' otherlv_4= ':' ( (lv_driver_5_0= ruleEString ) ) )
+                    	    {
+                    	    // InternalDcDsl.g:3302:6: (otherlv_3= 'driver' otherlv_4= ':' ( (lv_driver_5_0= ruleEString ) ) )
+                    	    // InternalDcDsl.g:3303:7: otherlv_3= 'driver' otherlv_4= ':' ( (lv_driver_5_0= ruleEString ) )
+                    	    {
+                    	    otherlv_3=(Token)match(input,63,FOLLOW_3); 
+
+                    	    							newLeafNode(otherlv_3, grammarAccess.getNetworkAccess().getDriverKeyword_2_0_1_0_0());
+                    	    						
+                    	    otherlv_4=(Token)match(input,17,FOLLOW_4); 
+
+                    	    							newLeafNode(otherlv_4, grammarAccess.getNetworkAccess().getColonKeyword_2_0_1_0_1());
+                    	    						
+                    	    // InternalDcDsl.g:3311:7: ( (lv_driver_5_0= ruleEString ) )
+                    	    // InternalDcDsl.g:3312:8: (lv_driver_5_0= ruleEString )
+                    	    {
+                    	    // InternalDcDsl.g:3312:8: (lv_driver_5_0= ruleEString )
+                    	    // InternalDcDsl.g:3313:9: lv_driver_5_0= ruleEString
+                    	    {
+
+                    	    									newCompositeNode(grammarAccess.getNetworkAccess().getDriverEStringParserRuleCall_2_0_1_0_2_0());
+                    	    								
+                    	    pushFollow(FOLLOW_33);
+                    	    lv_driver_5_0=ruleEString();
+
+                    	    state._fsp--;
+
+
+                    	    									if (current==null) {
+                    	    										current = createModelElementForParent(grammarAccess.getNetworkRule());
+                    	    									}
+                    	    									set(
+                    	    										current,
+                    	    										"driver",
+                    	    										lv_driver_5_0,
+                    	    										"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
+                    	    									afterParserOrEnumRuleCall();
+                    	    								
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+                    	case 2 :
+                    	    // InternalDcDsl.g:3332:6: (otherlv_6= 'ipv4_address' otherlv_7= ':' ( (lv_ipv4Address_8_0= ruleEString ) ) )
+                    	    {
+                    	    // InternalDcDsl.g:3332:6: (otherlv_6= 'ipv4_address' otherlv_7= ':' ( (lv_ipv4Address_8_0= ruleEString ) ) )
+                    	    // InternalDcDsl.g:3333:7: otherlv_6= 'ipv4_address' otherlv_7= ':' ( (lv_ipv4Address_8_0= ruleEString ) )
+                    	    {
+                    	    otherlv_6=(Token)match(input,64,FOLLOW_3); 
+
+                    	    							newLeafNode(otherlv_6, grammarAccess.getNetworkAccess().getIpv4_addressKeyword_2_0_1_1_0());
+                    	    						
+                    	    otherlv_7=(Token)match(input,17,FOLLOW_4); 
+
+                    	    							newLeafNode(otherlv_7, grammarAccess.getNetworkAccess().getColonKeyword_2_0_1_1_1());
+                    	    						
+                    	    // InternalDcDsl.g:3341:7: ( (lv_ipv4Address_8_0= ruleEString ) )
+                    	    // InternalDcDsl.g:3342:8: (lv_ipv4Address_8_0= ruleEString )
+                    	    {
+                    	    // InternalDcDsl.g:3342:8: (lv_ipv4Address_8_0= ruleEString )
+                    	    // InternalDcDsl.g:3343:9: lv_ipv4Address_8_0= ruleEString
+                    	    {
+
+                    	    									newCompositeNode(grammarAccess.getNetworkAccess().getIpv4AddressEStringParserRuleCall_2_0_1_1_2_0());
+                    	    								
+                    	    pushFollow(FOLLOW_33);
+                    	    lv_ipv4Address_8_0=ruleEString();
+
+                    	    state._fsp--;
+
+
+                    	    									if (current==null) {
+                    	    										current = createModelElementForParent(grammarAccess.getNetworkRule());
+                    	    									}
+                    	    									set(
+                    	    										current,
+                    	    										"ipv4Address",
+                    	    										lv_ipv4Address_8_0,
+                    	    										"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
+                    	    									afterParserOrEnumRuleCall();
+                    	    								
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+                    	case 3 :
+                    	    // InternalDcDsl.g:3362:6: (otherlv_9= 'ipam' otherlv_10= ':' this_BEG_BLOCK_11= RULE_BEG_BLOCK ruleKeyName otherlv_13= ':' this_BEG_BLOCK_14= RULE_BEG_BLOCK ( (lv_ipam_15_0= ruleConfig ) )+ this_END_BLOCK_16= RULE_END_BLOCK this_END_BLOCK_17= RULE_END_BLOCK )
+                    	    {
+                    	    // InternalDcDsl.g:3362:6: (otherlv_9= 'ipam' otherlv_10= ':' this_BEG_BLOCK_11= RULE_BEG_BLOCK ruleKeyName otherlv_13= ':' this_BEG_BLOCK_14= RULE_BEG_BLOCK ( (lv_ipam_15_0= ruleConfig ) )+ this_END_BLOCK_16= RULE_END_BLOCK this_END_BLOCK_17= RULE_END_BLOCK )
+                    	    // InternalDcDsl.g:3363:7: otherlv_9= 'ipam' otherlv_10= ':' this_BEG_BLOCK_11= RULE_BEG_BLOCK ruleKeyName otherlv_13= ':' this_BEG_BLOCK_14= RULE_BEG_BLOCK ( (lv_ipam_15_0= ruleConfig ) )+ this_END_BLOCK_16= RULE_END_BLOCK this_END_BLOCK_17= RULE_END_BLOCK
+                    	    {
+                    	    otherlv_9=(Token)match(input,65,FOLLOW_3); 
+
+                    	    							newLeafNode(otherlv_9, grammarAccess.getNetworkAccess().getIpamKeyword_2_0_1_2_0());
+                    	    						
+                    	    otherlv_10=(Token)match(input,17,FOLLOW_6); 
+
+                    	    							newLeafNode(otherlv_10, grammarAccess.getNetworkAccess().getColonKeyword_2_0_1_2_1());
+                    	    						
+                    	    this_BEG_BLOCK_11=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_22); 
+
+                    	    							newLeafNode(this_BEG_BLOCK_11, grammarAccess.getNetworkAccess().getBEG_BLOCKTerminalRuleCall_2_0_1_2_2());
+                    	    						
+
+                    	    							newCompositeNode(grammarAccess.getNetworkAccess().getKeyNameParserRuleCall_2_0_1_2_3());
+                    	    						
+                    	    pushFollow(FOLLOW_3);
+                    	    ruleKeyName();
+
+                    	    state._fsp--;
+
+
+                    	    							afterParserOrEnumRuleCall();
+                    	    						
+                    	    otherlv_13=(Token)match(input,17,FOLLOW_6); 
+
+                    	    							newLeafNode(otherlv_13, grammarAccess.getNetworkAccess().getColonKeyword_2_0_1_2_4());
+                    	    						
+                    	    this_BEG_BLOCK_14=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_15); 
+
+                    	    							newLeafNode(this_BEG_BLOCK_14, grammarAccess.getNetworkAccess().getBEG_BLOCKTerminalRuleCall_2_0_1_2_5());
+                    	    						
+                    	    // InternalDcDsl.g:3390:7: ( (lv_ipam_15_0= ruleConfig ) )+
+                    	    int cnt74=0;
+                    	    loop74:
+                    	    do {
+                    	        int alt74=2;
+                    	        int LA74_0 = input.LA(1);
+
+                    	        if ( (LA74_0==31) ) {
+                    	            alt74=1;
+                    	        }
+
+
+                    	        switch (alt74) {
+                    	    	case 1 :
+                    	    	    // InternalDcDsl.g:3391:8: (lv_ipam_15_0= ruleConfig )
+                    	    	    {
+                    	    	    // InternalDcDsl.g:3391:8: (lv_ipam_15_0= ruleConfig )
+                    	    	    // InternalDcDsl.g:3392:9: lv_ipam_15_0= ruleConfig
+                    	    	    {
+
+                    	    	    									newCompositeNode(grammarAccess.getNetworkAccess().getIpamConfigParserRuleCall_2_0_1_2_6_0());
+                    	    	    								
+                    	    	    pushFollow(FOLLOW_16);
+                    	    	    lv_ipam_15_0=ruleConfig();
+
+                    	    	    state._fsp--;
+
+
+                    	    	    									if (current==null) {
+                    	    	    										current = createModelElementForParent(grammarAccess.getNetworkRule());
+                    	    	    									}
+                    	    	    									add(
+                    	    	    										current,
+                    	    	    										"ipam",
+                    	    	    										lv_ipam_15_0,
+                    	    	    										"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.Config");
+                    	    	    									afterParserOrEnumRuleCall();
+                    	    	    								
+
+                    	    	    }
+
+
+                    	    	    }
+                    	    	    break;
+
+                    	    	default :
+                    	    	    if ( cnt74 >= 1 ) break loop74;
+                    	                EarlyExitException eee =
+                    	                    new EarlyExitException(74, input);
+                    	                throw eee;
+                    	        }
+                    	        cnt74++;
+                    	    } while (true);
+
+                    	    this_END_BLOCK_16=(Token)match(input,RULE_END_BLOCK,FOLLOW_23); 
+
+                    	    							newLeafNode(this_END_BLOCK_16, grammarAccess.getNetworkAccess().getEND_BLOCKTerminalRuleCall_2_0_1_2_7());
+                    	    						
+                    	    this_END_BLOCK_17=(Token)match(input,RULE_END_BLOCK,FOLLOW_33); 
+
+                    	    							newLeafNode(this_END_BLOCK_17, grammarAccess.getNetworkAccess().getEND_BLOCKTerminalRuleCall_2_0_1_2_8());
+                    	    						
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop75;
+                        }
+                    } while (true);
+
+                    this_END_BLOCK_18=(Token)match(input,RULE_END_BLOCK,FOLLOW_2); 
+
+                    					newLeafNode(this_END_BLOCK_18, grammarAccess.getNetworkAccess().getEND_BLOCKTerminalRuleCall_2_0_2());
+                    				
+
+                    }
+
+
                     }
                     break;
-                case 64:
+                case 2 :
+                    // InternalDcDsl.g:3425:4: ruleEString
                     {
-                    alt51=2;
+
+                    				newCompositeNode(grammarAccess.getNetworkAccess().getEStringParserRuleCall_2_1());
+                    			
+                    pushFollow(FOLLOW_2);
+                    ruleEString();
+
+                    state._fsp--;
+
+
+                    				afterParserOrEnumRuleCall();
+                    			
+
                     }
                     break;
-                case 65:
-                    {
-                    alt51=3;
-                    }
-                    break;
 
-                }
+            }
 
-                switch (alt51) {
-            	case 1 :
-            	    // InternalDcDsl.g:3056:4: (otherlv_3= 'driver' otherlv_4= ':' ( (lv_driver_5_0= ruleEString ) ) )
-            	    {
-            	    // InternalDcDsl.g:3056:4: (otherlv_3= 'driver' otherlv_4= ':' ( (lv_driver_5_0= ruleEString ) ) )
-            	    // InternalDcDsl.g:3057:5: otherlv_3= 'driver' otherlv_4= ':' ( (lv_driver_5_0= ruleEString ) )
-            	    {
-            	    otherlv_3=(Token)match(input,63,FOLLOW_3); 
-
-            	    					newLeafNode(otherlv_3, grammarAccess.getNetworkAccess().getDriverKeyword_3_0_0());
-            	    				
-            	    otherlv_4=(Token)match(input,17,FOLLOW_4); 
-
-            	    					newLeafNode(otherlv_4, grammarAccess.getNetworkAccess().getColonKeyword_3_0_1());
-            	    				
-            	    // InternalDcDsl.g:3065:5: ( (lv_driver_5_0= ruleEString ) )
-            	    // InternalDcDsl.g:3066:6: (lv_driver_5_0= ruleEString )
-            	    {
-            	    // InternalDcDsl.g:3066:6: (lv_driver_5_0= ruleEString )
-            	    // InternalDcDsl.g:3067:7: lv_driver_5_0= ruleEString
-            	    {
-
-            	    							newCompositeNode(grammarAccess.getNetworkAccess().getDriverEStringParserRuleCall_3_0_2_0());
-            	    						
-            	    pushFollow(FOLLOW_26);
-            	    lv_driver_5_0=ruleEString();
-
-            	    state._fsp--;
-
-
-            	    							if (current==null) {
-            	    								current = createModelElementForParent(grammarAccess.getNetworkRule());
-            	    							}
-            	    							set(
-            	    								current,
-            	    								"driver",
-            	    								lv_driver_5_0,
-            	    								"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
-            	    							afterParserOrEnumRuleCall();
-            	    						
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 2 :
-            	    // InternalDcDsl.g:3086:4: (otherlv_6= 'ipv4_address' otherlv_7= ':' ( (lv_ipv4Address_8_0= ruleEString ) ) )
-            	    {
-            	    // InternalDcDsl.g:3086:4: (otherlv_6= 'ipv4_address' otherlv_7= ':' ( (lv_ipv4Address_8_0= ruleEString ) ) )
-            	    // InternalDcDsl.g:3087:5: otherlv_6= 'ipv4_address' otherlv_7= ':' ( (lv_ipv4Address_8_0= ruleEString ) )
-            	    {
-            	    otherlv_6=(Token)match(input,64,FOLLOW_3); 
-
-            	    					newLeafNode(otherlv_6, grammarAccess.getNetworkAccess().getIpv4_addressKeyword_3_1_0());
-            	    				
-            	    otherlv_7=(Token)match(input,17,FOLLOW_4); 
-
-            	    					newLeafNode(otherlv_7, grammarAccess.getNetworkAccess().getColonKeyword_3_1_1());
-            	    				
-            	    // InternalDcDsl.g:3095:5: ( (lv_ipv4Address_8_0= ruleEString ) )
-            	    // InternalDcDsl.g:3096:6: (lv_ipv4Address_8_0= ruleEString )
-            	    {
-            	    // InternalDcDsl.g:3096:6: (lv_ipv4Address_8_0= ruleEString )
-            	    // InternalDcDsl.g:3097:7: lv_ipv4Address_8_0= ruleEString
-            	    {
-
-            	    							newCompositeNode(grammarAccess.getNetworkAccess().getIpv4AddressEStringParserRuleCall_3_1_2_0());
-            	    						
-            	    pushFollow(FOLLOW_26);
-            	    lv_ipv4Address_8_0=ruleEString();
-
-            	    state._fsp--;
-
-
-            	    							if (current==null) {
-            	    								current = createModelElementForParent(grammarAccess.getNetworkRule());
-            	    							}
-            	    							set(
-            	    								current,
-            	    								"ipv4Address",
-            	    								lv_ipv4Address_8_0,
-            	    								"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
-            	    							afterParserOrEnumRuleCall();
-            	    						
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-            	case 3 :
-            	    // InternalDcDsl.g:3116:4: (otherlv_9= 'ipam' otherlv_10= ':' this_BEG_BLOCK_11= RULE_BEG_BLOCK ( (lv_ipam_12_0= ruleConfig ) )+ this_END_BLOCK_13= RULE_END_BLOCK )
-            	    {
-            	    // InternalDcDsl.g:3116:4: (otherlv_9= 'ipam' otherlv_10= ':' this_BEG_BLOCK_11= RULE_BEG_BLOCK ( (lv_ipam_12_0= ruleConfig ) )+ this_END_BLOCK_13= RULE_END_BLOCK )
-            	    // InternalDcDsl.g:3117:5: otherlv_9= 'ipam' otherlv_10= ':' this_BEG_BLOCK_11= RULE_BEG_BLOCK ( (lv_ipam_12_0= ruleConfig ) )+ this_END_BLOCK_13= RULE_END_BLOCK
-            	    {
-            	    otherlv_9=(Token)match(input,65,FOLLOW_3); 
-
-            	    					newLeafNode(otherlv_9, grammarAccess.getNetworkAccess().getIpamKeyword_3_2_0());
-            	    				
-            	    otherlv_10=(Token)match(input,17,FOLLOW_6); 
-
-            	    					newLeafNode(otherlv_10, grammarAccess.getNetworkAccess().getColonKeyword_3_2_1());
-            	    				
-            	    this_BEG_BLOCK_11=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_15); 
-
-            	    					newLeafNode(this_BEG_BLOCK_11, grammarAccess.getNetworkAccess().getBEG_BLOCKTerminalRuleCall_3_2_2());
-            	    				
-            	    // InternalDcDsl.g:3129:5: ( (lv_ipam_12_0= ruleConfig ) )+
-            	    int cnt50=0;
-            	    loop50:
-            	    do {
-            	        int alt50=2;
-            	        int LA50_0 = input.LA(1);
-
-            	        if ( (LA50_0==31) ) {
-            	            alt50=1;
-            	        }
-
-
-            	        switch (alt50) {
-            	    	case 1 :
-            	    	    // InternalDcDsl.g:3130:6: (lv_ipam_12_0= ruleConfig )
-            	    	    {
-            	    	    // InternalDcDsl.g:3130:6: (lv_ipam_12_0= ruleConfig )
-            	    	    // InternalDcDsl.g:3131:7: lv_ipam_12_0= ruleConfig
-            	    	    {
-
-            	    	    							newCompositeNode(grammarAccess.getNetworkAccess().getIpamConfigParserRuleCall_3_2_3_0());
-            	    	    						
-            	    	    pushFollow(FOLLOW_16);
-            	    	    lv_ipam_12_0=ruleConfig();
-
-            	    	    state._fsp--;
-
-
-            	    	    							if (current==null) {
-            	    	    								current = createModelElementForParent(grammarAccess.getNetworkRule());
-            	    	    							}
-            	    	    							add(
-            	    	    								current,
-            	    	    								"ipam",
-            	    	    								lv_ipam_12_0,
-            	    	    								"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.Config");
-            	    	    							afterParserOrEnumRuleCall();
-            	    	    						
-
-            	    	    }
-
-
-            	    	    }
-            	    	    break;
-
-            	    	default :
-            	    	    if ( cnt50 >= 1 ) break loop50;
-            	                EarlyExitException eee =
-            	                    new EarlyExitException(50, input);
-            	                throw eee;
-            	        }
-            	        cnt50++;
-            	    } while (true);
-
-            	    this_END_BLOCK_13=(Token)match(input,RULE_END_BLOCK,FOLLOW_26); 
-
-            	    					newLeafNode(this_END_BLOCK_13, grammarAccess.getNetworkAccess().getEND_BLOCKTerminalRuleCall_3_2_4());
-            	    				
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop51;
-                }
-            } while (true);
-
-            this_END_BLOCK_14=(Token)match(input,RULE_END_BLOCK,FOLLOW_2); 
-
-            			newLeafNode(this_END_BLOCK_14, grammarAccess.getNetworkAccess().getEND_BLOCKTerminalRuleCall_4());
-            		
 
             }
 
@@ -7870,7 +8874,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConfig"
-    // InternalDcDsl.g:3162:1: entryRuleConfig returns [EObject current=null] : iv_ruleConfig= ruleConfig EOF ;
+    // InternalDcDsl.g:3437:1: entryRuleConfig returns [EObject current=null] : iv_ruleConfig= ruleConfig EOF ;
     public final EObject entryRuleConfig() throws RecognitionException {
         EObject current = null;
 
@@ -7878,8 +8882,8 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDcDsl.g:3162:47: (iv_ruleConfig= ruleConfig EOF )
-            // InternalDcDsl.g:3163:2: iv_ruleConfig= ruleConfig EOF
+            // InternalDcDsl.g:3437:47: (iv_ruleConfig= ruleConfig EOF )
+            // InternalDcDsl.g:3438:2: iv_ruleConfig= ruleConfig EOF
             {
              newCompositeNode(grammarAccess.getConfigRule()); 
             pushFollow(FOLLOW_1);
@@ -7906,28 +8910,30 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConfig"
-    // InternalDcDsl.g:3169:1: ruleConfig returns [EObject current=null] : ( () otherlv_1= '-' (otherlv_2= 'subnet' otherlv_3= ':' ( (lv_subnet_4_0= ruleEString ) ) ) ) ;
+    // InternalDcDsl.g:3444:1: ruleConfig returns [EObject current=null] : ( () otherlv_1= '-' this_BEG_BLOCK_2= RULE_BEG_BLOCK (otherlv_3= 'subnet' otherlv_4= ':' ( (lv_subnet_5_0= ruleEString ) ) ) this_END_BLOCK_6= RULE_END_BLOCK ) ;
     public final EObject ruleConfig() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
-        Token otherlv_2=null;
+        Token this_BEG_BLOCK_2=null;
         Token otherlv_3=null;
-        AntlrDatatypeRuleToken lv_subnet_4_0 = null;
+        Token otherlv_4=null;
+        Token this_END_BLOCK_6=null;
+        AntlrDatatypeRuleToken lv_subnet_5_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalDcDsl.g:3175:2: ( ( () otherlv_1= '-' (otherlv_2= 'subnet' otherlv_3= ':' ( (lv_subnet_4_0= ruleEString ) ) ) ) )
-            // InternalDcDsl.g:3176:2: ( () otherlv_1= '-' (otherlv_2= 'subnet' otherlv_3= ':' ( (lv_subnet_4_0= ruleEString ) ) ) )
+            // InternalDcDsl.g:3450:2: ( ( () otherlv_1= '-' this_BEG_BLOCK_2= RULE_BEG_BLOCK (otherlv_3= 'subnet' otherlv_4= ':' ( (lv_subnet_5_0= ruleEString ) ) ) this_END_BLOCK_6= RULE_END_BLOCK ) )
+            // InternalDcDsl.g:3451:2: ( () otherlv_1= '-' this_BEG_BLOCK_2= RULE_BEG_BLOCK (otherlv_3= 'subnet' otherlv_4= ':' ( (lv_subnet_5_0= ruleEString ) ) ) this_END_BLOCK_6= RULE_END_BLOCK )
             {
-            // InternalDcDsl.g:3176:2: ( () otherlv_1= '-' (otherlv_2= 'subnet' otherlv_3= ':' ( (lv_subnet_4_0= ruleEString ) ) ) )
-            // InternalDcDsl.g:3177:3: () otherlv_1= '-' (otherlv_2= 'subnet' otherlv_3= ':' ( (lv_subnet_4_0= ruleEString ) ) )
+            // InternalDcDsl.g:3451:2: ( () otherlv_1= '-' this_BEG_BLOCK_2= RULE_BEG_BLOCK (otherlv_3= 'subnet' otherlv_4= ':' ( (lv_subnet_5_0= ruleEString ) ) ) this_END_BLOCK_6= RULE_END_BLOCK )
+            // InternalDcDsl.g:3452:3: () otherlv_1= '-' this_BEG_BLOCK_2= RULE_BEG_BLOCK (otherlv_3= 'subnet' otherlv_4= ':' ( (lv_subnet_5_0= ruleEString ) ) ) this_END_BLOCK_6= RULE_END_BLOCK
             {
-            // InternalDcDsl.g:3177:3: ()
-            // InternalDcDsl.g:3178:4: 
+            // InternalDcDsl.g:3452:3: ()
+            // InternalDcDsl.g:3453:4: 
             {
 
             				current = forceCreateModelElement(
@@ -7937,32 +8943,36 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,31,FOLLOW_27); 
+            otherlv_1=(Token)match(input,31,FOLLOW_6); 
 
             			newLeafNode(otherlv_1, grammarAccess.getConfigAccess().getHyphenMinusKeyword_1());
             		
-            // InternalDcDsl.g:3188:3: (otherlv_2= 'subnet' otherlv_3= ':' ( (lv_subnet_4_0= ruleEString ) ) )
-            // InternalDcDsl.g:3189:4: otherlv_2= 'subnet' otherlv_3= ':' ( (lv_subnet_4_0= ruleEString ) )
-            {
-            otherlv_2=(Token)match(input,66,FOLLOW_3); 
+            this_BEG_BLOCK_2=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_34); 
 
-            				newLeafNode(otherlv_2, grammarAccess.getConfigAccess().getSubnetKeyword_2_0());
+            			newLeafNode(this_BEG_BLOCK_2, grammarAccess.getConfigAccess().getBEG_BLOCKTerminalRuleCall_2());
+            		
+            // InternalDcDsl.g:3467:3: (otherlv_3= 'subnet' otherlv_4= ':' ( (lv_subnet_5_0= ruleEString ) ) )
+            // InternalDcDsl.g:3468:4: otherlv_3= 'subnet' otherlv_4= ':' ( (lv_subnet_5_0= ruleEString ) )
+            {
+            otherlv_3=(Token)match(input,66,FOLLOW_3); 
+
+            				newLeafNode(otherlv_3, grammarAccess.getConfigAccess().getSubnetKeyword_3_0());
             			
-            otherlv_3=(Token)match(input,17,FOLLOW_4); 
+            otherlv_4=(Token)match(input,17,FOLLOW_4); 
 
-            				newLeafNode(otherlv_3, grammarAccess.getConfigAccess().getColonKeyword_2_1());
+            				newLeafNode(otherlv_4, grammarAccess.getConfigAccess().getColonKeyword_3_1());
             			
-            // InternalDcDsl.g:3197:4: ( (lv_subnet_4_0= ruleEString ) )
-            // InternalDcDsl.g:3198:5: (lv_subnet_4_0= ruleEString )
+            // InternalDcDsl.g:3476:4: ( (lv_subnet_5_0= ruleEString ) )
+            // InternalDcDsl.g:3477:5: (lv_subnet_5_0= ruleEString )
             {
-            // InternalDcDsl.g:3198:5: (lv_subnet_4_0= ruleEString )
-            // InternalDcDsl.g:3199:6: lv_subnet_4_0= ruleEString
+            // InternalDcDsl.g:3477:5: (lv_subnet_5_0= ruleEString )
+            // InternalDcDsl.g:3478:6: lv_subnet_5_0= ruleEString
             {
 
-            						newCompositeNode(grammarAccess.getConfigAccess().getSubnetEStringParserRuleCall_2_2_0());
+            						newCompositeNode(grammarAccess.getConfigAccess().getSubnetEStringParserRuleCall_3_2_0());
             					
-            pushFollow(FOLLOW_2);
-            lv_subnet_4_0=ruleEString();
+            pushFollow(FOLLOW_23);
+            lv_subnet_5_0=ruleEString();
 
             state._fsp--;
 
@@ -7973,7 +8983,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             						set(
             							current,
             							"subnet",
-            							lv_subnet_4_0,
+            							lv_subnet_5_0,
             							"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
             						afterParserOrEnumRuleCall();
             					
@@ -7986,6 +8996,10 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             }
 
+            this_END_BLOCK_6=(Token)match(input,RULE_END_BLOCK,FOLLOW_2); 
+
+            			newLeafNode(this_END_BLOCK_6, grammarAccess.getConfigAccess().getEND_BLOCKTerminalRuleCall_4());
+            		
 
             }
 
@@ -8009,7 +9023,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDepends_on"
-    // InternalDcDsl.g:3221:1: entryRuleDepends_on returns [EObject current=null] : iv_ruleDepends_on= ruleDepends_on EOF ;
+    // InternalDcDsl.g:3504:1: entryRuleDepends_on returns [EObject current=null] : iv_ruleDepends_on= ruleDepends_on EOF ;
     public final EObject entryRuleDepends_on() throws RecognitionException {
         EObject current = null;
 
@@ -8017,8 +9031,8 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDcDsl.g:3221:51: (iv_ruleDepends_on= ruleDepends_on EOF )
-            // InternalDcDsl.g:3222:2: iv_ruleDepends_on= ruleDepends_on EOF
+            // InternalDcDsl.g:3504:51: (iv_ruleDepends_on= ruleDepends_on EOF )
+            // InternalDcDsl.g:3505:2: iv_ruleDepends_on= ruleDepends_on EOF
             {
              newCompositeNode(grammarAccess.getDepends_onRule()); 
             pushFollow(FOLLOW_1);
@@ -8045,72 +9059,466 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDepends_on"
-    // InternalDcDsl.g:3228:1: ruleDepends_on returns [EObject current=null] : (this_Depends_onObject_0= ruleDepends_onObject | this_Depends_onValue_1= ruleDepends_onValue ) ;
+    // InternalDcDsl.g:3511:1: ruleDepends_on returns [EObject current=null] : ( (this_BEG_BLOCK_0= RULE_BEG_BLOCK ( ( () (otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )? )+ ) | ( () ( (lv_db_7_0= ruleDb ) ) ) ) this_END_BLOCK_8= RULE_END_BLOCK ) | ( () otherlv_10= '[' ( (lv_value_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_value_13_0= ruleEString ) ) )* otherlv_14= ']' ) | ( () ( (lv_value_16_0= ruleEString ) ) ) ) ;
     public final EObject ruleDepends_on() throws RecognitionException {
         EObject current = null;
 
-        EObject this_Depends_onObject_0 = null;
+        Token this_BEG_BLOCK_0=null;
+        Token otherlv_2=null;
+        Token this_BEG_BLOCK_3=null;
+        Token this_END_BLOCK_5=null;
+        Token this_END_BLOCK_8=null;
+        Token otherlv_10=null;
+        Token otherlv_12=null;
+        Token otherlv_14=null;
+        AntlrDatatypeRuleToken lv_value_4_0 = null;
 
-        EObject this_Depends_onValue_1 = null;
+        EObject lv_db_7_0 = null;
+
+        AntlrDatatypeRuleToken lv_value_11_0 = null;
+
+        AntlrDatatypeRuleToken lv_value_13_0 = null;
+
+        AntlrDatatypeRuleToken lv_value_16_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalDcDsl.g:3234:2: ( (this_Depends_onObject_0= ruleDepends_onObject | this_Depends_onValue_1= ruleDepends_onValue ) )
-            // InternalDcDsl.g:3235:2: (this_Depends_onObject_0= ruleDepends_onObject | this_Depends_onValue_1= ruleDepends_onValue )
+            // InternalDcDsl.g:3517:2: ( ( (this_BEG_BLOCK_0= RULE_BEG_BLOCK ( ( () (otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )? )+ ) | ( () ( (lv_db_7_0= ruleDb ) ) ) ) this_END_BLOCK_8= RULE_END_BLOCK ) | ( () otherlv_10= '[' ( (lv_value_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_value_13_0= ruleEString ) ) )* otherlv_14= ']' ) | ( () ( (lv_value_16_0= ruleEString ) ) ) ) )
+            // InternalDcDsl.g:3518:2: ( (this_BEG_BLOCK_0= RULE_BEG_BLOCK ( ( () (otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )? )+ ) | ( () ( (lv_db_7_0= ruleDb ) ) ) ) this_END_BLOCK_8= RULE_END_BLOCK ) | ( () otherlv_10= '[' ( (lv_value_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_value_13_0= ruleEString ) ) )* otherlv_14= ']' ) | ( () ( (lv_value_16_0= ruleEString ) ) ) )
             {
-            // InternalDcDsl.g:3235:2: (this_Depends_onObject_0= ruleDepends_onObject | this_Depends_onValue_1= ruleDepends_onValue )
-            int alt52=2;
-            int LA52_0 = input.LA(1);
-
-            if ( (LA52_0==RULE_BEG_BLOCK) ) {
-                alt52=1;
-            }
-            else if ( ((LA52_0>=RULE_STRING && LA52_0<=RULE_INT)||(LA52_0>=23 && LA52_0<=30)||LA52_0==32) ) {
-                alt52=2;
-            }
-            else {
+            // InternalDcDsl.g:3518:2: ( (this_BEG_BLOCK_0= RULE_BEG_BLOCK ( ( () (otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )? )+ ) | ( () ( (lv_db_7_0= ruleDb ) ) ) ) this_END_BLOCK_8= RULE_END_BLOCK ) | ( () otherlv_10= '[' ( (lv_value_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_value_13_0= ruleEString ) ) )* otherlv_14= ']' ) | ( () ( (lv_value_16_0= ruleEString ) ) ) )
+            int alt82=3;
+            switch ( input.LA(1) ) {
+            case RULE_BEG_BLOCK:
+                {
+                alt82=1;
+                }
+                break;
+            case 32:
+                {
+                alt82=2;
+                }
+                break;
+            case RULE_STRING:
+            case RULE_SQ_STRING:
+            case RULE_YAML_SCALAR:
+            case RULE_GH_EXPRESSION:
+            case RULE_ID:
+            case RULE_INT:
+            case 23:
+            case 24:
+            case 25:
+            case 26:
+            case 27:
+            case 28:
+            case 29:
+            case 30:
+                {
+                alt82=3;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 52, 0, input);
+                    new NoViableAltException("", 82, 0, input);
 
                 throw nvae;
             }
-            switch (alt52) {
+
+            switch (alt82) {
                 case 1 :
-                    // InternalDcDsl.g:3236:3: this_Depends_onObject_0= ruleDepends_onObject
+                    // InternalDcDsl.g:3519:3: (this_BEG_BLOCK_0= RULE_BEG_BLOCK ( ( () (otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )? )+ ) | ( () ( (lv_db_7_0= ruleDb ) ) ) ) this_END_BLOCK_8= RULE_END_BLOCK )
                     {
+                    // InternalDcDsl.g:3519:3: (this_BEG_BLOCK_0= RULE_BEG_BLOCK ( ( () (otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )? )+ ) | ( () ( (lv_db_7_0= ruleDb ) ) ) ) this_END_BLOCK_8= RULE_END_BLOCK )
+                    // InternalDcDsl.g:3520:4: this_BEG_BLOCK_0= RULE_BEG_BLOCK ( ( () (otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )? )+ ) | ( () ( (lv_db_7_0= ruleDb ) ) ) ) this_END_BLOCK_8= RULE_END_BLOCK
+                    {
+                    this_BEG_BLOCK_0=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_20); 
 
-                    			newCompositeNode(grammarAccess.getDepends_onAccess().getDepends_onObjectParserRuleCall_0());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_Depends_onObject_0=ruleDepends_onObject();
+                    				newLeafNode(this_BEG_BLOCK_0, grammarAccess.getDepends_onAccess().getBEG_BLOCKTerminalRuleCall_0_0());
+                    			
+                    // InternalDcDsl.g:3524:4: ( ( () (otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )? )+ ) | ( () ( (lv_db_7_0= ruleDb ) ) ) )
+                    int alt80=2;
+                    int LA80_0 = input.LA(1);
 
-                    state._fsp--;
+                    if ( (LA80_0==31) ) {
+                        alt80=1;
+                    }
+                    else if ( (LA80_0==RULE_YAML_SCALAR||(LA80_0>=RULE_ID && LA80_0<=RULE_INT)||LA80_0==16||(LA80_0>=18 && LA80_0<=22)||(LA80_0>=38 && LA80_0<=77)) ) {
+                        alt80=2;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 80, 0, input);
+
+                        throw nvae;
+                    }
+                    switch (alt80) {
+                        case 1 :
+                            // InternalDcDsl.g:3525:5: ( () (otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )? )+ )
+                            {
+                            // InternalDcDsl.g:3525:5: ( () (otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )? )+ )
+                            // InternalDcDsl.g:3526:6: () (otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )? )+
+                            {
+                            // InternalDcDsl.g:3526:6: ()
+                            // InternalDcDsl.g:3527:7: 
+                            {
+
+                            							current = forceCreateModelElement(
+                            								grammarAccess.getDepends_onAccess().getDepends_onValueAction_0_1_0_0(),
+                            								current);
+                            						
+
+                            }
+
+                            // InternalDcDsl.g:3533:6: (otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )? )+
+                            int cnt79=0;
+                            loop79:
+                            do {
+                                int alt79=2;
+                                int LA79_0 = input.LA(1);
+
+                                if ( (LA79_0==31) ) {
+                                    alt79=1;
+                                }
 
 
-                    			current = this_Depends_onObject_0;
-                    			afterParserOrEnumRuleCall();
-                    		
+                                switch (alt79) {
+                            	case 1 :
+                            	    // InternalDcDsl.g:3534:7: otherlv_2= '-' (this_BEG_BLOCK_3= RULE_BEG_BLOCK )? ( (lv_value_4_0= ruleEString ) ) (this_END_BLOCK_5= RULE_END_BLOCK )?
+                            	    {
+                            	    otherlv_2=(Token)match(input,31,FOLLOW_12); 
+
+                            	    							newLeafNode(otherlv_2, grammarAccess.getDepends_onAccess().getHyphenMinusKeyword_0_1_0_1_0());
+                            	    						
+                            	    // InternalDcDsl.g:3538:7: (this_BEG_BLOCK_3= RULE_BEG_BLOCK )?
+                            	    int alt77=2;
+                            	    int LA77_0 = input.LA(1);
+
+                            	    if ( (LA77_0==RULE_BEG_BLOCK) ) {
+                            	        alt77=1;
+                            	    }
+                            	    switch (alt77) {
+                            	        case 1 :
+                            	            // InternalDcDsl.g:3539:8: this_BEG_BLOCK_3= RULE_BEG_BLOCK
+                            	            {
+                            	            this_BEG_BLOCK_3=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_4); 
+
+                            	            								newLeafNode(this_BEG_BLOCK_3, grammarAccess.getDepends_onAccess().getBEG_BLOCKTerminalRuleCall_0_1_0_1_1());
+                            	            							
+
+                            	            }
+                            	            break;
+
+                            	    }
+
+                            	    // InternalDcDsl.g:3544:7: ( (lv_value_4_0= ruleEString ) )
+                            	    // InternalDcDsl.g:3545:8: (lv_value_4_0= ruleEString )
+                            	    {
+                            	    // InternalDcDsl.g:3545:8: (lv_value_4_0= ruleEString )
+                            	    // InternalDcDsl.g:3546:9: lv_value_4_0= ruleEString
+                            	    {
+
+                            	    									newCompositeNode(grammarAccess.getDepends_onAccess().getValueEStringParserRuleCall_0_1_0_1_2_0());
+                            	    								
+                            	    pushFollow(FOLLOW_16);
+                            	    lv_value_4_0=ruleEString();
+
+                            	    state._fsp--;
+
+
+                            	    									if (current==null) {
+                            	    										current = createModelElementForParent(grammarAccess.getDepends_onRule());
+                            	    									}
+                            	    									add(
+                            	    										current,
+                            	    										"value",
+                            	    										lv_value_4_0,
+                            	    										"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
+                            	    									afterParserOrEnumRuleCall();
+                            	    								
+
+                            	    }
+
+
+                            	    }
+
+                            	    // InternalDcDsl.g:3563:7: (this_END_BLOCK_5= RULE_END_BLOCK )?
+                            	    int alt78=2;
+                            	    alt78 = dfa78.predict(input);
+                            	    switch (alt78) {
+                            	        case 1 :
+                            	            // InternalDcDsl.g:3564:8: this_END_BLOCK_5= RULE_END_BLOCK
+                            	            {
+                            	            this_END_BLOCK_5=(Token)match(input,RULE_END_BLOCK,FOLLOW_16); 
+
+                            	            								newLeafNode(this_END_BLOCK_5, grammarAccess.getDepends_onAccess().getEND_BLOCKTerminalRuleCall_0_1_0_1_3());
+                            	            							
+
+                            	            }
+                            	            break;
+
+                            	    }
+
+
+                            	    }
+                            	    break;
+
+                            	default :
+                            	    if ( cnt79 >= 1 ) break loop79;
+                                        EarlyExitException eee =
+                                            new EarlyExitException(79, input);
+                                        throw eee;
+                                }
+                                cnt79++;
+                            } while (true);
+
+
+                            }
+
+
+                            }
+                            break;
+                        case 2 :
+                            // InternalDcDsl.g:3572:5: ( () ( (lv_db_7_0= ruleDb ) ) )
+                            {
+                            // InternalDcDsl.g:3572:5: ( () ( (lv_db_7_0= ruleDb ) ) )
+                            // InternalDcDsl.g:3573:6: () ( (lv_db_7_0= ruleDb ) )
+                            {
+                            // InternalDcDsl.g:3573:6: ()
+                            // InternalDcDsl.g:3574:7: 
+                            {
+
+                            							current = forceCreateModelElement(
+                            								grammarAccess.getDepends_onAccess().getDepends_onObjectAction_0_1_1_0(),
+                            								current);
+                            						
+
+                            }
+
+                            // InternalDcDsl.g:3580:6: ( (lv_db_7_0= ruleDb ) )
+                            // InternalDcDsl.g:3581:7: (lv_db_7_0= ruleDb )
+                            {
+                            // InternalDcDsl.g:3581:7: (lv_db_7_0= ruleDb )
+                            // InternalDcDsl.g:3582:8: lv_db_7_0= ruleDb
+                            {
+
+                            								newCompositeNode(grammarAccess.getDepends_onAccess().getDbDbParserRuleCall_0_1_1_1_0());
+                            							
+                            pushFollow(FOLLOW_23);
+                            lv_db_7_0=ruleDb();
+
+                            state._fsp--;
+
+
+                            								if (current==null) {
+                            									current = createModelElementForParent(grammarAccess.getDepends_onRule());
+                            								}
+                            								set(
+                            									current,
+                            									"db",
+                            									lv_db_7_0,
+                            									"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.Db");
+                            								afterParserOrEnumRuleCall();
+                            							
+
+                            }
+
+
+                            }
+
+
+                            }
+
+
+                            }
+                            break;
+
+                    }
+
+                    this_END_BLOCK_8=(Token)match(input,RULE_END_BLOCK,FOLLOW_2); 
+
+                    				newLeafNode(this_END_BLOCK_8, grammarAccess.getDepends_onAccess().getEND_BLOCKTerminalRuleCall_0_2());
+                    			
+
+                    }
+
 
                     }
                     break;
                 case 2 :
-                    // InternalDcDsl.g:3245:3: this_Depends_onValue_1= ruleDepends_onValue
+                    // InternalDcDsl.g:3607:3: ( () otherlv_10= '[' ( (lv_value_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_value_13_0= ruleEString ) ) )* otherlv_14= ']' )
+                    {
+                    // InternalDcDsl.g:3607:3: ( () otherlv_10= '[' ( (lv_value_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_value_13_0= ruleEString ) ) )* otherlv_14= ']' )
+                    // InternalDcDsl.g:3608:4: () otherlv_10= '[' ( (lv_value_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_value_13_0= ruleEString ) ) )* otherlv_14= ']'
+                    {
+                    // InternalDcDsl.g:3608:4: ()
+                    // InternalDcDsl.g:3609:5: 
                     {
 
-                    			newCompositeNode(grammarAccess.getDepends_onAccess().getDepends_onValueParserRuleCall_1());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_Depends_onValue_1=ruleDepends_onValue();
+                    					current = forceCreateModelElement(
+                    						grammarAccess.getDepends_onAccess().getDepends_onValueAction_1_0(),
+                    						current);
+                    				
+
+                    }
+
+                    otherlv_10=(Token)match(input,32,FOLLOW_4); 
+
+                    				newLeafNode(otherlv_10, grammarAccess.getDepends_onAccess().getLeftSquareBracketKeyword_1_1());
+                    			
+                    // InternalDcDsl.g:3619:4: ( (lv_value_11_0= ruleEString ) )
+                    // InternalDcDsl.g:3620:5: (lv_value_11_0= ruleEString )
+                    {
+                    // InternalDcDsl.g:3620:5: (lv_value_11_0= ruleEString )
+                    // InternalDcDsl.g:3621:6: lv_value_11_0= ruleEString
+                    {
+
+                    						newCompositeNode(grammarAccess.getDepends_onAccess().getValueEStringParserRuleCall_1_2_0());
+                    					
+                    pushFollow(FOLLOW_17);
+                    lv_value_11_0=ruleEString();
 
                     state._fsp--;
 
 
-                    			current = this_Depends_onValue_1;
-                    			afterParserOrEnumRuleCall();
-                    		
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getDepends_onRule());
+                    						}
+                    						add(
+                    							current,
+                    							"value",
+                    							lv_value_11_0,
+                    							"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+                    // InternalDcDsl.g:3638:4: (otherlv_12= ',' ( (lv_value_13_0= ruleEString ) ) )*
+                    loop81:
+                    do {
+                        int alt81=2;
+                        int LA81_0 = input.LA(1);
+
+                        if ( (LA81_0==35) ) {
+                            alt81=1;
+                        }
+
+
+                        switch (alt81) {
+                    	case 1 :
+                    	    // InternalDcDsl.g:3639:5: otherlv_12= ',' ( (lv_value_13_0= ruleEString ) )
+                    	    {
+                    	    otherlv_12=(Token)match(input,35,FOLLOW_4); 
+
+                    	    					newLeafNode(otherlv_12, grammarAccess.getDepends_onAccess().getCommaKeyword_1_3_0());
+                    	    				
+                    	    // InternalDcDsl.g:3643:5: ( (lv_value_13_0= ruleEString ) )
+                    	    // InternalDcDsl.g:3644:6: (lv_value_13_0= ruleEString )
+                    	    {
+                    	    // InternalDcDsl.g:3644:6: (lv_value_13_0= ruleEString )
+                    	    // InternalDcDsl.g:3645:7: lv_value_13_0= ruleEString
+                    	    {
+
+                    	    							newCompositeNode(grammarAccess.getDepends_onAccess().getValueEStringParserRuleCall_1_3_1_0());
+                    	    						
+                    	    pushFollow(FOLLOW_17);
+                    	    lv_value_13_0=ruleEString();
+
+                    	    state._fsp--;
+
+
+                    	    							if (current==null) {
+                    	    								current = createModelElementForParent(grammarAccess.getDepends_onRule());
+                    	    							}
+                    	    							add(
+                    	    								current,
+                    	    								"value",
+                    	    								lv_value_13_0,
+                    	    								"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
+                    	    							afterParserOrEnumRuleCall();
+                    	    						
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop81;
+                        }
+                    } while (true);
+
+                    otherlv_14=(Token)match(input,33,FOLLOW_2); 
+
+                    				newLeafNode(otherlv_14, grammarAccess.getDepends_onAccess().getRightSquareBracketKeyword_1_4());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalDcDsl.g:3669:3: ( () ( (lv_value_16_0= ruleEString ) ) )
+                    {
+                    // InternalDcDsl.g:3669:3: ( () ( (lv_value_16_0= ruleEString ) ) )
+                    // InternalDcDsl.g:3670:4: () ( (lv_value_16_0= ruleEString ) )
+                    {
+                    // InternalDcDsl.g:3670:4: ()
+                    // InternalDcDsl.g:3671:5: 
+                    {
+
+                    					current = forceCreateModelElement(
+                    						grammarAccess.getDepends_onAccess().getDepends_onValueAction_2_0(),
+                    						current);
+                    				
+
+                    }
+
+                    // InternalDcDsl.g:3677:4: ( (lv_value_16_0= ruleEString ) )
+                    // InternalDcDsl.g:3678:5: (lv_value_16_0= ruleEString )
+                    {
+                    // InternalDcDsl.g:3678:5: (lv_value_16_0= ruleEString )
+                    // InternalDcDsl.g:3679:6: lv_value_16_0= ruleEString
+                    {
+
+                    						newCompositeNode(grammarAccess.getDepends_onAccess().getValueEStringParserRuleCall_2_1_0());
+                    					
+                    pushFollow(FOLLOW_2);
+                    lv_value_16_0=ruleEString();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getDepends_onRule());
+                    						}
+                    						add(
+                    							current,
+                    							"value",
+                    							lv_value_16_0,
+                    							"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+
 
                     }
                     break;
@@ -8136,380 +9544,8 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleDepends_on"
 
 
-    // $ANTLR start "entryRuleDepends_onValue"
-    // InternalDcDsl.g:3257:1: entryRuleDepends_onValue returns [EObject current=null] : iv_ruleDepends_onValue= ruleDepends_onValue EOF ;
-    public final EObject entryRuleDepends_onValue() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleDepends_onValue = null;
-
-
-        try {
-            // InternalDcDsl.g:3257:56: (iv_ruleDepends_onValue= ruleDepends_onValue EOF )
-            // InternalDcDsl.g:3258:2: iv_ruleDepends_onValue= ruleDepends_onValue EOF
-            {
-             newCompositeNode(grammarAccess.getDepends_onValueRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleDepends_onValue=ruleDepends_onValue();
-
-            state._fsp--;
-
-             current =iv_ruleDepends_onValue; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleDepends_onValue"
-
-
-    // $ANTLR start "ruleDepends_onValue"
-    // InternalDcDsl.g:3264:1: ruleDepends_onValue returns [EObject current=null] : ( ( (lv_value_0_0= ruleEString ) ) | (otherlv_1= '[' ( (lv_value_2_0= ruleEString ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleEString ) ) )* otherlv_5= ']' ) ) ;
-    public final EObject ruleDepends_onValue() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_1=null;
-        Token otherlv_3=null;
-        Token otherlv_5=null;
-        AntlrDatatypeRuleToken lv_value_0_0 = null;
-
-        AntlrDatatypeRuleToken lv_value_2_0 = null;
-
-        AntlrDatatypeRuleToken lv_value_4_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalDcDsl.g:3270:2: ( ( ( (lv_value_0_0= ruleEString ) ) | (otherlv_1= '[' ( (lv_value_2_0= ruleEString ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleEString ) ) )* otherlv_5= ']' ) ) )
-            // InternalDcDsl.g:3271:2: ( ( (lv_value_0_0= ruleEString ) ) | (otherlv_1= '[' ( (lv_value_2_0= ruleEString ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleEString ) ) )* otherlv_5= ']' ) )
-            {
-            // InternalDcDsl.g:3271:2: ( ( (lv_value_0_0= ruleEString ) ) | (otherlv_1= '[' ( (lv_value_2_0= ruleEString ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleEString ) ) )* otherlv_5= ']' ) )
-            int alt54=2;
-            int LA54_0 = input.LA(1);
-
-            if ( ((LA54_0>=RULE_STRING && LA54_0<=RULE_INT)||(LA54_0>=23 && LA54_0<=30)) ) {
-                alt54=1;
-            }
-            else if ( (LA54_0==32) ) {
-                alt54=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 54, 0, input);
-
-                throw nvae;
-            }
-            switch (alt54) {
-                case 1 :
-                    // InternalDcDsl.g:3272:3: ( (lv_value_0_0= ruleEString ) )
-                    {
-                    // InternalDcDsl.g:3272:3: ( (lv_value_0_0= ruleEString ) )
-                    // InternalDcDsl.g:3273:4: (lv_value_0_0= ruleEString )
-                    {
-                    // InternalDcDsl.g:3273:4: (lv_value_0_0= ruleEString )
-                    // InternalDcDsl.g:3274:5: lv_value_0_0= ruleEString
-                    {
-
-                    					newCompositeNode(grammarAccess.getDepends_onValueAccess().getValueEStringParserRuleCall_0_0());
-                    				
-                    pushFollow(FOLLOW_2);
-                    lv_value_0_0=ruleEString();
-
-                    state._fsp--;
-
-
-                    					if (current==null) {
-                    						current = createModelElementForParent(grammarAccess.getDepends_onValueRule());
-                    					}
-                    					add(
-                    						current,
-                    						"value",
-                    						lv_value_0_0,
-                    						"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
-                    					afterParserOrEnumRuleCall();
-                    				
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalDcDsl.g:3292:3: (otherlv_1= '[' ( (lv_value_2_0= ruleEString ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleEString ) ) )* otherlv_5= ']' )
-                    {
-                    // InternalDcDsl.g:3292:3: (otherlv_1= '[' ( (lv_value_2_0= ruleEString ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleEString ) ) )* otherlv_5= ']' )
-                    // InternalDcDsl.g:3293:4: otherlv_1= '[' ( (lv_value_2_0= ruleEString ) ) (otherlv_3= ',' ( (lv_value_4_0= ruleEString ) ) )* otherlv_5= ']'
-                    {
-                    otherlv_1=(Token)match(input,32,FOLLOW_4); 
-
-                    				newLeafNode(otherlv_1, grammarAccess.getDepends_onValueAccess().getLeftSquareBracketKeyword_1_0());
-                    			
-                    // InternalDcDsl.g:3297:4: ( (lv_value_2_0= ruleEString ) )
-                    // InternalDcDsl.g:3298:5: (lv_value_2_0= ruleEString )
-                    {
-                    // InternalDcDsl.g:3298:5: (lv_value_2_0= ruleEString )
-                    // InternalDcDsl.g:3299:6: lv_value_2_0= ruleEString
-                    {
-
-                    						newCompositeNode(grammarAccess.getDepends_onValueAccess().getValueEStringParserRuleCall_1_1_0());
-                    					
-                    pushFollow(FOLLOW_17);
-                    lv_value_2_0=ruleEString();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getDepends_onValueRule());
-                    						}
-                    						add(
-                    							current,
-                    							"value",
-                    							lv_value_2_0,
-                    							"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    // InternalDcDsl.g:3316:4: (otherlv_3= ',' ( (lv_value_4_0= ruleEString ) ) )*
-                    loop53:
-                    do {
-                        int alt53=2;
-                        int LA53_0 = input.LA(1);
-
-                        if ( (LA53_0==35) ) {
-                            alt53=1;
-                        }
-
-
-                        switch (alt53) {
-                    	case 1 :
-                    	    // InternalDcDsl.g:3317:5: otherlv_3= ',' ( (lv_value_4_0= ruleEString ) )
-                    	    {
-                    	    otherlv_3=(Token)match(input,35,FOLLOW_4); 
-
-                    	    					newLeafNode(otherlv_3, grammarAccess.getDepends_onValueAccess().getCommaKeyword_1_2_0());
-                    	    				
-                    	    // InternalDcDsl.g:3321:5: ( (lv_value_4_0= ruleEString ) )
-                    	    // InternalDcDsl.g:3322:6: (lv_value_4_0= ruleEString )
-                    	    {
-                    	    // InternalDcDsl.g:3322:6: (lv_value_4_0= ruleEString )
-                    	    // InternalDcDsl.g:3323:7: lv_value_4_0= ruleEString
-                    	    {
-
-                    	    							newCompositeNode(grammarAccess.getDepends_onValueAccess().getValueEStringParserRuleCall_1_2_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_17);
-                    	    lv_value_4_0=ruleEString();
-
-                    	    state._fsp--;
-
-
-                    	    							if (current==null) {
-                    	    								current = createModelElementForParent(grammarAccess.getDepends_onValueRule());
-                    	    							}
-                    	    							add(
-                    	    								current,
-                    	    								"value",
-                    	    								lv_value_4_0,
-                    	    								"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop53;
-                        }
-                    } while (true);
-
-                    otherlv_5=(Token)match(input,33,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_5, grammarAccess.getDepends_onValueAccess().getRightSquareBracketKeyword_1_3());
-                    			
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleDepends_onValue"
-
-
-    // $ANTLR start "entryRuleDepends_onObject"
-    // InternalDcDsl.g:3350:1: entryRuleDepends_onObject returns [EObject current=null] : iv_ruleDepends_onObject= ruleDepends_onObject EOF ;
-    public final EObject entryRuleDepends_onObject() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleDepends_onObject = null;
-
-
-        try {
-            // InternalDcDsl.g:3350:57: (iv_ruleDepends_onObject= ruleDepends_onObject EOF )
-            // InternalDcDsl.g:3351:2: iv_ruleDepends_onObject= ruleDepends_onObject EOF
-            {
-             newCompositeNode(grammarAccess.getDepends_onObjectRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleDepends_onObject=ruleDepends_onObject();
-
-            state._fsp--;
-
-             current =iv_ruleDepends_onObject; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleDepends_onObject"
-
-
-    // $ANTLR start "ruleDepends_onObject"
-    // InternalDcDsl.g:3357:1: ruleDepends_onObject returns [EObject current=null] : ( () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (lv_db_2_0= ruleDb ) ) this_END_BLOCK_3= RULE_END_BLOCK ) ;
-    public final EObject ruleDepends_onObject() throws RecognitionException {
-        EObject current = null;
-
-        Token this_BEG_BLOCK_1=null;
-        Token this_END_BLOCK_3=null;
-        EObject lv_db_2_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalDcDsl.g:3363:2: ( ( () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (lv_db_2_0= ruleDb ) ) this_END_BLOCK_3= RULE_END_BLOCK ) )
-            // InternalDcDsl.g:3364:2: ( () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (lv_db_2_0= ruleDb ) ) this_END_BLOCK_3= RULE_END_BLOCK )
-            {
-            // InternalDcDsl.g:3364:2: ( () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (lv_db_2_0= ruleDb ) ) this_END_BLOCK_3= RULE_END_BLOCK )
-            // InternalDcDsl.g:3365:3: () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (lv_db_2_0= ruleDb ) ) this_END_BLOCK_3= RULE_END_BLOCK
-            {
-            // InternalDcDsl.g:3365:3: ()
-            // InternalDcDsl.g:3366:4: 
-            {
-
-            				current = forceCreateModelElement(
-            					grammarAccess.getDepends_onObjectAccess().getDepends_onObjectAction_0(),
-            					current);
-            			
-
-            }
-
-            this_BEG_BLOCK_1=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_19); 
-
-            			newLeafNode(this_BEG_BLOCK_1, grammarAccess.getDepends_onObjectAccess().getBEG_BLOCKTerminalRuleCall_1());
-            		
-            // InternalDcDsl.g:3376:3: ( (lv_db_2_0= ruleDb ) )
-            // InternalDcDsl.g:3377:4: (lv_db_2_0= ruleDb )
-            {
-            // InternalDcDsl.g:3377:4: (lv_db_2_0= ruleDb )
-            // InternalDcDsl.g:3378:5: lv_db_2_0= ruleDb
-            {
-
-            					newCompositeNode(grammarAccess.getDepends_onObjectAccess().getDbDbParserRuleCall_2_0());
-            				
-            pushFollow(FOLLOW_28);
-            lv_db_2_0=ruleDb();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getDepends_onObjectRule());
-            					}
-            					set(
-            						current,
-            						"db",
-            						lv_db_2_0,
-            						"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.Db");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            this_END_BLOCK_3=(Token)match(input,RULE_END_BLOCK,FOLLOW_2); 
-
-            			newLeafNode(this_END_BLOCK_3, grammarAccess.getDepends_onObjectAccess().getEND_BLOCKTerminalRuleCall_3());
-            		
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleDepends_onObject"
-
-
     // $ANTLR start "entryRuleDb"
-    // InternalDcDsl.g:3403:1: entryRuleDb returns [EObject current=null] : iv_ruleDb= ruleDb EOF ;
+    // InternalDcDsl.g:3701:1: entryRuleDb returns [EObject current=null] : iv_ruleDb= ruleDb EOF ;
     public final EObject entryRuleDb() throws RecognitionException {
         EObject current = null;
 
@@ -8517,8 +9553,8 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDcDsl.g:3403:43: (iv_ruleDb= ruleDb EOF )
-            // InternalDcDsl.g:3404:2: iv_ruleDb= ruleDb EOF
+            // InternalDcDsl.g:3701:43: (iv_ruleDb= ruleDb EOF )
+            // InternalDcDsl.g:3702:2: iv_ruleDb= ruleDb EOF
             {
              newCompositeNode(grammarAccess.getDbRule()); 
             pushFollow(FOLLOW_1);
@@ -8545,7 +9581,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDb"
-    // InternalDcDsl.g:3410:1: ruleDb returns [EObject current=null] : ( () ruleKeyName otherlv_2= ':' this_BEG_BLOCK_3= RULE_BEG_BLOCK (otherlv_4= 'condition' otherlv_5= ':' ( (lv_condition_6_0= ruleEString ) ) ) this_END_BLOCK_7= RULE_END_BLOCK ) ;
+    // InternalDcDsl.g:3708:1: ruleDb returns [EObject current=null] : ( () ruleKeyName otherlv_2= ':' this_BEG_BLOCK_3= RULE_BEG_BLOCK (otherlv_4= 'condition' otherlv_5= ':' ( (lv_condition_6_0= ruleEString ) ) ) this_END_BLOCK_7= RULE_END_BLOCK ) ;
     public final EObject ruleDb() throws RecognitionException {
         EObject current = null;
 
@@ -8561,14 +9597,14 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDcDsl.g:3416:2: ( ( () ruleKeyName otherlv_2= ':' this_BEG_BLOCK_3= RULE_BEG_BLOCK (otherlv_4= 'condition' otherlv_5= ':' ( (lv_condition_6_0= ruleEString ) ) ) this_END_BLOCK_7= RULE_END_BLOCK ) )
-            // InternalDcDsl.g:3417:2: ( () ruleKeyName otherlv_2= ':' this_BEG_BLOCK_3= RULE_BEG_BLOCK (otherlv_4= 'condition' otherlv_5= ':' ( (lv_condition_6_0= ruleEString ) ) ) this_END_BLOCK_7= RULE_END_BLOCK )
+            // InternalDcDsl.g:3714:2: ( ( () ruleKeyName otherlv_2= ':' this_BEG_BLOCK_3= RULE_BEG_BLOCK (otherlv_4= 'condition' otherlv_5= ':' ( (lv_condition_6_0= ruleEString ) ) ) this_END_BLOCK_7= RULE_END_BLOCK ) )
+            // InternalDcDsl.g:3715:2: ( () ruleKeyName otherlv_2= ':' this_BEG_BLOCK_3= RULE_BEG_BLOCK (otherlv_4= 'condition' otherlv_5= ':' ( (lv_condition_6_0= ruleEString ) ) ) this_END_BLOCK_7= RULE_END_BLOCK )
             {
-            // InternalDcDsl.g:3417:2: ( () ruleKeyName otherlv_2= ':' this_BEG_BLOCK_3= RULE_BEG_BLOCK (otherlv_4= 'condition' otherlv_5= ':' ( (lv_condition_6_0= ruleEString ) ) ) this_END_BLOCK_7= RULE_END_BLOCK )
-            // InternalDcDsl.g:3418:3: () ruleKeyName otherlv_2= ':' this_BEG_BLOCK_3= RULE_BEG_BLOCK (otherlv_4= 'condition' otherlv_5= ':' ( (lv_condition_6_0= ruleEString ) ) ) this_END_BLOCK_7= RULE_END_BLOCK
+            // InternalDcDsl.g:3715:2: ( () ruleKeyName otherlv_2= ':' this_BEG_BLOCK_3= RULE_BEG_BLOCK (otherlv_4= 'condition' otherlv_5= ':' ( (lv_condition_6_0= ruleEString ) ) ) this_END_BLOCK_7= RULE_END_BLOCK )
+            // InternalDcDsl.g:3716:3: () ruleKeyName otherlv_2= ':' this_BEG_BLOCK_3= RULE_BEG_BLOCK (otherlv_4= 'condition' otherlv_5= ':' ( (lv_condition_6_0= ruleEString ) ) ) this_END_BLOCK_7= RULE_END_BLOCK
             {
-            // InternalDcDsl.g:3418:3: ()
-            // InternalDcDsl.g:3419:4: 
+            // InternalDcDsl.g:3716:3: ()
+            // InternalDcDsl.g:3717:4: 
             {
 
             				current = forceCreateModelElement(
@@ -8593,12 +9629,12 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getDbAccess().getColonKeyword_2());
             		
-            this_BEG_BLOCK_3=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_29); 
+            this_BEG_BLOCK_3=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_35); 
 
             			newLeafNode(this_BEG_BLOCK_3, grammarAccess.getDbAccess().getBEG_BLOCKTerminalRuleCall_3());
             		
-            // InternalDcDsl.g:3440:3: (otherlv_4= 'condition' otherlv_5= ':' ( (lv_condition_6_0= ruleEString ) ) )
-            // InternalDcDsl.g:3441:4: otherlv_4= 'condition' otherlv_5= ':' ( (lv_condition_6_0= ruleEString ) )
+            // InternalDcDsl.g:3738:3: (otherlv_4= 'condition' otherlv_5= ':' ( (lv_condition_6_0= ruleEString ) ) )
+            // InternalDcDsl.g:3739:4: otherlv_4= 'condition' otherlv_5= ':' ( (lv_condition_6_0= ruleEString ) )
             {
             otherlv_4=(Token)match(input,67,FOLLOW_3); 
 
@@ -8608,16 +9644,16 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             				newLeafNode(otherlv_5, grammarAccess.getDbAccess().getColonKeyword_4_1());
             			
-            // InternalDcDsl.g:3449:4: ( (lv_condition_6_0= ruleEString ) )
-            // InternalDcDsl.g:3450:5: (lv_condition_6_0= ruleEString )
+            // InternalDcDsl.g:3747:4: ( (lv_condition_6_0= ruleEString ) )
+            // InternalDcDsl.g:3748:5: (lv_condition_6_0= ruleEString )
             {
-            // InternalDcDsl.g:3450:5: (lv_condition_6_0= ruleEString )
-            // InternalDcDsl.g:3451:6: lv_condition_6_0= ruleEString
+            // InternalDcDsl.g:3748:5: (lv_condition_6_0= ruleEString )
+            // InternalDcDsl.g:3749:6: lv_condition_6_0= ruleEString
             {
 
             						newCompositeNode(grammarAccess.getDbAccess().getConditionEStringParserRuleCall_4_2_0());
             					
-            pushFollow(FOLLOW_28);
+            pushFollow(FOLLOW_23);
             lv_condition_6_0=ruleEString();
 
             state._fsp--;
@@ -8669,7 +9705,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleHealthcheck"
-    // InternalDcDsl.g:3477:1: entryRuleHealthcheck returns [EObject current=null] : iv_ruleHealthcheck= ruleHealthcheck EOF ;
+    // InternalDcDsl.g:3775:1: entryRuleHealthcheck returns [EObject current=null] : iv_ruleHealthcheck= ruleHealthcheck EOF ;
     public final EObject entryRuleHealthcheck() throws RecognitionException {
         EObject current = null;
 
@@ -8677,8 +9713,8 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDcDsl.g:3477:52: (iv_ruleHealthcheck= ruleHealthcheck EOF )
-            // InternalDcDsl.g:3478:2: iv_ruleHealthcheck= ruleHealthcheck EOF
+            // InternalDcDsl.g:3775:52: (iv_ruleHealthcheck= ruleHealthcheck EOF )
+            // InternalDcDsl.g:3776:2: iv_ruleHealthcheck= ruleHealthcheck EOF
             {
              newCompositeNode(grammarAccess.getHealthcheckRule()); 
             pushFollow(FOLLOW_1);
@@ -8705,7 +9741,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHealthcheck"
-    // InternalDcDsl.g:3484:1: ruleHealthcheck returns [EObject current=null] : ( () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (otherlv_2= 'test' otherlv_3= ':' ( (this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' ( (lv_test_6_0= ruleEString ) ) )+ this_END_BLOCK_7= RULE_END_BLOCK ) | (otherlv_8= '[' ( (lv_test_9_0= ruleEString ) ) (otherlv_10= ',' ( (lv_test_11_0= ruleEString ) ) )* otherlv_12= ']' ) ) ) | (otherlv_13= 'interval' otherlv_14= ':' ( (lv_interval_15_0= ruleEString ) ) ) | (otherlv_16= 'timeout' otherlv_17= ':' ( (lv_timeout_18_0= ruleEString ) ) ) | (otherlv_19= 'retries' otherlv_20= ':' ( (lv_retries_21_0= RULE_INT ) ) ) | (otherlv_22= 'start_period' otherlv_23= ':' ( (lv_startPeriod_24_0= ruleEString ) ) ) )* this_END_BLOCK_25= RULE_END_BLOCK ) ;
+    // InternalDcDsl.g:3782:1: ruleHealthcheck returns [EObject current=null] : ( () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (otherlv_2= 'test' otherlv_3= ':' ( (this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' (this_BEG_BLOCK_6= RULE_BEG_BLOCK )? ( (lv_test_7_0= ruleEString ) ) (this_END_BLOCK_8= RULE_END_BLOCK )? )+ this_END_BLOCK_9= RULE_END_BLOCK ) | (otherlv_10= '[' ( (lv_test_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_test_13_0= ruleEString ) ) )* otherlv_14= ']' ) ) ) | (otherlv_15= 'interval' otherlv_16= ':' ( (lv_interval_17_0= ruleEString ) ) ) | (otherlv_18= 'timeout' otherlv_19= ':' ( (lv_timeout_20_0= ruleEString ) ) ) | (otherlv_21= 'retries' otherlv_22= ':' ( (lv_retries_23_0= RULE_INT ) ) ) | (otherlv_24= 'start_period' otherlv_25= ':' ( (lv_startPeriod_26_0= ruleEString ) ) ) )* this_END_BLOCK_27= RULE_END_BLOCK ) ;
     public final EObject ruleHealthcheck() throws RecognitionException {
         EObject current = null;
 
@@ -8714,45 +9750,47 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
         Token otherlv_3=null;
         Token this_BEG_BLOCK_4=null;
         Token otherlv_5=null;
-        Token this_END_BLOCK_7=null;
-        Token otherlv_8=null;
+        Token this_BEG_BLOCK_6=null;
+        Token this_END_BLOCK_8=null;
+        Token this_END_BLOCK_9=null;
         Token otherlv_10=null;
         Token otherlv_12=null;
-        Token otherlv_13=null;
         Token otherlv_14=null;
+        Token otherlv_15=null;
         Token otherlv_16=null;
-        Token otherlv_17=null;
+        Token otherlv_18=null;
         Token otherlv_19=null;
-        Token otherlv_20=null;
-        Token lv_retries_21_0=null;
+        Token otherlv_21=null;
         Token otherlv_22=null;
-        Token otherlv_23=null;
-        Token this_END_BLOCK_25=null;
-        AntlrDatatypeRuleToken lv_test_6_0 = null;
-
-        AntlrDatatypeRuleToken lv_test_9_0 = null;
+        Token lv_retries_23_0=null;
+        Token otherlv_24=null;
+        Token otherlv_25=null;
+        Token this_END_BLOCK_27=null;
+        AntlrDatatypeRuleToken lv_test_7_0 = null;
 
         AntlrDatatypeRuleToken lv_test_11_0 = null;
 
-        AntlrDatatypeRuleToken lv_interval_15_0 = null;
+        AntlrDatatypeRuleToken lv_test_13_0 = null;
 
-        AntlrDatatypeRuleToken lv_timeout_18_0 = null;
+        AntlrDatatypeRuleToken lv_interval_17_0 = null;
 
-        AntlrDatatypeRuleToken lv_startPeriod_24_0 = null;
+        AntlrDatatypeRuleToken lv_timeout_20_0 = null;
+
+        AntlrDatatypeRuleToken lv_startPeriod_26_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalDcDsl.g:3490:2: ( ( () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (otherlv_2= 'test' otherlv_3= ':' ( (this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' ( (lv_test_6_0= ruleEString ) ) )+ this_END_BLOCK_7= RULE_END_BLOCK ) | (otherlv_8= '[' ( (lv_test_9_0= ruleEString ) ) (otherlv_10= ',' ( (lv_test_11_0= ruleEString ) ) )* otherlv_12= ']' ) ) ) | (otherlv_13= 'interval' otherlv_14= ':' ( (lv_interval_15_0= ruleEString ) ) ) | (otherlv_16= 'timeout' otherlv_17= ':' ( (lv_timeout_18_0= ruleEString ) ) ) | (otherlv_19= 'retries' otherlv_20= ':' ( (lv_retries_21_0= RULE_INT ) ) ) | (otherlv_22= 'start_period' otherlv_23= ':' ( (lv_startPeriod_24_0= ruleEString ) ) ) )* this_END_BLOCK_25= RULE_END_BLOCK ) )
-            // InternalDcDsl.g:3491:2: ( () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (otherlv_2= 'test' otherlv_3= ':' ( (this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' ( (lv_test_6_0= ruleEString ) ) )+ this_END_BLOCK_7= RULE_END_BLOCK ) | (otherlv_8= '[' ( (lv_test_9_0= ruleEString ) ) (otherlv_10= ',' ( (lv_test_11_0= ruleEString ) ) )* otherlv_12= ']' ) ) ) | (otherlv_13= 'interval' otherlv_14= ':' ( (lv_interval_15_0= ruleEString ) ) ) | (otherlv_16= 'timeout' otherlv_17= ':' ( (lv_timeout_18_0= ruleEString ) ) ) | (otherlv_19= 'retries' otherlv_20= ':' ( (lv_retries_21_0= RULE_INT ) ) ) | (otherlv_22= 'start_period' otherlv_23= ':' ( (lv_startPeriod_24_0= ruleEString ) ) ) )* this_END_BLOCK_25= RULE_END_BLOCK )
+            // InternalDcDsl.g:3788:2: ( ( () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (otherlv_2= 'test' otherlv_3= ':' ( (this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' (this_BEG_BLOCK_6= RULE_BEG_BLOCK )? ( (lv_test_7_0= ruleEString ) ) (this_END_BLOCK_8= RULE_END_BLOCK )? )+ this_END_BLOCK_9= RULE_END_BLOCK ) | (otherlv_10= '[' ( (lv_test_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_test_13_0= ruleEString ) ) )* otherlv_14= ']' ) ) ) | (otherlv_15= 'interval' otherlv_16= ':' ( (lv_interval_17_0= ruleEString ) ) ) | (otherlv_18= 'timeout' otherlv_19= ':' ( (lv_timeout_20_0= ruleEString ) ) ) | (otherlv_21= 'retries' otherlv_22= ':' ( (lv_retries_23_0= RULE_INT ) ) ) | (otherlv_24= 'start_period' otherlv_25= ':' ( (lv_startPeriod_26_0= ruleEString ) ) ) )* this_END_BLOCK_27= RULE_END_BLOCK ) )
+            // InternalDcDsl.g:3789:2: ( () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (otherlv_2= 'test' otherlv_3= ':' ( (this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' (this_BEG_BLOCK_6= RULE_BEG_BLOCK )? ( (lv_test_7_0= ruleEString ) ) (this_END_BLOCK_8= RULE_END_BLOCK )? )+ this_END_BLOCK_9= RULE_END_BLOCK ) | (otherlv_10= '[' ( (lv_test_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_test_13_0= ruleEString ) ) )* otherlv_14= ']' ) ) ) | (otherlv_15= 'interval' otherlv_16= ':' ( (lv_interval_17_0= ruleEString ) ) ) | (otherlv_18= 'timeout' otherlv_19= ':' ( (lv_timeout_20_0= ruleEString ) ) ) | (otherlv_21= 'retries' otherlv_22= ':' ( (lv_retries_23_0= RULE_INT ) ) ) | (otherlv_24= 'start_period' otherlv_25= ':' ( (lv_startPeriod_26_0= ruleEString ) ) ) )* this_END_BLOCK_27= RULE_END_BLOCK )
             {
-            // InternalDcDsl.g:3491:2: ( () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (otherlv_2= 'test' otherlv_3= ':' ( (this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' ( (lv_test_6_0= ruleEString ) ) )+ this_END_BLOCK_7= RULE_END_BLOCK ) | (otherlv_8= '[' ( (lv_test_9_0= ruleEString ) ) (otherlv_10= ',' ( (lv_test_11_0= ruleEString ) ) )* otherlv_12= ']' ) ) ) | (otherlv_13= 'interval' otherlv_14= ':' ( (lv_interval_15_0= ruleEString ) ) ) | (otherlv_16= 'timeout' otherlv_17= ':' ( (lv_timeout_18_0= ruleEString ) ) ) | (otherlv_19= 'retries' otherlv_20= ':' ( (lv_retries_21_0= RULE_INT ) ) ) | (otherlv_22= 'start_period' otherlv_23= ':' ( (lv_startPeriod_24_0= ruleEString ) ) ) )* this_END_BLOCK_25= RULE_END_BLOCK )
-            // InternalDcDsl.g:3492:3: () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (otherlv_2= 'test' otherlv_3= ':' ( (this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' ( (lv_test_6_0= ruleEString ) ) )+ this_END_BLOCK_7= RULE_END_BLOCK ) | (otherlv_8= '[' ( (lv_test_9_0= ruleEString ) ) (otherlv_10= ',' ( (lv_test_11_0= ruleEString ) ) )* otherlv_12= ']' ) ) ) | (otherlv_13= 'interval' otherlv_14= ':' ( (lv_interval_15_0= ruleEString ) ) ) | (otherlv_16= 'timeout' otherlv_17= ':' ( (lv_timeout_18_0= ruleEString ) ) ) | (otherlv_19= 'retries' otherlv_20= ':' ( (lv_retries_21_0= RULE_INT ) ) ) | (otherlv_22= 'start_period' otherlv_23= ':' ( (lv_startPeriod_24_0= ruleEString ) ) ) )* this_END_BLOCK_25= RULE_END_BLOCK
+            // InternalDcDsl.g:3789:2: ( () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (otherlv_2= 'test' otherlv_3= ':' ( (this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' (this_BEG_BLOCK_6= RULE_BEG_BLOCK )? ( (lv_test_7_0= ruleEString ) ) (this_END_BLOCK_8= RULE_END_BLOCK )? )+ this_END_BLOCK_9= RULE_END_BLOCK ) | (otherlv_10= '[' ( (lv_test_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_test_13_0= ruleEString ) ) )* otherlv_14= ']' ) ) ) | (otherlv_15= 'interval' otherlv_16= ':' ( (lv_interval_17_0= ruleEString ) ) ) | (otherlv_18= 'timeout' otherlv_19= ':' ( (lv_timeout_20_0= ruleEString ) ) ) | (otherlv_21= 'retries' otherlv_22= ':' ( (lv_retries_23_0= RULE_INT ) ) ) | (otherlv_24= 'start_period' otherlv_25= ':' ( (lv_startPeriod_26_0= ruleEString ) ) ) )* this_END_BLOCK_27= RULE_END_BLOCK )
+            // InternalDcDsl.g:3790:3: () this_BEG_BLOCK_1= RULE_BEG_BLOCK ( (otherlv_2= 'test' otherlv_3= ':' ( (this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' (this_BEG_BLOCK_6= RULE_BEG_BLOCK )? ( (lv_test_7_0= ruleEString ) ) (this_END_BLOCK_8= RULE_END_BLOCK )? )+ this_END_BLOCK_9= RULE_END_BLOCK ) | (otherlv_10= '[' ( (lv_test_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_test_13_0= ruleEString ) ) )* otherlv_14= ']' ) ) ) | (otherlv_15= 'interval' otherlv_16= ':' ( (lv_interval_17_0= ruleEString ) ) ) | (otherlv_18= 'timeout' otherlv_19= ':' ( (lv_timeout_20_0= ruleEString ) ) ) | (otherlv_21= 'retries' otherlv_22= ':' ( (lv_retries_23_0= RULE_INT ) ) ) | (otherlv_24= 'start_period' otherlv_25= ':' ( (lv_startPeriod_26_0= ruleEString ) ) ) )* this_END_BLOCK_27= RULE_END_BLOCK
             {
-            // InternalDcDsl.g:3492:3: ()
-            // InternalDcDsl.g:3493:4: 
+            // InternalDcDsl.g:3790:3: ()
+            // InternalDcDsl.g:3791:4: 
             {
 
             				current = forceCreateModelElement(
@@ -8762,49 +9800,49 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_BEG_BLOCK_1=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_30); 
+            this_BEG_BLOCK_1=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_36); 
 
             			newLeafNode(this_BEG_BLOCK_1, grammarAccess.getHealthcheckAccess().getBEG_BLOCKTerminalRuleCall_1());
             		
-            // InternalDcDsl.g:3503:3: ( (otherlv_2= 'test' otherlv_3= ':' ( (this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' ( (lv_test_6_0= ruleEString ) ) )+ this_END_BLOCK_7= RULE_END_BLOCK ) | (otherlv_8= '[' ( (lv_test_9_0= ruleEString ) ) (otherlv_10= ',' ( (lv_test_11_0= ruleEString ) ) )* otherlv_12= ']' ) ) ) | (otherlv_13= 'interval' otherlv_14= ':' ( (lv_interval_15_0= ruleEString ) ) ) | (otherlv_16= 'timeout' otherlv_17= ':' ( (lv_timeout_18_0= ruleEString ) ) ) | (otherlv_19= 'retries' otherlv_20= ':' ( (lv_retries_21_0= RULE_INT ) ) ) | (otherlv_22= 'start_period' otherlv_23= ':' ( (lv_startPeriod_24_0= ruleEString ) ) ) )*
-            loop58:
+            // InternalDcDsl.g:3801:3: ( (otherlv_2= 'test' otherlv_3= ':' ( (this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' (this_BEG_BLOCK_6= RULE_BEG_BLOCK )? ( (lv_test_7_0= ruleEString ) ) (this_END_BLOCK_8= RULE_END_BLOCK )? )+ this_END_BLOCK_9= RULE_END_BLOCK ) | (otherlv_10= '[' ( (lv_test_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_test_13_0= ruleEString ) ) )* otherlv_14= ']' ) ) ) | (otherlv_15= 'interval' otherlv_16= ':' ( (lv_interval_17_0= ruleEString ) ) ) | (otherlv_18= 'timeout' otherlv_19= ':' ( (lv_timeout_20_0= ruleEString ) ) ) | (otherlv_21= 'retries' otherlv_22= ':' ( (lv_retries_23_0= RULE_INT ) ) ) | (otherlv_24= 'start_period' otherlv_25= ':' ( (lv_startPeriod_26_0= ruleEString ) ) ) )*
+            loop88:
             do {
-                int alt58=6;
+                int alt88=6;
                 switch ( input.LA(1) ) {
                 case 71:
                     {
-                    alt58=1;
+                    alt88=1;
                     }
                     break;
                 case 72:
                     {
-                    alt58=2;
+                    alt88=2;
                     }
                     break;
                 case 73:
                     {
-                    alt58=3;
+                    alt88=3;
                     }
                     break;
                 case 74:
                     {
-                    alt58=4;
+                    alt88=4;
                     }
                     break;
                 case 75:
                     {
-                    alt58=5;
+                    alt88=5;
                     }
                     break;
 
                 }
 
-                switch (alt58) {
+                switch (alt88) {
             	case 1 :
-            	    // InternalDcDsl.g:3504:4: (otherlv_2= 'test' otherlv_3= ':' ( (this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' ( (lv_test_6_0= ruleEString ) ) )+ this_END_BLOCK_7= RULE_END_BLOCK ) | (otherlv_8= '[' ( (lv_test_9_0= ruleEString ) ) (otherlv_10= ',' ( (lv_test_11_0= ruleEString ) ) )* otherlv_12= ']' ) ) )
+            	    // InternalDcDsl.g:3802:4: (otherlv_2= 'test' otherlv_3= ':' ( (this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' (this_BEG_BLOCK_6= RULE_BEG_BLOCK )? ( (lv_test_7_0= ruleEString ) ) (this_END_BLOCK_8= RULE_END_BLOCK )? )+ this_END_BLOCK_9= RULE_END_BLOCK ) | (otherlv_10= '[' ( (lv_test_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_test_13_0= ruleEString ) ) )* otherlv_14= ']' ) ) )
             	    {
-            	    // InternalDcDsl.g:3504:4: (otherlv_2= 'test' otherlv_3= ':' ( (this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' ( (lv_test_6_0= ruleEString ) ) )+ this_END_BLOCK_7= RULE_END_BLOCK ) | (otherlv_8= '[' ( (lv_test_9_0= ruleEString ) ) (otherlv_10= ',' ( (lv_test_11_0= ruleEString ) ) )* otherlv_12= ']' ) ) )
-            	    // InternalDcDsl.g:3505:5: otherlv_2= 'test' otherlv_3= ':' ( (this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' ( (lv_test_6_0= ruleEString ) ) )+ this_END_BLOCK_7= RULE_END_BLOCK ) | (otherlv_8= '[' ( (lv_test_9_0= ruleEString ) ) (otherlv_10= ',' ( (lv_test_11_0= ruleEString ) ) )* otherlv_12= ']' ) )
+            	    // InternalDcDsl.g:3802:4: (otherlv_2= 'test' otherlv_3= ':' ( (this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' (this_BEG_BLOCK_6= RULE_BEG_BLOCK )? ( (lv_test_7_0= ruleEString ) ) (this_END_BLOCK_8= RULE_END_BLOCK )? )+ this_END_BLOCK_9= RULE_END_BLOCK ) | (otherlv_10= '[' ( (lv_test_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_test_13_0= ruleEString ) ) )* otherlv_14= ']' ) ) )
+            	    // InternalDcDsl.g:3803:5: otherlv_2= 'test' otherlv_3= ':' ( (this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' (this_BEG_BLOCK_6= RULE_BEG_BLOCK )? ( (lv_test_7_0= ruleEString ) ) (this_END_BLOCK_8= RULE_END_BLOCK )? )+ this_END_BLOCK_9= RULE_END_BLOCK ) | (otherlv_10= '[' ( (lv_test_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_test_13_0= ruleEString ) ) )* otherlv_14= ']' ) )
             	    {
             	    otherlv_2=(Token)match(input,71,FOLLOW_3); 
 
@@ -8814,64 +9852,85 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	    					newLeafNode(otherlv_3, grammarAccess.getHealthcheckAccess().getColonKeyword_2_0_1());
             	    				
-            	    // InternalDcDsl.g:3513:5: ( (this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' ( (lv_test_6_0= ruleEString ) ) )+ this_END_BLOCK_7= RULE_END_BLOCK ) | (otherlv_8= '[' ( (lv_test_9_0= ruleEString ) ) (otherlv_10= ',' ( (lv_test_11_0= ruleEString ) ) )* otherlv_12= ']' ) )
-            	    int alt57=2;
-            	    int LA57_0 = input.LA(1);
+            	    // InternalDcDsl.g:3811:5: ( (this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' (this_BEG_BLOCK_6= RULE_BEG_BLOCK )? ( (lv_test_7_0= ruleEString ) ) (this_END_BLOCK_8= RULE_END_BLOCK )? )+ this_END_BLOCK_9= RULE_END_BLOCK ) | (otherlv_10= '[' ( (lv_test_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_test_13_0= ruleEString ) ) )* otherlv_14= ']' ) )
+            	    int alt87=2;
+            	    int LA87_0 = input.LA(1);
 
-            	    if ( (LA57_0==RULE_BEG_BLOCK) ) {
-            	        alt57=1;
+            	    if ( (LA87_0==RULE_BEG_BLOCK) ) {
+            	        alt87=1;
             	    }
-            	    else if ( (LA57_0==32) ) {
-            	        alt57=2;
+            	    else if ( (LA87_0==32) ) {
+            	        alt87=2;
             	    }
             	    else {
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 57, 0, input);
+            	            new NoViableAltException("", 87, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt57) {
+            	    switch (alt87) {
             	        case 1 :
-            	            // InternalDcDsl.g:3514:6: (this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' ( (lv_test_6_0= ruleEString ) ) )+ this_END_BLOCK_7= RULE_END_BLOCK )
+            	            // InternalDcDsl.g:3812:6: (this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' (this_BEG_BLOCK_6= RULE_BEG_BLOCK )? ( (lv_test_7_0= ruleEString ) ) (this_END_BLOCK_8= RULE_END_BLOCK )? )+ this_END_BLOCK_9= RULE_END_BLOCK )
             	            {
-            	            // InternalDcDsl.g:3514:6: (this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' ( (lv_test_6_0= ruleEString ) ) )+ this_END_BLOCK_7= RULE_END_BLOCK )
-            	            // InternalDcDsl.g:3515:7: this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' ( (lv_test_6_0= ruleEString ) ) )+ this_END_BLOCK_7= RULE_END_BLOCK
+            	            // InternalDcDsl.g:3812:6: (this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' (this_BEG_BLOCK_6= RULE_BEG_BLOCK )? ( (lv_test_7_0= ruleEString ) ) (this_END_BLOCK_8= RULE_END_BLOCK )? )+ this_END_BLOCK_9= RULE_END_BLOCK )
+            	            // InternalDcDsl.g:3813:7: this_BEG_BLOCK_4= RULE_BEG_BLOCK (otherlv_5= '-' (this_BEG_BLOCK_6= RULE_BEG_BLOCK )? ( (lv_test_7_0= ruleEString ) ) (this_END_BLOCK_8= RULE_END_BLOCK )? )+ this_END_BLOCK_9= RULE_END_BLOCK
             	            {
             	            this_BEG_BLOCK_4=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_15); 
 
             	            							newLeafNode(this_BEG_BLOCK_4, grammarAccess.getHealthcheckAccess().getBEG_BLOCKTerminalRuleCall_2_0_2_0_0());
             	            						
-            	            // InternalDcDsl.g:3519:7: (otherlv_5= '-' ( (lv_test_6_0= ruleEString ) ) )+
-            	            int cnt55=0;
-            	            loop55:
+            	            // InternalDcDsl.g:3817:7: (otherlv_5= '-' (this_BEG_BLOCK_6= RULE_BEG_BLOCK )? ( (lv_test_7_0= ruleEString ) ) (this_END_BLOCK_8= RULE_END_BLOCK )? )+
+            	            int cnt85=0;
+            	            loop85:
             	            do {
-            	                int alt55=2;
-            	                int LA55_0 = input.LA(1);
+            	                int alt85=2;
+            	                int LA85_0 = input.LA(1);
 
-            	                if ( (LA55_0==31) ) {
-            	                    alt55=1;
+            	                if ( (LA85_0==31) ) {
+            	                    alt85=1;
             	                }
 
 
-            	                switch (alt55) {
+            	                switch (alt85) {
             	            	case 1 :
-            	            	    // InternalDcDsl.g:3520:8: otherlv_5= '-' ( (lv_test_6_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:3818:8: otherlv_5= '-' (this_BEG_BLOCK_6= RULE_BEG_BLOCK )? ( (lv_test_7_0= ruleEString ) ) (this_END_BLOCK_8= RULE_END_BLOCK )?
             	            	    {
-            	            	    otherlv_5=(Token)match(input,31,FOLLOW_4); 
+            	            	    otherlv_5=(Token)match(input,31,FOLLOW_12); 
 
             	            	    								newLeafNode(otherlv_5, grammarAccess.getHealthcheckAccess().getHyphenMinusKeyword_2_0_2_0_1_0());
             	            	    							
-            	            	    // InternalDcDsl.g:3524:8: ( (lv_test_6_0= ruleEString ) )
-            	            	    // InternalDcDsl.g:3525:9: (lv_test_6_0= ruleEString )
+            	            	    // InternalDcDsl.g:3822:8: (this_BEG_BLOCK_6= RULE_BEG_BLOCK )?
+            	            	    int alt83=2;
+            	            	    int LA83_0 = input.LA(1);
+
+            	            	    if ( (LA83_0==RULE_BEG_BLOCK) ) {
+            	            	        alt83=1;
+            	            	    }
+            	            	    switch (alt83) {
+            	            	        case 1 :
+            	            	            // InternalDcDsl.g:3823:9: this_BEG_BLOCK_6= RULE_BEG_BLOCK
+            	            	            {
+            	            	            this_BEG_BLOCK_6=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_4); 
+
+            	            	            									newLeafNode(this_BEG_BLOCK_6, grammarAccess.getHealthcheckAccess().getBEG_BLOCKTerminalRuleCall_2_0_2_0_1_1());
+            	            	            								
+
+            	            	            }
+            	            	            break;
+
+            	            	    }
+
+            	            	    // InternalDcDsl.g:3828:8: ( (lv_test_7_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:3829:9: (lv_test_7_0= ruleEString )
             	            	    {
-            	            	    // InternalDcDsl.g:3525:9: (lv_test_6_0= ruleEString )
-            	            	    // InternalDcDsl.g:3526:10: lv_test_6_0= ruleEString
+            	            	    // InternalDcDsl.g:3829:9: (lv_test_7_0= ruleEString )
+            	            	    // InternalDcDsl.g:3830:10: lv_test_7_0= ruleEString
             	            	    {
 
-            	            	    										newCompositeNode(grammarAccess.getHealthcheckAccess().getTestEStringParserRuleCall_2_0_2_0_1_1_0());
+            	            	    										newCompositeNode(grammarAccess.getHealthcheckAccess().getTestEStringParserRuleCall_2_0_2_0_1_2_0());
             	            	    									
             	            	    pushFollow(FOLLOW_16);
-            	            	    lv_test_6_0=ruleEString();
+            	            	    lv_test_7_0=ruleEString();
 
             	            	    state._fsp--;
 
@@ -8882,7 +9941,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            	    										add(
             	            	    											current,
             	            	    											"test",
-            	            	    											lv_test_6_0,
+            	            	    											lv_test_7_0,
             	            	    											"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
             	            	    										afterParserOrEnumRuleCall();
             	            	    									
@@ -8892,22 +9951,39 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	            	    }
 
+            	            	    // InternalDcDsl.g:3847:8: (this_END_BLOCK_8= RULE_END_BLOCK )?
+            	            	    int alt84=2;
+            	            	    alt84 = dfa84.predict(input);
+            	            	    switch (alt84) {
+            	            	        case 1 :
+            	            	            // InternalDcDsl.g:3848:9: this_END_BLOCK_8= RULE_END_BLOCK
+            	            	            {
+            	            	            this_END_BLOCK_8=(Token)match(input,RULE_END_BLOCK,FOLLOW_16); 
+
+            	            	            									newLeafNode(this_END_BLOCK_8, grammarAccess.getHealthcheckAccess().getEND_BLOCKTerminalRuleCall_2_0_2_0_1_3());
+            	            	            								
+
+            	            	            }
+            	            	            break;
+
+            	            	    }
+
 
             	            	    }
             	            	    break;
 
             	            	default :
-            	            	    if ( cnt55 >= 1 ) break loop55;
+            	            	    if ( cnt85 >= 1 ) break loop85;
             	                        EarlyExitException eee =
-            	                            new EarlyExitException(55, input);
+            	                            new EarlyExitException(85, input);
             	                        throw eee;
             	                }
-            	                cnt55++;
+            	                cnt85++;
             	            } while (true);
 
-            	            this_END_BLOCK_7=(Token)match(input,RULE_END_BLOCK,FOLLOW_30); 
+            	            this_END_BLOCK_9=(Token)match(input,RULE_END_BLOCK,FOLLOW_36); 
 
-            	            							newLeafNode(this_END_BLOCK_7, grammarAccess.getHealthcheckAccess().getEND_BLOCKTerminalRuleCall_2_0_2_0_2());
+            	            							newLeafNode(this_END_BLOCK_9, grammarAccess.getHealthcheckAccess().getEND_BLOCKTerminalRuleCall_2_0_2_0_2());
             	            						
 
             	            }
@@ -8916,26 +9992,26 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalDcDsl.g:3550:6: (otherlv_8= '[' ( (lv_test_9_0= ruleEString ) ) (otherlv_10= ',' ( (lv_test_11_0= ruleEString ) ) )* otherlv_12= ']' )
+            	            // InternalDcDsl.g:3860:6: (otherlv_10= '[' ( (lv_test_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_test_13_0= ruleEString ) ) )* otherlv_14= ']' )
             	            {
-            	            // InternalDcDsl.g:3550:6: (otherlv_8= '[' ( (lv_test_9_0= ruleEString ) ) (otherlv_10= ',' ( (lv_test_11_0= ruleEString ) ) )* otherlv_12= ']' )
-            	            // InternalDcDsl.g:3551:7: otherlv_8= '[' ( (lv_test_9_0= ruleEString ) ) (otherlv_10= ',' ( (lv_test_11_0= ruleEString ) ) )* otherlv_12= ']'
+            	            // InternalDcDsl.g:3860:6: (otherlv_10= '[' ( (lv_test_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_test_13_0= ruleEString ) ) )* otherlv_14= ']' )
+            	            // InternalDcDsl.g:3861:7: otherlv_10= '[' ( (lv_test_11_0= ruleEString ) ) (otherlv_12= ',' ( (lv_test_13_0= ruleEString ) ) )* otherlv_14= ']'
             	            {
-            	            otherlv_8=(Token)match(input,32,FOLLOW_4); 
+            	            otherlv_10=(Token)match(input,32,FOLLOW_4); 
 
-            	            							newLeafNode(otherlv_8, grammarAccess.getHealthcheckAccess().getLeftSquareBracketKeyword_2_0_2_1_0());
+            	            							newLeafNode(otherlv_10, grammarAccess.getHealthcheckAccess().getLeftSquareBracketKeyword_2_0_2_1_0());
             	            						
-            	            // InternalDcDsl.g:3555:7: ( (lv_test_9_0= ruleEString ) )
-            	            // InternalDcDsl.g:3556:8: (lv_test_9_0= ruleEString )
+            	            // InternalDcDsl.g:3865:7: ( (lv_test_11_0= ruleEString ) )
+            	            // InternalDcDsl.g:3866:8: (lv_test_11_0= ruleEString )
             	            {
-            	            // InternalDcDsl.g:3556:8: (lv_test_9_0= ruleEString )
-            	            // InternalDcDsl.g:3557:9: lv_test_9_0= ruleEString
+            	            // InternalDcDsl.g:3866:8: (lv_test_11_0= ruleEString )
+            	            // InternalDcDsl.g:3867:9: lv_test_11_0= ruleEString
             	            {
 
             	            									newCompositeNode(grammarAccess.getHealthcheckAccess().getTestEStringParserRuleCall_2_0_2_1_1_0());
             	            								
             	            pushFollow(FOLLOW_17);
-            	            lv_test_9_0=ruleEString();
+            	            lv_test_11_0=ruleEString();
 
             	            state._fsp--;
 
@@ -8946,7 +10022,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            									add(
             	            										current,
             	            										"test",
-            	            										lv_test_9_0,
+            	            										lv_test_11_0,
             	            										"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
             	            									afterParserOrEnumRuleCall();
             	            								
@@ -8956,36 +10032,36 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             	            }
 
-            	            // InternalDcDsl.g:3574:7: (otherlv_10= ',' ( (lv_test_11_0= ruleEString ) ) )*
-            	            loop56:
+            	            // InternalDcDsl.g:3884:7: (otherlv_12= ',' ( (lv_test_13_0= ruleEString ) ) )*
+            	            loop86:
             	            do {
-            	                int alt56=2;
-            	                int LA56_0 = input.LA(1);
+            	                int alt86=2;
+            	                int LA86_0 = input.LA(1);
 
-            	                if ( (LA56_0==35) ) {
-            	                    alt56=1;
+            	                if ( (LA86_0==35) ) {
+            	                    alt86=1;
             	                }
 
 
-            	                switch (alt56) {
+            	                switch (alt86) {
             	            	case 1 :
-            	            	    // InternalDcDsl.g:3575:8: otherlv_10= ',' ( (lv_test_11_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:3885:8: otherlv_12= ',' ( (lv_test_13_0= ruleEString ) )
             	            	    {
-            	            	    otherlv_10=(Token)match(input,35,FOLLOW_4); 
+            	            	    otherlv_12=(Token)match(input,35,FOLLOW_4); 
 
-            	            	    								newLeafNode(otherlv_10, grammarAccess.getHealthcheckAccess().getCommaKeyword_2_0_2_1_2_0());
+            	            	    								newLeafNode(otherlv_12, grammarAccess.getHealthcheckAccess().getCommaKeyword_2_0_2_1_2_0());
             	            	    							
-            	            	    // InternalDcDsl.g:3579:8: ( (lv_test_11_0= ruleEString ) )
-            	            	    // InternalDcDsl.g:3580:9: (lv_test_11_0= ruleEString )
+            	            	    // InternalDcDsl.g:3889:8: ( (lv_test_13_0= ruleEString ) )
+            	            	    // InternalDcDsl.g:3890:9: (lv_test_13_0= ruleEString )
             	            	    {
-            	            	    // InternalDcDsl.g:3580:9: (lv_test_11_0= ruleEString )
-            	            	    // InternalDcDsl.g:3581:10: lv_test_11_0= ruleEString
+            	            	    // InternalDcDsl.g:3890:9: (lv_test_13_0= ruleEString )
+            	            	    // InternalDcDsl.g:3891:10: lv_test_13_0= ruleEString
             	            	    {
 
             	            	    										newCompositeNode(grammarAccess.getHealthcheckAccess().getTestEStringParserRuleCall_2_0_2_1_2_1_0());
             	            	    									
             	            	    pushFollow(FOLLOW_17);
-            	            	    lv_test_11_0=ruleEString();
+            	            	    lv_test_13_0=ruleEString();
 
             	            	    state._fsp--;
 
@@ -8996,7 +10072,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            	    										add(
             	            	    											current,
             	            	    											"test",
-            	            	    											lv_test_11_0,
+            	            	    											lv_test_13_0,
             	            	    											"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
             	            	    										afterParserOrEnumRuleCall();
             	            	    									
@@ -9011,13 +10087,13 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	            	    break;
 
             	            	default :
-            	            	    break loop56;
+            	            	    break loop86;
             	                }
             	            } while (true);
 
-            	            otherlv_12=(Token)match(input,33,FOLLOW_30); 
+            	            otherlv_14=(Token)match(input,33,FOLLOW_36); 
 
-            	            							newLeafNode(otherlv_12, grammarAccess.getHealthcheckAccess().getRightSquareBracketKeyword_2_0_2_1_3());
+            	            							newLeafNode(otherlv_14, grammarAccess.getHealthcheckAccess().getRightSquareBracketKeyword_2_0_2_1_3());
             	            						
 
             	            }
@@ -9035,30 +10111,30 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalDcDsl.g:3607:4: (otherlv_13= 'interval' otherlv_14= ':' ( (lv_interval_15_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:3917:4: (otherlv_15= 'interval' otherlv_16= ':' ( (lv_interval_17_0= ruleEString ) ) )
             	    {
-            	    // InternalDcDsl.g:3607:4: (otherlv_13= 'interval' otherlv_14= ':' ( (lv_interval_15_0= ruleEString ) ) )
-            	    // InternalDcDsl.g:3608:5: otherlv_13= 'interval' otherlv_14= ':' ( (lv_interval_15_0= ruleEString ) )
+            	    // InternalDcDsl.g:3917:4: (otherlv_15= 'interval' otherlv_16= ':' ( (lv_interval_17_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:3918:5: otherlv_15= 'interval' otherlv_16= ':' ( (lv_interval_17_0= ruleEString ) )
             	    {
-            	    otherlv_13=(Token)match(input,72,FOLLOW_3); 
+            	    otherlv_15=(Token)match(input,72,FOLLOW_3); 
 
-            	    					newLeafNode(otherlv_13, grammarAccess.getHealthcheckAccess().getIntervalKeyword_2_1_0());
+            	    					newLeafNode(otherlv_15, grammarAccess.getHealthcheckAccess().getIntervalKeyword_2_1_0());
             	    				
-            	    otherlv_14=(Token)match(input,17,FOLLOW_4); 
+            	    otherlv_16=(Token)match(input,17,FOLLOW_4); 
 
-            	    					newLeafNode(otherlv_14, grammarAccess.getHealthcheckAccess().getColonKeyword_2_1_1());
+            	    					newLeafNode(otherlv_16, grammarAccess.getHealthcheckAccess().getColonKeyword_2_1_1());
             	    				
-            	    // InternalDcDsl.g:3616:5: ( (lv_interval_15_0= ruleEString ) )
-            	    // InternalDcDsl.g:3617:6: (lv_interval_15_0= ruleEString )
+            	    // InternalDcDsl.g:3926:5: ( (lv_interval_17_0= ruleEString ) )
+            	    // InternalDcDsl.g:3927:6: (lv_interval_17_0= ruleEString )
             	    {
-            	    // InternalDcDsl.g:3617:6: (lv_interval_15_0= ruleEString )
-            	    // InternalDcDsl.g:3618:7: lv_interval_15_0= ruleEString
+            	    // InternalDcDsl.g:3927:6: (lv_interval_17_0= ruleEString )
+            	    // InternalDcDsl.g:3928:7: lv_interval_17_0= ruleEString
             	    {
 
             	    							newCompositeNode(grammarAccess.getHealthcheckAccess().getIntervalEStringParserRuleCall_2_1_2_0());
             	    						
-            	    pushFollow(FOLLOW_30);
-            	    lv_interval_15_0=ruleEString();
+            	    pushFollow(FOLLOW_36);
+            	    lv_interval_17_0=ruleEString();
 
             	    state._fsp--;
 
@@ -9069,7 +10145,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    							set(
             	    								current,
             	    								"interval",
-            	    								lv_interval_15_0,
+            	    								lv_interval_17_0,
             	    								"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
             	    							afterParserOrEnumRuleCall();
             	    						
@@ -9086,30 +10162,30 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // InternalDcDsl.g:3637:4: (otherlv_16= 'timeout' otherlv_17= ':' ( (lv_timeout_18_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:3947:4: (otherlv_18= 'timeout' otherlv_19= ':' ( (lv_timeout_20_0= ruleEString ) ) )
             	    {
-            	    // InternalDcDsl.g:3637:4: (otherlv_16= 'timeout' otherlv_17= ':' ( (lv_timeout_18_0= ruleEString ) ) )
-            	    // InternalDcDsl.g:3638:5: otherlv_16= 'timeout' otherlv_17= ':' ( (lv_timeout_18_0= ruleEString ) )
+            	    // InternalDcDsl.g:3947:4: (otherlv_18= 'timeout' otherlv_19= ':' ( (lv_timeout_20_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:3948:5: otherlv_18= 'timeout' otherlv_19= ':' ( (lv_timeout_20_0= ruleEString ) )
             	    {
-            	    otherlv_16=(Token)match(input,73,FOLLOW_3); 
+            	    otherlv_18=(Token)match(input,73,FOLLOW_3); 
 
-            	    					newLeafNode(otherlv_16, grammarAccess.getHealthcheckAccess().getTimeoutKeyword_2_2_0());
+            	    					newLeafNode(otherlv_18, grammarAccess.getHealthcheckAccess().getTimeoutKeyword_2_2_0());
             	    				
-            	    otherlv_17=(Token)match(input,17,FOLLOW_4); 
+            	    otherlv_19=(Token)match(input,17,FOLLOW_4); 
 
-            	    					newLeafNode(otherlv_17, grammarAccess.getHealthcheckAccess().getColonKeyword_2_2_1());
+            	    					newLeafNode(otherlv_19, grammarAccess.getHealthcheckAccess().getColonKeyword_2_2_1());
             	    				
-            	    // InternalDcDsl.g:3646:5: ( (lv_timeout_18_0= ruleEString ) )
-            	    // InternalDcDsl.g:3647:6: (lv_timeout_18_0= ruleEString )
+            	    // InternalDcDsl.g:3956:5: ( (lv_timeout_20_0= ruleEString ) )
+            	    // InternalDcDsl.g:3957:6: (lv_timeout_20_0= ruleEString )
             	    {
-            	    // InternalDcDsl.g:3647:6: (lv_timeout_18_0= ruleEString )
-            	    // InternalDcDsl.g:3648:7: lv_timeout_18_0= ruleEString
+            	    // InternalDcDsl.g:3957:6: (lv_timeout_20_0= ruleEString )
+            	    // InternalDcDsl.g:3958:7: lv_timeout_20_0= ruleEString
             	    {
 
             	    							newCompositeNode(grammarAccess.getHealthcheckAccess().getTimeoutEStringParserRuleCall_2_2_2_0());
             	    						
-            	    pushFollow(FOLLOW_30);
-            	    lv_timeout_18_0=ruleEString();
+            	    pushFollow(FOLLOW_36);
+            	    lv_timeout_20_0=ruleEString();
 
             	    state._fsp--;
 
@@ -9120,7 +10196,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    							set(
             	    								current,
             	    								"timeout",
-            	    								lv_timeout_18_0,
+            	    								lv_timeout_20_0,
             	    								"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
             	    							afterParserOrEnumRuleCall();
             	    						
@@ -9137,28 +10213,28 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 4 :
-            	    // InternalDcDsl.g:3667:4: (otherlv_19= 'retries' otherlv_20= ':' ( (lv_retries_21_0= RULE_INT ) ) )
+            	    // InternalDcDsl.g:3977:4: (otherlv_21= 'retries' otherlv_22= ':' ( (lv_retries_23_0= RULE_INT ) ) )
             	    {
-            	    // InternalDcDsl.g:3667:4: (otherlv_19= 'retries' otherlv_20= ':' ( (lv_retries_21_0= RULE_INT ) ) )
-            	    // InternalDcDsl.g:3668:5: otherlv_19= 'retries' otherlv_20= ':' ( (lv_retries_21_0= RULE_INT ) )
+            	    // InternalDcDsl.g:3977:4: (otherlv_21= 'retries' otherlv_22= ':' ( (lv_retries_23_0= RULE_INT ) ) )
+            	    // InternalDcDsl.g:3978:5: otherlv_21= 'retries' otherlv_22= ':' ( (lv_retries_23_0= RULE_INT ) )
             	    {
-            	    otherlv_19=(Token)match(input,74,FOLLOW_3); 
+            	    otherlv_21=(Token)match(input,74,FOLLOW_3); 
 
-            	    					newLeafNode(otherlv_19, grammarAccess.getHealthcheckAccess().getRetriesKeyword_2_3_0());
+            	    					newLeafNode(otherlv_21, grammarAccess.getHealthcheckAccess().getRetriesKeyword_2_3_0());
             	    				
-            	    otherlv_20=(Token)match(input,17,FOLLOW_18); 
+            	    otherlv_22=(Token)match(input,17,FOLLOW_19); 
 
-            	    					newLeafNode(otherlv_20, grammarAccess.getHealthcheckAccess().getColonKeyword_2_3_1());
+            	    					newLeafNode(otherlv_22, grammarAccess.getHealthcheckAccess().getColonKeyword_2_3_1());
             	    				
-            	    // InternalDcDsl.g:3676:5: ( (lv_retries_21_0= RULE_INT ) )
-            	    // InternalDcDsl.g:3677:6: (lv_retries_21_0= RULE_INT )
+            	    // InternalDcDsl.g:3986:5: ( (lv_retries_23_0= RULE_INT ) )
+            	    // InternalDcDsl.g:3987:6: (lv_retries_23_0= RULE_INT )
             	    {
-            	    // InternalDcDsl.g:3677:6: (lv_retries_21_0= RULE_INT )
-            	    // InternalDcDsl.g:3678:7: lv_retries_21_0= RULE_INT
+            	    // InternalDcDsl.g:3987:6: (lv_retries_23_0= RULE_INT )
+            	    // InternalDcDsl.g:3988:7: lv_retries_23_0= RULE_INT
             	    {
-            	    lv_retries_21_0=(Token)match(input,RULE_INT,FOLLOW_30); 
+            	    lv_retries_23_0=(Token)match(input,RULE_INT,FOLLOW_36); 
 
-            	    							newLeafNode(lv_retries_21_0, grammarAccess.getHealthcheckAccess().getRetriesINTTerminalRuleCall_2_3_2_0());
+            	    							newLeafNode(lv_retries_23_0, grammarAccess.getHealthcheckAccess().getRetriesINTTerminalRuleCall_2_3_2_0());
             	    						
 
             	    							if (current==null) {
@@ -9167,7 +10243,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    							setWithLastConsumed(
             	    								current,
             	    								"retries",
-            	    								lv_retries_21_0,
+            	    								lv_retries_23_0,
             	    								"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.INT");
             	    						
 
@@ -9183,30 +10259,30 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 5 :
-            	    // InternalDcDsl.g:3696:4: (otherlv_22= 'start_period' otherlv_23= ':' ( (lv_startPeriod_24_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:4006:4: (otherlv_24= 'start_period' otherlv_25= ':' ( (lv_startPeriod_26_0= ruleEString ) ) )
             	    {
-            	    // InternalDcDsl.g:3696:4: (otherlv_22= 'start_period' otherlv_23= ':' ( (lv_startPeriod_24_0= ruleEString ) ) )
-            	    // InternalDcDsl.g:3697:5: otherlv_22= 'start_period' otherlv_23= ':' ( (lv_startPeriod_24_0= ruleEString ) )
+            	    // InternalDcDsl.g:4006:4: (otherlv_24= 'start_period' otherlv_25= ':' ( (lv_startPeriod_26_0= ruleEString ) ) )
+            	    // InternalDcDsl.g:4007:5: otherlv_24= 'start_period' otherlv_25= ':' ( (lv_startPeriod_26_0= ruleEString ) )
             	    {
-            	    otherlv_22=(Token)match(input,75,FOLLOW_3); 
+            	    otherlv_24=(Token)match(input,75,FOLLOW_3); 
 
-            	    					newLeafNode(otherlv_22, grammarAccess.getHealthcheckAccess().getStart_periodKeyword_2_4_0());
+            	    					newLeafNode(otherlv_24, grammarAccess.getHealthcheckAccess().getStart_periodKeyword_2_4_0());
             	    				
-            	    otherlv_23=(Token)match(input,17,FOLLOW_4); 
+            	    otherlv_25=(Token)match(input,17,FOLLOW_4); 
 
-            	    					newLeafNode(otherlv_23, grammarAccess.getHealthcheckAccess().getColonKeyword_2_4_1());
+            	    					newLeafNode(otherlv_25, grammarAccess.getHealthcheckAccess().getColonKeyword_2_4_1());
             	    				
-            	    // InternalDcDsl.g:3705:5: ( (lv_startPeriod_24_0= ruleEString ) )
-            	    // InternalDcDsl.g:3706:6: (lv_startPeriod_24_0= ruleEString )
+            	    // InternalDcDsl.g:4015:5: ( (lv_startPeriod_26_0= ruleEString ) )
+            	    // InternalDcDsl.g:4016:6: (lv_startPeriod_26_0= ruleEString )
             	    {
-            	    // InternalDcDsl.g:3706:6: (lv_startPeriod_24_0= ruleEString )
-            	    // InternalDcDsl.g:3707:7: lv_startPeriod_24_0= ruleEString
+            	    // InternalDcDsl.g:4016:6: (lv_startPeriod_26_0= ruleEString )
+            	    // InternalDcDsl.g:4017:7: lv_startPeriod_26_0= ruleEString
             	    {
 
             	    							newCompositeNode(grammarAccess.getHealthcheckAccess().getStartPeriodEStringParserRuleCall_2_4_2_0());
             	    						
-            	    pushFollow(FOLLOW_30);
-            	    lv_startPeriod_24_0=ruleEString();
+            	    pushFollow(FOLLOW_36);
+            	    lv_startPeriod_26_0=ruleEString();
 
             	    state._fsp--;
 
@@ -9217,7 +10293,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    							set(
             	    								current,
             	    								"startPeriod",
-            	    								lv_startPeriod_24_0,
+            	    								lv_startPeriod_26_0,
             	    								"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
             	    							afterParserOrEnumRuleCall();
             	    						
@@ -9235,13 +10311,13 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop58;
+            	    break loop88;
                 }
             } while (true);
 
-            this_END_BLOCK_25=(Token)match(input,RULE_END_BLOCK,FOLLOW_2); 
+            this_END_BLOCK_27=(Token)match(input,RULE_END_BLOCK,FOLLOW_2); 
 
-            			newLeafNode(this_END_BLOCK_25, grammarAccess.getHealthcheckAccess().getEND_BLOCKTerminalRuleCall_3());
+            			newLeafNode(this_END_BLOCK_27, grammarAccess.getHealthcheckAccess().getEND_BLOCKTerminalRuleCall_3());
             		
 
             }
@@ -9266,7 +10342,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSecret"
-    // InternalDcDsl.g:3734:1: entryRuleSecret returns [EObject current=null] : iv_ruleSecret= ruleSecret EOF ;
+    // InternalDcDsl.g:4044:1: entryRuleSecret returns [EObject current=null] : iv_ruleSecret= ruleSecret EOF ;
     public final EObject entryRuleSecret() throws RecognitionException {
         EObject current = null;
 
@@ -9274,8 +10350,8 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDcDsl.g:3734:47: (iv_ruleSecret= ruleSecret EOF )
-            // InternalDcDsl.g:3735:2: iv_ruleSecret= ruleSecret EOF
+            // InternalDcDsl.g:4044:47: (iv_ruleSecret= ruleSecret EOF )
+            // InternalDcDsl.g:4045:2: iv_ruleSecret= ruleSecret EOF
             {
              newCompositeNode(grammarAccess.getSecretRule()); 
             pushFollow(FOLLOW_1);
@@ -9302,7 +10378,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSecret"
-    // InternalDcDsl.g:3741:1: ruleSecret returns [EObject current=null] : ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK (otherlv_3= 'file' otherlv_4= ':' ( (lv_file_5_0= ruleEString ) ) )? this_END_BLOCK_6= RULE_END_BLOCK ) ;
+    // InternalDcDsl.g:4051:1: ruleSecret returns [EObject current=null] : ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK (otherlv_3= 'file' otherlv_4= ':' ( (lv_file_5_0= ruleEString ) ) )? this_END_BLOCK_6= RULE_END_BLOCK ) ;
     public final EObject ruleSecret() throws RecognitionException {
         EObject current = null;
 
@@ -9320,17 +10396,17 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDcDsl.g:3747:2: ( ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK (otherlv_3= 'file' otherlv_4= ':' ( (lv_file_5_0= ruleEString ) ) )? this_END_BLOCK_6= RULE_END_BLOCK ) )
-            // InternalDcDsl.g:3748:2: ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK (otherlv_3= 'file' otherlv_4= ':' ( (lv_file_5_0= ruleEString ) ) )? this_END_BLOCK_6= RULE_END_BLOCK )
+            // InternalDcDsl.g:4057:2: ( ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK (otherlv_3= 'file' otherlv_4= ':' ( (lv_file_5_0= ruleEString ) ) )? this_END_BLOCK_6= RULE_END_BLOCK ) )
+            // InternalDcDsl.g:4058:2: ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK (otherlv_3= 'file' otherlv_4= ':' ( (lv_file_5_0= ruleEString ) ) )? this_END_BLOCK_6= RULE_END_BLOCK )
             {
-            // InternalDcDsl.g:3748:2: ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK (otherlv_3= 'file' otherlv_4= ':' ( (lv_file_5_0= ruleEString ) ) )? this_END_BLOCK_6= RULE_END_BLOCK )
-            // InternalDcDsl.g:3749:3: ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK (otherlv_3= 'file' otherlv_4= ':' ( (lv_file_5_0= ruleEString ) ) )? this_END_BLOCK_6= RULE_END_BLOCK
+            // InternalDcDsl.g:4058:2: ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK (otherlv_3= 'file' otherlv_4= ':' ( (lv_file_5_0= ruleEString ) ) )? this_END_BLOCK_6= RULE_END_BLOCK )
+            // InternalDcDsl.g:4059:3: ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK (otherlv_3= 'file' otherlv_4= ':' ( (lv_file_5_0= ruleEString ) ) )? this_END_BLOCK_6= RULE_END_BLOCK
             {
-            // InternalDcDsl.g:3749:3: ( (lv_id_0_0= ruleEString ) )
-            // InternalDcDsl.g:3750:4: (lv_id_0_0= ruleEString )
+            // InternalDcDsl.g:4059:3: ( (lv_id_0_0= ruleEString ) )
+            // InternalDcDsl.g:4060:4: (lv_id_0_0= ruleEString )
             {
-            // InternalDcDsl.g:3750:4: (lv_id_0_0= ruleEString )
-            // InternalDcDsl.g:3751:5: lv_id_0_0= ruleEString
+            // InternalDcDsl.g:4060:4: (lv_id_0_0= ruleEString )
+            // InternalDcDsl.g:4061:5: lv_id_0_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getSecretAccess().getIdEStringParserRuleCall_0_0());
@@ -9361,20 +10437,20 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getSecretAccess().getColonKeyword_1());
             		
-            this_BEG_BLOCK_2=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_31); 
+            this_BEG_BLOCK_2=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_37); 
 
             			newLeafNode(this_BEG_BLOCK_2, grammarAccess.getSecretAccess().getBEG_BLOCKTerminalRuleCall_2());
             		
-            // InternalDcDsl.g:3776:3: (otherlv_3= 'file' otherlv_4= ':' ( (lv_file_5_0= ruleEString ) ) )?
-            int alt59=2;
-            int LA59_0 = input.LA(1);
+            // InternalDcDsl.g:4086:3: (otherlv_3= 'file' otherlv_4= ':' ( (lv_file_5_0= ruleEString ) ) )?
+            int alt89=2;
+            int LA89_0 = input.LA(1);
 
-            if ( (LA59_0==77) ) {
-                alt59=1;
+            if ( (LA89_0==77) ) {
+                alt89=1;
             }
-            switch (alt59) {
+            switch (alt89) {
                 case 1 :
-                    // InternalDcDsl.g:3777:4: otherlv_3= 'file' otherlv_4= ':' ( (lv_file_5_0= ruleEString ) )
+                    // InternalDcDsl.g:4087:4: otherlv_3= 'file' otherlv_4= ':' ( (lv_file_5_0= ruleEString ) )
                     {
                     otherlv_3=(Token)match(input,77,FOLLOW_3); 
 
@@ -9384,16 +10460,16 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_4, grammarAccess.getSecretAccess().getColonKeyword_3_1());
                     			
-                    // InternalDcDsl.g:3785:4: ( (lv_file_5_0= ruleEString ) )
-                    // InternalDcDsl.g:3786:5: (lv_file_5_0= ruleEString )
+                    // InternalDcDsl.g:4095:4: ( (lv_file_5_0= ruleEString ) )
+                    // InternalDcDsl.g:4096:5: (lv_file_5_0= ruleEString )
                     {
-                    // InternalDcDsl.g:3786:5: (lv_file_5_0= ruleEString )
-                    // InternalDcDsl.g:3787:6: lv_file_5_0= ruleEString
+                    // InternalDcDsl.g:4096:5: (lv_file_5_0= ruleEString )
+                    // InternalDcDsl.g:4097:6: lv_file_5_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getSecretAccess().getFileEStringParserRuleCall_3_2_0());
                     					
-                    pushFollow(FOLLOW_28);
+                    pushFollow(FOLLOW_23);
                     lv_file_5_0=ruleEString();
 
                     state._fsp--;
@@ -9448,7 +10524,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleResource"
-    // InternalDcDsl.g:3813:1: entryRuleResource returns [EObject current=null] : iv_ruleResource= ruleResource EOF ;
+    // InternalDcDsl.g:4123:1: entryRuleResource returns [EObject current=null] : iv_ruleResource= ruleResource EOF ;
     public final EObject entryRuleResource() throws RecognitionException {
         EObject current = null;
 
@@ -9456,8 +10532,8 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDcDsl.g:3813:49: (iv_ruleResource= ruleResource EOF )
-            // InternalDcDsl.g:3814:2: iv_ruleResource= ruleResource EOF
+            // InternalDcDsl.g:4123:49: (iv_ruleResource= ruleResource EOF )
+            // InternalDcDsl.g:4124:2: iv_ruleResource= ruleResource EOF
             {
              newCompositeNode(grammarAccess.getResourceRule()); 
             pushFollow(FOLLOW_1);
@@ -9484,7 +10560,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleResource"
-    // InternalDcDsl.g:3820:1: ruleResource returns [EObject current=null] : ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK (otherlv_3= 'memory' otherlv_4= ':' ( (lv_memory_5_0= ruleEString ) ) )? this_END_BLOCK_6= RULE_END_BLOCK ) ;
+    // InternalDcDsl.g:4130:1: ruleResource returns [EObject current=null] : ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK (otherlv_3= 'memory' otherlv_4= ':' ( (lv_memory_5_0= ruleEString ) ) )? this_END_BLOCK_6= RULE_END_BLOCK ) ;
     public final EObject ruleResource() throws RecognitionException {
         EObject current = null;
 
@@ -9502,17 +10578,17 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDcDsl.g:3826:2: ( ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK (otherlv_3= 'memory' otherlv_4= ':' ( (lv_memory_5_0= ruleEString ) ) )? this_END_BLOCK_6= RULE_END_BLOCK ) )
-            // InternalDcDsl.g:3827:2: ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK (otherlv_3= 'memory' otherlv_4= ':' ( (lv_memory_5_0= ruleEString ) ) )? this_END_BLOCK_6= RULE_END_BLOCK )
+            // InternalDcDsl.g:4136:2: ( ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK (otherlv_3= 'memory' otherlv_4= ':' ( (lv_memory_5_0= ruleEString ) ) )? this_END_BLOCK_6= RULE_END_BLOCK ) )
+            // InternalDcDsl.g:4137:2: ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK (otherlv_3= 'memory' otherlv_4= ':' ( (lv_memory_5_0= ruleEString ) ) )? this_END_BLOCK_6= RULE_END_BLOCK )
             {
-            // InternalDcDsl.g:3827:2: ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK (otherlv_3= 'memory' otherlv_4= ':' ( (lv_memory_5_0= ruleEString ) ) )? this_END_BLOCK_6= RULE_END_BLOCK )
-            // InternalDcDsl.g:3828:3: ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK (otherlv_3= 'memory' otherlv_4= ':' ( (lv_memory_5_0= ruleEString ) ) )? this_END_BLOCK_6= RULE_END_BLOCK
+            // InternalDcDsl.g:4137:2: ( ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK (otherlv_3= 'memory' otherlv_4= ':' ( (lv_memory_5_0= ruleEString ) ) )? this_END_BLOCK_6= RULE_END_BLOCK )
+            // InternalDcDsl.g:4138:3: ( (lv_id_0_0= ruleEString ) ) otherlv_1= ':' this_BEG_BLOCK_2= RULE_BEG_BLOCK (otherlv_3= 'memory' otherlv_4= ':' ( (lv_memory_5_0= ruleEString ) ) )? this_END_BLOCK_6= RULE_END_BLOCK
             {
-            // InternalDcDsl.g:3828:3: ( (lv_id_0_0= ruleEString ) )
-            // InternalDcDsl.g:3829:4: (lv_id_0_0= ruleEString )
+            // InternalDcDsl.g:4138:3: ( (lv_id_0_0= ruleEString ) )
+            // InternalDcDsl.g:4139:4: (lv_id_0_0= ruleEString )
             {
-            // InternalDcDsl.g:3829:4: (lv_id_0_0= ruleEString )
-            // InternalDcDsl.g:3830:5: lv_id_0_0= ruleEString
+            // InternalDcDsl.g:4139:4: (lv_id_0_0= ruleEString )
+            // InternalDcDsl.g:4140:5: lv_id_0_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getResourceAccess().getIdEStringParserRuleCall_0_0());
@@ -9543,20 +10619,20 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getResourceAccess().getColonKeyword_1());
             		
-            this_BEG_BLOCK_2=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_32); 
+            this_BEG_BLOCK_2=(Token)match(input,RULE_BEG_BLOCK,FOLLOW_38); 
 
             			newLeafNode(this_BEG_BLOCK_2, grammarAccess.getResourceAccess().getBEG_BLOCKTerminalRuleCall_2());
             		
-            // InternalDcDsl.g:3855:3: (otherlv_3= 'memory' otherlv_4= ':' ( (lv_memory_5_0= ruleEString ) ) )?
-            int alt60=2;
-            int LA60_0 = input.LA(1);
+            // InternalDcDsl.g:4165:3: (otherlv_3= 'memory' otherlv_4= ':' ( (lv_memory_5_0= ruleEString ) ) )?
+            int alt90=2;
+            int LA90_0 = input.LA(1);
 
-            if ( (LA60_0==76) ) {
-                alt60=1;
+            if ( (LA90_0==76) ) {
+                alt90=1;
             }
-            switch (alt60) {
+            switch (alt90) {
                 case 1 :
-                    // InternalDcDsl.g:3856:4: otherlv_3= 'memory' otherlv_4= ':' ( (lv_memory_5_0= ruleEString ) )
+                    // InternalDcDsl.g:4166:4: otherlv_3= 'memory' otherlv_4= ':' ( (lv_memory_5_0= ruleEString ) )
                     {
                     otherlv_3=(Token)match(input,76,FOLLOW_3); 
 
@@ -9566,16 +10642,16 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_4, grammarAccess.getResourceAccess().getColonKeyword_3_1());
                     			
-                    // InternalDcDsl.g:3864:4: ( (lv_memory_5_0= ruleEString ) )
-                    // InternalDcDsl.g:3865:5: (lv_memory_5_0= ruleEString )
+                    // InternalDcDsl.g:4174:4: ( (lv_memory_5_0= ruleEString ) )
+                    // InternalDcDsl.g:4175:5: (lv_memory_5_0= ruleEString )
                     {
-                    // InternalDcDsl.g:3865:5: (lv_memory_5_0= ruleEString )
-                    // InternalDcDsl.g:3866:6: lv_memory_5_0= ruleEString
+                    // InternalDcDsl.g:4175:5: (lv_memory_5_0= ruleEString )
+                    // InternalDcDsl.g:4176:6: lv_memory_5_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getResourceAccess().getMemoryEStringParserRuleCall_3_2_0());
                     					
-                    pushFollow(FOLLOW_28);
+                    pushFollow(FOLLOW_23);
                     lv_memory_5_0=ruleEString();
 
                     state._fsp--;
@@ -9630,7 +10706,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEBoolean"
-    // InternalDcDsl.g:3892:1: entryRuleEBoolean returns [String current=null] : iv_ruleEBoolean= ruleEBoolean EOF ;
+    // InternalDcDsl.g:4202:1: entryRuleEBoolean returns [String current=null] : iv_ruleEBoolean= ruleEBoolean EOF ;
     public final String entryRuleEBoolean() throws RecognitionException {
         String current = null;
 
@@ -9638,8 +10714,8 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDcDsl.g:3892:48: (iv_ruleEBoolean= ruleEBoolean EOF )
-            // InternalDcDsl.g:3893:2: iv_ruleEBoolean= ruleEBoolean EOF
+            // InternalDcDsl.g:4202:48: (iv_ruleEBoolean= ruleEBoolean EOF )
+            // InternalDcDsl.g:4203:2: iv_ruleEBoolean= ruleEBoolean EOF
             {
              newCompositeNode(grammarAccess.getEBooleanRule()); 
             pushFollow(FOLLOW_1);
@@ -9666,7 +10742,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEBoolean"
-    // InternalDcDsl.g:3899:1: ruleEBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' ) ;
+    // InternalDcDsl.g:4209:1: ruleEBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' ) ;
     public final AntlrDatatypeRuleToken ruleEBoolean() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -9676,28 +10752,28 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDcDsl.g:3905:2: ( (kw= 'true' | kw= 'false' ) )
-            // InternalDcDsl.g:3906:2: (kw= 'true' | kw= 'false' )
+            // InternalDcDsl.g:4215:2: ( (kw= 'true' | kw= 'false' ) )
+            // InternalDcDsl.g:4216:2: (kw= 'true' | kw= 'false' )
             {
-            // InternalDcDsl.g:3906:2: (kw= 'true' | kw= 'false' )
-            int alt61=2;
-            int LA61_0 = input.LA(1);
+            // InternalDcDsl.g:4216:2: (kw= 'true' | kw= 'false' )
+            int alt91=2;
+            int LA91_0 = input.LA(1);
 
-            if ( (LA61_0==23) ) {
-                alt61=1;
+            if ( (LA91_0==23) ) {
+                alt91=1;
             }
-            else if ( (LA61_0==24) ) {
-                alt61=2;
+            else if ( (LA91_0==24) ) {
+                alt91=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 61, 0, input);
+                    new NoViableAltException("", 91, 0, input);
 
                 throw nvae;
             }
-            switch (alt61) {
+            switch (alt91) {
                 case 1 :
-                    // InternalDcDsl.g:3907:3: kw= 'true'
+                    // InternalDcDsl.g:4217:3: kw= 'true'
                     {
                     kw=(Token)match(input,23,FOLLOW_2); 
 
@@ -9708,7 +10784,7 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDcDsl.g:3913:3: kw= 'false'
+                    // InternalDcDsl.g:4223:3: kw= 'false'
                     {
                     kw=(Token)match(input,24,FOLLOW_2); 
 
@@ -9743,25 +10819,27 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
 
 
     protected DFA8 dfa8 = new DFA8(this);
-    static final String dfa_1s = "\137\uffff";
-    static final String dfa_2s = "\1\1\1\uffff\1\27\1\30\1\33\1\35\1\uffff\1\63\16\uffff\1\77\2\uffff\1\115\1\133\2\uffff\1\136\101\uffff";
-    static final String dfa_3s = "\1\5\1\uffff\3\5\1\4\1\uffff\1\5\16\uffff\1\4\2\uffff\2\4\2\uffff\1\0\27\uffff\1\5\12\uffff\2\5\1\uffff\1\5\12\uffff\2\5\1\uffff\1\5\12\uffff\2\5\1\uffff";
-    static final String dfa_4s = "\1\115\1\uffff\4\115\1\uffff\1\115\16\uffff\1\115\2\uffff\2\115\2\uffff\1\0\27\uffff\1\115\12\uffff\2\115\1\uffff\1\115\12\uffff\2\115\1\uffff\1\115\12\uffff\2\115\1\uffff";
-    static final String dfa_5s = "\1\uffff\1\25\4\uffff\1\6\1\uffff\1\10\1\2\1\5\1\7\1\11\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\uffff\1\3\1\1\2\uffff\1\4\1\12\1\uffff\13\12\13\13\1\3\1\uffff\12\3\2\uffff\1\1\1\uffff\12\1\2\uffff\1\4\1\uffff\12\4\2\uffff\1\12";
-    static final String dfa_6s = "\137\uffff}>";
+    protected DFA59 dfa59 = new DFA59(this);
+    protected DFA62 dfa62 = new DFA62(this);
+    protected DFA68 dfa68 = new DFA68(this);
+    protected DFA76 dfa76 = new DFA76(this);
+    protected DFA78 dfa78 = new DFA78(this);
+    protected DFA84 dfa84 = new DFA84(this);
+    static final String dfa_1s = "\44\uffff";
+    static final String dfa_2s = "\1\1\6\uffff\1\41\34\uffff";
+    static final String dfa_3s = "\1\5\6\uffff\1\5\17\uffff\1\21\12\uffff\2\21";
+    static final String dfa_4s = "\1\115\6\uffff\1\115\17\uffff\1\43\12\uffff\2\43";
+    static final String dfa_5s = "\1\uffff\1\25\1\3\1\1\1\4\1\6\1\12\1\uffff\1\10\1\5\1\20\1\17\1\21\1\22\1\23\1\24\1\2\1\7\1\11\1\14\1\15\1\16\1\13\1\uffff\12\13\2\uffff";
+    static final String dfa_6s = "\44\uffff}>";
     static final String[] dfa_7s = {
-            "\1\1\1\12\1\uffff\1\3\1\11\1\2\1\4\1\17\3\uffff\1\1\1\5\5\1\2\uffff\1\21\1\20\1\22\1\23\1\24\1\25\1\6\1\13\1\10\1\14\1\7\1\15\1\16\50\1",
+            "\1\1\1\11\1\1\1\3\1\20\1\2\1\4\1\25\3\uffff\1\1\1\6\7\1\1\12\1\13\1\14\1\15\1\16\1\17\1\5\1\21\1\10\1\22\1\7\1\23\1\24\50\1",
             "",
-            "\2\27\1\uffff\5\27\3\uffff\1\27\1\26\5\27\2\uffff\65\27",
-            "\2\30\1\uffff\5\30\3\uffff\1\30\1\31\5\30\2\uffff\65\30",
-            "\2\33\1\uffff\5\33\3\uffff\1\33\1\32\5\33\2\uffff\65\33",
-            "\1\1\1\34\1\42\1\1\1\37\1\41\1\36\1\40\1\42\3\uffff\1\34\1\40\5\34\2\1\1\44\1\43\1\45\1\46\1\47\1\50\1\40\1\42\1\40\1\42\1\40\2\42\50\40",
             "",
-            "\1\63\1\51\1\1\1\60\1\61\1\62\2\63\3\uffff\7\63\2\1\1\52\1\53\1\54\1\55\1\56\1\57\57\63",
             "",
             "",
             "",
             "",
+            "\1\41\1\26\1\27\1\36\1\37\1\40\2\41\3\uffff\7\41\1\42\1\43\1\30\1\31\1\32\1\33\1\34\1\35\57\41",
             "",
             "",
             "",
@@ -9772,15 +10850,12 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             "",
             "",
             "",
-            "\2\27\1\64\1\65\1\74\1\75\1\76\2\77\3\uffff\7\77\1\100\1\101\1\66\1\67\1\70\1\71\1\72\1\73\57\77",
             "",
             "",
-            "\2\30\1\102\1\103\1\112\1\113\1\114\2\115\3\uffff\7\115\1\116\1\117\1\104\1\105\1\106\1\107\1\110\1\111\57\115",
-            "\2\33\1\120\1\121\1\130\1\131\1\132\2\133\3\uffff\7\133\1\134\1\135\1\122\1\123\1\124\1\125\1\126\1\127\57\133",
             "",
             "",
-            "\1\uffff",
             "",
+            "\1\41\17\uffff\1\1\1\uffff\1\1",
             "",
             "",
             "",
@@ -9791,60 +10866,8 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             "",
             "",
             "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\1\2\uffff\1\1\1\uffff\2\1\4\uffff\1\1\1\77\5\1\17\uffff\50\1",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\1\2\uffff\1\1\1\uffff\2\1\4\uffff\1\1\1\77\5\1\17\uffff\50\1",
-            "\1\1\2\uffff\1\1\1\uffff\2\1\4\uffff\1\1\1\77\5\1\17\uffff\50\1",
-            "",
-            "\1\1\2\uffff\1\1\1\uffff\2\1\4\uffff\1\1\1\115\5\1\17\uffff\50\1",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\1\2\uffff\1\1\1\uffff\2\1\4\uffff\1\1\1\115\5\1\17\uffff\50\1",
-            "\1\1\2\uffff\1\1\1\uffff\2\1\4\uffff\1\1\1\115\5\1\17\uffff\50\1",
-            "",
-            "\1\1\2\uffff\1\1\1\uffff\2\1\4\uffff\1\1\1\133\5\1\17\uffff\50\1",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\1\2\uffff\1\1\1\uffff\2\1\4\uffff\1\1\1\133\5\1\17\uffff\50\1",
-            "\1\1\2\uffff\1\1\1\uffff\2\1\4\uffff\1\1\1\133\5\1\17\uffff\50\1",
-            ""
+            "\1\41\17\uffff\1\1\1\uffff\1\1",
+            "\1\41\17\uffff\1\1\1\uffff\1\1"
     };
 
     static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
@@ -9872,6 +10895,315 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
             return "()* loopback of 436:3: (this_YAML_SCALAR_7= RULE_YAML_SCALAR | this_GH_EXPRESSION_8= RULE_GH_EXPRESSION | this_ID_9= RULE_ID | this_INT_10= RULE_INT | this_STRING_11= RULE_STRING | kw= '-' | kw= '[' | kw= ']' | kw= ';' | kw= ':' | kw= ',' | kw= '{' | kw= '}' | this_ANY_OTHER_20= RULE_ANY_OTHER | kw= '|' | kw= '>' | kw= '>-' | kw= '>+' | kw= '|-' | kw= '|+' )*";
         }
     }
+    static final String dfa_8s = "\47\uffff";
+    static final String dfa_9s = "\1\17\2\20\14\45\2\uffff\1\45\5\uffff\4\45\1\uffff\4\45\6\uffff\1\45";
+    static final String dfa_10s = "\3\5\6\4\6\5\2\uffff\1\5\5\uffff\4\5\1\uffff\4\5\6\uffff\1\5";
+    static final String dfa_11s = "\3\36\6\45\6\36\2\uffff\1\45\5\uffff\4\45\1\uffff\4\45\6\uffff\1\36";
+    static final String dfa_12s = "\17\uffff\1\2\1\1\1\uffff\5\1\4\uffff\1\1\4\uffff\6\1\1\uffff";
+    static final String dfa_13s = "\47\uffff}>";
+    static final String[] dfa_14s = {
+            "\1\17\1\1\1\2\1\11\1\12\1\13\1\14\13\uffff\1\15\1\16\1\3\1\4\1\5\1\6\1\7\1\10",
+            "\7\20\5\uffff\1\17\5\uffff\10\20",
+            "\7\20\5\uffff\1\17\5\uffff\10\20",
+            "\1\21\1\46\1\26\1\45\1\22\1\23\1\24\1\25\1\37\4\uffff\1\33\5\uffff\2\45\1\41\1\40\1\42\1\43\1\44\1\45\1\27\1\30\1\31\1\32\1\34\1\35\1\36",
+            "\1\21\1\46\1\26\1\45\1\22\1\23\1\24\1\25\1\37\4\uffff\1\33\5\uffff\2\45\1\41\1\40\1\42\1\43\1\44\1\45\1\27\1\30\1\31\1\32\1\34\1\35\1\36",
+            "\1\21\1\46\1\26\1\45\1\22\1\23\1\24\1\25\1\37\4\uffff\1\33\5\uffff\2\45\1\41\1\40\1\42\1\43\1\44\1\45\1\27\1\30\1\31\1\32\1\34\1\35\1\36",
+            "\1\21\1\46\1\26\1\45\1\22\1\23\1\24\1\25\1\37\4\uffff\1\33\5\uffff\2\45\1\41\1\40\1\42\1\43\1\44\1\45\1\27\1\30\1\31\1\32\1\34\1\35\1\36",
+            "\1\21\1\46\1\26\1\45\1\22\1\23\1\24\1\25\1\37\4\uffff\1\33\5\uffff\2\45\1\41\1\40\1\42\1\43\1\44\1\45\1\27\1\30\1\31\1\32\1\34\1\35\1\36",
+            "\1\21\1\46\1\26\1\45\1\22\1\23\1\24\1\25\1\37\4\uffff\1\33\5\uffff\2\45\1\41\1\40\1\42\1\43\1\44\1\45\1\27\1\30\1\31\1\32\1\34\1\35\1\36",
+            "\1\20\6\45\5\uffff\1\17\5\uffff\10\45",
+            "\1\20\6\45\5\uffff\1\17\5\uffff\10\45",
+            "\1\20\6\45\5\uffff\1\17\5\uffff\10\45",
+            "\1\20\6\45\5\uffff\1\17\5\uffff\10\45",
+            "\1\20\6\45\5\uffff\1\17\5\uffff\10\45",
+            "\1\20\6\45\5\uffff\1\17\5\uffff\10\45",
+            "",
+            "",
+            "\1\46\1\26\1\45\1\22\1\23\1\24\1\25\1\37\4\uffff\1\33\5\uffff\2\45\1\41\1\40\1\42\1\43\1\44\1\45\1\27\1\30\1\31\1\32\1\34\1\35\1\36",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\46\1\26\1\45\1\22\1\23\1\24\1\25\1\37\4\uffff\1\33\5\uffff\2\45\1\41\1\40\1\42\1\43\1\44\1\45\1\27\1\30\1\31\1\32\1\34\1\35\1\36",
+            "\1\46\1\26\1\45\1\22\1\23\1\24\1\25\1\37\4\uffff\1\33\5\uffff\2\45\1\41\1\40\1\42\1\43\1\44\1\45\1\27\1\30\1\31\1\32\1\34\1\35\1\36",
+            "\1\46\1\26\1\45\1\22\1\23\1\24\1\25\1\37\4\uffff\1\33\5\uffff\2\45\1\41\1\40\1\42\1\43\1\44\1\45\1\27\1\30\1\31\1\32\1\34\1\35\1\36",
+            "\1\46\1\26\1\45\1\22\1\23\1\24\1\25\1\37\4\uffff\1\33\5\uffff\2\45\1\41\1\40\1\42\1\43\1\44\1\45\1\27\1\30\1\31\1\32\1\34\1\35\1\36",
+            "",
+            "\1\46\1\26\1\45\1\22\1\23\1\24\1\25\1\37\4\uffff\1\33\5\uffff\2\45\1\41\1\40\1\42\1\43\1\44\1\45\1\27\1\30\1\31\1\32\1\34\1\35\1\36",
+            "\1\46\1\26\1\45\1\22\1\23\1\24\1\25\1\37\4\uffff\1\33\5\uffff\2\45\1\41\1\40\1\42\1\43\1\44\1\45\1\27\1\30\1\31\1\32\1\34\1\35\1\36",
+            "\1\46\1\26\1\45\1\22\1\23\1\24\1\25\1\37\4\uffff\1\33\5\uffff\2\45\1\41\1\40\1\42\1\43\1\44\1\45\1\27\1\30\1\31\1\32\1\34\1\35\1\36",
+            "\1\46\1\26\1\45\1\22\1\23\1\24\1\25\1\37\4\uffff\1\33\5\uffff\2\45\1\41\1\40\1\42\1\43\1\44\1\45\1\27\1\30\1\31\1\32\1\34\1\35\1\36",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\20\6\45\4\uffff\1\45\1\17\15\45"
+    };
+
+    static final short[] dfa_8 = DFA.unpackEncodedString(dfa_8s);
+    static final short[] dfa_9 = DFA.unpackEncodedString(dfa_9s);
+    static final char[] dfa_10 = DFA.unpackEncodedStringToUnsignedChars(dfa_10s);
+    static final char[] dfa_11 = DFA.unpackEncodedStringToUnsignedChars(dfa_11s);
+    static final short[] dfa_12 = DFA.unpackEncodedString(dfa_12s);
+    static final short[] dfa_13 = DFA.unpackEncodedString(dfa_13s);
+    static final short[][] dfa_14 = unpackEncodedStringArray(dfa_14s);
+
+    class DFA59 extends DFA {
+
+        public DFA59(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 59;
+            this.eot = dfa_8;
+            this.eof = dfa_9;
+            this.min = dfa_10;
+            this.max = dfa_11;
+            this.accept = dfa_12;
+            this.special = dfa_13;
+            this.transition = dfa_14;
+        }
+        public String getDescription() {
+            return "2735:3: ( ruleEString )?";
+        }
+    }
+    static final String dfa_15s = "\13\uffff";
+    static final String dfa_16s = "\3\uffff\1\2\1\uffff\1\7\1\10\1\11\1\12\2\uffff";
+    static final String dfa_17s = "\2\5\1\uffff\1\5\1\uffff\2\5\2\0\2\uffff";
+    static final String dfa_18s = "\1\37\1\76\1\uffff\1\76\1\uffff\1\72\1\36\2\0\2\uffff";
+    static final String dfa_19s = "\2\uffff\1\2\1\uffff\1\1\4\uffff\2\1";
+    static final String dfa_20s = "\13\uffff}>";
+    static final String[] dfa_21s = {
+            "\1\1\31\uffff\1\2",
+            "\1\3\31\uffff\1\4\33\uffff\4\2",
+            "",
+            "\1\5\16\uffff\3\2\17\uffff\25\2\4\4",
+            "",
+            "\1\6\6\2\10\uffff\3\4\10\2\7\uffff\25\4",
+            "\7\4\4\uffff\1\2\1\uffff\5\2\10\4",
+            "\1\uffff",
+            "\1\uffff",
+            "",
+            ""
+    };
+
+    static final short[] dfa_15 = DFA.unpackEncodedString(dfa_15s);
+    static final short[] dfa_16 = DFA.unpackEncodedString(dfa_16s);
+    static final char[] dfa_17 = DFA.unpackEncodedStringToUnsignedChars(dfa_17s);
+    static final char[] dfa_18 = DFA.unpackEncodedStringToUnsignedChars(dfa_18s);
+    static final short[] dfa_19 = DFA.unpackEncodedString(dfa_19s);
+    static final short[] dfa_20 = DFA.unpackEncodedString(dfa_20s);
+    static final short[][] dfa_21 = unpackEncodedStringArray(dfa_21s);
+
+    class DFA62 extends DFA {
+
+        public DFA62(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 62;
+            this.eot = dfa_15;
+            this.eof = dfa_16;
+            this.min = dfa_17;
+            this.max = dfa_18;
+            this.accept = dfa_19;
+            this.special = dfa_20;
+            this.transition = dfa_21;
+        }
+        public String getDescription() {
+            return "2982:8: (this_END_BLOCK_17= RULE_END_BLOCK )?";
+        }
+    }
+    static final String dfa_22s = "\12\uffff";
+    static final String dfa_23s = "\1\uffff\1\2\1\uffff\1\5\1\uffff\1\7\1\10\1\uffff\1\11\1\uffff";
+    static final String dfa_24s = "\2\5\1\uffff\1\5\1\uffff\1\0\1\5\1\uffff\1\0\1\uffff";
+    static final String dfa_25s = "\1\37\1\72\1\uffff\1\72\1\uffff\1\0\1\36\1\uffff\1\0\1\uffff";
+    static final String dfa_26s = "\2\uffff\1\2\1\uffff\1\1\2\uffff\1\1\1\uffff\1\1";
+    static final String dfa_27s = "\12\uffff}>";
+    static final String[] dfa_28s = {
+            "\1\1\31\uffff\1\2",
+            "\1\3\12\uffff\1\2\1\uffff\5\2\10\uffff\1\4\6\uffff\25\2",
+            "",
+            "\1\6\6\2\4\uffff\1\4\1\uffff\5\4\10\2\7\uffff\25\4",
+            "",
+            "\1\uffff",
+            "\7\4\4\uffff\1\2\1\uffff\5\2\10\4",
+            "",
+            "\1\uffff",
+            ""
+    };
+
+    static final short[] dfa_22 = DFA.unpackEncodedString(dfa_22s);
+    static final short[] dfa_23 = DFA.unpackEncodedString(dfa_23s);
+    static final char[] dfa_24 = DFA.unpackEncodedStringToUnsignedChars(dfa_24s);
+    static final char[] dfa_25 = DFA.unpackEncodedStringToUnsignedChars(dfa_25s);
+    static final short[] dfa_26 = DFA.unpackEncodedString(dfa_26s);
+    static final short[] dfa_27 = DFA.unpackEncodedString(dfa_27s);
+    static final short[][] dfa_28 = unpackEncodedStringArray(dfa_28s);
+
+    class DFA68 extends DFA {
+
+        public DFA68(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 68;
+            this.eot = dfa_22;
+            this.eof = dfa_23;
+            this.min = dfa_24;
+            this.max = dfa_25;
+            this.accept = dfa_26;
+            this.special = dfa_27;
+            this.transition = dfa_28;
+        }
+        public String getDescription() {
+            return "3119:7: (this_END_BLOCK_5= RULE_END_BLOCK )?";
+        }
+    }
+    static final String dfa_29s = "\50\uffff";
+    static final String dfa_30s = "\1\20\1\uffff\2\21\14\46\2\uffff\1\46\5\uffff\4\46\1\uffff\4\46\6\uffff\1\46";
+    static final String dfa_31s = "\1\4\1\uffff\2\5\6\4\6\5\2\uffff\1\5\5\uffff\4\5\1\uffff\4\5\6\uffff\1\5";
+    static final String dfa_32s = "\1\36\1\uffff\2\36\6\45\6\36\2\uffff\1\45\5\uffff\4\45\1\uffff\4\45\6\uffff\1\72";
+    static final String dfa_33s = "\1\uffff\1\1\16\uffff\1\3\1\2\1\uffff\5\2\4\uffff\1\2\4\uffff\6\2\1\uffff";
+    static final String dfa_34s = "\50\uffff}>";
+    static final String[] dfa_35s = {
+            "\1\1\1\20\1\2\1\3\1\12\1\13\1\14\1\15\13\uffff\1\16\1\17\1\4\1\5\1\6\1\7\1\10\1\11",
+            "",
+            "\7\21\5\uffff\1\20\5\uffff\10\21",
+            "\7\21\5\uffff\1\20\5\uffff\10\21",
+            "\1\22\1\47\1\27\1\46\1\23\1\24\1\25\1\26\1\40\4\uffff\1\34\5\uffff\2\46\1\42\1\41\1\43\1\44\1\45\1\46\1\30\1\31\1\32\1\33\1\35\1\36\1\37",
+            "\1\22\1\47\1\27\1\46\1\23\1\24\1\25\1\26\1\40\4\uffff\1\34\5\uffff\2\46\1\42\1\41\1\43\1\44\1\45\1\46\1\30\1\31\1\32\1\33\1\35\1\36\1\37",
+            "\1\22\1\47\1\27\1\46\1\23\1\24\1\25\1\26\1\40\4\uffff\1\34\5\uffff\2\46\1\42\1\41\1\43\1\44\1\45\1\46\1\30\1\31\1\32\1\33\1\35\1\36\1\37",
+            "\1\22\1\47\1\27\1\46\1\23\1\24\1\25\1\26\1\40\4\uffff\1\34\5\uffff\2\46\1\42\1\41\1\43\1\44\1\45\1\46\1\30\1\31\1\32\1\33\1\35\1\36\1\37",
+            "\1\22\1\47\1\27\1\46\1\23\1\24\1\25\1\26\1\40\4\uffff\1\34\5\uffff\2\46\1\42\1\41\1\43\1\44\1\45\1\46\1\30\1\31\1\32\1\33\1\35\1\36\1\37",
+            "\1\22\1\47\1\27\1\46\1\23\1\24\1\25\1\26\1\40\4\uffff\1\34\5\uffff\2\46\1\42\1\41\1\43\1\44\1\45\1\46\1\30\1\31\1\32\1\33\1\35\1\36\1\37",
+            "\1\21\6\46\5\uffff\1\20\5\uffff\10\46",
+            "\1\21\6\46\5\uffff\1\20\5\uffff\10\46",
+            "\1\21\6\46\5\uffff\1\20\5\uffff\10\46",
+            "\1\21\6\46\5\uffff\1\20\5\uffff\10\46",
+            "\1\21\6\46\5\uffff\1\20\5\uffff\10\46",
+            "\1\21\6\46\5\uffff\1\20\5\uffff\10\46",
+            "",
+            "",
+            "\1\47\1\27\1\46\1\23\1\24\1\25\1\26\1\40\4\uffff\1\34\5\uffff\2\46\1\42\1\41\1\43\1\44\1\45\1\46\1\30\1\31\1\32\1\33\1\35\1\36\1\37",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\47\1\27\1\46\1\23\1\24\1\25\1\26\1\40\4\uffff\1\34\5\uffff\2\46\1\42\1\41\1\43\1\44\1\45\1\46\1\30\1\31\1\32\1\33\1\35\1\36\1\37",
+            "\1\47\1\27\1\46\1\23\1\24\1\25\1\26\1\40\4\uffff\1\34\5\uffff\2\46\1\42\1\41\1\43\1\44\1\45\1\46\1\30\1\31\1\32\1\33\1\35\1\36\1\37",
+            "\1\47\1\27\1\46\1\23\1\24\1\25\1\26\1\40\4\uffff\1\34\5\uffff\2\46\1\42\1\41\1\43\1\44\1\45\1\46\1\30\1\31\1\32\1\33\1\35\1\36\1\37",
+            "\1\47\1\27\1\46\1\23\1\24\1\25\1\26\1\40\4\uffff\1\34\5\uffff\2\46\1\42\1\41\1\43\1\44\1\45\1\46\1\30\1\31\1\32\1\33\1\35\1\36\1\37",
+            "",
+            "\1\47\1\27\1\46\1\23\1\24\1\25\1\26\1\40\4\uffff\1\34\5\uffff\2\46\1\42\1\41\1\43\1\44\1\45\1\46\1\30\1\31\1\32\1\33\1\35\1\36\1\37",
+            "\1\47\1\27\1\46\1\23\1\24\1\25\1\26\1\40\4\uffff\1\34\5\uffff\2\46\1\42\1\41\1\43\1\44\1\45\1\46\1\30\1\31\1\32\1\33\1\35\1\36\1\37",
+            "\1\47\1\27\1\46\1\23\1\24\1\25\1\26\1\40\4\uffff\1\34\5\uffff\2\46\1\42\1\41\1\43\1\44\1\45\1\46\1\30\1\31\1\32\1\33\1\35\1\36\1\37",
+            "\1\47\1\27\1\46\1\23\1\24\1\25\1\26\1\40\4\uffff\1\34\5\uffff\2\46\1\42\1\41\1\43\1\44\1\45\1\46\1\30\1\31\1\32\1\33\1\35\1\36\1\37",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\7\46\4\uffff\1\46\1\20\15\46\7\uffff\25\46"
+    };
+
+    static final short[] dfa_29 = DFA.unpackEncodedString(dfa_29s);
+    static final short[] dfa_30 = DFA.unpackEncodedString(dfa_30s);
+    static final char[] dfa_31 = DFA.unpackEncodedStringToUnsignedChars(dfa_31s);
+    static final char[] dfa_32 = DFA.unpackEncodedStringToUnsignedChars(dfa_32s);
+    static final short[] dfa_33 = DFA.unpackEncodedString(dfa_33s);
+    static final short[] dfa_34 = DFA.unpackEncodedString(dfa_34s);
+    static final short[][] dfa_35 = unpackEncodedStringArray(dfa_35s);
+
+    class DFA76 extends DFA {
+
+        public DFA76(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 76;
+            this.eot = dfa_29;
+            this.eof = dfa_30;
+            this.min = dfa_31;
+            this.max = dfa_32;
+            this.accept = dfa_33;
+            this.special = dfa_34;
+            this.transition = dfa_35;
+        }
+        public String getDescription() {
+            return "3295:3: ( (this_BEG_BLOCK_2= RULE_BEG_BLOCK ( (otherlv_3= 'driver' otherlv_4= ':' ( (lv_driver_5_0= ruleEString ) ) ) | (otherlv_6= 'ipv4_address' otherlv_7= ':' ( (lv_ipv4Address_8_0= ruleEString ) ) ) | (otherlv_9= 'ipam' otherlv_10= ':' this_BEG_BLOCK_11= RULE_BEG_BLOCK ruleKeyName otherlv_13= ':' this_BEG_BLOCK_14= RULE_BEG_BLOCK ( (lv_ipam_15_0= ruleConfig ) )+ this_END_BLOCK_16= RULE_END_BLOCK this_END_BLOCK_17= RULE_END_BLOCK ) )* this_END_BLOCK_18= RULE_END_BLOCK ) | ruleEString )?";
+        }
+    }
+    static final String dfa_36s = "\1\uffff\1\2\1\uffff\1\6\1\uffff\1\7\1\10\1\11\2\uffff";
+    static final String dfa_37s = "\2\5\1\uffff\1\5\1\uffff\1\5\2\0\2\uffff";
+    static final String dfa_38s = "\1\37\1\72\1\uffff\1\72\1\uffff\1\36\2\0\2\uffff";
+    static final String dfa_39s = "\2\uffff\1\2\1\uffff\1\1\3\uffff\2\1";
+    static final String[] dfa_40s = {
+            "\1\1\31\uffff\1\2",
+            "\1\3\16\uffff\3\2\10\uffff\1\4\6\uffff\25\2",
+            "",
+            "\1\5\6\2\10\uffff\3\4\10\2\7\uffff\25\4",
+            "",
+            "\7\4\4\uffff\1\2\1\uffff\5\2\10\4",
+            "\1\uffff",
+            "\1\uffff",
+            "",
+            ""
+    };
+    static final short[] dfa_36 = DFA.unpackEncodedString(dfa_36s);
+    static final char[] dfa_37 = DFA.unpackEncodedStringToUnsignedChars(dfa_37s);
+    static final char[] dfa_38 = DFA.unpackEncodedStringToUnsignedChars(dfa_38s);
+    static final short[] dfa_39 = DFA.unpackEncodedString(dfa_39s);
+    static final short[][] dfa_40 = unpackEncodedStringArray(dfa_40s);
+
+    class DFA78 extends DFA {
+
+        public DFA78(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 78;
+            this.eot = dfa_22;
+            this.eof = dfa_36;
+            this.min = dfa_37;
+            this.max = dfa_38;
+            this.accept = dfa_39;
+            this.special = dfa_27;
+            this.transition = dfa_40;
+        }
+        public String getDescription() {
+            return "3563:7: (this_END_BLOCK_5= RULE_END_BLOCK )?";
+        }
+    }
+    static final String dfa_41s = "\1\37\1\113\1\uffff\1\113\1\uffff\1\72\1\36\2\0\2\uffff";
+    static final String[] dfa_42s = {
+            "\1\1\31\uffff\1\2",
+            "\1\3\31\uffff\1\4\47\uffff\5\2",
+            "",
+            "\1\5\16\uffff\3\2\17\uffff\25\2\14\uffff\5\4",
+            "",
+            "\1\6\6\2\10\uffff\3\4\10\2\7\uffff\25\4",
+            "\7\4\4\uffff\1\2\1\uffff\5\2\10\4",
+            "\1\uffff",
+            "\1\uffff",
+            "",
+            ""
+    };
+    static final char[] dfa_41 = DFA.unpackEncodedStringToUnsignedChars(dfa_41s);
+    static final short[][] dfa_42 = unpackEncodedStringArray(dfa_42s);
+
+    class DFA84 extends DFA {
+
+        public DFA84(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 84;
+            this.eot = dfa_15;
+            this.eof = dfa_16;
+            this.min = dfa_17;
+            this.max = dfa_41;
+            this.accept = dfa_19;
+            this.special = dfa_20;
+            this.transition = dfa_42;
+        }
+        public String getDescription() {
+            return "3847:8: (this_END_BLOCK_8= RULE_END_BLOCK )?";
+        }
+    }
  
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
@@ -9891,20 +11223,26 @@ public class InternalDcDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000080000000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000080000020L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000A00000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0xFFFFFFC0007D0D00L,0x0000000000003FFFL});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0xFFFFFFC0007D0D20L,0x0000000000003FFFL});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x200000007F800FF2L,0x0000000000000070L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x200000007F800FE2L,0x0000000000000070L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x2000000000000022L,0x0000000000000070L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x7800000000000020L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x8000000000000020L,0x0000000000000003L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000000020L,0x0000000000000F80L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000000020L,0x0000000000002000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000000020L,0x0000000000001000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000810L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0xFFFFFFC0807D0D00L,0x0000000000003FFFL});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0xFFFFFFC0007D0D20L,0x0000000000003FFFL});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0xFFFFFFC0007D0D00L,0x0000000000003FFFL});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x200000007F800FF2L,0x0000000000000070L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x200000007F800FE2L,0x0000000000000070L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x2000000000000022L,0x0000000000000070L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x000000007F800FC2L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x7800000000000020L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x00000000FF800FC0L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x00000000FF800FE0L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x000000007F800FD2L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x8000000000000020L,0x0000000000000003L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000000000020L,0x0000000000000F80L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000000020L,0x0000000000002000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000020L,0x0000000000001000L});
 
 }
