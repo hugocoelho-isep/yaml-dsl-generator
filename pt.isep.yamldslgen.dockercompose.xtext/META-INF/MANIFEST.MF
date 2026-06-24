@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: pt.isep.yamldslgen.dockercompose.xtext
+Bundle-ManifestVersion: 2
+Bundle-Name: pt.isep.yamldslgen.dockercompose.xtext
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: pt.isep.yamldslgen.dockercompose.xtext; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: pt.isep.yamldslgen.dockercompose,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.19.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.42.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: pt.isep.yamldslgen.dockercompose.xtext.scoping,
+ pt.isep.yamldslgen.dockercompose.xtext.parser.antlr,
+ pt.isep.yamldslgen.dockercompose.xtext.services,
+ pt.isep.yamldslgen.dockercompose.xtext.parser.antlr.internal,
+ pt.isep.yamldslgen.dockercompose.xtext.formatting2,
+ pt.isep.yamldslgen.dockercompose.xtext,
+ pt.isep.yamldslgen.dockercompose.xtext.validation,
+ pt.isep.yamldslgen.dockercompose.xtext.serializer,
+ pt.isep.yamldslgen.dockercompose.xtext.generator
+Import-Package: org.apache.log4j

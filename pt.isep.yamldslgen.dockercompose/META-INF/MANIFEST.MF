@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: pt.isep.yamldslgen.dockercompose;singleton:=true
+Automatic-Module-Name: pt.isep.yamldslgen.dockercompose
+Bundle-Version: 0.1.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: pt.isep.yamldslgen.docker_compose,
+ pt.isep.yamldslgen.docker_compose.impl,
+ pt.isep.yamldslgen.docker_compose.util
+Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy
