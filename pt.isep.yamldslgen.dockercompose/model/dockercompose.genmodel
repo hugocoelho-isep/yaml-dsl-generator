@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/pt.isep.yamldslgen.dockercompose/src-gen" creationIcons="false"
+    editDirectory="/pt.isep.yamldslgen.dockercompose.edit/src-gen" editorDirectory="/pt.isep.yamldslgen.dockercompose.editor/src-gen"
+    modelPluginID="pt.isep.yamldslgen.dockercompose" modelName="Dockercompose" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="21.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>dockercompose.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Dockercompose" basePackage="pt.isep.yamldslgen" disposableProviderFactory="true"
+      ecorePackage="dockercompose.ecore#/">
+    <genClasses ecoreClass="dockercompose.ecore#//KeyValuePair">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//KeyValuePair/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//KeyValuePair/value"/>
+    </genClasses>
+    <genClasses ecoreClass="dockercompose.ecore#//DockerCompose">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//DockerCompose/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//DockerCompose/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dockercompose.ecore#//DockerCompose/services"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dockercompose.ecore#//DockerCompose/networks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dockercompose.ecore#//DockerCompose/volumes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dockercompose.ecore#//DockerCompose/secrets"/>
+    </genClasses>
+    <genClasses ecoreClass="dockercompose.ecore#//Service">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Service/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Service/ports"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Service/image"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Service/restart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Service/containerName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Service/command"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Service/stopSignal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Service/expose"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Service/secrets"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Service/user"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Service/hostname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Service/capAdd"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Service/networkMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Service/stdinOpen"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Service/labels"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Service/platform"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Service/runtime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Service/sysctls"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dockercompose.ecore#//Service/build"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dockercompose.ecore#//Service/healthcheck"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dockercompose.ecore#//Service/deploy"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dockercompose.ecore#//Service/dependsOn"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dockercompose.ecore#//Service/volumes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dockercompose.ecore#//Service/networks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dockercompose.ecore#//Service/environment"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dockercompose.ecore#//Build"/>
+    <genClasses ecoreClass="dockercompose.ecore#//Healthcheck">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Healthcheck/test"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Healthcheck/interval"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Healthcheck/retries"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Healthcheck/startPeriod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Healthcheck/timeout"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dockercompose.ecore#//Networks"/>
+    <genClasses ecoreClass="dockercompose.ecore#//Network">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Network/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Network/driver"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Network/ipv4Address"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dockercompose.ecore#//Network/ipam"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dockercompose.ecore#//Volume"/>
+    <genClasses ecoreClass="dockercompose.ecore#//Resource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Resource/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Resource/memory"/>
+    </genClasses>
+    <genClasses ecoreClass="dockercompose.ecore#//Secret">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Secret/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Secret/file"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dockercompose.ecore#//Depends_on"/>
+    <genClasses ecoreClass="dockercompose.ecore#//Db">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Db/condition"/>
+    </genClasses>
+    <genClasses ecoreClass="dockercompose.ecore#//Config">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Config/subnet"/>
+    </genClasses>
+    <genClasses ecoreClass="dockercompose.ecore#//VolumeObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//VolumeObject/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//VolumeObject/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//VolumeObject/source"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//VolumeObject/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//VolumeObject/readOnly"/>
+    </genClasses>
+    <genClasses ecoreClass="dockercompose.ecore#//VolumeValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//VolumeValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="dockercompose.ecore#//BuildObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//BuildObject/context"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//BuildObject/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//BuildObject/args"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//BuildObject/dockerfile"/>
+    </genClasses>
+    <genClasses ecoreClass="dockercompose.ecore#//BuildValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//BuildValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="dockercompose.ecore#//NetworksObject">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dockercompose.ecore#//NetworksObject/network"/>
+    </genClasses>
+    <genClasses ecoreClass="dockercompose.ecore#//NetworksValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//NetworksValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="dockercompose.ecore#//Depends_onObject">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dockercompose.ecore#//Depends_onObject/db"/>
+    </genClasses>
+    <genClasses ecoreClass="dockercompose.ecore#//Depends_onValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Depends_onValue/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

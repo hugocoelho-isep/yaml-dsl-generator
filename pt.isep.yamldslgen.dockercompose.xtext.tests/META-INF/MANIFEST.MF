@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: pt.isep.yamldslgen.dockercompose.xtext.tests
+Bundle-ManifestVersion: 2
+Bundle-Name: pt.isep.yamldslgen.dockercompose.xtext.tests
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: pt.isep.yamldslgen.dockercompose.xtext.tests; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: pt.isep.yamldslgen.dockercompose.xtext,
+ pt.isep.yamldslgen.dockercompose,
+ org.eclipse.xtext.testing,
+ org.eclipse.xtext.xbase.testing,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.42.0"
+Import-Package: org.junit.jupiter.api;version="[5.1.0,6.0.0)",
+ org.junit.jupiter.api.extension;version="[5.1.0,6.0.0)"
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: pt.isep.yamldslgen.dockercompose.xtext.tests;x-internal=true
