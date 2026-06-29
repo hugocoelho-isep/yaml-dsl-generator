@@ -152,6 +152,8 @@ public class DcDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getNetworkAccess().getGroup_2_0_1_0(), "rule__Network__Group_2_0_1_0__0");
 			builder.put(grammarAccess.getNetworkAccess().getGroup_2_0_1_1(), "rule__Network__Group_2_0_1_1__0");
 			builder.put(grammarAccess.getNetworkAccess().getGroup_2_0_1_2(), "rule__Network__Group_2_0_1_2__0");
+			builder.put(grammarAccess.getIpamAccess().getGroup(), "rule__Ipam__Group__0");
+			builder.put(grammarAccess.getIpamAccess().getGroup_2(), "rule__Ipam__Group_2__0");
 			builder.put(grammarAccess.getConfigAccess().getGroup(), "rule__Config__Group__0");
 			builder.put(grammarAccess.getConfigAccess().getGroup_3(), "rule__Config__Group_3__0");
 			builder.put(grammarAccess.getDepends_onAccess().getGroup_0(), "rule__Depends_on__Group_0__0");
@@ -163,6 +165,12 @@ public class DcDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDepends_onAccess().getGroup_2(), "rule__Depends_on__Group_2__0");
 			builder.put(grammarAccess.getDbAccess().getGroup(), "rule__Db__Group__0");
 			builder.put(grammarAccess.getDbAccess().getGroup_4(), "rule__Db__Group_4__0");
+			builder.put(grammarAccess.getDeployAccess().getGroup(), "rule__Deploy__Group__0");
+			builder.put(grammarAccess.getDeployAccess().getGroup_2(), "rule__Deploy__Group_2__0");
+			builder.put(grammarAccess.getResourcesAccess().getGroup(), "rule__Resources__Group__0");
+			builder.put(grammarAccess.getResourcesAccess().getGroup_2(), "rule__Resources__Group_2__0");
+			builder.put(grammarAccess.getLimitsAccess().getGroup(), "rule__Limits__Group__0");
+			builder.put(grammarAccess.getLimitsAccess().getGroup_2(), "rule__Limits__Group_2__0");
 			builder.put(grammarAccess.getHealthcheckAccess().getGroup(), "rule__Healthcheck__Group__0");
 			builder.put(grammarAccess.getHealthcheckAccess().getGroup_2_0(), "rule__Healthcheck__Group_2_0__0");
 			builder.put(grammarAccess.getHealthcheckAccess().getGroup_2_0_2_0(), "rule__Healthcheck__Group_2_0_2_0__0");
@@ -175,8 +183,6 @@ public class DcDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getHealthcheckAccess().getGroup_2_4(), "rule__Healthcheck__Group_2_4__0");
 			builder.put(grammarAccess.getSecretAccess().getGroup(), "rule__Secret__Group__0");
 			builder.put(grammarAccess.getSecretAccess().getGroup_3(), "rule__Secret__Group_3__0");
-			builder.put(grammarAccess.getResourceAccess().getGroup(), "rule__Resource__Group__0");
-			builder.put(grammarAccess.getResourceAccess().getGroup_3(), "rule__Resource__Group_3__0");
 			builder.put(grammarAccess.getDockerComposeAccess().getVersionAssignment_0_2(), "rule__DockerCompose__VersionAssignment_0_2");
 			builder.put(grammarAccess.getDockerComposeAccess().getNameAssignment_1_2(), "rule__DockerCompose__NameAssignment_1_2");
 			builder.put(grammarAccess.getDockerComposeAccess().getServicesAssignment_2_3(), "rule__DockerCompose__ServicesAssignment_2_3");
@@ -226,7 +232,7 @@ public class DcDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getServiceAccess().getNetworksAssignment_3_20_2(), "rule__Service__NetworksAssignment_3_20_2");
 			builder.put(grammarAccess.getServiceAccess().getVolumesAssignment_3_21_3(), "rule__Service__VolumesAssignment_3_21_3");
 			builder.put(grammarAccess.getServiceAccess().getHealthcheckAssignment_3_22_2(), "rule__Service__HealthcheckAssignment_3_22_2");
-			builder.put(grammarAccess.getServiceAccess().getDeployAssignment_3_23_6(), "rule__Service__DeployAssignment_3_23_6");
+			builder.put(grammarAccess.getServiceAccess().getDeployAssignment_3_23_2(), "rule__Service__DeployAssignment_3_23_2");
 			builder.put(grammarAccess.getServiceVolumeAccess().getValueAssignment_2_0_1(), "rule__ServiceVolume__ValueAssignment_2_0_1");
 			builder.put(grammarAccess.getServiceVolumeAccess().getTypeAssignment_2_1_1_0_2(), "rule__ServiceVolume__TypeAssignment_2_1_1_0_2");
 			builder.put(grammarAccess.getServiceVolumeAccess().getSourceAssignment_2_1_1_1_2(), "rule__ServiceVolume__SourceAssignment_2_1_1_1_2");
@@ -248,7 +254,8 @@ public class DcDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getNetworkAccess().getIdAssignment_0(), "rule__Network__IdAssignment_0");
 			builder.put(grammarAccess.getNetworkAccess().getDriverAssignment_2_0_1_0_2(), "rule__Network__DriverAssignment_2_0_1_0_2");
 			builder.put(grammarAccess.getNetworkAccess().getIpv4AddressAssignment_2_0_1_1_2(), "rule__Network__Ipv4AddressAssignment_2_0_1_1_2");
-			builder.put(grammarAccess.getNetworkAccess().getIpamAssignment_2_0_1_2_6(), "rule__Network__IpamAssignment_2_0_1_2_6");
+			builder.put(grammarAccess.getNetworkAccess().getIpamAssignment_2_0_1_2_2(), "rule__Network__IpamAssignment_2_0_1_2_2");
+			builder.put(grammarAccess.getIpamAccess().getConfigAssignment_2_3(), "rule__Ipam__ConfigAssignment_2_3");
 			builder.put(grammarAccess.getConfigAccess().getSubnetAssignment_3_2(), "rule__Config__SubnetAssignment_3_2");
 			builder.put(grammarAccess.getDepends_onAccess().getValueAssignment_0_1_0_1_2(), "rule__Depends_on__ValueAssignment_0_1_0_1_2");
 			builder.put(grammarAccess.getDepends_onAccess().getDbAssignment_0_1_1_1(), "rule__Depends_on__DbAssignment_0_1_1_1");
@@ -256,6 +263,9 @@ public class DcDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDepends_onAccess().getValueAssignment_1_3_1(), "rule__Depends_on__ValueAssignment_1_3_1");
 			builder.put(grammarAccess.getDepends_onAccess().getValueAssignment_2_1(), "rule__Depends_on__ValueAssignment_2_1");
 			builder.put(grammarAccess.getDbAccess().getConditionAssignment_4_2(), "rule__Db__ConditionAssignment_4_2");
+			builder.put(grammarAccess.getDeployAccess().getResourcesAssignment_2_2(), "rule__Deploy__ResourcesAssignment_2_2");
+			builder.put(grammarAccess.getResourcesAccess().getLimitsAssignment_2_2(), "rule__Resources__LimitsAssignment_2_2");
+			builder.put(grammarAccess.getLimitsAccess().getMemoryAssignment_2_2(), "rule__Limits__MemoryAssignment_2_2");
 			builder.put(grammarAccess.getHealthcheckAccess().getTestAssignment_2_0_2_0_1_2(), "rule__Healthcheck__TestAssignment_2_0_2_0_1_2");
 			builder.put(grammarAccess.getHealthcheckAccess().getTestAssignment_2_0_2_1_1(), "rule__Healthcheck__TestAssignment_2_0_2_1_1");
 			builder.put(grammarAccess.getHealthcheckAccess().getTestAssignment_2_0_2_1_2_1(), "rule__Healthcheck__TestAssignment_2_0_2_1_2_1");
@@ -265,8 +275,6 @@ public class DcDslParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getHealthcheckAccess().getStartPeriodAssignment_2_4_2(), "rule__Healthcheck__StartPeriodAssignment_2_4_2");
 			builder.put(grammarAccess.getSecretAccess().getIdAssignment_0(), "rule__Secret__IdAssignment_0");
 			builder.put(grammarAccess.getSecretAccess().getFileAssignment_3_2(), "rule__Secret__FileAssignment_3_2");
-			builder.put(grammarAccess.getResourceAccess().getIdAssignment_0(), "rule__Resource__IdAssignment_0");
-			builder.put(grammarAccess.getResourceAccess().getMemoryAssignment_3_2(), "rule__Resource__MemoryAssignment_3_2");
 		}
 	}
 	

@@ -20,14 +20,17 @@ import pt.isep.yamldslgen.docker_compose.Config;
 import pt.isep.yamldslgen.docker_compose.Db;
 import pt.isep.yamldslgen.docker_compose.Depends_onObject;
 import pt.isep.yamldslgen.docker_compose.Depends_onValue;
+import pt.isep.yamldslgen.docker_compose.Deploy;
 import pt.isep.yamldslgen.docker_compose.DockerCompose;
 import pt.isep.yamldslgen.docker_compose.DockercomposePackage;
 import pt.isep.yamldslgen.docker_compose.Healthcheck;
+import pt.isep.yamldslgen.docker_compose.Ipam;
 import pt.isep.yamldslgen.docker_compose.KeyValuePair;
+import pt.isep.yamldslgen.docker_compose.Limits;
 import pt.isep.yamldslgen.docker_compose.Network;
 import pt.isep.yamldslgen.docker_compose.NetworksObject;
 import pt.isep.yamldslgen.docker_compose.NetworksValue;
-import pt.isep.yamldslgen.docker_compose.Resource;
+import pt.isep.yamldslgen.docker_compose.Resources;
 import pt.isep.yamldslgen.docker_compose.Secret;
 import pt.isep.yamldslgen.docker_compose.Service;
 import pt.isep.yamldslgen.docker_compose.VolumeObject;
@@ -66,11 +69,17 @@ public class DcDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case DockercomposePackage.DEPENDS_ON_VALUE:
 				sequence_Depends_on(context, (Depends_onValue) semanticObject); 
 				return; 
+			case DockercomposePackage.DEPLOY:
+				sequence_Deploy(context, (Deploy) semanticObject); 
+				return; 
 			case DockercomposePackage.DOCKER_COMPOSE:
 				sequence_DockerCompose(context, (DockerCompose) semanticObject); 
 				return; 
 			case DockercomposePackage.HEALTHCHECK:
 				sequence_Healthcheck(context, (Healthcheck) semanticObject); 
+				return; 
+			case DockercomposePackage.IPAM:
+				sequence_Ipam(context, (Ipam) semanticObject); 
 				return; 
 			case DockercomposePackage.KEY_VALUE_PAIR:
 				if (rule == grammarAccess.getEnvEntryRule()) {
@@ -82,6 +91,9 @@ public class DcDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case DockercomposePackage.LIMITS:
+				sequence_Limits(context, (Limits) semanticObject); 
+				return; 
 			case DockercomposePackage.NETWORK:
 				sequence_Network(context, (Network) semanticObject); 
 				return; 
@@ -91,8 +103,8 @@ public class DcDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case DockercomposePackage.NETWORKS_VALUE:
 				sequence_Networks(context, (NetworksValue) semanticObject); 
 				return; 
-			case DockercomposePackage.RESOURCE:
-				sequence_Resource(context, (Resource) semanticObject); 
+			case DockercomposePackage.RESOURCES:
+				sequence_Resources(context, (Resources) semanticObject); 
 				return; 
 			case DockercomposePackage.SECRET:
 				sequence_Secret(context, (Secret) semanticObject); 
@@ -231,6 +243,20 @@ public class DcDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Deploy returns Deploy
+	 *
+	 * Constraint:
+	 *     resources=Resources?
+	 * </pre>
+	 */
+	protected void sequence_Deploy(ISerializationContext context, Deploy semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     DockerCompose returns DockerCompose
 	 *
 	 * Constraint:
@@ -286,6 +312,20 @@ public class DcDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Ipam returns Ipam
+	 *
+	 * Constraint:
+	 *     config+=Config*
+	 * </pre>
+	 */
+	protected void sequence_Ipam(ISerializationContext context, Ipam semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     KeyValuePair returns KeyValuePair
 	 *
 	 * Constraint:
@@ -303,6 +343,20 @@ public class DcDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		feeder.accept(grammarAccess.getKeyValuePairAccess().getKeyKeyNameParserRuleCall_0_0(), semanticObject.getKey());
 		feeder.accept(grammarAccess.getKeyValuePairAccess().getValueEStringParserRuleCall_2_0(), semanticObject.getValue());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Limits returns Limits
+	 *
+	 * Constraint:
+	 *     memory=EString?
+	 * </pre>
+	 */
+	protected void sequence_Limits(ISerializationContext context, Limits semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -332,7 +386,7 @@ public class DcDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Network returns Network
 	 *
 	 * Constraint:
-	 *     (id=EString (driver=EString | ipv4Address=EString | ipam+=Config)*)
+	 *     (id=EString (driver=EString | ipv4Address=EString | ipam=Ipam)*)
 	 * </pre>
 	 */
 	protected void sequence_Network(ISerializationContext context, Network semanticObject) {
@@ -371,13 +425,13 @@ public class DcDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Resource returns Resource
+	 *     Resources returns Resources
 	 *
 	 * Constraint:
-	 *     (id=EString memory=EString?)
+	 *     limits=Limits?
 	 * </pre>
 	 */
-	protected void sequence_Resource(ISerializationContext context, Resource semanticObject) {
+	protected void sequence_Resources(ISerializationContext context, Resources semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -459,7 +513,7 @@ public class DcDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *                 networks=Networks | 
 	 *                 volumes+=ServiceVolume | 
 	 *                 healthcheck=Healthcheck | 
-	 *                 deploy+=Resource
+	 *                 deploy=Deploy
 	 *             )? 
 	 *             (ports+=EString ports+=EString*)? 
 	 *             (expose+=INT expose+=INT*)? 

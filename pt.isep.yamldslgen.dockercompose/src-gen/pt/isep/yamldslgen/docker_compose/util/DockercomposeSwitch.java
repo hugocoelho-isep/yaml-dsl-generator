@@ -122,16 +122,23 @@ public class DockercomposeSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case DockercomposePackage.RESOURCE: {
-			Resource resource = (Resource) theEObject;
-			T result = caseResource(resource);
+		case DockercomposePackage.DEPLOY: {
+			Deploy deploy = (Deploy) theEObject;
+			T result = caseDeploy(deploy);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case DockercomposePackage.SECRET: {
-			Secret secret = (Secret) theEObject;
-			T result = caseSecret(secret);
+		case DockercomposePackage.RESOURCES: {
+			Resources resources = (Resources) theEObject;
+			T result = caseResources(resources);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DockercomposePackage.LIMITS: {
+			Limits limits = (Limits) theEObject;
+			T result = caseLimits(limits);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -146,6 +153,20 @@ public class DockercomposeSwitch<T> extends Switch<T> {
 		case DockercomposePackage.DB: {
 			Db db = (Db) theEObject;
 			T result = caseDb(db);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DockercomposePackage.SECRET: {
+			Secret secret = (Secret) theEObject;
+			T result = caseSecret(secret);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DockercomposePackage.IPAM: {
+			Ipam ipam = (Ipam) theEObject;
+			T result = caseIpam(ipam);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -355,32 +376,47 @@ public class DockercomposeSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Resource</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Deploy</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Resource</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Deploy</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseResource(Resource object) {
+	public T caseDeploy(Deploy object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Secret</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Resources</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Secret</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Resources</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSecret(Secret object) {
+	public T caseResources(Resources object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Limits</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Limits</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLimits(Limits object) {
 		return null;
 	}
 
@@ -411,6 +447,36 @@ public class DockercomposeSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDb(Db object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Secret</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Secret</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSecret(Secret object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ipam</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ipam</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIpam(Ipam object) {
 		return null;
 	}
 

@@ -894,14 +894,14 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 			keyValuePairItemProvider.dispose();
 		if (githubActionsItemProvider != null)
 			githubActionsItemProvider.dispose();
-		if (jobItemProvider != null)
-			jobItemProvider.dispose();
-		if (stepItemProvider != null)
-			stepItemProvider.dispose();
 		if (pushItemProvider != null)
 			pushItemProvider.dispose();
 		if (pull_requestItemProvider != null)
 			pull_requestItemProvider.dispose();
+		if (jobItemProvider != null)
+			jobItemProvider.dispose();
+		if (stepItemProvider != null)
+			stepItemProvider.dispose();
 		if (scheduleItemProvider != null)
 			scheduleItemProvider.dispose();
 		if (workflow_dispatchItemProvider != null)
@@ -926,12 +926,12 @@ public class YamlmdeItemProviderAdapterFactory extends YamlmdeAdapterFactory
 			runItemProvider.dispose();
 		if (releaseItemProvider != null)
 			releaseItemProvider.dispose();
+		if (serviceItemProvider != null)
+			serviceItemProvider.dispose();
 		if (inputItemProvider != null)
 			inputItemProvider.dispose();
 		if (merge_groupItemProvider != null)
 			merge_groupItemProvider.dispose();
-		if (serviceItemProvider != null)
-			serviceItemProvider.dispose();
 		if (issuesItemProvider != null)
 			issuesItemProvider.dispose();
 		if (permissionsObjectItemProvider != null)

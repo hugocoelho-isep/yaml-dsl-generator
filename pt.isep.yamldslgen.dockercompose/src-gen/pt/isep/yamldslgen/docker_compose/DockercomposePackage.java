@@ -375,7 +375,7 @@ public interface DockercomposePackage extends EPackage {
 	int SERVICE__HEALTHCHECK = 19;
 
 	/**
-	 * The feature id for the '<em><b>Deploy</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Deploy</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -604,7 +604,7 @@ public interface DockercomposePackage extends EPackage {
 	int NETWORK__IPV4_ADDRESS = 2;
 
 	/**
-	 * The feature id for the '<em><b>Ipam</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Ipam</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -659,23 +659,88 @@ public interface DockercomposePackage extends EPackage {
 	int VOLUME_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link pt.isep.yamldslgen.docker_compose.impl.ResourceImpl <em>Resource</em>}' class.
+	 * The meta object id for the '{@link pt.isep.yamldslgen.docker_compose.impl.DeployImpl <em>Deploy</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see pt.isep.yamldslgen.docker_compose.impl.ResourceImpl
-	 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getResource()
+	 * @see pt.isep.yamldslgen.docker_compose.impl.DeployImpl
+	 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getDeploy()
 	 * @generated
 	 */
-	int RESOURCE = 8;
+	int DEPLOY = 8;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Resources</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__ID = 0;
+	int DEPLOY__RESOURCES = 0;
+
+	/**
+	 * The number of structural features of the '<em>Deploy</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPLOY_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Deploy</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPLOY_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link pt.isep.yamldslgen.docker_compose.impl.ResourcesImpl <em>Resources</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pt.isep.yamldslgen.docker_compose.impl.ResourcesImpl
+	 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getResources()
+	 * @generated
+	 */
+	int RESOURCES = 9;
+
+	/**
+	 * The feature id for the '<em><b>Limits</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCES__LIMITS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Resources</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCES_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Resources</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCES_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link pt.isep.yamldslgen.docker_compose.impl.LimitsImpl <em>Limits</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pt.isep.yamldslgen.docker_compose.impl.LimitsImpl
+	 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getLimits()
+	 * @generated
+	 */
+	int LIMITS = 10;
 
 	/**
 	 * The feature id for the '<em><b>Memory</b></em>' attribute.
@@ -684,25 +749,90 @@ public interface DockercomposePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__MEMORY = 1;
+	int LIMITS__MEMORY = 0;
 
 	/**
-	 * The number of structural features of the '<em>Resource</em>' class.
+	 * The number of structural features of the '<em>Limits</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_FEATURE_COUNT = 2;
+	int LIMITS_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>Resource</em>' class.
+	 * The number of operations of the '<em>Limits</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_OPERATION_COUNT = 0;
+	int LIMITS_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link pt.isep.yamldslgen.docker_compose.impl.Depends_onImpl <em>Depends on</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pt.isep.yamldslgen.docker_compose.impl.Depends_onImpl
+	 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getDepends_on()
+	 * @generated
+	 */
+	int DEPENDS_ON = 11;
+
+	/**
+	 * The number of structural features of the '<em>Depends on</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPENDS_ON_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Depends on</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPENDS_ON_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link pt.isep.yamldslgen.docker_compose.impl.DbImpl <em>Db</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see pt.isep.yamldslgen.docker_compose.impl.DbImpl
+	 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getDb()
+	 * @generated
+	 */
+	int DB = 12;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB__CONDITION = 0;
+
+	/**
+	 * The number of structural features of the '<em>Db</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Db</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link pt.isep.yamldslgen.docker_compose.impl.SecretImpl <em>Secret</em>}' class.
@@ -712,7 +842,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getSecret()
 	 * @generated
 	 */
-	int SECRET = 9;
+	int SECRET = 13;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -751,69 +881,41 @@ public interface DockercomposePackage extends EPackage {
 	int SECRET_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link pt.isep.yamldslgen.docker_compose.impl.Depends_onImpl <em>Depends on</em>}' class.
+	 * The meta object id for the '{@link pt.isep.yamldslgen.docker_compose.impl.IpamImpl <em>Ipam</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see pt.isep.yamldslgen.docker_compose.impl.Depends_onImpl
-	 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getDepends_on()
+	 * @see pt.isep.yamldslgen.docker_compose.impl.IpamImpl
+	 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getIpam()
 	 * @generated
 	 */
-	int DEPENDS_ON = 10;
+	int IPAM = 14;
 
 	/**
-	 * The number of structural features of the '<em>Depends on</em>' class.
+	 * The feature id for the '<em><b>Config</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPENDS_ON_FEATURE_COUNT = 0;
+	int IPAM__CONFIG = 0;
 
 	/**
-	 * The number of operations of the '<em>Depends on</em>' class.
+	 * The number of structural features of the '<em>Ipam</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPENDS_ON_OPERATION_COUNT = 0;
+	int IPAM_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link pt.isep.yamldslgen.docker_compose.impl.DbImpl <em>Db</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see pt.isep.yamldslgen.docker_compose.impl.DbImpl
-	 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getDb()
-	 * @generated
-	 */
-	int DB = 11;
-
-	/**
-	 * The feature id for the '<em><b>Condition</b></em>' attribute.
+	 * The number of operations of the '<em>Ipam</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DB__CONDITION = 0;
-
-	/**
-	 * The number of structural features of the '<em>Db</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DB_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Db</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DB_OPERATION_COUNT = 0;
+	int IPAM_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link pt.isep.yamldslgen.docker_compose.impl.ConfigImpl <em>Config</em>}' class.
@@ -823,7 +925,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getConfig()
 	 * @generated
 	 */
-	int CONFIG = 12;
+	int CONFIG = 15;
 
 	/**
 	 * The feature id for the '<em><b>Subnet</b></em>' attribute.
@@ -860,7 +962,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getVolumeObject()
 	 * @generated
 	 */
-	int VOLUME_OBJECT = 13;
+	int VOLUME_OBJECT = 16;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -933,7 +1035,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getVolumeValue()
 	 * @generated
 	 */
-	int VOLUME_VALUE = 14;
+	int VOLUME_VALUE = 17;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute list.
@@ -970,7 +1072,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getBuildObject()
 	 * @generated
 	 */
-	int BUILD_OBJECT = 15;
+	int BUILD_OBJECT = 18;
 
 	/**
 	 * The feature id for the '<em><b>Context</b></em>' attribute.
@@ -1034,7 +1136,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getBuildValue()
 	 * @generated
 	 */
-	int BUILD_VALUE = 16;
+	int BUILD_VALUE = 19;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1071,7 +1173,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getNetworksObject()
 	 * @generated
 	 */
-	int NETWORKS_OBJECT = 17;
+	int NETWORKS_OBJECT = 20;
 
 	/**
 	 * The feature id for the '<em><b>Network</b></em>' containment reference list.
@@ -1108,7 +1210,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getNetworksValue()
 	 * @generated
 	 */
-	int NETWORKS_VALUE = 18;
+	int NETWORKS_VALUE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute list.
@@ -1145,7 +1247,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getDepends_onObject()
 	 * @generated
 	 */
-	int DEPENDS_ON_OBJECT = 19;
+	int DEPENDS_ON_OBJECT = 22;
 
 	/**
 	 * The feature id for the '<em><b>Db</b></em>' containment reference.
@@ -1182,7 +1284,7 @@ public interface DockercomposePackage extends EPackage {
 	 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getDepends_onValue()
 	 * @generated
 	 */
-	int DEPENDS_ON_VALUE = 20;
+	int DEPENDS_ON_VALUE = 23;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute list.
@@ -1550,10 +1652,10 @@ public interface DockercomposePackage extends EPackage {
 	EReference getService_Healthcheck();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link pt.isep.yamldslgen.docker_compose.Service#getDeploy <em>Deploy</em>}'.
+	 * Returns the meta object for the containment reference '{@link pt.isep.yamldslgen.docker_compose.Service#getDeploy <em>Deploy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Deploy</em>'.
+	 * @return the meta object for the containment reference '<em>Deploy</em>'.
 	 * @see pt.isep.yamldslgen.docker_compose.Service#getDeploy()
 	 * @see #getService()
 	 * @generated
@@ -1733,10 +1835,10 @@ public interface DockercomposePackage extends EPackage {
 	EAttribute getNetwork_Ipv4Address();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link pt.isep.yamldslgen.docker_compose.Network#getIpam <em>Ipam</em>}'.
+	 * Returns the meta object for the containment reference '{@link pt.isep.yamldslgen.docker_compose.Network#getIpam <em>Ipam</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Ipam</em>'.
+	 * @return the meta object for the containment reference '<em>Ipam</em>'.
 	 * @see pt.isep.yamldslgen.docker_compose.Network#getIpam()
 	 * @see #getNetwork()
 	 * @generated
@@ -1754,36 +1856,98 @@ public interface DockercomposePackage extends EPackage {
 	EClass getVolume();
 
 	/**
-	 * Returns the meta object for class '{@link pt.isep.yamldslgen.docker_compose.Resource <em>Resource</em>}'.
+	 * Returns the meta object for class '{@link pt.isep.yamldslgen.docker_compose.Deploy <em>Deploy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Resource</em>'.
-	 * @see pt.isep.yamldslgen.docker_compose.Resource
+	 * @return the meta object for class '<em>Deploy</em>'.
+	 * @see pt.isep.yamldslgen.docker_compose.Deploy
 	 * @generated
 	 */
-	EClass getResource();
+	EClass getDeploy();
 
 	/**
-	 * Returns the meta object for the attribute '{@link pt.isep.yamldslgen.docker_compose.Resource#getId <em>Id</em>}'.
+	 * Returns the meta object for the containment reference '{@link pt.isep.yamldslgen.docker_compose.Deploy#getResources <em>Resources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see pt.isep.yamldslgen.docker_compose.Resource#getId()
-	 * @see #getResource()
+	 * @return the meta object for the containment reference '<em>Resources</em>'.
+	 * @see pt.isep.yamldslgen.docker_compose.Deploy#getResources()
+	 * @see #getDeploy()
 	 * @generated
 	 */
-	EAttribute getResource_Id();
+	EReference getDeploy_Resources();
 
 	/**
-	 * Returns the meta object for the attribute '{@link pt.isep.yamldslgen.docker_compose.Resource#getMemory <em>Memory</em>}'.
+	 * Returns the meta object for class '{@link pt.isep.yamldslgen.docker_compose.Resources <em>Resources</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Resources</em>'.
+	 * @see pt.isep.yamldslgen.docker_compose.Resources
+	 * @generated
+	 */
+	EClass getResources();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link pt.isep.yamldslgen.docker_compose.Resources#getLimits <em>Limits</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Limits</em>'.
+	 * @see pt.isep.yamldslgen.docker_compose.Resources#getLimits()
+	 * @see #getResources()
+	 * @generated
+	 */
+	EReference getResources_Limits();
+
+	/**
+	 * Returns the meta object for class '{@link pt.isep.yamldslgen.docker_compose.Limits <em>Limits</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Limits</em>'.
+	 * @see pt.isep.yamldslgen.docker_compose.Limits
+	 * @generated
+	 */
+	EClass getLimits();
+
+	/**
+	 * Returns the meta object for the attribute '{@link pt.isep.yamldslgen.docker_compose.Limits#getMemory <em>Memory</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Memory</em>'.
-	 * @see pt.isep.yamldslgen.docker_compose.Resource#getMemory()
-	 * @see #getResource()
+	 * @see pt.isep.yamldslgen.docker_compose.Limits#getMemory()
+	 * @see #getLimits()
 	 * @generated
 	 */
-	EAttribute getResource_Memory();
+	EAttribute getLimits_Memory();
+
+	/**
+	 * Returns the meta object for class '{@link pt.isep.yamldslgen.docker_compose.Depends_on <em>Depends on</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Depends on</em>'.
+	 * @see pt.isep.yamldslgen.docker_compose.Depends_on
+	 * @generated
+	 */
+	EClass getDepends_on();
+
+	/**
+	 * Returns the meta object for class '{@link pt.isep.yamldslgen.docker_compose.Db <em>Db</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Db</em>'.
+	 * @see pt.isep.yamldslgen.docker_compose.Db
+	 * @generated
+	 */
+	EClass getDb();
+
+	/**
+	 * Returns the meta object for the attribute '{@link pt.isep.yamldslgen.docker_compose.Db#getCondition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Condition</em>'.
+	 * @see pt.isep.yamldslgen.docker_compose.Db#getCondition()
+	 * @see #getDb()
+	 * @generated
+	 */
+	EAttribute getDb_Condition();
 
 	/**
 	 * Returns the meta object for class '{@link pt.isep.yamldslgen.docker_compose.Secret <em>Secret</em>}'.
@@ -1818,35 +1982,25 @@ public interface DockercomposePackage extends EPackage {
 	EAttribute getSecret_File();
 
 	/**
-	 * Returns the meta object for class '{@link pt.isep.yamldslgen.docker_compose.Depends_on <em>Depends on</em>}'.
+	 * Returns the meta object for class '{@link pt.isep.yamldslgen.docker_compose.Ipam <em>Ipam</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Depends on</em>'.
-	 * @see pt.isep.yamldslgen.docker_compose.Depends_on
+	 * @return the meta object for class '<em>Ipam</em>'.
+	 * @see pt.isep.yamldslgen.docker_compose.Ipam
 	 * @generated
 	 */
-	EClass getDepends_on();
+	EClass getIpam();
 
 	/**
-	 * Returns the meta object for class '{@link pt.isep.yamldslgen.docker_compose.Db <em>Db</em>}'.
+	 * Returns the meta object for the containment reference list '{@link pt.isep.yamldslgen.docker_compose.Ipam#getConfig <em>Config</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Db</em>'.
-	 * @see pt.isep.yamldslgen.docker_compose.Db
+	 * @return the meta object for the containment reference list '<em>Config</em>'.
+	 * @see pt.isep.yamldslgen.docker_compose.Ipam#getConfig()
+	 * @see #getIpam()
 	 * @generated
 	 */
-	EClass getDb();
-
-	/**
-	 * Returns the meta object for the attribute '{@link pt.isep.yamldslgen.docker_compose.Db#getCondition <em>Condition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Condition</em>'.
-	 * @see pt.isep.yamldslgen.docker_compose.Db#getCondition()
-	 * @see #getDb()
-	 * @generated
-	 */
-	EAttribute getDb_Condition();
+	EReference getIpam_Config();
 
 	/**
 	 * Returns the meta object for class '{@link pt.isep.yamldslgen.docker_compose.Config <em>Config</em>}'.
@@ -2392,7 +2546,7 @@ public interface DockercomposePackage extends EPackage {
 		EReference SERVICE__HEALTHCHECK = eINSTANCE.getService_Healthcheck();
 
 		/**
-		 * The meta object literal for the '<em><b>Deploy</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Deploy</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2536,7 +2690,7 @@ public interface DockercomposePackage extends EPackage {
 		EAttribute NETWORK__IPV4_ADDRESS = eINSTANCE.getNetwork_Ipv4Address();
 
 		/**
-		 * The meta object literal for the '<em><b>Ipam</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Ipam</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2554,22 +2708,50 @@ public interface DockercomposePackage extends EPackage {
 		EClass VOLUME = eINSTANCE.getVolume();
 
 		/**
-		 * The meta object literal for the '{@link pt.isep.yamldslgen.docker_compose.impl.ResourceImpl <em>Resource</em>}' class.
+		 * The meta object literal for the '{@link pt.isep.yamldslgen.docker_compose.impl.DeployImpl <em>Deploy</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see pt.isep.yamldslgen.docker_compose.impl.ResourceImpl
-		 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getResource()
+		 * @see pt.isep.yamldslgen.docker_compose.impl.DeployImpl
+		 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getDeploy()
 		 * @generated
 		 */
-		EClass RESOURCE = eINSTANCE.getResource();
+		EClass DEPLOY = eINSTANCE.getDeploy();
 
 		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Resources</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RESOURCE__ID = eINSTANCE.getResource_Id();
+		EReference DEPLOY__RESOURCES = eINSTANCE.getDeploy_Resources();
+
+		/**
+		 * The meta object literal for the '{@link pt.isep.yamldslgen.docker_compose.impl.ResourcesImpl <em>Resources</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see pt.isep.yamldslgen.docker_compose.impl.ResourcesImpl
+		 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getResources()
+		 * @generated
+		 */
+		EClass RESOURCES = eINSTANCE.getResources();
+
+		/**
+		 * The meta object literal for the '<em><b>Limits</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RESOURCES__LIMITS = eINSTANCE.getResources_Limits();
+
+		/**
+		 * The meta object literal for the '{@link pt.isep.yamldslgen.docker_compose.impl.LimitsImpl <em>Limits</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see pt.isep.yamldslgen.docker_compose.impl.LimitsImpl
+		 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getLimits()
+		 * @generated
+		 */
+		EClass LIMITS = eINSTANCE.getLimits();
 
 		/**
 		 * The meta object literal for the '<em><b>Memory</b></em>' attribute feature.
@@ -2577,33 +2759,7 @@ public interface DockercomposePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute RESOURCE__MEMORY = eINSTANCE.getResource_Memory();
-
-		/**
-		 * The meta object literal for the '{@link pt.isep.yamldslgen.docker_compose.impl.SecretImpl <em>Secret</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see pt.isep.yamldslgen.docker_compose.impl.SecretImpl
-		 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getSecret()
-		 * @generated
-		 */
-		EClass SECRET = eINSTANCE.getSecret();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SECRET__ID = eINSTANCE.getSecret_Id();
-
-		/**
-		 * The meta object literal for the '<em><b>File</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SECRET__FILE = eINSTANCE.getSecret_File();
+		EAttribute LIMITS__MEMORY = eINSTANCE.getLimits_Memory();
 
 		/**
 		 * The meta object literal for the '{@link pt.isep.yamldslgen.docker_compose.impl.Depends_onImpl <em>Depends on</em>}' class.
@@ -2632,6 +2788,50 @@ public interface DockercomposePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DB__CONDITION = eINSTANCE.getDb_Condition();
+
+		/**
+		 * The meta object literal for the '{@link pt.isep.yamldslgen.docker_compose.impl.SecretImpl <em>Secret</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see pt.isep.yamldslgen.docker_compose.impl.SecretImpl
+		 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getSecret()
+		 * @generated
+		 */
+		EClass SECRET = eINSTANCE.getSecret();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SECRET__ID = eINSTANCE.getSecret_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>File</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SECRET__FILE = eINSTANCE.getSecret_File();
+
+		/**
+		 * The meta object literal for the '{@link pt.isep.yamldslgen.docker_compose.impl.IpamImpl <em>Ipam</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see pt.isep.yamldslgen.docker_compose.impl.IpamImpl
+		 * @see pt.isep.yamldslgen.docker_compose.impl.DockercomposePackageImpl#getIpam()
+		 * @generated
+		 */
+		EClass IPAM = eINSTANCE.getIpam();
+
+		/**
+		 * The meta object literal for the '<em><b>Config</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IPAM__CONFIG = eINSTANCE.getIpam_Config();
 
 		/**
 		 * The meta object literal for the '{@link pt.isep.yamldslgen.docker_compose.impl.ConfigImpl <em>Config</em>}' class.

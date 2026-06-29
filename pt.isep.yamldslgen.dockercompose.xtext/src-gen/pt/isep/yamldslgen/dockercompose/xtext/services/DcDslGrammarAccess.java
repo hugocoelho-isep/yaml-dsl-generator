@@ -429,18 +429,21 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cDriverKeyword_31 = (Keyword)cAlternatives.eContents().get(31);
 		private final Keyword cIpv4_addressKeyword_32 = (Keyword)cAlternatives.eContents().get(32);
 		private final Keyword cIpamKeyword_33 = (Keyword)cAlternatives.eContents().get(33);
-		private final Keyword cSubnetKeyword_34 = (Keyword)cAlternatives.eContents().get(34);
-		private final Keyword cConditionKeyword_35 = (Keyword)cAlternatives.eContents().get(35);
-		private final Keyword cTypeKeyword_36 = (Keyword)cAlternatives.eContents().get(36);
-		private final Keyword cSourceKeyword_37 = (Keyword)cAlternatives.eContents().get(37);
-		private final Keyword cRead_onlyKeyword_38 = (Keyword)cAlternatives.eContents().get(38);
-		private final Keyword cTestKeyword_39 = (Keyword)cAlternatives.eContents().get(39);
-		private final Keyword cIntervalKeyword_40 = (Keyword)cAlternatives.eContents().get(40);
-		private final Keyword cTimeoutKeyword_41 = (Keyword)cAlternatives.eContents().get(41);
-		private final Keyword cRetriesKeyword_42 = (Keyword)cAlternatives.eContents().get(42);
-		private final Keyword cStart_periodKeyword_43 = (Keyword)cAlternatives.eContents().get(43);
-		private final Keyword cMemoryKeyword_44 = (Keyword)cAlternatives.eContents().get(44);
-		private final Keyword cFileKeyword_45 = (Keyword)cAlternatives.eContents().get(45);
+		private final Keyword cConfigKeyword_34 = (Keyword)cAlternatives.eContents().get(34);
+		private final Keyword cSubnetKeyword_35 = (Keyword)cAlternatives.eContents().get(35);
+		private final Keyword cConditionKeyword_36 = (Keyword)cAlternatives.eContents().get(36);
+		private final Keyword cTypeKeyword_37 = (Keyword)cAlternatives.eContents().get(37);
+		private final Keyword cSourceKeyword_38 = (Keyword)cAlternatives.eContents().get(38);
+		private final Keyword cRead_onlyKeyword_39 = (Keyword)cAlternatives.eContents().get(39);
+		private final Keyword cTestKeyword_40 = (Keyword)cAlternatives.eContents().get(40);
+		private final Keyword cIntervalKeyword_41 = (Keyword)cAlternatives.eContents().get(41);
+		private final Keyword cTimeoutKeyword_42 = (Keyword)cAlternatives.eContents().get(42);
+		private final Keyword cRetriesKeyword_43 = (Keyword)cAlternatives.eContents().get(43);
+		private final Keyword cStart_periodKeyword_44 = (Keyword)cAlternatives.eContents().get(44);
+		private final Keyword cResourcesKeyword_45 = (Keyword)cAlternatives.eContents().get(45);
+		private final Keyword cLimitsKeyword_46 = (Keyword)cAlternatives.eContents().get(46);
+		private final Keyword cMemoryKeyword_47 = (Keyword)cAlternatives.eContents().get(47);
+		private final Keyword cFileKeyword_48 = (Keyword)cAlternatives.eContents().get(48);
 		
 		//// =============================================================================
 		//// KEY RULE   (Layer A skeleton; ReservedWord is the per-DSL keyword list)
@@ -453,10 +456,10 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//    | 'ports' | 'expose' | 'command' | 'cap_add' | 'labels' | 'sysctls'
 		//    | 'environment' | 'depends_on' | 'healthcheck' | 'deploy'
 		//    | 'context' | 'dockerfile' | 'target' | 'args'
-		//    | 'driver' | 'ipv4_address' | 'ipam' | 'subnet' | 'condition'
+		//    | 'driver' | 'ipv4_address' | 'ipam' | 'config' | 'subnet' | 'condition'
 		//    | 'type' | 'source' | 'read_only'
 		//    | 'test' | 'interval' | 'timeout' | 'retries' | 'start_period'
-		//    | 'memory' | 'file';
+		//    | 'resources' | 'limits' | 'memory' | 'file';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//  'version' | 'name' | 'services' | 'networks' | 'volumes' | 'secrets'
@@ -465,10 +468,10 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//| 'ports' | 'expose' | 'command' | 'cap_add' | 'labels' | 'sysctls'
 		//| 'environment' | 'depends_on' | 'healthcheck' | 'deploy'
 		//| 'context' | 'dockerfile' | 'target' | 'args'
-		//| 'driver' | 'ipv4_address' | 'ipam' | 'subnet' | 'condition'
+		//| 'driver' | 'ipv4_address' | 'ipam' | 'config' | 'subnet' | 'condition'
 		//| 'type' | 'source' | 'read_only'
 		//| 'test' | 'interval' | 'timeout' | 'retries' | 'start_period'
-		//| 'memory' | 'file'
+		//| 'resources' | 'limits' | 'memory' | 'file'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//'version'
@@ -573,41 +576,50 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'ipam'
 		public Keyword getIpamKeyword_33() { return cIpamKeyword_33; }
 		
+		//'config'
+		public Keyword getConfigKeyword_34() { return cConfigKeyword_34; }
+		
 		//'subnet'
-		public Keyword getSubnetKeyword_34() { return cSubnetKeyword_34; }
+		public Keyword getSubnetKeyword_35() { return cSubnetKeyword_35; }
 		
 		//'condition'
-		public Keyword getConditionKeyword_35() { return cConditionKeyword_35; }
+		public Keyword getConditionKeyword_36() { return cConditionKeyword_36; }
 		
 		//'type'
-		public Keyword getTypeKeyword_36() { return cTypeKeyword_36; }
+		public Keyword getTypeKeyword_37() { return cTypeKeyword_37; }
 		
 		//'source'
-		public Keyword getSourceKeyword_37() { return cSourceKeyword_37; }
+		public Keyword getSourceKeyword_38() { return cSourceKeyword_38; }
 		
 		//'read_only'
-		public Keyword getRead_onlyKeyword_38() { return cRead_onlyKeyword_38; }
+		public Keyword getRead_onlyKeyword_39() { return cRead_onlyKeyword_39; }
 		
 		//'test'
-		public Keyword getTestKeyword_39() { return cTestKeyword_39; }
+		public Keyword getTestKeyword_40() { return cTestKeyword_40; }
 		
 		//'interval'
-		public Keyword getIntervalKeyword_40() { return cIntervalKeyword_40; }
+		public Keyword getIntervalKeyword_41() { return cIntervalKeyword_41; }
 		
 		//'timeout'
-		public Keyword getTimeoutKeyword_41() { return cTimeoutKeyword_41; }
+		public Keyword getTimeoutKeyword_42() { return cTimeoutKeyword_42; }
 		
 		//'retries'
-		public Keyword getRetriesKeyword_42() { return cRetriesKeyword_42; }
+		public Keyword getRetriesKeyword_43() { return cRetriesKeyword_43; }
 		
 		//'start_period'
-		public Keyword getStart_periodKeyword_43() { return cStart_periodKeyword_43; }
+		public Keyword getStart_periodKeyword_44() { return cStart_periodKeyword_44; }
+		
+		//'resources'
+		public Keyword getResourcesKeyword_45() { return cResourcesKeyword_45; }
+		
+		//'limits'
+		public Keyword getLimitsKeyword_46() { return cLimitsKeyword_46; }
 		
 		//'memory'
-		public Keyword getMemoryKeyword_44() { return cMemoryKeyword_44; }
+		public Keyword getMemoryKeyword_47() { return cMemoryKeyword_47; }
 		
 		//'file'
-		public Keyword getFileKeyword_45() { return cFileKeyword_45; }
+		public Keyword getFileKeyword_48() { return cFileKeyword_48; }
 	}
 	public class KeyNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "pt.isep.yamldslgen.dockercompose.xtext.DcDsl.KeyName");
@@ -957,14 +969,8 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Group cGroup_3_23 = (Group)cAlternatives_3.eContents().get(23);
 		private final Keyword cDeployKeyword_3_23_0 = (Keyword)cGroup_3_23.eContents().get(0);
 		private final Keyword cColonKeyword_3_23_1 = (Keyword)cGroup_3_23.eContents().get(1);
-		private final RuleCall cBEG_BLOCKTerminalRuleCall_3_23_2 = (RuleCall)cGroup_3_23.eContents().get(2);
-		private final RuleCall cKeyNameParserRuleCall_3_23_3 = (RuleCall)cGroup_3_23.eContents().get(3);
-		private final Keyword cColonKeyword_3_23_4 = (Keyword)cGroup_3_23.eContents().get(4);
-		private final RuleCall cBEG_BLOCKTerminalRuleCall_3_23_5 = (RuleCall)cGroup_3_23.eContents().get(5);
-		private final Assignment cDeployAssignment_3_23_6 = (Assignment)cGroup_3_23.eContents().get(6);
-		private final RuleCall cDeployResourceParserRuleCall_3_23_6_0 = (RuleCall)cDeployAssignment_3_23_6.eContents().get(0);
-		private final RuleCall cEND_BLOCKTerminalRuleCall_3_23_7 = (RuleCall)cGroup_3_23.eContents().get(7);
-		private final RuleCall cEND_BLOCKTerminalRuleCall_3_23_8 = (RuleCall)cGroup_3_23.eContents().get(8);
+		private final Assignment cDeployAssignment_3_23_2 = (Assignment)cGroup_3_23.eContents().get(2);
+		private final RuleCall cDeployDeployParserRuleCall_3_23_2_0 = (RuleCall)cDeployAssignment_3_23_2.eContents().get(0);
 		private final RuleCall cEND_BLOCKTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		
 		//// =============================================================================
@@ -1020,7 +1026,7 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//        | ('networks' ':' networks=Networks)
 		//        | ('volumes' ':' BEG_BLOCK volumes+=ServiceVolume+ END_BLOCK)
 		//        | ('healthcheck' ':' healthcheck=Healthcheck)
-		//        | ('deploy' ':' BEG_BLOCK KeyName ':' BEG_BLOCK deploy+=Resource+ END_BLOCK END_BLOCK)
+		//        | ('deploy' ':' deploy=Deploy)
 		//        )*
 		//    END_BLOCK;
 		@Override public ParserRule getRule() { return rule; }
@@ -1074,7 +1080,7 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//    | ('networks' ':' networks=Networks)
 		//    | ('volumes' ':' BEG_BLOCK volumes+=ServiceVolume+ END_BLOCK)
 		//    | ('healthcheck' ':' healthcheck=Healthcheck)
-		//    | ('deploy' ':' BEG_BLOCK KeyName ':' BEG_BLOCK deploy+=Resource+ END_BLOCK END_BLOCK)
+		//    | ('deploy' ':' deploy=Deploy)
 		//    )*
 		//END_BLOCK
 		public Group getGroup() { return cGroup; }
@@ -1139,7 +1145,7 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//| ('networks' ':' networks=Networks)
 		//| ('volumes' ':' BEG_BLOCK volumes+=ServiceVolume+ END_BLOCK)
 		//| ('healthcheck' ':' healthcheck=Healthcheck)
-		//| ('deploy' ':' BEG_BLOCK KeyName ':' BEG_BLOCK deploy+=Resource+ END_BLOCK END_BLOCK)
+		//| ('deploy' ':' deploy=Deploy)
 		//)*
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 		
@@ -1934,7 +1940,7 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//Healthcheck
 		public RuleCall getHealthcheckHealthcheckParserRuleCall_3_22_2_0() { return cHealthcheckHealthcheckParserRuleCall_3_22_2_0; }
 		
-		//('deploy' ':' BEG_BLOCK KeyName ':' BEG_BLOCK deploy+=Resource+ END_BLOCK END_BLOCK)
+		//('deploy' ':' deploy=Deploy)
 		public Group getGroup_3_23() { return cGroup_3_23; }
 		
 		//'deploy'
@@ -1943,29 +1949,11 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//':'
 		public Keyword getColonKeyword_3_23_1() { return cColonKeyword_3_23_1; }
 		
-		//BEG_BLOCK
-		public RuleCall getBEG_BLOCKTerminalRuleCall_3_23_2() { return cBEG_BLOCKTerminalRuleCall_3_23_2; }
+		//deploy=Deploy
+		public Assignment getDeployAssignment_3_23_2() { return cDeployAssignment_3_23_2; }
 		
-		//KeyName
-		public RuleCall getKeyNameParserRuleCall_3_23_3() { return cKeyNameParserRuleCall_3_23_3; }
-		
-		//':'
-		public Keyword getColonKeyword_3_23_4() { return cColonKeyword_3_23_4; }
-		
-		//BEG_BLOCK
-		public RuleCall getBEG_BLOCKTerminalRuleCall_3_23_5() { return cBEG_BLOCKTerminalRuleCall_3_23_5; }
-		
-		//deploy+=Resource+
-		public Assignment getDeployAssignment_3_23_6() { return cDeployAssignment_3_23_6; }
-		
-		//Resource
-		public RuleCall getDeployResourceParserRuleCall_3_23_6_0() { return cDeployResourceParserRuleCall_3_23_6_0; }
-		
-		//END_BLOCK
-		public RuleCall getEND_BLOCKTerminalRuleCall_3_23_7() { return cEND_BLOCKTerminalRuleCall_3_23_7; }
-		
-		//END_BLOCK
-		public RuleCall getEND_BLOCKTerminalRuleCall_3_23_8() { return cEND_BLOCKTerminalRuleCall_3_23_8; }
+		//Deploy
+		public RuleCall getDeployDeployParserRuleCall_3_23_2_0() { return cDeployDeployParserRuleCall_3_23_2_0; }
 		
 		//END_BLOCK
 		public RuleCall getEND_BLOCKTerminalRuleCall_4() { return cEND_BLOCKTerminalRuleCall_4; }
@@ -2592,14 +2580,8 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Group cGroup_2_0_1_2 = (Group)cAlternatives_2_0_1.eContents().get(2);
 		private final Keyword cIpamKeyword_2_0_1_2_0 = (Keyword)cGroup_2_0_1_2.eContents().get(0);
 		private final Keyword cColonKeyword_2_0_1_2_1 = (Keyword)cGroup_2_0_1_2.eContents().get(1);
-		private final RuleCall cBEG_BLOCKTerminalRuleCall_2_0_1_2_2 = (RuleCall)cGroup_2_0_1_2.eContents().get(2);
-		private final RuleCall cKeyNameParserRuleCall_2_0_1_2_3 = (RuleCall)cGroup_2_0_1_2.eContents().get(3);
-		private final Keyword cColonKeyword_2_0_1_2_4 = (Keyword)cGroup_2_0_1_2.eContents().get(4);
-		private final RuleCall cBEG_BLOCKTerminalRuleCall_2_0_1_2_5 = (RuleCall)cGroup_2_0_1_2.eContents().get(5);
-		private final Assignment cIpamAssignment_2_0_1_2_6 = (Assignment)cGroup_2_0_1_2.eContents().get(6);
-		private final RuleCall cIpamConfigParserRuleCall_2_0_1_2_6_0 = (RuleCall)cIpamAssignment_2_0_1_2_6.eContents().get(0);
-		private final RuleCall cEND_BLOCKTerminalRuleCall_2_0_1_2_7 = (RuleCall)cGroup_2_0_1_2.eContents().get(7);
-		private final RuleCall cEND_BLOCKTerminalRuleCall_2_0_1_2_8 = (RuleCall)cGroup_2_0_1_2.eContents().get(8);
+		private final Assignment cIpamAssignment_2_0_1_2_2 = (Assignment)cGroup_2_0_1_2.eContents().get(2);
+		private final RuleCall cIpamIpamParserRuleCall_2_0_1_2_2_0 = (RuleCall)cIpamAssignment_2_0_1_2_2.eContents().get(0);
 		private final RuleCall cEND_BLOCKTerminalRuleCall_2_0_2 = (RuleCall)cGroup_2_0.eContents().get(2);
 		private final RuleCall cEStringParserRuleCall_2_1 = (RuleCall)cAlternatives_2.eContents().get(1);
 		
@@ -2609,7 +2591,7 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//        BEG_BLOCK (
 		//            ('driver' ':' driver=EString)
 		//            | ('ipv4_address' ':' ipv4Address=EString)
-		//            | ('ipam' ':' BEG_BLOCK KeyName ':' BEG_BLOCK ipam+=Config+ END_BLOCK END_BLOCK)
+		//            | ('ipam' ':' ipam=Ipam)
 		//        )* END_BLOCK
 		//        | EString                       // 'react-spring: {}' (capturado "{}") ou vazio
 		//    )?;
@@ -2619,7 +2601,7 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//    BEG_BLOCK (
 		//        ('driver' ':' driver=EString)
 		//        | ('ipv4_address' ':' ipv4Address=EString)
-		//        | ('ipam' ':' BEG_BLOCK KeyName ':' BEG_BLOCK ipam+=Config+ END_BLOCK END_BLOCK)
+		//        | ('ipam' ':' ipam=Ipam)
 		//    )* END_BLOCK
 		//    | EString                       // 'react-spring: {}' (capturado "{}") ou vazio
 		//)?
@@ -2638,7 +2620,7 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//       BEG_BLOCK (
 		//           ('driver' ':' driver=EString)
 		//           | ('ipv4_address' ':' ipv4Address=EString)
-		//           | ('ipam' ':' BEG_BLOCK KeyName ':' BEG_BLOCK ipam+=Config+ END_BLOCK END_BLOCK)
+		//           | ('ipam' ':' ipam=Ipam)
 		//       )* END_BLOCK
 		//       | EString                       // 'react-spring: {}' (capturado "{}") ou vazio
 		//   )?
@@ -2647,7 +2629,7 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//BEG_BLOCK (
 		//    ('driver' ':' driver=EString)
 		//    | ('ipv4_address' ':' ipv4Address=EString)
-		//    | ('ipam' ':' BEG_BLOCK KeyName ':' BEG_BLOCK ipam+=Config+ END_BLOCK END_BLOCK)
+		//    | ('ipam' ':' ipam=Ipam)
 		//)* END_BLOCK
 		public Group getGroup_2_0() { return cGroup_2_0; }
 		
@@ -2657,7 +2639,7 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//(
 		//           ('driver' ':' driver=EString)
 		//           | ('ipv4_address' ':' ipv4Address=EString)
-		//           | ('ipam' ':' BEG_BLOCK KeyName ':' BEG_BLOCK ipam+=Config+ END_BLOCK END_BLOCK)
+		//           | ('ipam' ':' ipam=Ipam)
 		//       )*
 		public Alternatives getAlternatives_2_0_1() { return cAlternatives_2_0_1; }
 		
@@ -2691,7 +2673,7 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//EString
 		public RuleCall getIpv4AddressEStringParserRuleCall_2_0_1_1_2_0() { return cIpv4AddressEStringParserRuleCall_2_0_1_1_2_0; }
 		
-		//('ipam' ':' BEG_BLOCK KeyName ':' BEG_BLOCK ipam+=Config+ END_BLOCK END_BLOCK)
+		//('ipam' ':' ipam=Ipam)
 		public Group getGroup_2_0_1_2() { return cGroup_2_0_1_2; }
 		
 		//'ipam'
@@ -2700,35 +2682,75 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//':'
 		public Keyword getColonKeyword_2_0_1_2_1() { return cColonKeyword_2_0_1_2_1; }
 		
-		//BEG_BLOCK
-		public RuleCall getBEG_BLOCKTerminalRuleCall_2_0_1_2_2() { return cBEG_BLOCKTerminalRuleCall_2_0_1_2_2; }
+		//ipam=Ipam
+		public Assignment getIpamAssignment_2_0_1_2_2() { return cIpamAssignment_2_0_1_2_2; }
 		
-		//KeyName
-		public RuleCall getKeyNameParserRuleCall_2_0_1_2_3() { return cKeyNameParserRuleCall_2_0_1_2_3; }
-		
-		//':'
-		public Keyword getColonKeyword_2_0_1_2_4() { return cColonKeyword_2_0_1_2_4; }
-		
-		//BEG_BLOCK
-		public RuleCall getBEG_BLOCKTerminalRuleCall_2_0_1_2_5() { return cBEG_BLOCKTerminalRuleCall_2_0_1_2_5; }
-		
-		//ipam+=Config+
-		public Assignment getIpamAssignment_2_0_1_2_6() { return cIpamAssignment_2_0_1_2_6; }
-		
-		//Config
-		public RuleCall getIpamConfigParserRuleCall_2_0_1_2_6_0() { return cIpamConfigParserRuleCall_2_0_1_2_6_0; }
-		
-		//END_BLOCK
-		public RuleCall getEND_BLOCKTerminalRuleCall_2_0_1_2_7() { return cEND_BLOCKTerminalRuleCall_2_0_1_2_7; }
-		
-		//END_BLOCK
-		public RuleCall getEND_BLOCKTerminalRuleCall_2_0_1_2_8() { return cEND_BLOCKTerminalRuleCall_2_0_1_2_8; }
+		//Ipam
+		public RuleCall getIpamIpamParserRuleCall_2_0_1_2_2_0() { return cIpamIpamParserRuleCall_2_0_1_2_2_0; }
 		
 		//END_BLOCK
 		public RuleCall getEND_BLOCKTerminalRuleCall_2_0_2() { return cEND_BLOCKTerminalRuleCall_2_0_2; }
 		
 		//EString
 		public RuleCall getEStringParserRuleCall_2_1() { return cEStringParserRuleCall_2_1; }
+	}
+	public class IpamElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "pt.isep.yamldslgen.dockercompose.xtext.DcDsl.Ipam");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cIpamAction_0 = (Action)cGroup.eContents().get(0);
+		private final RuleCall cBEG_BLOCKTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cConfigKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Keyword cColonKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final RuleCall cBEG_BLOCKTerminalRuleCall_2_2 = (RuleCall)cGroup_2.eContents().get(2);
+		private final Assignment cConfigAssignment_2_3 = (Assignment)cGroup_2.eContents().get(3);
+		private final RuleCall cConfigConfigParserRuleCall_2_3_0 = (RuleCall)cConfigAssignment_2_3.eContents().get(0);
+		private final RuleCall cEND_BLOCKTerminalRuleCall_2_4 = (RuleCall)cGroup_2.eContents().get(4);
+		private final RuleCall cEND_BLOCKTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		
+		//// ipam:\n   config:\n     - subnet: ...   →  Network.ipam : Ipam, Ipam.config : Config [1..*]
+		//Ipam returns Ipam:
+		//    {Ipam}
+		//    BEG_BLOCK
+		//        ('config' ':' BEG_BLOCK config+=Config+ END_BLOCK)?
+		//    END_BLOCK;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Ipam}
+		//BEG_BLOCK
+		//    ('config' ':' BEG_BLOCK config+=Config+ END_BLOCK)?
+		//END_BLOCK
+		public Group getGroup() { return cGroup; }
+		
+		//{Ipam}
+		public Action getIpamAction_0() { return cIpamAction_0; }
+		
+		//BEG_BLOCK
+		public RuleCall getBEG_BLOCKTerminalRuleCall_1() { return cBEG_BLOCKTerminalRuleCall_1; }
+		
+		//('config' ':' BEG_BLOCK config+=Config+ END_BLOCK)?
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//'config'
+		public Keyword getConfigKeyword_2_0() { return cConfigKeyword_2_0; }
+		
+		//':'
+		public Keyword getColonKeyword_2_1() { return cColonKeyword_2_1; }
+		
+		//BEG_BLOCK
+		public RuleCall getBEG_BLOCKTerminalRuleCall_2_2() { return cBEG_BLOCKTerminalRuleCall_2_2; }
+		
+		//config+=Config+
+		public Assignment getConfigAssignment_2_3() { return cConfigAssignment_2_3; }
+		
+		//Config
+		public RuleCall getConfigConfigParserRuleCall_2_3_0() { return cConfigConfigParserRuleCall_2_3_0; }
+		
+		//END_BLOCK
+		public RuleCall getEND_BLOCKTerminalRuleCall_2_4() { return cEND_BLOCKTerminalRuleCall_2_4; }
+		
+		//END_BLOCK
+		public RuleCall getEND_BLOCKTerminalRuleCall_3() { return cEND_BLOCKTerminalRuleCall_3; }
 	}
 	public class ConfigElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "pt.isep.yamldslgen.dockercompose.xtext.DcDsl.Config");
@@ -2988,6 +3010,156 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//END_BLOCK
 		public RuleCall getEND_BLOCKTerminalRuleCall_5() { return cEND_BLOCKTerminalRuleCall_5; }
 	}
+	public class DeployElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "pt.isep.yamldslgen.dockercompose.xtext.DcDsl.Deploy");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cDeployAction_0 = (Action)cGroup.eContents().get(0);
+		private final RuleCall cBEG_BLOCKTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cResourcesKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Keyword cColonKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Assignment cResourcesAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cResourcesResourcesParserRuleCall_2_2_0 = (RuleCall)cResourcesAssignment_2_2.eContents().get(0);
+		private final RuleCall cEND_BLOCKTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		
+		//// =============================================================================
+		//// DEPLOY   (real compose nesting: deploy → resources → limits → memory)
+		//// =============================================================================
+		//Deploy returns Deploy:
+		//    {Deploy}
+		//    BEG_BLOCK
+		//        ('resources' ':' resources=Resources)?
+		//    END_BLOCK;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Deploy}
+		//BEG_BLOCK
+		//    ('resources' ':' resources=Resources)?
+		//END_BLOCK
+		public Group getGroup() { return cGroup; }
+		
+		//{Deploy}
+		public Action getDeployAction_0() { return cDeployAction_0; }
+		
+		//BEG_BLOCK
+		public RuleCall getBEG_BLOCKTerminalRuleCall_1() { return cBEG_BLOCKTerminalRuleCall_1; }
+		
+		//('resources' ':' resources=Resources)?
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//'resources'
+		public Keyword getResourcesKeyword_2_0() { return cResourcesKeyword_2_0; }
+		
+		//':'
+		public Keyword getColonKeyword_2_1() { return cColonKeyword_2_1; }
+		
+		//resources=Resources
+		public Assignment getResourcesAssignment_2_2() { return cResourcesAssignment_2_2; }
+		
+		//Resources
+		public RuleCall getResourcesResourcesParserRuleCall_2_2_0() { return cResourcesResourcesParserRuleCall_2_2_0; }
+		
+		//END_BLOCK
+		public RuleCall getEND_BLOCKTerminalRuleCall_3() { return cEND_BLOCKTerminalRuleCall_3; }
+	}
+	public class ResourcesElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "pt.isep.yamldslgen.dockercompose.xtext.DcDsl.Resources");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cResourcesAction_0 = (Action)cGroup.eContents().get(0);
+		private final RuleCall cBEG_BLOCKTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cLimitsKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Keyword cColonKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Assignment cLimitsAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cLimitsLimitsParserRuleCall_2_2_0 = (RuleCall)cLimitsAssignment_2_2.eContents().get(0);
+		private final RuleCall cEND_BLOCKTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		
+		//Resources returns Resources:
+		//    {Resources}
+		//    BEG_BLOCK
+		//        ('limits' ':' limits=Limits)?
+		//    END_BLOCK;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Resources}
+		//BEG_BLOCK
+		//    ('limits' ':' limits=Limits)?
+		//END_BLOCK
+		public Group getGroup() { return cGroup; }
+		
+		//{Resources}
+		public Action getResourcesAction_0() { return cResourcesAction_0; }
+		
+		//BEG_BLOCK
+		public RuleCall getBEG_BLOCKTerminalRuleCall_1() { return cBEG_BLOCKTerminalRuleCall_1; }
+		
+		//('limits' ':' limits=Limits)?
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//'limits'
+		public Keyword getLimitsKeyword_2_0() { return cLimitsKeyword_2_0; }
+		
+		//':'
+		public Keyword getColonKeyword_2_1() { return cColonKeyword_2_1; }
+		
+		//limits=Limits
+		public Assignment getLimitsAssignment_2_2() { return cLimitsAssignment_2_2; }
+		
+		//Limits
+		public RuleCall getLimitsLimitsParserRuleCall_2_2_0() { return cLimitsLimitsParserRuleCall_2_2_0; }
+		
+		//END_BLOCK
+		public RuleCall getEND_BLOCKTerminalRuleCall_3() { return cEND_BLOCKTerminalRuleCall_3; }
+	}
+	public class LimitsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "pt.isep.yamldslgen.dockercompose.xtext.DcDsl.Limits");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cLimitsAction_0 = (Action)cGroup.eContents().get(0);
+		private final RuleCall cBEG_BLOCKTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cMemoryKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Keyword cColonKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Assignment cMemoryAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cMemoryEStringParserRuleCall_2_2_0 = (RuleCall)cMemoryAssignment_2_2.eContents().get(0);
+		private final RuleCall cEND_BLOCKTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		
+		//Limits returns Limits:
+		//    {Limits}
+		//    BEG_BLOCK
+		//        ('memory' ':' memory=EString)?
+		//    END_BLOCK;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Limits}
+		//BEG_BLOCK
+		//    ('memory' ':' memory=EString)?
+		//END_BLOCK
+		public Group getGroup() { return cGroup; }
+		
+		//{Limits}
+		public Action getLimitsAction_0() { return cLimitsAction_0; }
+		
+		//BEG_BLOCK
+		public RuleCall getBEG_BLOCKTerminalRuleCall_1() { return cBEG_BLOCKTerminalRuleCall_1; }
+		
+		//('memory' ':' memory=EString)?
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//'memory'
+		public Keyword getMemoryKeyword_2_0() { return cMemoryKeyword_2_0; }
+		
+		//':'
+		public Keyword getColonKeyword_2_1() { return cColonKeyword_2_1; }
+		
+		//memory=EString
+		public Assignment getMemoryAssignment_2_2() { return cMemoryAssignment_2_2; }
+		
+		//EString
+		public RuleCall getMemoryEStringParserRuleCall_2_2_0() { return cMemoryEStringParserRuleCall_2_2_0; }
+		
+		//END_BLOCK
+		public RuleCall getEND_BLOCKTerminalRuleCall_3() { return cEND_BLOCKTerminalRuleCall_3; }
+	}
 	public class HealthcheckElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "pt.isep.yamldslgen.dockercompose.xtext.DcDsl.Healthcheck");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3039,7 +3211,7 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cEND_BLOCKTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//// =============================================================================
-		//// HEALTHCHECK / SECRET / RESOURCE
+		//// HEALTHCHECK / SECRET
 		//// =============================================================================
 		//Healthcheck returns Healthcheck:
 		//    {Healthcheck}
@@ -3277,62 +3449,6 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//END_BLOCK
 		public RuleCall getEND_BLOCKTerminalRuleCall_4() { return cEND_BLOCKTerminalRuleCall_4; }
 	}
-	public class ResourceElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "pt.isep.yamldslgen.dockercompose.xtext.DcDsl.Resource");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cIdAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cIdEStringParserRuleCall_0_0 = (RuleCall)cIdAssignment_0.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final RuleCall cBEG_BLOCKTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cMemoryKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Keyword cColonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Assignment cMemoryAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cMemoryEStringParserRuleCall_3_2_0 = (RuleCall)cMemoryAssignment_3_2.eContents().get(0);
-		private final RuleCall cEND_BLOCKTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
-		
-		//// NOTE: inference artifact — real compose nests deploy -> resources -> limits -> memory.
-		//Resource returns Resource:
-		//    id=EString ':' BEG_BLOCK
-		//        ('memory' ':' memory=EString)?
-		//    END_BLOCK;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//id=EString ':' BEG_BLOCK
-		//    ('memory' ':' memory=EString)?
-		//END_BLOCK
-		public Group getGroup() { return cGroup; }
-		
-		//id=EString
-		public Assignment getIdAssignment_0() { return cIdAssignment_0; }
-		
-		//EString
-		public RuleCall getIdEStringParserRuleCall_0_0() { return cIdEStringParserRuleCall_0_0; }
-		
-		//':'
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
-		
-		//BEG_BLOCK
-		public RuleCall getBEG_BLOCKTerminalRuleCall_2() { return cBEG_BLOCKTerminalRuleCall_2; }
-		
-		//('memory' ':' memory=EString)?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'memory'
-		public Keyword getMemoryKeyword_3_0() { return cMemoryKeyword_3_0; }
-		
-		//':'
-		public Keyword getColonKeyword_3_1() { return cColonKeyword_3_1; }
-		
-		//memory=EString
-		public Assignment getMemoryAssignment_3_2() { return cMemoryAssignment_3_2; }
-		
-		//EString
-		public RuleCall getMemoryEStringParserRuleCall_3_2_0() { return cMemoryEStringParserRuleCall_3_2_0; }
-		
-		//END_BLOCK
-		public RuleCall getEND_BLOCKTerminalRuleCall_4() { return cEND_BLOCKTerminalRuleCall_4; }
-	}
 	public class EBooleanElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EBoolean");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -3372,12 +3488,15 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final BuildObjectElements pBuildObject;
 	private final NetworksElements pNetworks;
 	private final NetworkElements pNetwork;
+	private final IpamElements pIpam;
 	private final ConfigElements pConfig;
 	private final Depends_onElements pDepends_on;
 	private final DbElements pDb;
+	private final DeployElements pDeploy;
+	private final ResourcesElements pResources;
+	private final LimitsElements pLimits;
 	private final HealthcheckElements pHealthcheck;
 	private final SecretElements pSecret;
-	private final ResourceElements pResource;
 	private final EBooleanElements pEBoolean;
 	private final TerminalRule tBEG_BLOCK;
 	private final TerminalRule tEND_BLOCK;
@@ -3411,12 +3530,15 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pBuildObject = new BuildObjectElements();
 		this.pNetworks = new NetworksElements();
 		this.pNetwork = new NetworkElements();
+		this.pIpam = new IpamElements();
 		this.pConfig = new ConfigElements();
 		this.pDepends_on = new Depends_onElements();
 		this.pDb = new DbElements();
+		this.pDeploy = new DeployElements();
+		this.pResources = new ResourcesElements();
+		this.pLimits = new LimitsElements();
 		this.pHealthcheck = new HealthcheckElements();
 		this.pSecret = new SecretElements();
-		this.pResource = new ResourceElements();
 		this.pEBoolean = new EBooleanElements();
 		this.tBEG_BLOCK = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "pt.isep.yamldslgen.dockercompose.xtext.DcDsl.BEG_BLOCK");
 		this.tEND_BLOCK = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "pt.isep.yamldslgen.dockercompose.xtext.DcDsl.END_BLOCK");
@@ -3516,10 +3638,10 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//    | 'ports' | 'expose' | 'command' | 'cap_add' | 'labels' | 'sysctls'
 	//    | 'environment' | 'depends_on' | 'healthcheck' | 'deploy'
 	//    | 'context' | 'dockerfile' | 'target' | 'args'
-	//    | 'driver' | 'ipv4_address' | 'ipam' | 'subnet' | 'condition'
+	//    | 'driver' | 'ipv4_address' | 'ipam' | 'config' | 'subnet' | 'condition'
 	//    | 'type' | 'source' | 'read_only'
 	//    | 'test' | 'interval' | 'timeout' | 'retries' | 'start_period'
-	//    | 'memory' | 'file';
+	//    | 'resources' | 'limits' | 'memory' | 'file';
 	public ReservedWordElements getReservedWordAccess() {
 		return pReservedWord;
 	}
@@ -3620,7 +3742,7 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//        | ('networks' ':' networks=Networks)
 	//        | ('volumes' ':' BEG_BLOCK volumes+=ServiceVolume+ END_BLOCK)
 	//        | ('healthcheck' ':' healthcheck=Healthcheck)
-	//        | ('deploy' ':' BEG_BLOCK KeyName ':' BEG_BLOCK deploy+=Resource+ END_BLOCK END_BLOCK)
+	//        | ('deploy' ':' deploy=Deploy)
 	//        )*
 	//    END_BLOCK;
 	public ServiceElements getServiceAccess() {
@@ -3734,7 +3856,7 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//        BEG_BLOCK (
 	//            ('driver' ':' driver=EString)
 	//            | ('ipv4_address' ':' ipv4Address=EString)
-	//            | ('ipam' ':' BEG_BLOCK KeyName ':' BEG_BLOCK ipam+=Config+ END_BLOCK END_BLOCK)
+	//            | ('ipam' ':' ipam=Ipam)
 	//        )* END_BLOCK
 	//        | EString                       // 'react-spring: {}' (capturado "{}") ou vazio
 	//    )?;
@@ -3744,6 +3866,20 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public ParserRule getNetworkRule() {
 		return getNetworkAccess().getRule();
+	}
+	
+	//// ipam:\n   config:\n     - subnet: ...   →  Network.ipam : Ipam, Ipam.config : Config [1..*]
+	//Ipam returns Ipam:
+	//    {Ipam}
+	//    BEG_BLOCK
+	//        ('config' ':' BEG_BLOCK config+=Config+ END_BLOCK)?
+	//    END_BLOCK;
+	public IpamElements getIpamAccess() {
+		return pIpam;
+	}
+	
+	public ParserRule getIpamRule() {
+		return getIpamAccess().getRule();
 	}
 	
 	//Config returns Config:
@@ -3790,7 +3926,49 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//// =============================================================================
-	//// HEALTHCHECK / SECRET / RESOURCE
+	//// DEPLOY   (real compose nesting: deploy → resources → limits → memory)
+	//// =============================================================================
+	//Deploy returns Deploy:
+	//    {Deploy}
+	//    BEG_BLOCK
+	//        ('resources' ':' resources=Resources)?
+	//    END_BLOCK;
+	public DeployElements getDeployAccess() {
+		return pDeploy;
+	}
+	
+	public ParserRule getDeployRule() {
+		return getDeployAccess().getRule();
+	}
+	
+	//Resources returns Resources:
+	//    {Resources}
+	//    BEG_BLOCK
+	//        ('limits' ':' limits=Limits)?
+	//    END_BLOCK;
+	public ResourcesElements getResourcesAccess() {
+		return pResources;
+	}
+	
+	public ParserRule getResourcesRule() {
+		return getResourcesAccess().getRule();
+	}
+	
+	//Limits returns Limits:
+	//    {Limits}
+	//    BEG_BLOCK
+	//        ('memory' ':' memory=EString)?
+	//    END_BLOCK;
+	public LimitsElements getLimitsAccess() {
+		return pLimits;
+	}
+	
+	public ParserRule getLimitsRule() {
+		return getLimitsAccess().getRule();
+	}
+	
+	//// =============================================================================
+	//// HEALTHCHECK / SECRET
 	//// =============================================================================
 	//Healthcheck returns Healthcheck:
 	//    {Healthcheck}
@@ -3823,19 +4001,6 @@ public class DcDslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public ParserRule getSecretRule() {
 		return getSecretAccess().getRule();
-	}
-	
-	//// NOTE: inference artifact — real compose nests deploy -> resources -> limits -> memory.
-	//Resource returns Resource:
-	//    id=EString ':' BEG_BLOCK
-	//        ('memory' ':' memory=EString)?
-	//    END_BLOCK;
-	public ResourceElements getResourceAccess() {
-		return pResource;
-	}
-	
-	public ParserRule getResourceRule() {
-		return getResourceAccess().getRule();
 	}
 	
 	//// =============================================================================

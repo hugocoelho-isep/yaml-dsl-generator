@@ -11,29 +11,29 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 // keyword, clean exit on EOF. "at-most-once / required key" is no longer
 // enforced by the grammar — it moves to validation.
 DockerCompose returns DockerCompose:
-	( ('version' ':' version=EString)
-	| ('name' ':' name=EString)
-	| ('services' ':' BEG_BLOCK services+=Service+ END_BLOCK)
-	| ('networks' ':' networks=Networks)
-	| ('volumes' ':' BEG_BLOCK volumes+=NamedVolume+ END_BLOCK)
-	| ('secrets' ':' BEG_BLOCK secrets+=Secret+ END_BLOCK)
-	)*;
+    ( ('version' ':' version=EString)
+    | ('name' ':' name=EString)
+    | ('services' ':' BEG_BLOCK services+=Service+ END_BLOCK)
+    | ('networks' ':' networks=Networks)
+    | ('volumes' ':' BEG_BLOCK volumes+=NamedVolume+ END_BLOCK)
+    | ('secrets' ':' BEG_BLOCK secrets+=Secret+ END_BLOCK)
+    )*;
 
 // =============================================================================
 // VALUE RULES   (Layer A — identical to MyDsl.xtext)
 // =============================================================================
 
 EString returns ecore::EString:
-	STRING | SQ_STRING | BlockString
-	| YAML_SCALAR | GH_EXPRESSION | ID | INT | 'true' | 'false';
+    STRING | SQ_STRING | BlockString
+    | YAML_SCALAR | GH_EXPRESSION | ID | INT | 'true' | 'false';
 
 // Handles 'command: >' or 'command: |' by consuming the whole block.
 BlockString returns ecore::EString:
-	('>' | '|' | '>-' | '>+' | '|-' | '|+') BEG_BLOCK? (
-		YAML_SCALAR | GH_EXPRESSION | ID | INT | STRING
-		| '-' | '[' | ']' | ';' | ':' | ',' | '{' | '}' | ANY_OTHER
-		| '|' | '>' | '>-' | '>+' | '|-' | '|+'
-	)* END_BLOCK?;
+    ('>' | '|' | '>-' | '>+' | '|-' | '|+') BEG_BLOCK? (
+        YAML_SCALAR | GH_EXPRESSION | ID | INT | STRING
+        | '-' | '[' | ']' | ';' | ':' | ',' | '{' | '}' | ANY_OTHER
+        | '|' | '>' | '>-' | '>+' | '|-' | '|+'
+    )* END_BLOCK?;
 
 // =============================================================================
 // KEY RULE   (Layer A skeleton; ReservedWord is the per-DSL keyword list)
@@ -41,35 +41,35 @@ BlockString returns ecore::EString:
 
 // ─── When adding a new DSL: add its keywords to this rule only. ───────────
 ReservedWord returns ecore::EString:
-	  'version' | 'name' | 'services' | 'networks' | 'volumes' | 'secrets'
-	| 'image' | 'build' | 'container_name' | 'restart' | 'user' | 'hostname'
-	| 'network_mode' | 'platform' | 'runtime' | 'stop_signal' | 'stdin_open'
-	| 'ports' | 'expose' | 'command' | 'cap_add' | 'labels' | 'sysctls'
-	| 'environment' | 'depends_on' | 'healthcheck' | 'deploy'
-	| 'context' | 'dockerfile' | 'target' | 'args'
-	| 'driver' | 'ipv4_address' | 'ipam' | 'subnet' | 'condition'
-	| 'type' | 'source' | 'read_only'
-	| 'test' | 'interval' | 'timeout' | 'retries' | 'start_period'
-	| 'memory' | 'file';
+      'version' | 'name' | 'services' | 'networks' | 'volumes' | 'secrets'
+    | 'image' | 'build' | 'container_name' | 'restart' | 'user' | 'hostname'
+    | 'network_mode' | 'platform' | 'runtime' | 'stop_signal' | 'stdin_open'
+    | 'ports' | 'expose' | 'command' | 'cap_add' | 'labels' | 'sysctls'
+    | 'environment' | 'depends_on' | 'healthcheck' | 'deploy'
+    | 'context' | 'dockerfile' | 'target' | 'args'
+    | 'driver' | 'ipv4_address' | 'ipam' | 'config' | 'subnet' | 'condition'
+    | 'type' | 'source' | 'read_only'
+    | 'test' | 'interval' | 'timeout' | 'retries' | 'start_period'
+    | 'resources' | 'limits' | 'memory' | 'file';
 
 // KeyName is used as the key in KeyValuePair (and for free-form map keys).
 // Xtext keyword tokens cannot be matched by ID or YAML_SCALAR, so every grammar
 // keyword that may appear as a YAML key must be listed in ReservedWord.
 KeyName returns ecore::EString:
-	ID | YAML_SCALAR | INT | ReservedWord;
+    ID | YAML_SCALAR | INT | ReservedWord;
 
 // =============================================================================
 // KEY-VALUE PAIR   (Layer A — identical to MyDsl.xtext)
 // =============================================================================
 
 KeyValuePair returns KeyValuePair:
-	key=KeyName ':' value=EString;
-	
-	
+    key=KeyName ':' value=EString;
+
+
 // environment list form '- KEY=VALUE': whole 'KEY=VALUE' lands in key (no ':' to
 // split on). Round-trips; the '=' split is not modelled.
 EnvEntry returns KeyValuePair:
-	{KeyValuePair} key=EString
+    {KeyValuePair} key=EString
 ;
 
 // =============================================================================
@@ -77,78 +77,78 @@ EnvEntry returns KeyValuePair:
 // =============================================================================
 
 Service returns Service:
-	id=EString ':' BEG_BLOCK
-		( ('image' ':' image=EString)
-		| ('build' ':' build=Build)
-		| ('container_name' ':' containerName=EString)
-		| ('restart' ':' restart=EString)
-		| ('user' ':' user=EString)
-		| ('hostname' ':' hostname=EString)
-		| ('network_mode' ':' networkMode=EString)
-		| ('platform' ':' platform=EString)
-		| ('runtime' ':' runtime=EString)
-		| ('stop_signal' ':' stopSignal=EString)
-		| ('stdin_open' ':' stdinOpen=EBoolean)
-		| ('ports' ':' (
-			BEG_BLOCK ('-' BEG_BLOCK? ports+=EString END_BLOCK?)+ END_BLOCK
+    id=EString ':' BEG_BLOCK
+        ( ('image' ':' image=EString)
+        | ('build' ':' build=Build)
+        | ('container_name' ':' containerName=EString)
+        | ('restart' ':' restart=EString)
+        | ('user' ':' user=EString)
+        | ('hostname' ':' hostname=EString)
+        | ('network_mode' ':' networkMode=EString)
+        | ('platform' ':' platform=EString)
+        | ('runtime' ':' runtime=EString)
+        | ('stop_signal' ':' stopSignal=EString)
+        | ('stdin_open' ':' stdinOpen=EBoolean)
+        | ('ports' ':' (
+            BEG_BLOCK ('-' BEG_BLOCK? ports+=EString END_BLOCK?)+ END_BLOCK
             | '[' ports+=EString (',' ports+=EString)* ']'
         ))
-		| ('expose' ':' (
-			  BEG_BLOCK ('-' BEG_BLOCK? expose+=INT END_BLOCK?)+ END_BLOCK
-			| '[' expose+=INT (',' expose+=INT)* ']'
-		))
-		| ('command' ':' (
-			  BEG_BLOCK ('-' BEG_BLOCK? command+=EString END_BLOCK?)+ END_BLOCK
-			| '[' command+=EString (',' command+=EString)* ']'
-			| command+=EString
-		))
-		| ('secrets' ':' (
-			  BEG_BLOCK ('-' BEG_BLOCK? secrets+=EString END_BLOCK?)+ END_BLOCK
-			| '[' secrets+=EString (',' secrets+=EString)* ']'
-		))
-		| ('cap_add' ':' (
-			  BEG_BLOCK ('-' BEG_BLOCK? capAdd+=EString END_BLOCK?)+ END_BLOCK
-			| '[' capAdd+=EString (',' capAdd+=EString)* ']'
-		))
-		| ('labels' ':' (
-			  BEG_BLOCK ('-' BEG_BLOCK? labels+=EString END_BLOCK?)+ END_BLOCK
-			| '[' labels+=EString (',' labels+=EString)* ']'
-		))
-		| ('sysctls' ':' (
-			  BEG_BLOCK ('-' BEG_BLOCK? sysctls+=EString END_BLOCK?)+ END_BLOCK
-			| '[' sysctls+=EString (',' sysctls+=EString)* ']'
-		))
-		| ('environment' ':' BEG_BLOCK (
-			environment+=KeyValuePair+
-			| ('-' BEG_BLOCK? environment+=EnvEntry END_BLOCK?)+
+        | ('expose' ':' (
+              BEG_BLOCK ('-' BEG_BLOCK? expose+=INT END_BLOCK?)+ END_BLOCK
+            | '[' expose+=INT (',' expose+=INT)* ']'
+        ))
+        | ('command' ':' (
+              BEG_BLOCK ('-' BEG_BLOCK? command+=EString END_BLOCK?)+ END_BLOCK
+            | '[' command+=EString (',' command+=EString)* ']'
+            | command+=EString
+        ))
+        | ('secrets' ':' (
+              BEG_BLOCK ('-' BEG_BLOCK? secrets+=EString END_BLOCK?)+ END_BLOCK
+            | '[' secrets+=EString (',' secrets+=EString)* ']'
+        ))
+        | ('cap_add' ':' (
+              BEG_BLOCK ('-' BEG_BLOCK? capAdd+=EString END_BLOCK?)+ END_BLOCK
+            | '[' capAdd+=EString (',' capAdd+=EString)* ']'
+        ))
+        | ('labels' ':' (
+              BEG_BLOCK ('-' BEG_BLOCK? labels+=EString END_BLOCK?)+ END_BLOCK
+            | '[' labels+=EString (',' labels+=EString)* ']'
+        ))
+        | ('sysctls' ':' (
+              BEG_BLOCK ('-' BEG_BLOCK? sysctls+=EString END_BLOCK?)+ END_BLOCK
+            | '[' sysctls+=EString (',' sysctls+=EString)* ']'
+        ))
+        | ('environment' ':' BEG_BLOCK (
+            environment+=KeyValuePair+
+            | ('-' BEG_BLOCK? environment+=EnvEntry END_BLOCK?)+
          ) END_BLOCK)
-		| ('depends_on' ':' dependsOn=Depends_on)
-		| ('networks' ':' networks=Networks)
-		| ('volumes' ':' BEG_BLOCK volumes+=ServiceVolume+ END_BLOCK)
-		| ('healthcheck' ':' healthcheck=Healthcheck)
-		| ('deploy' ':' BEG_BLOCK KeyName ':' BEG_BLOCK deploy+=Resource+ END_BLOCK END_BLOCK)
-		)*
-	END_BLOCK;
+        | ('depends_on' ':' dependsOn=Depends_on)
+        | ('networks' ':' networks=Networks)
+        | ('volumes' ':' BEG_BLOCK volumes+=ServiceVolume+ END_BLOCK)
+        | ('healthcheck' ':' healthcheck=Healthcheck)
+        | ('deploy' ':' deploy=Deploy)
+        )*
+    END_BLOCK;
 
 // Service volume entry: short '- host:container' (VolumeValue)
 //                       long  '- {type:.., source:.., target:..}' (VolumeObject).
 // Block-sequence idiom (like Step), with a union body after the dash.
 ServiceVolume returns Volume:
-	'-' BEG_BLOCK? (
-		  {VolumeValue} value+=EString
-		| {VolumeObject} (
-			  ('type' ':' type=EString)
-			| ('source' ':' source=EString)
-			| ('target' ':' target=EString)
-			| ('read_only' ':' readOnly=EBoolean)
-		  )*
-	) END_BLOCK?;
+    '-' BEG_BLOCK? (
+          {VolumeValue} value+=EString
+        | {VolumeObject} (
+              ('type' ':' type=EString)
+            | ('source' ':' source=EString)
+            | ('target' ':' target=EString)
+            | ('read_only' ':' readOnly=EBoolean)
+          )*
+    ) END_BLOCK?;
 
 // Top-level named volume: 'db-data:' — named-map idiom; maps onto VolumeObject.id.
 // His model carries no body for named volumes, so no inner block (avoids the
 // inner/outer END_BLOCK ambiguity against the 'volumes' wrapper).
 NamedVolume returns VolumeObject:
-	id=EString ':' EString?;
+    id=EString ':' EString?;
 
 // =============================================================================
 // BUILD   (short '.' vs long block — union pattern, mirrors On/Environment)
@@ -156,49 +156,56 @@ NamedVolume returns VolumeObject:
 // in future try to infer the build short/long form in metayaml
 
 Build returns Build:
-	BuildObject | BuildValue;
+    BuildObject | BuildValue;
 
 BuildValue returns BuildValue:
-	value=EString;                       // ex: build: .
+    value=EString;                       // ex: build: .
 
 BuildObject returns BuildObject:
-	{BuildObject}
-	BEG_BLOCK
-		( ('context' ':' context=EString)
-		| ('dockerfile' ':' dockerfile=EString)
-		| ('target' ':' target=EString)
-		| ('args' ':' (
-			  BEG_BLOCK ('-' BEG_BLOCK? args+=EString END_BLOCK?)+ END_BLOCK
-			| '[' args+=EString (',' args+=EString)* ']'
-		))
-		)*
-	END_BLOCK;
+    {BuildObject}
+    BEG_BLOCK
+        ( ('context' ':' context=EString)
+        | ('dockerfile' ':' dockerfile=EString)
+        | ('target' ':' target=EString)
+        | ('args' ':' (
+              BEG_BLOCK ('-' BEG_BLOCK? args+=EString END_BLOCK?)+ END_BLOCK
+            | '[' args+=EString (',' args+=EString)* ']'
+        ))
+        )*
+    END_BLOCK;
 
 // =============================================================================
 // NETWORKS   (union: flow/list short form vs named-map object form)
 // =============================================================================
 
 Networks returns Networks:
-	BEG_BLOCK (
-		{NetworksValue} ('-' BEG_BLOCK? value+=EString END_BLOCK?)+   // networks:\n - react-spring
-			| {NetworksObject} network+=Network+                            // networks:\n my-net:\n driver: ...
+    BEG_BLOCK (
+        {NetworksValue} ('-' BEG_BLOCK? value+=EString END_BLOCK?)+   // networks:\n - react-spring
+            | {NetworksObject} network+=Network+                            // networks:\n my-net:\n driver: ...
         ) END_BLOCK
       | {NetworksValue} '[' value+=EString (',' value+=EString)* ']'       // networks: [a, b]
       | {NetworksValue} value+=EString;                                   // networks: a
 
 Network returns Network:
-	id=EString ':' (
-		BEG_BLOCK (
-			('driver' ':' driver=EString)
-			| ('ipv4_address' ':' ipv4Address=EString)
-			| ('ipam' ':' BEG_BLOCK KeyName ':' BEG_BLOCK ipam+=Config+ END_BLOCK END_BLOCK)
-		)* END_BLOCK
-		| EString                       // 'react-spring: {}' (capturado "{}") ou vazio
-	)?;
+    id=EString ':' (
+        BEG_BLOCK (
+            ('driver' ':' driver=EString)
+            | ('ipv4_address' ':' ipv4Address=EString)
+            | ('ipam' ':' ipam=Ipam)
+        )* END_BLOCK
+        | EString                       // 'react-spring: {}' (capturado "{}") ou vazio
+    )?;
+
+// ipam:\n   config:\n     - subnet: ...   →  Network.ipam : Ipam, Ipam.config : Config [1..*]
+Ipam returns Ipam:
+    {Ipam}
+    BEG_BLOCK
+        ('config' ':' BEG_BLOCK config+=Config+ END_BLOCK)?
+    END_BLOCK;
 
 Config returns Config:
-	{Config}
-	'-' BEG_BLOCK ('subnet' ':' subnet=EString) END_BLOCK;
+    {Config}
+    '-' BEG_BLOCK ('subnet' ':' subnet=EString) END_BLOCK;
 
 // =============================================================================
 // DEPENDS_ON   (union: flow/list short form vs object with condition)
@@ -213,46 +220,62 @@ Depends_on returns Depends_on:
         | {Depends_onValue} value+=EString;                                  // dependb
 
 Db returns Db:
-	{Db}
-	KeyName ':' BEG_BLOCK               // KeyName consumes the dependency name (discarded — artifact)
-		('condition' ':' condition=EString)
-	END_BLOCK;
+    {Db}
+    KeyName ':' BEG_BLOCK               // KeyName consumes the dependency name (discarded — artifact)
+        ('condition' ':' condition=EString)
+    END_BLOCK;
 
 // =============================================================================
-// HEALTHCHECK / SECRET / RESOURCE
+// DEPLOY   (real compose nesting: deploy → resources → limits → memory)
+// =============================================================================
+
+Deploy returns Deploy:
+    {Deploy}
+    BEG_BLOCK
+        ('resources' ':' resources=Resources)?
+    END_BLOCK;
+
+Resources returns Resources:
+    {Resources}
+    BEG_BLOCK
+        ('limits' ':' limits=Limits)?
+    END_BLOCK; 
+
+Limits returns Limits:
+    {Limits}
+    BEG_BLOCK
+        ('memory' ':' memory=EString)?
+    END_BLOCK;
+
+// =============================================================================
+// HEALTHCHECK / SECRET
 // =============================================================================
 
 Healthcheck returns Healthcheck:
-	{Healthcheck}
-	BEG_BLOCK
-		( ('test' ':' (
-			  BEG_BLOCK ('-' BEG_BLOCK? test+=EString END_BLOCK?)+ END_BLOCK
-			| '[' test+=EString (',' test+=EString)* ']'
-		))
-		| ('interval' ':' interval=EString)
-		| ('timeout' ':' timeout=EString)
-		| ('retries' ':' retries=INT)
-		| ('start_period' ':' startPeriod=EString)
-		)*
-	END_BLOCK;
+    {Healthcheck}
+    BEG_BLOCK
+        ( ('test' ':' (
+              BEG_BLOCK ('-' BEG_BLOCK? test+=EString END_BLOCK?)+ END_BLOCK
+            | '[' test+=EString (',' test+=EString)* ']'
+        ))
+        | ('interval' ':' interval=EString)
+        | ('timeout' ':' timeout=EString)
+        | ('retries' ':' retries=INT)
+        | ('start_period' ':' startPeriod=EString)
+        )*
+    END_BLOCK;
 
 Secret returns Secret:
-	id=EString ':' BEG_BLOCK
-		('file' ':' file=EString)?
-	END_BLOCK;
-
-// NOTE: inference artifact — real compose nests deploy -> resources -> limits -> memory.
-Resource returns Resource:
-	id=EString ':' BEG_BLOCK
-		('memory' ':' memory=EString)?
-	END_BLOCK;
+    id=EString ':' BEG_BLOCK
+        ('file' ':' file=EString)?
+    END_BLOCK;
 
 // =============================================================================
 // BOOLEAN   (Layer A — identical to MyDsl.xtext)
 // =============================================================================
 
 EBoolean returns ecore::EBoolean:
-	'true' | 'false';
+    'true' | 'false';
 
 // =============================================================================
 // SYNTHETIC TERMINALS  (Layer A — injected by MyDslIndentationAwareLexer)
@@ -273,12 +296,12 @@ terminal SQ_STRING: "'" !("'")* "'";
 
 // ${{ ... }} expression; the '$' identifier branch also matches compose $VAR.
 terminal GH_EXPRESSION:
-	('$'? '{{' -> '}}' | '$' ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-')*)
-	(
-		('/' | '.' | '-' | '_' | '@') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-'|'.'|'/'|'@')*
-	  | '$'? '{{' -> '}}'
-	  | '$' ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-')*
-	)*;
+    ('$'? '{{' -> '}}' | '$' ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-')*)
+    (
+        ('/' | '.' | '-' | '_' | '@') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-'|'.'|'/'|'@')*
+      | '$'? '{{' -> '}}'
+      | '$' ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-')*
+    )*;
 
 // Force the lexer to prioritise pure numbers before YAML_SCALAR.
 @Override terminal INT returns ecore::EInt: ('0'..'9')+;
@@ -286,6 +309,5 @@ terminal GH_EXPRESSION:
 // A catch-all YAML scalar (commands, spaces handled per-token, symbols).
 // Deliberately stops at commas, brackets and colons so arrays and keys work.
 terminal YAML_SCALAR:
-	('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'.'|'/'|'@'|'*'|'$'|'='|'+'|'<'|'>'|'|'|'&'|'~'|'!'|'?'|'\\'|'('|')')
-	('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-'|'.'|'/'|'@'|'*'|'$'|'='|'+'|'<'|'>'|'|'|'&'|'~'|'!'|'?'|'\\'|'('|')')*;
-
+    ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'.'|'/'|'@'|'*'|'$'|'='|'+'|'<'|'>'|'|'|'&'|'~'|'!'|'?'|'\\'|'('|')')
+    ('a'..'z'|'A'..'Z'|'0'..'9'|'_'|'-'|'.'|'/'|'@'|'*'|'$'|'='|'+'|'<'|'>'|'|'|'&'|'~'|'!'|'?'|'\\'|'('|')')*;

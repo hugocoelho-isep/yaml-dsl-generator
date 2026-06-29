@@ -107,13 +107,18 @@ public class DockercomposeAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseResource(Resource object) {
-			return createResourceAdapter();
+		public Adapter caseDeploy(Deploy object) {
+			return createDeployAdapter();
 		}
 
 		@Override
-		public Adapter caseSecret(Secret object) {
-			return createSecretAdapter();
+		public Adapter caseResources(Resources object) {
+			return createResourcesAdapter();
+		}
+
+		@Override
+		public Adapter caseLimits(Limits object) {
+			return createLimitsAdapter();
 		}
 
 		@Override
@@ -124,6 +129,16 @@ public class DockercomposeAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseDb(Db object) {
 			return createDbAdapter();
+		}
+
+		@Override
+		public Adapter caseSecret(Secret object) {
+			return createSecretAdapter();
+		}
+
+		@Override
+		public Adapter caseIpam(Ipam object) {
+			return createIpamAdapter();
 		}
 
 		@Override
@@ -303,30 +318,44 @@ public class DockercomposeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.docker_compose.Resource <em>Resource</em>}'.
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.docker_compose.Deploy <em>Deploy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see pt.isep.yamldslgen.docker_compose.Resource
+	 * @see pt.isep.yamldslgen.docker_compose.Deploy
 	 * @generated
 	 */
-	public Adapter createResourceAdapter() {
+	public Adapter createDeployAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.docker_compose.Secret <em>Secret</em>}'.
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.docker_compose.Resources <em>Resources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see pt.isep.yamldslgen.docker_compose.Secret
+	 * @see pt.isep.yamldslgen.docker_compose.Resources
 	 * @generated
 	 */
-	public Adapter createSecretAdapter() {
+	public Adapter createResourcesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.docker_compose.Limits <em>Limits</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.docker_compose.Limits
+	 * @generated
+	 */
+	public Adapter createLimitsAdapter() {
 		return null;
 	}
 
@@ -355,6 +384,34 @@ public class DockercomposeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDbAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.docker_compose.Secret <em>Secret</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.docker_compose.Secret
+	 * @generated
+	 */
+	public Adapter createSecretAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link pt.isep.yamldslgen.docker_compose.Ipam <em>Ipam</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see pt.isep.yamldslgen.docker_compose.Ipam
+	 * @generated
+	 */
+	public Adapter createIpamAdapter() {
 		return null;
 	}
 

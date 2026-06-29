@@ -2,8 +2,6 @@
  */
 package pt.isep.yamldslgen.docker_compose;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -93,15 +91,25 @@ public interface Network extends EObject {
 	void setIpv4Address(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Ipam</b></em>' containment reference list.
-	 * The list contents are of type {@link pt.isep.yamldslgen.docker_compose.Config}.
+	 * Returns the value of the '<em><b>Ipam</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ipam</em>' containment reference list.
+	 * @return the value of the '<em>Ipam</em>' containment reference.
+	 * @see #setIpam(Ipam)
 	 * @see pt.isep.yamldslgen.docker_compose.DockercomposePackage#getNetwork_Ipam()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Config> getIpam();
+	Ipam getIpam();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.docker_compose.Network#getIpam <em>Ipam</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ipam</em>' containment reference.
+	 * @see #getIpam()
+	 * @generated
+	 */
+	void setIpam(Ipam value);
 
 } // Network

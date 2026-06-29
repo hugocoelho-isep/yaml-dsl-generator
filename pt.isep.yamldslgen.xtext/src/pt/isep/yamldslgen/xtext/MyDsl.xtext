@@ -45,19 +45,17 @@ BlockString returns ecore::EString:
 // =============================================================================
 
 ReservedWord returns ecore::EString:
-	  'name' | 'on' | 'concurrency' | 'defaults' | 'jobs' | 'permissions' | 'env'
-	| 'branch_protection_rule' | 'push' | 'pull_request' | 'pull_request_target'
-	| 'schedule' | 'workflow_dispatch' | 'workflow_call' | 'release' | 'merge_group' | 'issues'
-	| 'branches' | 'tags' | 'types' | 'cron' | 'inputs' | 'description' | 'default'
-	| 'required' | 'type' | 'secrets' | 'group' | 'cancel-in-progress' | 'url'
-	| 'contents' | 'security-events' | 'actions' | 'pages' | 'id-token' | 'pull-requests'
-	| 'packages' | 'models' | 'checks' | 'runs-on' | 'needs' | 'if' | 'uses'
-	| 'environment' | 'strategy' | 'container' | 'services' | 'outputs' | 'steps' | 'with'
-	| 'image' | 'ports' | 'id' | 'run' | 'working-directory' | 'shell'
-	| 'continue-on-error' | 'timeout-minutes' | 'fail-fast' | 'max-parallel' | 'matrix'
-	| 'include' | 'exclude' | 'os' | 'build-type' | 'c-compiler' | 'cpp-compiler'
-	| 'otp' | 'elixir' | 'node-version' | 'cache' | 'python-version' | 'configuration'
-	| 'digests' | 'r-version' | 'ruby-version';
+        'name' | 'on' | 'concurrency' | 'defaults' | 'jobs' | 'permissions' | 'env'
+      | 'branch_protection_rule' | 'push' | 'pull_request' | 'pull_request_target'
+      | 'schedule' | 'workflow_dispatch' | 'workflow_call' | 'release' | 'merge_group' | 'issues'
+      | 'branches' | 'tags' | 'types' | 'cron' | 'inputs' | 'description' | 'default'
+      | 'required' | 'type' | 'secrets' | 'group' | 'cancel-in-progress' | 'url'
+      | 'contents' | 'security-events' | 'actions' | 'pages' | 'id-token' | 'pull-requests'
+      | 'packages' | 'models' | 'checks' | 'runs-on' | 'needs' | 'if' | 'uses'
+      | 'environment' | 'strategy' | 'container' | 'services' | 'outputs' | 'steps' | 'with'
+      | 'image' | 'ports' | 'id' | 'run' | 'working-directory' | 'shell'
+      | 'continue-on-error' | 'timeout-minutes' | 'fail-fast' | 'max-parallel' | 'matrix'
+      | 'include' | 'exclude';
 
 
 // KeyName is used exclusively as the key in KeyValuePair.
@@ -150,10 +148,11 @@ Input returns Input:
     END_BLOCK?;
 	
 Workflow_call returns Workflow_call:
-	{Workflow_call}
-	BEG_BLOCK?
-		('secrets' ':' BEG_BLOCK? secrets+=Secret+ END_BLOCK?)?
-	END_BLOCK?;
+      {Workflow_call}
+      BEG_BLOCK?
+              (('inputs' ':' (BEG_BLOCK? inputs+=Input+ END_BLOCK?))?
+              & ('secrets' ':' BEG_BLOCK? secrets+=Secret+ END_BLOCK?)?)
+      END_BLOCK?;
 	
 Secret returns Secret:
 	id=EString ':' BEG_BLOCK?

@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import pt.isep.yamldslgen.github_actions.Input;
 import pt.isep.yamldslgen.github_actions.Secret;
 import pt.isep.yamldslgen.github_actions.Workflow_call;
 import pt.isep.yamldslgen.github_actions.YamlmdePackage;
@@ -29,6 +30,7 @@ import pt.isep.yamldslgen.github_actions.YamlmdePackage;
  * </p>
  * <ul>
  *   <li>{@link pt.isep.yamldslgen.github_actions.impl.Workflow_callImpl#getSecrets <em>Secrets</em>}</li>
+ *   <li>{@link pt.isep.yamldslgen.github_actions.impl.Workflow_callImpl#getInputs <em>Inputs</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,6 +45,16 @@ public class Workflow_callImpl extends MinimalEObjectImpl.Container implements W
 	 * @ordered
 	 */
 	protected EList<Secret> secrets;
+
+	/**
+	 * The cached value of the '{@link #getInputs() <em>Inputs</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInputs()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Input> inputs;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -82,10 +94,25 @@ public class Workflow_callImpl extends MinimalEObjectImpl.Container implements W
 	 * @generated
 	 */
 	@Override
+	public EList<Input> getInputs() {
+		if (inputs == null) {
+			inputs = new EObjectContainmentEList<Input>(Input.class, this, YamlmdePackage.WORKFLOW_CALL__INPUTS);
+		}
+		return inputs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case YamlmdePackage.WORKFLOW_CALL__SECRETS:
 			return ((InternalEList<?>) getSecrets()).basicRemove(otherEnd, msgs);
+		case YamlmdePackage.WORKFLOW_CALL__INPUTS:
+			return ((InternalEList<?>) getInputs()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -100,6 +127,8 @@ public class Workflow_callImpl extends MinimalEObjectImpl.Container implements W
 		switch (featureID) {
 		case YamlmdePackage.WORKFLOW_CALL__SECRETS:
 			return getSecrets();
+		case YamlmdePackage.WORKFLOW_CALL__INPUTS:
+			return getInputs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -117,6 +146,10 @@ public class Workflow_callImpl extends MinimalEObjectImpl.Container implements W
 			getSecrets().clear();
 			getSecrets().addAll((Collection<? extends Secret>) newValue);
 			return;
+		case YamlmdePackage.WORKFLOW_CALL__INPUTS:
+			getInputs().clear();
+			getInputs().addAll((Collection<? extends Input>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -132,6 +165,9 @@ public class Workflow_callImpl extends MinimalEObjectImpl.Container implements W
 		case YamlmdePackage.WORKFLOW_CALL__SECRETS:
 			getSecrets().clear();
 			return;
+		case YamlmdePackage.WORKFLOW_CALL__INPUTS:
+			getInputs().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -146,6 +182,8 @@ public class Workflow_callImpl extends MinimalEObjectImpl.Container implements W
 		switch (featureID) {
 		case YamlmdePackage.WORKFLOW_CALL__SECRETS:
 			return secrets != null && !secrets.isEmpty();
+		case YamlmdePackage.WORKFLOW_CALL__INPUTS:
+			return inputs != null && !inputs.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

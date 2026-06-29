@@ -17,16 +17,19 @@ import pt.isep.yamldslgen.docker_compose.Db;
 import pt.isep.yamldslgen.docker_compose.Depends_on;
 import pt.isep.yamldslgen.docker_compose.Depends_onObject;
 import pt.isep.yamldslgen.docker_compose.Depends_onValue;
+import pt.isep.yamldslgen.docker_compose.Deploy;
 import pt.isep.yamldslgen.docker_compose.DockerCompose;
 import pt.isep.yamldslgen.docker_compose.DockercomposeFactory;
 import pt.isep.yamldslgen.docker_compose.DockercomposePackage;
 import pt.isep.yamldslgen.docker_compose.Healthcheck;
+import pt.isep.yamldslgen.docker_compose.Ipam;
 import pt.isep.yamldslgen.docker_compose.KeyValuePair;
+import pt.isep.yamldslgen.docker_compose.Limits;
 import pt.isep.yamldslgen.docker_compose.Network;
 import pt.isep.yamldslgen.docker_compose.Networks;
 import pt.isep.yamldslgen.docker_compose.NetworksObject;
 import pt.isep.yamldslgen.docker_compose.NetworksValue;
-import pt.isep.yamldslgen.docker_compose.Resource;
+import pt.isep.yamldslgen.docker_compose.Resources;
 import pt.isep.yamldslgen.docker_compose.Secret;
 import pt.isep.yamldslgen.docker_compose.Service;
 import pt.isep.yamldslgen.docker_compose.Volume;
@@ -101,14 +104,21 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass resourceEClass = null;
+	private EClass deployEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass secretEClass = null;
+	private EClass resourcesEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass limitsEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -123,6 +133,20 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * @generated
 	 */
 	private EClass dbEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass secretEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass ipamEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -757,8 +781,8 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * @generated
 	 */
 	@Override
-	public EClass getResource() {
-		return resourceEClass;
+	public EClass getDeploy() {
+		return deployEClass;
 	}
 
 	/**
@@ -767,8 +791,8 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * @generated
 	 */
 	@Override
-	public EAttribute getResource_Id() {
-		return (EAttribute) resourceEClass.getEStructuralFeatures().get(0);
+	public EReference getDeploy_Resources() {
+		return (EReference) deployEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -777,8 +801,68 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * @generated
 	 */
 	@Override
-	public EAttribute getResource_Memory() {
-		return (EAttribute) resourceEClass.getEStructuralFeatures().get(1);
+	public EClass getResources() {
+		return resourcesEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getResources_Limits() {
+		return (EReference) resourcesEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getLimits() {
+		return limitsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getLimits_Memory() {
+		return (EAttribute) limitsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getDepends_on() {
+		return depends_onEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getDb() {
+		return dbEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDb_Condition() {
+		return (EAttribute) dbEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -817,8 +901,8 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * @generated
 	 */
 	@Override
-	public EClass getDepends_on() {
-		return depends_onEClass;
+	public EClass getIpam() {
+		return ipamEClass;
 	}
 
 	/**
@@ -827,18 +911,8 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 	 * @generated
 	 */
 	@Override
-	public EClass getDb() {
-		return dbEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getDb_Condition() {
-		return (EAttribute) dbEClass.getEStructuralFeatures().get(0);
+	public EReference getIpam_Config() {
+		return (EReference) ipamEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1179,18 +1253,26 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 
 		volumeEClass = createEClass(VOLUME);
 
-		resourceEClass = createEClass(RESOURCE);
-		createEAttribute(resourceEClass, RESOURCE__ID);
-		createEAttribute(resourceEClass, RESOURCE__MEMORY);
+		deployEClass = createEClass(DEPLOY);
+		createEReference(deployEClass, DEPLOY__RESOURCES);
 
-		secretEClass = createEClass(SECRET);
-		createEAttribute(secretEClass, SECRET__ID);
-		createEAttribute(secretEClass, SECRET__FILE);
+		resourcesEClass = createEClass(RESOURCES);
+		createEReference(resourcesEClass, RESOURCES__LIMITS);
+
+		limitsEClass = createEClass(LIMITS);
+		createEAttribute(limitsEClass, LIMITS__MEMORY);
 
 		depends_onEClass = createEClass(DEPENDS_ON);
 
 		dbEClass = createEClass(DB);
 		createEAttribute(dbEClass, DB__CONDITION);
+
+		secretEClass = createEClass(SECRET);
+		createEAttribute(secretEClass, SECRET__ID);
+		createEAttribute(secretEClass, SECRET__FILE);
+
+		ipamEClass = createEClass(IPAM);
+		createEReference(ipamEClass, IPAM__CONFIG);
 
 		configEClass = createEClass(CONFIG);
 		createEAttribute(configEClass, CONFIG__SUBNET);
@@ -1337,9 +1419,9 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		initEReference(getService_Healthcheck(), this.getHealthcheck(), null, "healthcheck", null, 0, 1, Service.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getService_Deploy(), this.getResource(), null, "deploy", null, 0, -1, Service.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getService_Deploy(), this.getDeploy(), null, "deploy", null, 0, 1, Service.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEReference(getService_DependsOn(), this.getDepends_on(), null, "dependsOn", null, 0, 1, Service.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1378,23 +1460,25 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNetwork_Ipv4Address(), ecorePackage.getEString(), "ipv4Address", null, 0, 1, Network.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getNetwork_Ipam(), this.getConfig(), null, "ipam", null, 0, -1, Network.class, !IS_TRANSIENT,
+		initEReference(getNetwork_Ipam(), this.getIpam(), null, "ipam", null, 0, 1, Network.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 
 		initEClass(volumeEClass, Volume.class, "Volume", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(resourceEClass, Resource.class, "Resource", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getResource_Id(), ecorePackage.getEString(), "id", null, 1, 1, Resource.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getResource_Memory(), ecorePackage.getEString(), "memory", null, 1, 1, Resource.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(deployEClass, Deploy.class, "Deploy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDeploy_Resources(), this.getResources(), null, "resources", null, 1, 1, Deploy.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(secretEClass, Secret.class, "Secret", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSecret_Id(), ecorePackage.getEString(), "id", null, 1, 1, Secret.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSecret_File(), ecorePackage.getEString(), "file", null, 1, 1, Secret.class, !IS_TRANSIENT,
+		initEClass(resourcesEClass, Resources.class, "Resources", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getResources_Limits(), this.getLimits(), null, "limits", null, 1, 1, Resources.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(limitsEClass, Limits.class, "Limits", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLimits_Memory(), ecorePackage.getEString(), "memory", null, 1, 1, Limits.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(depends_onEClass, Depends_on.class, "Depends_on", IS_ABSTRACT, !IS_INTERFACE,
@@ -1403,6 +1487,17 @@ public class DockercomposePackageImpl extends EPackageImpl implements Dockercomp
 		initEClass(dbEClass, Db.class, "Db", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDb_Condition(), ecorePackage.getEString(), "condition", null, 1, 1, Db.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(secretEClass, Secret.class, "Secret", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSecret_Id(), ecorePackage.getEString(), "id", null, 1, 1, Secret.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSecret_File(), ecorePackage.getEString(), "file", null, 1, 1, Secret.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(ipamEClass, Ipam.class, "Ipam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getIpam_Config(), this.getConfig(), null, "config", null, 1, -1, Ipam.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(configEClass, Config.class, "Config", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConfig_Subnet(), ecorePackage.getEString(), "subnet", null, 1, 1, Config.class, !IS_TRANSIENT,

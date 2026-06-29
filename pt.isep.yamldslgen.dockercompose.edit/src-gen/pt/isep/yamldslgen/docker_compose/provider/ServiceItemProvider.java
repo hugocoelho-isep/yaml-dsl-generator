@@ -500,7 +500,7 @@ public class ServiceItemProvider extends ItemProviderAdapter implements IEditing
 				DockercomposeFactory.eINSTANCE.createHealthcheck()));
 
 		newChildDescriptors.add(createChildParameter(DockercomposePackage.Literals.SERVICE__DEPLOY,
-				DockercomposeFactory.eINSTANCE.createResource()));
+				DockercomposeFactory.eINSTANCE.createDeploy()));
 
 		newChildDescriptors.add(createChildParameter(DockercomposePackage.Literals.SERVICE__DEPENDS_ON,
 				DockercomposeFactory.eINSTANCE.createDepends_onObject()));

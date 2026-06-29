@@ -65,17 +65,25 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dockercompose.ecore#//Network/ipam"/>
     </genClasses>
     <genClasses image="false" ecoreClass="dockercompose.ecore#//Volume"/>
-    <genClasses ecoreClass="dockercompose.ecore#//Resource">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Resource/id"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Resource/memory"/>
+    <genClasses ecoreClass="dockercompose.ecore#//Deploy">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dockercompose.ecore#//Deploy/resources"/>
+    </genClasses>
+    <genClasses ecoreClass="dockercompose.ecore#//Resources">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dockercompose.ecore#//Resources/limits"/>
+    </genClasses>
+    <genClasses ecoreClass="dockercompose.ecore#//Limits">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Limits/memory"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dockercompose.ecore#//Depends_on"/>
+    <genClasses ecoreClass="dockercompose.ecore#//Db">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Db/condition"/>
     </genClasses>
     <genClasses ecoreClass="dockercompose.ecore#//Secret">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Secret/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Secret/file"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="dockercompose.ecore#//Depends_on"/>
-    <genClasses ecoreClass="dockercompose.ecore#//Db">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Db/condition"/>
+    <genClasses ecoreClass="dockercompose.ecore#//Ipam">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dockercompose.ecore#//Ipam/config"/>
     </genClasses>
     <genClasses ecoreClass="dockercompose.ecore#//Config">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dockercompose.ecore#//Config/subnet"/>

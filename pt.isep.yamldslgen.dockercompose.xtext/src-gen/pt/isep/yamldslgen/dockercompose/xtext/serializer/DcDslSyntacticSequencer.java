@@ -34,7 +34,6 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Healthcheck_END_BLOCKTerminalRuleCall_2_0_2_0_1_3_q;
 	protected AbstractElementAlias match_Healthcheck___END_BLOCKTerminalRuleCall_2_0_2_0_2_TestKeyword_2_0_0_ColonKeyword_2_0_1_BEG_BLOCKTerminalRuleCall_2_0_2_0_0__q;
 	protected AbstractElementAlias match_NamedVolume_EStringParserRuleCall_2_q;
-	protected AbstractElementAlias match_Network___END_BLOCKTerminalRuleCall_2_0_1_2_7_END_BLOCKTerminalRuleCall_2_0_1_2_8_IpamKeyword_2_0_1_2_0_ColonKeyword_2_0_1_2_1_BEG_BLOCKTerminalRuleCall_2_0_1_2_2_KeyNameParserRuleCall_2_0_1_2_3_ColonKeyword_2_0_1_2_4_BEG_BLOCKTerminalRuleCall_2_0_1_2_5__q;
 	protected AbstractElementAlias match_Network___EStringParserRuleCall_2_1_or___BEG_BLOCKTerminalRuleCall_2_0_0_END_BLOCKTerminalRuleCall_2_0_2____q;
 	protected AbstractElementAlias match_Networks_BEG_BLOCKTerminalRuleCall_0_1_0_1_1_q;
 	protected AbstractElementAlias match_Networks_END_BLOCKTerminalRuleCall_0_1_0_1_3_q;
@@ -65,7 +64,6 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Service___END_BLOCKTerminalRuleCall_3_17_2_0_2_SysctlsKeyword_3_17_0_ColonKeyword_3_17_1_BEG_BLOCKTerminalRuleCall_3_17_2_0_0__q;
 	protected AbstractElementAlias match_Service___END_BLOCKTerminalRuleCall_3_18_4_EnvironmentKeyword_3_18_0_ColonKeyword_3_18_1_BEG_BLOCKTerminalRuleCall_3_18_2__q;
 	protected AbstractElementAlias match_Service___END_BLOCKTerminalRuleCall_3_21_4_VolumesKeyword_3_21_0_ColonKeyword_3_21_1_BEG_BLOCKTerminalRuleCall_3_21_2__q;
-	protected AbstractElementAlias match_Service___END_BLOCKTerminalRuleCall_3_23_7_END_BLOCKTerminalRuleCall_3_23_8_DeployKeyword_3_23_0_ColonKeyword_3_23_1_BEG_BLOCKTerminalRuleCall_3_23_2_KeyNameParserRuleCall_3_23_3_ColonKeyword_3_23_4_BEG_BLOCKTerminalRuleCall_3_23_5__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -82,7 +80,6 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Healthcheck_END_BLOCKTerminalRuleCall_2_0_2_0_1_3_q = new TokenAlias(false, true, grammarAccess.getHealthcheckAccess().getEND_BLOCKTerminalRuleCall_2_0_2_0_1_3());
 		match_Healthcheck___END_BLOCKTerminalRuleCall_2_0_2_0_2_TestKeyword_2_0_0_ColonKeyword_2_0_1_BEG_BLOCKTerminalRuleCall_2_0_2_0_0__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getHealthcheckAccess().getEND_BLOCKTerminalRuleCall_2_0_2_0_2()), new TokenAlias(false, false, grammarAccess.getHealthcheckAccess().getTestKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getHealthcheckAccess().getColonKeyword_2_0_1()), new TokenAlias(false, false, grammarAccess.getHealthcheckAccess().getBEG_BLOCKTerminalRuleCall_2_0_2_0_0()));
 		match_NamedVolume_EStringParserRuleCall_2_q = new TokenAlias(false, true, grammarAccess.getNamedVolumeAccess().getEStringParserRuleCall_2());
-		match_Network___END_BLOCKTerminalRuleCall_2_0_1_2_7_END_BLOCKTerminalRuleCall_2_0_1_2_8_IpamKeyword_2_0_1_2_0_ColonKeyword_2_0_1_2_1_BEG_BLOCKTerminalRuleCall_2_0_1_2_2_KeyNameParserRuleCall_2_0_1_2_3_ColonKeyword_2_0_1_2_4_BEG_BLOCKTerminalRuleCall_2_0_1_2_5__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getNetworkAccess().getEND_BLOCKTerminalRuleCall_2_0_1_2_7()), new TokenAlias(false, false, grammarAccess.getNetworkAccess().getEND_BLOCKTerminalRuleCall_2_0_1_2_8()), new TokenAlias(false, false, grammarAccess.getNetworkAccess().getIpamKeyword_2_0_1_2_0()), new TokenAlias(false, false, grammarAccess.getNetworkAccess().getColonKeyword_2_0_1_2_1()), new TokenAlias(false, false, grammarAccess.getNetworkAccess().getBEG_BLOCKTerminalRuleCall_2_0_1_2_2()), new TokenAlias(false, false, grammarAccess.getNetworkAccess().getKeyNameParserRuleCall_2_0_1_2_3()), new TokenAlias(false, false, grammarAccess.getNetworkAccess().getColonKeyword_2_0_1_2_4()), new TokenAlias(false, false, grammarAccess.getNetworkAccess().getBEG_BLOCKTerminalRuleCall_2_0_1_2_5()));
 		match_Network___EStringParserRuleCall_2_1_or___BEG_BLOCKTerminalRuleCall_2_0_0_END_BLOCKTerminalRuleCall_2_0_2____q = new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNetworkAccess().getBEG_BLOCKTerminalRuleCall_2_0_0()), new TokenAlias(false, false, grammarAccess.getNetworkAccess().getEND_BLOCKTerminalRuleCall_2_0_2())), new TokenAlias(false, false, grammarAccess.getNetworkAccess().getEStringParserRuleCall_2_1()));
 		match_Networks_BEG_BLOCKTerminalRuleCall_0_1_0_1_1_q = new TokenAlias(false, true, grammarAccess.getNetworksAccess().getBEG_BLOCKTerminalRuleCall_0_1_0_1_1());
 		match_Networks_END_BLOCKTerminalRuleCall_0_1_0_1_3_q = new TokenAlias(false, true, grammarAccess.getNetworksAccess().getEND_BLOCKTerminalRuleCall_0_1_0_1_3());
@@ -113,7 +110,6 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Service___END_BLOCKTerminalRuleCall_3_17_2_0_2_SysctlsKeyword_3_17_0_ColonKeyword_3_17_1_BEG_BLOCKTerminalRuleCall_3_17_2_0_0__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_17_2_0_2()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getSysctlsKeyword_3_17_0()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getColonKeyword_3_17_1()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_17_2_0_0()));
 		match_Service___END_BLOCKTerminalRuleCall_3_18_4_EnvironmentKeyword_3_18_0_ColonKeyword_3_18_1_BEG_BLOCKTerminalRuleCall_3_18_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_18_4()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getEnvironmentKeyword_3_18_0()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getColonKeyword_3_18_1()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_18_2()));
 		match_Service___END_BLOCKTerminalRuleCall_3_21_4_VolumesKeyword_3_21_0_ColonKeyword_3_21_1_BEG_BLOCKTerminalRuleCall_3_21_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_21_4()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getVolumesKeyword_3_21_0()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getColonKeyword_3_21_1()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_21_2()));
-		match_Service___END_BLOCKTerminalRuleCall_3_23_7_END_BLOCKTerminalRuleCall_3_23_8_DeployKeyword_3_23_0_ColonKeyword_3_23_1_BEG_BLOCKTerminalRuleCall_3_23_2_KeyNameParserRuleCall_3_23_3_ColonKeyword_3_23_4_BEG_BLOCKTerminalRuleCall_3_23_5__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_23_7()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_23_8()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getDeployKeyword_3_23_0()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getColonKeyword_3_23_1()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_23_2()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getKeyNameParserRuleCall_3_23_3()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getColonKeyword_3_23_4()), new TokenAlias(false, false, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_23_5()));
 	}
 	
 	@Override
@@ -149,8 +145,8 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * EString returns ecore::EString:
-	 * 	STRING | SQ_STRING | BlockString
-	 * 	| YAML_SCALAR | GH_EXPRESSION | ID | INT | 'true' | 'false';
+	 *     STRING | SQ_STRING | BlockString
+	 *     | YAML_SCALAR | GH_EXPRESSION | ID | INT | 'true' | 'false';
 	 */
 	protected String getEStringToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
@@ -160,7 +156,7 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * KeyName returns ecore::EString:
-	 * 	ID | YAML_SCALAR | INT | ReservedWord;
+	 *     ID | YAML_SCALAR | INT | ReservedWord;
 	 */
 	protected String getKeyNameToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
@@ -198,8 +194,6 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Healthcheck___END_BLOCKTerminalRuleCall_2_0_2_0_2_TestKeyword_2_0_0_ColonKeyword_2_0_1_BEG_BLOCKTerminalRuleCall_2_0_2_0_0__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_NamedVolume_EStringParserRuleCall_2_q.equals(syntax))
 				emit_NamedVolume_EStringParserRuleCall_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Network___END_BLOCKTerminalRuleCall_2_0_1_2_7_END_BLOCKTerminalRuleCall_2_0_1_2_8_IpamKeyword_2_0_1_2_0_ColonKeyword_2_0_1_2_1_BEG_BLOCKTerminalRuleCall_2_0_1_2_2_KeyNameParserRuleCall_2_0_1_2_3_ColonKeyword_2_0_1_2_4_BEG_BLOCKTerminalRuleCall_2_0_1_2_5__q.equals(syntax))
-				emit_Network___END_BLOCKTerminalRuleCall_2_0_1_2_7_END_BLOCKTerminalRuleCall_2_0_1_2_8_IpamKeyword_2_0_1_2_0_ColonKeyword_2_0_1_2_1_BEG_BLOCKTerminalRuleCall_2_0_1_2_2_KeyNameParserRuleCall_2_0_1_2_3_ColonKeyword_2_0_1_2_4_BEG_BLOCKTerminalRuleCall_2_0_1_2_5__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Network___EStringParserRuleCall_2_1_or___BEG_BLOCKTerminalRuleCall_2_0_0_END_BLOCKTerminalRuleCall_2_0_2____q.equals(syntax))
 				emit_Network___EStringParserRuleCall_2_1_or___BEG_BLOCKTerminalRuleCall_2_0_0_END_BLOCKTerminalRuleCall_2_0_2____q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Networks_BEG_BLOCKTerminalRuleCall_0_1_0_1_1_q.equals(syntax))
@@ -260,8 +254,6 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Service___END_BLOCKTerminalRuleCall_3_18_4_EnvironmentKeyword_3_18_0_ColonKeyword_3_18_1_BEG_BLOCKTerminalRuleCall_3_18_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Service___END_BLOCKTerminalRuleCall_3_21_4_VolumesKeyword_3_21_0_ColonKeyword_3_21_1_BEG_BLOCKTerminalRuleCall_3_21_2__q.equals(syntax))
 				emit_Service___END_BLOCKTerminalRuleCall_3_21_4_VolumesKeyword_3_21_0_ColonKeyword_3_21_1_BEG_BLOCKTerminalRuleCall_3_21_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Service___END_BLOCKTerminalRuleCall_3_23_7_END_BLOCKTerminalRuleCall_3_23_8_DeployKeyword_3_23_0_ColonKeyword_3_23_1_BEG_BLOCKTerminalRuleCall_3_23_2_KeyNameParserRuleCall_3_23_3_ColonKeyword_3_23_4_BEG_BLOCKTerminalRuleCall_3_23_5__q.equals(syntax))
-				emit_Service___END_BLOCKTerminalRuleCall_3_23_7_END_BLOCKTerminalRuleCall_3_23_8_DeployKeyword_3_23_0_ColonKeyword_3_23_1_BEG_BLOCKTerminalRuleCall_3_23_2_KeyNameParserRuleCall_3_23_3_ColonKeyword_3_23_4_BEG_BLOCKTerminalRuleCall_3_23_5__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -461,29 +453,6 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
-	 *     (
-	  *         END_BLOCK 
-	  *         END_BLOCK 
-	  *         'ipam' 
-	  *         ':' 
-	  *         BEG_BLOCK 
-	  *         KeyName 
-	  *         ':' 
-	  *         BEG_BLOCK
-	  *     )?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     ipam+=Config (ambiguity) ipam+=Config
-	 
-	 * </pre>
-	 */
-	protected void emit_Network___END_BLOCKTerminalRuleCall_2_0_1_2_7_END_BLOCKTerminalRuleCall_2_0_1_2_8_IpamKeyword_2_0_1_2_0_ColonKeyword_2_0_1_2_1_BEG_BLOCKTerminalRuleCall_2_0_1_2_2_KeyNameParserRuleCall_2_0_1_2_3_ColonKeyword_2_0_1_2_4_BEG_BLOCKTerminalRuleCall_2_0_1_2_5__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
 	 *     ((BEG_BLOCK END_BLOCK) | EString)?
 	 *
 	 * This ambiguous syntax occurs at:
@@ -577,7 +546,7 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     command+=EString END_BLOCK? END_BLOCK 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
 	 *     containerName=EString 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
 	 *     dependsOn=Depends_on 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
-	 *     deploy+=Resource END_BLOCK END_BLOCK 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
+	 *     deploy=Deploy 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
 	 *     environment+=EnvEntry END_BLOCK? END_BLOCK 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
 	 *     environment+=KeyValuePair END_BLOCK 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
 	 *     expose+=INT ']' 'ports' ':' BEG_BLOCK '-' (ambiguity) ports+=EString
@@ -624,7 +593,7 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     command+=EString END_BLOCK? END_BLOCK 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
 	 *     containerName=EString 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
 	 *     dependsOn=Depends_on 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
-	 *     deploy+=Resource END_BLOCK END_BLOCK 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
+	 *     deploy=Deploy 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
 	 *     environment+=EnvEntry END_BLOCK? END_BLOCK 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
 	 *     environment+=KeyValuePair END_BLOCK 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
 	 *     expose+=INT ']' 'expose' ':' BEG_BLOCK '-' (ambiguity) expose+=INT
@@ -671,7 +640,7 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     command+=EString END_BLOCK? (END_BLOCK 'command' ':' BEG_BLOCK)? '-' (ambiguity) command+=EString
 	 *     containerName=EString 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
 	 *     dependsOn=Depends_on 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
-	 *     deploy+=Resource END_BLOCK END_BLOCK 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
+	 *     deploy=Deploy 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
 	 *     environment+=EnvEntry END_BLOCK? END_BLOCK 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
 	 *     environment+=KeyValuePair END_BLOCK 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
 	 *     expose+=INT ']' 'command' ':' BEG_BLOCK '-' (ambiguity) command+=EString
@@ -718,7 +687,7 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     command+=EString END_BLOCK? END_BLOCK 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
 	 *     containerName=EString 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
 	 *     dependsOn=Depends_on 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
-	 *     deploy+=Resource END_BLOCK END_BLOCK 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
+	 *     deploy=Deploy 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
 	 *     environment+=EnvEntry END_BLOCK? END_BLOCK 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
 	 *     environment+=KeyValuePair END_BLOCK 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
 	 *     expose+=INT ']' 'secrets' ':' BEG_BLOCK '-' (ambiguity) secrets+=EString
@@ -765,7 +734,7 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     command+=EString END_BLOCK? END_BLOCK 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
 	 *     containerName=EString 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
 	 *     dependsOn=Depends_on 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
-	 *     deploy+=Resource END_BLOCK END_BLOCK 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
+	 *     deploy=Deploy 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
 	 *     environment+=EnvEntry END_BLOCK? END_BLOCK 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
 	 *     environment+=KeyValuePair END_BLOCK 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
 	 *     expose+=INT ']' 'cap_add' ':' BEG_BLOCK '-' (ambiguity) capAdd+=EString
@@ -812,7 +781,7 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     command+=EString END_BLOCK? END_BLOCK 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
 	 *     containerName=EString 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
 	 *     dependsOn=Depends_on 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
-	 *     deploy+=Resource END_BLOCK END_BLOCK 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
+	 *     deploy=Deploy 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
 	 *     environment+=EnvEntry END_BLOCK? END_BLOCK 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
 	 *     environment+=KeyValuePair END_BLOCK 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
 	 *     expose+=INT ']' 'labels' ':' BEG_BLOCK '-' (ambiguity) labels+=EString
@@ -859,7 +828,7 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     command+=EString END_BLOCK? END_BLOCK 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
 	 *     containerName=EString 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
 	 *     dependsOn=Depends_on 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
-	 *     deploy+=Resource END_BLOCK END_BLOCK 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
+	 *     deploy=Deploy 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
 	 *     environment+=EnvEntry END_BLOCK? END_BLOCK 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
 	 *     environment+=KeyValuePair END_BLOCK 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
 	 *     expose+=INT ']' 'sysctls' ':' BEG_BLOCK '-' (ambiguity) sysctls+=EString
@@ -906,7 +875,7 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     command+=EString END_BLOCK? END_BLOCK 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
 	 *     containerName=EString 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
 	 *     dependsOn=Depends_on 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
-	 *     deploy+=Resource END_BLOCK END_BLOCK 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
+	 *     deploy=Deploy 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
 	 *     environment+=EnvEntry END_BLOCK? (END_BLOCK 'environment' ':' BEG_BLOCK)? '-' (ambiguity) environment+=EnvEntry
 	 *     environment+=KeyValuePair END_BLOCK 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
 	 *     expose+=INT ']' 'environment' ':' BEG_BLOCK '-' (ambiguity) environment+=EnvEntry
@@ -954,7 +923,7 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ports+=EString (ambiguity) END_BLOCK 'command' ':' command+=EString
 	 *     ports+=EString (ambiguity) END_BLOCK 'container_name' ':' containerName=EString
 	 *     ports+=EString (ambiguity) END_BLOCK 'depends_on' ':' dependsOn=Depends_on
-	 *     ports+=EString (ambiguity) END_BLOCK 'deploy' ':' BEG_BLOCK KeyName ':' BEG_BLOCK deploy+=Resource
+	 *     ports+=EString (ambiguity) END_BLOCK 'deploy' ':' deploy=Deploy
 	 *     ports+=EString (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK '-' BEG_BLOCK? environment+=EnvEntry
 	 *     ports+=EString (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK environment+=KeyValuePair
 	 *     ports+=EString (ambiguity) END_BLOCK 'expose' ':' '[' expose+=INT
@@ -1001,7 +970,7 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     expose+=INT (ambiguity) END_BLOCK 'command' ':' command+=EString
 	 *     expose+=INT (ambiguity) END_BLOCK 'container_name' ':' containerName=EString
 	 *     expose+=INT (ambiguity) END_BLOCK 'depends_on' ':' dependsOn=Depends_on
-	 *     expose+=INT (ambiguity) END_BLOCK 'deploy' ':' BEG_BLOCK KeyName ':' BEG_BLOCK deploy+=Resource
+	 *     expose+=INT (ambiguity) END_BLOCK 'deploy' ':' deploy=Deploy
 	 *     expose+=INT (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK '-' BEG_BLOCK? environment+=EnvEntry
 	 *     expose+=INT (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK environment+=KeyValuePair
 	 *     expose+=INT (ambiguity) END_BLOCK 'expose' ':' '[' expose+=INT
@@ -1047,7 +1016,7 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     command+=EString (ambiguity) END_BLOCK 'command' ':' command+=EString
 	 *     command+=EString (ambiguity) END_BLOCK 'container_name' ':' containerName=EString
 	 *     command+=EString (ambiguity) END_BLOCK 'depends_on' ':' dependsOn=Depends_on
-	 *     command+=EString (ambiguity) END_BLOCK 'deploy' ':' BEG_BLOCK KeyName ':' BEG_BLOCK deploy+=Resource
+	 *     command+=EString (ambiguity) END_BLOCK 'deploy' ':' deploy=Deploy
 	 *     command+=EString (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK '-' BEG_BLOCK? environment+=EnvEntry
 	 *     command+=EString (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK environment+=KeyValuePair
 	 *     command+=EString (ambiguity) END_BLOCK 'expose' ':' '[' expose+=INT
@@ -1095,7 +1064,7 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     secrets+=EString (ambiguity) END_BLOCK 'command' ':' command+=EString
 	 *     secrets+=EString (ambiguity) END_BLOCK 'container_name' ':' containerName=EString
 	 *     secrets+=EString (ambiguity) END_BLOCK 'depends_on' ':' dependsOn=Depends_on
-	 *     secrets+=EString (ambiguity) END_BLOCK 'deploy' ':' BEG_BLOCK KeyName ':' BEG_BLOCK deploy+=Resource
+	 *     secrets+=EString (ambiguity) END_BLOCK 'deploy' ':' deploy=Deploy
 	 *     secrets+=EString (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK '-' BEG_BLOCK? environment+=EnvEntry
 	 *     secrets+=EString (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK environment+=KeyValuePair
 	 *     secrets+=EString (ambiguity) END_BLOCK 'expose' ':' '[' expose+=INT
@@ -1141,7 +1110,7 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     capAdd+=EString (ambiguity) END_BLOCK 'command' ':' command+=EString
 	 *     capAdd+=EString (ambiguity) END_BLOCK 'container_name' ':' containerName=EString
 	 *     capAdd+=EString (ambiguity) END_BLOCK 'depends_on' ':' dependsOn=Depends_on
-	 *     capAdd+=EString (ambiguity) END_BLOCK 'deploy' ':' BEG_BLOCK KeyName ':' BEG_BLOCK deploy+=Resource
+	 *     capAdd+=EString (ambiguity) END_BLOCK 'deploy' ':' deploy=Deploy
 	 *     capAdd+=EString (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK '-' BEG_BLOCK? environment+=EnvEntry
 	 *     capAdd+=EString (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK environment+=KeyValuePair
 	 *     capAdd+=EString (ambiguity) END_BLOCK 'expose' ':' '[' expose+=INT
@@ -1189,7 +1158,7 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     labels+=EString (ambiguity) END_BLOCK 'command' ':' command+=EString
 	 *     labels+=EString (ambiguity) END_BLOCK 'container_name' ':' containerName=EString
 	 *     labels+=EString (ambiguity) END_BLOCK 'depends_on' ':' dependsOn=Depends_on
-	 *     labels+=EString (ambiguity) END_BLOCK 'deploy' ':' BEG_BLOCK KeyName ':' BEG_BLOCK deploy+=Resource
+	 *     labels+=EString (ambiguity) END_BLOCK 'deploy' ':' deploy=Deploy
 	 *     labels+=EString (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK '-' BEG_BLOCK? environment+=EnvEntry
 	 *     labels+=EString (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK environment+=KeyValuePair
 	 *     labels+=EString (ambiguity) END_BLOCK 'expose' ':' '[' expose+=INT
@@ -1236,7 +1205,7 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     sysctls+=EString (ambiguity) END_BLOCK 'command' ':' command+=EString
 	 *     sysctls+=EString (ambiguity) END_BLOCK 'container_name' ':' containerName=EString
 	 *     sysctls+=EString (ambiguity) END_BLOCK 'depends_on' ':' dependsOn=Depends_on
-	 *     sysctls+=EString (ambiguity) END_BLOCK 'deploy' ':' BEG_BLOCK KeyName ':' BEG_BLOCK deploy+=Resource
+	 *     sysctls+=EString (ambiguity) END_BLOCK 'deploy' ':' deploy=Deploy
 	 *     sysctls+=EString (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK '-' BEG_BLOCK? environment+=EnvEntry
 	 *     sysctls+=EString (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK environment+=KeyValuePair
 	 *     sysctls+=EString (ambiguity) END_BLOCK 'expose' ':' '[' expose+=INT
@@ -1283,7 +1252,7 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'command' ':' command+=EString
 	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'container_name' ':' containerName=EString
 	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'depends_on' ':' dependsOn=Depends_on
-	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'deploy' ':' BEG_BLOCK KeyName ':' BEG_BLOCK deploy+=Resource
+	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'deploy' ':' deploy=Deploy
 	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'environment' ':' BEG_BLOCK environment+=KeyValuePair
 	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'expose' ':' '[' expose+=INT
 	 *     environment+=EnvEntry (ambiguity) END_BLOCK 'expose' ':' BEG_BLOCK '-' BEG_BLOCK? expose+=INT
@@ -1439,29 +1408,6 @@ public class DcDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * </pre>
 	 */
 	protected void emit_Service___END_BLOCKTerminalRuleCall_3_21_4_VolumesKeyword_3_21_0_ColonKeyword_3_21_1_BEG_BLOCKTerminalRuleCall_3_21_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
-	 *     (
-	  *         END_BLOCK 
-	  *         END_BLOCK 
-	  *         'deploy' 
-	  *         ':' 
-	  *         BEG_BLOCK 
-	  *         KeyName 
-	  *         ':' 
-	  *         BEG_BLOCK
-	  *     )?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     deploy+=Resource (ambiguity) deploy+=Resource
-	 
-	 * </pre>
-	 */
-	protected void emit_Service___END_BLOCKTerminalRuleCall_3_23_7_END_BLOCKTerminalRuleCall_3_23_8_DeployKeyword_3_23_0_ColonKeyword_3_23_1_BEG_BLOCKTerminalRuleCall_3_23_2_KeyNameParserRuleCall_3_23_3_ColonKeyword_3_23_4_BEG_BLOCKTerminalRuleCall_3_23_5__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

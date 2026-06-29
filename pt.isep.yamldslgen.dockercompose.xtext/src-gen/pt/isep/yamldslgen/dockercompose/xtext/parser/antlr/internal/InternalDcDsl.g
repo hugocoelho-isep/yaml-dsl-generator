@@ -798,76 +798,94 @@ ruleReservedWord returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTo
 			newLeafNode(kw, grammarAccess.getReservedWordAccess().getIpamKeyword_33());
 		}
 		    |
+		kw='config'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getReservedWordAccess().getConfigKeyword_34());
+		}
+		    |
 		kw='subnet'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getReservedWordAccess().getSubnetKeyword_34());
+			newLeafNode(kw, grammarAccess.getReservedWordAccess().getSubnetKeyword_35());
 		}
 		    |
 		kw='condition'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getReservedWordAccess().getConditionKeyword_35());
+			newLeafNode(kw, grammarAccess.getReservedWordAccess().getConditionKeyword_36());
 		}
 		    |
 		kw='type'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getReservedWordAccess().getTypeKeyword_36());
+			newLeafNode(kw, grammarAccess.getReservedWordAccess().getTypeKeyword_37());
 		}
 		    |
 		kw='source'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getReservedWordAccess().getSourceKeyword_37());
+			newLeafNode(kw, grammarAccess.getReservedWordAccess().getSourceKeyword_38());
 		}
 		    |
 		kw='read_only'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getReservedWordAccess().getRead_onlyKeyword_38());
+			newLeafNode(kw, grammarAccess.getReservedWordAccess().getRead_onlyKeyword_39());
 		}
 		    |
 		kw='test'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getReservedWordAccess().getTestKeyword_39());
+			newLeafNode(kw, grammarAccess.getReservedWordAccess().getTestKeyword_40());
 		}
 		    |
 		kw='interval'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getReservedWordAccess().getIntervalKeyword_40());
+			newLeafNode(kw, grammarAccess.getReservedWordAccess().getIntervalKeyword_41());
 		}
 		    |
 		kw='timeout'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getReservedWordAccess().getTimeoutKeyword_41());
+			newLeafNode(kw, grammarAccess.getReservedWordAccess().getTimeoutKeyword_42());
 		}
 		    |
 		kw='retries'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getReservedWordAccess().getRetriesKeyword_42());
+			newLeafNode(kw, grammarAccess.getReservedWordAccess().getRetriesKeyword_43());
 		}
 		    |
 		kw='start_period'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getReservedWordAccess().getStart_periodKeyword_43());
+			newLeafNode(kw, grammarAccess.getReservedWordAccess().getStart_periodKeyword_44());
+		}
+		    |
+		kw='resources'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getReservedWordAccess().getResourcesKeyword_45());
+		}
+		    |
+		kw='limits'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getReservedWordAccess().getLimitsKeyword_46());
 		}
 		    |
 		kw='memory'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getReservedWordAccess().getMemoryKeyword_44());
+			newLeafNode(kw, grammarAccess.getReservedWordAccess().getMemoryKeyword_47());
 		}
 		    |
 		kw='file'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getReservedWordAccess().getFileKeyword_45());
+			newLeafNode(kw, grammarAccess.getReservedWordAccess().getFileKeyword_48());
 		}
 	)
 ;
@@ -2442,57 +2460,30 @@ ruleService returns [EObject current=null]
 				{
 					newLeafNode(otherlv_152, grammarAccess.getServiceAccess().getColonKeyword_3_23_1());
 				}
-				this_BEG_BLOCK_153=RULE_BEG_BLOCK
-				{
-					newLeafNode(this_BEG_BLOCK_153, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_23_2());
-				}
-				{
-					newCompositeNode(grammarAccess.getServiceAccess().getKeyNameParserRuleCall_3_23_3());
-				}
-				ruleKeyName
-				{
-					afterParserOrEnumRuleCall();
-				}
-				otherlv_155=':'
-				{
-					newLeafNode(otherlv_155, grammarAccess.getServiceAccess().getColonKeyword_3_23_4());
-				}
-				this_BEG_BLOCK_156=RULE_BEG_BLOCK
-				{
-					newLeafNode(this_BEG_BLOCK_156, grammarAccess.getServiceAccess().getBEG_BLOCKTerminalRuleCall_3_23_5());
-				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getServiceAccess().getDeployResourceParserRuleCall_3_23_6_0());
+							newCompositeNode(grammarAccess.getServiceAccess().getDeployDeployParserRuleCall_3_23_2_0());
 						}
-						lv_deploy_157_0=ruleResource
+						lv_deploy_153_0=ruleDeploy
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getServiceRule());
 							}
-							add(
+							set(
 								$current,
 								"deploy",
-								lv_deploy_157_0,
-								"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.Resource");
+								lv_deploy_153_0,
+								"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.Deploy");
 							afterParserOrEnumRuleCall();
 						}
 					)
-				)+
-				this_END_BLOCK_158=RULE_END_BLOCK
-				{
-					newLeafNode(this_END_BLOCK_158, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_23_7());
-				}
-				this_END_BLOCK_159=RULE_END_BLOCK
-				{
-					newLeafNode(this_END_BLOCK_159, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_3_23_8());
-				}
+				)
 			)
 		)*
-		this_END_BLOCK_160=RULE_END_BLOCK
+		this_END_BLOCK_154=RULE_END_BLOCK
 		{
-			newLeafNode(this_END_BLOCK_160, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_4());
+			newLeafNode(this_END_BLOCK_154, grammarAccess.getServiceAccess().getEND_BLOCKTerminalRuleCall_4());
 		}
 	)
 ;
@@ -3368,57 +3359,30 @@ ruleNetwork returns [EObject current=null]
 						{
 							newLeafNode(otherlv_10, grammarAccess.getNetworkAccess().getColonKeyword_2_0_1_2_1());
 						}
-						this_BEG_BLOCK_11=RULE_BEG_BLOCK
-						{
-							newLeafNode(this_BEG_BLOCK_11, grammarAccess.getNetworkAccess().getBEG_BLOCKTerminalRuleCall_2_0_1_2_2());
-						}
-						{
-							newCompositeNode(grammarAccess.getNetworkAccess().getKeyNameParserRuleCall_2_0_1_2_3());
-						}
-						ruleKeyName
-						{
-							afterParserOrEnumRuleCall();
-						}
-						otherlv_13=':'
-						{
-							newLeafNode(otherlv_13, grammarAccess.getNetworkAccess().getColonKeyword_2_0_1_2_4());
-						}
-						this_BEG_BLOCK_14=RULE_BEG_BLOCK
-						{
-							newLeafNode(this_BEG_BLOCK_14, grammarAccess.getNetworkAccess().getBEG_BLOCKTerminalRuleCall_2_0_1_2_5());
-						}
 						(
 							(
 								{
-									newCompositeNode(grammarAccess.getNetworkAccess().getIpamConfigParserRuleCall_2_0_1_2_6_0());
+									newCompositeNode(grammarAccess.getNetworkAccess().getIpamIpamParserRuleCall_2_0_1_2_2_0());
 								}
-								lv_ipam_15_0=ruleConfig
+								lv_ipam_11_0=ruleIpam
 								{
 									if ($current==null) {
 										$current = createModelElementForParent(grammarAccess.getNetworkRule());
 									}
-									add(
+									set(
 										$current,
 										"ipam",
-										lv_ipam_15_0,
-										"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.Config");
+										lv_ipam_11_0,
+										"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.Ipam");
 									afterParserOrEnumRuleCall();
 								}
 							)
-						)+
-						this_END_BLOCK_16=RULE_END_BLOCK
-						{
-							newLeafNode(this_END_BLOCK_16, grammarAccess.getNetworkAccess().getEND_BLOCKTerminalRuleCall_2_0_1_2_7());
-						}
-						this_END_BLOCK_17=RULE_END_BLOCK
-						{
-							newLeafNode(this_END_BLOCK_17, grammarAccess.getNetworkAccess().getEND_BLOCKTerminalRuleCall_2_0_1_2_8());
-						}
+						)
 					)
 				)*
-				this_END_BLOCK_18=RULE_END_BLOCK
+				this_END_BLOCK_12=RULE_END_BLOCK
 				{
-					newLeafNode(this_END_BLOCK_18, grammarAccess.getNetworkAccess().getEND_BLOCKTerminalRuleCall_2_0_2());
+					newLeafNode(this_END_BLOCK_12, grammarAccess.getNetworkAccess().getEND_BLOCKTerminalRuleCall_2_0_2());
 				}
 			)
 			    |
@@ -3430,6 +3394,77 @@ ruleNetwork returns [EObject current=null]
 				afterParserOrEnumRuleCall();
 			}
 		)?
+	)
+;
+
+// Entry rule entryRuleIpam
+entryRuleIpam returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getIpamRule()); }
+	iv_ruleIpam=ruleIpam
+	{ $current=$iv_ruleIpam.current; }
+	EOF;
+
+// Rule Ipam
+ruleIpam returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getIpamAccess().getIpamAction_0(),
+					$current);
+			}
+		)
+		this_BEG_BLOCK_1=RULE_BEG_BLOCK
+		{
+			newLeafNode(this_BEG_BLOCK_1, grammarAccess.getIpamAccess().getBEG_BLOCKTerminalRuleCall_1());
+		}
+		(
+			otherlv_2='config'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getIpamAccess().getConfigKeyword_2_0());
+			}
+			otherlv_3=':'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getIpamAccess().getColonKeyword_2_1());
+			}
+			this_BEG_BLOCK_4=RULE_BEG_BLOCK
+			{
+				newLeafNode(this_BEG_BLOCK_4, grammarAccess.getIpamAccess().getBEG_BLOCKTerminalRuleCall_2_2());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getIpamAccess().getConfigConfigParserRuleCall_2_3_0());
+					}
+					lv_config_5_0=ruleConfig
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getIpamRule());
+						}
+						add(
+							$current,
+							"config",
+							lv_config_5_0,
+							"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.Config");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)+
+			this_END_BLOCK_6=RULE_END_BLOCK
+			{
+				newLeafNode(this_END_BLOCK_6, grammarAccess.getIpamAccess().getEND_BLOCKTerminalRuleCall_2_4());
+			}
+		)?
+		this_END_BLOCK_7=RULE_END_BLOCK
+		{
+			newLeafNode(this_END_BLOCK_7, grammarAccess.getIpamAccess().getEND_BLOCKTerminalRuleCall_3());
+		}
 	)
 ;
 
@@ -3767,6 +3802,195 @@ ruleDb returns [EObject current=null]
 		this_END_BLOCK_7=RULE_END_BLOCK
 		{
 			newLeafNode(this_END_BLOCK_7, grammarAccess.getDbAccess().getEND_BLOCKTerminalRuleCall_5());
+		}
+	)
+;
+
+// Entry rule entryRuleDeploy
+entryRuleDeploy returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDeployRule()); }
+	iv_ruleDeploy=ruleDeploy
+	{ $current=$iv_ruleDeploy.current; }
+	EOF;
+
+// Rule Deploy
+ruleDeploy returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getDeployAccess().getDeployAction_0(),
+					$current);
+			}
+		)
+		this_BEG_BLOCK_1=RULE_BEG_BLOCK
+		{
+			newLeafNode(this_BEG_BLOCK_1, grammarAccess.getDeployAccess().getBEG_BLOCKTerminalRuleCall_1());
+		}
+		(
+			otherlv_2='resources'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getDeployAccess().getResourcesKeyword_2_0());
+			}
+			otherlv_3=':'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getDeployAccess().getColonKeyword_2_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getDeployAccess().getResourcesResourcesParserRuleCall_2_2_0());
+					}
+					lv_resources_4_0=ruleResources
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDeployRule());
+						}
+						set(
+							$current,
+							"resources",
+							lv_resources_4_0,
+							"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.Resources");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		this_END_BLOCK_5=RULE_END_BLOCK
+		{
+			newLeafNode(this_END_BLOCK_5, grammarAccess.getDeployAccess().getEND_BLOCKTerminalRuleCall_3());
+		}
+	)
+;
+
+// Entry rule entryRuleResources
+entryRuleResources returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getResourcesRule()); }
+	iv_ruleResources=ruleResources
+	{ $current=$iv_ruleResources.current; }
+	EOF;
+
+// Rule Resources
+ruleResources returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getResourcesAccess().getResourcesAction_0(),
+					$current);
+			}
+		)
+		this_BEG_BLOCK_1=RULE_BEG_BLOCK
+		{
+			newLeafNode(this_BEG_BLOCK_1, grammarAccess.getResourcesAccess().getBEG_BLOCKTerminalRuleCall_1());
+		}
+		(
+			otherlv_2='limits'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getResourcesAccess().getLimitsKeyword_2_0());
+			}
+			otherlv_3=':'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getResourcesAccess().getColonKeyword_2_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getResourcesAccess().getLimitsLimitsParserRuleCall_2_2_0());
+					}
+					lv_limits_4_0=ruleLimits
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getResourcesRule());
+						}
+						set(
+							$current,
+							"limits",
+							lv_limits_4_0,
+							"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.Limits");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		this_END_BLOCK_5=RULE_END_BLOCK
+		{
+			newLeafNode(this_END_BLOCK_5, grammarAccess.getResourcesAccess().getEND_BLOCKTerminalRuleCall_3());
+		}
+	)
+;
+
+// Entry rule entryRuleLimits
+entryRuleLimits returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getLimitsRule()); }
+	iv_ruleLimits=ruleLimits
+	{ $current=$iv_ruleLimits.current; }
+	EOF;
+
+// Rule Limits
+ruleLimits returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getLimitsAccess().getLimitsAction_0(),
+					$current);
+			}
+		)
+		this_BEG_BLOCK_1=RULE_BEG_BLOCK
+		{
+			newLeafNode(this_BEG_BLOCK_1, grammarAccess.getLimitsAccess().getBEG_BLOCKTerminalRuleCall_1());
+		}
+		(
+			otherlv_2='memory'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getLimitsAccess().getMemoryKeyword_2_0());
+			}
+			otherlv_3=':'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getLimitsAccess().getColonKeyword_2_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getLimitsAccess().getMemoryEStringParserRuleCall_2_2_0());
+					}
+					lv_memory_4_0=ruleEString
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getLimitsRule());
+						}
+						set(
+							$current,
+							"memory",
+							lv_memory_4_0,
+							"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		this_END_BLOCK_5=RULE_END_BLOCK
+		{
+			newLeafNode(this_END_BLOCK_5, grammarAccess.getLimitsAccess().getEND_BLOCKTerminalRuleCall_3());
 		}
 	)
 ;
@@ -4115,85 +4339,6 @@ ruleSecret returns [EObject current=null]
 		this_END_BLOCK_6=RULE_END_BLOCK
 		{
 			newLeafNode(this_END_BLOCK_6, grammarAccess.getSecretAccess().getEND_BLOCKTerminalRuleCall_4());
-		}
-	)
-;
-
-// Entry rule entryRuleResource
-entryRuleResource returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getResourceRule()); }
-	iv_ruleResource=ruleResource
-	{ $current=$iv_ruleResource.current; }
-	EOF;
-
-// Rule Resource
-ruleResource returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getResourceAccess().getIdEStringParserRuleCall_0_0());
-				}
-				lv_id_0_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getResourceRule());
-					}
-					set(
-						$current,
-						"id",
-						lv_id_0_0,
-						"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_1=':'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getResourceAccess().getColonKeyword_1());
-		}
-		this_BEG_BLOCK_2=RULE_BEG_BLOCK
-		{
-			newLeafNode(this_BEG_BLOCK_2, grammarAccess.getResourceAccess().getBEG_BLOCKTerminalRuleCall_2());
-		}
-		(
-			otherlv_3='memory'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getResourceAccess().getMemoryKeyword_3_0());
-			}
-			otherlv_4=':'
-			{
-				newLeafNode(otherlv_4, grammarAccess.getResourceAccess().getColonKeyword_3_1());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getResourceAccess().getMemoryEStringParserRuleCall_3_2_0());
-					}
-					lv_memory_5_0=ruleEString
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getResourceRule());
-						}
-						set(
-							$current,
-							"memory",
-							lv_memory_5_0,
-							"pt.isep.yamldslgen.dockercompose.xtext.DcDsl.EString");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		this_END_BLOCK_6=RULE_END_BLOCK
-		{
-			newLeafNode(this_END_BLOCK_6, grammarAccess.getResourceAccess().getEND_BLOCKTerminalRuleCall_4());
 		}
 	)
 ;

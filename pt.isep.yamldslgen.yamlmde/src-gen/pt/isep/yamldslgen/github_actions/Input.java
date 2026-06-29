@@ -76,7 +76,7 @@ public interface Input extends EObject {
 	 * @return the value of the '<em>Default</em>' attribute.
 	 * @see #setDefault(String)
 	 * @see pt.isep.yamldslgen.github_actions.YamlmdePackage#getInput_Default()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	String getDefault();
