@@ -188,26 +188,95 @@ public class DockercomposeItemProviderAdapterFactory extends DockercomposeAdapte
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.docker_compose.Resource} instances.
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.docker_compose.Deploy} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ResourceItemProvider resourceItemProvider;
+	protected DeployItemProvider deployItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link pt.isep.yamldslgen.docker_compose.Resource}.
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.docker_compose.Deploy}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createResourceAdapter() {
-		if (resourceItemProvider == null) {
-			resourceItemProvider = new ResourceItemProvider(this);
+	public Adapter createDeployAdapter() {
+		if (deployItemProvider == null) {
+			deployItemProvider = new DeployItemProvider(this);
 		}
 
-		return resourceItemProvider;
+		return deployItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.docker_compose.Resources} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ResourcesItemProvider resourcesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.docker_compose.Resources}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createResourcesAdapter() {
+		if (resourcesItemProvider == null) {
+			resourcesItemProvider = new ResourcesItemProvider(this);
+		}
+
+		return resourcesItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.docker_compose.Limits} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LimitsItemProvider limitsItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.docker_compose.Limits}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLimitsAdapter() {
+		if (limitsItemProvider == null) {
+			limitsItemProvider = new LimitsItemProvider(this);
+		}
+
+		return limitsItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.docker_compose.Db} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DbItemProvider dbItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.docker_compose.Db}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDbAdapter() {
+		if (dbItemProvider == null) {
+			dbItemProvider = new DbItemProvider(this);
+		}
+
+		return dbItemProvider;
 	}
 
 	/**
@@ -234,26 +303,26 @@ public class DockercomposeItemProviderAdapterFactory extends DockercomposeAdapte
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.docker_compose.Db} instances.
+	 * This keeps track of the one adapter used for all {@link pt.isep.yamldslgen.docker_compose.Ipam} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DbItemProvider dbItemProvider;
+	protected IpamItemProvider ipamItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link pt.isep.yamldslgen.docker_compose.Db}.
+	 * This creates an adapter for a {@link pt.isep.yamldslgen.docker_compose.Ipam}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createDbAdapter() {
-		if (dbItemProvider == null) {
-			dbItemProvider = new DbItemProvider(this);
+	public Adapter createIpamAdapter() {
+		if (ipamItemProvider == null) {
+			ipamItemProvider = new IpamItemProvider(this);
 		}
 
-		return dbItemProvider;
+		return ipamItemProvider;
 	}
 
 	/**
@@ -578,12 +647,18 @@ public class DockercomposeItemProviderAdapterFactory extends DockercomposeAdapte
 			healthcheckItemProvider.dispose();
 		if (networkItemProvider != null)
 			networkItemProvider.dispose();
-		if (resourceItemProvider != null)
-			resourceItemProvider.dispose();
-		if (secretItemProvider != null)
-			secretItemProvider.dispose();
+		if (deployItemProvider != null)
+			deployItemProvider.dispose();
+		if (resourcesItemProvider != null)
+			resourcesItemProvider.dispose();
+		if (limitsItemProvider != null)
+			limitsItemProvider.dispose();
 		if (dbItemProvider != null)
 			dbItemProvider.dispose();
+		if (secretItemProvider != null)
+			secretItemProvider.dispose();
+		if (ipamItemProvider != null)
+			ipamItemProvider.dispose();
 		if (configItemProvider != null)
 			configItemProvider.dispose();
 		if (volumeObjectItemProvider != null)

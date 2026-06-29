@@ -1073,84 +1073,6 @@ ruleReservedWord returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTo
 			$current.merge(kw);
 			newLeafNode(kw, grammarAccess.getReservedWordAccess().getExcludeKeyword_62());
 		}
-		    |
-		kw='os'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getReservedWordAccess().getOsKeyword_63());
-		}
-		    |
-		kw='build-type'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getReservedWordAccess().getBuildTypeKeyword_64());
-		}
-		    |
-		kw='c-compiler'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getReservedWordAccess().getCCompilerKeyword_65());
-		}
-		    |
-		kw='cpp-compiler'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getReservedWordAccess().getCppCompilerKeyword_66());
-		}
-		    |
-		kw='otp'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getReservedWordAccess().getOtpKeyword_67());
-		}
-		    |
-		kw='elixir'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getReservedWordAccess().getElixirKeyword_68());
-		}
-		    |
-		kw='node-version'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getReservedWordAccess().getNodeVersionKeyword_69());
-		}
-		    |
-		kw='cache'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getReservedWordAccess().getCacheKeyword_70());
-		}
-		    |
-		kw='python-version'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getReservedWordAccess().getPythonVersionKeyword_71());
-		}
-		    |
-		kw='configuration'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getReservedWordAccess().getConfigurationKeyword_72());
-		}
-		    |
-		kw='digests'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getReservedWordAccess().getDigestsKeyword_73());
-		}
-		    |
-		kw='r-version'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getReservedWordAccess().getRVersionKeyword_74());
-		}
-		    |
-		kw='ruby-version'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getReservedWordAccess().getRubyVersionKeyword_75());
-		}
 	)
 ;
 
@@ -2810,50 +2732,125 @@ ruleWorkflow_call returns [EObject current=null]
 			}
 		)?
 		(
-			otherlv_2='secrets'
-			{
-				newLeafNode(otherlv_2, grammarAccess.getWorkflow_callAccess().getSecretsKeyword_2_0());
-			}
-			otherlv_3=':'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getWorkflow_callAccess().getColonKeyword_2_1());
-			}
 			(
-				this_BEG_BLOCK_4=RULE_BEG_BLOCK
-				{
-					newLeafNode(this_BEG_BLOCK_4, grammarAccess.getWorkflow_callAccess().getBEG_BLOCKTerminalRuleCall_2_2());
+				{ 
+				  getUnorderedGroupHelper().enter(grammarAccess.getWorkflow_callAccess().getUnorderedGroup_2());
 				}
-			)?
-			(
 				(
+					(
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getWorkflow_callAccess().getUnorderedGroup_2(), 0)}?=>(
 					{
-						newCompositeNode(grammarAccess.getWorkflow_callAccess().getSecretsSecretParserRuleCall_2_3_0());
+						getUnorderedGroupHelper().select(grammarAccess.getWorkflow_callAccess().getUnorderedGroup_2(), 0);
 					}
-					lv_secrets_5_0=ruleSecret
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getWorkflow_callRule());
-						}
-						add(
-							$current,
-							"secrets",
-							lv_secrets_5_0,
-							"pt.isep.yamldslgen.xtext.MyDsl.Secret");
-						afterParserOrEnumRuleCall();
+								({true}?=>(otherlv_3='inputs'
+								{
+									newLeafNode(otherlv_3, grammarAccess.getWorkflow_callAccess().getInputsKeyword_2_0_0());
+								}
+								otherlv_4=':'
+								{
+									newLeafNode(otherlv_4, grammarAccess.getWorkflow_callAccess().getColonKeyword_2_0_1());
+								}
+								(
+									(
+										this_BEG_BLOCK_5=RULE_BEG_BLOCK
+										{
+											newLeafNode(this_BEG_BLOCK_5, grammarAccess.getWorkflow_callAccess().getBEG_BLOCKTerminalRuleCall_2_0_2_0());
+										}
+									)?
+									(
+										(
+											{
+												newCompositeNode(grammarAccess.getWorkflow_callAccess().getInputsInputParserRuleCall_2_0_2_1_0());
+											}
+											lv_inputs_6_0=ruleInput
+											{
+												if ($current==null) {
+													$current = createModelElementForParent(grammarAccess.getWorkflow_callRule());
+												}
+												add(
+													$current,
+													"inputs",
+													lv_inputs_6_0,
+													"pt.isep.yamldslgen.xtext.MyDsl.Input");
+												afterParserOrEnumRuleCall();
+											}
+										)
+									)+
+									(
+										this_END_BLOCK_7=RULE_END_BLOCK
+										{
+											newLeafNode(this_END_BLOCK_7, grammarAccess.getWorkflow_callAccess().getEND_BLOCKTerminalRuleCall_2_0_2_2());
+										}
+									)?
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getWorkflow_callAccess().getUnorderedGroup_2());
 					}
 				)
-			)+
+			)|
 			(
-				this_END_BLOCK_6=RULE_END_BLOCK
-				{
-					newLeafNode(this_END_BLOCK_6, grammarAccess.getWorkflow_callAccess().getEND_BLOCKTerminalRuleCall_2_4());
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getWorkflow_callAccess().getUnorderedGroup_2(), 1)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getWorkflow_callAccess().getUnorderedGroup_2(), 1);
+					}
+								({true}?=>(otherlv_8='secrets'
+								{
+									newLeafNode(otherlv_8, grammarAccess.getWorkflow_callAccess().getSecretsKeyword_2_1_0());
+								}
+								otherlv_9=':'
+								{
+									newLeafNode(otherlv_9, grammarAccess.getWorkflow_callAccess().getColonKeyword_2_1_1());
+								}
+								(
+									this_BEG_BLOCK_10=RULE_BEG_BLOCK
+									{
+										newLeafNode(this_BEG_BLOCK_10, grammarAccess.getWorkflow_callAccess().getBEG_BLOCKTerminalRuleCall_2_1_2());
+									}
+								)?
+								(
+									(
+										{
+											newCompositeNode(grammarAccess.getWorkflow_callAccess().getSecretsSecretParserRuleCall_2_1_3_0());
+										}
+										lv_secrets_11_0=ruleSecret
+										{
+											if ($current==null) {
+												$current = createModelElementForParent(grammarAccess.getWorkflow_callRule());
+											}
+											add(
+												$current,
+												"secrets",
+												lv_secrets_11_0,
+												"pt.isep.yamldslgen.xtext.MyDsl.Secret");
+											afterParserOrEnumRuleCall();
+										}
+									)
+								)+
+								(
+									this_END_BLOCK_12=RULE_END_BLOCK
+									{
+										newLeafNode(this_END_BLOCK_12, grammarAccess.getWorkflow_callAccess().getEND_BLOCKTerminalRuleCall_2_1_4());
+									}
+								)?
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getWorkflow_callAccess().getUnorderedGroup_2());
+					}
+				)
+			)
+					)*
+				)
+			)
+				{ 
+				  getUnorderedGroupHelper().leave(grammarAccess.getWorkflow_callAccess().getUnorderedGroup_2());
 				}
-			)?
-		)?
+		)
 		(
-			this_END_BLOCK_7=RULE_END_BLOCK
+			this_END_BLOCK_13=RULE_END_BLOCK
 			{
-				newLeafNode(this_END_BLOCK_7, grammarAccess.getWorkflow_callAccess().getEND_BLOCKTerminalRuleCall_3());
+				newLeafNode(this_END_BLOCK_13, grammarAccess.getWorkflow_callAccess().getEND_BLOCKTerminalRuleCall_3());
 			}
 		)?
 	)

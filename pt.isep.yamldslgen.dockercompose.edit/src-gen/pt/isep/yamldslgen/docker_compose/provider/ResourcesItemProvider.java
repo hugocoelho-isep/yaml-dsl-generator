@@ -1,6 +1,6 @@
 /**
  */
-package pt.isep.yamldslgen.github_actions.provider;
+package pt.isep.yamldslgen.docker_compose.provider;
 
 import java.util.Collection;
 import java.util.List;
@@ -21,17 +21,17 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import pt.isep.yamldslgen.github_actions.Workflow_call;
-import pt.isep.yamldslgen.github_actions.YamlmdeFactory;
-import pt.isep.yamldslgen.github_actions.YamlmdePackage;
+import pt.isep.yamldslgen.docker_compose.DockercomposeFactory;
+import pt.isep.yamldslgen.docker_compose.DockercomposePackage;
+import pt.isep.yamldslgen.docker_compose.Resources;
 
 /**
- * This is the item provider adapter for a {@link pt.isep.yamldslgen.github_actions.Workflow_call} object.
+ * This is the item provider adapter for a {@link pt.isep.yamldslgen.docker_compose.Resources} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class Workflow_callItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class ResourcesItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -39,7 +39,7 @@ public class Workflow_callItemProvider extends ItemProviderAdapter implements IE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Workflow_callItemProvider(AdapterFactory adapterFactory) {
+	public ResourcesItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -70,8 +70,7 @@ public class Workflow_callItemProvider extends ItemProviderAdapter implements IE
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(YamlmdePackage.Literals.WORKFLOW_CALL__SECRETS);
-			childrenFeatures.add(YamlmdePackage.Literals.WORKFLOW_CALL__INPUTS);
+			childrenFeatures.add(DockercomposePackage.Literals.RESOURCES__LIMITS);
 		}
 		return childrenFeatures;
 	}
@@ -90,14 +89,14 @@ public class Workflow_callItemProvider extends ItemProviderAdapter implements IE
 	}
 
 	/**
-	 * This returns Workflow_call.gif.
+	 * This returns Resources.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Workflow_call"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Resources"));
 	}
 
 	/**
@@ -118,7 +117,7 @@ public class Workflow_callItemProvider extends ItemProviderAdapter implements IE
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Workflow_call_type");
+		return getString("_UI_Resources_type");
 	}
 
 	/**
@@ -132,9 +131,8 @@ public class Workflow_callItemProvider extends ItemProviderAdapter implements IE
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Workflow_call.class)) {
-		case YamlmdePackage.WORKFLOW_CALL__SECRETS:
-		case YamlmdePackage.WORKFLOW_CALL__INPUTS:
+		switch (notification.getFeatureID(Resources.class)) {
+		case DockercomposePackage.RESOURCES__LIMITS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -152,11 +150,8 @@ public class Workflow_callItemProvider extends ItemProviderAdapter implements IE
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.WORKFLOW_CALL__SECRETS,
-				YamlmdeFactory.eINSTANCE.createSecret()));
-
-		newChildDescriptors.add(createChildParameter(YamlmdePackage.Literals.WORKFLOW_CALL__INPUTS,
-				YamlmdeFactory.eINSTANCE.createInput()));
+		newChildDescriptors.add(createChildParameter(DockercomposePackage.Literals.RESOURCES__LIMITS,
+				DockercomposeFactory.eINSTANCE.createLimits()));
 	}
 
 	/**
@@ -167,7 +162,7 @@ public class Workflow_callItemProvider extends ItemProviderAdapter implements IE
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return YamlmdeEditPlugin.INSTANCE;
+		return DockercomposeEditPlugin.INSTANCE;
 	}
 
 }

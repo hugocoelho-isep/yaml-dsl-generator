@@ -14,11 +14,11 @@ import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.XbaseGenerated;
 import pt.isep.yamldslgen.docker_compose.Build;
 import pt.isep.yamldslgen.docker_compose.Depends_on;
+import pt.isep.yamldslgen.docker_compose.Deploy;
 import pt.isep.yamldslgen.docker_compose.DockerCompose;
 import pt.isep.yamldslgen.docker_compose.Healthcheck;
 import pt.isep.yamldslgen.docker_compose.KeyValuePair;
 import pt.isep.yamldslgen.docker_compose.Networks;
-import pt.isep.yamldslgen.docker_compose.Resource;
 import pt.isep.yamldslgen.docker_compose.Secret;
 import pt.isep.yamldslgen.docker_compose.Service;
 import pt.isep.yamldslgen.docker_compose.Volume;
@@ -49,9 +49,9 @@ public class DcDslFormatter extends AbstractFormatter2 {
   protected void _format(final Service service, @Extension final IFormattableDocument document) {
     document.<Build>format(service.getBuild());
     document.<Healthcheck>format(service.getHealthcheck());
-    EList<Resource> _deploy = service.getDeploy();
-    for (final Resource resource : _deploy) {
-      document.<Resource>format(resource);
+    Deploy _deploy = service.getDeploy();
+    if (_deploy!=null) {
+      document.<Deploy>format(_deploy);
     }
     document.<Depends_on>format(service.getDependsOn());
     EList<Volume> _volumes = service.getVolumes();

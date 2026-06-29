@@ -66,12 +66,18 @@ public class DockercomposeFactoryImpl extends EFactoryImpl implements Dockercomp
 			return createHealthcheck();
 		case DockercomposePackage.NETWORK:
 			return createNetwork();
-		case DockercomposePackage.RESOURCE:
-			return createResource();
-		case DockercomposePackage.SECRET:
-			return createSecret();
+		case DockercomposePackage.DEPLOY:
+			return createDeploy();
+		case DockercomposePackage.RESOURCES:
+			return createResources();
+		case DockercomposePackage.LIMITS:
+			return createLimits();
 		case DockercomposePackage.DB:
 			return createDb();
+		case DockercomposePackage.SECRET:
+			return createSecret();
+		case DockercomposePackage.IPAM:
+			return createIpam();
 		case DockercomposePackage.CONFIG:
 			return createConfig();
 		case DockercomposePackage.VOLUME_OBJECT:
@@ -156,9 +162,42 @@ public class DockercomposeFactoryImpl extends EFactoryImpl implements Dockercomp
 	 * @generated
 	 */
 	@Override
-	public Resource createResource() {
-		ResourceImpl resource = new ResourceImpl();
-		return resource;
+	public Deploy createDeploy() {
+		DeployImpl deploy = new DeployImpl();
+		return deploy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Resources createResources() {
+		ResourcesImpl resources = new ResourcesImpl();
+		return resources;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Limits createLimits() {
+		LimitsImpl limits = new LimitsImpl();
+		return limits;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Db createDb() {
+		DbImpl db = new DbImpl();
+		return db;
 	}
 
 	/**
@@ -178,9 +217,9 @@ public class DockercomposeFactoryImpl extends EFactoryImpl implements Dockercomp
 	 * @generated
 	 */
 	@Override
-	public Db createDb() {
-		DbImpl db = new DbImpl();
-		return db;
+	public Ipam createIpam() {
+		IpamImpl ipam = new IpamImpl();
+		return ipam;
 	}
 
 	/**

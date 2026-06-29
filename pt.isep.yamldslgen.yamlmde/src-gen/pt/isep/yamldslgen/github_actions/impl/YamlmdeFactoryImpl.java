@@ -60,14 +60,14 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 			return createKeyValuePair();
 		case YamlmdePackage.GITHUB_ACTIONS:
 			return createGithubActions();
-		case YamlmdePackage.JOB:
-			return createJob();
-		case YamlmdePackage.STEP:
-			return createStep();
 		case YamlmdePackage.PUSH:
 			return createPush();
 		case YamlmdePackage.PULL_REQUEST:
 			return createPull_request();
+		case YamlmdePackage.JOB:
+			return createJob();
+		case YamlmdePackage.STEP:
+			return createStep();
 		case YamlmdePackage.SCHEDULE:
 			return createSchedule();
 		case YamlmdePackage.WORKFLOW_DISPATCH:
@@ -92,12 +92,12 @@ public class YamlmdeFactoryImpl extends EFactoryImpl implements YamlmdeFactory {
 			return createRun();
 		case YamlmdePackage.RELEASE:
 			return createRelease();
+		case YamlmdePackage.SERVICE:
+			return createService();
 		case YamlmdePackage.INPUT:
 			return createInput();
 		case YamlmdePackage.MERGE_GROUP:
 			return createMerge_group();
-		case YamlmdePackage.SERVICE:
-			return createService();
 		case YamlmdePackage.ISSUES:
 			return createIssues();
 		case YamlmdePackage.PERMISSIONS_OBJECT:

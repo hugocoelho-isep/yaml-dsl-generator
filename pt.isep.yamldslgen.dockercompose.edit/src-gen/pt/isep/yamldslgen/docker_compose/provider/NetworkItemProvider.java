@@ -210,7 +210,7 @@ public class NetworkItemProvider extends ItemProviderAdapter implements IEditing
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(DockercomposePackage.Literals.NETWORK__IPAM,
-				DockercomposeFactory.eINSTANCE.createConfig()));
+				DockercomposeFactory.eINSTANCE.createIpam()));
 	}
 
 	/**

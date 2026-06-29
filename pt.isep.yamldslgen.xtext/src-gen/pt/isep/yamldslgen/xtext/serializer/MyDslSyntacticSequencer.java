@@ -119,9 +119,13 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Strategy_BEG_BLOCKTerminalRuleCall_1_q;
 	protected AbstractElementAlias match_Strategy_END_BLOCKTerminalRuleCall_3_q;
 	protected AbstractElementAlias match_Workflow_call_BEG_BLOCKTerminalRuleCall_1_q;
-	protected AbstractElementAlias match_Workflow_call_BEG_BLOCKTerminalRuleCall_2_2_q;
-	protected AbstractElementAlias match_Workflow_call_END_BLOCKTerminalRuleCall_2_4_q;
+	protected AbstractElementAlias match_Workflow_call_BEG_BLOCKTerminalRuleCall_2_0_2_0_q;
+	protected AbstractElementAlias match_Workflow_call_BEG_BLOCKTerminalRuleCall_2_1_2_q;
+	protected AbstractElementAlias match_Workflow_call_END_BLOCKTerminalRuleCall_2_0_2_2_q;
+	protected AbstractElementAlias match_Workflow_call_END_BLOCKTerminalRuleCall_2_1_4_q;
 	protected AbstractElementAlias match_Workflow_call_END_BLOCKTerminalRuleCall_3_q;
+	protected AbstractElementAlias match_Workflow_call___END_BLOCKTerminalRuleCall_2_0_2_2_q_InputsKeyword_2_0_0_ColonKeyword_2_0_1_BEG_BLOCKTerminalRuleCall_2_0_2_0_q__q;
+	protected AbstractElementAlias match_Workflow_call___END_BLOCKTerminalRuleCall_2_1_4_q_SecretsKeyword_2_1_0_ColonKeyword_2_1_1_BEG_BLOCKTerminalRuleCall_2_1_2_q__q;
 	protected AbstractElementAlias match_Workflow_dispatch_BEG_BLOCKTerminalRuleCall_1_q;
 	protected AbstractElementAlias match_Workflow_dispatch_BEG_BLOCKTerminalRuleCall_2_2_0_q;
 	protected AbstractElementAlias match_Workflow_dispatch_END_BLOCKTerminalRuleCall_2_2_2_q;
@@ -236,9 +240,13 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Strategy_BEG_BLOCKTerminalRuleCall_1_q = new TokenAlias(false, true, grammarAccess.getStrategyAccess().getBEG_BLOCKTerminalRuleCall_1());
 		match_Strategy_END_BLOCKTerminalRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getStrategyAccess().getEND_BLOCKTerminalRuleCall_3());
 		match_Workflow_call_BEG_BLOCKTerminalRuleCall_1_q = new TokenAlias(false, true, grammarAccess.getWorkflow_callAccess().getBEG_BLOCKTerminalRuleCall_1());
-		match_Workflow_call_BEG_BLOCKTerminalRuleCall_2_2_q = new TokenAlias(false, true, grammarAccess.getWorkflow_callAccess().getBEG_BLOCKTerminalRuleCall_2_2());
-		match_Workflow_call_END_BLOCKTerminalRuleCall_2_4_q = new TokenAlias(false, true, grammarAccess.getWorkflow_callAccess().getEND_BLOCKTerminalRuleCall_2_4());
+		match_Workflow_call_BEG_BLOCKTerminalRuleCall_2_0_2_0_q = new TokenAlias(false, true, grammarAccess.getWorkflow_callAccess().getBEG_BLOCKTerminalRuleCall_2_0_2_0());
+		match_Workflow_call_BEG_BLOCKTerminalRuleCall_2_1_2_q = new TokenAlias(false, true, grammarAccess.getWorkflow_callAccess().getBEG_BLOCKTerminalRuleCall_2_1_2());
+		match_Workflow_call_END_BLOCKTerminalRuleCall_2_0_2_2_q = new TokenAlias(false, true, grammarAccess.getWorkflow_callAccess().getEND_BLOCKTerminalRuleCall_2_0_2_2());
+		match_Workflow_call_END_BLOCKTerminalRuleCall_2_1_4_q = new TokenAlias(false, true, grammarAccess.getWorkflow_callAccess().getEND_BLOCKTerminalRuleCall_2_1_4());
 		match_Workflow_call_END_BLOCKTerminalRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getWorkflow_callAccess().getEND_BLOCKTerminalRuleCall_3());
+		match_Workflow_call___END_BLOCKTerminalRuleCall_2_0_2_2_q_InputsKeyword_2_0_0_ColonKeyword_2_0_1_BEG_BLOCKTerminalRuleCall_2_0_2_0_q__q = new GroupAlias(false, true, new TokenAlias(false, true, grammarAccess.getWorkflow_callAccess().getEND_BLOCKTerminalRuleCall_2_0_2_2()), new TokenAlias(false, false, grammarAccess.getWorkflow_callAccess().getInputsKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getWorkflow_callAccess().getColonKeyword_2_0_1()), new TokenAlias(false, true, grammarAccess.getWorkflow_callAccess().getBEG_BLOCKTerminalRuleCall_2_0_2_0()));
+		match_Workflow_call___END_BLOCKTerminalRuleCall_2_1_4_q_SecretsKeyword_2_1_0_ColonKeyword_2_1_1_BEG_BLOCKTerminalRuleCall_2_1_2_q__q = new GroupAlias(false, true, new TokenAlias(false, true, grammarAccess.getWorkflow_callAccess().getEND_BLOCKTerminalRuleCall_2_1_4()), new TokenAlias(false, false, grammarAccess.getWorkflow_callAccess().getSecretsKeyword_2_1_0()), new TokenAlias(false, false, grammarAccess.getWorkflow_callAccess().getColonKeyword_2_1_1()), new TokenAlias(false, true, grammarAccess.getWorkflow_callAccess().getBEG_BLOCKTerminalRuleCall_2_1_2()));
 		match_Workflow_dispatch_BEG_BLOCKTerminalRuleCall_1_q = new TokenAlias(false, true, grammarAccess.getWorkflow_dispatchAccess().getBEG_BLOCKTerminalRuleCall_1());
 		match_Workflow_dispatch_BEG_BLOCKTerminalRuleCall_2_2_0_q = new TokenAlias(false, true, grammarAccess.getWorkflow_dispatchAccess().getBEG_BLOCKTerminalRuleCall_2_2_0());
 		match_Workflow_dispatch_END_BLOCKTerminalRuleCall_2_2_2_q = new TokenAlias(false, true, grammarAccess.getWorkflow_dispatchAccess().getEND_BLOCKTerminalRuleCall_2_2_2());
@@ -474,12 +482,20 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Strategy_END_BLOCKTerminalRuleCall_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Workflow_call_BEG_BLOCKTerminalRuleCall_1_q.equals(syntax))
 				emit_Workflow_call_BEG_BLOCKTerminalRuleCall_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Workflow_call_BEG_BLOCKTerminalRuleCall_2_2_q.equals(syntax))
-				emit_Workflow_call_BEG_BLOCKTerminalRuleCall_2_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Workflow_call_END_BLOCKTerminalRuleCall_2_4_q.equals(syntax))
-				emit_Workflow_call_END_BLOCKTerminalRuleCall_2_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Workflow_call_BEG_BLOCKTerminalRuleCall_2_0_2_0_q.equals(syntax))
+				emit_Workflow_call_BEG_BLOCKTerminalRuleCall_2_0_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Workflow_call_BEG_BLOCKTerminalRuleCall_2_1_2_q.equals(syntax))
+				emit_Workflow_call_BEG_BLOCKTerminalRuleCall_2_1_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Workflow_call_END_BLOCKTerminalRuleCall_2_0_2_2_q.equals(syntax))
+				emit_Workflow_call_END_BLOCKTerminalRuleCall_2_0_2_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Workflow_call_END_BLOCKTerminalRuleCall_2_1_4_q.equals(syntax))
+				emit_Workflow_call_END_BLOCKTerminalRuleCall_2_1_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Workflow_call_END_BLOCKTerminalRuleCall_3_q.equals(syntax))
 				emit_Workflow_call_END_BLOCKTerminalRuleCall_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Workflow_call___END_BLOCKTerminalRuleCall_2_0_2_2_q_InputsKeyword_2_0_0_ColonKeyword_2_0_1_BEG_BLOCKTerminalRuleCall_2_0_2_0_q__q.equals(syntax))
+				emit_Workflow_call___END_BLOCKTerminalRuleCall_2_0_2_2_q_InputsKeyword_2_0_0_ColonKeyword_2_0_1_BEG_BLOCKTerminalRuleCall_2_0_2_0_q__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Workflow_call___END_BLOCKTerminalRuleCall_2_1_4_q_SecretsKeyword_2_1_0_ColonKeyword_2_1_1_BEG_BLOCKTerminalRuleCall_2_1_2_q__q.equals(syntax))
+				emit_Workflow_call___END_BLOCKTerminalRuleCall_2_1_4_q_SecretsKeyword_2_1_0_ColonKeyword_2_1_1_BEG_BLOCKTerminalRuleCall_2_1_2_q__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Workflow_dispatch_BEG_BLOCKTerminalRuleCall_1_q.equals(syntax))
 				emit_Workflow_dispatch_BEG_BLOCKTerminalRuleCall_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Workflow_dispatch_BEG_BLOCKTerminalRuleCall_2_2_0_q.equals(syntax))
@@ -2399,6 +2415,7 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     BEG_BLOCK?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) 'inputs' ':' BEG_BLOCK? inputs+=Input
 	 *     (rule start) (ambiguity) 'secrets' ':' BEG_BLOCK? secrets+=Secret
 	 *     (rule start) (ambiguity) END_BLOCK? (rule start)
 	 
@@ -2414,11 +2431,27 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     BEG_BLOCK?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) BEG_BLOCK? 'secrets' ':' (ambiguity) secrets+=Secret
+	 *     (rule start) BEG_BLOCK? 'inputs' ':' (ambiguity) inputs+=Input
+	 *     secrets+=Secret END_BLOCK? 'inputs' ':' (ambiguity) inputs+=Input
 	 
 	 * </pre>
 	 */
-	protected void emit_Workflow_call_BEG_BLOCKTerminalRuleCall_2_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Workflow_call_BEG_BLOCKTerminalRuleCall_2_0_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     BEG_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) BEG_BLOCK? 'secrets' ':' (ambiguity) secrets+=Secret
+	 *     inputs+=Input END_BLOCK? 'secrets' ':' (ambiguity) secrets+=Secret
+	 
+	 * </pre>
+	 */
+	protected void emit_Workflow_call_BEG_BLOCKTerminalRuleCall_2_1_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -2428,11 +2461,27 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     END_BLOCK?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     inputs+=Input (ambiguity) 'secrets' ':' BEG_BLOCK? secrets+=Secret
+	 *     inputs+=Input (ambiguity) END_BLOCK? (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Workflow_call_END_BLOCKTerminalRuleCall_2_0_2_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     END_BLOCK?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     secrets+=Secret (ambiguity) 'inputs' ':' BEG_BLOCK? inputs+=Input
 	 *     secrets+=Secret (ambiguity) END_BLOCK? (rule end)
 	 
 	 * </pre>
 	 */
-	protected void emit_Workflow_call_END_BLOCKTerminalRuleCall_2_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Workflow_call_END_BLOCKTerminalRuleCall_2_1_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -2443,11 +2492,40 @@ public class MyDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) BEG_BLOCK? (ambiguity) (rule start)
+	 *     inputs+=Input END_BLOCK? (ambiguity) (rule end)
 	 *     secrets+=Secret END_BLOCK? (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
 	protected void emit_Workflow_call_END_BLOCKTerminalRuleCall_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END_BLOCK? 'inputs' ':' BEG_BLOCK?)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     inputs+=Input (ambiguity) inputs+=Input
+	 
+	 * </pre>
+	 */
+	protected void emit_Workflow_call___END_BLOCKTerminalRuleCall_2_0_2_2_q_InputsKeyword_2_0_0_ColonKeyword_2_0_1_BEG_BLOCKTerminalRuleCall_2_0_2_0_q__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (END_BLOCK? 'secrets' ':' BEG_BLOCK?)?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     secrets+=Secret (ambiguity) secrets+=Secret
+	 
+	 * </pre>
+	 */
+	protected void emit_Workflow_call___END_BLOCKTerminalRuleCall_2_1_4_q_SecretsKeyword_2_1_0_ColonKeyword_2_1_1_BEG_BLOCKTerminalRuleCall_2_1_2_q__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

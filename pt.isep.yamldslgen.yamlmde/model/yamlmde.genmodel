@@ -16,12 +16,21 @@
     </genClasses>
     <genClasses ecoreClass="yamlmde.ecore#//GithubActions">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//GithubActions/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//GithubActions/jobs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//GithubActions/on"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//GithubActions/jobs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//GithubActions/permissions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//GithubActions/concurrency"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//GithubActions/defaults"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//GithubActions/env"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//On"/>
+    <genClasses ecoreClass="yamlmde.ecore#//Push">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Push/branches"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Push/tags"/>
+    </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Pull_request">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Pull_request/branches"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Pull_request/types"/>
     </genClasses>
     <genClasses ecoreClass="yamlmde.ecore#//Job">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Job/id"/>
@@ -54,15 +63,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Step/env"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Step/with"/>
     </genClasses>
-    <genClasses ecoreClass="yamlmde.ecore#//On"/>
-    <genClasses ecoreClass="yamlmde.ecore#//Push">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Push/branches"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Push/tags"/>
-    </genClasses>
-    <genClasses ecoreClass="yamlmde.ecore#//Pull_request">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Pull_request/branches"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Pull_request/types"/>
-    </genClasses>
     <genClasses ecoreClass="yamlmde.ecore#//Permissions"/>
     <genClasses ecoreClass="yamlmde.ecore#//Schedule">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Schedule/cron"/>
@@ -70,11 +70,11 @@
     <genClasses ecoreClass="yamlmde.ecore#//Workflow_dispatch">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Workflow_dispatch/inputs"/>
     </genClasses>
-    <genClasses ecoreClass="yamlmde.ecore#//Environment"/>
     <genClasses ecoreClass="yamlmde.ecore#//Concurrency">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Concurrency/group"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Concurrency/cancelInProgress"/>
     </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Environment"/>
     <genClasses ecoreClass="yamlmde.ecore#//Strategy">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Strategy/failFast"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Strategy/maxParallel"/>
@@ -89,6 +89,7 @@
     </genClasses>
     <genClasses ecoreClass="yamlmde.ecore#//Workflow_call">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Workflow_call/secrets"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Workflow_call/inputs"/>
     </genClasses>
     <genClasses ecoreClass="yamlmde.ecore#//Secret">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Secret/id"/>
@@ -106,6 +107,12 @@
     <genClasses ecoreClass="yamlmde.ecore#//Release">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Release/types"/>
     </genClasses>
+    <genClasses ecoreClass="yamlmde.ecore#//Service">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Service/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Service/image"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Service/ports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Service/env"/>
+    </genClasses>
     <genClasses ecoreClass="yamlmde.ecore#//Input">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Input/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Input/description"/>
@@ -115,12 +122,6 @@
     </genClasses>
     <genClasses ecoreClass="yamlmde.ecore#//Merge_group">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Merge_group/branches"/>
-    </genClasses>
-    <genClasses ecoreClass="yamlmde.ecore#//Service">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Service/id"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Service/image"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Service/ports"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yamlmde.ecore#//Service/env"/>
     </genClasses>
     <genClasses ecoreClass="yamlmde.ecore#//Issues">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yamlmde.ecore#//Issues/types"/>

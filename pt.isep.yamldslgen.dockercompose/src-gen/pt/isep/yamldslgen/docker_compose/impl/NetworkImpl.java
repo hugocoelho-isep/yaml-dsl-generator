@@ -2,12 +2,8 @@
  */
 package pt.isep.yamldslgen.docker_compose.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -15,11 +11,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
-import pt.isep.yamldslgen.docker_compose.Config;
 import pt.isep.yamldslgen.docker_compose.DockercomposePackage;
+import pt.isep.yamldslgen.docker_compose.Ipam;
 import pt.isep.yamldslgen.docker_compose.Network;
 
 /**
@@ -100,14 +93,14 @@ public class NetworkImpl extends MinimalEObjectImpl.Container implements Network
 	protected String ipv4Address = IPV4_ADDRESS_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getIpam() <em>Ipam</em>}' containment reference list.
+	 * The cached value of the '{@link #getIpam() <em>Ipam</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getIpam()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Config> ipam;
+	protected Ipam ipam;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -205,11 +198,50 @@ public class NetworkImpl extends MinimalEObjectImpl.Container implements Network
 	 * @generated
 	 */
 	@Override
-	public EList<Config> getIpam() {
-		if (ipam == null) {
-			ipam = new EObjectContainmentEList<Config>(Config.class, this, DockercomposePackage.NETWORK__IPAM);
-		}
+	public Ipam getIpam() {
 		return ipam;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetIpam(Ipam newIpam, NotificationChain msgs) {
+		Ipam oldIpam = ipam;
+		ipam = newIpam;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					DockercomposePackage.NETWORK__IPAM, oldIpam, newIpam);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIpam(Ipam newIpam) {
+		if (newIpam != ipam) {
+			NotificationChain msgs = null;
+			if (ipam != null)
+				msgs = ((InternalEObject) ipam).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - DockercomposePackage.NETWORK__IPAM, null, msgs);
+			if (newIpam != null)
+				msgs = ((InternalEObject) newIpam).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - DockercomposePackage.NETWORK__IPAM, null, msgs);
+			msgs = basicSetIpam(newIpam, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DockercomposePackage.NETWORK__IPAM, newIpam,
+					newIpam));
 	}
 
 	/**
@@ -221,7 +253,7 @@ public class NetworkImpl extends MinimalEObjectImpl.Container implements Network
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case DockercomposePackage.NETWORK__IPAM:
-			return ((InternalEList<?>) getIpam()).basicRemove(otherEnd, msgs);
+			return basicSetIpam(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -251,7 +283,6 @@ public class NetworkImpl extends MinimalEObjectImpl.Container implements Network
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -265,8 +296,7 @@ public class NetworkImpl extends MinimalEObjectImpl.Container implements Network
 			setIpv4Address((String) newValue);
 			return;
 		case DockercomposePackage.NETWORK__IPAM:
-			getIpam().clear();
-			getIpam().addAll((Collection<? extends Config>) newValue);
+			setIpam((Ipam) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -290,7 +320,7 @@ public class NetworkImpl extends MinimalEObjectImpl.Container implements Network
 			setIpv4Address(IPV4_ADDRESS_EDEFAULT);
 			return;
 		case DockercomposePackage.NETWORK__IPAM:
-			getIpam().clear();
+			setIpam((Ipam) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -311,7 +341,7 @@ public class NetworkImpl extends MinimalEObjectImpl.Container implements Network
 		case DockercomposePackage.NETWORK__IPV4_ADDRESS:
 			return IPV4_ADDRESS_EDEFAULT == null ? ipv4Address != null : !IPV4_ADDRESS_EDEFAULT.equals(ipv4Address);
 		case DockercomposePackage.NETWORK__IPAM:
-			return ipam != null && !ipam.isEmpty();
+			return ipam != null;
 		}
 		return super.eIsSet(featureID);
 	}

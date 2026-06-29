@@ -67,13 +67,40 @@ public interface DockercomposeFactory extends EFactory {
 	Network createNetwork();
 
 	/**
-	 * Returns a new object of class '<em>Resource</em>'.
+	 * Returns a new object of class '<em>Deploy</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Resource</em>'.
+	 * @return a new object of class '<em>Deploy</em>'.
 	 * @generated
 	 */
-	Resource createResource();
+	Deploy createDeploy();
+
+	/**
+	 * Returns a new object of class '<em>Resources</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Resources</em>'.
+	 * @generated
+	 */
+	Resources createResources();
+
+	/**
+	 * Returns a new object of class '<em>Limits</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Limits</em>'.
+	 * @generated
+	 */
+	Limits createLimits();
+
+	/**
+	 * Returns a new object of class '<em>Db</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Db</em>'.
+	 * @generated
+	 */
+	Db createDb();
 
 	/**
 	 * Returns a new object of class '<em>Secret</em>'.
@@ -85,13 +112,13 @@ public interface DockercomposeFactory extends EFactory {
 	Secret createSecret();
 
 	/**
-	 * Returns a new object of class '<em>Db</em>'.
+	 * Returns a new object of class '<em>Ipam</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Db</em>'.
+	 * @return a new object of class '<em>Ipam</em>'.
 	 * @generated
 	 */
-	Db createDb();
+	Ipam createIpam();
 
 	/**
 	 * Returns a new object of class '<em>Config</em>'.

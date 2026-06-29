@@ -696,7 +696,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Workflow_call returns Workflow_call
 	 *
 	 * Constraint:
-	 *     secrets+=Secret*
+	 *     (inputs+=Input | secrets+=Secret)*
 	 * </pre>
 	 */
 	protected void sequence_Workflow_call(ISerializationContext context, Workflow_call semanticObject) {

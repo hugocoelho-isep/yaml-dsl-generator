@@ -418,16 +418,26 @@ public interface Service extends EObject {
 	void setHealthcheck(Healthcheck value);
 
 	/**
-	 * Returns the value of the '<em><b>Deploy</b></em>' containment reference list.
-	 * The list contents are of type {@link pt.isep.yamldslgen.docker_compose.Resource}.
+	 * Returns the value of the '<em><b>Deploy</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Deploy</em>' containment reference list.
+	 * @return the value of the '<em>Deploy</em>' containment reference.
+	 * @see #setDeploy(Deploy)
 	 * @see pt.isep.yamldslgen.docker_compose.DockercomposePackage#getService_Deploy()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Resource> getDeploy();
+	Deploy getDeploy();
+
+	/**
+	 * Sets the value of the '{@link pt.isep.yamldslgen.docker_compose.Service#getDeploy <em>Deploy</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Deploy</em>' containment reference.
+	 * @see #getDeploy()
+	 * @generated
+	 */
+	void setDeploy(Deploy value);
 
 	/**
 	 * Returns the value of the '<em><b>Depends On</b></em>' containment reference.

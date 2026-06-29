@@ -21,11 +21,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import pt.isep.yamldslgen.docker_compose.Build;
 import pt.isep.yamldslgen.docker_compose.Depends_on;
+import pt.isep.yamldslgen.docker_compose.Deploy;
 import pt.isep.yamldslgen.docker_compose.DockercomposePackage;
 import pt.isep.yamldslgen.docker_compose.Healthcheck;
 import pt.isep.yamldslgen.docker_compose.KeyValuePair;
 import pt.isep.yamldslgen.docker_compose.Networks;
-import pt.isep.yamldslgen.docker_compose.Resource;
 import pt.isep.yamldslgen.docker_compose.Service;
 import pt.isep.yamldslgen.docker_compose.Volume;
 
@@ -378,14 +378,14 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	protected Healthcheck healthcheck;
 
 	/**
-	 * The cached value of the '{@link #getDeploy() <em>Deploy</em>}' containment reference list.
+	 * The cached value of the '{@link #getDeploy() <em>Deploy</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDeploy()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Resource> deploy;
+	protected Deploy deploy;
 
 	/**
 	 * The cached value of the '{@link #getDependsOn() <em>Depends On</em>}' containment reference.
@@ -909,11 +909,50 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * @generated
 	 */
 	@Override
-	public EList<Resource> getDeploy() {
-		if (deploy == null) {
-			deploy = new EObjectContainmentEList<Resource>(Resource.class, this, DockercomposePackage.SERVICE__DEPLOY);
-		}
+	public Deploy getDeploy() {
 		return deploy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDeploy(Deploy newDeploy, NotificationChain msgs) {
+		Deploy oldDeploy = deploy;
+		deploy = newDeploy;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					DockercomposePackage.SERVICE__DEPLOY, oldDeploy, newDeploy);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDeploy(Deploy newDeploy) {
+		if (newDeploy != deploy) {
+			NotificationChain msgs = null;
+			if (deploy != null)
+				msgs = ((InternalEObject) deploy).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - DockercomposePackage.SERVICE__DEPLOY, null, msgs);
+			if (newDeploy != null)
+				msgs = ((InternalEObject) newDeploy).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - DockercomposePackage.SERVICE__DEPLOY, null, msgs);
+			msgs = basicSetDeploy(newDeploy, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DockercomposePackage.SERVICE__DEPLOY, newDeploy,
+					newDeploy));
 	}
 
 	/**
@@ -1060,7 +1099,7 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 		case DockercomposePackage.SERVICE__HEALTHCHECK:
 			return basicSetHealthcheck(null, msgs);
 		case DockercomposePackage.SERVICE__DEPLOY:
-			return ((InternalEList<?>) getDeploy()).basicRemove(otherEnd, msgs);
+			return basicSetDeploy(null, msgs);
 		case DockercomposePackage.SERVICE__DEPENDS_ON:
 			return basicSetDependsOn(null, msgs);
 		case DockercomposePackage.SERVICE__VOLUMES:
@@ -1212,8 +1251,7 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 			setHealthcheck((Healthcheck) newValue);
 			return;
 		case DockercomposePackage.SERVICE__DEPLOY:
-			getDeploy().clear();
-			getDeploy().addAll((Collection<? extends Resource>) newValue);
+			setDeploy((Deploy) newValue);
 			return;
 		case DockercomposePackage.SERVICE__DEPENDS_ON:
 			setDependsOn((Depends_on) newValue);
@@ -1302,7 +1340,7 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 			setHealthcheck((Healthcheck) null);
 			return;
 		case DockercomposePackage.SERVICE__DEPLOY:
-			getDeploy().clear();
+			setDeploy((Deploy) null);
 			return;
 		case DockercomposePackage.SERVICE__DEPENDS_ON:
 			setDependsOn((Depends_on) null);
@@ -1370,7 +1408,7 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 		case DockercomposePackage.SERVICE__HEALTHCHECK:
 			return healthcheck != null;
 		case DockercomposePackage.SERVICE__DEPLOY:
-			return deploy != null && !deploy.isEmpty();
+			return deploy != null;
 		case DockercomposePackage.SERVICE__DEPENDS_ON:
 			return dependsOn != null;
 		case DockercomposePackage.SERVICE__VOLUMES:

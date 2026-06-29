@@ -32,9 +32,7 @@ class DcDslFormatter extends AbstractFormatter2 {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
 		service.build.format
 		service.healthcheck.format
-		for (resource : service.deploy) {
-			resource.format
-		}
+		service.deploy?.format
 		service.dependsOn.format
 		for (volume : service.volumes) {
 			volume.format

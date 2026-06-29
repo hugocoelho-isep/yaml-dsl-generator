@@ -80,20 +80,6 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case YamlmdePackage.JOB: {
-			Job job = (Job) theEObject;
-			T result = caseJob(job);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case YamlmdePackage.STEP: {
-			Step step = (Step) theEObject;
-			T result = caseStep(step);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case YamlmdePackage.ON: {
 			On on = (On) theEObject;
 			T result = caseOn(on);
@@ -111,6 +97,20 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 		case YamlmdePackage.PULL_REQUEST: {
 			Pull_request pull_request = (Pull_request) theEObject;
 			T result = casePull_request(pull_request);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamlmdePackage.JOB: {
+			Job job = (Job) theEObject;
+			T result = caseJob(job);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case YamlmdePackage.STEP: {
+			Step step = (Step) theEObject;
+			T result = caseStep(step);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -136,16 +136,16 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case YamlmdePackage.ENVIRONMENT: {
-			Environment environment = (Environment) theEObject;
-			T result = caseEnvironment(environment);
+		case YamlmdePackage.CONCURRENCY: {
+			Concurrency concurrency = (Concurrency) theEObject;
+			T result = caseConcurrency(concurrency);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case YamlmdePackage.CONCURRENCY: {
-			Concurrency concurrency = (Concurrency) theEObject;
-			T result = caseConcurrency(concurrency);
+		case YamlmdePackage.ENVIRONMENT: {
+			Environment environment = (Environment) theEObject;
+			T result = caseEnvironment(environment);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -220,6 +220,13 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case YamlmdePackage.SERVICE: {
+			Service service = (Service) theEObject;
+			T result = caseService(service);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case YamlmdePackage.INPUT: {
 			Input input = (Input) theEObject;
 			T result = caseInput(input);
@@ -230,13 +237,6 @@ public class YamlmdeSwitch<T> extends Switch<T> {
 		case YamlmdePackage.MERGE_GROUP: {
 			Merge_group merge_group = (Merge_group) theEObject;
 			T result = caseMerge_group(merge_group);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case YamlmdePackage.SERVICE: {
-			Service service = (Service) theEObject;
-			T result = caseService(service);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
